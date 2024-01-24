@@ -1,0 +1,59 @@
+<apex:page id="pgCreateOrder" 
+           name="Create Order" 
+           title="Create Order: {!Quote__c.Name}" 
+           standardController="Quote__c" 
+           extensions="ViewCreateOrderContExt"
+           action="{!createOrder}">
+  
+  <apex:sectionHeader id="shACreateQuote" title="Create Order" subtitle="{!Quote__c.Name}"/>
+  <apex:pageMessages id="pmCreateOrder" escape="false"/>
+  
+  <apex:form id="frmMain">
+
+    <apex:pageBlock id="pbCreateOrder" title="Create Order">
+        
+        <apex:pageBlockButtons id="pbbCreateOrder">
+            <apex:commandButton id="cbRetry" title="Retry" value="Retry" action="{!createOrder}" rendered="{!showRetry}"/>
+            <apex:commandButton id="cbBack"  title="Back" value="Back" action="{!cancel}"/>
+        </apex:pageBlockButtons>
+        
+        <apex:pageBlockSection id="pbsQuoteHeader" title="Quote Header" rendered="{!isValidQuote}">
+               <apex:outputField value="{!quote.Name}"/>
+                <apex:outputField value="{!quote.Account__r.Name}"/>
+                <apex:outputField value="{!quote.Account__r.AccountNumber}"/>
+                <apex:outputField value="{!quote.Account__r.RecordType.Name}"/>
+                <apex:outputField value="{!quote.Customer_Contact__r.Name}"/>
+                <apex:outputField value="{!quote.Ship_To_Number__c}"/>
+                <apex:outputField value="{!quote.Ship_To__c}"/>
+                <apex:outputField value="{!quote.Ship_To__r.Name}"/>
+                <apex:outputField value="{!quote.Ship_To__r.Address_Line1__c}"/>
+                <apex:outputField value="{!quote.Ship_To__r.Address_Line2__c}"/>
+                <apex:outputField value="{!quote.Ship_To__r.City__c}"/>
+                <apex:outputField value="{!quote.Ship_To__r.State__c}"/>
+                <apex:outputField value="{!quote.Ship_To__r.Postal_Code__c}"/>
+                <apex:outputField value="{!quote.Servicing_Division__c}"/>
+                <apex:outputField value="{!quote.System_Code__c}"/>
+                <apex:outputField value="{!quote.Shipment_Method__c}"/>
+                <apex:outputField value="{!quote.Requested_Delivery_Date__c}"/>
+                <apex:outputField value="{!quote.Comments__c}"/>
+            </apex:pageBlockSection>
+            
+            <apex:pageBlockSection id="pbsQLI" title="Quote Line Items" columns="1" rendered="{!isValidQuote}">
+                <apex:pageBlockTable id="pbtSelectedProducts" value="{!selectedQuoteLineItems}" var="qli">
+                   <apex:column value="{!qli.Special_Item__c}"/>
+                    <apex:column value="{!qli.Quantity_unit_of_measure__c}"/>
+                    <apex:column value="{!qli.Qty__c}"/>
+                    <apex:column value="{!qli.Projected_Delivery_Date__c}"/>
+                    <apex:column value="{!qli.Product_Description__c}"/>
+                    <apex:column value="{!qli.Product_Code__c}"/>
+                    <apex:column value="{!qli.Price_unit_of_measure__c}"/>
+                    <apex:column value="{!qli.Price__c}"/>
+                    <apex:column value="{!qli.Cost__c}"/>
+                    <apex:column value="{!qli.Bid_number_Contract_number__c}"/>
+                    <apex:column value="{!qli.Vendor_Name__r.Name}"/>
+                </apex:pageBlockTable>
+              </apex:pageBlockSection>
+           </apex:pageBlock>
+  </apex:form>  
+  
+</apex:page>

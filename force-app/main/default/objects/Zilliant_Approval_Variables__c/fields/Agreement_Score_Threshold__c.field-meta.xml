@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Agreement_Score_Threshold__c</fullName>
+    <defaultValue>30</defaultValue>
+    <description># of the score that, if above, an ALI will be automatically approved.</description>
+    <externalId>false</externalId>
+    <inlineHelpText># of the score that, if above, an ALI will be automatically approved.</inlineHelpText>
+    <label>Agreement Score Threshold</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>0</scale>
+    <trackTrending>false</trackTrending>
+    <type>Number</type>
+    <unique>false</unique>
+</CustomField>

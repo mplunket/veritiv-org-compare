@@ -1,0 +1,1105 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Product_Category__c</fullName>
+    <description>Any changes here should also be made on the following objects - Opportunities, Work Orders and Contacts. It&apos;s a dependent picklist to Segment. We have some Dashboards that filter on some values for Specialists, so changes need to be vetted against those dashboards.</description>
+    <externalId>false</externalId>
+    <label>Product Category</label>
+    <required>false</required>
+    <trackTrending>true</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <controllingField>Segment__c</controllingField>
+        <valueSetDefinition>
+            <sorted>true</sorted>
+            <value>
+                <fullName>ADHESIVES</fullName>
+                <default>false</default>
+                <label>ADHESIVES</label>
+            </value>
+            <value>
+                <fullName>AMENITIES</fullName>
+                <default>false</default>
+                <label>AMENITIES</label>
+            </value>
+            <value>
+                <fullName>AQUEOUS MEDIA</fullName>
+                <default>false</default>
+                <label>AQUEOUS MEDIA</label>
+            </value>
+            <value>
+                <fullName>AQUEOUS PRINTERS</fullName>
+                <default>false</default>
+                <label>AQUEOUS PRINTERS</label>
+            </value>
+            <value>
+                <fullName>BAGS</fullName>
+                <default>false</default>
+                <label>BAGS</label>
+            </value>
+            <value>
+                <fullName>BINDERY</fullName>
+                <default>false</default>
+                <label>BINDERY</label>
+            </value>
+            <value>
+                <fullName>BLANKETS</fullName>
+                <default>false</default>
+                <label>BLANKETS</label>
+            </value>
+            <value>
+                <fullName>BOND &amp; WRITING</fullName>
+                <default>false</default>
+                <label>BOND &amp; WRITING</label>
+            </value>
+            <value>
+                <fullName>CAN LINERS</fullName>
+                <default>false</default>
+                <label>CAN LINERS</label>
+            </value>
+            <value>
+                <fullName>CAN LINERS-PRIVATE BRAND</fullName>
+                <default>false</default>
+                <label>CAN LINERS-PRIVATE BRAND</label>
+            </value>
+            <value>
+                <fullName>CANNABIS PACKAGING</fullName>
+                <default>false</default>
+                <label>CANNABIS PACKAGING</label>
+            </value>
+            <value>
+                <fullName>CARBONLESS</fullName>
+                <default>false</default>
+                <label>CARBONLESS</label>
+            </value>
+            <value>
+                <fullName>CHEMICALS</fullName>
+                <default>false</default>
+                <label>CHEMICALS</label>
+            </value>
+            <value>
+                <fullName>CHEMICALS-PRIVATE BRAND</fullName>
+                <default>false</default>
+                <label>CHEMICALS-PRIVATE BRAND</label>
+            </value>
+            <value>
+                <fullName>CHIPBOARD</fullName>
+                <default>false</default>
+                <label>CHIPBOARD</label>
+            </value>
+            <value>
+                <fullName>COATED BOARD - ROLLS</fullName>
+                <default>false</default>
+                <label>COATED BOARD - ROLLS</label>
+            </value>
+            <value>
+                <fullName>COATED BOARD - SHEETS</fullName>
+                <default>false</default>
+                <label>COATED BOARD - SHEETS</label>
+            </value>
+            <value>
+                <fullName>COATED DOMESTIC - SHEETS</fullName>
+                <default>false</default>
+                <label>COATED DOMESTIC - SHEETS</label>
+            </value>
+            <value>
+                <fullName>COATED IMPORT - SHEETS</fullName>
+                <default>false</default>
+                <label>COATED IMPORT - SHEETS</label>
+            </value>
+            <value>
+                <fullName>COATED - ROLLS</fullName>
+                <default>false</default>
+                <label>COATED - ROLLS</label>
+            </value>
+            <value>
+                <fullName>COLD CHAIN</fullName>
+                <default>false</default>
+                <label>COLD CHAIN</label>
+            </value>
+            <value>
+                <fullName>COLD CHAIN/TEMPERATURE CONTROLLED PACKAGING</fullName>
+                <default>false</default>
+                <label>COLD CHAIN/TEMPERATURE CONTROLLED PACKAGING</label>
+            </value>
+            <value>
+                <fullName>COMPUTER &amp; LAPTOP</fullName>
+                <default>false</default>
+                <label>COMPUTER &amp; LAPTOP</label>
+            </value>
+            <value>
+                <fullName>CORRUGATED</fullName>
+                <default>false</default>
+                <label>CORRUGATED</label>
+            </value>
+            <value>
+                <fullName>CUSHIONING</fullName>
+                <default>false</default>
+                <label>CUSHIONING</label>
+            </value>
+            <value>
+                <fullName>DESIGN</fullName>
+                <default>false</default>
+                <label>DESIGN</label>
+            </value>
+            <value>
+                <fullName>DIGITAL PAPER</fullName>
+                <default>false</default>
+                <label>DIGITAL PAPER</label>
+            </value>
+            <value>
+                <fullName>DIGITAL PROOFING</fullName>
+                <default>false</default>
+                <label>DIGITAL PROOFING</label>
+            </value>
+            <value>
+                <fullName>DIRECT FOOD CONTACT PACKAGING</fullName>
+                <default>false</default>
+                <label>DIRECT FOOD CONTACT PACKAGING</label>
+            </value>
+            <value>
+                <fullName>DISPENSERS</fullName>
+                <default>false</default>
+                <label>DISPENSERS</label>
+            </value>
+            <value>
+                <fullName>ENGINEERING SUPPLIES BLACK &amp; WHITE</fullName>
+                <default>false</default>
+                <label>ENGINEERING SUPPLIES BLACK &amp; WHITE</label>
+            </value>
+            <value>
+                <fullName>ENGINEERING SUPPLIES COLOR</fullName>
+                <default>false</default>
+                <label>ENGINEERING SUPPLIES COLOR</label>
+            </value>
+            <value>
+                <fullName>ENVELOPES</fullName>
+                <default>false</default>
+                <label>ENVELOPES</label>
+            </value>
+            <value>
+                <fullName>EQUIPMENT – GRAPHICS</fullName>
+                <default>false</default>
+                <label>EQUIPMENT – GRAPHICS</label>
+            </value>
+            <value>
+                <fullName>EQUIPMENT - PACKAGING</fullName>
+                <default>false</default>
+                <label>EQUIPMENT - PACKAGING</label>
+            </value>
+            <value>
+                <fullName>FOOD PACKAGING</fullName>
+                <default>false</default>
+                <label>FOOD PACKAGING</label>
+            </value>
+            <value>
+                <fullName>FOOD SERVICE</fullName>
+                <default>false</default>
+                <label>FOOD SERVICE</label>
+            </value>
+            <value>
+                <fullName>FOOD SERVICE-PRIVATE BRAND</fullName>
+                <default>false</default>
+                <label>FOOD SERVICE-PRIVATE BRAND</label>
+            </value>
+            <value>
+                <fullName>FURNITURE</fullName>
+                <default>false</default>
+                <label>FURNITURE</label>
+            </value>
+            <value>
+                <fullName>HEWLETT PACKARD AEC PRODUCTS</fullName>
+                <default>false</default>
+                <label>HEWLETT PACKARD AEC PRODUCTS</label>
+            </value>
+            <value>
+                <fullName>IMAGING - CUT/SHEETS/ROLLS</fullName>
+                <default>false</default>
+                <label>IMAGING - CUT/SHEETS/ROLLS</label>
+            </value>
+            <value>
+                <fullName>INDEX/ BRISTOLS/ BOARDS</fullName>
+                <default>false</default>
+                <label>INDEX/ BRISTOLS/ BOARDS</label>
+            </value>
+            <value>
+                <fullName>INK/TONER</fullName>
+                <default>false</default>
+                <label>INK/TONER</label>
+            </value>
+            <value>
+                <fullName>INKS/COATINGS</fullName>
+                <default>false</default>
+                <label>INKS/COATINGS</label>
+            </value>
+            <value>
+                <fullName>JANITORIAL POWER EQUIPMENT</fullName>
+                <default>false</default>
+                <label>JANITORIAL POWER EQUIPMENT</label>
+            </value>
+            <value>
+                <fullName>JANITORIAL POWER EQUIPMENT-PRIVATE BRAND</fullName>
+                <default>false</default>
+                <label>JANITORIAL POWER EQUIPMENT-PRIVATE BRAND</label>
+            </value>
+            <value>
+                <fullName>JANITORIAL SUPPLIES</fullName>
+                <default>false</default>
+                <label>JANITORIAL SUPPLIES</label>
+            </value>
+            <value>
+                <fullName>JANITORIAL SUPPLIES-MATTING</fullName>
+                <default>false</default>
+                <label>JANITORIAL SUPPLIES-MATTING</label>
+            </value>
+            <value>
+                <fullName>JANITORIAL SUPPLIES-PRIVATE BRAND</fullName>
+                <default>false</default>
+                <label>JANITORIAL SUPPLIES-PRIVATE BRAND</label>
+            </value>
+            <value>
+                <fullName>KITTING</fullName>
+                <default>false</default>
+                <label>KITTING</label>
+            </value>
+            <value>
+                <fullName>LABELING &amp; IDENTIFICATION</fullName>
+                <default>false</default>
+                <label>LABELING &amp; IDENTIFICATION</label>
+            </value>
+            <value>
+                <fullName>LAMINATORS</fullName>
+                <default>false</default>
+                <label>LAMINATORS</label>
+            </value>
+            <value>
+                <fullName>LATEX PRINTERS</fullName>
+                <default>false</default>
+                <label>LATEX PRINTERS</label>
+            </value>
+            <value>
+                <fullName>MAILERS</fullName>
+                <default>false</default>
+                <label>MAILERS</label>
+            </value>
+            <value>
+                <fullName>MAILERS NON CORRUGATED</fullName>
+                <default>false</default>
+                <label>MAILERS NON CORRUGATED</label>
+            </value>
+            <value>
+                <fullName>MISCELLANEOUS ACCESSORIES</fullName>
+                <default>false</default>
+                <label>MISCELLANEOUS ACCESSORIES</label>
+            </value>
+            <value>
+                <fullName>MOLDED FIBER</fullName>
+                <default>false</default>
+                <label>MOLDED FIBER</label>
+            </value>
+            <value>
+                <fullName>OFF LINE FOLDERS</fullName>
+                <default>false</default>
+                <label>OFF LINE FOLDERS</label>
+            </value>
+            <value>
+                <fullName>OTHER PACKAGING</fullName>
+                <default>false</default>
+                <label>OTHER PACKAGING</label>
+            </value>
+            <value>
+                <fullName>OTHER PAPER</fullName>
+                <default>false</default>
+                <label>OTHER PAPER</label>
+            </value>
+            <value>
+                <fullName>PACKAGES</fullName>
+                <default>false</default>
+                <label>PACKAGES</label>
+            </value>
+            <value>
+                <fullName>PACKAGING MATERIALS</fullName>
+                <default>false</default>
+                <label>PACKAGING MATERIALS</label>
+            </value>
+            <value>
+                <fullName>PALLETS</fullName>
+                <default>false</default>
+                <label>PALLETS</label>
+            </value>
+            <value>
+                <fullName>PARTS</fullName>
+                <default>false</default>
+                <label>PARTS</label>
+            </value>
+            <value>
+                <fullName>PERSONAL HYGIENE</fullName>
+                <default>false</default>
+                <label>PERSONAL HYGIENE</label>
+            </value>
+            <value>
+                <fullName>PERSONAL HYGIENE-PRIVATE BRAND</fullName>
+                <default>false</default>
+                <label>PERSONAL HYGIENE-PRIVATE BRAND</label>
+            </value>
+            <value>
+                <fullName>PERSONAL PROTECTION AND SAFETY</fullName>
+                <default>false</default>
+                <label>PERSONAL PROTECTION AND SAFETY</label>
+            </value>
+            <value>
+                <fullName>PERSONAL PROTECTION AND SAFETY-PRIVATE BRAND</fullName>
+                <default>false</default>
+                <label>PERSONAL PROTECTION AND SAFETY-PRIVATE BRAND</label>
+            </value>
+            <value>
+                <fullName>PHOTO SUPPLIES</fullName>
+                <default>false</default>
+                <label>PHOTO SUPPLIES</label>
+            </value>
+            <value>
+                <fullName>PLATES/FILM</fullName>
+                <default>false</default>
+                <label>PLATES/FILM</label>
+            </value>
+            <value>
+                <fullName>POLY BAGS</fullName>
+                <default>false</default>
+                <label>POLY BAGS</label>
+            </value>
+            <value>
+                <fullName>PREPRESS ELECTRONICS</fullName>
+                <default>false</default>
+                <label>PREPRESS ELECTRONICS</label>
+            </value>
+            <value>
+                <fullName>PREPRESS SUPPLIES</fullName>
+                <default>false</default>
+                <label>PREPRESS SUPPLIES</label>
+            </value>
+            <value>
+                <fullName>PRESS ROOM CHEMISTRY</fullName>
+                <default>false</default>
+                <label>PRESS ROOM CHEMISTRY</label>
+            </value>
+            <value>
+                <fullName>PRESS ROOM EQUIPMENT</fullName>
+                <default>false</default>
+                <label>PRESS ROOM EQUIPMENT</label>
+            </value>
+            <value>
+                <fullName>PRESS ROOM SUPPLIES</fullName>
+                <default>false</default>
+                <label>PRESS ROOM SUPPLIES</label>
+            </value>
+            <value>
+                <fullName>PRESSURE SENSITIVE</fullName>
+                <default>false</default>
+                <label>PRESSURE SENSITIVE</label>
+            </value>
+            <value>
+                <fullName>RECEPTACLES AND MATERIAL HANDLING</fullName>
+                <default>false</default>
+                <label>RECEPTACLES AND MATERIAL HANDLING</label>
+            </value>
+            <value>
+                <fullName>RETAIL/OFFICE AND SCHOOL SUPPLIES</fullName>
+                <default>false</default>
+                <label>RETAIL/OFFICE AND SCHOOL SUPPLIES</label>
+            </value>
+            <value>
+                <fullName>RETAIL PACKAGING</fullName>
+                <default>false</default>
+                <label>RETAIL PACKAGING - DISPLAY</label>
+            </value>
+            <value>
+                <fullName>FOLDING CARTON</fullName>
+                <default>false</default>
+                <label>RETAIL PACKAGING - FOLDING CARTON</label>
+            </value>
+            <value>
+                <fullName>RIGID</fullName>
+                <default>false</default>
+                <label>RIGID</label>
+            </value>
+            <value>
+                <fullName>SHRINK FILM</fullName>
+                <default>false</default>
+                <label>SHRINK FILM</label>
+            </value>
+            <value>
+                <fullName>SKINCARE</fullName>
+                <default>false</default>
+                <label>SKINCARE</label>
+            </value>
+            <value>
+                <fullName>SKINCARE-PRIVATE BRAND</fullName>
+                <default>false</default>
+                <label>SKINCARE-PRIVATE BRAND</label>
+            </value>
+            <value>
+                <fullName>SOFTWARE</fullName>
+                <default>false</default>
+                <label>SOFTWARE</label>
+            </value>
+            <value>
+                <fullName>SOLVENT MEDIA</fullName>
+                <default>false</default>
+                <label>SOLVENT MEDIA</label>
+            </value>
+            <value>
+                <fullName>SOLVENT PRINTERS</fullName>
+                <default>false</default>
+                <label>SOLVENT PRINTERS</label>
+            </value>
+            <value>
+                <fullName>SPECIALTY</fullName>
+                <default>false</default>
+                <label>SPECIALTY</label>
+            </value>
+            <value>
+                <fullName>SPECIALTY FILM</fullName>
+                <default>false</default>
+                <label>SPECIALTY FILM</label>
+            </value>
+            <value>
+                <fullName>SPECIALTY PACKAGING PRODUCTS</fullName>
+                <default>false</default>
+                <label>SPECIALTY PACKAGING PRODUCTS</label>
+            </value>
+            <value>
+                <fullName>STRAPPING</fullName>
+                <default>false</default>
+                <label>STRAPPING</label>
+            </value>
+            <value>
+                <fullName>STRETCH - BANDING</fullName>
+                <default>false</default>
+                <label>STRETCH - BANDING</label>
+            </value>
+            <value>
+                <fullName>STRETCH FILM</fullName>
+                <default>false</default>
+                <label>STRETCH FILM</label>
+            </value>
+            <value>
+                <fullName>STRETCH FILM-PRIVATE BRAND</fullName>
+                <default>false</default>
+                <label>STRETCH FILM-PRIVATE BRAND</label>
+            </value>
+            <value>
+                <fullName>STRETCH - HAND GRADE FILMS</fullName>
+                <default>false</default>
+                <label>STRETCH - HAND GRADE FILMS</label>
+            </value>
+            <value>
+                <fullName>STRETCH - MACHINE GRADE FILMS</fullName>
+                <default>false</default>
+                <label>STRETCH - MACHINE GRADE FILMS</label>
+            </value>
+            <value>
+                <fullName>STRETCH - NETTING</fullName>
+                <default>false</default>
+                <label>STRETCH - NETTING</label>
+            </value>
+            <value>
+                <fullName>SURFACE PROTECTION</fullName>
+                <default>false</default>
+                <label>SURFACE PROTECTION</label>
+            </value>
+            <value>
+                <fullName>SUSTAINABILITY</fullName>
+                <default>false</default>
+                <label>SUSTAINABILITY</label>
+            </value>
+            <value>
+                <fullName>TAPES</fullName>
+                <default>false</default>
+                <label>TAPES</label>
+            </value>
+            <value>
+                <fullName>TAPES-PRIVATE BRAND</fullName>
+                <default>false</default>
+                <label>TAPES-PRIVATE BRAND</label>
+            </value>
+            <value>
+                <fullName>TCW</fullName>
+                <default>false</default>
+                <label>TCW</label>
+            </value>
+            <value>
+                <fullName>TECHNICAL ENGINEERING SYS BLACK &amp; WHITE</fullName>
+                <default>false</default>
+                <label>TECHNICAL ENGINEERING SYS BLACK &amp; WHITE</label>
+            </value>
+            <value>
+                <fullName>TECHNICAL ENGINEERING SYSTEMS COLOR</fullName>
+                <default>false</default>
+                <label>TECHNICAL ENGINEERING SYSTEMS COLOR</label>
+            </value>
+            <value>
+                <fullName>TECHNICAL PLASTICS</fullName>
+                <default>false</default>
+                <label>TECHNICAL PLASTICS</label>
+            </value>
+            <value>
+                <fullName>TEXT &amp; COVER</fullName>
+                <default>false</default>
+                <label>TEXT &amp; COVER</label>
+            </value>
+            <value>
+                <fullName>TOWELS/TISSUES</fullName>
+                <default>false</default>
+                <label>TOWELS/TISSUES</label>
+            </value>
+            <value>
+                <fullName>TOWELS/TISSUES-PRIVATE BRAND</fullName>
+                <default>false</default>
+                <label>TOWELS/TISSUES-PRIVATE BRAND</label>
+            </value>
+            <value>
+                <fullName>TUBE/CORE</fullName>
+                <default>false</default>
+                <label>TUBE/CORE</label>
+            </value>
+            <value>
+                <fullName>UNCOATED BOARD - CUT/SHEETS</fullName>
+                <default>false</default>
+                <label>UNCOATED BOARD - CUT/SHEETS</label>
+            </value>
+            <value>
+                <fullName>UNCOATED BOARD - ROLLS</fullName>
+                <default>false</default>
+                <label>UNCOATED BOARD - ROLLS</label>
+            </value>
+            <value>
+                <fullName>UNCOATED BOOK &amp; COVER</fullName>
+                <default>false</default>
+                <label>UNCOATED BOOK &amp; COVER</label>
+            </value>
+            <value>
+                <fullName>UNCOATED OFFSET - CUT/SHEETS</fullName>
+                <default>false</default>
+                <label>UNCOATED OFFSET - CUT/SHEETS</label>
+            </value>
+            <value>
+                <fullName>UNCOATED OFFSET - ROLLS</fullName>
+                <default>false</default>
+                <label>UNCOATED OFFSET - ROLLS</label>
+            </value>
+            <value>
+                <fullName>UNCOATED OPAQUE - CUT/SHEETS</fullName>
+                <default>false</default>
+                <label>UNCOATED OPAQUE - CUT/SHEETS</label>
+            </value>
+            <value>
+                <fullName>UNCOATED OPAQUE - ROLLS</fullName>
+                <default>false</default>
+                <label>UNCOATED OPAQUE - ROLLS</label>
+            </value>
+            <value>
+                <fullName>UNITIZING</fullName>
+                <default>false</default>
+                <label>UNITIZING</label>
+            </value>
+            <value>
+                <fullName>UV PRINTERS</fullName>
+                <default>false</default>
+                <label>UV PRINTERS</label>
+            </value>
+            <value>
+                <fullName>WIDE FORMAT FLEXIBLE</fullName>
+                <default>false</default>
+                <label>WIDE FORMAT FLEXIBLE</label>
+            </value>
+            <value>
+                <fullName>WIDE FORMAT INKS</fullName>
+                <default>false</default>
+                <label>WIDE FORMAT INKS</label>
+            </value>
+            <value>
+                <fullName>WIDE FORMAT RIGID</fullName>
+                <default>false</default>
+                <label>WIDE FORMAT RIGID</label>
+            </value>
+            <value>
+                <fullName>WIPERS</fullName>
+                <default>false</default>
+                <label>WIPERS</label>
+            </value>
+            <value>
+                <fullName>XEROGRAPHIC MATERIAL</fullName>
+                <default>false</default>
+                <label>XEROGRAPHIC MATERIAL</label>
+            </value>
+        </valueSetDefinition>
+        <valueSettings>
+            <controllingFieldValue>Facility Solutions</controllingFieldValue>
+            <valueName>AMENITIES</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Facility Solutions</controllingFieldValue>
+            <valueName>CAN LINERS</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Facility Solutions</controllingFieldValue>
+            <valueName>CAN LINERS-PRIVATE BRAND</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Facility Solutions</controllingFieldValue>
+            <valueName>CHEMICALS</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Facility Solutions</controllingFieldValue>
+            <valueName>CHEMICALS-PRIVATE BRAND</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Facility Solutions</controllingFieldValue>
+            <valueName>COLD CHAIN</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Facility Solutions</controllingFieldValue>
+            <valueName>FOOD SERVICE</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Facility Solutions</controllingFieldValue>
+            <valueName>FOOD SERVICE-PRIVATE BRAND</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Facility Solutions</controllingFieldValue>
+            <valueName>JANITORIAL POWER EQUIPMENT</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Facility Solutions</controllingFieldValue>
+            <valueName>JANITORIAL POWER EQUIPMENT-PRIVATE BRAND</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Facility Solutions</controllingFieldValue>
+            <valueName>JANITORIAL SUPPLIES</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Facility Solutions</controllingFieldValue>
+            <valueName>JANITORIAL SUPPLIES-MATTING</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Facility Solutions</controllingFieldValue>
+            <valueName>JANITORIAL SUPPLIES-PRIVATE BRAND</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Facility Solutions</controllingFieldValue>
+            <valueName>PERSONAL HYGIENE</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Facility Solutions</controllingFieldValue>
+            <valueName>PERSONAL HYGIENE-PRIVATE BRAND</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Facility Solutions</controllingFieldValue>
+            <valueName>PERSONAL PROTECTION AND SAFETY</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Facility Solutions</controllingFieldValue>
+            <valueName>PERSONAL PROTECTION AND SAFETY-PRIVATE BRAND</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Facility Solutions</controllingFieldValue>
+            <valueName>RECEPTACLES AND MATERIAL HANDLING</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Facility Solutions</controllingFieldValue>
+            <valueName>RETAIL/OFFICE AND SCHOOL SUPPLIES</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Facility Solutions</controllingFieldValue>
+            <valueName>SKINCARE</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Facility Solutions</controllingFieldValue>
+            <valueName>SKINCARE-PRIVATE BRAND</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Facility Solutions</controllingFieldValue>
+            <valueName>TOWELS/TISSUES</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Facility Solutions</controllingFieldValue>
+            <valueName>TOWELS/TISSUES-PRIVATE BRAND</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Facility Solutions</controllingFieldValue>
+            <valueName>WIPERS</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Packaging</controllingFieldValue>
+            <valueName>ADHESIVES</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Packaging</controllingFieldValue>
+            <valueName>BAGS</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Packaging</controllingFieldValue>
+            <valueName>CANNABIS PACKAGING</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Packaging</controllingFieldValue>
+            <valueName>CHIPBOARD</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Packaging</controllingFieldValue>
+            <valueName>COLD CHAIN/TEMPERATURE CONTROLLED PACKAGING</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Packaging</controllingFieldValue>
+            <valueName>CORRUGATED</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Packaging</controllingFieldValue>
+            <valueName>CUSHIONING</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Packaging</controllingFieldValue>
+            <valueName>DESIGN</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Packaging</controllingFieldValue>
+            <valueName>DIRECT FOOD CONTACT PACKAGING</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Packaging</controllingFieldValue>
+            <valueName>DISPENSERS</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Packaging</controllingFieldValue>
+            <valueName>EQUIPMENT - PACKAGING</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Packaging</controllingFieldValue>
+            <valueName>FOOD PACKAGING</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Packaging</controllingFieldValue>
+            <valueName>KITTING</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Packaging</controllingFieldValue>
+            <valueName>LABELING &amp; IDENTIFICATION</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Packaging</controllingFieldValue>
+            <valueName>MAILERS</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Packaging</controllingFieldValue>
+            <valueName>MAILERS NON CORRUGATED</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Packaging</controllingFieldValue>
+            <valueName>MOLDED FIBER</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Packaging</controllingFieldValue>
+            <valueName>OTHER PACKAGING</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Packaging</controllingFieldValue>
+            <valueName>PACKAGES</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Packaging</controllingFieldValue>
+            <valueName>PACKAGING MATERIALS</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Packaging</controllingFieldValue>
+            <valueName>PALLETS</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Packaging</controllingFieldValue>
+            <valueName>PARTS</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Packaging</controllingFieldValue>
+            <valueName>POLY BAGS</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Packaging</controllingFieldValue>
+            <valueName>RETAIL PACKAGING</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Packaging</controllingFieldValue>
+            <valueName>FOLDING CARTON</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Packaging</controllingFieldValue>
+            <valueName>RIGID</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Packaging</controllingFieldValue>
+            <valueName>SHRINK FILM</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Packaging</controllingFieldValue>
+            <valueName>SPECIALTY FILM</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Packaging</controllingFieldValue>
+            <valueName>SPECIALTY PACKAGING PRODUCTS</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Packaging</controllingFieldValue>
+            <valueName>STRAPPING</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Packaging</controllingFieldValue>
+            <valueName>STRETCH - BANDING</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Packaging</controllingFieldValue>
+            <valueName>STRETCH FILM</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Packaging</controllingFieldValue>
+            <valueName>STRETCH FILM-PRIVATE BRAND</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Packaging</controllingFieldValue>
+            <valueName>STRETCH - HAND GRADE FILMS</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Packaging</controllingFieldValue>
+            <valueName>STRETCH - MACHINE GRADE FILMS</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Packaging</controllingFieldValue>
+            <valueName>STRETCH - NETTING</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Packaging</controllingFieldValue>
+            <valueName>SUSTAINABILITY</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Packaging</controllingFieldValue>
+            <valueName>TAPES</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Packaging</controllingFieldValue>
+            <valueName>TAPES-PRIVATE BRAND</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Packaging</controllingFieldValue>
+            <valueName>TECHNICAL PLASTICS</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Packaging</controllingFieldValue>
+            <valueName>TUBE/CORE</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Packaging</controllingFieldValue>
+            <valueName>UNITIZING</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Print</controllingFieldValue>
+            <controllingFieldValue>Publishing</controllingFieldValue>
+            <valueName>AQUEOUS MEDIA</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Print</controllingFieldValue>
+            <controllingFieldValue>Publishing</controllingFieldValue>
+            <valueName>AQUEOUS PRINTERS</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Print</controllingFieldValue>
+            <controllingFieldValue>Publishing</controllingFieldValue>
+            <valueName>BLANKETS</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Print</controllingFieldValue>
+            <controllingFieldValue>Publishing</controllingFieldValue>
+            <valueName>CARBONLESS</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Print</controllingFieldValue>
+            <controllingFieldValue>Publishing</controllingFieldValue>
+            <valueName>COATED BOARD - ROLLS</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Print</controllingFieldValue>
+            <controllingFieldValue>Publishing</controllingFieldValue>
+            <valueName>COATED BOARD - SHEETS</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Print</controllingFieldValue>
+            <controllingFieldValue>Publishing</controllingFieldValue>
+            <valueName>COATED DOMESTIC - SHEETS</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Print</controllingFieldValue>
+            <controllingFieldValue>Publishing</controllingFieldValue>
+            <valueName>COATED IMPORT - SHEETS</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Print</controllingFieldValue>
+            <controllingFieldValue>Publishing</controllingFieldValue>
+            <valueName>COATED - ROLLS</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Print</controllingFieldValue>
+            <controllingFieldValue>Publishing</controllingFieldValue>
+            <valueName>COMPUTER &amp; LAPTOP</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Print</controllingFieldValue>
+            <controllingFieldValue>Publishing</controllingFieldValue>
+            <valueName>DIGITAL PROOFING</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Print</controllingFieldValue>
+            <controllingFieldValue>Publishing</controllingFieldValue>
+            <valueName>ENGINEERING SUPPLIES BLACK &amp; WHITE</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Print</controllingFieldValue>
+            <controllingFieldValue>Publishing</controllingFieldValue>
+            <valueName>ENGINEERING SUPPLIES COLOR</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Print</controllingFieldValue>
+            <controllingFieldValue>Publishing</controllingFieldValue>
+            <valueName>ENVELOPES</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Print</controllingFieldValue>
+            <controllingFieldValue>Publishing</controllingFieldValue>
+            <valueName>EQUIPMENT – GRAPHICS</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Print</controllingFieldValue>
+            <controllingFieldValue>Publishing</controllingFieldValue>
+            <valueName>FURNITURE</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Print</controllingFieldValue>
+            <controllingFieldValue>Publishing</controllingFieldValue>
+            <valueName>HEWLETT PACKARD AEC PRODUCTS</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Print</controllingFieldValue>
+            <controllingFieldValue>Publishing</controllingFieldValue>
+            <valueName>IMAGING - CUT/SHEETS/ROLLS</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Print</controllingFieldValue>
+            <controllingFieldValue>Publishing</controllingFieldValue>
+            <valueName>INK/TONER</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Print</controllingFieldValue>
+            <controllingFieldValue>Publishing</controllingFieldValue>
+            <valueName>INKS/COATINGS</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Print</controllingFieldValue>
+            <controllingFieldValue>Publishing</controllingFieldValue>
+            <valueName>LAMINATORS</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Print</controllingFieldValue>
+            <controllingFieldValue>Publishing</controllingFieldValue>
+            <valueName>LATEX PRINTERS</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Print</controllingFieldValue>
+            <controllingFieldValue>Publishing</controllingFieldValue>
+            <valueName>OFF LINE FOLDERS</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Print</controllingFieldValue>
+            <controllingFieldValue>Publishing</controllingFieldValue>
+            <valueName>OTHER PAPER</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Print</controllingFieldValue>
+            <controllingFieldValue>Publishing</controllingFieldValue>
+            <valueName>PHOTO SUPPLIES</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Print</controllingFieldValue>
+            <controllingFieldValue>Publishing</controllingFieldValue>
+            <valueName>PLATES/FILM</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Print</controllingFieldValue>
+            <controllingFieldValue>Publishing</controllingFieldValue>
+            <valueName>PRESS ROOM CHEMISTRY</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Print</controllingFieldValue>
+            <controllingFieldValue>Publishing</controllingFieldValue>
+            <valueName>SOFTWARE</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Print</controllingFieldValue>
+            <controllingFieldValue>Publishing</controllingFieldValue>
+            <valueName>SOLVENT MEDIA</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Print</controllingFieldValue>
+            <controllingFieldValue>Publishing</controllingFieldValue>
+            <valueName>SOLVENT PRINTERS</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Print</controllingFieldValue>
+            <controllingFieldValue>Publishing</controllingFieldValue>
+            <valueName>TCW</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Print</controllingFieldValue>
+            <controllingFieldValue>Publishing</controllingFieldValue>
+            <valueName>TECHNICAL ENGINEERING SYS BLACK &amp; WHITE</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Print</controllingFieldValue>
+            <controllingFieldValue>Publishing</controllingFieldValue>
+            <valueName>TECHNICAL ENGINEERING SYSTEMS COLOR</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Print</controllingFieldValue>
+            <controllingFieldValue>Publishing</controllingFieldValue>
+            <valueName>UNCOATED BOARD - CUT/SHEETS</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Print</controllingFieldValue>
+            <controllingFieldValue>Publishing</controllingFieldValue>
+            <valueName>UNCOATED BOARD - ROLLS</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Print</controllingFieldValue>
+            <controllingFieldValue>Publishing</controllingFieldValue>
+            <valueName>UNCOATED OFFSET - CUT/SHEETS</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Print</controllingFieldValue>
+            <controllingFieldValue>Publishing</controllingFieldValue>
+            <valueName>UNCOATED OFFSET - ROLLS</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Print</controllingFieldValue>
+            <controllingFieldValue>Publishing</controllingFieldValue>
+            <valueName>UNCOATED OPAQUE - CUT/SHEETS</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Print</controllingFieldValue>
+            <controllingFieldValue>Publishing</controllingFieldValue>
+            <valueName>UNCOATED OPAQUE - ROLLS</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Print</controllingFieldValue>
+            <controllingFieldValue>Publishing</controllingFieldValue>
+            <valueName>UV PRINTERS</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Print</controllingFieldValue>
+            <controllingFieldValue>Publishing</controllingFieldValue>
+            <valueName>XEROGRAPHIC MATERIAL</valueName>
+        </valueSettings>
+    </valueSet>
+</CustomField>

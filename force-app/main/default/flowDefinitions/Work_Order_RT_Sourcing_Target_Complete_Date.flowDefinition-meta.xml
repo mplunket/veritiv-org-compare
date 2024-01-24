@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<FlowDefinition xmlns="http://soap.sforce.com/2006/04/metadata">
+    <activeVersionNumber>2</activeVersionNumber>
+    <description>Calculates the &apos;Target Complete Date&apos; field on the Work Order record, based on number of business days to complete the request while including weekends and holidays</description>
+    <masterLabel>Work Order - [RT] Sourcing Target Complete Date</masterLabel>
+</FlowDefinition>

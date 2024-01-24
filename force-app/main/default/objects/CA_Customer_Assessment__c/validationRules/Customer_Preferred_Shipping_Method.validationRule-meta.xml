@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Customer_Preferred_Shipping_Method</fullName>
+    <active>false</active>
+    <errorConditionFormula>NOT( 
+   AND( 
+       OR( 
+          ISPICKVAL(Customer_Preferred_Shipping_Method__c, &apos;UPS&apos;), 
+          ISPICKVAL(Customer_Preferred_Shipping_Method__c, &apos;FEDEX&apos;), 
+          ISPICKVAL(Customer_Preferred_Shipping_Method__c, &apos;COMM CARRIER&apos;), 
+          ISPICKVAL(Customer_Preferred_Shipping_Method__c, &apos;OTHER&apos;), 
+          ISBLANK(Cust_Preferred_Shipping_Meth_Description__c)
+          )
+      )
+   )</errorConditionFormula>
+    <errorMessage>Please Choose a Preferred Shipping Method.</errorMessage>
+</ValidationRule>

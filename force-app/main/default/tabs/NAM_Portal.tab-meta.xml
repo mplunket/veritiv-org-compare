@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomTab xmlns="http://soap.sforce.com/2006/04/metadata">
+    <description>National Accounts Portal</description>
+    <frameHeight>600</frameHeight>
+    <hasSidebar>false</hasSidebar>
+    <label>NAM Portal</label>
+    <motif>Custom14: Hands</motif>
+    <url>http://portal.srv.unisourcelink.net/C15/C2/National%20Accounts/default.aspx</url>
+    <urlEncodingKey>UTF-8</urlEncodingKey>
+</CustomTab>

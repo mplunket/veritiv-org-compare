@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Opportunities_Stage_2_and_3_Movements__c</fullName>
+    <externalId>false</externalId>
+    <formula>HYPERLINK( 
+
+/* If they&apos;re in Lightning */ 
+IF($User.UIThemeDisplayed=&quot;Theme4d&quot;, 
+
+/* Use Lightning syntax, optimized to avoid full page reload */ 
+&quot;/lightning/r/Report/00Of2000005Bvwv/view?fv5=&quot;&amp;Aliases__c&amp;&quot;&amp;fv6=&quot;&amp;Aliases__c&amp;&quot;&amp;fv7=&quot;&amp;Aliases__c&amp;&quot;&amp;fv8=&quot;&amp;Aliases__c&amp;&quot;&amp;fv9=&quot;&amp;Aliases__c, 
+
+/* Otherwise use Classic syntax */ 
+&quot;/00Of2000005Bvwv?pv5=&quot;&amp;Aliases__c&amp;&quot;&amp;pv6=&quot;&amp;Aliases__c&amp;&quot;&amp;pv7=&quot;&amp;Aliases__c&amp;&quot;&amp;pv8=&quot;&amp;Aliases__c&amp;&quot;&amp;pv9=&quot;&amp;Aliases__c) 
+
+, 
+/* Specify the link text */ 
+&quot;Opportunities - Stage 2 and 3 Movements&quot;, 
+
+/* Keep it in the same browser tab to avoid full page reload */ 
+&quot;_self&quot; 
+)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Opportunities - Stage 2 and 3 Movements</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

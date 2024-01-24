@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Timeline__c</fullName>
+    <description>High level time estimates for assessment of project, outside vendor review, requirements gathering, development &amp; testing and rollout (communication &amp; training plan)</description>
+    <externalId>false</externalId>
+    <inlineHelpText>High level time estimates for assessment of project, outside vendor review, requirements gathering, development &amp; testing and rollout (communication &amp; training plan)</inlineHelpText>
+    <label>Timeline</label>
+    <length>2000</length>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>LongTextArea</type>
+    <visibleLines>3</visibleLines>
+</CustomField>

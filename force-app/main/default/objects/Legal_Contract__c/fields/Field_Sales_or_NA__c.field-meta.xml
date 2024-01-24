@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Field_Sales_or_NA__c</fullName>
+    <externalId>false</externalId>
+    <formula>IF
+(OR
+ (ISPICKVAL(Prospect_Field_or_Parent__c, &quot;Parent National Account&quot;),
+(AND
+( Account__r.National_Account__c = True,  Account__r.ParentId = NULL)))
+
+,&quot;Parent National Account&quot;, &quot;Field Sales&quot;)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Field Sales or NA</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

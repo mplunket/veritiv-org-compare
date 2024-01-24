@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Letterhead xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <backgroundColor>#ffffff</backgroundColor>
+    <bodyColor>#FFFFFF</bodyColor>
+    <bottomLine>
+        <color>#ffffff</color>
+        <height>0</height>
+    </bottomLine>
+    <description>PUM Packaging Automation Letterhead 0122</description>
+    <footer>
+        <backgroundColor>#FFFFFF</backgroundColor>
+        <height>100</height>
+        <horizontalAlignment>Left</horizontalAlignment>
+        <logo>Marketing/Veritiv_logo_footer.jpg</logo>
+        <verticalAlignment>Top</verticalAlignment>
+    </footer>
+    <header>
+        <backgroundColor>#FFFFFF</backgroundColor>
+        <height>100</height>
+        <horizontalAlignment>Left</horizontalAlignment>
+        <logo>Marketing/PUM_Packaging_Automation_Email_Header_0122.png</logo>
+        <verticalAlignment>Top</verticalAlignment>
+    </header>
+    <middleLine>
+        <color>#ffffff</color>
+        <height>0</height>
+    </middleLine>
+    <name>PUM Packaging Automation Letterhead 0122</name>
+    <topLine>
+        <color>#ffffff</color>
+        <height>0</height>
+    </topLine>
+</Letterhead>

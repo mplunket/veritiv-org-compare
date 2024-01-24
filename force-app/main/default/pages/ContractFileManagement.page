@@ -1,0 +1,62 @@
+<apex:page controller="ContractFileManagementCtrl" sidebar="false">
+	<apex:includeScript value="{!URLFOR($Resource.jQueryUI_new, 'js/jquery-1.7.2.min.js')}" />
+	<script>
+		function setFocusOnLoad() {}
+	</script>
+	
+    <apex:pageMessages id="messages"/>
+    
+     <apex:form id="form">
+     
+        <apex:actionFunction name="rerenderTable" reRender="pbt"/>
+        
+     	<!-- <apex:actionRegion > -->
+    		<apex:actionFunction name="refreshAttachments" action="{!initializePage}" reRender="form"/>
+    	<!--  </apex:actionRegion> -->
+		<apex:pageBlock id="mainPageBlock">
+			<apex:pageBlockButtons location="top">
+				<apex:commandButton value="Save and Validate" action="{!goBackAndSave}" rerender="messages" />
+				<apex:commandButton value="Cancel" action="{!returnToOpportunity}" rerender="messages" />
+				 
+				<apex:commandButton value="Close-Win" action="{!closeWinOpportunity}" rendered="{!$CurrentPage.parameters.fromButton=='true'}" rerender="messages,pbt " />
+			</apex:pageBlockButtons>
+		<apex:pageBlockTable id="pbt" value="{!contractWrappers}" var="wrapper">
+			<apex:column headerValue="Document Type" width="20%">
+				<apex:outputText value="{!wrapper.documentType}"/>
+			</apex:column>
+			<apex:column headerValue="Attachment" width="40%">
+				<!-- Required Attachment functionality -- commented out as no longer needed 8/19/16 -- Bluewolf -->
+				<!--<apex:outputText value="Missing Attachment  " style="font-style:italic; font-weight:bold; color:red" rendered="{!wrapper.isMissing}"/>  -->
+				<!--<apex:image url="{!URLFOR($Resource.Image_helpText)}" title="{!wrapper.requiredHelp}" rendered="{!AND(wrapper.requiredDocument, wrapper.attachmentId==null)}"/>-->
+				<apex:outputLink value="{!URLFOR($Action.Attachment.Download, wrapper.attachmentId)}" rendered="{!wrapper.attachmentId != null}">{!wrapper.attachmentName}</apex:outputLink>
+				&nbsp;
+
+				<apex:commandButton value="{!wrapper.buttonText}" onClick="openAttachmentDialog('{!wrapper.documentType}', '{!wrapper.contract.Id}', '{!wrapper.attachmentId}' ); return false;"/>
+			</apex:column>
+			
+			<apex:column headerValue="{!$ObjectType.Contract.fields.StartDate.Label}" width="15%">	
+				 <apex:outputPanel layout="block" styleClass="requiredInput">
+                              <apex:outputPanel rendered="{!AND(wrapper.contract!=null,NOT(wrapper.isMonthToMonth),wrapper.fapSpecification!=null,wrapper.fapSpecification.Need_Date__c)}" layout="block" styleClass="requiredBlock"/>
+                              <apex:inputfield value="{!wrapper.contract.StartDate}" rendered="{!wrapper.contract!=null}"/>
+                 </apex:outputPanel>
+			</apex:column> 
+			
+			<apex:column headerValue="{!$ObjectType.Contract.fields.ContractTerm.Label}" width="15%">
+				<apex:inputfield value="{!wrapper.contract.ContractTerm}" rendered="{!AND(wrapper.contract!=null,NOT(wrapper.isMonthToMonth))}"/>
+				<apex:outputLabel value="N/A" rendered="{!AND(wrapper.contract!=null,wrapper.isMonthToMonth)}"/>
+			</apex:column>
+			
+			<apex:column headerValue="Month-to-Month?" width="10%">
+			<apex:actionRegion >	
+				<apex:inputcheckbox required="true" value="{!wrapper.isMonthToMonth}" rendered="{!wrapper.contract!=null}">
+					<apex:actionSupport event="onclick" rerender="mainPageBlock" status="status"/>
+				</apex:inputcheckbox>
+			</apex:actionRegion>
+			</apex:column> 
+		</apex:pageBlockTable>
+		
+		</apex:pageBlock>   
+	</apex:form>
+	
+	 <c:FileAttachmentDialog pageMessagesId="messages" opportunityId="{!opportunityId}" accountId="{!opportunity.AccountId}"  divisionId="{!opportunity.Servicing_Division__c}" refresh="refreshAttachments"/>
+</apex:page>

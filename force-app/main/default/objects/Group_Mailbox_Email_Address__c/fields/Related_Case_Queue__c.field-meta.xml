@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Related_Case_Queue__c</fullName>
+    <deleteConstraint>SetNull</deleteConstraint>
+    <description>The name of the Queue related to the group mailbox email address</description>
+    <externalId>false</externalId>
+    <label>Related Case Queue</label>
+    <referenceTo>Fax_To_Case_Queue_Assignment__c</referenceTo>
+    <relationshipLabel>Group Mailbox Email Addresses</relationshipLabel>
+    <relationshipName>Group_Mailbox_Email_Addresses</relationshipName>
+    <required>false</required>
+    <trackHistory>true</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Lookup</type>
+</CustomField>

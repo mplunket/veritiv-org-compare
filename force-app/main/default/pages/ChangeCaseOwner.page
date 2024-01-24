@@ -1,0 +1,39 @@
+<apex:page StandardController="Case" extensions="ChangeCaseOwnerControllerExt" >
+
+    <apex:outputText >This screen allows you to transfer cases from one user or queue to another. When you transfer ownership, the new owner will own:</apex:outputText>
+    <ul>
+        <li>all open activities (tasks and events) for this case that are assigned to the current owner</li>
+    </ul>
+    <apex:outputText >Note that completed activities will not be transferred. Open activities will not be transferred when assigning this case to a queue.</apex:outputText>
+
+    <apex:form >
+        
+        <apex:pageBlock id="pageBlockSection">
+            <apex:pageMessages id="mesgs"/>
+        
+            <apex:pageBlockButtons location="bottom" id="buttons">
+                <apex:commandButton action="{!beforeSave}" value="Save" id="saveButton"/>
+                <apex:commandButton action="{!cancel}" value="Cancel" id="cancelButton"/>
+            </apex:pageBlockButtons>
+            
+            <apex:pageBlockSection columns="1" title="Select New Owner" collapsible="false">
+                
+                <apex:pageBlockSectionItem >
+                    <apex:outputLabel >Transfer this case</apex:outputLabel>
+                    <apex:outputText value="{!Case.CaseNumber}"/>
+                </apex:pageBlockSectionItem>
+                
+                <apex:outputText rendered="false" value="{!Case.OwnerId}"/>
+                <apex:inputField value="{!changeOwnerCase.OwnerId}"/>
+                
+                <apex:pageBlockSectionItem rendered="{!failedSave}" >
+                    <apex:outputText value="Override User's Status"/>
+                    <apex:inputCheckbox value="{!overrideUserStatus}"/>
+                </apex:pageBlockSectionItem>
+                
+            </apex:pageBlockSection>
+        </apex:pageBlock>
+
+    </apex:form>
+
+</apex:page>

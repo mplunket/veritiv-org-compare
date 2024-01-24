@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Object__c</fullName>
+    <description>Object the field you are mapping from is on</description>
+    <externalId>false</externalId>
+    <inlineHelpText>please input &quot;Account&quot; or &quot;Opportunity&quot;</inlineHelpText>
+    <label>Object</label>
+    <length>20</length>
+    <required>true</required>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

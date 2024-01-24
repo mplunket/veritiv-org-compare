@@ -1,0 +1,142 @@
+<apex:page standardController="Quote__c" extensions="QuoteControllerExtension" sidebar="false" showHeader="false" action="{!createQuote}" renderAs="pdf" standardStylesheets="true">
+    <apex:stylesheet value="{!$Resource.QuoteStyle}"/>
+    <apex:outputPanel id="msgs">
+        <apex:pageMessages />
+    </apex:outputPanel>
+    <table width="100%">
+        <tr>
+            <td width="33.33%"/>
+            <apex:outputPanel layout="none" rendered="{!NOT(isSalesRepPDF)}">
+                <td align="center" width="33.33%" style="font-size:x-large;font-weight:bold">Web Center<br/>Request for Quote</td>
+            </apex:outputPanel>
+            <td align="right" width="33.33%">
+            
+            <!-- Commented and added code by Sujitha-->
+                
+                <!-- <apex:image value="{!$Resource.UnisourceLogo}" rendered="{!NOT(isWebsource)}"/> -->
+                <apex:image value="{!$Resource.SaalfeldLogo}" rendered="{!isSaalfeld}" />
+              <apex:image value="{!$Resource.UnisourceLogo}" rendered="{!NOT(isSaalfeld)}" /> 
+                <!--End of changes by sujitha-->
+            </td>
+        </tr>
+    </table>
+    <apex:pageBlock tabStyle="Product2">
+        <apex:pageBlockSection id="vendorPageBlock"  collapsible="false">
+            <apex:outputField value="{!Quote__c.Name}"/>
+            <apex:pageBlockSectionItem >
+                <apex:outputLabel value="Date/Time Email Sent"/>
+                <apex:outputText value="{!formattedNow}"/>
+            </apex:pageBlockSectionItem>
+            <apex:pageBlockSectionItem >
+                <apex:outputLabel value="Customer Name"/>
+                <apex:outputText value="{!Quote__c.Account__r.Name}"/>
+            </apex:pageBlockSectionItem>
+            <apex:pageBlockSectionItem >
+            <apex:outputLabel value="Vendor Name"/>
+            <apex:outputPanel >
+                <apex:dataTable value="{!selectedQLIs}" var="qli" rows="1">
+                    <apex:column headerValue="" value="{!qli.Vendor_Name__r.Name}"/>
+                </apex:dataTable>
+            </apex:outputPanel>
+            </apex:pageBlockSectionItem>
+            <apex:pageBlockSectionItem >
+                <apex:outputLabel value="Shipping City, State, Zip"/>
+                <apex:outputPanel >
+                    <apex:outputField value="{!Quote__c.Ship_To__r.City__c}"/>
+                    <apex:outputText value="{!IF(LEN(Quote__c.Ship_To__r.City__c) = 0, '', ', ')}"/>
+                    <apex:outputField value="{!Quote__c.Ship_To__r.State__c}"/>
+                    <apex:outputText value="{!IF(LEN(Quote__c.Ship_To__r.State__c) = 0, '', ' ')}"/>
+                    <apex:outputField value="{!Quote__c.Ship_To__r.Postal_Code__c}"/>
+                </apex:outputPanel>
+            </apex:pageBlockSectionItem>
+            <apex:pageBlockSectionItem >
+                <apex:outputLabel value="Vendor Contact Name"/>
+                <apex:outputPanel >
+                    <apex:dataTable value="{!selectedQLIs}" var="qli" rows="1">
+                        <apex:column headerValue="" value="{!qli.Vendor_Contact__r.Name}"/>
+                    </apex:dataTable>
+                </apex:outputPanel>
+            </apex:pageBlockSectionItem>
+            <apex:pageBlockSectionItem >
+                <apex:outputLabel value="Unisource Division Name"/>
+                <apex:outputText value="{!Quote__c.Servicing_Division_Name__c}"/>
+            </apex:pageBlockSectionItem>
+            <apex:pageBlockSectionItem >
+                <apex:outputLabel value="Vendor Contact Email"/>
+                <apex:outputPanel >
+                    <apex:dataTable value="{!selectedQLIs}" var="qli" rows="1">
+                        <apex:column headerValue="" value="{!qli.Vendor_Contact__r.Email}"/>
+                    </apex:dataTable>
+                </apex:outputPanel>
+            </apex:pageBlockSectionItem>
+            <apex:pageBlockSectionItem >
+                <apex:outputLabel value="Web Center Contact"/>
+                <apex:outputText value="{!$User.FirstName} {!$User.LastName}"/>
+            </apex:pageBlockSectionItem>
+            <apex:pageBlockSectionItem >
+                <apex:outputLabel value="Vendor Contact Phone"/>
+                <apex:outputPanel >
+                    <apex:dataTable value="{!selectedQLIs}" var="qli" rows="1">
+                        <apex:column headerValue="" value="{!qli.Vendor_Contact__r.Phone}"/>
+                    </apex:dataTable>
+                </apex:outputPanel>
+            </apex:pageBlockSectionItem>
+            <apex:pageBlockSectionItem >
+                <apex:outputLabel value="Web Center Email"/>
+                <apex:outputText value="{!$Label.WebCenterEmailAddress}"/>
+            </apex:pageBlockSectionItem>
+        </apex:pageBlockSection>
+        <apex:pageBlockSection title="Vendor Product Requested" columns="1" collapsible="false">
+            <apex:pageBlockTable value="{!selectedQLIs}" var="qli"  headerClass="alignCenter" columnClasses="alignRight">
+                <apex:column >
+                    <apex:facet name="header">Qty</apex:facet>
+                    <apex:outputText value="{0, number, 0}">
+                        <apex:param value="{!qli.Qty__c}" />
+                    </apex:outputText>
+                </apex:column>
+                <apex:column value="{!qli.Quantity_unit_of_measure__c}">
+                    <apex:facet name="header">Qty<br/>UOM</apex:facet>
+                </apex:column>
+                <apex:column value="{!qli.Roll_Size__c}"/>
+                <apex:column value="{!qli.Basis_Weight__c}">
+                    <apex:facet name="header">Bs Wt</apex:facet>
+                </apex:column>
+                <apex:column value="{!qli.Brand__c}"/>
+                <apex:column value="{!qli.Brightness__c}"/>
+                <apex:column value="{!qli.Finish__c}"/>
+                <apex:column value="{!qli.Color__c}"/>
+                <apex:column value="{!qli.Outer_Diameter__c}">
+                    <apex:facet name="header">OD</apex:facet>
+                </apex:column>
+                <apex:column value="{!qli.Core__c}"/>
+                <apex:column value="{!qli.Recycled_Content__c}"  width="50px">
+                    <apex:facet name="header">Recycled %</apex:facet>
+                </apex:column>
+                <apex:column value="{!qli.PCW_Content__c}">
+                    <apex:facet name="header">PCW %</apex:facet>
+                </apex:column>
+                <apex:column value="{!qli.Coc_Required__c}" width="80px">
+                    <apex:facet name="header">CoC Required?</apex:facet>
+                </apex:column>
+                <apex:column value="{!qli.Projected_Delivery_Date__c}" width="80px">
+                    <apex:facet name="header">Requested Delivery</apex:facet>
+                </apex:column>
+                <!-- Hidden fields required by Apex controller extension to bind to the data -->
+                <apex:outputText value="{!qli.Special_Item__c}" rendered="false"/>
+                <!-- End of hidden fields -->
+            </apex:pageBlockTable>
+        </apex:pageBlockSection>
+        <apex:pageBlockSection title="" id="vendorCommentsBlock" columns="1"  collapsible="false">
+            <apex:pageBlockSectionItem >
+                <apex:outputLabel value="{!IF($CurrentPage.parameters.title == 'Sales Rep', 'Customer ', '')}Comments"/>
+                <apex:outputField value="{!Quote__c.Vendor_Comments__c}"/>
+            </apex:pageBlockSectionItem>
+            
+            <apex:pageBlockSectionItem >
+                <apex:outputLabel value="ATTENTION!"/>
+                <apex:outputText value="{!$Label.QuotePDFAttention}"/>
+            </apex:pageBlockSectionItem>
+        </apex:pageBlockSection>
+        <apex:outputText value="{!Quote__c.Shipment_Method__c}" rendered="false"/>
+    </apex:pageBlock>
+</apex:page>

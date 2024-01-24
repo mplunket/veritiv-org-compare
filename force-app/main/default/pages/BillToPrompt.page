@@ -1,0 +1,111 @@
+<apex:page standardcontroller="Opportunity" extensions="BillToPromptControllerExtenstion" id="page">
+    <apex:includeScript value="{!$Resource.Prototype}"/>
+
+    <style type="text/css">
+    body
+    {
+        background-color:#F3F3EC;
+    }
+    
+    #billToPrompt
+    {
+        font-weight: bold;
+        font-size : .95em;
+    }
+    
+    .floatleft
+    {
+        float:left;
+        width:33%;
+    }
+    
+    .floatright
+    {
+        float:right;
+        width:65%;
+    }
+    
+    .cleared
+    {
+        clear:both;
+        height:0px;
+    }
+    
+    .centered
+    {
+        text-align:center;
+        width:160px;
+    }
+        
+            
+    .boldMsg
+    {
+        font-weight : bold;
+        font-size : 1.1em;
+        text-align : center;
+        margin-top : 15px;
+    }
+    </style>
+    
+    <script type="text/javascript">
+         Event.observe(window, 'load', alertUser);
+         
+         function alertUser()
+         {
+            if($F('page:billToForm:showPrompt') == 'true')
+            {
+                alert('Please enter a bill to number. For Canadian Accounts, please include the division number (ex. A1543212).');
+                flashBody();
+            }
+         }
+         function flashBody()
+         {
+            var bodyElements = document.getElementsByTagName('body');
+            var bodyEl = (bodyElements.length > 0) ? bodyElements[0] : null;
+            if(!bodyEl)
+            {
+                return;
+            }  
+            bodyEl = $(bodyEl);
+            var currentColor = bodyEl.getStyle('backgroundColor'); 
+            var flashColor = '#E1E3DC';
+            bodyEl.setStyle({backgroundColor : flashColor });
+            bodyEl.setStyle.bind(bodyEl).delay(1, {backgroundColor : currentColor });
+            bodyEl.setStyle.bind(bodyEl).delay(1.5, {backgroundColor : flashColor });
+            bodyEl.setStyle.bind(bodyEl).delay(2.5, {backgroundColor : currentColor });
+         }
+    </script>
+    <apex:form id="billToForm">
+        <div id="container">
+            <apex:inputHidden value="{!showBillToPrompt}" id="showPrompt" />
+            <!-- Show JS alert if showBillToPrompt  and/or flash div for several seconds-->
+            <apex:outputPanel id="billToPanel" rendered="{!showBillToPrompt}">
+                <div>
+                    <div id="billToPrompt" class="floatleft">
+                        Enter the bill to number for this account:
+                    </div>
+                <div class="floatright">
+                    <div>
+                        <apex:inputField value="{!account.Bill_To_Number_to_Merge_With__c}" style="margin-left: 5px;"/>
+                        <apex:commandButton action="{!submit}" value="Submit" rerender="billToForm" style="margin-left: 5px;"/>
+                    </div>
+                    <div id="orDiv"  class="centered" style="padding:10px; 0 10px 0">or</div>
+                    <div> 
+                        <apex:commandButton action="{!createRemindMeLaterTask}" value="Remind me later" rerender="billToForm" style="width:160px;" />
+                    </div>
+                </div>
+            <div class="cleared">&nbsp;</div>
+            </div>
+            <div class="cleared">&nbsp;</div>
+            
+            </apex:outputPanel>
+                
+            <apex:outputPanel rendered="{!isSubmitted}">
+                <div class="boldMsg">The bill to number was successfully saved to the account.</div>
+            </apex:outputPanel>
+            <apex:outputPanel rendered="{!isReminded}">
+                <div class="boldMsg">You will be reminded in 7 days.</div>
+            </apex:outputPanel>
+        </div> 
+    </apex:form>
+</apex:page>

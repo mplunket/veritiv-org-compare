@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Vertical_Minor__c</fullName>
+    <description>Assigns Minor Vertical to a PSR</description>
+    <externalId>false</externalId>
+    <label>Vertical Minor</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>true</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Building Service Contractors</fullName>
+                <default>false</default>
+                <label>Building Service Contractors</label>
+            </value>
+            <value>
+                <fullName>Education</fullName>
+                <default>false</default>
+                <label>Education</label>
+            </value>
+            <value>
+                <fullName>Food Processing</fullName>
+                <default>false</default>
+                <label>Food Processing</label>
+            </value>
+            <value>
+                <fullName>Food Service</fullName>
+                <default>false</default>
+                <label>Food Service</label>
+            </value>
+            <value>
+                <fullName>Fulfillment</fullName>
+                <default>false</default>
+                <label>Fulfillment</label>
+            </value>
+            <value>
+                <fullName>Government</fullName>
+                <default>false</default>
+                <label>Government</label>
+            </value>
+            <value>
+                <fullName>Graphic Design/Advertising</fullName>
+                <default>false</default>
+                <label>Graphic Design/Advertising</label>
+            </value>
+            <value>
+                <fullName>Healthcare</fullName>
+                <default>false</default>
+                <label>Healthcare</label>
+            </value>
+            <value>
+                <fullName>Health Clubs</fullName>
+                <default>false</default>
+                <label>Health Clubs</label>
+            </value>
+            <value>
+                <fullName>Hospitality/Lodging</fullName>
+                <default>false</default>
+                <label>Hospitality/Lodging</label>
+            </value>
+            <value>
+                <fullName>Large Venue</fullName>
+                <default>false</default>
+                <label>Large Venue</label>
+            </value>
+            <value>
+                <fullName>Manufacturing (non food/print)</fullName>
+                <default>false</default>
+                <label>Manufacturing (non food/print)</label>
+            </value>
+            <value>
+                <fullName>Printer - Commercial/Sheet Fed</fullName>
+                <default>false</default>
+                <label>Printer - Commercial/Sheet Fed</label>
+            </value>
+            <value>
+                <fullName>Printer - Digital/Wide Format</fullName>
+                <default>false</default>
+                <label>Printer - Digital/Wide Format</label>
+            </value>
+            <value>
+                <fullName>Printer - Gang Run</fullName>
+                <default>false</default>
+                <label>Printer - Gang Run</label>
+            </value>
+            <value>
+                <fullName>Printer - In-plant</fullName>
+                <default>false</default>
+                <label>Printer - In-plant</label>
+            </value>
+            <value>
+                <fullName>Printer - Packaging</fullName>
+                <default>false</default>
+                <label>Printer - Packaging</label>
+            </value>
+            <value>
+                <fullName>Printer - Sheetfed/Web Combo</fullName>
+                <default>false</default>
+                <label>Printer - Sheetfed/Web Combo</label>
+            </value>
+            <value>
+                <fullName>Printer - Web</fullName>
+                <default>false</default>
+                <label>Printer - Web</label>
+            </value>
+            <value>
+                <fullName>Printer – Other</fullName>
+                <default>false</default>
+                <label>Printer – Other</label>
+            </value>
+            <value>
+                <fullName>Property Management</fullName>
+                <default>false</default>
+                <label>Property Management</label>
+            </value>
+            <value>
+                <fullName>Redistribution - FS</fullName>
+                <default>false</default>
+                <label>Redistribution - FS</label>
+            </value>
+            <value>
+                <fullName>Retail</fullName>
+                <default>false</default>
+                <label>Retail</label>
+            </value>
+            <value>
+                <fullName>Transportation</fullName>
+                <default>false</default>
+                <label>Transportation</label>
+            </value>
+            <value>
+                <fullName>Other</fullName>
+                <default>false</default>
+                <label>Other</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

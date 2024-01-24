@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PermissionSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <applicationVisibilities>
+        <application>iSell__iSell_for_Salesforce</application>
+        <visible>true</visible>
+    </applicationVisibilities>
+    <description>Grants access to the D&amp;B Hoovers tab/application</description>
+    <hasActivationRequired>false</hasActivationRequired>
+    <label>D&amp;B Hoovers Access</label>
+    <license>Salesforce</license>
+    <pageAccesses>
+        <apexPage>iSell__Account_Quick_View</apexPage>
+        <enabled>true</enabled>
+    </pageAccesses>
+    <pageAccesses>
+        <apexPage>iSell__AventionApp</apexPage>
+        <enabled>true</enabled>
+    </pageAccesses>
+    <pageAccesses>
+        <apexPage>iSell__Contact_Quick_View</apexPage>
+        <enabled>true</enabled>
+    </pageAccesses>
+    <pageAccesses>
+        <apexPage>iSell__Lead_Quick_View</apexPage>
+        <enabled>true</enabled>
+    </pageAccesses>
+    <pageAccesses>
+        <apexPage>iSell__Opportunity_Quick_View</apexPage>
+        <enabled>true</enabled>
+    </pageAccesses>
+    <pageAccesses>
+        <apexPage>iSell__iSell_Account_Quick_Profile</apexPage>
+        <enabled>true</enabled>
+    </pageAccesses>
+    <pageAccesses>
+        <apexPage>iSell__iSell_Lead_Quick_Profile</apexPage>
+        <enabled>true</enabled>
+    </pageAccesses>
+    <pageAccesses>
+        <apexPage>iSell__iSell_Opportunity_Quick_Profile</apexPage>
+        <enabled>true</enabled>
+    </pageAccesses>
+    <tabSettings>
+        <tab>iSell__Avention</tab>
+        <visibility>Visible</visibility>
+    </tabSettings>
+</PermissionSet>

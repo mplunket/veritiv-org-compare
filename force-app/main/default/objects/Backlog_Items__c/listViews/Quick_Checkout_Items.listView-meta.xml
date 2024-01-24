@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Quick_Checkout_Items</fullName>
+    <columns>NAME</columns>
+    <columns>Title__c</columns>
+    <columns>Assigned__c</columns>
+    <columns>OWNER.LAST_NAME</columns>
+    <columns>Status__c</columns>
+    <columns>CREATED_DATE</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>Project_Name__c</field>
+        <operation>contains</operation>
+        <value>Quick Checkout</value>
+    </filters>
+    <filters>
+        <field>Status__c</field>
+        <operation>notEqual</operation>
+        <value>Released,Canceled,Pass,Resolved,Rejected</value>
+    </filters>
+    <label>Quick Checkout Items</label>
+</ListView>

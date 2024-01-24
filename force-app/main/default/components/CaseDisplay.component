@@ -1,0 +1,49 @@
+<apex:component >
+	<apex:attribute name="cases" description="The cases to display" type="Case[]" required="true"/>
+	
+	<apex:stylesheet value="{!URLFOR($Resource.CaseDisplayStyle)}"/>   
+	
+	    
+	<apex:repeat value="{!cases}" var="item" id="CaseTable"> 
+		<div class="table-wrap-wrapper">
+			<div class="table">
+				<div class="table-row">
+					<div class="table-cell data small-icon"> 
+						<apex:outputField value="{!item.Critical__c}"/>
+            		</div>
+            		<div class="table-cell data"> 
+						 <a href="javascript:sforce.console.openPrimaryTab(null,'/{!item.Id}',true,'{!item.CaseNumber}');">{!item.Subject}</a>  
+            		</div>
+	    		</div> 
+	    	</div>
+	    	<div class="table">
+	    		<div class="table-row">
+		    		<div class="table-cell data first-col"> 
+		    			{!item.Status}
+		    		</div>
+		    		<div class="table-cell data second-col">
+		    			<a href="javascript:sforce.console.openPrimaryTab(null,'/{!item.Account.Id}',true,'{!item.Account.Name}');">{!item.Account.Name}</a>
+		    		</div>
+		    		<div class="table-cell data third-col"> 
+		    			<a href="javascript:sforce.console.openPrimaryTab(null,'/{!item.Contact.Id}',true,'{!item.Contact.Name}');">{!item.Contact.Name}</a>
+		    		</div>
+	    		</div>
+	    	</div>
+	    	<div class="table">
+	    		<div class="table-row">
+		    		<div class="table-cell data first-col"> 
+		    			{!item.Owner.Name}
+		    		</div>
+		    		<div class="table-cell data second-col">
+		    			<apex:outputText value="{0,date,MM/dd/yyyy hh:mm aa}">
+		    				<apex:param value="{!item.LastModifiedDate}" />
+		    			</apex:outputText>
+		    		</div>
+		    		<div class="table-cell data third-col"> 
+		    			{!item.Specifics__c}
+		    		</div>
+	    		</div>
+	    	</div>
+    	</div>	
+	</apex:repeat>  
+</apex:component>

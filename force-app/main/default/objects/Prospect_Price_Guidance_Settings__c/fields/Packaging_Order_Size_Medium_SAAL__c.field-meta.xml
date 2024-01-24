@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Packaging_Order_Size_Medium_SAAL__c</fullName>
+    <description>Medium Range of the packaging order size if the prospect is a Saalfield VOS Business Group</description>
+    <externalId>false</externalId>
+    <inlineHelpText>Medium Range of the packaging order size if the prospect is a Saalfield VOS Business Group</inlineHelpText>
+    <label>Packaging: Order Size - Medium SAAL</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>0</scale>
+    <trackTrending>false</trackTrending>
+    <type>Currency</type>
+</CustomField>

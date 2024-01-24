@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<StaticResource xmlns="http://soap.sforce.com/2006/04/metadata">
+    <cacheControl>Private</cacheControl>
+    <contentType>image/png</contentType>
+    <description>display a warning on child ULS accounts to instruct to add all child objects to the Primary ULS account</description>
+</StaticResource>

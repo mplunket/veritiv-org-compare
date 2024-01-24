@@ -1,0 +1,123 @@
+<aura:component implements="force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId,forceCommunity:availableForAllPageTypes,force:lightningQuickAction" access="global" controller="QuickPriceLookupController" >
+    <aura:handler name="init" value="{!this}" action="{!c.doInit}"/>
+    <aura:attribute name="recordId" type="String" />
+    <aura:attribute name="Quant" type="string" default=""/>
+    <aura:attribute name="selectedLookUpRecord" type="sObject" default="null"/>
+    <aura:attribute name="myMap" type="Map" default="{}"/>
+    <aura:attribute name="objInfo" type="Account" default="{sobjectType : 'Account'}" />   
+    <aura:attribute name ="slctOptns" type="List"></aura:attribute>
+    <aura:attribute name ="picklistSelected" type="string"/>
+    <aura:attribute name ="picklistSelected1" type="string"/>
+    <aura:attribute name="picklistOptions" type="List" />
+    <aura:attribute name="picklistOptions1" type="List" />
+    <div style="margin:0px;padding: 0px;">
+        <!-- <p style="fontweight: bold !important;fontsize: 20px !important;">Get Price</p> -->
+        
+        <div class="slds-col">
+            <div class="slds-form slds-form_horizontal">
+                <div class="slds-form-element">
+                    <label class="slds-form-element__label" for="input-id-01" style="font-size:14px">Account</label>
+                    <div class="slds-form-element__control">
+                        <!-- <ui:inputText  value="{!v.objInfo.AccountNumber}" disabled="true"/>-->
+                        <!-- <force:inputField value="{!v.objInfo.AccountNumber}" disabled="true"/>-->
+                        <!-- <ui:inputtext value="{!v.objInfo.Name}"  disable="true" class="accName"/>-->
+                        <ui:outputText  value="{!v.objInfo.Name}"  class="newAccName" />
+                        <!-- <force:inputField value="{!v.objInfo.Name}"/>  --> 	
+                    </div>
+                    
+                </div>
+               
+                <div class="slds-form-element">
+                    <c:customLookup aura:id="childCmp" objectAPIName="Product2"  selectedRecord="{!v.selectedLookUpRecord}" label="Product Code"/>
+                    <div class="slds-form-element__control">
+                        <ui:inputTextArea  value="{!v.selectedLookUpRecord.Name}" class="prodDesc accName" disabled="true"   /> 
+                        <!--<ui:outputText  value="{!v.selectedLookUpRecord.Name}"  />-->
+                    </div>
+                </div>
+                
+                
+                <div class="slds-grid slds-wrap">
+                    <div class="slds-col slds-size_6-of-12">
+                        <label class="slds-col slds-size_3-of-12" style="font-size: 14px; color: rgb(62, 62, 60);"><span style="color : rgb(194, 57, 52);font-weight: 700;	margin: 3px;">*</span>Quantity</label>
+                        <ui:inputText class="slds-col slds-size_2-of-12 inpField siz" required="true" value="{!v.Quant}" /> 
+                    </div>
+                    <div class="slds-col slds-size_6-of-12" >
+                        <lightning:button class="gpBtn siz" label="Get Price"  onclick="{!c.getPrice}"/>                         
+                    </div>
+                    
+                </div>
+                    <div class="slds-grid slds-wrap">
+                        <div class="slds-col slds-size_6-of-12">
+                            <label class="slds-col slds-size_3-of-12" style="font-size: 14px;margin-right: 10px; color: rgb(62, 62, 60); ">Qty UOM</label>
+                            <ui:inputSelect class="slds-col slds-size_2-of-12  inpField siz" aura:id="InputSelectDynamic1" value="{!v.picklistSelected}" disabled="false"  options="{!v.picklistOptions}" />
+                        </div>
+                        
+                        <div class="slds-col slds-size_6-of-12">
+                            <label class="slds-col slds-size_3-of-12" style="font-size: 14px; color: rgb(62, 62, 60);">Price UOM</label>
+                            <ui:inputSelect class="slds-col slds-size_2-of-12  inpField siz" aura:id="InputSelectDynamic" value="{!v.picklistSelected1}" disabled="false" options="{!v.picklistOptions1}" /> 
+                            
+                        </div>
+                    </div>
+                    
+               
+                
+                <div class="slds-grid slds-wrap">
+                    
+                    <div class="slds-col slds-size_6-of-12">
+                        <label class="slds-col slds-size_3-of-12" style="font-size: 14px; color: rgb(62, 62, 60);margin-right: 38px;">Price</label>
+                        <!-- <label class="slds-col slds-size_3-of-12" style="font-size: 14px; color: rgb(62, 62, 60);float: left; margin-top: 10px;">Price</label>-->
+                        <ui:inputText class="slds-col slds-size_2-of-12 accName inpField"  value="{!v.myMap.PPU}" disabled="true" /> 
+                        <!--<ui:inputText class="slds-col slds-size_3-of-12 " disabled = "true" value="{!v.myMap.PPU}" />-->
+                    </div>
+                    <div class="slds-col slds-size_6-of-12">
+                        <label class="slds-col slds-size_3-of-12" style="font-size: 14px;margin-right: 7px; color: rgb(62, 62, 60);">Start Price</label>
+                        <ui:inputText class="slds-col slds-size_2-of-12 accName inpField" value="{!v.myMap.SP}"  disabled="true"/> 
+                    </div>
+                </div>
+                
+                <div class="slds-grid slds-wrap">
+                    <div class="slds-col slds-size_6-of-12">
+                        <label class="slds-col slds-size_3-of-12" style="font-size: 14px; color: rgb(62, 62, 60);">Target Price</label>
+                        <ui:inputText class="slds-col slds-size_2-of-12 accName inpField"  value="{!v.myMap.TPrice}"  disabled="true"/> 
+                    </div>
+                    <div class="slds-col slds-size_6-of-12">
+                        <label class="slds-col slds-size_3-of-12" style="font-size: 14px; color: rgb(62, 62, 60);">Floor Price</label>
+                        <ui:inputText class="slds-col slds-size_2-of-12 accName inpField" value="{!v.myMap.fPrice}" disabled="true" />
+                        
+                    </div>
+                    <!--<div class="slds-col slds-size_1-of-12"></div>-->
+                    
+                </div>
+                
+                
+                <div class="slds-grid slds-wrap">
+                    
+                    <div class="slds-col slds-size_12-of-12">
+                        
+                        <label class="slds-col slds-size_3-of-12" style="font-size: 14px; color: rgb(62, 62, 60);">Price Code</label>
+                        <ui:inputText class="slds-col slds-size_8-of-12 accName wdth inpField" value="{!v.myMap.PCode}" disabled="true" /> 
+                        
+                    </div>
+                </div>
+                <div class="slds-grid slds-wrap">
+                    <div class="slds-col slds-size_6-of-12">
+                        <div style="width: 100%;display: block;">
+                            <div class="" style="margin: 10px 5px 0px 73px; ">
+                                <lightning:button label="Clear" onclick="{!c.clearAll}" />  
+                            </div>
+                            
+                        </div>
+                    </div>
+                    
+                </div>
+                
+            </div>
+            
+         
+            
+        </div>
+    </div>
+    
+    
+    
+</aura:component>

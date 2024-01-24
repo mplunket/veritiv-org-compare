@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomTab xmlns="http://soap.sforce.com/2006/04/metadata">
+    <description>uTown Collaboration Portal</description>
+    <frameHeight>800</frameHeight>
+    <hasSidebar>false</hasSidebar>
+    <label>uTown</label>
+    <motif>Custom14: Hands</motif>
+    <url>http://uwiatlsps01/default.aspx</url>
+    <urlEncodingKey>UTF-8</urlEncodingKey>
+</CustomTab>

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Assigned_is_Blank</fullName>
+    <columns>NAME</columns>
+    <columns>Object__c</columns>
+    <columns>Title__c</columns>
+    <columns>OWNER.LAST_NAME</columns>
+    <columns>UPDATEDBY_USER</columns>
+    <columns>Status__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>Status__c</field>
+        <operation>notEqual</operation>
+        <value>Released,On Hold,Canceled,Pass,Resolved,Rejected,Closed,Deferred</value>
+    </filters>
+    <filters>
+        <field>Assigned__c</field>
+        <operation>equals</operation>
+    </filters>
+    <label>Assigned is Blank</label>
+</ListView>

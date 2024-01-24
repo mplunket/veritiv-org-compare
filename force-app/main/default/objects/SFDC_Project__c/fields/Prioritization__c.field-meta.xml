@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Prioritization__c</fullName>
+    <externalId>false</externalId>
+    <formula>(
+IF(ISPICKVAL(LOE__c,&apos;XL&apos;),20,
+IF(ISPICKVAL(LOE__c,&apos;L&apos;),30,
+IF(ISPICKVAL(LOE__c,&apos;M&apos;),40,
+IF(ISPICKVAL(LOE__c,&apos;S&apos;),60,
+IF(ISPICKVAL(LOE__c,&apos;XS&apos;),100,0)))))
+)*0.25
+
++
+(
+IF(ISPICKVAL(Urgency__c,&quot;1 - Low&quot;),20,
+IF(ISPICKVAL(Urgency__c,&quot;2 - Medium&quot;),50,
+IF(ISPICKVAL(Urgency__c,&quot;3 - High&quot;),80,
+IF(ISPICKVAL(Urgency__c,&quot;4 - Critical&quot;),100,0))))
+)*0.25
+
++
+(
+IF(and(of_days_since_committee_approved__c&gt;0,of_days_since_committee_approved__c&lt;90),0,
+IF(and(of_days_since_committee_approved__c&gt;=91,of_days_since_committee_approved__c&lt;180),30,
+IF(and(of_days_since_committee_approved__c&gt;=181,of_days_since_committee_approved__c&lt;270),50,
+IF(and(of_days_since_committee_approved__c&gt;=271,of_days_since_committee_approved__c&lt;365),70,
+IF(of_days_since_committee_approved__c&gt;=365,100,0)))))
+)* 0.125
++
+
+(
+IF(and(of_days_since_creation__c&gt;=0,of_days_since_creation__c&lt;90),0,
+IF(and(of_days_since_creation__c&gt;=91,of_days_since_creation__c&lt;180),30,
+IF(and(of_days_since_creation__c&gt;=181,of_days_since_creation__c&lt;270),50,
+IF(and(of_days_since_creation__c&gt;=271,of_days_since_creation__c&lt;365),70,
+IF(of_days_since_creation__c&gt;=365,100,0)))))
+)*0.125
++
+
+(
+(Impact_Score__c)
+)*0.25</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Priority Score</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>0</scale>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Number</type>
+    <unique>false</unique>
+</CustomField>

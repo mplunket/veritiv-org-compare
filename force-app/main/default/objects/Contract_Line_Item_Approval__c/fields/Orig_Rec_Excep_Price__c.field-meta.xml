@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Orig_Rec_Excep_Price__c</fullName>
+    <description>changed formula:  changed Net_Price__c to zpl__PolicyValue__c</description>
+    <externalId>false</externalId>
+    <formula>IF(
+	AND (
+	OR(Contract_Line_Item__r.zpl__PolicyType__r.Name == &apos;Maintain GTM&apos;, Contract_Line_Item__r.zpl__PolicyType__r.Name == &apos;List Down&apos;) ,
+	OR(ISBLANK(Contract_Line_Item__r.PricingCost__c), Contract_Line_Item__r.PricingCost__c == 0),
+	ISBLANK(Contract_Line_Item__r.CampaignActionReference__c)
+	),
+	
+	TEXT(Contract_Line_Item__r.PreviousValue__c) + &apos; | &apos; + &apos;0&apos; + &apos; | &apos; + TEXT(Contract_Line_Item__r.zpl__PolicyValue__c)
+	,
+	
+	
+	IF(
+	AND (
+	OR(Contract_Line_Item__r.zpl__PolicyType__r.Name == &apos;Maintain GTM&apos;, Contract_Line_Item__r.zpl__PolicyType__r.Name == &apos;List Down&apos;) ,
+	AND(NOT(ISBLANK(Contract_Line_Item__r.PricingCost__c)), Contract_Line_Item__r.PricingCost__c &gt; 0),
+	ISBLANK(Contract_Line_Item__r.CampaignActionReference__c)
+	),
+	
+	TEXT(Contract_Line_Item__r.PreviousValue__c) + &apos; | &apos; + TEXT(Contract_Line_Item__r.Recommended_Price__c) + &apos; | &apos; + TEXT(Contract_Line_Item__r.Net_Price__c)
+	,
+	
+	IF(
+	AND (
+	OR(Contract_Line_Item__r.zpl__PolicyType__r.Name == &apos;Maintain GTM&apos;, Contract_Line_Item__r.zpl__PolicyType__r.Name == &apos;List Down&apos;) ,
+	OR(ISBLANK(Contract_Line_Item__r.PricingCost__c), Contract_Line_Item__r.PricingCost__c == 0),
+	NOT(ISBLANK(Contract_Line_Item__r.CampaignActionReference__c))
+	),
+	
+	TEXT(Contract_Line_Item__r.PrecedingCampPrice__c) + &apos; | &apos; + TEXT(Contract_Line_Item__r.PreviousValue__c) + &apos; | &apos; + TEXT(Contract_Line_Item__r.zpl__PolicyValue__c)
+	,
+	
+	
+	IF(
+	AND (
+	OR(Contract_Line_Item__r.zpl__PolicyType__r.Name == &apos;Maintain GTM&apos;, Contract_Line_Item__r.zpl__PolicyType__r.Name == &apos;List Down&apos;) ,
+	AND(NOT(ISBLANK(Contract_Line_Item__r.PricingCost__c)), Contract_Line_Item__r.PricingCost__c &gt; 0),
+	NOT(ISBLANK(Contract_Line_Item__r.CampaignActionReference__c))
+	),
+	
+	TEXT(Contract_Line_Item__r.PrecedingCampPrice__c) + &apos; | &apos; + TEXT(Contract_Line_Item__r.Recommended_Price__c) + &apos; | &apos; + TEXT(Contract_Line_Item__r.zpl__PolicyValue__c)
+	,
+	
+	
+	IF(
+	AND (
+	OR(Contract_Line_Item__r.zpl__PolicyType__r.Name == &apos;Fixed Price&apos;, Contract_Line_Item__r.zpl__PolicyType__r.Name == &apos;CWT Fixed&apos;) ,
+	ISBLANK(Contract_Line_Item__r.CampaignActionReference__c)
+	),
+	
+	TEXT(Contract_Line_Item__r.PreviousPrice__c) + &apos; | &apos; + &apos;0&apos; + &apos; | &apos; + TEXT(Contract_Line_Item__r.zpl__PolicyValue__c)
+	,
+	
+	
+	IF(
+	AND (
+	OR(Contract_Line_Item__r.zpl__PolicyType__r.Name == &apos;Fixed Price&apos;, Contract_Line_Item__r.zpl__PolicyType__r.Name == &apos;CWT Fixed&apos;) ,
+	NOT(ISBLANK(Contract_Line_Item__r.CampaignActionReference__c))
+	),
+	
+	TEXT(Contract_Line_Item__r.PrecedingCampPrice__c) + &apos; | &apos; +TEXT(Contract_Line_Item__r.Recommended_Price__c) + &apos; | &apos; + TEXT(Contract_Line_Item__r.zpl__PolicyValue__c)
+	,
+	
+&apos;0&apos;
+	
+	)
+	
+	)
+	
+	
+	)
+	
+	)
+
+)
+
+
+)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Curr | Rec | Excep Price</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

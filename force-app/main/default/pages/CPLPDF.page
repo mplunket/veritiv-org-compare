@@ -1,0 +1,315 @@
+<apex:page controller="CPLController" showHeader="false" applyBodyTag="false" applyHtmlTag="false" renderAs="pdf" readOnly="true">
+    <html xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+        <head>
+            <style>
+                html {
+                    background: #fff;
+                }
+                
+                body {
+                    max-width: 1080px;
+                    margin-left: auto;
+                    margin-right: auto;
+                }
+                
+                @page {
+                    @bottom-center {
+                        width: 500px;
+                        font-size: 9px;
+                        content: {!'"' + $Label.CPL_Footer_Terms + '"'};
+                    }
+                    @bottom-right {
+                        content: "Page " counter(page) " of " counter(pages);
+                        
+                    }
+                    thead {
+                        display: table-header-group;                     
+                        
+                    }
+                    table tbody td {
+                        border-collapse: collapse !important;
+                    }
+                }       
+
+                .float-left-UnisourceLogo {
+                    float: left;
+                    margin-left: -70px;
+                    margin-bottom: 80px;
+                }
+                
+                <!--SP-->
+                .float-left-SaalfeldLogo {
+                    float: left;
+                    margin-left: -40px;
+                    margin-bottom: 10px;
+                }
+                
+                .float-right {
+                	float: right;
+                }
+                
+                #cpl-details {
+                font-size: 14px;
+                }
+                <!--SP-->
+                
+                .header-corner {
+                    display: block;
+                    text-align: right;
+                }
+                
+                half-width {
+                    width: 50%;
+                }
+                
+                #cpl-details table tr {
+                    height: 10px;
+                    vertical-align: top;                
+                }
+                
+                table {
+                    width: 100%;
+                    empty-cells: show;
+                    border-collapse: collapse;
+                    -fs-table-paginate: paginate;
+                }
+                
+                #cpl-items {
+                    width: 100%;
+                    font-size: 10px;
+                    margin: 0px;
+                }           
+                
+                #cpl-items table {
+                    width: 100%;
+                    border: 2px solid black; 
+                    border-collapse: collapse;  
+                }                
+                
+                #cpl-items table th {
+                    text-align: center;
+                }
+                
+                #cpl-items table th,
+                #cpl-items table td {
+                    vertical-align: top;
+                    border-width: 0px;
+                    border-style: solid;
+                    border-color: black;
+                    background-color: #f5f5f5
+                }                
+                
+                #cpl-items td {                  
+                    vertical-align: top;
+                }                
+                
+                #cpl-items table .class-brand-section-header {
+                    height: 15px;
+                    font-size: 12px;
+                    color: #FFF;
+                    background: #000 !important;
+                }
+                
+                #cpl-items table .class-brand-section-division {
+                    font-size: 12px;
+                    height: 15px;
+                    background: #007934 !important;
+                    color: #FFF;
+                }
+                
+                #cpl-items table .class-brand-section-header td {
+                    color: #FFF;
+                    background: #000 !important;
+                }
+
+</style>
+        </head>
+        <body>
+            
+            
+                <div >
+                    <header id="preview-header">
+                        <div class="float-left-UnisourceLogo">
+                            <apex:outputPanel >
+                                <apex:image url="{!$Resource.UnisourceLogo}" width="300px" />
+                            </apex:outputPanel>
+                        </div>
+                        <div class="float-right">
+                            <span class="header-corner">
+                                {!cplRecord.Agreement__r.Account.AccountNumber}
+                            </span>
+                            <span class="header-corner">
+                                <apex:outputText value="{0, date, M/d/yyyy}">
+                                    <apex:param value="{!cplRecord.Effective_Date__c}" />
+                                </apex:outputText>
+                            </span>
+                        </div>
+                    </header>
+                    <br/><br/><br/>
+                    <section id="cpl-details">
+                        <table style="width: 100%;">
+                            <col width="20%"/>
+                            <col width="30%"/>
+                            <col width="20%"/>
+                            <col width="30%"/>
+                            <tr>
+                                <td>Account Name: </td>
+                                <td>{!cplRecord.Agreement__r.Account.Name}</td>
+                                <!--<td>Location: </td>
+                                <td>{!cplRecord.Agreement__r.Division__r.Name}</td>
+                                <td>{!cplRecord.Agreement__r.Account.BillingCity}</td>-->
+                                <td>Sales Rep: </td>
+                                <td>{!cplRecord.Sales_Rep__r.Name}</td>
+                            </tr>
+                            <tr>
+                                <td>Customer #: </td>
+                                <td>{!cplRecord.Agreement__r.Account.AccountNumber}</td>
+                                <td>Sales Rep Email: </td>
+                                <td>{!cplRecord.Sales_Rep__r.Email}</td>
+                            </tr>
+                            <tr>
+                                <td>Contract #: </td>
+                                <td>{!cplRecord.Agreement__r.ContractNumber}</td>
+                                <td>Issue Date: </td>
+                                <td>
+                                    <apex:outputText value="{0, date, M/d/yyyy}">
+                                        <apex:param value="{!cplRecord.Effective_Date__c}" />
+                                    </apex:outputText>
+                                </td>                                
+                            </tr>
+                            <tr>
+                                <td></td>
+                                <td></td>
+                                
+                                
+                            </tr>
+                            <tr>
+                                <td>PO#: </td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>Ship To: </td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td colspan="4">Comments: </td>
+                            </tr>
+                        </table>
+                    </section>
+                    <section id="cpl-items">
+                        <apex:outputPanel rendered="{!IF(!cplByDivision.Empty, true, false)}">                            
+                            <apex:outputPanel rendered="{!CPLType == 'External'}">
+                                <table>                                    
+                                    <thead> 
+                                        <tr>    
+                                            <apex:repeat value="{!cplheaders}" var="tableHeader">
+                                                <th>{!tableHeader}</th>
+                                            </apex:repeat>                                       
+                                        </tr> 
+                                    </thead>                                    
+                                    <apex:repeat value="{!cplByDivision}" var="cpl">
+                                        <tbody>                                        
+                                            <tr class="class-brand-section-division" style="display: {!IF(AND(cplRecord.Agreement__r.Account.Recordtype.Name != 'Chain Account', !cpl.isNationals, cplRecord.Regional_National_Filter__c != 'Show Chain Accounts Only'), '', 'None')}">
+                                                <td style="background: #007934 !important;" colspan="{!cpl.headers.size}">{!cpl.Division}</td>
+                                            </tr>
+                                            <apex:repeat value="{!cpl.rows}" var="category">                                        
+                                                <tr class="class-brand-section-header" style="display: {!IF(category != '', '', 'None')}">
+                                                    <td colspan="{!cpl.headers.size}">{!category}</td>                                            
+                                                </tr>
+                                                <apex:repeat value="{!cpl.rows[category]}" var="row">
+                                                    <tr>
+                                                        <td>{!row.ProductCode}</td>
+                                                        <td>{!row.OrderQty}</td>
+                                                        <td>{!row.CustomerSKU}</td>
+                                                        <td>{!row.ProductDescription}</td>
+                                                        <td>{!row.QTYPriceBreak}</td>
+                                                        <td>{!row.OrderQtyUOM}</td>                                                        
+                                                        <!--<td>
+                                                            <!-- <apex:outputText value="{0, Number, Currency}">
+                                                                <apex:param value="{!row.CurrentPrice}" />
+                                                            </apex:outputText> -->
+                                                             <!--apex:outputText value="{0, Number, $###,##0.0000}" rendered="{!OR(row.CustomerSKU == null, row.CustomerUOM == null) }">
+                                                                    <apex:param value="{!row.CurrentPrice}" />
+                                                                </apex:outputText>
+                                                            <apex:outputText value="{0, Number, $###,##0.0000}" rendered="{!AND(row.CustomerSKU != null, row.CustomerUOM != null) }">
+                                                                    <apex:param value="{!row.CustomerCalcPrice}" />
+                                                            </apex:outputText-->
+                                                            
+                                                            <!--<apex:outputText value="{0, Number, $###,##0.0000}" rendered="{!AND(OR(row.CustomerSKU == null, row.CustomerUOM == null), row.PriceType != 'List Down')}">
+                                                                <apex:param value="{!row.CurrentPrice}"/>
+                                                            </apex:outputText>
+                                                            <apex:outputText value="{0, Number, ##.##%}" rendered="{!AND(OR(row.CustomerSKU == null, row.CustomerUOM == null), row.PriceType == 'List Down')}">
+                                                                <apex:param value="{!row.CurrentPrice}"/>
+                                                            </apex:outputText>
+                                                            <apex:outputText value="{0, Number, $###,##0.0000}" rendered="{!AND(row.CustomerSKU != null, row.CustomerUOM != null, row.PriceType != 'List Down') }">
+                                                                   <apex:param value="{!row.CustomerCalcPrice}"/>
+                                                            </apex:outputText>
+                                                            <apex:outputText value="{0, Number, $###,##0.0000}" rendered="{!AND(row.CustomerSKU != null, row.CustomerUOM != null, row.PriceType == 'List Down') }">
+                                                                   <apex:param value="{!row.CustomerCalcPrice}"/>
+                                                            </apex:outputText>
+                                                            
+                                                        </td>-->
+                                                        
+                                                        <!-- BL-3089 12/06/2022 -->
+                                                        <td>
+                                                            <apex:outputText value="{0, Number, $###,##0.00}" rendered="{!AND(row.PriceType != 'List Down', row.PriceType != 'Maintain GTM')}">
+                                                                <apex:param value="{!row.CurrentPrice}" />
+                                                            </apex:outputText>
+                                                            <apex:outputText value="{0, Number, ##%}" rendered="{!AND(OR(row.PriceType == 'List Down', row.PriceType == 'Maintain GTM'), IF(row.Cost != null, IF(row.Cost == 0,true,false),false))}">
+                                                                <apex:param value="{!row.CurrentPrice}" />
+                                                            </apex:outputText>
+                                                            <apex:outputText value="{0, Number, $###,##0.00}" rendered="{!AND(OR(row.PriceType == 'Maintain GTM', row.PriceType == 'List Down'), IF(row.Cost != null, IF(row.Cost > 0,true,false),false))}">
+                                                                <apex:param value="{!row.CurrentPrice}" />
+                                                            </apex:outputText>
+                                                            <apex:outputText value="{0, Number, ##%}" rendered="{!AND(row.PriceType == 'List Down', row.Cost == null)}">
+                                                                <apex:param value="{!row.CurrentPrice}" />
+                                                            </apex:outputText>                                  
+                                                        </td>
+                                                        
+                                                        
+                                                        
+                                                        
+                                                        
+                                                        <!-- <td>{!row.CustPriceUOM}</td> -->
+                                                         <td>{!IF((AND(row.CustomerSKU != null, row.CustomerUOM != null) ),row.CustomerUOM,row.CustPriceUOM)}</td>
+                                                        <td>
+                                                            <apex:outputText value="{0, Number, $###,##0.00}">
+                                                                <apex:param value="{!row.FuturePrice}" />
+                                                            </apex:outputText>
+                                                        </td>
+                                                        <td>{!row.FuturePriceUOM}</td>
+                                                        <td class="td_last">
+                                                            <apex:outputText value="{0, date, M/d/yyyy}">
+                                                                <apex:param value="{!row.FutureEffDate}" />
+                                                            </apex:outputText>
+                                                        </td>
+                                                        <!-- <td>
+                                                            <apex:outputText value="{0,number,0.00}%" rendered="{!row.Percentage != null}">
+                                                                <apex:param value="{!row.Percentage}" />
+                                                            </apex:outputText>
+                                                        </td> -->
+                                                        <td>
+                                                            <apex:outputText value="{0, Number, $###,##0.00}">
+                                                                <apex:param value="{!row.EmptyColumn}" />
+                                                            </apex:outputText>
+                                                        </td>                                                     
+                                                    </tr>                                     
+                                                </apex:repeat>
+                                            </apex:repeat>                                        
+                                        </tbody>
+                                    </apex:repeat>                               
+                                </table>
+                            </apex:outputPanel>                                                       
+                        </apex:outputPanel>
+                        <apex:outputPanel rendered="{!IF(!cplByDivision.Empty, false, true)}">
+                            {!$Label.Customer_Price_List_No_Results_Message}
+                        </apex:outputPanel>                    
+                    </section>                    
+                </div>            
+        </body>
+    </html>
+</apex:page>

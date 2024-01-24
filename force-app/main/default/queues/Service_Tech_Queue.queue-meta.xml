@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Queue xmlns="http://soap.sforce.com/2006/04/metadata">
+    <doesSendEmailToMembers>false</doesSendEmailToMembers>
+    <name>Service Tech Queue</name>
+    <queueMembers>
+        <users>
+            <user>angela.mcknight@veritivcorp.com</user>
+            <user>leslie.yost@veritivcorp.com</user>
+            <user>robert.habermehl@veritivcorp.com</user>
+            <user>tina.lee@veritivcorp.com</user>
+        </users>
+    </queueMembers>
+    <queueSobject>
+        <sobjectType>Lead</sobjectType>
+    </queueSobject>
+    <queueSobject>
+        <sobjectType>Lead_Duration__c</sobjectType>
+    </queueSobject>
+</Queue>

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Full_Name_of_Backup_Person__c</fullName>
+    <externalId>false</externalId>
+    <formula>Backup_Person__r.LastName &amp; &quot;,&quot; &amp;  Backup_Person__r.FirstName</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Full Name of Backup Person</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>C360_Name__c</fullName>
+    <description>C360:Name Field - name of the object being included in the 360 batch process. 
+
+Field mapping on the Customer 360 rollup mapping custom setting will specify specific fields for rollups.</description>
+    <externalId>false</externalId>
+    <inlineHelpText>C360:Name Field - name of the object being included in the 360 batch process.</inlineHelpText>
+    <label>Name</label>
+    <length>25</length>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

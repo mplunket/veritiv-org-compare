@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Legal_Contract__c</fullName>
+    <externalId>false</externalId>
+    <label>Legal Contract</label>
+    <referenceTo>Legal_Contract__c</referenceTo>
+    <relationshipLabel>Legal Contract Lines</relationshipLabel>
+    <relationshipName>Legal_Contract_Lines</relationshipName>
+    <relationshipOrder>0</relationshipOrder>
+    <reparentableMasterDetail>true</reparentableMasterDetail>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>MasterDetail</type>
+    <writeRequiresMasterRead>false</writeRequiresMasterRead>
+</CustomField>

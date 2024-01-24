@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>PSRs_without_User_Info</fullName>
+    <columns>NAME</columns>
+    <columns>SF_userid__c</columns>
+    <columns>user_profile__c</columns>
+    <columns>user_role__c</columns>
+    <columns>User_Group__c</columns>
+    <columns>Servicing_Division__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>SF_userid__c</field>
+        <operation>equals</operation>
+    </filters>
+    <filters>
+        <field>deactivated_user__c</field>
+        <operation>equals</operation>
+        <value>0</value>
+    </filters>
+    <label>PSRs without User Info</label>
+    <language>en_US</language>
+    <sharedTo>
+        <group>SFDCAdminAccount</group>
+    </sharedTo>
+</ListView>

@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <customSettingsType>List</customSettingsType>
+    <description>Houses the Search Order relative URL for Quoting 2.0</description>
+    <enableFeeds>false</enableFeeds>
+    <label>Search Order</label>
+    <visibility>Public</visibility>
+</CustomObject>

@@ -1,0 +1,24 @@
+<apex:page controller="DnBLeadVFSyncController" lightningStylesheets="true">
+    <apex:includeLightning />
+
+    <div style="width: 100%; text-align: center;">
+        <a href="{!'/' + lead.id}">Return to Lead</a>
+    </div>
+
+    <div id="sync-lead-with-dnb-lightning" style="width: 600px; margin: 0 auto;"/>
+    
+    <script>
+        $Lightning.use("c:SyncLeadWithDnBApp", function() {
+            $Lightning.createComponent("c:SyncLeadWithDnBQuickAction", 
+                { 
+                    recordId : '{!lead.Id}',
+                    isClassic : true
+                },
+                "sync-lead-with-dnb-lightning",
+                function(cmp) {
+
+                }
+            );
+        });
+    </script>
+</apex:page>

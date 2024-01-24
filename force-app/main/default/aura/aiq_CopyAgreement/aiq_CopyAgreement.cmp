@@ -1,0 +1,11 @@
+<aura:component implements="force:lightningQuickActionWithoutHeader,force:hasRecordId,lightning:isUrlAddressable"  
+                access="public"
+                extends="c:AIQqa_QuickAction">
+    <aura:set attribute = "actionName" value="AIQ_DeepCopy"/>
+    <aura:set attribute = "parentId" value="{!v.recordId}"/>
+    <aura:set attribute = "isRendered" value="true" />
+
+    <aura:handler name="init" value="{!this}" action="{!c.doInit}" />
+    <aura:handler name="actionCompleteEvent" event="c:AIQqa_ActionCompleteEvent" action="{!c.handleCloseDialog}" />
+    
+</aura:component>

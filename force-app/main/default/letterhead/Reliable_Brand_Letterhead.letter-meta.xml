@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Letterhead xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <backgroundColor>#CCCCCC</backgroundColor>
+    <bodyColor>#FFFFFF</bodyColor>
+    <bottomLine>
+        <color>#ffffff</color>
+        <height>0</height>
+    </bottomLine>
+    <description>FS - Reliable Brand Letterhead</description>
+    <footer>
+        <backgroundColor>#FFFFFF</backgroundColor>
+        <height>0</height>
+        <horizontalAlignment>Left</horizontalAlignment>
+        <logo>Marketing/Reliable_Brand_Footer_for_Sales_Letterhead.png</logo>
+        <verticalAlignment>Top</verticalAlignment>
+    </footer>
+    <header>
+        <backgroundColor>#FFFFFF</backgroundColor>
+        <height>0</height>
+        <horizontalAlignment>Left</horizontalAlignment>
+        <logo>Marketing/Reliable_Brand_Header_no_TM_R.jpg</logo>
+        <verticalAlignment>Top</verticalAlignment>
+    </header>
+    <middleLine>
+        <color>#ffffff</color>
+        <height>0</height>
+    </middleLine>
+    <name>FS - Reliable Brand Letterhead</name>
+    <topLine>
+        <color>#ffffff</color>
+        <height>0</height>
+    </topLine>
+</Letterhead>

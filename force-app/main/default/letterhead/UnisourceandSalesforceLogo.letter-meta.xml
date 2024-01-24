@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Letterhead xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <backgroundColor>#CCCCCC</backgroundColor>
+    <bodyColor>#FFFFFF</bodyColor>
+    <bottomLine>
+        <color>#AAAAFF</color>
+        <height>3</height>
+    </bottomLine>
+    <description>Displays the Veritiv logo and Salesforce.com logo for communication to all end users of the system</description>
+    <footer>
+        <backgroundColor>#FFFFFF</backgroundColor>
+        <height>50</height>
+        <horizontalAlignment>Right</horizontalAlignment>
+        <logo>SharedDocuments/SalesforcecomSuccessOnDemand.jpg</logo>
+        <verticalAlignment>Middle</verticalAlignment>
+    </footer>
+    <header>
+        <backgroundColor>#FFFFFF</backgroundColor>
+        <height>50</height>
+        <horizontalAlignment>Left</horizontalAlignment>
+        <logo>SharedDocuments/A_Veritiv_Company_Logo.png</logo>
+        <verticalAlignment>Middle</verticalAlignment>
+    </header>
+    <middleLine>
+        <color>#AAAAFF</color>
+        <height>5</height>
+    </middleLine>
+    <name>Veritiv and Salesforce Logo</name>
+    <topLine>
+        <color>#AAAAFF</color>
+        <height>5</height>
+    </topLine>
+</Letterhead>

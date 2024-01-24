@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Product_Grouping__c</fullName>
+    <description>Used to group Prod Categories for use on new Product Dashboard that is being built for Prod Category Managers</description>
+    <externalId>false</externalId>
+    <formula>CASE( Segment__c ,
+&quot;Print&quot;, &quot;Print&quot;,
+&quot;Publishing&quot;, &quot;Publishing&quot;,
+&quot;Logistics Solutions&quot;, &quot;Logistics&quot;,
+(CASE ( Product_Category__c ,
+
+&quot;BAGS&quot;, &quot;Bags&quot;,
+&quot;POLY BAGS&quot;, &quot;Bags&quot;,
+
+&quot;MAILERS&quot;, &quot;Mailers&quot;,
+
+&quot;CHEMICALS&quot;, &quot;Chemicals&quot;,
+&quot;CHEMICALS-PRIVATE BRAND&quot;, &quot;Chemicals&quot;,
+
+&quot;CORRUGATED&quot;, &quot;Corrugated &amp; Retail&quot;,
+&quot;RETAIL PACKAGING&quot;, &quot;Corrugated &amp; Retail&quot;,
+&quot;FOLDING CARTON&quot;, &quot;Corrugated &amp; Retail&quot;,
+&quot;SURFACE PROTECTION&quot;, &quot;Corrugated &amp; Retail&quot;,
+
+&quot;CUSHIONING&quot;, &quot;Cushioning&quot;,
+&quot;TEMPERATURE CONTROLLED/COLD CHAIN PACKAGING&quot;, &quot;Cushioning&quot;,
+
+&quot;SHRINK FILM&quot;, &quot;Films&quot;,
+&quot;SPECIALTY FILM&quot;, &quot;Films&quot;,
+&quot;STRETCH - BANDING&quot;, &quot;Films&quot;,
+&quot;STRETCH FILM&quot;, &quot;Films&quot;,
+&quot;STRETCH FILM-PRIVATE BRAND&quot;, &quot;Films&quot;,
+&quot;STRETCH - HAND GRADE FILMS&quot;, &quot;Films&quot;,
+&quot;STRETCH - MACHINE GRADE FILMS&quot;, &quot;Films&quot;,
+&quot;STRETCH - NETTING&quot;, &quot;Films&quot;,
+
+&quot;AMENITIES&quot;, &quot;FS - Other&quot;,
+&quot;RETAIL/OFFICE AND SCHOOL SUPPLIES&quot;, &quot;FS - Other&quot;,
+&quot;OTHER SUPPLY&quot;, &quot;FS - Other&quot;,
+
+&quot;Janitorial Power Equipment&quot;, &quot;JanSan Tools and Equipment&quot;,
+&quot;JANITORIAL POWER EQUIPMENT-PRIVATE BRAND&quot;, &quot;JanSan Tools and Equipment&quot;,
+&quot;Janitorial Supplies&quot;, &quot;JanSan Tools and Equipment&quot;,
+&quot;JANITORIAL SUPPLIES-MATTING&quot;, &quot;JanSan Tools and Equipment&quot;,
+&quot;JANITORIAL SUPPLIES-PRIVATE BRAND&quot;, &quot;JanSan Tools and Equipment&quot;,
+&quot;Receptacles and Material Handling&quot;, &quot;JanSan Tools and Equipment&quot;,
+
+&quot;CAN LINERS&quot;, &quot;Liners and Food Service&quot;,
+&quot;CAN LINERS-PRIVATE BRAND&quot;, &quot;Liners and Food Service&quot;,
+&quot;FOOD SERVICE&quot;, &quot;Liners and Food Service&quot;,
+&quot;FOOD SERVICE-PRIVATE BRAND&quot;, &quot;Liners and Food Service&quot;,
+&quot;Personal Hygiene&quot;, &quot;Liners and Food Service&quot;,
+&quot;PERSONAL HYGIENE-PRIVATE BRAND&quot;, &quot;Liners and Food Service&quot;,
+
+&quot;EQUIPMENT - PACKAGING&quot;, &quot;Packaging Equipment &amp; Parts&quot;,
+&quot;PARTS&quot;, &quot;Packaging Equipment &amp; Parts&quot;,
+
+&quot;Personal Protection and Safety&quot;, &quot;PPE&quot;,
+&quot;PERSONAL PROTECTION AND SAFETY-PRIVATE BRAND&quot;, &quot;PPE&quot;,
+
+&quot;SKINCARE&quot;, &quot;Skincare&quot;,
+&quot;SKINCARE-PRIVATE BRAND&quot;, &quot;Skincare&quot;,
+
+&quot;LABELING &amp; IDENTIFICATION&quot;, &quot;Labeling &amp; Identification&quot;,
+
+&quot;STRAPPING&quot;, &quot;Strapping&quot;,
+
+&quot;ADHESIVES&quot;, &quot;Tapes&quot;,
+&quot;TAPES&quot;, &quot;Tapes&quot;,
+&quot;TAPES-PRIVATE BRAND&quot;, &quot;Tapes&quot;,
+
+&quot;TOWELS/TISSUES&quot;, &quot;Towel, Tissue, Wipers&quot;,
+&quot;TOWELS/TISSUES-PRIVATE BRAND&quot;, &quot;Towel, Tissue, Wipers&quot;,
+&quot;WIPERS&quot;, &quot;Towel, Tissue, Wipers&quot;,
+
+&quot;Pkg - Other&quot;)))</formula>
+    <label>Product Grouping</label>
+    <required>false</required>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

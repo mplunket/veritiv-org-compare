@@ -1,0 +1,321 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionCalls>
+        <description>Sends a quick email alert to the requestor email</description>
+        <name>axn_RequestorEmailNotification</name>
+        <label>Requestor Email Notification</label>
+        <locationX>50</locationX>
+        <locationY>1271</locationY>
+        <actionName>emailSimple</actionName>
+        <actionType>emailSimple</actionType>
+        <flowTransactionModel>CurrentTransaction</flowTransactionModel>
+        <inputParameters>
+            <name>emailBody</name>
+            <value>
+                <elementReference>txt_EmailBody</elementReference>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>emailAddressesArray</name>
+            <value>
+                <elementReference>var_EmailCollection</elementReference>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>sendRichBody</name>
+            <value>
+                <booleanValue>true</booleanValue>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>senderAddress</name>
+            <value>
+                <stringValue>noreply-sfdc@veritivcorp.com</stringValue>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>senderType</name>
+            <value>
+                <stringValue>OrgWideEmailAddress</stringValue>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>emailSubject</name>
+            <value>
+                <stringValue>Salesforce Project Request {!$Record.Request_Number__c}</stringValue>
+            </value>
+        </inputParameters>
+        <nameSegment>emailSimple</nameSegment>
+        <versionSegment>1</versionSegment>
+    </actionCalls>
+    <actionCalls>
+        <description>Sends a notification to the Salesforce Admin team when a Request is created</description>
+        <name>axn_SFDCTeamNotification</name>
+        <label>SFDC Team Notification</label>
+        <locationX>50</locationX>
+        <locationY>1055</locationY>
+        <actionName>customNotificationAction</actionName>
+        <actionType>customNotificationAction</actionType>
+        <connector>
+            <targetReference>asn_EmailAddresses</targetReference>
+        </connector>
+        <flowTransactionModel>CurrentTransaction</flowTransactionModel>
+        <inputParameters>
+            <name>customNotifTypeId</name>
+            <value>
+                <elementReference>get_NotificationTypeID.Id</elementReference>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>body</name>
+            <value>
+                <elementReference>txt_NotificationDescription</elementReference>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>title</name>
+            <value>
+                <stringValue>New Project Request {!$Record.Request_Number__c}</stringValue>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>recipientIds</name>
+            <value>
+                <elementReference>var_GroupMemberCollection</elementReference>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>targetId</name>
+            <value>
+                <elementReference>$Record.Id</elementReference>
+            </value>
+        </inputParameters>
+        <nameSegment>customNotificationAction</nameSegment>
+        <versionSegment>1</versionSegment>
+    </actionCalls>
+    <apiVersion>56.0</apiVersion>
+    <assignments>
+        <description>Assigns email addresses to the list for notification</description>
+        <name>asn_EmailAddresses</name>
+        <label>Email Addresses</label>
+        <locationX>50</locationX>
+        <locationY>1163</locationY>
+        <assignmentItems>
+            <assignToReference>var_EmailCollection</assignToReference>
+            <operator>Add</operator>
+            <value>
+                <elementReference>$Record.Requested_By_Email__c</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>var_EmailCollection</assignToReference>
+            <operator>Add</operator>
+            <value>
+                <elementReference>$Record.Primary_Project_Contact_Email__c</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>var_EmailCollection</assignToReference>
+            <operator>Add</operator>
+            <value>
+                <stringValue>Scott.Williams@veritivcorp.com</stringValue>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>axn_RequestorEmailNotification</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <description>Assigns IDs to the Group Member Collection variable</description>
+        <name>asn_GroupMemberCollection</name>
+        <label>Group Member Collection</label>
+        <locationX>138</locationX>
+        <locationY>755</locationY>
+        <assignmentItems>
+            <assignToReference>var_GroupMemberCollection</assignToReference>
+            <operator>Add</operator>
+            <value>
+                <elementReference>loop_ForEachGroupMember.UserOrGroupId</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>loop_ForEachGroupMember</targetReference>
+        </connector>
+    </assignments>
+    <decisions>
+        <description>Determines if record is being created or updated</description>
+        <name>dec_TriggerType</name>
+        <label>Trigger Type</label>
+        <locationX>182</locationX>
+        <locationY>323</locationY>
+        <defaultConnectorLabel>Record Updated</defaultConnectorLabel>
+        <rules>
+            <name>ocm_TriggerType_RecordCreated</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.CreatedDate</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <elementReference>$Record.LastModifiedDate</elementReference>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>get_AdminPublicGroup</targetReference>
+            </connector>
+            <label>Record Created</label>
+        </rules>
+    </decisions>
+    <description>Sends email and notifications out when a new Request record is created</description>
+    <environments>Default</environments>
+    <formulas>
+        <description>Calculates the hyperlink to be used in the email template resource</description>
+        <name>fx_RecordHyperink</name>
+        <dataType>String</dataType>
+        <expression>LEFT({!$Api.Partner_Server_URL_260}, FIND( &apos;/services&apos;, {!$Api.Partner_Server_URL_260}))</expression>
+    </formulas>
+    <interviewLabel>Request - RT After - {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>Request - RTafter - Create Notifications</label>
+    <loops>
+        <description>Loops through all Group Members to assign to the collection variable</description>
+        <name>loop_ForEachGroupMember</name>
+        <label>For Each Group Member</label>
+        <locationX>50</locationX>
+        <locationY>647</locationY>
+        <collectionReference>get_GroupMembership</collectionReference>
+        <iterationOrder>Asc</iterationOrder>
+        <nextValueConnector>
+            <targetReference>asn_GroupMemberCollection</targetReference>
+        </nextValueConnector>
+        <noMoreValuesConnector>
+            <targetReference>get_NotificationTypeID</targetReference>
+        </noMoreValuesConnector>
+    </loops>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>CanvasMode</name>
+        <value>
+            <stringValue>AUTO_LAYOUT_CANVAS</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>OriginBuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>AutoLaunchedFlow</processType>
+    <recordLookups>
+        <description>Gets the Public Group with SFDC Admin user members</description>
+        <name>get_AdminPublicGroup</name>
+        <label>Admin Public Group</label>
+        <locationX>50</locationX>
+        <locationY>431</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>get_GroupMembership</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>DeveloperName</field>
+            <operator>EqualTo</operator>
+            <value>
+                <stringValue>All_Admins</stringValue>
+            </value>
+        </filters>
+        <getFirstRecordOnly>true</getFirstRecordOnly>
+        <object>Group</object>
+        <queriedFields>Id</queriedFields>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordLookups>
+    <recordLookups>
+        <description>Gets the Group Member IDs</description>
+        <name>get_GroupMembership</name>
+        <label>Group Membership</label>
+        <locationX>50</locationX>
+        <locationY>539</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>loop_ForEachGroupMember</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>GroupId</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>get_AdminPublicGroup.Id</elementReference>
+            </value>
+        </filters>
+        <getFirstRecordOnly>false</getFirstRecordOnly>
+        <object>GroupMember</object>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordLookups>
+    <recordLookups>
+        <description>Gets the ID of the Custom Notification to be used the Notification quick action</description>
+        <name>get_NotificationTypeID</name>
+        <label>Notification Type ID</label>
+        <locationX>50</locationX>
+        <locationY>947</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>axn_SFDCTeamNotification</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>DeveloperName</field>
+            <operator>EqualTo</operator>
+            <value>
+                <stringValue>Request_Created</stringValue>
+            </value>
+        </filters>
+        <getFirstRecordOnly>true</getFirstRecordOnly>
+        <object>CustomNotificationType</object>
+        <queriedFields>Id</queriedFields>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordLookups>
+    <start>
+        <locationX>56</locationX>
+        <locationY>0</locationY>
+        <connector>
+            <targetReference>dec_TriggerType</targetReference>
+        </connector>
+        <object>SFDC_Request__c</object>
+        <recordTriggerType>CreateAndUpdate</recordTriggerType>
+        <triggerType>RecordAfterSave</triggerType>
+    </start>
+    <status>Active</status>
+    <textTemplates>
+        <description>Text for the body of the email notification quick action</description>
+        <name>txt_EmailBody</name>
+        <isViewedAsPlainText>false</isViewedAsPlainText>
+        <text>&lt;p&gt;&lt;strong style=&quot;background-color: rgb(255, 255, 255); font-family: arial; font-size: 16px; color: rgb(0, 153, 0);&quot;&gt;**Please do not respond to this email, as it will go to an unmonitored mailbox**&lt;/strong&gt;&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;The Salesforce Team has received the following project request. It is currently in a review status and an update will be provided within the next 3 business days:&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;&lt;strong style=&quot;color: rgb(0, 0, 0); font-family: var(--lwc-fontFamily,-apple-system, BlinkMacSystemFont, &amp;quot;Segoe UI&amp;quot;, Roboto, Helvetica, Arial, sans-serif, &amp;quot;Apple Color Emoji&amp;quot;, &amp;quot;Segoe UI Emoji&amp;quot;, &amp;quot;Segoe UI Symbol&amp;quot;); font-size: var(--lwc-fontSize3,0.8125rem);&quot;&gt;Requested By:&lt;/strong&gt;&lt;span style=&quot;color: rgb(0, 0, 0); font-family: var(--lwc-fontFamily,-apple-system, BlinkMacSystemFont, &amp;quot;Segoe UI&amp;quot;, Roboto, Helvetica, Arial, sans-serif, &amp;quot;Apple Color Emoji&amp;quot;, &amp;quot;Segoe UI Emoji&amp;quot;, &amp;quot;Segoe UI Symbol&amp;quot;); font-size: var(--lwc-fontSize3,0.8125rem);&quot;&gt; {!$Record.Requested_By_Email__c}&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;strong style=&quot;background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);&quot;&gt;Request Number&lt;/strong&gt;&lt;strong style=&quot;color: rgb(0, 0, 0);&quot;&gt;: &lt;/strong&gt;&lt;span style=&quot;color: rgb(0, 0, 0);&quot;&gt;{!$Record.Request_Number__c}&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;strong style=&quot;color: rgb(0, 0, 0);&quot;&gt;Request Description: &lt;/strong&gt;&lt;span style=&quot;color: rgb(0, 0, 0);&quot;&gt;{!$Record.Name}&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;strong style=&quot;color: rgb(0, 0, 0); background-color: rgb(255, 255, 255);&quot;&gt;Request Details:&lt;/strong&gt;&lt;/p&gt;&lt;p&gt;{!$Record.Request_Detail__c}&lt;/p&gt;&lt;p&gt;&lt;strong style=&quot;background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);&quot;&gt;Expected Results: &lt;/strong&gt;{!$Record.Expected_Results__c}&lt;/p&gt;&lt;p&gt;&lt;strong style=&quot;color: rgb(0, 0, 0); background-color: rgb(255, 255, 255);&quot;&gt;Potential Business Benefit/Value: &lt;/strong&gt;&lt;span style=&quot;color: rgb(0, 0, 0); background-color: rgb(255, 255, 255);&quot;&gt;{!$Record.Potential_Business_Benefit__c}&lt;/span&gt;&lt;/p&gt;</text>
+    </textTemplates>
+    <textTemplates>
+        <description>Template to be used in the Notification description</description>
+        <name>txt_NotificationDescription</name>
+        <isViewedAsPlainText>true</isViewedAsPlainText>
+        <text>Target Complete Date: {!$Record.Target_Complete_Date__c}
+Requested By: {!$Record.Requested_By_Email__c}
+Request Name: {!$Record.Name}</text>
+    </textTemplates>
+    <variables>
+        <description>Stores the list of emails to be send during the email alert action</description>
+        <name>var_EmailCollection</name>
+        <dataType>String</dataType>
+        <isCollection>true</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+    <variables>
+        <description>Stores collection of Group Member IDs to be used as notification recipients</description>
+        <name>var_GroupMemberCollection</name>
+        <dataType>String</dataType>
+        <isCollection>true</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+</Flow>

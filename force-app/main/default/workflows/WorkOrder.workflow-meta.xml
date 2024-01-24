@@ -1,0 +1,735 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Workflow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <alerts>
+        <fullName>Cannabis_Work_Order_Created</fullName>
+        <description>Cannabis Work Order Created</description>
+        <protected>false</protected>
+        <recipients>
+            <recipient>jay.funderburk@veritivcorp.com</recipient>
+            <type>user</type>
+        </recipients>
+        <recipients>
+            <recipient>michael.parks@veritivcorp.com</recipient>
+            <type>user</type>
+        </recipients>
+        <recipients>
+            <recipient>trisha.clifford@veritivcorp.com</recipient>
+            <type>user</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>Workflow_Alert_Emails/Cannabis_Work_Order</template>
+    </alerts>
+    <alerts>
+        <fullName>Equip_Request_WO_is_assigned</fullName>
+        <description>Equip Request WO is assigned</description>
+        <protected>false</protected>
+        <recipients>
+            <type>accountOwner</type>
+        </recipients>
+        <recipients>
+            <field>WO_Submitted_By__c</field>
+            <type>userLookup</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>Workflow_Alert_Emails/Equip_Request_WO_is_assigned</template>
+    </alerts>
+    <alerts>
+        <fullName>Equip_Request_WO_is_created</fullName>
+        <ccEmails>team.proposal@veritivcorp.com</ccEmails>
+        <description>Equip Request WO is created</description>
+        <protected>false</protected>
+        <recipients>
+            <recipient>admin@unisource.com</recipient>
+            <type>user</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>Workflow_Alert_Emails/Equip_Request_WO_is_created</template>
+    </alerts>
+    <alerts>
+        <fullName>NIR_WO_Rejected_by_Sourcing</fullName>
+        <description>NIR WO Rejected by Sourcing</description>
+        <protected>false</protected>
+        <recipients>
+            <type>creator</type>
+        </recipients>
+        <recipients>
+            <field>PrimarySalesRepEmail__c</field>
+            <type>email</type>
+        </recipients>
+        <recipients>
+            <type>owner</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>Work_Order_NIR_Automated_Email/NIR_WO_Cancelled_by_Sourcing</template>
+    </alerts>
+    <alerts>
+        <fullName>NIR_WO_Request_Created</fullName>
+        <description>NIR WO - Request Created</description>
+        <protected>false</protected>
+        <recipients>
+            <type>creator</type>
+        </recipients>
+        <recipients>
+            <field>PrimarySalesRepEmail__c</field>
+            <type>email</type>
+        </recipients>
+        <senderAddress>salesforce@veritivcorp.com</senderAddress>
+        <senderType>OrgWideEmailAddress</senderType>
+        <template>Work_Order_NIR_Automated_Email/NIR_WO_Request_Created</template>
+    </alerts>
+    <alerts>
+        <fullName>Notifies_Print_Mill_Claim_Owner_that_Carrier_information_has_been_added</fullName>
+        <description>VCP - Notifies Vendor Claim Owner that Carrier information has been added</description>
+        <protected>false</protected>
+        <recipients>
+            <type>owner</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>Vendor_Claim_Workflows_Print/Carrier_Info_has_been_added_to_Vendor_Claim</template>
+    </alerts>
+    <alerts>
+        <fullName>Notify_Sourcing_Corr_Mgrs_when_WO_manually_assigned_to_Corr_Queue</fullName>
+        <description>Notify Sourcing Corr Mgrs when WO manually assigned to Corr Queue</description>
+        <protected>false</protected>
+        <recipients>
+            <recipient>eric.tollefsen@veritivcorp.com</recipient>
+            <type>user</type>
+        </recipients>
+        <recipients>
+            <recipient>steve.hogan@veritivcorp.com</recipient>
+            <type>user</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>Work_Order_Sourcing_Automated/WO_assigned_to_Corrugated_Queue_manually</template>
+    </alerts>
+    <alerts>
+        <fullName>Print_Mill_Claim_Email_to_Sales_Rep_and_Submitter</fullName>
+        <description>VCP - Print Vendor Claim Email to Sales Rep and Submitter</description>
+        <protected>false</protected>
+        <recipients>
+            <field>PrimarySalesRepEmail__c</field>
+            <type>email</type>
+        </recipients>
+        <recipients>
+            <field>WO_Submitted_By__c</field>
+            <type>userLookup</type>
+        </recipients>
+        <senderAddress>printmillclaims@veritivcorp.com</senderAddress>
+        <senderType>OrgWideEmailAddress</senderType>
+        <template>Vendor_Claim_Workflows_Print/Email_Notification_to_Rep_and_Submitter</template>
+    </alerts>
+    <alerts>
+        <fullName>Print_Mill_Claim_Reminder_to_Owner_for_Follow_Up</fullName>
+        <description>VCP - Print Vendor Claim Reminder to Owner for Follow Up</description>
+        <protected>false</protected>
+        <recipients>
+            <type>owner</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>Vendor_Claim_Workflows_Print/Print_Vendor_Claim_Reminder</template>
+    </alerts>
+    <alerts>
+        <fullName>VendorClaim_Email_Alert_Work_Order_is_still_in_a_Status_of_New_after_1_Hour</fullName>
+        <description>Vendor Claim Email Alert-Work Order is still in a Status of New after 1 Hour</description>
+        <protected>false</protected>
+        <recipients>
+            <type>owner</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>Vendor_Claim_Workflows_Print/Notification_1_Hr_StillNew</template>
+    </alerts>
+    <alerts>
+        <fullName>WO_Created_Confirmation_to_Creator_PSR</fullName>
+        <description>WO Created Confirmation to Creator &amp; PSR</description>
+        <protected>false</protected>
+        <recipients>
+            <type>creator</type>
+        </recipients>
+        <recipients>
+            <field>PrimarySalesRepEmail__c</field>
+            <type>email</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>Work_Order_Sourcing_Automated/WO_Created_Confirmation_to_Submitter</template>
+    </alerts>
+    <alerts>
+        <fullName>WO_Sourcing_Notify_group_of_MLA_FS</fullName>
+        <description>WO - Sourcing - Notify group of MLA - FS</description>
+        <protected>false</protected>
+        <recipients>
+            <recipient>ashley.forgit@veritivcorp.com</recipient>
+            <type>user</type>
+        </recipients>
+        <recipients>
+            <recipient>ellen.williams@veritivcorp.com</recipient>
+            <type>user</type>
+        </recipients>
+        <recipients>
+            <recipient>krista.emslie@veritivcorp.com</recipient>
+            <type>user</type>
+        </recipients>
+        <recipients>
+            <recipient>michele.bischof@veritivcorp.com</recipient>
+            <type>user</type>
+        </recipients>
+        <recipients>
+            <recipient>tobi.rightnour@veritivcorp.com</recipient>
+            <type>user</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>Work_Order_Sourcing_Automated/WO_Sourcing_Notify_group_of_MLA</template>
+    </alerts>
+    <alerts>
+        <fullName>WO_Sourcing_Notify_group_of_MLA_PKG</fullName>
+        <description>WO - Sourcing - Notify group of MLA - PKG</description>
+        <protected>false</protected>
+        <recipients>
+            <recipient>jennifer.frederick@veritivcorp.com</recipient>
+            <type>user</type>
+        </recipients>
+        <recipients>
+            <recipient>krista.emslie@veritivcorp.com</recipient>
+            <type>user</type>
+        </recipients>
+        <recipients>
+            <recipient>lee.yost@veritivcorp.com</recipient>
+            <type>user</type>
+        </recipients>
+        <recipients>
+            <recipient>tobi.rightnour@veritivcorp.com</recipient>
+            <type>user</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>Work_Order_Sourcing_Automated/WO_Sourcing_Notify_group_of_MLA</template>
+    </alerts>
+    <fieldUpdates>
+        <fullName>Assign_Intl_Pkg_to_Sourcing_Group_field</fullName>
+        <field>Sourcing_Group__c</field>
+        <formula>&quot;Intl Pkg&quot;</formula>
+        <name>Assign Intl Pkg to Sourcing Group field</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Assign_to_Pkg_Queue</fullName>
+        <field>OwnerId</field>
+        <lookupValue>Packaging_Field_Sourcing</lookupValue>
+        <lookupValueType>Queue</lookupValueType>
+        <name>Assign to Pkg Queue</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>LookupValue</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Change_Intl_Pkg_flag_to_checked</fullName>
+        <field>Int_l_Pkg_Sourcing_Only__c</field>
+        <literalValue>1</literalValue>
+        <name>Change Intl Pkg flag to checked</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Change_Status_to_Assigned</fullName>
+        <field>Status</field>
+        <literalValue>Assigned</literalValue>
+        <name>Change Status to Assigned</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Update_Status_Change_Date</fullName>
+        <field>Status_Changed_Date__c</field>
+        <formula>Now()</formula>
+        <name>Update Status Change Date</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Update_Status_Change_Date2</fullName>
+        <field>Status_Changed_Date__c</field>
+        <formula>Now()</formula>
+        <name>Update Status Change Date2</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>VCP_Update_Owner_to_Jenny_Perez</fullName>
+        <description>Vendor Claims Print - Update owner to Jenny Perez</description>
+        <field>OwnerId</field>
+        <lookupValue>jenny.perez@veritivcorp.com</lookupValue>
+        <lookupValueType>User</lookupValueType>
+        <name>VCP - Update Owner to Jenny Perez</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>LookupValue</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>VCP_Update_VCP_Status_to_NEW</fullName>
+        <field>VCP_Status__c</field>
+        <literalValue>New</literalValue>
+        <name>VCP - Update VCP Status to NEW</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Vendor_Claim_Print_Status_Change_False</fullName>
+        <field>Vendor_Claim_Print_on_Status_Change__c</field>
+        <literalValue>0</literalValue>
+        <name>Vendor Claim Print Status Change False</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Vendor_Claim_for_Print_Status_Change</fullName>
+        <field>Vendor_Claim_Print_on_Status_Change__c</field>
+        <literalValue>1</literalValue>
+        <name>Vendor Claim for Print Status Change</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>true</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Work_Order_Update_Checkbox_to_Default</fullName>
+        <field>Vendor_Claim_Print_on_Status_Change__c</field>
+        <literalValue>0</literalValue>
+        <name>Work Order: Update Checkbox to Default</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>true</reevaluateOnChange>
+    </fieldUpdates>
+    <rules>
+        <fullName>Field Sourcing - Cannabis Work Order</fullName>
+        <active>true</active>
+        <criteriaItems>
+            <field>WorkOrder.Prod_Categories__c</field>
+            <operation>equals</operation>
+            <value>CANNABIS PACKAGING</value>
+        </criteriaItems>
+        <description>Email alert when a Cannabis Work Order is created - put on a delay because there are other workflows that update data and we want this to run last</description>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+        <workflowTimeTriggers>
+            <actions>
+                <name>Cannabis_Work_Order_Created</name>
+                <type>Alert</type>
+            </actions>
+            <offsetFromField>WorkOrder.CreatedDate</offsetFromField>
+            <timeLength>1</timeLength>
+            <workflowTimeTriggerUnit>Hours</workflowTimeTriggerUnit>
+        </workflowTimeTriggers>
+    </rules>
+    <rules>
+        <fullName>Field Sourcing - Intl Pkg - assign queue</fullName>
+        <actions>
+            <name>Assign_Intl_Pkg_to_Sourcing_Group_field</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <actions>
+            <name>Assign_to_Pkg_Queue</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <booleanFilter>1 AND (2 OR 3) AND 4</booleanFilter>
+        <criteriaItems>
+            <field>WorkOrder.Int_l_Pkg_Sourcing_Only__c</field>
+            <operation>equals</operation>
+            <value>True</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>WorkOrder.MLA__c</field>
+            <operation>equals</operation>
+            <value>No</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>WorkOrder.MLA__c</field>
+            <operation>equals</operation>
+        </criteriaItems>
+        <criteriaItems>
+            <field>WorkOrder.RecordTypeId</field>
+            <operation>notEqual</operation>
+            <value>Sourcing US - Lightning</value>
+        </criteriaItems>
+        <description>When a Field Sourcing work order is created, assign it to a queue based on Segment, country and Intl Pkg flag
+
+12/2017 -  change this to send Int&apos;l Pkg to the Packaging queue for that team to evaluate first
+10/2021 - excludes &apos;Sourcing US - Lightning&apos;</description>
+        <triggerType>onCreateOnly</triggerType>
+    </rules>
+    <rules>
+        <fullName>Field Sourcing - Update Int%27l Pkg field</fullName>
+        <actions>
+            <name>Change_Intl_Pkg_flag_to_checked</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <criteriaItems>
+            <field>WorkOrder.Int_l_Packaging_Location__c</field>
+            <operation>notEqual</operation>
+        </criteriaItems>
+        <description>The form does not appear to be updating this flag appropriately in Prod and we&apos;ve been unable to resolve it, so creating this workflow to update the flag when Int&apos;l Pkg data is filled out</description>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+    </rules>
+    <rules>
+        <fullName>Field Sourcing - Work Order - Change status to Assigned</fullName>
+        <actions>
+            <name>Change_Status_to_Assigned</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <actions>
+            <name>Update_Status_Change_Date2</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <formula>AND( ISPICKVAL( Status , &quot;New&quot;),   LEFT(Owner:Queue.Id,3)  &lt;&gt; &quot;00G&quot;,   ISCHANGED( OwnerId ),  OR(RecordType.DeveloperName = &quot;Field_Sourcing&quot;, RecordType.DeveloperName = &quot;Equipment_Requests&quot;, RecordType.DeveloperName = &quot;CLM_Intake&quot;, RecordType.DeveloperName = &quot;RFP_RFQ&quot;,RecordType.DeveloperName = &quot;Sourcing_US_Lightning&quot;))</formula>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+    <rules>
+        <fullName>Field Sourcing - Work Order - Status Change Date</fullName>
+        <actions>
+            <name>Update_Status_Change_Date</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <formula>ISCHANGED( Status )</formula>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+    <rules>
+        <fullName>Sourcing - Corrugated Work Order - Owner is reassigned to Queue</fullName>
+        <actions>
+            <name>Notify_Sourcing_Corr_Mgrs_when_WO_manually_assigned_to_Corr_Queue</name>
+            <type>Alert</type>
+        </actions>
+        <active>true</active>
+        <description>Triggers when a work order owner is edited and the work order is a queue not a user</description>
+        <formula>AND(  NOT(PRIORVALUE(OwnerId) = &apos;00G5w000008Xh7e&apos;) , RecordType.DeveloperName = &quot;Sourcing_US_Lightning&quot; , ISCHANGED( OwnerId ) , BEGINS(OwnerId,&quot;00G&quot;) , INCLUDES(Prod_Categories__c, &apos;CORRUGATED&apos;)  )</formula>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+    <rules>
+        <fullName>Vendor Claim Print - 15%2C 30%2C 60 Day Reminders after Samples Shipped date</fullName>
+        <active>true</active>
+        <criteriaItems>
+            <field>WorkOrder.VCP_Status__c</field>
+            <operation>notEqual</operation>
+            <value>Cancelled,Complete</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>WorkOrder.RecordTypeId</field>
+            <operation>equals</operation>
+            <value>Vendor Claim</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>WorkOrder.Vendor_Claim_Print_on_Status_Change__c</field>
+            <operation>equals</operation>
+            <value>False</value>
+        </criteriaItems>
+        <description>Time based workflow to trigger 15, 30, &amp; 60 days after the Samples Shipped date has been added.</description>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+        <workflowTimeTriggers>
+            <actions>
+                <name>Print_Mill_Claim_Reminder_to_Owner_for_Follow_Up</name>
+                <type>Alert</type>
+            </actions>
+            <offsetFromField>WorkOrder.Date_Samples_Shipped__c</offsetFromField>
+            <timeLength>30</timeLength>
+            <workflowTimeTriggerUnit>Days</workflowTimeTriggerUnit>
+        </workflowTimeTriggers>
+        <workflowTimeTriggers>
+            <actions>
+                <name>Print_Mill_Claim_Reminder_to_Owner_for_Follow_Up</name>
+                <type>Alert</type>
+            </actions>
+            <offsetFromField>WorkOrder.Date_Samples_Shipped__c</offsetFromField>
+            <timeLength>15</timeLength>
+            <workflowTimeTriggerUnit>Days</workflowTimeTriggerUnit>
+        </workflowTimeTriggers>
+        <workflowTimeTriggers>
+            <actions>
+                <name>Print_Mill_Claim_Reminder_to_Owner_for_Follow_Up</name>
+                <type>Alert</type>
+            </actions>
+            <offsetFromField>WorkOrder.Date_Samples_Shipped__c</offsetFromField>
+            <timeLength>60</timeLength>
+            <workflowTimeTriggerUnit>Days</workflowTimeTriggerUnit>
+        </workflowTimeTriggers>
+    </rules>
+    <rules>
+        <fullName>Vendor Claim Print - 30%2C 60%2C 90 Day Reminder</fullName>
+        <active>true</active>
+        <criteriaItems>
+            <field>WorkOrder.VCP_Status__c</field>
+            <operation>notEqual</operation>
+            <value>Cancelled,Complete</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>WorkOrder.RecordTypeId</field>
+            <operation>equals</operation>
+            <value>Vendor Claim</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>WorkOrder.Vendor_Claim_Print_on_Status_Change__c</field>
+            <operation>equals</operation>
+            <value>False</value>
+        </criteriaItems>
+        <description>Time based workflow based on when the VCP Status is updated to In Process after it was marked complete.</description>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+        <workflowTimeTriggers>
+            <actions>
+                <name>Print_Mill_Claim_Reminder_to_Owner_for_Follow_Up</name>
+                <type>Alert</type>
+            </actions>
+            <offsetFromField>WorkOrder.Date_Samples_Shipped__c</offsetFromField>
+            <timeLength>60</timeLength>
+            <workflowTimeTriggerUnit>Days</workflowTimeTriggerUnit>
+        </workflowTimeTriggers>
+        <workflowTimeTriggers>
+            <actions>
+                <name>Print_Mill_Claim_Reminder_to_Owner_for_Follow_Up</name>
+                <type>Alert</type>
+            </actions>
+            <offsetFromField>WorkOrder.Date_Samples_Shipped__c</offsetFromField>
+            <timeLength>30</timeLength>
+            <workflowTimeTriggerUnit>Days</workflowTimeTriggerUnit>
+        </workflowTimeTriggers>
+        <workflowTimeTriggers>
+            <actions>
+                <name>Print_Mill_Claim_Reminder_to_Owner_for_Follow_Up</name>
+                <type>Alert</type>
+            </actions>
+            <offsetFromField>WorkOrder.Date_Samples_Shipped__c</offsetFromField>
+            <timeLength>90</timeLength>
+            <workflowTimeTriggerUnit>Days</workflowTimeTriggerUnit>
+        </workflowTimeTriggers>
+    </rules>
+    <rules>
+        <fullName>Vendor Claim Print - 30%2C 60%2C 90 Day Reminder %28Status Change to In Progress%29</fullName>
+        <active>true</active>
+        <criteriaItems>
+            <field>WorkOrder.Vendor_Claim_Print_on_Status_Change__c</field>
+            <operation>equals</operation>
+            <value>True</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>WorkOrder.RecordTypeId</field>
+            <operation>equals</operation>
+            <value>Vendor Claim</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>WorkOrder.VCP_Status__c</field>
+            <operation>notEqual</operation>
+            <value>Cancelled,Complete,Complete - Policy Credit,Complete - Denied</value>
+        </criteriaItems>
+        <description>Reminders based on status change to In Progress after the Work Order VCP Status = Cancelled,Complete,Complete - Policy Credit,Complete - Denied</description>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+        <workflowTimeTriggers>
+            <actions>
+                <name>Print_Mill_Claim_Reminder_to_Owner_for_Follow_Up</name>
+                <type>Alert</type>
+            </actions>
+            <timeLength>30</timeLength>
+            <workflowTimeTriggerUnit>Days</workflowTimeTriggerUnit>
+        </workflowTimeTriggers>
+        <workflowTimeTriggers>
+            <actions>
+                <name>Print_Mill_Claim_Reminder_to_Owner_for_Follow_Up</name>
+                <type>Alert</type>
+            </actions>
+            <timeLength>60</timeLength>
+            <workflowTimeTriggerUnit>Days</workflowTimeTriggerUnit>
+        </workflowTimeTriggers>
+        <workflowTimeTriggers>
+            <actions>
+                <name>Print_Mill_Claim_Reminder_to_Owner_for_Follow_Up</name>
+                <type>Alert</type>
+            </actions>
+            <actions>
+                <name>Work_Order_Update_Checkbox_to_Default</name>
+                <type>FieldUpdate</type>
+            </actions>
+            <timeLength>90</timeLength>
+            <workflowTimeTriggerUnit>Days</workflowTimeTriggerUnit>
+        </workflowTimeTriggers>
+    </rules>
+    <rules>
+        <fullName>Vendor Claim Print - Email Notification to Rep and Submitter</fullName>
+        <actions>
+            <name>Print_Mill_Claim_Email_to_Sales_Rep_and_Submitter</name>
+            <type>Alert</type>
+        </actions>
+        <active>true</active>
+        <criteriaItems>
+            <field>WorkOrder.VCP_Status__c</field>
+            <operation>equals</operation>
+            <value>New</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>WorkOrder.RecordTypeId</field>
+            <operation>equals</operation>
+            <value>Vendor Claim</value>
+        </criteriaItems>
+        <description>Workflow to send email to Sales rep and person submitting the claim</description>
+        <triggerType>onCreateOnly</triggerType>
+    </rules>
+    <rules>
+        <fullName>Vendor Claim Print - Update Checkbox</fullName>
+        <actions>
+            <name>Vendor_Claim_for_Print_Status_Change</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <description>Used to send email alert based on the day a Print Vendor Claim is changed back to Status = In Process after it was Status = Cancelled, Complete, Complete - Policy Credit, or Complete - Denied.</description>
+        <formula>AND(OR( ISPICKVAL(PRIORVALUE(VCP_Status__c), &quot;Complete&quot;), ISPICKVAL(PRIORVALUE(VCP_Status__c), &quot;Cancelled&quot;), ISPICKVAL(PRIORVALUE(VCP_Status__c), &quot;Complete - Policy Credit&quot;), ISPICKVAL(PRIORVALUE(VCP_Status__c), &quot;Complete - Policy Denied&quot;) )&amp;&amp; AND(ISPICKVAL(VCP_Status__c, &quot;In Progress&quot;)) )</formula>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+    <rules>
+        <fullName>Vendor Claim Print - Update VCP Status to NEW</fullName>
+        <actions>
+            <name>VCP_Update_VCP_Status_to_NEW</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <criteriaItems>
+            <field>WorkOrder.RecordTypeId</field>
+            <operation>equals</operation>
+            <value>Vendor Claim</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>WorkOrder.VCP_Status__c</field>
+            <operation>equals</operation>
+        </criteriaItems>
+        <description>VCP team needed different Status selections so created a different field for them to track status - this will update the Status to New when created</description>
+        <triggerType>onCreateOnly</triggerType>
+    </rules>
+    <rules>
+        <fullName>Vendor Claim Print - When Work Order is Complete or Cancelled</fullName>
+        <actions>
+            <name>Vendor_Claim_Print_Status_Change_False</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <criteriaItems>
+            <field>WorkOrder.VCP_Status__c</field>
+            <operation>equals</operation>
+            <value>Cancelled,Complete,Complete - Policy Credit,Complete - Denied</value>
+        </criteriaItems>
+        <description>Updates when VCP Status is Cancelled,Complete,Complete - Policy Credit,Complete - Denied</description>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+    </rules>
+    <rules>
+        <fullName>Vendor Claim Print Work Order New-1 Hour</fullName>
+        <active>true</active>
+        <criteriaItems>
+            <field>WorkOrder.RecordTypeId</field>
+            <operation>equals</operation>
+            <value>Vendor Claim</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>WorkOrder.VCP_Status__c</field>
+            <operation>equals</operation>
+            <value>New</value>
+        </criteriaItems>
+        <description>Vendor Claim Print Work Order was received an hour ago, but is still in a Status of New.</description>
+        <triggerType>onCreateOnly</triggerType>
+        <workflowTimeTriggers>
+            <actions>
+                <name>VendorClaim_Email_Alert_Work_Order_is_still_in_a_Status_of_New_after_1_Hour</name>
+                <type>Alert</type>
+            </actions>
+            <offsetFromField>WorkOrder.CreatedDate</offsetFromField>
+            <timeLength>1</timeLength>
+            <workflowTimeTriggerUnit>Hours</workflowTimeTriggerUnit>
+        </workflowTimeTriggers>
+    </rules>
+    <rules>
+        <fullName>Vendor Claim for Print - 30%2C 60%2C 90 Day Reminder</fullName>
+        <active>true</active>
+        <criteriaItems>
+            <field>WorkOrder.VCP_Status__c</field>
+            <operation>notEqual</operation>
+            <value>Cancelled,Complete</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>WorkOrder.RecordTypeId</field>
+            <operation>equals</operation>
+            <value>Vendor Claim</value>
+        </criteriaItems>
+        <description>Reminder sent to Print Mill Claim Owner to follow up on open Mill Claim</description>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+        <workflowTimeTriggers>
+            <actions>
+                <name>Print_Mill_Claim_Reminder_to_Owner_for_Follow_Up</name>
+                <type>Alert</type>
+            </actions>
+            <offsetFromField>WorkOrder.Date_Samples_Shipped__c</offsetFromField>
+            <timeLength>60</timeLength>
+            <workflowTimeTriggerUnit>Days</workflowTimeTriggerUnit>
+        </workflowTimeTriggers>
+        <workflowTimeTriggers>
+            <actions>
+                <name>Print_Mill_Claim_Reminder_to_Owner_for_Follow_Up</name>
+                <type>Alert</type>
+            </actions>
+            <offsetFromField>WorkOrder.Date_Samples_Shipped__c</offsetFromField>
+            <timeLength>30</timeLength>
+            <workflowTimeTriggerUnit>Days</workflowTimeTriggerUnit>
+        </workflowTimeTriggers>
+        <workflowTimeTriggers>
+            <actions>
+                <name>Print_Mill_Claim_Reminder_to_Owner_for_Follow_Up</name>
+                <type>Alert</type>
+            </actions>
+            <offsetFromField>WorkOrder.Date_Samples_Shipped__c</offsetFromField>
+            <timeLength>90</timeLength>
+            <workflowTimeTriggerUnit>Days</workflowTimeTriggerUnit>
+        </workflowTimeTriggers>
+    </rules>
+    <rules>
+        <fullName>Vendor Claim for Print - Carrier Info has been added</fullName>
+        <actions>
+            <name>Notifies_Print_Mill_Claim_Owner_that_Carrier_information_has_been_added</name>
+            <type>Alert</type>
+        </actions>
+        <active>true</active>
+        <criteriaItems>
+            <field>WorkOrder.RecordTypeId</field>
+            <operation>equals</operation>
+            <value>Vendor Claim</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>WorkOrder.Carrier_Used_to_Submit_Samples__c</field>
+            <operation>notEqual</operation>
+        </criteriaItems>
+        <description>Will notify the Vendor Claim Coordinator that owns the Vendor Claim that the shipping carrier information has been added to the Vendor Claim Work Order</description>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+    </rules>
+    <rules>
+        <fullName>Vendor Claims Print - Update Work Order Owner</fullName>
+        <actions>
+            <name>VCP_Update_Owner_to_Jenny_Perez</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <criteriaItems>
+            <field>WorkOrder.RecordTypeId</field>
+            <operation>equals</operation>
+            <value>Vendor Claim</value>
+        </criteriaItems>
+        <triggerType>onCreateOnly</triggerType>
+    </rules>
+</Workflow>

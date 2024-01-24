@@ -1,0 +1,864 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionCalls>
+        <description>Sourcing feedback survey invitation sends to the active PSR related to the Work Order</description>
+        <name>apx_Sourcing_Feedback_Survey_Email_Invitation</name>
+        <label>Sourcing Feedback Survey Email Invitation</label>
+        <locationX>182</locationX>
+        <locationY>360</locationY>
+        <actionName>emailSimple</actionName>
+        <actionType>emailSimple</actionType>
+        <connector>
+            <targetReference>dec_InitialSurveySent</targetReference>
+        </connector>
+        <flowTransactionModel>CurrentTransaction</flowTransactionModel>
+        <inputParameters>
+            <name>emailAddresses</name>
+            <value>
+                <elementReference>$Record.Primary_Sales_Rep_2__r.Email__c</elementReference>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>senderType</name>
+            <value>
+                <stringValue>DefaultWorkflowUser</stringValue>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>emailSubject</name>
+            <value>
+                <elementReference>fx_Email_Subject</elementReference>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>emailBody</name>
+            <value>
+                <elementReference>tmp_Email_Body</elementReference>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>sendRichBody</name>
+            <value>
+                <booleanValue>true</booleanValue>
+            </value>
+        </inputParameters>
+        <nameSegment>emailSimple</nameSegment>
+        <versionSegment>1</versionSegment>
+    </actionCalls>
+    <apiVersion>58.0</apiVersion>
+    <decisions>
+        <description>Determines if the &apos;Primary Sales Rep&apos; field is populated with an active PSR</description>
+        <name>dec_Active_PSR_Selected</name>
+        <label>Active PSR Selected</label>
+        <locationX>380</locationX>
+        <locationY>252</locationY>
+        <defaultConnector>
+            <targetReference>udt_Field_Updates_No</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>No</defaultConnectorLabel>
+        <rules>
+            <name>ocm_Yes</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.Primary_Sales_Rep_2__r.deactivated_user__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>apx_Sourcing_Feedback_Survey_Email_Invitation</targetReference>
+            </connector>
+            <label>Yes</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <description>Determines if there has been an initial survey previously sent</description>
+        <name>dec_InitialSurveySent</name>
+        <label>Initial Survey Sent</label>
+        <locationX>182</locationX>
+        <locationY>468</locationY>
+        <defaultConnector>
+            <targetReference>udt_FieldUpdates_AdditionalSurvey</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Yes</defaultConnectorLabel>
+        <rules>
+            <name>ocm_InitialSurveySent_No</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.Survey_Initial_Send_Date__c</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>udt_FieldUpdates_InitialSurvey</targetReference>
+            </connector>
+            <label>No</label>
+        </rules>
+    </decisions>
+    <description>Delivers a survey to collect feedback on recently completed Sourcing Work Orders with a Line Item count equal to 1. This will also send a a follow-up survey if the the &apos;Send Survey Date&apos; field is re-populated with a new date through the &apos;Work Order - Survey Send Second&apos; Flow.</description>
+    <environments>Default</environments>
+    <formulas>
+        <description>Transforms the &apos;Completed Date&apos; from Date/Time to Date data type</description>
+        <name>fx_Completed_Date</name>
+        <dataType>Date</dataType>
+        <expression>DATEVALUE({!$Record.Completed_Date__c})</expression>
+    </formulas>
+    <formulas>
+        <description>Calculates the text for the Subject to be used in the Email Send Action</description>
+        <name>fx_Email_Subject</name>
+        <dataType>String</dataType>
+        <expression>&quot;Sourcing Win/Loss Feedback Survey Invitation for Work Order #&quot;&amp;{!$Record.WorkOrderNumber}</expression>
+    </formulas>
+    <formulas>
+        <description>Calculates the Org domain to use in a hyperlink to the Work Order record.</description>
+        <name>fx_Org_Hyperink</name>
+        <dataType>String</dataType>
+        <expression>LEFT({!$Api.Partner_Server_URL_260}, FIND( &apos;/services&apos;, {!$Api.Partner_Server_URL_260}))</expression>
+    </formulas>
+    <formulas>
+        <description>Determines the number of times a survey has been sent</description>
+        <name>fx_Survey_Send_Count</name>
+        <dataType>Number</dataType>
+        <expression>IF(ISBLANK({!$Record.Survey_Send_Count__c}), 1, 
+{!$Record.Survey_Send_Count__c} + 1)</expression>
+        <scale>0</scale>
+    </formulas>
+    <formulas>
+        <description>Calculates the date to re-send the survey. This date will be used if the respondent selects &quot;Customer Still Deciding&quot; in the survey response, or if no action is taken. This formula also checks if the Flow is running in PROD (calculates TODAY+30), or the sandbox org (calculates TODAY+1 to test functionality).</description>
+        <name>fx_Survey_Send_Date</name>
+        <dataType>Date</dataType>
+        <expression>if({!$Organization.Id}=&apos;00D7000000091qn&apos;, 
+TODAY() + 30, 
+TODAY() + 1)</expression>
+    </formulas>
+    <formulas>
+        <description>Calculates the survey link, based on the org data to avoid manual updates when migrating this Flow to Production</description>
+        <name>fx_SurveyLink</name>
+        <dataType>String</dataType>
+        <expression>if({!$Organization.Id}=&apos;00D7000000091qn&apos;, 
+&apos;https://veritivcorp.surveymonkey.com/r/Sourcing_Survey?&apos;, 
+&apos;https://veritivcorp.surveymonkey.com/r/TEST_SourcingSurvey?&apos;)</expression>
+    </formulas>
+    <interviewLabel>Work Order - Survey for Sourcing Feedback {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>Work Order - Survey for Sourcing Feedback</label>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>CanvasMode</name>
+        <value>
+            <stringValue>AUTO_LAYOUT_CANVAS</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>OriginBuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>AutoLaunchedFlow</processType>
+    <recordUpdates>
+        <name>udt_Field_Updates_No</name>
+        <label>Field Updates</label>
+        <locationX>578</locationX>
+        <locationY>360</locationY>
+        <inputAssignments>
+            <field>Survey_Send_Date__c</field>
+        </inputAssignments>
+        <inputReference>$Record</inputReference>
+    </recordUpdates>
+    <recordUpdates>
+        <name>udt_FieldUpdates_AdditionalSurvey</name>
+        <label>Field Updates</label>
+        <locationX>314</locationX>
+        <locationY>576</locationY>
+        <inputAssignments>
+            <field>Survey_Send_Count__c</field>
+            <value>
+                <elementReference>fx_Survey_Send_Count</elementReference>
+            </value>
+        </inputAssignments>
+        <inputReference>$Record</inputReference>
+    </recordUpdates>
+    <recordUpdates>
+        <name>udt_FieldUpdates_InitialSurvey</name>
+        <label>Field Updates</label>
+        <locationX>50</locationX>
+        <locationY>576</locationY>
+        <inputAssignments>
+            <field>Survey_Initial_Send_Date__c</field>
+            <value>
+                <elementReference>$Flow.CurrentDate</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Survey_Send_Count__c</field>
+            <value>
+                <elementReference>fx_Survey_Send_Count</elementReference>
+            </value>
+        </inputAssignments>
+        <inputReference>$Record</inputReference>
+    </recordUpdates>
+    <start>
+        <locationX>254</locationX>
+        <locationY>0</locationY>
+        <connector>
+            <targetReference>dec_Active_PSR_Selected</targetReference>
+        </connector>
+        <filterLogic>1 AND 2 AND 3 AND 4 AND (5 OR 6) AND (7 OR 8)</filterLogic>
+        <filters>
+            <field>Survey_Send_Indicator__c</field>
+            <operator>EqualTo</operator>
+            <value>
+                <booleanValue>true</booleanValue>
+            </value>
+        </filters>
+        <filters>
+            <field>of_Line_Item__c</field>
+            <operator>EqualTo</operator>
+            <value>
+                <numberValue>1.0</numberValue>
+            </value>
+        </filters>
+        <filters>
+            <field>Type_of_Request__c</field>
+            <operator>NotEqualTo</operator>
+            <value>
+                <stringValue>Multi-Product Request 5+</stringValue>
+            </value>
+        </filters>
+        <filters>
+            <field>Off_Strategy_Product__c</field>
+            <operator>EqualTo</operator>
+            <value>
+                <booleanValue>false</booleanValue>
+            </value>
+        </filters>
+        <filters>
+            <field>Status</field>
+            <operator>EqualTo</operator>
+            <value>
+                <stringValue>Completed</stringValue>
+            </value>
+        </filters>
+        <filters>
+            <field>Status</field>
+            <operator>EqualTo</operator>
+            <value>
+                <stringValue>Complete</stringValue>
+            </value>
+        </filters>
+        <filters>
+            <field>Survey_Send_Count__c</field>
+            <operator>LessThan</operator>
+            <value>
+                <numberValue>2.0</numberValue>
+            </value>
+        </filters>
+        <filters>
+            <field>Survey_Send_Count__c</field>
+            <operator>IsNull</operator>
+            <value>
+                <booleanValue>true</booleanValue>
+            </value>
+        </filters>
+        <object>WorkOrder</object>
+        <schedule>
+            <frequency>Daily</frequency>
+            <startDate>2023-06-20</startDate>
+            <startTime>12:00:00.000Z</startTime>
+        </schedule>
+        <triggerType>Scheduled</triggerType>
+    </start>
+    <status>Obsolete</status>
+    <textTemplates>
+        <name>tmp_Email_Body</name>
+        <isViewedAsPlainText>true</isViewedAsPlainText>
+        <text>&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+	&lt;head&gt;
+		&lt;meta http-equiv=&quot;Content-Type&quot; content=&quot;text/html; charset=utf-8&quot;&gt;
+		&lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initialscale=1.0&quot;&gt;
+		&lt;meta http-equiv=&quot;X-UA-Compatible&quot; content=&quot;IE=edge&quot;&gt;
+		&lt;style type=&quot;text/css&quot;&gt;@media screen and (max-width: 480px) {slot[style] {margin-right: 0 !important;}.columnDiv {margin-right: 0 !important;}}@media screen and (min-width: 480px) {slot[style] {margin-bottom: 0 !important;}.columnDiv {margin-bottom: 0 !important;}}&lt;/style&gt;
+		&lt;style type=&quot;text/css&quot;&gt;@media screen and (max-width: 480px) {.contentbuilderBaseColumnRow .columnCell {display:inline-block;width:100%}}&lt;/style&gt;
+		&lt;style type=&quot;text/css&quot;&gt;.contentpageDefaultEmailTemplatePageTemplate .contentRoot {width: 600px;}@media only screen and (max-width: 480px) {.contentpageDefaultEmailTemplatePageTemplate .contentRoot {width: 320px;}}&lt;/style&gt;
+	&lt;/head&gt;
+	&lt;body&gt;
+		&lt;table class=&quot;contentpageDefaultEmailTemplatePageTemplate&quot;
+				style=&quot;background-color: #E9EAEC;&quot;
+				role=&quot;presentation&quot;
+				id=&quot;contentpage_emailTemplateBodyContent&quot;
+				width=&quot;100%&quot;
+				cellpadding=&quot;0&quot;
+				cellspacing=&quot;0&quot;&gt;
+			&lt;tr&gt;
+				&lt;td width=&quot;100%&quot; align=&quot;center&quot;&gt;
+					&lt;table class=&quot;contentRoot&quot;
+							style=&quot;background-color: #FFFFFF;&quot;
+							role=&quot;presentation&quot;
+							width=&quot;600&quot;
+							cellpadding=&quot;0&quot;
+							cellspacing=&quot;0&quot;&gt;
+						&lt;tr&gt;
+							&lt;td style=&quot;padding-top: 10px; padding-bottom: 10px; padding-left: 10px; padding-right: 10px;&quot;&gt;
+								&lt;table class=&quot;contentbuilderBaseColumnRow&quot;
+										style=&quot;align-items: flex-start; width: 100%; background-color:#007940;&quot;
+										role=&quot;presentation&quot;
+										width=&quot;100%&quot;
+										cellpadding=&quot;0&quot;
+										cellspacing=&quot;0&quot;&gt;
+									&lt;tr valign=&quot;top&quot;&gt;
+										&lt;td width=&quot;100%&quot;
+											class=&quot;columnCell&quot;
+											style=&quot;vertical-align: top;display: inline-block; float:left&quot;&gt;
+											&lt;table cellpadding=&quot;0&quot;
+													cellspacing=&quot;0&quot;
+													style=&quot;width: 100%; border-collapse: collapse; word-break:break-word;&quot;&gt;
+												&lt;tr&gt;
+													&lt;td&gt;
+														&lt;table style=&quot;width: 100%; border-collapse: collapse; word-break: break-word; font-size: 14px&quot;
+																id=&quot;contentRegion&quot;
+																role=&quot;presentation&quot;
+																cellspacing=&quot;0&quot;
+																cellpadding=&quot;0&quot;
+																locked=&quot;0&quot;&gt;
+															&lt;tr&gt;
+																&lt;td style=&quot;font-family: Arial, Helvetica, sans-serif;padding-top: 40px;padding-right: 10px;padding-bottom: 40px;padding-left: 10px;&quot;&gt;
+																	&lt;div style=&quot;text-align: center;&quot;&gt;
+																		&lt;span style=&quot;color:#ffffff;&quot;&gt;
+																			&lt;span style=&quot;font-size:18px;&quot;&gt;
+																				&lt;strong&gt;Sourcing Work Order Win/Loss Feedback Survey Invitation&lt;/strong&gt;
+																			&lt;/span&gt;
+																		&lt;/span&gt;
+																	&lt;/div&gt;
+																&lt;/td&gt;
+															&lt;/tr&gt;
+														&lt;/table&gt;
+													&lt;/td&gt;
+												&lt;/tr&gt;
+											&lt;/table&gt;
+										&lt;/td&gt;
+									&lt;/tr&gt;
+								&lt;/table&gt;
+								&lt;table class=&quot;contentbuilderBaseColumnRow&quot;
+										style=&quot;align-items: flex-start; width: 100%;&quot;
+										role=&quot;presentation&quot;
+										width=&quot;100%&quot;
+										cellpadding=&quot;0&quot;
+										cellspacing=&quot;0&quot;&gt;
+									&lt;tr valign=&quot;top&quot;&gt;
+										&lt;td width=&quot;100%&quot;
+											class=&quot;columnCell&quot;
+											style=&quot;vertical-align: top;display: inline-block; float:left&quot;&gt;
+											&lt;table cellpadding=&quot;0&quot;
+													cellspacing=&quot;0&quot;
+													style=&quot;width: 100%; border-collapse: collapse; word-break:break-word;&quot;&gt;
+												&lt;tr&gt;
+													&lt;td&gt;
+														&lt;table style=&quot;width: 100%; border-collapse: collapse; word-break: break-word; font-size: 14px&quot;
+																id=&quot;contentRegion&quot;
+																role=&quot;presentation&quot;
+																cellspacing=&quot;0&quot;
+																cellpadding=&quot;0&quot;
+																locked=&quot;1&quot;&gt;
+															&lt;tr&gt;
+																&lt;td style=&quot;font-family: Arial, Helvetica, sans-serif;padding-top: 25px;padding-bottom: 25px;&quot;&gt;
+																	&lt;p&gt;Hi&amp;nbsp;{!$Record.Primary_Sales_Rep_2__r.SF_userid__r.FirstName},&lt;/p&gt;
+																	&lt;p&gt;We are requesting your valuable feedback for the recently completed sourcing work order recommendation. Your feedback will be utilized to provide more robust support to our external and internal partners through enhanced product, market, and negotiation knowledge as well as and hold suppliers accountable. Please click the button below to begin a brief survey.&lt;/p&gt;
+																&lt;/td&gt;
+															&lt;/tr&gt;
+														&lt;/table&gt;
+													&lt;/td&gt;
+												&lt;/tr&gt;
+											&lt;/table&gt;
+										&lt;/td&gt;
+									&lt;/tr&gt;
+								&lt;/table&gt;
+								&lt;table class=&quot;contentbuilderBaseColumnRow&quot;
+										style=&quot;align-items: flex-start; width: 100%;&quot;
+										role=&quot;presentation&quot;
+										width=&quot;100%&quot;
+										cellpadding=&quot;0px&quot;
+										cellspacing=&quot;0&quot;&gt;
+									&lt;tr valign=&quot;top&quot;&gt;
+										&lt;td width=&quot;50%&quot;
+											class=&quot;columnCell&quot;
+											style=&quot;vertical-align: top;display: inline-block; float:left&quot;&gt;
+											&lt;div class=&quot;columnDiv&quot;
+												style=&quot;margin-left: 20px;margin-right: 5px;margin-bottom: 0px;&quot;&gt;
+												&lt;table cellpadding=&quot;0px&quot;
+													cellspacing=&quot;0&quot;
+													style=&quot;width: 100%; border-collapse: collapse; word-break:break-word;&quot;&gt;
+													&lt;tr&gt;
+														&lt;td&gt;
+															&lt;table style=&quot;width: 100%; border-collapse: collapse; word-break: break-word; font-size: 12px&quot;
+																id=&quot;contentRegion&quot;
+																role=&quot;presentation&quot;
+																cellspacing=&quot;0&quot;
+																cellpadding=&quot;0px&quot;
+																locked=&quot;0&quot;&gt;
+																&lt;tr&gt;
+																	&lt;td style=&quot;font-family: Arial, Helvetica, sans-serif;&quot;&gt;
+																		&lt;span style=&quot;font-size:12px;&quot;&gt;
+																			&lt;p&gt;Work Order #: &lt;a href=&quot;{!fx_Org_Hyperink}{!$Record.Id}&quot; rel=&quot;noopener noreferrer&quot; target=&quot;_blank&quot;&gt;{!$Record.WorkOrderNumber}&lt;/a&gt;&lt;br /&gt;
+																			Completed Date:&amp;nbsp;{!fx_Completed_Date}&lt;br /&gt;
+																			Type of Request:&amp;nbsp;{!$Record.Type_of_Request__c}&lt;br /&gt;
+																			Product Categories:&amp;nbsp;{!$Record.Prod_Categories__c}&lt;br /&gt;
+																		&lt;/span&gt;
+																	&lt;/td&gt;
+																&lt;/tr&gt;
+															&lt;/table&gt;
+														&lt;/td&gt;
+													&lt;/tr&gt;
+												&lt;/table&gt;
+											&lt;/div&gt;
+										&lt;/td&gt;
+										&lt;td width=&quot;50%&quot;
+											class=&quot;columnCell&quot;
+											style=&quot;vertical-align: top;display: inline-block; float:left&quot;&gt;
+											&lt;div class=&quot;columnDiv&quot;
+													style=&quot;margin-left: 20px;margin-right: 5px;margin-bottom: 0px;&quot;&gt;
+												&lt;table cellpadding=&quot;0px&quot;
+													cellspacing=&quot;0&quot;
+													style=&quot;width: 100%; border-collapse: collapse; word-break:break-word;&quot;&gt;
+													&lt;tr&gt;
+														&lt;td&gt;
+															&lt;table style=&quot;width: 100%; border-collapse: collapse; word-break: break-word; font-size: 12px&quot;
+																	id=&quot;contentRegion&quot;
+																	role=&quot;presentation&quot;
+																	cellspacing=&quot;0&quot;
+																	cellpadding=&quot;0px&quot;
+																	locked=&quot;0&quot;&gt;
+																&lt;tr&gt;
+																	&lt;td style=&quot;font-family: Arial, Helvetica, sans-serif;&quot;&gt;
+																		&lt;span style=&quot;font-size:12px;&quot;&gt;
+																			&lt;p&gt;Segment:&amp;nbsp;{!$Record.Segment__c}&lt;br /&gt;
+																			Division:&amp;nbsp;{!$Record.Corrugated_Servicing_Division__r.Name}&lt;br /&gt;
+																			Account Name:&amp;nbsp;{!$Record.Account.Name}&lt;br /&gt;
+																			Opportunity Name:&amp;nbsp;{!$Record.Opportunity_del__r.Name}&lt;br /&gt;
+																		&lt;/span&gt;
+																	&lt;/td&gt;
+																&lt;/tr&gt;
+															&lt;/table&gt;
+														&lt;/td&gt;
+													&lt;/tr&gt;
+												&lt;/table&gt;
+											&lt;/div&gt;
+										&lt;/td&gt;
+									&lt;/tr&gt;
+								&lt;/table&gt;
+								&lt;br&gt;	
+								&lt;table class=&quot;contentbuilderBaseColumnRow&quot;
+										style=&quot;align-items: flex-start; width: 100%;&quot;
+										role=&quot;presentation&quot;
+										width=&quot;100%&quot;
+										cellpadding=&quot;0&quot;
+										cellspacing=&quot;0&quot;&gt;
+									&lt;tr valign=&quot;top&quot;&gt;
+										&lt;td width=&quot;100%&quot;
+											class=&quot;columnCell&quot;
+											style=&quot;vertical-align: top;display: inline-block; float:left&quot;&gt;
+											&lt;table cellpadding=&quot;0&quot;
+													cellspacing=&quot;0&quot;
+													style=&quot;width: 100%; border-collapse: collapse; word-break:break-word;&quot;&gt;
+												&lt;tr&gt;
+													&lt;td&gt;
+														&lt;table style=&quot;width: 100%; border-collapse: collapse; word-break: break-word; font-size: 14px&quot;
+																id=&quot;contentRegion&quot;
+																role=&quot;presentation&quot;
+																cellspacing=&quot;0&quot;
+																cellpadding=&quot;0&quot;
+																locked=&quot;1&quot;&gt;
+															&lt;tr&gt;
+																&lt;td style=&quot;font-family: Arial, Helvetica, sans-serif;padding-top: 0px;padding-bottom: 0px;&quot;&gt;
+																	&lt;p&gt;Thank you,&lt;br /&gt;
+																	Category Management and Sourcing&lt;/p&gt;
+																&lt;/td&gt;
+															&lt;/tr&gt;
+														&lt;/table&gt;
+													&lt;/td&gt;
+												&lt;/tr&gt;
+											&lt;/table&gt;
+										&lt;/td&gt;
+									&lt;/tr&gt;
+								&lt;/table&gt;
+								&lt;br&gt;							
+								&lt;table class=&quot;contentbuilderBaseColumnRow&quot;
+										style=&quot;align-items: flex-start; width: 100%;&quot;
+										role=&quot;presentation&quot;
+										width=&quot;100%&quot;
+										cellpadding=&quot;0&quot;
+										cellspacing=&quot;0&quot;&gt;
+									&lt;tr valign=&quot;top&quot;&gt;
+										&lt;td width=&quot;100%&quot;
+											class=&quot;columnCell&quot;
+											style=&quot;vertical-align: top;display: inline-block; float:left&quot;&gt;
+											&lt;table cellpadding=&quot;0&quot;
+												cellspacing=&quot;0&quot;
+												style=&quot;width: 100%; border-collapse: collapse; word-break:break-word;&quot;&gt;
+												&lt;tr&gt;
+													&lt;td&gt;
+														&lt;table style=&quot;border: 0; width: 100%; border-collapse: collapse; mso-table-lspace:0pt;mso-table-rspace:0pt;&quot;
+															locked=&quot;1&quot;&gt;
+															&lt;tr&gt;
+																&lt;td style=&quot;mso-table-lspace:0pt;mso-table-rspace:0pt;&quot;&gt;
+																	&lt;div style=&quot;word-break:break-word; border: 0; mso-border-alt: 0; text-align:center; &quot;&gt;
+																		&lt;div style=&quot;display: inline-block; border: 0; mso-border-alt: 0; &quot;&gt;
+																			&lt;a style=&quot;direction:ltr;display:block;text-align:center;margin:0; font-family:Arial, Helvetica, sans-serif; font-size:16px; padding-top: 10px;padding-right: 20px;padding-bottom: 10px;padding-left: 20px; color:#FFFFFF;font-weight:normal;font-style:normal;text-decoration:none;border:0;background-color:#007940;border-radius:15px;mso-padding-alt:0;&quot;
+																				href=&quot;{!fx_SurveyLink}uid={!$Record.Primary_Sales_Rep_2__r.SF_userid__r.Id}&amp;amp;amp;amp;woid={!$Record.Id}&quot;
+																				rel=&quot;noopener noreferrer&quot;
+																				target=&quot;_blank&quot;&gt;
+																				&lt;i style=&quot;background-color:#007940; letter-spacing: 20px; mso-text-raise: 10px; mso-font-width: -100%;&quot;&gt;&amp;nbsp;&lt;/i&gt;
+																				&lt;span&gt;Begin Survey&lt;/span&gt;
+																				&lt;i style=&quot;background-color:#007940; letter-spacing: 20px; mso-text-raise: -10px; mso-font-width: -100%;&quot;&gt;&amp;nbsp;&lt;/i&gt;
+																			&lt;/a&gt;
+																		&lt;/div&gt;
+																	&lt;/div&gt;
+																&lt;/td&gt;
+															&lt;/tr&gt;
+														&lt;/table&gt;
+													&lt;/td&gt;
+												&lt;/tr&gt;
+											&lt;/table&gt;
+										&lt;/td&gt;
+									&lt;/tr&gt;
+								&lt;/table&gt;
+							&lt;/td&gt;
+						&lt;/tr&gt;
+					&lt;/table&gt;
+				&lt;/td&gt;
+			&lt;/tr&gt;
+		&lt;/table&gt;
+	&lt;/body&gt;
+&lt;/html&gt;</text>
+    </textTemplates>
+    <textTemplates>
+        <name>tmp_Email_Body_TESTING</name>
+        <isViewedAsPlainText>true</isViewedAsPlainText>
+        <text>&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+	&lt;head&gt;
+		&lt;style&gt;
+      @import url(&apos;https://cdn.jsdelivr.net/gh/salesforce-ux/design-system/assets/fonts/webfonts/SalesforceSans-Regular.woff&apos;);
+      body {
+        font-family: &apos;Salesforce Sans&apos;, sans-serif;
+        margin: 0 50px;
+        background-color: #E9EAEC;
+      }
+      .banner {
+        height: 100px;
+        background-color: #007940;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+      .banner-text {
+        color: white;
+        font-size: 20px;
+        font-weight: bold;
+      }
+      .container {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        background-color: white;
+        width: 100%;
+      }
+      h1 {
+        font-size: 14px;
+      }
+      p {
+        font-size: 14px;
+      }
+      .column p {
+        font-size: 9pt;
+      }
+      .columns {
+        display: flex;
+        flex-direction: row;
+      }
+      .column {
+        flex: 1;
+        width: 50%;
+        padding-left: 20px;
+      }
+      .button-container {
+        display: flex;
+        justify-content: center;
+        width: 100%;
+      }
+      .button {
+        display: inline-block;
+        padding: 15px;
+        border-radius: 12px;
+        background-color: #007940;
+        color: white;
+        text-decoration: none;
+      }
+    &lt;/style&gt;
+	&lt;!--[if gte mso 9]&gt;
+    &lt;style&gt;
+    .container { width: 600px !important; }
+    &lt;/style&gt;
+    &lt;![endif]--&gt;
+	&lt;/head&gt;
+	&lt;body&gt;
+		&lt;div class=&quot;banner&quot;&gt;
+			&lt;span class=&quot;banner-text&quot;&gt;Sourcing Work Order Win/Loss Feedback Survey&lt;/span&gt;
+		&lt;/div&gt;
+		&lt;div class=&quot;container&quot;&gt;
+			&lt;h1&gt;Hi {!$Record.Primary_Sales_Rep_2__r.SF_userid__r.FirstName},&lt;/h1&gt;
+			&lt;p&gt;We&apos;d appreciate your valuable feedback for the following recently completed Souring Work Order. Please click the button below to begin a brief survey.&lt;/p&gt;
+			&lt;br&gt;
+				&lt;div class=&quot;columns&quot;&gt;
+					&lt;div class=&quot;column&quot;&gt;
+						&lt;p&gt;Work Order #:&amp;nbsp;{!$Record.WorkOrderNumber}&lt;/p&gt;
+						&lt;p&gt;Copmleted Date:&amp;nbsp;{!fx_Completed_Date}&lt;/p&gt;
+						&lt;p&gt;Type of Request:&amp;nbsp;{!$Record.Type_of_Request__c}&lt;/p&gt;
+						&lt;p&gt;Product Category:&amp;nbsp;{!$Record.Prod_Categories__c}&lt;/p&gt;
+					&lt;/div&gt;
+					&lt;div class=&quot;column&quot;&gt;
+						&lt;p&gt;Segment:&amp;nbsp;{!$Record.Segment__c}&lt;/p&gt;
+						&lt;p&gt;Division:&amp;nbsp;{!$Record.Corrugated_Servicing_Division__r.Name}&lt;/p&gt;
+						&lt;p&gt;Account Name:&amp;nbsp;{!$Record.Account.Name}&lt;/p&gt;
+						&lt;p&gt;Opportunity Name:&amp;nbsp;{!$Record.Opportunity_del__r.Name}&lt;/p&gt;
+					&lt;/div&gt;
+				&lt;/div&gt;
+				&lt;p&gt;Thank you,&lt;br&gt;
+				Category Management and Sourcing&lt;/p&gt;
+					&lt;br&gt;
+						&lt;div class=&quot;button-container&quot;&gt;
+							&lt;a href=&quot;{!fx_SurveyLink}uid={!$Record.Primary_Sales_Rep_2__r.SF_userid__r.Id}&amp;amp;woid={!$Record.Id}&quot; class=&quot;button&quot;&gt;Begin Survey&lt;/a&gt;
+						&lt;/div&gt;
+						&lt;br&gt;
+				&lt;/div&gt;
+					&lt;/body&gt;
+				&lt;/html&gt;</text>
+    </textTemplates>
+    <textTemplates>
+        <name>tmp_Email_Body_TESTINGgeneric</name>
+        <isViewedAsPlainText>true</isViewedAsPlainText>
+        <text>&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+    &lt;meta charset=&quot;utf-8&quot;&gt;
+    &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;&gt;
+    &lt;title&gt;Sourcing Work Order Win/Loss Feedback Survey Email&lt;/title&gt;
+    &lt;!--[if gte mso 9]&gt;
+    &lt;xml&gt;
+        &lt;o:OfficeDocumentSettings&gt;
+            &lt;o:VMLDefaults v:ext=&quot;edit&quot; /&gt;
+        &lt;/o:OfficeDocumentSettings&gt;
+    &lt;/xml&gt;
+    &lt;![endif]--&gt;
+    &lt;style&gt;
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: #E9EAEC;
+            font-family: Avenir, sans-serif;
+            color: #000000;
+        }
+        
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+            background-color: #ffffff;
+            padding: 0 20px; /* Apply padding to create margins */
+            padding-top: 20px;
+            padding-bottom: 20px;
+        }
+        
+        .banner {
+            background-color: #007A33;
+            padding: 30px;
+            color: #ffffff;
+            text-align: center;
+        }
+        
+        .greeting {
+            font-size: 16px;
+            margin-top: 20px;
+            margin-bottom: 10px;
+        }
+ 
+         .body-text {
+            margin-bottom: 20px;
+        }
+
+        .content {
+            margin-top: 20px;
+            margin-bottom: 20px;
+        }
+        
+        .columns {
+            width: 100%;
+            display: table;
+            table-layout: fixed;
+        }
+        
+        .column {
+            display: table-cell;
+            vertical-align: top;
+            width: 48%;
+            padding-right: 10px;
+        }
+        
+        .row {
+            margin-bottom: 10px;
+        }
+
+        .row-merged {
+            display: flex;
+            flex-wrap: wrap;
+        }
+        
+        .row-merged .column {
+            width: 100%;
+            padding-right: 0;
+        }
+        
+        .closing {
+            margin-top: 20px;
+            margin-bottom: 10px;
+        }
+        
+        .button-container {
+            text-align: center;
+            margin-top: 20px;
+        }
+        
+        .button {
+            display: inline-block;
+            padding: 20px 20px;
+            background-color: #007A33;
+            color: #ffffff;
+            text-decoration: none;
+            border-radius: 8px;
+            line-height: 1;
+            vertical-align: middle;
+        }
+        
+        /* VML for rounded corners in Outlook */
+        .button-vml {
+            mso-element: &quot;v:roundrect&quot;;
+        }
+        
+        .single-column {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 10px;
+        }
+        
+        .single-column .row {
+            flex-grow: 1;
+            margin-right: 10px;
+        }
+        
+        .single-column .row:last-child {
+            margin-right: 0;
+        }
+    &lt;/style&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;table align=&quot;center&quot; width=&quot;100%&quot; cellpadding=&quot;0&quot; cellspacing=&quot;0&quot; border=&quot;0&quot;&gt;
+        &lt;tr&gt;
+            &lt;td&gt;
+                &lt;table class=&quot;container&quot; width=&quot;100%&quot; cellpadding=&quot;0&quot; cellspacing=&quot;0&quot; border=&quot;0&quot;&gt;
+                    &lt;tr&gt;
+                        &lt;td&gt;
+                            &lt;table class=&quot;banner&quot; width=&quot;100%&quot; cellpadding=&quot;0&quot; cellspacing=&quot;0&quot; border=&quot;0&quot;&gt;
+                                &lt;tr&gt;
+                                    &lt;td align=&quot;center&quot;&gt;
+                                        &lt;h3&gt;Sourcing Work Order Win/Loss Feedback Survey&lt;/h3&gt;
+                                    &lt;/td&gt;
+                                &lt;/tr&gt;
+                            &lt;/table&gt;
+
+                            &lt;div class=&quot;greeting&quot;&gt;
+                                Hi {!$Record.Primary_Sales_Rep_2__r.SF_userid__r.FirstName},
+                            &lt;/div&gt;
+
+                            &lt;div class=&quot;body-text&quot;&gt;
+                                We are requesting your valuable feedback for the recently completed sourcing work order recommendation. Your feedback will be utilized to improve our internal NPS and provide more robust support to our external and internal partners through enhanced product, market, and negotiation knowledge as well as and hold suppliers accountable. Please click the button below to begin a brief survey.
+                            &lt;/div&gt;
+
+                            &lt;div class=&quot;content&quot;&gt;
+                                &lt;table class=&quot;columns&quot; cellpadding=&quot;25&quot; cellspacing=&quot;0&quot; border=&quot;0&quot;&gt;
+                                    &lt;tr&gt;
+                                        &lt;td class=&quot;column&quot; valign=&quot;top&quot; width=&quot;48%&quot; style=&quot;padding-right: 10px;&quot;&gt;
+                                            &lt;div class=&quot;row&quot;&gt;Work Order #:&amp;nbsp;{!$Record.WorkOrderNumber}&lt;/div&gt;
+                                            &lt;div class=&quot;row&quot;&gt;Copmleted Date:&amp;nbsp;{!fx_Completed_Date}&lt;/div&gt;
+                                            &lt;div class=&quot;row&quot;&gt;Type of Request:&amp;nbsp;{!$Record.Type_of_Request__c}&lt;/div&gt;
+                                            &lt;div class=&quot;row&quot;&gt;Product Category:&amp;nbsp;{!$Record.Prod_Categories__c}&lt;/div&gt;
+                                        &lt;/td&gt;
+                                        &lt;td class=&quot;column&quot; valign=&quot;top&quot; width=&quot;48%&quot;&gt;
+                                            &lt;div class=&quot;row&quot;&gt;Segment:&amp;nbsp;{!$Record.Segment__c}&lt;/div&gt;
+                                            &lt;div class=&quot;row&quot;&gt;Division:&amp;nbsp;{!$Record.Corrugated_Servicing_Division__r.Name}&lt;/div&gt;
+                                            &lt;div class=&quot;row&quot;&gt;Account Name:&amp;nbsp;{!$Record.Account.Name}&lt;/div&gt;
+                                            &lt;div class=&quot;row&quot;&gt;Opportunity Name:&amp;nbsp;{!$Record.Opportunity_del__r.Name}&lt;/div&gt;
+                                        &lt;/td&gt;
+                                    &lt;/tr&gt;
+                                &lt;/table&gt;
+                            &lt;/div&gt;
+                            
+                            &lt;div class=&quot;closing&quot;&gt;
+                                Thank you,&lt;br&gt;
+								Category Management and Sourcing
+                            &lt;/div&gt;
+                            
+                            &lt;div class=&quot;button-container&quot;&gt;
+                                &lt;!--[if mso]&gt;
+                                &lt;v:roundrect xmlns:v=&quot;urn:schemas-microsoft-com:vml&quot; xmlns:w=&quot;urn:schemas-microsoft-com:office:word&quot; href=&quot;{!fx_SurveyLink}uid={!$Record.Primary_Sales_Rep_2__r.SF_userid__r.Id}&amp;amp;woid={!$Record.Id}&quot; class=&quot;button-vml&quot; style=&quot;v-text-anchor:middle;width:180px;height:40px;&quot;&gt;
+                                    &lt;v:fill type=&quot;solid&quot; color=&quot;#007A33&quot; /&gt;
+                                    &lt;w:anchorlock/&gt;
+                                    &lt;center&gt;
+                                &lt;![endif]--&gt;
+                                &lt;a href=&quot;{!fx_SurveyLink}uid={!$Record.Primary_Sales_Rep_2__r.SF_userid__r.Id}&amp;amp;woid={!$Record.Id}&quot; class=&quot;button&quot; style=&quot;color: #ffffff; text-decoration: none;&quot;&gt;
+                                    &lt;!--[if mso]&gt;
+                                    &lt;table role=&quot;presentation&quot; border=&quot;0&quot; cellpadding=&quot;0&quot; cellspacing=&quot;0&quot; style=&quot;display:inline-block;&quot;&gt;
+                                        &lt;tr&gt;
+                                            &lt;td&gt;
+                                    &lt;![endif]--&gt;
+                                    &lt;!--[if !mso]&gt;&lt;!-- --&gt;
+                                    &lt;span style=&quot;display:inline-block; mso-hide:all; line-height: normal;&quot;&gt;
+                                        Begin Survey
+                                    &lt;/span&gt;
+                                    &lt;!--&lt;![endif]--&gt;
+                                    &lt;!--[if mso]&gt;
+                                    &lt;table role=&quot;presentation&quot; border=&quot;0&quot; cellpadding=&quot;0&quot; cellspacing=&quot;0&quot; style=&quot;display:inline-block;&quot;&gt;
+                                        &lt;tr&gt;
+                                            &lt;td&gt;
+                                                Begin Survey
+                                            &lt;/td&gt;
+                                        &lt;/tr&gt;
+                                    &lt;/table&gt;
+                                    &lt;![endif]--&gt;
+                                    &lt;!--[if mso]&gt;
+                                            &lt;/td&gt;
+                                        &lt;/tr&gt;
+                                    &lt;/table&gt;
+                                    &lt;![endif]--&gt;
+                                &lt;/a&gt;
+                                &lt;!--[if mso]&gt;
+                                    &lt;/center&gt;
+                                &lt;/v:roundrect&gt;
+                                &lt;![endif]--&gt;
+                            &lt;/div&gt;
+                        &lt;/td&gt;
+                    &lt;/tr&gt;
+                &lt;/table&gt;
+            &lt;/td&gt;
+        &lt;/tr&gt;
+    &lt;/table&gt;
+&lt;/body&gt;
+&lt;/html&gt;</text>
+    </textTemplates>
+</Flow>

@@ -1,0 +1,108 @@
+<aura:component controller="callToCreditController" implements="force:lightningQuickActionWithoutHeader,force:hasRecordId,flexipage:availableForRecordHome" access="global">
+    <aura:attribute name="account" type="Account" default="{ 'sobjectType': 'Account' }" />
+    <aura:attribute name="isOpenModal" type="boolean" default="false"/>
+    <aura:handler name="init" value="{!this}" action="{!c.doInit}" />
+    <aura:attribute name="recordId" type="String" />
+    <aura:attribute name="lead" type="Object" />
+    <aura:attribute name="isOpen" type="boolean" default="false"/>
+    <aura:attribute name="isEmpty" type="boolean" default="false"/>
+    <aura:attribute name="hasActionForSetup" type="boolean" default="false"/>
+    <aura:handler event="c:callToCreditEvent" action="{!c.closeModal}"/>
+    <aura:handler event="aura:waiting" action="{!c.showSpinner}"/>
+    <aura:handler event="aura:doneWaiting" action="{!c.hideSpinner}"/>
+    
+    
+    
+    
+    <aura:renderIf isTrue="{!v.hasActionForSetup}">
+        <div class="exampleHolder">
+            <lightning:spinner aura:id="mySpinner" class="slds-hide"/>
+        </div>
+        <!-- Display a header with details about the account -->
+        <div class="slds-page-header" role="banner">
+            <p class="slds-text-heading_label">{!v.account.Name}</p>
+        </div>
+        
+        <div class="c-container">
+            <div class="c-container">
+                <br></br>
+                <aura:renderIf isTrue="{!v.isEmpty}">
+                    <lightning:button variant="Neutral"
+                                      label="{!$Label.c.Get_D_B_Data}"
+                                      title="{!$Label.c.Get_D_B_Data}"
+                                      onclick="{! c.openModel }" />
+                </aura:renderIf>
+            </div>
+            <lightning:recordEditForm aura:id="editForm" recordId="{!v.recordId}" objectApiName="Account">
+                <lightning:messages />
+                <!--<lightning:outputField aura:id="accId" required="true" fieldName="AccountId" />-->
+                <lightning:inputField aura:id="contactFirstName" required="true" fieldName="Credit_Contact_First_Name__c" />
+                <lightning:inputField aura:id="contactLastName" required="true" fieldName="Credit_Contact_Last_Name__c" />
+                <lightning:inputField aura:id="contactEmail" required="true" fieldName="Credit_Contact_Email__c" />
+                <lightning:inputField aura:id="prospectSegment" required="true" fieldName="Prospect_Segment__c" />
+                <lightning:inputField aura:id="servicingDivision" required="true" fieldName="Servicing_Division__c" />
+                <lightning:inputField aura:id="salesRep" required="true" fieldName="Sales_Rep_Code__c" />
+                <!-- <lightning:inputField aura:id="duns" required="true" fieldName="D_U_N_S__c" /> //SP 10192021 --> 
+                <lightning:inputField class="slds-hide"  required="true" aura:id="dunsHidden" fieldName="D_U_N_S__c" />
+                <lightning:inputField aura:id="EquipmentAcc" fieldName="Equipment_Account__c" />
+                <lightning:inputField aura:id="internalComments" fieldName="Internal_Comments_to_Credit__c" /> <!--//SP 10202021 --> 
+                <lightning:button class="slds-m-top_small" variant="Neutral" type="submit" name="update" label="Update" onclick="{!c.onSubmit}"/>
+            </lightning:recordEditForm>
+        </div>
+        
+        <aura:if isTrue="{!v.isOpen}">
+            
+            <!--###### MODAL BOX Start######--> 
+            
+            <section role="dialog" tabindex="-1" aria-labelledby="modal-heading-01" aria-modal="true" aria-describedby="modal-content-id-1" class="slds-modal slds-fade-in-open">
+                <div class="slds-modal__container" style="background-color: white; padding:0px; width: 600px; height: 800px; text-align: center; margin-left: auto;
+                                                          margin-right: auto; overflow: auto; margin-top: 50px;" >
+                    <!-- ###### MODAL BOX HEADER Start ######-->
+                    <header class="slds-modal__header">
+                        <lightning:buttonIcon iconName="utility:close"
+                                              onclick="{! c.closeModel }"
+                                              alternativeText="close"
+                                              variant="bare-inverse"
+                                              class="slds-modal__close"/>
+                        <h2 id="modal-heading-01" class="slds-text-heading_medium slds-hyphenate">{!$Label.c.Get_D_B_Data}</h2>
+                    </header>
+                    <!--###### MODAL BOX BODY Part Start######-->
+                    <div class="slds-modal__content slds-p-around_medium" id="modal-content-id-1">
+                        <c:SyncAccountWithDnBQuickAction
+                                                         recordId="{!v.recordId}" aura:id="getDB" isCalled="TRUE" isEmpty ="{!v.isEmpty}"></c:SyncAccountWithDnBQuickAction>
+                    </div>
+                    <!--###### MODAL BOX FOOTER Part Start ######-->
+                    <footer class="slds-modal__footer">
+                        <lightning:button variant="neutral" 
+                                          label="Cancel"
+                                          title="Cancel"
+                                          onclick="{! c.closeModel }"/>
+                    </footer>
+                </div>
+            </section>
+            <div class="slds-backdrop slds-backdrop_open"></div>
+            <!--###### MODAL BOX Part END Here ######-->
+            
+        </aura:if>
+        
+        <aura:if isTrue="{!v.showError}">
+            <!-- Show the message to ui -->
+            <div class="slds-notify slds-notify_toast slds-theme_error">
+                <span class="slds-assistive-text">ERROR</span>
+                <div class="slds-notify__content">
+                    <h5 class="slds-text-heading_small slds-align_absolute-center">Error</h5>
+                    <br/>
+                    <p class="slds-align_absolute-center">{!v.errorMessage}</p>                
+                </div>
+            </div>
+        </aura:if>
+        
+        <aura:set attribute="else">
+                <p>This account has already been processed, therefore cannot be resubmitted. If your customer needs a new copy of the email, please forward them the copy you received on the first submission. 
+                    If that email can't be located, please contact the credit department directly and they can generate a new email.
+                </p>
+        </aura:set>
+        
+    </aura:renderIf>
+    
+</aura:component>

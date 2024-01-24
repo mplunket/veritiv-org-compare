@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Last_Modified_Users__c</fullName>
+    <externalId>false</externalId>
+    <label>Last Modified Users</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackTrending>false</trackTrending>
+    <type>MultiselectPicklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Picklist (Multi-Select)</fullName>
+                <default>false</default>
+                <label>Picklist (Multi-Select)</label>
+            </value>
+            <value>
+                <fullName>alm_pm2__Last_Modified_Users__c</fullName>
+                <default>false</default>
+                <label>alm_pm2__Last_Modified_Users__c</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+    <visibleLines>4</visibleLines>
+</CustomField>

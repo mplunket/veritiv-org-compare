@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CompactLayout xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>CS_ROUTING_RECORD</fullName>
+    <fields>Name</fields>
+    <fields>ANI_Contact__c</fields>
+    <fields>Contact_Email_Address__c</fields>
+    <fields>Email_To_Address__c</fields>
+    <label>CS ROUTING RECORD</label>
+</CompactLayout>

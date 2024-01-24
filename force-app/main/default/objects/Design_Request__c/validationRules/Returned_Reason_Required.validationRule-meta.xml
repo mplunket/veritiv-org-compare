@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Returned_Reason_Required</fullName>
+    <active>true</active>
+    <description>Returned Reason Required when marking Status = Returned</description>
+    <errorConditionFormula>AND(
+ ISCHANGED(Status__c),
+ ISPICKVAL(Status__c, &quot;Returned&quot;),
+ ISBLANK( Returned_Reason__c )
+)</errorConditionFormula>
+    <errorDisplayField>Returned_Reason__c</errorDisplayField>
+    <errorMessage>Returned Reason is required to mark Status as Returned</errorMessage>
+</ValidationRule>

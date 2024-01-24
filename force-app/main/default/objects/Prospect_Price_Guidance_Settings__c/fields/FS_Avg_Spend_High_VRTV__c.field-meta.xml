@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>FS_Avg_Spend_High_VRTV__c</fullName>
+    <description>High range of the facilities spend</description>
+    <externalId>false</externalId>
+    <inlineHelpText>High range of the facilities spend</inlineHelpText>
+    <label>FS: Avg Spend - High - VRTV</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>2</scale>
+    <trackTrending>false</trackTrending>
+    <type>Currency</type>
+</CustomField>

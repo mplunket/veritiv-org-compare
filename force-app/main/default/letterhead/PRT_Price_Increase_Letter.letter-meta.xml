@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Letterhead xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <backgroundColor>#CCCCCC</backgroundColor>
+    <bodyColor>#FFFFFF</bodyColor>
+    <bottomLine>
+        <color>#ffffff</color>
+        <height>0</height>
+    </bottomLine>
+    <description>Print Price Increase Letterhead</description>
+    <footer>
+        <backgroundColor>#FFFFFF</backgroundColor>
+        <height>100</height>
+        <horizontalAlignment>Left</horizontalAlignment>
+        <logo>Marketing/PRT_Veritiv_print_email_footer.jpg</logo>
+        <verticalAlignment>Top</verticalAlignment>
+    </footer>
+    <header>
+        <backgroundColor>#FFFFFF</backgroundColor>
+        <height>100</height>
+        <horizontalAlignment>Left</horizontalAlignment>
+        <logo>Marketing/VRTV_Print_Email_Header.jpg</logo>
+        <verticalAlignment>Top</verticalAlignment>
+    </header>
+    <middleLine>
+        <color>#ffffff</color>
+        <height>0</height>
+    </middleLine>
+    <name>PRT Price Increase Letter</name>
+    <topLine>
+        <color>#ffffff</color>
+        <height>0</height>
+    </topLine>
+</Letterhead>

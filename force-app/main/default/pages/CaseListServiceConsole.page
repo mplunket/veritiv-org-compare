@@ -1,0 +1,59 @@
+<apex:page controller="CaseListServiceConsoleCtrl" showHeader="false" sidebar="false">
+  <apex:includeScript value="/support/console/22.0/integration.js"/>
+  <apex:includescript value="{!$Resource.jquery1_8_2}" />
+  <apex:includescript value="{!$Resource.BlockUI}"/>
+  
+  <apex:stylesheet value="{!URLFOR($Resource.CaseListServiceConsoleStyles , 'CaseListServiceConsole.css')}"/> 
+  
+  <script>
+  	jQuery.noConflict();
+  	
+  	function block()
+  	{
+  		jQuery.blockUI({ css: { 
+            border: 'none', width: '170px', marginLeft: '-50px', padding: '0 15px 0 10px'}, message: '<div class="loadingBox"><span class="loadingText">Loading...</span></div>' });
+  	}
+  	
+  	function unblock()
+  	{
+  		jQuery.unblockUI();
+  	}
+  	
+  </script>
+  <apex:form id="pageForm">
+	   <div id="background">	
+	       <apex:selectList value="{!CaseFilter}" size="1" id="filterMenu">
+	
+	            <apex:selectOptions value="{!CaseExistingViews}"></apex:selectOptions>  
+	
+	            <apex:actionSupport event="onchange"  action="{!resetFilter}" rerender="mainBlock" status="ajaxStatus"/>
+	
+	       </apex:selectList>
+	
+		   <apex:actionPoller action="{!resetFilter}" reRender="mainBlock"  status="ajaxStatus" interval="120"/>
+			
+	       <apex:actionStatus id="ajaxStatus" onstart="block();" onstop="unblock();">
+	       </apex:actionStatus>
+	
+	 
+	        <apex:pageBlock title="Cases" id="mainBlock">
+	            <apex:pageBlockButtons >
+	
+	                <apex:commandButton action="{!CaseSetController.first}" value="|<<" styleClass="disableWhenLoading" reRender="mainBlock,CaseTable"  status="ajaxStatus" rendered="{!CaseSetController.hasPrevious}"/>
+	
+	                <apex:commandButton action="{!CaseSetController.previous}" value="Previous" styleClass="disableWhenLoading" reRender="mainBlock,CaseTable"  status="ajaxStatus" rendered="{!CaseSetController.hasPrevious}"/>
+	
+	                <apex:commandButton action="{!CaseSetController.next}" value="Next" styleClass="disableWhenLoading" reRender="mainBlock,CaseTable"  status="ajaxStatus" rendered="{!CaseSetController.hasNext}"/>
+		
+	            </apex:pageBlockButtons>
+	
+	
+				<c:CaseDisplay id="CaseTable" cases="{!Cases}" rendered="{!areThereCases}"/> 
+				<apex:outputPanel rendered="{!NOT(areThereCases)}">
+					There are no matching cases.
+				</apex:outputPanel> 
+	      </apex:pageBlock>
+      </div>
+   </apex:form>
+   
+</apex:page>

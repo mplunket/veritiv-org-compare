@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>GTM_Details__c</fullName>
+    <externalId>false</externalId>
+    <formula>&quot;Curr | Rec | Excep:   &quot; &amp;
+
+	
+IF(
+	Maintain_GTM_Condition_1__c,
+	
+	TEXT(ROUND(Contract_Line_Item__r.ORIG_GTM_BULKEDIT__c*100,2)) + &apos; | &apos; + TEXT(ROUND(Contract_Line_Item__r.PreviousValue__c*100,2)) + &apos; | &apos; + TEXT(ROUND(Contract_Line_Item__r.GTM__c*100,2))
+	,
+IF(
+	AND (
+	OR(Contract_Line_Item__r.zpl__PolicyType__r.Name == &apos;Maintain GTM&apos;, Contract_Line_Item__r.zpl__PolicyType__r.Name == &apos;List Down&apos;) ,
+	AND(NOT(ISBLANK(Contract_Line_Item__r.PricingCost__c)), Contract_Line_Item__r.PricingCost__c &gt; 0),
+	NOT(ISBLANK(Contract_Line_Item__r.CampaignActionReference__c))
+	),
+	
+		
+	TEXT(ROUND(Contract_Line_Item__r.aiq_Previous_GTM__c*100,2)) + &apos; | &apos; + TEXT(ROUND(Contract_Line_Item__r.GTM__c *100,2)) + &apos; | &apos; + TEXT(ROUND(Contract_Line_Item__r.aiq_GTM__c*100,2))
+	,
+IF(
+	AND (
+	OR(Contract_Line_Item__r.zpl__PolicyType__r.Name == &apos;Fixed Price&apos;, Contract_Line_Item__r.zpl__PolicyType__r.Name == &apos;CWT Fixed&apos;) ,
+	ISBLANK(Contract_Line_Item__r.CampaignActionReference__c)
+	),
+	
+	TEXT(ROUND(Contract_Line_Item__r.aiq_Previous_GTM__c*100,2)) + &apos; | &apos; + &apos;0&apos; + &apos; | &apos; + TEXT(ROUND(Contract_Line_Item__r.aiq_GTM__c*100,2))
+	,
+	IF(
+	AND (
+	OR(Contract_Line_Item__r.zpl__PolicyType__r.Name == &apos;Fixed Price&apos;, Contract_Line_Item__r.zpl__PolicyType__r.Name == &apos;CWT Fixed&apos;) ,
+	NOT(ISBLANK(Contract_Line_Item__r.CampaignActionReference__c))
+	),
+	
+	TEXT(ROUND(Contract_Line_Item__r.ORIG_GTM_BULKEDIT__c*100,2)) + &apos; | &apos; + TEXT(ROUND(Contract_Line_Item__r.aiq_Previous_GTM__c*100,2)) + &apos; | &apos; + TEXT(ROUND(Contract_Line_Item__r.aiq_GTM__c*100,2))
+	,
+	
+&apos;0&apos;
+	
+	)
+	
+	)
+	
+	
+	
+	
+	
+
+)
+
+
+)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>GTM%</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

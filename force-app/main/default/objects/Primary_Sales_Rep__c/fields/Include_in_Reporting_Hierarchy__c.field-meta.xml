@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Include_in_Reporting_Hierarchy__c</fullName>
+    <defaultValue>false</defaultValue>
+    <description>Indicates whether a Primary Sales Rep should be included in the reporting hierarchy for Budget Allocations and Direct Report rollup- this is only necessary if they are not attached to a User record and have their User Profile field populated.</description>
+    <externalId>false</externalId>
+    <label>Include in Reporting Hierarchy</label>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>true</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

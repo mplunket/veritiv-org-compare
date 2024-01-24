@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Order_Request_Submitted_Pklst__c</fullName>
+    <externalId>false</externalId>
+    <label>Order Processed?</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <controllingField>Quote_Stage__c</controllingField>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Being submitted again</fullName>
+                <default>false</default>
+                <label>Being submitted again</label>
+            </value>
+        </valueSetDefinition>
+        <valueSettings>
+            <controllingFieldValue>Won</controllingFieldValue>
+            <valueName>Being submitted again</valueName>
+        </valueSettings>
+    </valueSet>
+</CustomField>

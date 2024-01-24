@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>If_Won_By_Unisource_Complete_Other_Data</fullName>
+    <active>true</active>
+    <errorConditionFormula>AND(Won_by_Unisource__c,
+
+OR(
+ISBLANK(Text(Shipping_Type__c)),
+ISBLANK(Text( Terms__c)),
+ISBLANK( GTM__c)
+)
+)</errorConditionFormula>
+    <errorMessage>For Unisource wins, please complete the Shipping Type, Terms, and GTM %.</errorMessage>
+</ValidationRule>

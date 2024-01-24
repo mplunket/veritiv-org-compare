@@ -1,0 +1,159 @@
+<apex:page id="pgNewQuote" name="NewQuote" title="New Quote" standardController="Quote__c" extensions="ViewNewQuoteQuoteContExt">
+   <style type="text/css">
+   .commentInput {
+            width:100%;
+            height: 3.6em;
+    }
+    .subjectInput {
+            width:100%;
+            height: 1.2em;
+     }
+    </style>
+    
+    <script type="text/javascript" src="//code.jquery.com/jquery-2.1.4.min.js"></script>
+    
+    <script type="text/javascript"> 
+	    
+	    function clearLostReasonDependentFieldJSCaller(){
+    	    if ($('[id$="lostReasonFieldValue"]')[0].disabled === true){
+                clearLostReasonDependentFieldJS();
+    	    }
+	    }
+	    
+	</script>
+	
+ <apex:sectionHeader id="shAQuotes" title="Quote" subtitle="{!quote.Name}"/>
+    <apex:pageMessages id="pmNewQuote" />
+    
+    <apex:form id="frmMain">
+    
+        <apex:actionFunction name="clearLostReasonDependentFieldJS" action="{!clearLostReasonDependentField}" rerender="pmNewQuote" immediate="true"></apex:actionFunction>
+        
+        <span id="quoteId" style="display:none">{!quote.Id}</span>
+        <span style="display:none">{!quote.createdDate}</span>
+
+        <!-- Begin Quote Header -->
+        <apex:pageBlock id="quoteHeader" title="Quote Detail" mode="maindetail">
+            <apex:pageBlockSection columns="2">
+                <apex:inputfield value="{!quote.Account__c}"  required="true"/>
+                <apex:Outputfield value="{!quote.OwnerID}" />
+
+                <apex:inputfield value="{!quote.Customer_Contact__c}" />
+                <apex:outputfield value="{!quote.Bill_To_Number__c}" />
+
+                <apex:inputfield value="{!quote.Shipment_Method__c}" />
+                <apex:outputfield value="{!quote.Service_Level__c}" />
+
+                <apex:outputField value="{!quote.Ship_To_Number__c}"/>
+                <apex:outputField value="{!quote.Servicing_Division_Name__c}" />
+
+                <apex:outputfield value="{!quote.Ship_To_Address__c}" />
+                <apex:inputfield value="{!quote.Servicing_Division__c}" />
+
+                <apex:inputfield value="{!quote.End_User__c}" />
+                <apex:inputfield value="{!quote.Primary_Sales_Rep__c}" />
+
+                <apex:inputfield value="{!quote.PO_Number__c}"/>
+                <apex:inputfield value="{!quote.iRep__c}" />
+
+                <!-- <apex:outputfield value="{!quote.PO_Reqd__c}" /> -->
+                <apex:outputlabel ></apex:outputlabel>
+                <apex:inputfield value="{!quote.Opportunity__c}" />
+
+                <apex:inputfield value="{!quote.Print_Quote_Totals__c}" />
+                <apex:inputfield value="{!quote.Promotion__c}"/>
+
+                <apex:inputfield value="{!quote.Date_Quoted__c}" />
+                <apex:inputfield value="{!quote.TSB_Segment__c}" />
+
+                <apex:inputfield value="{!quote.Expiration_Date__c}" />
+                
+                
+                
+                <!--
+                <apex:inputfield value="{!quote.Quote_Stage__c}" />
+                <apex:inputfield value="{!quote.Requested_Delivery_Date__c}" />
+                <apex:inputfield value="{!quote.Lost_Reason__c}"/>-->
+                
+                <apex:pageBlockSectionItem >
+				    <apex:outputLabel value="{!$ObjectType.Quote__c.Fields.Quote_Stage__c.Label}" />
+				    <apex:actionRegion >
+    				    <apex:inputfield value="{!quote.Quote_Stage__c}">
+        				    <apex:actionSupport event="onchange" rerender="salesOrderField, salesOrderFieldLabel, lostReasonField, lostReasonLabel, pmNewQuote" oncomplete="clearLostReasonDependentFieldJSCaller();" />
+        				</apex:inputField>
+				    </apex:actionRegion>
+				    
+				</apex:pageBlockSectionItem>
+				
+				<apex:inputfield value="{!Quote__c.Requested_Delivery_Date__c}" />
+				
+    			<apex:pageBlockSectionItem >
+    			    
+    			    <apex:outputPanel id="salesOrderFieldLabel">
+    			        <apex:outputLabel value="{!$ObjectType.Quote__c.Fields.Sales_Order_Number__c.Label}" rendered="{!renderSalesOrderNumberField}"  />
+    			    </apex:outputPanel>
+    			    <apex:outputPanel id="salesOrderField">
+    				    <apex:actionRegion >
+    				        <apex:inputfield value="{!quote.Sales_Order_Number__c}" rendered="{!renderSalesOrderNumberField}" /> 
+    				    </apex:actionRegion>
+				    </apex:outputPanel>
+    			
+    			</apex:pageBlockSectionItem>
+                
+                
+                <apex:outputlabel ></apex:outputlabel>
+                
+                
+				
+				<apex:pageBlockSectionItem >
+				    <apex:outputLabel value="{!$ObjectType.Quote__c.Fields.Lost_Reason__c.Label}" />
+				    <apex:actionRegion >
+    				    <apex:inputfield value="{!quote.Lost_Reason__c}" required="true" id="lostReasonFieldValue" >
+        				    <apex:actionSupport event="onchange" rerender="salesOrderField, salesOrderFieldLabel, lostReasonField, lostReasonLabel"/>
+        				</apex:inputField>
+				    </apex:actionRegion>
+				    
+				</apex:pageBlockSectionItem>
+
+
+
+
+
+
+
+                <apex:outputField value="{!quote.Number_of_Orders_Submitted__c}" />
+                
+                <apex:pageBlockSectionItem >
+    			    
+    			    <apex:outputPanel id="lostReasonLabel">
+    			        <apex:outputLabel value="{!$ObjectType.Quote__c.Fields.Lost_Reason_Comments__c.Label}" rendered="{!renderLostReasonCommentsField}"  />
+    			    </apex:outputPanel>
+    			    <apex:outputPanel id="lostReasonField">
+    				    <apex:actionRegion >
+    				        <apex:inputfield value="{!Quote__c.Lost_Reason_Comments__c}" required="{!renderLostReasonCommentsField}" rendered="{!renderLostReasonCommentsField}" /> 
+    				    </apex:actionRegion>
+				    </apex:outputPanel>
+    			
+    			</apex:pageBlockSectionItem>
+
+                <apex:outputfield value="{!quote.Last_Submitted_Timestamp__c}"/>
+                <apex:outputfield value="{!quote.Primary_Merchandising_Segment__c}"/>
+             </apex:pageBlockSection>
+
+             <apex:pageBlockSection columns="1">
+                <apex:inputField styleClass="subjectInput" value="{!quote.Subject__c}" />
+                <apex:inputField styleClass="commentInput" value="{!quote.Comments__c}" />
+                <apex:inputField styleClass="commentInput" value="{!quote.Vendor_Comments__c}" />
+                <apex:inputField styleClass="commentInput" value="{!quote.Internal_Comments__c}" />
+             </apex:pageBlockSection>
+
+            <apex:pageBlockButtons >
+                <apex:commandButton value="Save" title="Save" action="{!doSave}"/>
+                <apex:commandButton value="Save & New" title="Save & New" action="{!doSaveNew}"/>
+                <apex:commandButton value="Cancel" title="Cancel" action="{!doCancel}" immediate="true"/>
+            </apex:pageBlockButtons>
+        </apex:pageBlock>
+       <!-- End Quote Header -->
+  <!-- End Default Content REMOVE THIS -->
+  </apex:form>
+</apex:page>

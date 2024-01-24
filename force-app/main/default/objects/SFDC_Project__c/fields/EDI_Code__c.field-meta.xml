@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>EDI_Code__c</fullName>
+    <externalId>false</externalId>
+    <label>EDI Code</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>MultiselectPicklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>810: Invoice</fullName>
+                <default>false</default>
+                <label>810: Invoice</label>
+            </value>
+            <value>
+                <fullName>812: Credit/Debit Adjustment</fullName>
+                <default>false</default>
+                <label>812: Credit/Debit Adjustment</label>
+            </value>
+            <value>
+                <fullName>816: Organizational Relationships</fullName>
+                <default>false</default>
+                <label>816: Organizational Relationships</label>
+            </value>
+            <value>
+                <fullName>820: Remittance Advice</fullName>
+                <default>false</default>
+                <label>820: Remittance Advice</label>
+            </value>
+            <value>
+                <fullName>821: Financial Information Reporting</fullName>
+                <default>false</default>
+                <label>821: Financial Information Reporting</label>
+            </value>
+            <value>
+                <fullName>824: Application Advice</fullName>
+                <default>false</default>
+                <label>824: Application Advice</label>
+            </value>
+            <value>
+                <fullName>828: Debit Authorization</fullName>
+                <default>false</default>
+                <label>828: Debit Authorization</label>
+            </value>
+            <value>
+                <fullName>830: Planning Schedule with Release Capability</fullName>
+                <default>false</default>
+                <label>830: Planning Schedule with Release Capability</label>
+            </value>
+            <value>
+                <fullName>832: Price/Sales Catalog</fullName>
+                <default>false</default>
+                <label>832: Price/Sales Catalog</label>
+            </value>
+            <value>
+                <fullName>843: Response to Request for Quotation</fullName>
+                <default>false</default>
+                <label>843: Response to Request for Quotation</label>
+            </value>
+            <value>
+                <fullName>850: Purchase Order</fullName>
+                <default>false</default>
+                <label>850: Purchase Order</label>
+            </value>
+            <value>
+                <fullName>852: Product Activity Data</fullName>
+                <default>false</default>
+                <label>852: Product Activity Data</label>
+            </value>
+            <value>
+                <fullName>855: Order Acknowledgement</fullName>
+                <default>false</default>
+                <label>855: Order Acknowledgement</label>
+            </value>
+            <value>
+                <fullName>856: Advanced Shipping Notification</fullName>
+                <default>false</default>
+                <label>856: Advanced Shipping Notification</label>
+            </value>
+            <value>
+                <fullName>858: Shipment Information</fullName>
+                <default>false</default>
+                <label>858: Shipment Information</label>
+            </value>
+            <value>
+                <fullName>860: Purchase Order Change</fullName>
+                <default>false</default>
+                <label>860: Purchase Order Change</label>
+            </value>
+            <value>
+                <fullName>861: Receiving Advice/Acceptance Certificate</fullName>
+                <default>false</default>
+                <label>861: Receiving Advice/Acceptance Certificate</label>
+            </value>
+            <value>
+                <fullName>862: Shipping Schedule</fullName>
+                <default>false</default>
+                <label>862: Shipping Schedule</label>
+            </value>
+            <value>
+                <fullName>864: Text Message</fullName>
+                <default>false</default>
+                <label>864: Text Message</label>
+            </value>
+            <value>
+                <fullName>875: Grocery Purchase Order</fullName>
+                <default>false</default>
+                <label>875: Grocery Purchase Order</label>
+            </value>
+            <value>
+                <fullName>880: Grocery Invoice</fullName>
+                <default>false</default>
+                <label>880: Grocery Invoice</label>
+            </value>
+            <value>
+                <fullName>940: Warehouse Shipping Order</fullName>
+                <default>false</default>
+                <label>940: Warehouse Shipping Order</label>
+            </value>
+            <value>
+                <fullName>943: Warehouse Stock Transfer Shipment Advice</fullName>
+                <default>false</default>
+                <label>943: Warehouse Stock Transfer Shipment Advice</label>
+            </value>
+            <value>
+                <fullName>944: Warehouse Stock Transfer Receipt Advice</fullName>
+                <default>false</default>
+                <label>944: Warehouse Stock Transfer Receipt Advice</label>
+            </value>
+            <value>
+                <fullName>945: Warehouse Shipping Advice</fullName>
+                <default>false</default>
+                <label>945: Warehouse Shipping Advice</label>
+            </value>
+            <value>
+                <fullName>997: Functional Acknowledgement</fullName>
+                <default>false</default>
+                <label>997: Functional Acknowledgement</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+    <visibleLines>10</visibleLines>
+</CustomField>

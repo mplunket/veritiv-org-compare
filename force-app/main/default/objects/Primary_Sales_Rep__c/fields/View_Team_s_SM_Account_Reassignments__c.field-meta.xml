@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>View_Team_s_SM_Account_Reassignments__c</fullName>
+    <externalId>false</externalId>
+    <formula>HYPERLINK( 
+
+/* If they&apos;re in Lightning */ 
+IF($User.UIThemeDisplayed=&quot;Theme4d&quot;, 
+
+/* Use Lightning syntax, optimized to avoid full page reload */ 
+&quot;#/sObject/00O39000005S3giEAC/view?fv1=&quot;, 
+
+/* Otherwise use Classic syntax */ 
+&quot;/00O39000005S3gi?pv1=&quot;) 
+
+/* Append the SM email */ 
+&amp;  email_dir__c  , 
+
+/* Specify the link text */ 
+&quot;View Team&apos;s (SM) Account Reassignments&quot;, 
+
+/* Keep it in the same browser tab to avoid full page reload */ 
+&quot;_self&quot; 
+)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>View Team&apos;s (SM) Account Reassignments</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

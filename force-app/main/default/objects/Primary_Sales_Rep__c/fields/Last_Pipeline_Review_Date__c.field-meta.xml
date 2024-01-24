@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Last_Pipeline_Review_Date__c</fullName>
+    <description>This field will get updated by a process builder to track the last pipeline review the PSR has.  We&apos;ll use it as a filter on the SMs Dashboard, so they can see who hasn&apos;t had one in the last 45 days</description>
+    <externalId>false</externalId>
+    <label>Last Pipeline Review Date</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Date</type>
+</CustomField>

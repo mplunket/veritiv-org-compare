@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>prior_period_commish_GTM__c</fullName>
+    <description>sum(fsa.commissionable_gtm)
+the prior period&apos;s information, for example if the week was 2007 week 42 the prior period would be 2006 week 42</description>
+    <externalId>false</externalId>
+    <label>Prior Period CGM</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>0</scale>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Currency</type>
+</CustomField>

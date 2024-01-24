@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Queue xmlns="http://soap.sforce.com/2006/04/metadata">
+    <doesSendEmailToMembers>false</doesSendEmailToMembers>
+    <name>Field Sourcing Print</name>
+    <queueMembers>
+        <roles>
+            <role>CAN_CS_Central_Corp_Accts_Manager</role>
+        </roles>
+    </queueMembers>
+    <queueSobject>
+        <sobjectType>Quote__c</sobjectType>
+    </queueSobject>
+</Queue>

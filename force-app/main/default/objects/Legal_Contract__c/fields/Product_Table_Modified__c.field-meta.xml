@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Product_Table_Modified__c</fullName>
+    <defaultValue>false</defaultValue>
+    <description>If the product table on a CDI is modified in CLM, they will send a True value to Salesforce.</description>
+    <externalId>false</externalId>
+    <label>Product Table Modified</label>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

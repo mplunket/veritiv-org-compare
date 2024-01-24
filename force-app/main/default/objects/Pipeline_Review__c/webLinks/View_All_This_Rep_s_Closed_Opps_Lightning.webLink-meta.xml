@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<WebLink xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>View_All_This_Rep_s_Closed_Opps_Lightning</fullName>
+    <availability>online</availability>
+    <description>View All This Rep&apos;s Closed Opps for Lightning</description>
+    <displayType>button</displayType>
+    <encodingKey>UTF-8</encodingKey>
+    <height>600</height>
+    <linkType>url</linkType>
+    <masterLabel>See Rep&apos;s Closed Won Opps</masterLabel>
+    <openType>sidebar</openType>
+    <protected>false</protected>
+    <url>https://veritiv.lightning.force.com/lightning/r/Report/00O700000020V8BEAU/view?fv0={!Pipeline_Review__c.Reporting_PSR_First_Name__c}{!Pipeline_Review__c.Reporting_PSR_Last_Name__c}&amp;fv1={!Pipeline_Review__c.Reporting_PSR_First_Name__c}{!Pipeline_Review__c.Reporting_PSR_Last_Name__c}&amp;fv2={!Pipeline_Review__c.Reporting_PSR_First_Name__c}{!Pipeline_Review__c.Reporting_PSR_Last_Name__c}</url>
+</WebLink>

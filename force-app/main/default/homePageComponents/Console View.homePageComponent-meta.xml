@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<HomePageComponent xmlns="http://soap.sforce.com/2006/04/metadata">
+    <body>&lt;div style=&quot;margin-left: 160px;&quot;&gt;&lt;span style=&quot;font-size: 16px;&quot;&gt;&lt;b&gt;&lt;a href=&quot;/_ui/core/chatter/groups/GroupProfilePage?g=0F9700000004DUl&quot; target=&quot;_blank&quot;&gt;&lt;span style=&quot;color: #0000ff;&quot;&gt;Customer Service Chatter Group&lt;/span&gt;&lt;/a&gt;&lt;/b&gt;&lt;span style=&quot;color: #0000ff;&quot;&gt;&lt;b&gt; &lt;/b&gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt; &lt;/div&gt;
+
+&lt;div style=&quot;margin-left: 80px;&quot;&gt;&lt;span style=&quot;font-size: 14px;&quot;&gt;&lt;span style=&quot;color: #ff8c00;&quot;&gt;&lt;b&gt;Contact the Veritiv Service Desk for Salesforce.com Support   800-868-6250 &lt;/b&gt;&lt;/span&gt;&lt;/span&gt;&lt;/div&gt;
+
+&lt;div style=&quot;margin-left: 120px;&quot;&gt;&lt;b&gt;&lt;span style=&quot;font-size: 14px;&quot;&gt;&lt;span style=&quot;color: #ff8c00;&quot;&gt;  or email &lt;/span&gt;&lt;a href=&quot;mailto:vgsd@veritivcorp.com?subject=Salesforce.com&amp;amp;body=I%20am%20working%20on%20Accounts%2C%20Cases%2C%20Contacts%2C%20Quotes%20or%20_____%0A%0AThe%20Account%20(Case%2C%20Contact%2C%20Quote)%20number%20is%3A&quot;&gt;&lt;span style=&quot;color: #ff8c00;&quot;&gt;vgsd@veritivcorp.com&lt;/span&gt;&lt;/a&gt;&lt;/span&gt;&lt;span style=&quot;color: #ff8c00;&quot;&gt;&lt;span style=&quot;font-size: 14px;&quot;&gt; (Click on the email address)&lt;/span&gt; &lt;/span&gt;&lt;/b&gt;&lt;br&gt; &lt;/div&gt;
+
+&lt;table align=&quot;left&quot; border=&quot;1&quot; cellpadding=&quot;1&quot; cellspacing=&quot;1&quot;&gt;&lt;thead&gt;&lt;tr&gt;&lt;th colspan=&quot;1&quot; rowspan=&quot;1&quot;&gt;
+			&lt;div&gt;&lt;span style=&quot;font-size: 14px;&quot;&gt;&lt;span style=&quot;color: #00ff00;&quot;&gt;&lt;span style=&quot;background-color: #000000;&quot;&gt;Veritiv Reports and Links&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/div&gt;
+			&lt;/th&gt;&lt;th colspan=&quot;1&quot; rowspan=&quot;1&quot;&gt;&lt;span style=&quot;color: #00ff00;&quot;&gt;&lt;span style=&quot;background-color: #000000; font-size: 14px;&quot;&gt;CS Information&lt;/span&gt;&lt;/span&gt;&lt;/th&gt;&lt;th colspan=&quot;1&quot; rowspan=&quot;1&quot;&gt;
+			&lt;div&gt;&lt;span style=&quot;font-size: 14px;&quot;&gt;&lt;span style=&quot;color: #00ff00;&quot;&gt;&lt;span style=&quot;background-color: #000000;&quot;&gt;Links for VOS Customers&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/div&gt;
+			&lt;/th&gt;&lt;/tr&gt;&lt;/thead&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td colspan=&quot;1&quot; rowspan=&quot;1&quot; style=&quot;text-align: center;&quot;&gt;
+			&lt;div&gt;&lt;a href=&quot;https://na33.salesforce.com/sfc/p/7000000091qn/a/39000000Px99/2ji7Dfibx7pZvQke.hopJl36JgjN.Y431nR6rNq5hAM&quot; target=&quot;_blank&quot;&gt;&lt;span style=&quot;color: #339966;&quot;&gt;Customer Request Information Guide&lt;/span&gt;&lt;/a&gt;&lt;/div&gt;
+			&lt;/td&gt;&lt;td colspan=&quot;1&quot; rowspan=&quot;1&quot; style=&quot;text-align: center;&quot;&gt;&lt;a href=&quot;https://veritiv.my.salesforce.com/sfc/p/7000000091qn/a/f2000000PgNA/RlXPsIsSl9gY8zqb0MGd2vegQ861rQeqR.nRZiYdk6s&quot;&gt;&lt;span style=&quot;color: #339966;&quot;&gt;Customer Service Contacts for Print Field Sourcing &lt;/span&gt;&lt;/a&gt;&lt;/td&gt;&lt;td colspan=&quot;1&quot; rowspan=&quot;1&quot; style=&quot;text-align: center;&quot;&gt;
+			&lt;div&gt;&lt;a href=&quot;http://uwpatlscrpt01.int.distco.com/Reports/Pages/Report.aspx?ItemPath=/ERS+Reporting/ERS+Portal/SalesRepBackorderReport&quot; target=&quot;_blank&quot;&gt;&lt;span style=&quot;color: #339966;&quot;&gt;Back Order Report&lt;/span&gt;&lt;/a&gt;&lt;/div&gt;
+			&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan=&quot;1&quot; rowspan=&quot;1&quot; style=&quot;text-align: center;&quot;&gt;
+			&lt;div&gt;&lt;a href=&quot;http://uwpatlscrpt01.int.distco.com/Reports/Pages/Report.aspx?ItemPath=/ERS+Reporting/ERS+Portal/ERS+Buyer+Listing&quot; target=&quot;_blank&quot;&gt;&lt;span style=&quot;color: #339966;&quot;&gt;ERS Buyer Listing&lt;/span&gt;&lt;/a&gt;&lt;/div&gt;
+			&lt;/td&gt;&lt;td colspan=&quot;1&quot; rowspan=&quot;1&quot; style=&quot;text-align: center;&quot;&gt; &lt;/td&gt;&lt;td colspan=&quot;1&quot; rowspan=&quot;1&quot; style=&quot;text-align: center;&quot;&gt;
+			&lt;div&gt;&lt;a href=&quot;http://myteamsites.veritiv.net/ProcessNewItemRequest/SitePages/Home.aspx&quot; target=&quot;_blank&quot;&gt;&lt;span style=&quot;color: #339966;&quot;&gt;NIR - New Item Request&lt;/span&gt;&lt;/a&gt;&lt;/div&gt;
+			&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan=&quot;1&quot; rowspan=&quot;1&quot; style=&quot;text-align: center;&quot;&gt;
+			&lt;div&gt;&lt;a href=&quot;http://uwpatlscrpt01.int.distco.com/Reports/Pages/Report.aspx?ItemPath=/ERS+Reporting/ERS+Portal/ERS+Daily+Purchase+Orders&quot; target=&quot;_blank&quot;&gt;&lt;span style=&quot;color: #339966;&quot;&gt;ERS Daily Purchase Orders&lt;/span&gt;&lt;/a&gt;&lt;/div&gt;
+			&lt;/td&gt;&lt;td colspan=&quot;1&quot; rowspan=&quot;1&quot; style=&quot;text-align: center;&quot;&gt; &lt;/td&gt;&lt;td colspan=&quot;1&quot; rowspan=&quot;1&quot; style=&quot;text-align: center;&quot;&gt;
+			&lt;div&gt;&lt;a href=&quot;http://myteamsites.veritiv.net/ProcessNewItemRequest/Shared%20Documents/NIR%20General%20Training%20v3%20%203-7-2016.pdf&quot; target=&quot;_blank&quot;&gt;&lt;span style=&quot;color: #339966;&quot;&gt;NIR - Training&lt;/span&gt;&lt;/a&gt;&lt;/div&gt;
+			&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan=&quot;1&quot; rowspan=&quot;1&quot; style=&quot;text-align: center;&quot;&gt;
+			&lt;div&gt;&lt;a href=&quot;http://patlers01.int.distco.com/ERSPortal/ProductDetails.aspx&quot; target=&quot;_blank&quot;&gt;&lt;span style=&quot;color: #339966;&quot;&gt;ERS Portal&lt;/span&gt;&lt;/a&gt;&lt;/div&gt;
+			&lt;/td&gt;&lt;td colspan=&quot;1&quot; rowspan=&quot;1&quot; style=&quot;text-align: center;&quot;&gt; &lt;/td&gt;&lt;td colspan=&quot;1&quot; rowspan=&quot;1&quot; style=&quot;text-align: center;&quot;&gt;
+			&lt;div&gt;&lt;a href=&quot;http://patlrnric01.int.distco.com/RIC/&quot; target=&quot;_blank&quot;&gt;&lt;span style=&quot;color: #339966;&quot;&gt;Roadnet&lt;/span&gt;&lt;/a&gt;&lt;/div&gt;
+			&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan=&quot;1&quot; rowspan=&quot;1&quot; style=&quot;text-align: center;&quot;&gt;
+			&lt;div&gt;&lt;a href=&quot;http://uwpatlscrpt01.int.distco.com/Reports/Pages/Report.aspx?ItemPath=/ERS+Reporting/ERS+Portal/ERS+Vendor+Hub_Spoke+Order+Strategy&quot; target=&quot;_blank&quot;&gt;&lt;span style=&quot;color: #339966;&quot;&gt;ERS Vendor Hub Spoke Order Strategy&lt;/span&gt;&lt;/a&gt;&lt;/div&gt;
+			&lt;/td&gt;&lt;td colspan=&quot;1&quot; rowspan=&quot;1&quot; style=&quot;text-align: center;&quot;&gt;
+			&lt;div&gt; &lt;/div&gt;
+			&lt;/td&gt;&lt;td colspan=&quot;1&quot; rowspan=&quot;1&quot; style=&quot;text-align: center;&quot;&gt;
+			&lt;div&gt;&lt;a href=&quot;http://uwpatlscrpt01.int.distco.com/Reports/Pages/Report.aspx?ItemPath=/ERS+Reporting/ERS+Portal/VOS+Common+Product+Code+Report&quot;&gt;&lt;span style=&quot;color: #339966;&quot;&gt;VOS Common Product Code Report&lt;/span&gt;&lt;/a&gt;&lt;/div&gt;
+			&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan=&quot;1&quot; rowspan=&quot;1&quot; style=&quot;text-align: center;&quot;&gt;
+			&lt;div&gt;&lt;a href=&quot;http://myportal.veritiv.net/en-us/Pages/Home.aspx&quot; target=&quot;_blank&quot;&gt;&lt;span style=&quot;color: #339966;&quot;&gt;Intranet&lt;/span&gt;&lt;/a&gt;&lt;/div&gt;
+			&lt;/td&gt;&lt;td colspan=&quot;1&quot; rowspan=&quot;1&quot; style=&quot;text-align: center;&quot;&gt;
+			&lt;div&gt; &lt;/div&gt;
+			&lt;/td&gt;&lt;td colspan=&quot;1&quot; rowspan=&quot;1&quot; style=&quot;text-align: center;&quot;&gt;
+			&lt;div&gt;&lt;a href=&quot;http://commerce.veritivcorp.com/ec/Login.do&quot; target=&quot;_blank&quot;&gt;&lt;span style=&quot;color: #339966;&quot;&gt;VOS eCommerce&lt;/span&gt;&lt;/a&gt;&lt;/div&gt;
+			&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan=&quot;1&quot; rowspan=&quot;1&quot; style=&quot;text-align: center;&quot;&gt;
+			&lt;div&gt;&lt;a href=&quot;http://connect.veritivcorp.com/NSRUS&quot; target=&quot;_blank&quot;&gt;&lt;span style=&quot;color: #339966;&quot;&gt;NSR - New Supplier Request&lt;/span&gt;&lt;/a&gt;&lt;/div&gt;
+			&lt;/td&gt;&lt;td colspan=&quot;1&quot; rowspan=&quot;1&quot; style=&quot;text-align: center;&quot;&gt;
+			&lt;div&gt; &lt;/div&gt;
+			&lt;/td&gt;&lt;td colspan=&quot;1&quot; rowspan=&quot;1&quot; style=&quot;text-align: center;&quot;&gt;
+			&lt;div&gt;&lt;a href=&quot;http://zilliantdmavos.int.distco.com/zps/&quot; target=&quot;_blank&quot;&gt;&lt;span style=&quot;color: #339966;&quot;&gt;Zilliant&lt;/span&gt;&lt;/a&gt;&lt;/div&gt;
+			&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan=&quot;1&quot; rowspan=&quot;1&quot; style=&quot;text-align: center;&quot;&gt;
+			&lt;div&gt;&lt;a href=&quot;https://www.brainshark.com/veritiv/vu?pi=zGwz16P1gYzRKWJz0&amp;amp;intk=66716059&quot; target=&quot;_blank&quot;&gt;&lt;span style=&quot;color: #339966;&quot;&gt;NSR - Training&lt;/span&gt;&lt;/a&gt;&lt;/div&gt;
+			&lt;/td&gt;&lt;td colspan=&quot;1&quot; rowspan=&quot;1&quot; style=&quot;text-align: center;&quot;&gt;
+			&lt;div&gt; &lt;/div&gt;
+			&lt;/td&gt;&lt;td colspan=&quot;1&quot; rowspan=&quot;1&quot; style=&quot;text-align: center;&quot;&gt;
+			&lt;div&gt; &lt;/div&gt;
+			&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan=&quot;1&quot; rowspan=&quot;1&quot; style=&quot;text-align: center;&quot;&gt;
+			&lt;div&gt;&lt;a href=&quot;https://www.veritivfreight.com/vfreight/signIn.html;jsessionid=909CE6AD9570A8810B72D1225E96A40E.uf4&quot; target=&quot;_blank&quot;&gt;&lt;span style=&quot;color: #339966;&quot;&gt;Veritiv Freight&lt;/span&gt;&lt;/a&gt;&lt;/div&gt;
+			&lt;/td&gt;&lt;td colspan=&quot;1&quot; rowspan=&quot;1&quot; style=&quot;text-align: center;&quot;&gt;
+			&lt;div&gt; &lt;/div&gt;
+			&lt;/td&gt;&lt;td colspan=&quot;1&quot; rowspan=&quot;1&quot;&gt;
+			&lt;div&gt; &lt;/div&gt;
+			&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;</body>
+    <pageComponentType>htmlArea</pageComponentType>
+    <width>wide</width>
+</HomePageComponent>

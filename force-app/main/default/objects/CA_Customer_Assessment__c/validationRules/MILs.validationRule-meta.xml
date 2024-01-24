@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>MILs</fullName>
+    <active>false</active>
+    <description>E-Business</description>
+    <errorConditionFormula>OR( 
+AND( 
+ISBLANK(TEXT(MIL_s_Reviewed_with_Customer__c)), 
+NOT(ISBLANK(MILs_Description__c)) 
+), 
+AND( 
+ISBLANK(TEXT(MIL_s__c)), 
+NOT(ISBLANK(MILs_How_Many__c)) 
+))</errorConditionFormula>
+    <errorMessage>You have entered a description without the corresponding checkbox. Please either check the corresponding box or remove the description.</errorMessage>
+</ValidationRule>

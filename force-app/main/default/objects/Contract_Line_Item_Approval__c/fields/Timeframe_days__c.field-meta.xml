@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Timeframe_days__c</fullName>
+    <description>Created by BW to track number of days the assigned approver has to action the record. Populated on creation via a custom setting. This field will be referenced in the due date formula to remove weekends from the assigned timeframe.</description>
+    <externalId>false</externalId>
+    <label>Timeframe days</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>0</scale>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>true</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Number</type>
+    <unique>false</unique>
+</CustomField>

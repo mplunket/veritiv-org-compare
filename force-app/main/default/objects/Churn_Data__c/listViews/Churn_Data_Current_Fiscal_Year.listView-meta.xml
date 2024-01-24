@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Churn_Data_Current_Fiscal_Year</fullName>
+    <columns>Account__c</columns>
+    <columns>NAME</columns>
+    <columns>Primary_Sales_Rep__c</columns>
+    <columns>Customer_Id__c</columns>
+    <columns>AVP_Name__c</columns>
+    <columns>BM_Name__c</columns>
+    <filterScope>Everything</filterScope>
+    <label>Churn Data: Current Fiscal Year</label>
+    <language>en_US</language>
+    <sharedTo></sharedTo>
+</ListView>

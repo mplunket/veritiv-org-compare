@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CompactLayout xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Sales_Equipment</fullName>
+    <fields>Account__c</fields>
+    <fields>Contract_Type__c</fields>
+    <fields>contract_status__c</fields>
+    <fields>Agreement_Number__c</fields>
+    <fields>OwnerId</fields>
+    <fields>account_type__c</fields>
+    <label>Sales &amp; Equipment</label>
+</CompactLayout>

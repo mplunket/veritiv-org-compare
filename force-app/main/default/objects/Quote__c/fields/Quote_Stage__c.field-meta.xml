@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Quote_Stage__c</fullName>
+    <externalId>false</externalId>
+    <label>Quote Stage</label>
+    <required>false</required>
+    <trackHistory>true</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Draft</fullName>
+                <color>#E27001</color>
+                <default>true</default>
+                <label>Draft</label>
+            </value>
+            <value>
+                <fullName>Submitted for Approval</fullName>
+                <color>#66E9BD</color>
+                <default>false</default>
+                <label>Submitted for Approval</label>
+            </value>
+            <value>
+                <fullName>Approved</fullName>
+                <color>#F96FB7</color>
+                <default>false</default>
+                <label>Approved</label>
+            </value>
+            <value>
+                <fullName>Sent to Customer</fullName>
+                <color>#0B6FCE</color>
+                <default>false</default>
+                <label>Sent to Customer</label>
+            </value>
+            <value>
+                <fullName>Lost</fullName>
+                <color>#CC0000</color>
+                <default>false</default>
+                <label>Lost</label>
+            </value>
+            <value>
+                <fullName>Won</fullName>
+                <color>#009900</color>
+                <default>false</default>
+                <label>Won</label>
+            </value>
+            <value>
+                <fullName>Returned From Field Sourcing</fullName>
+                <color>#641CCF</color>
+                <default>false</default>
+                <label>Returned From Field Sourcing</label>
+            </value>
+            <value>
+                <fullName>Expired</fullName>
+                <color>#8F6429</color>
+                <default>false</default>
+                <label>Expired</label>
+            </value>
+            <value>
+                <fullName>Requires Additional Follow-up</fullName>
+                <color>#CC33CC</color>
+                <default>false</default>
+                <label>Requires Additional Follow-up</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

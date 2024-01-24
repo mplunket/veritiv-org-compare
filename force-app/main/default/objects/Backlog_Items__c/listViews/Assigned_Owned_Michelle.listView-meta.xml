@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Assigned_Owned_Michelle</fullName>
+    <booleanFilter>2 AND (1 OR 3)</booleanFilter>
+    <columns>Sprint__c</columns>
+    <columns>NAME</columns>
+    <columns>Project_Name__c</columns>
+    <columns>Dev_Effort__c</columns>
+    <columns>Development_Due_Date__c</columns>
+    <columns>Planned_Deployment_Date__c</columns>
+    <columns>Title__c</columns>
+    <columns>Status__c</columns>
+    <columns>Assigned__c</columns>
+    <columns>OWNER.LAST_NAME</columns>
+    <columns>Added_to_Change_Set__c</columns>
+    <columns>RECORDTYPE</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>Assigned__c</field>
+        <operation>equals</operation>
+        <value>Michelle Anderson</value>
+    </filters>
+    <filters>
+        <field>Status__c</field>
+        <operation>notEqual</operation>
+        <value>QA Verified,Shelf Ready,Released,On Hold,Canceled,Pass,Fail,Resolved,Rejected,Closed,Deferred</value>
+    </filters>
+    <filters>
+        <field>OWNER.LAST_NAME</field>
+        <operation>contains</operation>
+        <value>Anderson</value>
+    </filters>
+    <label>Assigned/Owned - Michelle</label>
+</ListView>

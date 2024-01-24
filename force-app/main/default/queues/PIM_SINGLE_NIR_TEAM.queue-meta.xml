@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Queue xmlns="http://soap.sforce.com/2006/04/metadata">
+    <doesSendEmailToMembers>false</doesSendEmailToMembers>
+    <email>a@b.com</email>
+    <name>PIM - SINGLE NIR TEAM</name>
+    <queueMembers>
+        <roles>
+            <role>PIM_Product_Item_Coordinators</role>
+            <role>PIM_Product_Item_Maintenance_MGRs</role>
+        </roles>
+    </queueMembers>
+    <queueSobject>
+        <sobjectType>WorkOrder</sobjectType>
+    </queueSobject>
+</Queue>

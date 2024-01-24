@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Approval_Sequence__c</fullName>
+    <description>Essentially maps to whether this was for an SM or for a GM. This value will be populated from process builder. 1= the first approval record created and the one designed for the SM. 2= the second approval record created and the one for the GM/pricing team. This field is created so that the time-based workflow rule knows when to cancel the second record rather than create an additional CLI. The second record never needs to expire.</description>
+    <externalId>false</externalId>
+    <label>Approval Sequence</label>
+    <precision>1</precision>
+    <required>false</required>
+    <scale>0</scale>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Number</type>
+    <unique>false</unique>
+</CustomField>

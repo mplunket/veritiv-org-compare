@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<SharingRules xmlns="http://soap.sforce.com/2006/04/metadata">
+    <sharingCriteriaRules>
+        <fullName>RePrint_Reps_to_see_all_RePrint_Accounts</fullName>
+        <accessLevel>Edit</accessLevel>
+        <accountSettings>
+            <caseAccessLevel>Read</caseAccessLevel>
+            <contactAccessLevel>Edit</contactAccessLevel>
+            <opportunityAccessLevel>Read</opportunityAccessLevel>
+        </accountSettings>
+        <description>RePrint accounts are flagged, give access to all the RePrint team</description>
+        <label>RePrint Reps to see all RePrint Accounts</label>
+        <sharedTo>
+            <group>Print_RePrint_Sales_Team</group>
+        </sharedTo>
+        <criteriaItems>
+            <field>RePrint_Small_Customer_Flag__c</field>
+            <operation>equals</operation>
+            <value>True</value>
+        </criteriaItems>
+        <includeRecordsOwnedByAll>false</includeRecordsOwnedByAll>
+    </sharingCriteriaRules>
+    <sharingCriteriaRules>
+        <fullName>Sharing_Veritiv_HQ_Account</fullName>
+        <accessLevel>Edit</accessLevel>
+        <accountSettings>
+            <caseAccessLevel>None</caseAccessLevel>
+            <contactAccessLevel>Edit</contactAccessLevel>
+            <opportunityAccessLevel>None</opportunityAccessLevel>
+        </accountSettings>
+        <description>Item-3231: allows US users the ability to update Contacts related to this Account record</description>
+        <label>Sharing Veritiv HQ Account</label>
+        <sharedTo>
+            <roleAndSubordinatesInternal>Veritiv_Users</roleAndSubordinatesInternal>
+        </sharedTo>
+        <criteriaItems>
+            <field>Name</field>
+            <operation>equals</operation>
+            <value>Veritiv Headquarters</value>
+        </criteriaItems>
+        <includeRecordsOwnedByAll>true</includeRecordsOwnedByAll>
+    </sharingCriteriaRules>
+    <sharingCriteriaRules>
+        <fullName>TSB_Accounts</fullName>
+        <accessLevel>Edit</accessLevel>
+        <accountSettings>
+            <caseAccessLevel>None</caseAccessLevel>
+            <contactAccessLevel>Edit</contactAccessLevel>
+            <opportunityAccessLevel>Read</opportunityAccessLevel>
+        </accountSettings>
+        <label>TSB Accounts</label>
+        <sharedTo>
+            <group>TSB_Specialists_and_Leaders</group>
+        </sharedTo>
+        <criteriaItems>
+            <field>TSB__c</field>
+            <operation>equals</operation>
+            <value>Yes</value>
+        </criteriaItems>
+        <includeRecordsOwnedByAll>false</includeRecordsOwnedByAll>
+    </sharingCriteriaRules>
+    <sharingCriteriaRules>
+        <fullName>US_users_access_to_Vendor_Accounts</fullName>
+        <accessLevel>Edit</accessLevel>
+        <accountSettings>
+            <caseAccessLevel>None</caseAccessLevel>
+            <contactAccessLevel>Edit</contactAccessLevel>
+            <opportunityAccessLevel>None</opportunityAccessLevel>
+        </accountSettings>
+        <description>give all US users access to see Vendor Accounts and create/edit associated contact</description>
+        <label>US users access to Vendor Accounts</label>
+        <sharedTo>
+            <roleAndSubordinatesInternal>Veritiv_Users</roleAndSubordinatesInternal>
+        </sharedTo>
+        <criteriaItems>
+            <field>RecordTypeId</field>
+            <operation>equals</operation>
+            <value>Vendor</value>
+        </criteriaItems>
+        <includeRecordsOwnedByAll>true</includeRecordsOwnedByAll>
+    </sharingCriteriaRules>
+    <sharingOwnerRules>
+        <fullName>Share_AW_accounts_with_her_team</fullName>
+        <accessLevel>Edit</accessLevel>
+        <accountSettings>
+            <caseAccessLevel>Read</caseAccessLevel>
+            <contactAccessLevel>Edit</contactAccessLevel>
+            <opportunityAccessLevel>Edit</opportunityAccessLevel>
+        </accountSettings>
+        <description>Share all Amanda Webber&apos;s accounts with her team so they can see them in Deal Manager</description>
+        <label>Share AW accounts with her team</label>
+        <sharedTo>
+            <group>Print_RePrint_Sales_Team</group>
+        </sharedTo>
+        <sharedFrom>
+            <group>Amanda_Webber</group>
+        </sharedFrom>
+    </sharingOwnerRules>
+    <sharingOwnerRules>
+        <fullName>US_Users_access_to_all_Acct_Opp_Cases</fullName>
+        <accessLevel>Edit</accessLevel>
+        <accountSettings>
+            <caseAccessLevel>Edit</caseAccessLevel>
+            <contactAccessLevel>Edit</contactAccessLevel>
+            <opportunityAccessLevel>Edit</opportunityAccessLevel>
+        </accountSettings>
+        <label>US Users access to all Acct, Opp, Cases</label>
+        <sharedTo>
+            <group>UsersWithAccesstoallAccounts</group>
+        </sharedTo>
+        <sharedFrom>
+            <roleAndSubordinatesInternal>Veritiv_Users</roleAndSubordinatesInternal>
+        </sharedFrom>
+    </sharingOwnerRules>
+    <sharingOwnerRules>
+        <fullName>Users_that_see_All_Can_and_US</fullName>
+        <accessLevel>Edit</accessLevel>
+        <accountSettings>
+            <caseAccessLevel>Edit</caseAccessLevel>
+            <contactAccessLevel>Edit</contactAccessLevel>
+            <opportunityAccessLevel>Edit</opportunityAccessLevel>
+        </accountSettings>
+        <label>Users that see All Can and US</label>
+        <sharedTo>
+            <group>US_Users_access_to_all</group>
+        </sharedTo>
+        <sharedFrom>
+            <roleAndSubordinatesInternal>UWWCEO</roleAndSubordinatesInternal>
+        </sharedFrom>
+    </sharingOwnerRules>
+</SharingRules>

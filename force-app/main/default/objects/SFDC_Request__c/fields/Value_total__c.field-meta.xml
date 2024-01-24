@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Value_total__c</fullName>
+    <externalId>false</externalId>
+    <formula>Value_Clean_Data__c +  Value_Cost_Savings__c +  Value_Grow_Sales__c +  Value_Retain_Customers__c</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <inlineHelpText>Sum of Value fields (Clean Data, Grow Sales, Retain Customers, Cost Savings)</inlineHelpText>
+    <label>Value: Total</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>0</scale>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Number</type>
+    <unique>false</unique>
+</CustomField>

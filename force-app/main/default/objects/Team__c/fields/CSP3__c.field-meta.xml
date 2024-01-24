@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>CSP3__c</fullName>
+    <deleteConstraint>SetNull</deleteConstraint>
+    <externalId>false</externalId>
+    <inlineHelpText>Customer Program Manager</inlineHelpText>
+    <label>Customer Program Manager</label>
+    <referenceTo>Contact</referenceTo>
+    <relationshipLabel>Teams (CSP 3)</relationshipLabel>
+    <relationshipName>Teams5</relationshipName>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Lookup</type>
+</CustomField>

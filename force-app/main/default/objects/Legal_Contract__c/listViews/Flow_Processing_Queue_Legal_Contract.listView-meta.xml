@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Flow_Processing_Queue_Legal_Contract</fullName>
+    <columns>NAME</columns>
+    <columns>Submitted_By_Email__c</columns>
+    <columns>CREATED_DATE</columns>
+    <filterScope>Queue</filterScope>
+    <label>Flow Processing Queue</label>
+    <queue>Flow_Processing_Queue</queue>
+    <sharedTo>
+        <group>All_Admins</group>
+    </sharedTo>
+</ListView>

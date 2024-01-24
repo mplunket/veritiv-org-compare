@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Stage_Link__c</fullName>
+    <externalId>false</externalId>
+    <formula>IF(StageName__c=&quot;1- Research&quot;,HYPERLINK(&quot;https://veritiv.lightning.force.com/lightning/r/Report/00O5w000006wlwt/view&quot;, StageName__c),
+IF(StageName__c=&quot;1- Prospect&quot;,HYPERLINK(&quot;https://veritiv.lightning.force.com/lightning/o/Opportunity/list?filterName=00B5w00000AAkGc&quot;, StageName__c),
+IF(StageName__c=&quot;2- Qualify&quot;,HYPERLINK(&quot;https://veritiv.lightning.force.com/lightning/o/Opportunity/list?filterName=00B5w00000AAkGm&quot;, StageName__c),
+IF(StageName__c=&quot;2- Qualify/Audit&quot;,HYPERLINK(&quot;https://veritiv.lightning.force.com/lightning/o/Opportunity/list?filterName=00B5w00000AAkGh&quot;, StageName__c),
+IF(StageName__c=&quot;3- Develop Solution&quot;,HYPERLINK(&quot;https://veritiv.lightning.force.com/lightning/o/Opportunity/list?filterName=00B5w00000AAkGw&quot;, StageName__c),
+IF(StageName__c=&quot;3- Project Identified&quot;,HYPERLINK(&quot;https://veritiv.lightning.force.com/lightning/o/Opportunity/list?filterName=00B5w00000AAkGr&quot;, StageName__c),
+IF(StageName__c=&quot;4- Demo/RFQ&quot;,HYPERLINK(&quot;https://veritiv.lightning.force.com/lightning/o/Opportunity/list?filterName=00B5w00000AAkH1&quot;, StageName__c),
+IF(StageName__c=&quot;4- Propose&quot;,HYPERLINK(&quot;https://veritiv.lightning.force.com/lightning/o/Opportunity/list?filterName=00B5w00000AAkH6&quot;, StageName__c),
+IF(StageName__c=&quot;5- Implement&quot;,HYPERLINK(&quot;https://veritiv.lightning.force.com/lightning/o/Opportunity/list?filterName=00B5w00000AAkHG&quot;, StageName__c),
+IF(StageName__c=&quot;5- Proposal&quot;,HYPERLINK(&quot;https://veritiv.lightning.force.com/lightning/o/Opportunity/list?filterName=00B5w00000AAkHB&quot;, StageName__c),
+&quot;&quot;))))))))))</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Stage Link</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

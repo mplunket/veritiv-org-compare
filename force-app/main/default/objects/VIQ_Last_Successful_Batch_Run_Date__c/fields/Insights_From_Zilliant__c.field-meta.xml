@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Insights_From_Zilliant__c</fullName>
+    <description>Date of the last successful batch run when retrieving insights from zilliant to create as opportunities</description>
+    <externalId>false</externalId>
+    <inlineHelpText>DO NOT CHANGE.
+Date of the last successful batch run when retrieving insights from zilliant to create as opportunities</inlineHelpText>
+    <label>Insights From Zilliant</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Date</type>
+</CustomField>

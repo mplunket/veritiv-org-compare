@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Queue xmlns="http://soap.sforce.com/2006/04/metadata">
+    <doesSendEmailToMembers>false</doesSendEmailToMembers>
+    <email>sfcasereply@veritivcorp.com.invalid</email>
+    <name>PRINT MILL CLAIMS - E2C</name>
+    <queueMembers>
+        <publicGroups>
+            <publicGroup>VCP_Vendor_Claims_Print_Team</publicGroup>
+        </publicGroups>
+    </queueMembers>
+    <queueSobject>
+        <sobjectType>Case</sobjectType>
+    </queueSobject>
+    <queueSobject>
+        <sobjectType>Fax_To_Case_Queue_Assignment__c</sobjectType>
+    </queueSobject>
+</Queue>

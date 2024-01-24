@@ -1,0 +1,54 @@
+<apex:page controller="SegmentBudgetsController" cache="true" contentType="application/vnd.ms-excel#{!escapedUserName}_Annual_Budget_{!selectedYear}.xls">
+	<table>
+		<tr>
+			<th>BM: {!currentUser.rep.Name} {!selectedYear}</th>
+		</tr>
+		<tr>
+			<th>Name</th>
+			<th>FS Sales Budget</th>			
+			<th>FS CGTM Budget</th>
+			<th>Paper Sales Budget</th>
+			<th>Paper CGTM Budget</th>
+			<th>Packaging Sales Budget</th>
+			<th>Packaging CGTM Budget</th>
+			<th>Unknown Sales Budget</th>
+			<th>Unknown CGTM Budget</th>
+			<th>Total Sales Budget</th>
+			<th>Total CGTM Budget</th>
+		</tr>
+		
+		{!currentUser.bmFormattedContent}
+		
+		<apex:repeat value="{!directReports}" var="directReport">
+			{!directReport.baseFormattedContent}
+		</apex:repeat>
+		
+		<tr>
+			<th>Total Allocated</th>
+			<td>=SUM(B4:B{!numExcelReports})</td>
+			<td>=SUM(C4:C{!numExcelReports})</td>
+			<td>=SUM(D4:D{!numExcelReports})</td>
+			<td>=SUM(E4:E{!numExcelReports})</td>
+			<td>=SUM(F4:F{!numExcelReports})</td>
+			<td>=SUM(G4:G{!numExcelReports})</td>
+			<td>=SUM(H4:H{!numExcelReports})</td>
+			<td>=SUM(I4:I{!numExcelReports})</td>
+			<td>=SUM(J4:J{!numExcelReports})</td>
+			<td>=SUM(K4:K{!numExcelReports})</td>
+		</tr>
+		
+		<tr>
+			<th>Total Unallocated</th>
+			<td>=B3-SUM(B4:B{!numExcelReports})</td>
+			<td>=C3-SUM(C4:C{!numExcelReports})</td>
+			<td>=D3-SUM(D4:D{!numExcelReports})</td>
+			<td>=E3-SUM(E4:E{!numExcelReports})</td>
+			<td>=F3-SUM(F4:F{!numExcelReports})</td>
+			<td>=G3-SUM(G4:G{!numExcelReports})</td>
+			<td>=H3-SUM(H4:H{!numExcelReports})</td>
+			<td>=I3-SUM(I4:I{!numExcelReports})</td>
+			<td>=J3-SUM(J4:J{!numExcelReports})</td>
+			<td>=K3-SUM(K4:K{!numExcelReports})</td>
+		</tr>
+	</table>
+</apex:page>

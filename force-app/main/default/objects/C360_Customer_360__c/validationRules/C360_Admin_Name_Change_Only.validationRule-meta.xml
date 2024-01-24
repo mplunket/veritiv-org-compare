@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>C360_Admin_Name_Change_Only</fullName>
+    <active>true</active>
+    <description>This will allow admins to change the name of the record but no one else.</description>
+    <errorConditionFormula>AND( ISCHANGED( Name ),$Profile.Id&lt;&gt;&apos;00e70000000swa5&apos;)</errorConditionFormula>
+    <errorMessage>Only system administrators may change the Customer 360 Name. Please contact a system administrator if you believe the name should be changed.</errorMessage>
+</ValidationRule>

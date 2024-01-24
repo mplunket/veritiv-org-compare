@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Supply_Chain_Actions__c</fullName>
+    <externalId>false</externalId>
+    <label>Supply Chain Actions</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>MultiselectPicklist</type>
+    <valueSet>
+        <controllingField>Improve_Supply_Chain_Metrics__c</controllingField>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Increase Order Size</fullName>
+                <default>false</default>
+                <label>Increase Order Size</label>
+            </value>
+            <value>
+                <fullName>Reduce number of deliveries</fullName>
+                <default>false</default>
+                <label>Reduce number of deliveries</label>
+            </value>
+            <value>
+                <fullName>Decrease number of lines</fullName>
+                <default>false</default>
+                <label>Decrease number of lines</label>
+            </value>
+            <value>
+                <fullName>Increase margin per line</fullName>
+                <default>false</default>
+                <label>Increase margin per line</label>
+            </value>
+            <value>
+                <fullName>Other</fullName>
+                <default>false</default>
+                <label>Other</label>
+            </value>
+        </valueSetDefinition>
+        <valueSettings>
+            <controllingFieldValue>checked</controllingFieldValue>
+            <valueName>Increase Order Size</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>checked</controllingFieldValue>
+            <valueName>Reduce number of deliveries</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>checked</controllingFieldValue>
+            <valueName>Decrease number of lines</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>checked</controllingFieldValue>
+            <valueName>Increase margin per line</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>checked</controllingFieldValue>
+            <valueName>Other</valueName>
+        </valueSettings>
+    </valueSet>
+    <visibleLines>6</visibleLines>
+</CustomField>

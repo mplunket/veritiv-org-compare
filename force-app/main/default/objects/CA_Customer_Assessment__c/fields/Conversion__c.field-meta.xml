@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Conversion__c</fullName>
+    <externalId>false</externalId>
+    <inlineHelpText>Divisions that will be involved in the conversion</inlineHelpText>
+    <label>Conversion</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>true</sorted>
+            <value>
+                <fullName>Event 5</fullName>
+                <default>false</default>
+                <label>Event 5</label>
+            </value>
+            <value>
+                <fullName>Event 6</fullName>
+                <default>false</default>
+                <label>Event 6</label>
+            </value>
+            <value>
+                <fullName>Lakeland/Miami</fullName>
+                <default>false</default>
+                <label>Lakeland/Miami</label>
+            </value>
+            <value>
+                <fullName>Memphis/Little Rock</fullName>
+                <default>false</default>
+                <label>Memphis/Little Rock</label>
+            </value>
+            <value>
+                <fullName>PC/NU Conversion</fullName>
+                <default>false</default>
+                <label>PC/NU Conversion</label>
+            </value>
+            <value>
+                <fullName>SW Instance</fullName>
+                <default>false</default>
+                <label>SW Instance</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

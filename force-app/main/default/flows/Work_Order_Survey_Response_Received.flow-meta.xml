@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>58.0</apiVersion>
+    <decisions>
+        <description>Determines the value of the &quot;Did We Win the Business&quot; response received</description>
+        <name>dec_WinLossResponse</name>
+        <label>Win/Loss Response</label>
+        <locationX>440</locationX>
+        <locationY>276</locationY>
+        <defaultConnector>
+            <targetReference>udt_WorkOrder_YesNo</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Yes or No</defaultConnectorLabel>
+        <rules>
+            <name>ocm_WinLossResponse_CustomerStillDeciding</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.Did_we_win_the_business__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Customer still deciding</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Work_Order__r.Survey_Send_Count__c</leftValueReference>
+                <operator>LessThan</operator>
+                <rightValue>
+                    <numberValue>2.0</numberValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>udt_WorkOrder_CustomerStillDeciding</targetReference>
+            </connector>
+            <label>Customer Still Deciding</label>
+        </rules>
+        <rules>
+            <name>ocm_WinLossResponse_CustomerStillDeciding2</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.Did_we_win_the_business__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Customer still deciding</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Work_Order__r.Survey_Send_Count__c</leftValueReference>
+                <operator>GreaterThanOrEqualTo</operator>
+                <rightValue>
+                    <numberValue>2.0</numberValue>
+                </rightValue>
+            </conditions>
+            <label>Customer Still Deciding (2)</label>
+        </rules>
+    </decisions>
+    <description>This will update the Work Order to capture the &quot;Initial Survey Response Date.&quot; This will also update the &quot;Survey Send Date&quot; 30 days after the first survey response if &quot;Customer Still Deciding&quot; was selected, which will trigger a follow-up survey.</description>
+    <environments>Default</environments>
+    <formulas>
+        <description>Calculates 30 days from todays date to send the survey</description>
+        <name>fx_CalculatePlus30Days</name>
+        <dataType>Date</dataType>
+        <expression>if({!$Organization.Id}=&apos;00D7000000091qn&apos;, 
+TODAY() + 30, 
+TODAY() + 1)</expression>
+    </formulas>
+    <interviewLabel>Work Order - Survey Response Received {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>Work Order - Survey Response Received</label>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>CanvasMode</name>
+        <value>
+            <stringValue>AUTO_LAYOUT_CANVAS</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>OriginBuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>AutoLaunchedFlow</processType>
+    <recordUpdates>
+        <description>Updates the &quot;Survey Send Date&quot; field when &quot;Customer is still deciding&quot; is chose, which will trigger a follow-up survey to send 30 days out. The &quot;Initial Survey Response Date&quot; field will also be updated.</description>
+        <name>udt_WorkOrder_CustomerStillDeciding</name>
+        <label>Work Order</label>
+        <locationX>176</locationX>
+        <locationY>384</locationY>
+        <inputAssignments>
+            <field>Survey_Initial_Response_Date__c</field>
+            <value>
+                <elementReference>$Flow.CurrentDate</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Survey_Response_Received__c</field>
+            <value>
+                <booleanValue>true</booleanValue>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Survey_Send_Date__c</field>
+            <value>
+                <elementReference>fx_CalculatePlus30Days</elementReference>
+            </value>
+        </inputAssignments>
+        <inputReference>$Record.Work_Order__r</inputReference>
+    </recordUpdates>
+    <recordUpdates>
+        <description>Updates the &quot;Initial Survey Response Date&quot; field.</description>
+        <name>udt_WorkOrder_YesNo</name>
+        <label>Work Order</label>
+        <locationX>704</locationX>
+        <locationY>384</locationY>
+        <inputAssignments>
+            <field>Survey_Initial_Response_Date__c</field>
+            <value>
+                <elementReference>$Flow.CurrentDate</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Survey_Response_Received__c</field>
+            <value>
+                <booleanValue>true</booleanValue>
+            </value>
+        </inputAssignments>
+        <inputReference>$Record.Work_Order__r</inputReference>
+    </recordUpdates>
+    <start>
+        <locationX>50</locationX>
+        <locationY>0</locationY>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>Work_Order__c</field>
+            <operator>IsNull</operator>
+            <value>
+                <booleanValue>false</booleanValue>
+            </value>
+        </filters>
+        <object>Survey__c</object>
+        <recordTriggerType>Create</recordTriggerType>
+        <scheduledPaths>
+            <name>sch_Delay_WO_Update</name>
+            <connector>
+                <targetReference>dec_WinLossResponse</targetReference>
+            </connector>
+            <label>Delay WO Update</label>
+            <offsetNumber>1</offsetNumber>
+            <offsetUnit>Minutes</offsetUnit>
+            <timeSource>RecordTriggerEvent</timeSource>
+        </scheduledPaths>
+        <triggerType>RecordAfterSave</triggerType>
+    </start>
+    <status>Obsolete</status>
+</Flow>

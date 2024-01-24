@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ApprovalProcess xmlns="http://soap.sforce.com/2006/04/metadata">
+    <active>false</active>
+    <allowRecall>true</allowRecall>
+    <allowedSubmitters>
+        <submitter>CoreALL</submitter>
+        <type>group</type>
+    </allowedSubmitters>
+    <allowedSubmitters>
+        <type>owner</type>
+    </allowedSubmitters>
+    <allowedSubmitters>
+        <submitter>UWWCEO</submitter>
+        <type>roleSubordinates</type>
+    </allowedSubmitters>
+    <approvalPageFields>
+        <field>Name</field>
+        <field>Owner</field>
+        <field>Project_Work_Required__c</field>
+        <field>Estimated_Annual_Volume__c</field>
+        <field>Customer_Selling_Margin_Rate__c</field>
+        <field>Program_Manager__c</field>
+        <field>Requested_Completion_Date__c</field>
+    </approvalPageFields>
+    <approvalStep>
+        <allowDelegate>true</allowDelegate>
+        <assignedApprover>
+            <approver>
+                <name>alex.garcia@veritivcorp.com</name>
+                <type>user</type>
+            </approver>
+            <approver>
+                <name>james.ollmann@veritivcorp.com</name>
+                <type>user</type>
+            </approver>
+            <approver>
+                <name>johnny.guerra@veritivcorp.com</name>
+                <type>user</type>
+            </approver>
+            <approver>
+                <name>justen.bausewein@veritivcorp.com</name>
+                <type>user</type>
+            </approver>
+            <approver>
+                <name>katie.zimmerman@veritivcorp.com</name>
+                <type>user</type>
+            </approver>
+            <approver>
+                <name>william.rinaldi@veritivcorp.com</name>
+                <type>user</type>
+            </approver>
+            <whenMultipleApprovers>FirstResponse</whenMultipleApprovers>
+        </assignedApprover>
+        <label>Request Approval for West So. CA Project</label>
+        <name>Request_Approval_for_West_Project</name>
+    </approvalStep>
+    <emailTemplate>ZZ_Archived_Email_Templates/Specialty_Packaging_Approval_Requested</emailTemplate>
+    <enableMobileDeviceAccess>false</enableMobileDeviceAccess>
+    <entryCriteria>
+        <criteriaItems>
+            <field>Opportunity.StageName</field>
+            <operation>equals</operation>
+            <value>3- Project Identified,7- Verbal Commitment,6-Closing Presentation to Decision Maker,5- Proposal,4- Demo/RFQ</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Opportunity.RecordType</field>
+            <operation>equals</operation>
+            <value>Engineered Packaging Record Type (PDN)</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Opportunity.Region__c</field>
+            <operation>equals</operation>
+            <value>West (So. CA)</value>
+        </criteriaItems>
+    </entryCriteria>
+    <finalApprovalRecordLock>false</finalApprovalRecordLock>
+    <finalRejectionRecordLock>false</finalRejectionRecordLock>
+    <label>PDN - West So CA</label>
+    <nextAutomatedApprover>
+        <useApproverFieldOfRecordOwner>false</useApproverFieldOfRecordOwner>
+        <userHierarchyField>Manager</userHierarchyField>
+    </nextAutomatedApprover>
+    <processOrder>2</processOrder>
+    <recordEditability>AdminOrCurrentApprover</recordEditability>
+    <showApprovalHistory>true</showApprovalHistory>
+</ApprovalProcess>

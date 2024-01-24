@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>X3_Shelf_Ready_No_Planned_Deploy_Date</fullName>
+    <columns>NAME</columns>
+    <columns>Requested_By_User__c</columns>
+    <columns>Request_Type__c</columns>
+    <columns>request_owner_user__c</columns>
+    <columns>CREATEDBY_USER</columns>
+    <columns>SFDC_Project__c</columns>
+    <columns>Project_Name__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>request_status__c</field>
+        <operation>equals</operation>
+        <value>3. Shelf Ready</value>
+    </filters>
+    <filters>
+        <field>Planned_Deployment_Date__c</field>
+        <operation>equals</operation>
+    </filters>
+    <label>3. Shelf Ready - No Planned Deploy Date</label>
+    <language>en_US</language>
+</ListView>

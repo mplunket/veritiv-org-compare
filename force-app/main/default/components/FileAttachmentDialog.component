@@ -1,0 +1,111 @@
+<apex:component controller="FileAttachmentController" allowDML="true">
+	<apex:attribute name="pageMessagesId" type="String" required="false" description="The Visualforce id of the pageMessages component." />
+	<apex:attribute name="opportunityId" assignTo="{!opportunityId}" type="Id" required="true" description="The Id of the opportunity that the contract looksup to." />
+	<apex:attribute name="accountId" assignTo="{!accountId}" type="Id" required="true" description="The Id of the account that the contract looksup to." />
+	<apex:attribute name="divisionId" assignTo="{!divisionId}" type="Id" required="true" description="The Id of the division that the contract looksup to." />
+	<apex:attribute name="refresh" type="String" required="false" description="The Javascript method to call after attaching the file." />
+	<apex:includeScript value="{!URLFOR($Resource.jQueryUI_new, 'js/jquery-1.7.2.min.js')}" />
+	<apex:includeScript value="{!URLFOR($Resource.jQueryUI_new, 'js/jquery-ui-1.8.20.custom.min.js')}" />
+	<apex:stylesheet value="{!URLFOR($Resource.jQueryUI_new, 'css/cupertino/jquery-ui-1.8.20.custom.css')}" />
+
+
+	<script type="text/javascript">
+
+	(function($){
+
+		var	$attachmentForm,
+			$fileInput,
+			$iFrame,
+			$pageMessages;
+		var attachType;
+		var callRefreshMethod;
+		
+		function initRefreshMethod(){
+			if( "" != "{!refresh}" && {!refresh} && typeof {!refresh} === 'function' )
+				callRefreshMethod = {!refresh};
+			else
+				callRefreshMethod = function(){};
+		}
+
+		function initWrappers(){
+			$attachmentForm = $('#attachmentForm');
+			$fileInput = $('input[type="file"]', $attachmentForm);
+			$iFrame = $('[id$="formFrame"]', $attachmentForm);
+		}
+
+		function initDialogs(){
+			$attachmentForm.dialog({
+				buttons: {
+					Save: function(){
+						afAttachFile();
+					},
+					Cancel: function(){
+						$attachmentForm.dialog('close');
+					}
+				},
+				title: 'Upload File',
+				close: function(){
+					$fileInput.attr('value','');
+				},
+				minWidth: 400,
+				autoOpen: false,
+				resizable: false,
+				draggable: false,
+				modal: true
+			});
+		}
+
+		function initRefresh(){
+			$iFrame.load(function(){
+				$pageMessages = $('[id$="messages"]');
+				var $messages = $(this.contentDocument.body).find('[id$="messages"]');
+				if( $messages.size() == 1 ){
+					$pageMessages.replaceWith( $messages );
+					$attachmentForm.dialog('close');
+					callRefreshMethod();
+				}
+			});
+		}
+
+		$(function(){
+			initRefreshMethod();
+			initWrappers();
+			initDialogs();
+			initRefresh();
+		});
+
+	})(jQuery);
+
+	function openAttachmentDialog( aType, cId, aId ){
+		jQuery('#attachmentForm').find('[id$="hiddenAttachType"]').val( aType );
+		jQuery('#attachmentForm').find('[id$="hiddenContractId"]').val( cId );
+		jQuery('#attachmentForm').find('[id$="hiddenAttachmentId"]').val( aId );
+		//alert('Testing Attachment ID : ' + aid);
+		jQuery('#attachmentForm').dialog('open');
+	}
+
+	</script>
+	
+	<div id="attachmentForm" style="display:none;">
+		<apex:form target="formFrame">
+		
+			<apex:inputHidden id="hiddenAttachType" value="{!attachType}" />
+			<apex:inputHidden id="hiddenContractId" value="{!existingContractId}"/>
+			<apex:inputHidden id="hiddenAttachmentId" value="{!existingAttachmentId}" />
+			
+			<table>
+				<tr>
+					<td><apex:outputLabel value="Attachment:"/></td> 
+					<td><apex:inputFile id="fileInput" value="{!attachment.Body}" filename="{!attachment.Name}"/></td>
+				</tr>
+			</table>
+			
+			<apex:actionFunction name="afAttachFile" action="{!attachFile}"/>
+			
+			
+		</apex:form>
+		<div style="display:none;">
+			<apex:iframe id="formFrame" />
+		</div>
+	</div>
+</apex:component>

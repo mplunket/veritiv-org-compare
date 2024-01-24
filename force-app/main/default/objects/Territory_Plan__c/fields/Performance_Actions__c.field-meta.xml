@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Performance_Actions__c</fullName>
+    <externalId>false</externalId>
+    <label>Performance Actions</label>
+    <required>false</required>
+    <trackHistory>true</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>MultiselectPicklist</type>
+    <valueSet>
+        <controllingField>Improve_Performance__c</controllingField>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Commission Dial Down</fullName>
+                <default>false</default>
+                <label>Commission Dial Down</label>
+            </value>
+            <value>
+                <fullName>National Accounts Dial Down</fullName>
+                <default>false</default>
+                <label>National Accounts Dial Down</label>
+            </value>
+            <value>
+                <fullName>Salary to Commission</fullName>
+                <default>false</default>
+                <label>Salary to Commission</label>
+            </value>
+            <value>
+                <fullName>HR Action Plan</fullName>
+                <default>false</default>
+                <label>HR Action Plan</label>
+            </value>
+            <value>
+                <fullName>Schedule Rep Ride With</fullName>
+                <default>false</default>
+                <label>Schedule Rep Ride With</label>
+            </value>
+            <value>
+                <fullName>Other</fullName>
+                <default>false</default>
+                <label>Other</label>
+            </value>
+        </valueSetDefinition>
+        <valueSettings>
+            <controllingFieldValue>checked</controllingFieldValue>
+            <valueName>Commission Dial Down</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>checked</controllingFieldValue>
+            <valueName>National Accounts Dial Down</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>checked</controllingFieldValue>
+            <valueName>Salary to Commission</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>checked</controllingFieldValue>
+            <valueName>HR Action Plan</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>checked</controllingFieldValue>
+            <valueName>Schedule Rep Ride With</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>checked</controllingFieldValue>
+            <valueName>Other</valueName>
+        </valueSettings>
+    </valueSet>
+    <visibleLines>7</visibleLines>
+</CustomField>

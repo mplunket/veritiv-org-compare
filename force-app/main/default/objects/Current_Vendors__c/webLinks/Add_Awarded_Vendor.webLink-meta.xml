@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<WebLink xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Add_Awarded_Vendor</fullName>
+    <availability>online</availability>
+    <description>&amp;CF00NV0000000Vq2Q={!Opportunity.Name}</description>
+    <displayType>massActionButton</displayType>
+    <encodingKey>UTF-8</encodingKey>
+    <linkType>url</linkType>
+    <masterLabel>Add Awarded Vendor</masterLabel>
+    <openType>replace</openType>
+    <protected>false</protected>
+    <requireRowSelection>false</requireRowSelection>
+    <url>/a1S/e?CF00N70000002ch6b={!Opportunity.Name}
+&amp;CF00N70000002ch6b_lkid={!Opportunity.Id}
+&amp;retURL={!Opportunity.Id}
+&amp;saveURL={!Opportunity.Id}
+&amp;RecordType=01270000000E1Ot</url>
+</WebLink>

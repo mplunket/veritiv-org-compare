@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Proposed_Owner_error_if_in_wrong_stage</fullName>
+    <active>true</active>
+    <errorConditionFormula>AND(
+NOT(
+OR( 
+ISPICKVAL(Reassignment_Stage__c , &quot;New Rep - In 180-Day Review&quot;) ,
+ISPICKVAL(Reassignment_Stage__c , &quot;Reassigned - House&quot;),
+ISPICKVAL(Reassignment_Stage__c , &quot;Reassigned - Inside Sales&quot;),
+ISPICKVAL(Reassignment_Stage__c , &quot;Observation Complete - Stay with Rep&quot;)
+) 
+),
+NOT(ISBLANK( Proposed_New_Owner_Primary_Sales_Rep__c ) ))</errorConditionFormula>
+    <errorDisplayField>Proposed_New_Owner_Primary_Sales_Rep__c</errorDisplayField>
+    <errorMessage>Please enter a stage of  New Rep - In 180-Day Review, Reassigned - House or Reassigned - Inside Sales, before choosing the Proposed New Owner.</errorMessage>
+</ValidationRule>

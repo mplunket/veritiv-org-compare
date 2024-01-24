@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>OOO_DAL_Baginski</fullName>
+    <columns>NAME</columns>
+    <columns>User__c</columns>
+    <columns>Working_Status__c</columns>
+    <columns>Time_Out_Of_Office_Hours__c</columns>
+    <columns>LAST_UPDATE</columns>
+    <columns>Team_Lead_Name__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>Working_Status__c</field>
+        <operation>notEqual</operation>
+        <value>In Office</value>
+    </filters>
+    <filters>
+        <field>User_Profile__c</field>
+        <operation>contains</operation>
+        <value>CSP,CS</value>
+    </filters>
+    <filters>
+        <field>Team_Lead_Name__c</field>
+        <operation>contains</operation>
+        <value>BAGINSKI</value>
+    </filters>
+    <filters>
+        <field>Active__c</field>
+        <operation>equals</operation>
+        <value>1</value>
+    </filters>
+    <label>OOO - DAL - Baginski</label>
+    <language>en_US</language>
+    <sharedTo>
+        <roleAndSubordinatesInternal>CS_DAL_CXC_Manager</roleAndSubordinatesInternal>
+    </sharedTo>
+</ListView>

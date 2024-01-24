@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>StageName__c</fullName>
+    <description>Stage that the opportunity moved from when the Duration record was created. This is populated from Cronsights. 
+
+API Name must remain StageName.</description>
+    <externalId>false</externalId>
+    <inlineHelpText>What was the previous stage before it was changed?</inlineHelpText>
+    <label>From Stage</label>
+    <length>255</length>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

@@ -1,0 +1,3 @@
+<apex:page showHeader="false" sidebar="false" standardController="Primary_Sales_Rep__c">
+	<apex:iframe src="{!URLFOR($Setup.SAP_BI_Reports_Setting__c.SAP_Report_Base_URL__c&'&iDocID='&$Setup.SAP_BI_Reports_Setting__c.Document_Id__c&'&token='&URLENCODE($Setup.SAP_BI_Reports_Setting__c.SAP_Login_Token__c )&'&sOutputFormat=P', null)}&lsSSelect+Date=DateTime({!TEXT(YEAR(TODAY()))},{!TEXT(MONTH(TODAY()))},{!TEXT(DAY(TODAY()))},0,0,0)&lsMEnter+value(s)+for+Sale+Representative+Network+ID={! Primary_Sales_Rep__c.Network_ID__c}" />
+</apex:page>

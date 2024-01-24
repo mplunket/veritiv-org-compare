@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<WebLink xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>CLM_Intake</fullName>
+    <availability>online</availability>
+    <displayType>button</displayType>
+    <encodingKey>UTF-8</encodingKey>
+    <height>600</height>
+    <linkType>url</linkType>
+    <masterLabel>Send to CLM</masterLabel>
+    <openType>noSidebar</openType>
+    <protected>false</protected>
+    <url>https://na11.springcm.com/atlas/doclauncher/eos/Sales - Phase 2 SFDC Integration?aid=21998&amp;eos[0].Id={!Legal_Contract__c.Id}&amp;eos[0].System=Salesforce&amp;eos[0].Type=Legal_Contract__c&amp;eos[0].Name={!Legal_Contract__c.Contract_Type__c}_{!Legal_Contract__c.Created_Date_value__c}&amp;eos[0].ScmPath=/Salesforce/Account/{!Legal_Contract__c.Account_Name__c}/{!Legal_Contract__c.DW_Key__c}/</url>
+</WebLink>

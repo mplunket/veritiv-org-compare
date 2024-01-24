@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PermissionSetGroup xmlns="http://soap.sforce.com/2006/04/metadata">
+    <hasActivationRequired>false</hasActivationRequired>
+    <label>Deal Manager Access Customer Experience</label>
+    <permissionSets>Deal_Manager_Only_Non_LEX_users</permissionSets>
+    <permissionSets>ZilliantAIQPricingManager</permissionSets>
+    <permissionSets>Zilliant_CLI_Submitter</permissionSets>
+    <permissionSets>Zilliant_CPL</permissionSets>
+    <permissionSets>Zilliant_Price_Lookup_User_Veritiv</permissionSets>
+    <permissionSets>zpf__ZilliantPlatformUser3</permissionSets>
+    <permissionSets>zpl__ZilliantPriceLookupUser2</permissionSets>
+    <permissionSets>zsc__ZilliantSalesMaxConnectUser</permissionSets>
+    <permissionSets>zsx__ZilliantSalesMaxOnDemandUser2</permissionSets>
+    <permissionSets>zsx__ZilliantSalesMaxUser3</permissionSets>
+    <status>Updated</status>
+</PermissionSetGroup>

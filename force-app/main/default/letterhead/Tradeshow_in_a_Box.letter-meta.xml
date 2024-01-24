@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Letterhead xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <backgroundColor>#CCCCCC</backgroundColor>
+    <bodyColor>#FFFFFF</bodyColor>
+    <bottomLine>
+        <color>#cccccc</color>
+        <height>5</height>
+    </bottomLine>
+    <description>Tradeshow in a Box header - graphics can be used for all segments and verticals.</description>
+    <footer>
+        <backgroundColor>#FFFFFF</backgroundColor>
+        <height>28</height>
+        <horizontalAlignment>Left</horizontalAlignment>
+        <logo>Marketing/veritivcorp_com_url_footer.jpg</logo>
+        <verticalAlignment>Top</verticalAlignment>
+    </footer>
+    <header>
+        <backgroundColor>#FFFFFF</backgroundColor>
+        <height>68</height>
+        <horizontalAlignment>Left</horizontalAlignment>
+        <logo>Marketing/Tradeshow_in_a_Box_Header_Join_Us.jpg</logo>
+        <verticalAlignment>Top</verticalAlignment>
+    </header>
+    <middleLine>
+        <color>#FFFFFF</color>
+        <height>0</height>
+    </middleLine>
+    <name>Tradeshow in a Box</name>
+    <topLine>
+        <color>#FFFFFF</color>
+        <height>0</height>
+    </topLine>
+</Letterhead>

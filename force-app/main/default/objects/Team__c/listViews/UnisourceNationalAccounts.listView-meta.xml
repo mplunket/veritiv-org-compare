@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>UnisourceNationalAccounts</fullName>
+    <columns>NAME</columns>
+    <columns>National_Account_Manager__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>RECORDTYPE</field>
+        <operation>equals</operation>
+        <value>Team__c.Unisource_National_Accounts</value>
+    </filters>
+    <label>Unisource - National Accounts Team</label>
+</ListView>

@@ -1,0 +1,4 @@
+<aura:component>    
+    <aura:registerEvent name="CreatePricingContractEvent" type="c:aiqCreatePricingContractEvent"/>
+    <lightning:button name = "CreatePricingContract" label="Create Pricing Contract" iconName="utility:contract" variant="neutral" onclick="{!c.clickButton}" />
+</aura:component>

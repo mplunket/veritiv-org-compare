@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Letterhead xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <backgroundColor>#CCCCCC</backgroundColor>
+    <bodyColor>#FFFFFF</bodyColor>
+    <bottomLine>
+        <color>#CCCCCC</color>
+        <height>0</height>
+    </bottomLine>
+    <description>Co-branded Veritiv, KPN and KCP WypAll header for Who would you hire? promotion.</description>
+    <footer>
+        <backgroundColor>#FFFFFF</backgroundColor>
+        <height>25</height>
+        <horizontalAlignment>Left</horizontalAlignment>
+        <logo>Marketing/veritivcorp_com_footer.jpg</logo>
+        <verticalAlignment>Top</verticalAlignment>
+    </footer>
+    <header>
+        <backgroundColor>#FFFFFF</backgroundColor>
+        <height>100</height>
+        <horizontalAlignment>Left</horizontalAlignment>
+        <logo>Marketing/Veritiv_KPN_KCP_WypAll.jpg</logo>
+        <verticalAlignment>Top</verticalAlignment>
+    </header>
+    <middleLine>
+        <color>#FFFFFF</color>
+        <height>0</height>
+    </middleLine>
+    <name>Veritiv-KPN KCP WypAll</name>
+    <topLine>
+        <color>#FFFFFF</color>
+        <height>0</height>
+    </topLine>
+</Letterhead>

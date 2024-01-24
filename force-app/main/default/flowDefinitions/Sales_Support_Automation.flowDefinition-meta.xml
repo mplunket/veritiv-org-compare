@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<FlowDefinition xmlns="http://soap.sforce.com/2006/04/metadata">
+    <activeVersionNumber>9</activeVersionNumber>
+    <description>PSR and Category matching for SS Cases
+Null instead of blank
+which flow decision updated
+changed second decision to only share if it finds the psr
+Update fCategory
+Update with running user to stop creation if psr is owner
+Update to use PSR id not running user - oops</description>
+    <masterLabel>Case - Sales Support Automation</masterLabel>
+</FlowDefinition>

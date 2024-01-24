@@ -1,0 +1,433 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GlobalValueSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <customValue>
+        <fullName>2T - Sets Sold By Thousand</fullName>
+        <default>false</default>
+        <label>2T - Sets Sold By Thousand</label>
+    </customValue>
+    <customValue>
+        <fullName>BA - Bale</fullName>
+        <default>false</default>
+        <label>BA - Bale</label>
+    </customValue>
+    <customValue>
+        <fullName>BC - Bucket</fullName>
+        <default>false</default>
+        <label>BC - Bucket</label>
+    </customValue>
+    <customValue>
+        <fullName>BD - Bundle</fullName>
+        <default>false</default>
+        <label>BD - Bundle</label>
+    </customValue>
+    <customValue>
+        <fullName>BG - Bag</fullName>
+        <default>false</default>
+        <label>BG - Bag</label>
+    </customValue>
+    <customValue>
+        <fullName>BO - Bottle</fullName>
+        <default>false</default>
+        <label>BO - Bottle</label>
+    </customValue>
+    <customValue>
+        <fullName>BX - Box</fullName>
+        <default>false</default>
+        <label>BX - Box</label>
+    </customValue>
+    <customValue>
+        <fullName>CS - Case</fullName>
+        <default>false</default>
+        <label>CA - Case</label>
+    </customValue>
+    <customValue>
+        <fullName>CB - Cabinet</fullName>
+        <default>false</default>
+        <label>CB - Cabinet</label>
+    </customValue>
+    <customValue>
+        <fullName>CF - Cubic Feet</fullName>
+        <default>false</default>
+        <label>CF - Cubic Feet</label>
+    </customValue>
+    <customValue>
+        <fullName>CH - Container</fullName>
+        <default>false</default>
+        <label>CH - Container</label>
+    </customValue>
+    <customValue>
+        <fullName>CN - Can</fullName>
+        <default>false</default>
+        <label>CN - Can</label>
+    </customValue>
+    <customValue>
+        <fullName>CP - Crate</fullName>
+        <default>false</default>
+        <label>CP - Crate</label>
+    </customValue>
+    <customValue>
+        <fullName>CQ - Cartridge</fullName>
+        <default>false</default>
+        <label>CQ - Cartridge</label>
+    </customValue>
+    <customValue>
+        <fullName>CT - Carton</fullName>
+        <default>false</default>
+        <label>CT - Carton</label>
+    </customValue>
+    <customValue>
+        <fullName>CW - Hundred Pounds CWT</fullName>
+        <default>false</default>
+        <label>CW - Hundred Pounds CWT</label>
+    </customValue>
+    <customValue>
+        <fullName>CX - Coil</fullName>
+        <default>false</default>
+        <label>CX - Coil</label>
+    </customValue>
+    <customValue>
+        <fullName>DI - Dispenser</fullName>
+        <default>false</default>
+        <label>DI - Dispenser</label>
+    </customValue>
+    <customValue>
+        <fullName>DP - Dozen Pair</fullName>
+        <default>false</default>
+        <label>DP - Dozen Pair</label>
+    </customValue>
+    <customValue>
+        <fullName>DR - Drum</fullName>
+        <default>false</default>
+        <label>DR - Drum</label>
+    </customValue>
+    <customValue>
+        <fullName>DS - Display</fullName>
+        <default>false</default>
+        <label>DS - Display</label>
+    </customValue>
+    <customValue>
+        <fullName>DZ - Dozen</fullName>
+        <default>false</default>
+        <label>DZ - Dozen</label>
+    </customValue>
+    <customValue>
+        <fullName>EA - Each</fullName>
+        <default>false</default>
+        <label>EA - Each</label>
+    </customValue>
+    <customValue>
+        <fullName>EV - Envelope</fullName>
+        <default>false</default>
+        <label>EV - Envelope</label>
+    </customValue>
+    <customValue>
+        <fullName>FT - Foot</fullName>
+        <default>false</default>
+        <label>FT - Foot</label>
+    </customValue>
+    <customValue>
+        <fullName>GA - Gallon</fullName>
+        <default>false</default>
+        <label>GA - Gallon</label>
+    </customValue>
+    <customValue>
+        <fullName>GS - Gross</fullName>
+        <default>false</default>
+        <label>GS - Gross</label>
+    </customValue>
+    <customValue>
+        <fullName>HU - Hundred</fullName>
+        <default>false</default>
+        <label>HU - Hundred</label>
+    </customValue>
+    <customValue>
+        <fullName>IN - Inch</fullName>
+        <default>false</default>
+        <label>IN - Inch</label>
+    </customValue>
+    <customValue>
+        <fullName>KG - Kilogram</fullName>
+        <default>false</default>
+        <label>KG - Kilogram</label>
+    </customValue>
+    <customValue>
+        <fullName>KT - Kit</fullName>
+        <default>false</default>
+        <label>KT - Kit</label>
+    </customValue>
+    <customValue>
+        <fullName>LB - Pound</fullName>
+        <default>false</default>
+        <label>LB - Pound</label>
+    </customValue>
+    <customValue>
+        <fullName>LF - Linear Foot</fullName>
+        <default>false</default>
+        <label>LF - Linear Foot</label>
+    </customValue>
+    <customValue>
+        <fullName>LT - Liter</fullName>
+        <default>false</default>
+        <label>LT - Liter</label>
+    </customValue>
+    <customValue>
+        <fullName>M3 - Mat</fullName>
+        <default>false</default>
+        <label>M3 - Mat</label>
+    </customValue>
+    <customValue>
+        <fullName>MA - Machine Unit</fullName>
+        <default>false</default>
+        <label>MA - Machine Unit</label>
+    </customValue>
+    <customValue>
+        <fullName>MP - Metric Ton</fullName>
+        <default>false</default>
+        <label>MP - Metric Ton</label>
+    </customValue>
+    <customValue>
+        <fullName>MR - Meter</fullName>
+        <default>false</default>
+        <label>MR - Meter</label>
+    </customValue>
+    <customValue>
+        <fullName>M - Thousand</fullName>
+        <default>false</default>
+        <label>M - Thousand</label>
+    </customValue>
+    <customValue>
+        <fullName>OZ - Ounce</fullName>
+        <default>false</default>
+        <label>OZ - Ounce</label>
+    </customValue>
+    <customValue>
+        <fullName>PA - Pail</fullName>
+        <default>false</default>
+        <label>PA - Pail</label>
+    </customValue>
+    <customValue>
+        <fullName>PD - Pad</fullName>
+        <default>false</default>
+        <label>PD - Pad</label>
+    </customValue>
+    <customValue>
+        <fullName>PK - Package</fullName>
+        <default>false</default>
+        <label>PK - Package</label>
+    </customValue>
+    <customValue>
+        <fullName>PL - Pallet/Unit Load</fullName>
+        <default>false</default>
+        <label>PL - Pallet/Unit Load</label>
+    </customValue>
+    <customValue>
+        <fullName>PR - Pair</fullName>
+        <default>false</default>
+        <label>PR - Pair</label>
+    </customValue>
+    <customValue>
+        <fullName>PT - Pint</fullName>
+        <default>false</default>
+        <label>PT - Pint</label>
+    </customValue>
+    <customValue>
+        <fullName>QT - Quart</fullName>
+        <default>false</default>
+        <label>QT - Quart</label>
+    </customValue>
+    <customValue>
+        <fullName>RA - Rack</fullName>
+        <default>false</default>
+        <label>RA - Rack</label>
+    </customValue>
+    <customValue>
+        <fullName>RL - Roll</fullName>
+        <default>false</default>
+        <label>RL - Roll</label>
+    </customValue>
+    <customValue>
+        <fullName>RM - Ream</fullName>
+        <default>false</default>
+        <label>RM - Ream</label>
+    </customValue>
+    <customValue>
+        <fullName>SF - Square Foot</fullName>
+        <default>false</default>
+        <label>SF - Square Foot</label>
+    </customValue>
+    <customValue>
+        <fullName>SH - Sheet</fullName>
+        <default>false</default>
+        <label>SH - Sheet</label>
+    </customValue>
+    <customValue>
+        <fullName>SI - Square Inch</fullName>
+        <default>false</default>
+        <label>SI - Square Inch</label>
+    </customValue>
+    <customValue>
+        <fullName>SL - Sleeve</fullName>
+        <default>false</default>
+        <label>SL - Sleeve</label>
+    </customValue>
+    <customValue>
+        <fullName>SM - Square Meter</fullName>
+        <default>false</default>
+        <label>SM - Square Meter</label>
+    </customValue>
+    <customValue>
+        <fullName>SO - Spool</fullName>
+        <default>false</default>
+        <label>SO - Spool</label>
+    </customValue>
+    <customValue>
+        <fullName>ST - Set</fullName>
+        <default>false</default>
+        <label>ST - Set</label>
+    </customValue>
+    <customValue>
+        <fullName>SK - Skid</fullName>
+        <default>false</default>
+        <label>SV - Skid</label>
+    </customValue>
+    <customValue>
+        <fullName>SY - Square Yard</fullName>
+        <default>false</default>
+        <label>SY - Square Yard</label>
+    </customValue>
+    <customValue>
+        <fullName>TB - Tube</fullName>
+        <default>false</default>
+        <label>TB - Tube</label>
+    </customValue>
+    <customValue>
+        <fullName>TE - Tote</fullName>
+        <default>false</default>
+        <label>TE - Tote</label>
+    </customValue>
+    <customValue>
+        <fullName>TI - Thousand Square Inches</fullName>
+        <default>false</default>
+        <label>TI - Thousand Square Inches</label>
+    </customValue>
+    <customValue>
+        <fullName>TN - Ton</fullName>
+        <default>false</default>
+        <label>TN - Ton</label>
+    </customValue>
+    <customValue>
+        <fullName>TQ - Thousand Feet</fullName>
+        <default>false</default>
+        <label>TQ - Thousand Feet</label>
+    </customValue>
+    <customValue>
+        <fullName>TS - Thousand Square Feet</fullName>
+        <default>false</default>
+        <label>TS - Thousand Square Feet</label>
+    </customValue>
+    <customValue>
+        <fullName>TZ - Thousand Cubic Feet</fullName>
+        <default>false</default>
+        <label>TZ - Thousand Cubic Feet</label>
+    </customValue>
+    <customValue>
+        <fullName>Unit - Unit</fullName>
+        <default>false</default>
+        <label>UN - Unit</label>
+    </customValue>
+    <customValue>
+        <fullName>VG - Glove</fullName>
+        <default>false</default>
+        <label>VG - Glove</label>
+    </customValue>
+    <customValue>
+        <fullName>Y4 - Tub</fullName>
+        <default>false</default>
+        <label>Y4 - Tub</label>
+    </customValue>
+    <customValue>
+        <fullName>YD - Yard</fullName>
+        <default>false</default>
+        <label>YD - Yard</label>
+    </customValue>
+    <customValue>
+        <fullName>MS - Thousand Square Feet</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>MS - Thousand Square Feet</label>
+    </customValue>
+    <customValue>
+        <fullName>MM - Thousand Square Meters</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>MM - Thousand Square Meters</label>
+    </customValue>
+    <customValue>
+        <fullName>MI - Thousand Square Inches</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>MI - Thousand Square Inches</label>
+    </customValue>
+    <customValue>
+        <fullName>MF - Thousand Lineal Feet</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>MF - Thousand Lineal Feet</label>
+    </customValue>
+    <customValue>
+        <fullName>ME - Metric Ton</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>ME - Metric Ton</label>
+    </customValue>
+    <customValue>
+        <fullName>LR - Layer (S)</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>LR - Layer (S)</label>
+    </customValue>
+    <customValue>
+        <fullName>C - Hundred</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>C - Hundred</label>
+    </customValue>
+    <customValue>
+        <fullName>BK - Bucket</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>BK - Bucket</label>
+    </customValue>
+    <customValue>
+        <fullName>TH - Thousand</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>TH - Thousand</label>
+    </customValue>
+    <customValue>
+        <fullName>MT - Thousand Sets</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>MT - Thousand Sets</label>
+    </customValue>
+    <customValue>
+        <fullName>SQ - Square Feet</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>SQ - Square Feet</label>
+    </customValue>
+    <customValue>
+        <fullName>TU - Tube</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>TU - Tube</label>
+    </customValue>
+    <customValue>
+        <fullName>ZZ - Truckload</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>ZZ - Truckload</label>
+    </customValue>
+    <masterLabel>Unit of Measure</masterLabel>
+    <sorted>true</sorted>
+</GlobalValueSet>

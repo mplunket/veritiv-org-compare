@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Queue xmlns="http://soap.sforce.com/2006/04/metadata">
+    <doesSendEmailToMembers>false</doesSendEmailToMembers>
+    <email>kevin.luptowski@bluewolf.com</email>
+    <name>Zilliant Pricing Team Queue</name>
+    <queueSobject>
+        <sobjectType>Contract_Line_Item_Approval__c</sobjectType>
+    </queueSobject>
+</Queue>

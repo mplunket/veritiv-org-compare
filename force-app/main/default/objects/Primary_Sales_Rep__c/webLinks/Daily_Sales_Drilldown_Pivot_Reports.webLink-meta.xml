@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<WebLink xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Daily_Sales_Drilldown_Pivot_Reports</fullName>
+    <availability>online</availability>
+    <description>Link to Excel template in Infosource. Data for excel resides in MS Cube server that pulls data from U data warehouse. Data refreshed daily at 10 am</description>
+    <displayType>link</displayType>
+    <encodingKey>UTF-8</encodingKey>
+    <hasMenubar>true</hasMenubar>
+    <hasScrollbars>true</hasScrollbars>
+    <hasToolbar>true</hasToolbar>
+    <height>600</height>
+    <isResizable>true</isResizable>
+    <linkType>url</linkType>
+    <masterLabel>zzzVOS - Daily Sales Drilldown Pivot Reports</masterLabel>
+    <openType>newWindow</openType>
+    <position>topLeft</position>
+    <protected>false</protected>
+    <showsLocation>true</showsLocation>
+    <showsStatus>true</showsStatus>
+    <url>http://portal.srv.unisourcelink.net/C10/C8/Infosource/Document%20Library/Forms/AllItems.aspx?RootFolder=%2fC10%2fC8%2fInfosource%2fDocument%20Library%2fDaily%20Sales%20Drilldown%20Pivot%20Reports&amp;View=%7bA2557BE7%2d8F1E%2d4EE9%2d9CC5%2d55D9D954A3DE%7d</url>
+</WebLink>

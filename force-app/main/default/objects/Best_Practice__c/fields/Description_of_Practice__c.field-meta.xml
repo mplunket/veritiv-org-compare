@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Description_of_Practice__c</fullName>
+    <externalId>false</externalId>
+    <inlineHelpText>Describe the implementation of your successful strategy. Outline specific information on activities and methods, including relevant information on any key factors such as: operations, transportation, ERS, Supply Chain, Cust. Serv, timeframes, costs, etc.</inlineHelpText>
+    <label>Description of Practice</label>
+    <length>2000</length>
+    <trackTrending>false</trackTrending>
+    <type>LongTextArea</type>
+    <visibleLines>10</visibleLines>
+</CustomField>

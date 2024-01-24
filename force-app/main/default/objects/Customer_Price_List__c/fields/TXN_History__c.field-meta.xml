@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>TXN_History__c</fullName>
+    <description>Only one active value, 12 Months, to correspond with the Purchased filter which will only show products that have been purchased within this TXN History date range (12 Months)</description>
+    <externalId>false</externalId>
+    <label>TXN History</label>
+    <required>true</required>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <controllingField>Purchased_Stocked_Filter__c</controllingField>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>All</fullName>
+                <default>true</default>
+                <label>All</label>
+            </value>
+            <value>
+                <fullName>Last 12 Months</fullName>
+                <default>false</default>
+                <label>Last 12 Months</label>
+            </value>
+        </valueSetDefinition>
+        <valueSettings>
+            <controllingFieldValue>Show All Agreement Lines</controllingFieldValue>
+            <valueName>All</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Show Purchased Agreement Lines Only</controllingFieldValue>
+            <controllingFieldValue>Show Stock Agreement Lines Only</controllingFieldValue>
+            <controllingFieldValue>Show Purchased Or Stocked Agreement Lines</controllingFieldValue>
+            <valueName>Last 12 Months</valueName>
+        </valueSettings>
+    </valueSet>
+</CustomField>

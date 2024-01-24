@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <customSettingsType>List</customSettingsType>
+    <description>Email List of Batch Job Results when giving Read/Write Access to Account Team Members</description>
+    <enableEnhancedLookup>false</enableEnhancedLookup>
+    <enableFeeds>false</enableFeeds>
+    <label>Read/Write Batch Job Email List</label>
+    <visibility>Protected</visibility>
+</CustomObject>

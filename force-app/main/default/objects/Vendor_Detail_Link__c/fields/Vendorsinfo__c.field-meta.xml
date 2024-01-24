@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Vendorsinfo__c</fullName>
+    <deleteConstraint>SetNull</deleteConstraint>
+    <externalId>false</externalId>
+    <label>Vendor</label>
+    <referenceTo>Vendor_Detail__c</referenceTo>
+    <relationshipLabel>Opportunities</relationshipLabel>
+    <relationshipName>R00N70000001kf1SEAQ</relationshipName>
+    <required>false</required>
+    <type>Lookup</type>
+</CustomField>

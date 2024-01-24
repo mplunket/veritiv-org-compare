@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Queue xmlns="http://soap.sforce.com/2006/04/metadata">
+    <doesSendEmailToMembers>true</doesSendEmailToMembers>
+    <email>pricemanagement@veritivcorp.com</email>
+    <name>Pricing Team Tickets</name>
+    <queueMembers>
+        <users>
+            <user>aerial.smith@veritivcorp.com</user>
+            <user>angela.schumacher@veritivcorp.com</user>
+            <user>candy.carter@veritivcorp.com</user>
+            <user>denise.cook@veritivcorp.com</user>
+            <user>kathy.knight@veritivcorp.com</user>
+            <user>keisha.brown04@veritivcorp.com</user>
+            <user>kevin.white@veritivcorp.com</user>
+            <user>pricebookteam@veritivcorp.com</user>
+            <user>ravipratap.misra@veritivcorp.com</user>
+            <user>robert.robbins@veritivcorp.com</user>
+            <user>roy.kennedy@veritivcorp.com</user>
+            <user>terri.gulli@veritivcorp.com</user>
+            <user>tom.francis@veritivcorp.com</user>
+            <user>tracey.powell@veritivcorp.com</user>
+        </users>
+    </queueMembers>
+    <queueSobject>
+        <sobjectType>WorkOrder</sobjectType>
+    </queueSobject>
+</Queue>

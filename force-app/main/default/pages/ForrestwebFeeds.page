@@ -1,0 +1,18 @@
+<apex:page >
+    <img src="https://na5.salesforce.com/servlet/servlet.ImageServer?id=01570000000jUaa&amp;oid=00D7000000091qn&amp;lastMod=1246376568000" alt="ForestWeb Logo"/><br/><br/>
+    <span style="font-weight: bold;"> &nbsp; &nbsp; Pulp &amp; Paper:</span> 
+    <script language="JavaScript" src="http://feed2js.org//feed2js.php?src=http%3A%2F%2Fmy.forestweb.com%2FiiFeed%2Ffeeds%2Funisource.rss&amp;num=1&amp;desc=150&amp;date=y&amp;tz=-10&amp;targ=blank" type="text/javascript"></script> &nbsp; 
+    <noscript> 
+        <a href="http://feed2js.org//feed2js.php?src=http%3A%2F%2Fmy.forestweb.com%2FiiFeed%2Ffeeds%2Funisource.rss&num=1&desc=150&date=y&tz=-10&targ=blank&html=y">View RSS feed</a> 
+        </noscript> &nbsp; <span style="font-weight: bold;">Packaging:</span>
+            <script language="JavaScript" src="http://feed2js.org//feed2js.php?src=http%3A%2F%2Fmy.forestweb.com%2FiiFeed%2Ffeeds%2FunisourcePaperPkg.rss&amp;num=1&amp;desc=150&amp;date=y&amp;tz=-10&amp;targ=blank" type="text/javascript"></script> &nbsp; 
+    <noscript> <a href="http://feed2js.org//feed2js.php?src=http%3A%2F%2Fmy.forestweb.com%2FiiFeed%2Ffeeds%2FunisourcePaperPkg.rss&num=1&desc=150&date=y&tz=-10&targ=blank&html=y">View RSS feed</a> </noscript> &nbsp; <span style="font-weight: bold;">Economy:</span> 
+    <script language="JavaScript" src="http://feed2js.org//feed2js.php?src=http%3A%2F%2Fmy.forestweb.com%2FiiFeed%2Ffeeds%2FunisourceEconomy.rss&amp;num=1&amp;desc=150&amp;date=y&amp;tz=-10&amp;targ=blank" type="text/javascript"></script> &nbsp; 
+    <noscript> <a href="http://feed2js.org//feed2js.php?src=http%3A%2F%2Fmy.forestweb.com%2FiiFeed%2Ffeeds%2FunisourceEconomy.rss&num=1&desc=150&date=y&tz=-10&targ=blank&html=y">View RSS feed</a> </noscript> &nbsp; <br/><font style="font-family: Verdana,Helvetica,Sans-Serif; color: rgb(0, 153, 0);" size="2"><font style="color: rgb(102, 0, 0); font-family: Arial,Sans-Serif;"><span style="font-weight: bold;">For more News, visit:</span>
+    </font></font>
+        <link style="font-family: Arial,Sans-Serif; color: rgb(0, 153, 0); text-decoration: underline;" rel="File-List" href="file:///C:%5CDOCUME%7E1%5Chamcar01%5CLOCALS%7E1%5CTemp%5Cmsohtmlclip1%5C01%5Cclip_filelist.xml"/>
+            <link style="font-family: Arial,Sans-Serif; color: rgb(0, 153, 0); text-decoration: underline;" rel="themeData" href="file:///C:%5CDOCUME%7E1%5Chamcar01%5CLOCALS%7E1%5CTemp%5Cmsohtmlclip1%5C01%5Cclip_themedata.thmx"/>
+                <link style="font-family: Arial,Sans-Serif; color: rgb(0, 153, 0); text-decoration: underline;" rel="colorSchemeMapping" href="file:///C:%5CDOCUME%7E1%5Chamcar01%5CLOCALS%7E1%5CTemp%5Cmsohtmlclip1%5C01%5Cclip_colorschememapping.xml"/>
+            <a href="http://www.industryintel.com/dashboard"><font style="font-family: Arial,Sans-Serif; color: rgb(0, 153, 0); text-decoration: underline;" size="2"><span style="font-size: 11pt;"></span></font></a><font style="font-family: Arial,Sans-Serif;" size="2"><a href="http://www.industryintel.com/dashboard" style="color: rgb(51, 51, 255); text-decoration: underline;" title="http://www.industryintel.com/dashboard" target="_blank">http://www.industryintel.com/dashboard</a><br/><br/></font>
+    <font style="font-family: Arial,Sans-Serif;" size="2">Request access to <span style="font-style: italic;">Industry Intelligence | Forestweb</span> here: <a style="color: rgb(51, 51, 255);" href="http://my.forestweb.com/iiDailyPromo/form.cfm" target="_blank">http://my.forestweb.com/iiDailyPromo/form.cfm</a> &nbsp;</font>
+</apex:page>

@@ -1,0 +1,4 @@
+<aura:component >
+	<aura:registerEvent name="aiqDelegatedApprovalEvent" type="c:aiqDelegatedApprovalEvent"/>
+    <lightning:button name = "DelegatedApproval" label="Delegate Approval" iconName="utility:change_owner" variant="neutral" onclick="{!c.clickButton}" />
+</aura:component>

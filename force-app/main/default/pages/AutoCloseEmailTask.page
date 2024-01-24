@@ -1,0 +1,88 @@
+<apex:page id="CloseEmailTaskWhenAccepted" name="Close Email Task When Accepted" sidebar="false" showHeader="false">
+    <apex:includeScript value="/support/console/38.0/integration.js"/>
+    <apex:includeScript value="/soap/ajax/38.0/connection.js"/>
+    <apex:includeScript value="{!URLFOR($Resource.cnx__CnxSfdcResources,'js/ConnectsIntegrationAPI.min.js')}"/>
+
+    <script type="text/javascript">
+        ConnectsIntegrationAPI.waitReady(function () {
+            ConnectsIntegrationAPI.writeLogDebug('Connects Integration API Successfully loaded from Custom Toolbar Visualforce Page.');
+            
+            //UNCOMMENT ME
+            ConnectsIntegrationAPI.onWorkItemConnect = function (event) {
+        
+                // write to gadget log
+                ConnectsIntegrationAPI.writeLogDebug("inside custom VF page");
+                console.log(event);
+                // function beginDemo() {
+                var timer = 5,
+                display = document.querySelector('#time'),
+                onComplete = document.querySelector('#onComplete');
+        
+                var minutes, seconds;
+                var expired = false;
+            
+                var workitemID;
+                    
+                    
+                // UNCOMMENT ME
+                ConnectsIntegrationAPI.writeLogDebug("Retrival of Event Channel = " + event.item.Channel + " Successful.");
+                       
+                if (event.item.Channel != "VOICE") {
+                    ConnectsIntegrationAPI.writeLogDebug("Workitem Call from " + event.item.Sender + " for Event ID: " + event.item.Id);
+               
+                    // save workitemid
+                    workitemID = event.item.Id; 
+                     
+                    setInterval(function () {
+                        minutes = parseInt(timer / 60, 10);
+                        seconds = parseInt(timer % 60, 10);
+
+                        minutes = minutes < 10 ? "0" + minutes : minutes;
+                        seconds = seconds < 10 ? "0" + seconds : seconds;
+                            
+                        display.textContent = seconds;
+            
+                        if(expired == false){
+                            --timer;
+                            if (timer <= 0) {
+                                expired = true;
+                                //onComplete.hidden = false;
+                                
+                              console.log("event.item.Channel: " + event.item.Channel);
+                                console.log("workItemID: " + workitemID);
+                                console.log("going to call 'endItem'");                      
+                                // Trigger the ConnectsIntegrationAPI.endItem   
+                                //ConnectsIntegrationAPI.endItem(workitemID, event.item.Channel, function (response) {
+                                //Testing to see if backwards parameters is the correct way to call the function.
+                                ConnectsIntegrationAPI.endItem(event.item.Channel, workitemID, function (response) {
+                                  console.log("ended item with response");
+                                    console.log(response);
+                                  
+                                    if (!response.success) {
+                                        ConnectsIntegrationAPI.showError("USER","Failed using item ID number: " + workitemID + " " + "Channel Type: " + event.item.Channel + " Failed using Sender: " + event.item.Sender + " EndItem failed with a response code: " + response.error, response.error);
+                                                
+                                        ConnectsIntegrationAPI.writeLogDebug("EndItem failed: " + response.error);
+                                    }
+                                });
+                                        
+                            }
+                        }
+                    }, 1000);
+                }
+            };
+        });
+    </script>
+
+    <body>
+        <!-- <button id="startTimer" visible="true" onclick="beginDemo()" >Simulate - onWorkItemConnect(Event) </button>< -->     
+        <div>Email ticket will be marked as closed in <span id="time" >5</span> seconds!</div>
+
+        <br />
+
+        <div id="onComplete" hidden="true">
+            Callout has been made to the ConnectsIntegrationAPI.endItem function.
+        </div>
+
+    </body>
+
+</apex:page>

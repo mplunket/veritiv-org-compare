@@ -1,0 +1,91 @@
+<aura:component implements="force:hasRecordId,flexipage:availableForRecordHome" access="public" controller="AIQ_ChainAccountLinesFilter">
+    <aura:handler name="init" value="{!this}" action="{!c.doInit}" />
+    <aura:attribute name="prodSelectorConfigNickname" type="String"/>
+    <aura:attribute name="scope" type="Map" default="{}"/>
+    <aura:attribute name="lineListPageSize" type="Integer"/>
+    <aura:attribute name="lineListPageSizeForMobile" type="Integer"/>
+    <aura:attribute name="workspacePageSize" type="String"/>
+    <aura:attribute name="workspacePageSizeForMobile" type="Integer"/>
+    <aura:attribute name="isLineItemsEnabled" type="Boolean"/>
+    <aura:attribute name="configuredInLineEdit" type="Boolean"/>
+    <aura:attribute name="inLineEditButtonConditionalDisplayField" type="String"/>
+    <aura:attribute name="configuredMassEdit" type="Boolean"/>
+    <aura:attribute name="massEditButtonConditionalDisplayField" type="String"/>
+    <aura:attribute name="configuredDeleteItems" type="Boolean"/>
+    <aura:attribute name="deleteButtonConditionalDisplayField" type="String"/>
+    <aura:attribute name="configuredDeleteRowAction" type="Boolean"/>
+    <aura:attribute name="deleteRowActionConditionalDisplayField" type="String"/>
+    <aura:attribute name="configuredEditRowAction" type="Boolean"/>
+    <aura:attribute name="editRowActionConditionalDisplayField" type="String"/>
+    <aura:attribute name="isWorkspaceEnabled" type="Boolean"/>
+    <aura:attribute name="isAddToWorkspaceEnabled" type="Boolean"/>
+    <aura:attribute name="addToWorkspaceButtonConditionalDisplayField" type="String"/>
+    <aura:attribute name="configuredWorkspaceSetRevertPoint" type="Boolean"/>
+    <aura:attribute name="configuredWorkspaceSetRevertPointRowAction" type="Boolean"/>
+    <aura:attribute name="workspaceSetRevertPointButtonConditionalDisplayField" type="String"/>
+    <aura:attribute name="workspaceSetRevertPointRowActionConditionalDisplayField" type="String"/>
+    <aura:attribute name="configuredWorkspaceMassEdit" type="Boolean"/>
+    <aura:attribute name="workspaceMassEditButtonConditionalDisplayField" type="String"/>
+    <aura:attribute name="isWorkspaceDeleteItemsEnabled" type="Boolean"/>
+    <aura:attribute name="workspaceDeleteButtonConditionalDisplayField" type="String"/>
+    <aura:attribute name="isWorkspaceDeleteRowActionEnabled" type="Boolean"/>
+    <aura:attribute name="workspaceDeleteRowActionConditionalDisplayField" type="String"/>
+    <aura:attribute name="isRemoveFromWorkspaceEnabled" type="Boolean"/>
+    <aura:attribute name="removeFromWorkspaceButtonConditionalDisplayField" type="String"/>
+    <aura:attribute name="isWorkspaceRevertEnabled" type="Boolean"/>
+    <aura:attribute name="workspaceRevertButtonConditionalDisplayField" type="String"/>
+    <aura:attribute name="lineItemsShowAllNotJustParentId" type="Boolean"/>
+    <aura:attribute name="canSelectAcrossAllPages" type="Boolean"/>
+    <aura:attribute name="thresholdTotalCount" type="Integer"/>
+    <aura:attribute name="toastMessageDuration" type="Integer"/>
+    <aura:attribute name="lineItemsLabel" type="String"/>
+    <aura:attribute name="workspaceLabel" type="String"/>
+    <aura:attribute name="scopeJSON" type="String"/>
+    <aura:attribute name="isSynchronousPersistEnabled" type="Boolean"/>
+    <aura:attribute name="showCurrencySymbolInsteadOfIsoCode" type="Boolean"/>
+
+
+    <zpl:ScrollableLineItems prodSelectorConfigNickname="{!v.prodSelectorConfigNickname}"
+                             scope="{!v.scope}"
+                             lineListPageSize="{!v.lineListPageSize}"
+                             lineListPageSizeForMobile="{!v.lineListPageSizeForMobile}"
+                             workspacePageSize="{!v.workspacePageSize}"
+                             workspacePageSizeForMobile="{!v.workspacePageSizeForMobile}"
+                             isLineItemsEnabled="{!v.isLineItemsEnabled}"
+                             configuredInLineEdit="{!v.configuredInLineEdit}"
+                             inLineEditButtonConditionalDisplayField="{!v.inLineEditButtonConditionalDisplayField}"
+                             configuredMassEdit="{!v.configuredMassEdit}"
+                             massEditButtonConditionalDisplayField="{!v.massEditButtonConditionalDisplayField}"
+                             configuredDeleteItems="{!v.configuredDeleteItems}"
+                             deleteButtonConditionalDisplayField="{!v.deleteButtonConditionalDisplayField}"
+                             configuredDeleteRowAction="{!v.configuredDeleteRowAction}"
+                             deleteRowActionConditionalDisplayField="{!v.deleteRowActionConditionalDisplayField}"
+                             configuredEditRowAction="{!v.configuredEditRowAction}"
+                             editRowActionConditionalDisplayField="{!v.editRowActionConditionalDisplayField}"
+                             isWorkspaceEnabled="{!v.isWorkspaceEnabled}"
+                             isAddToWorkspaceEnabled="{!v.isAddToWorkspaceEnabled}"
+                             addToWorkspaceButtonConditionalDisplayField="{!v.addToWorkspaceButtonConditionalDisplayField}"
+                             configuredWorkspaceSetRevertPoint='{!v.configuredWorkspaceSetRevertPoint}'
+                             configuredWorkspaceSetRevertPointRowAction='{!v.configuredWorkspaceSetRevertPointRowAction}'
+                             workspaceSetRevertPointButtonConditionalDisplayField='{!v.workspaceSetRevertPointButtonConditionalDisplayField}'
+                             configuredWorkspaceMassEdit='{!v.configuredWorkspaceMassEdit}'
+                             workspaceMassEditButtonConditionalDisplayField='{!v.workspaceMassEditButtonConditionalDisplayField}'
+                             isWorkspaceDeleteItemsEnabled='{!v.isWorkspaceDeleteItemsEnabled}'
+                             workspaceDeleteButtonConditionalDisplayField='{!v.workspaceDeleteButtonConditionalDisplayField}'
+                             isWorkspaceDeleteRowActionEnabled='{!v.isWorkspaceDeleteRowActionEnabled}'
+                             workspaceDeleteRowActionConditionalDisplayField='{!v.workspaceDeleteRowActionConditionalDisplayField}'
+                             isRemoveFromWorkspaceEnabled='{!v.isRemoveFromWorkspaceEnabled}'
+                             removeFromWorkspaceButtonConditionalDisplayField='{!v.removeFromWorkspaceButtonConditionalDisplayField}'
+                             isWorkspaceRevertEnabled='{!v.isWorkspaceRevertEnabled}'
+                             workspaceRevertButtonConditionalDisplayField='{!v.workspaceRevertButtonConditionalDisplayField}'
+                             lineItemsShowAllNotJustParentId='{!v.lineItemsShowAllNotJustParentId}'
+                             canSelectAcrossAllPages='{!v.canSelectAcrossAllPages}'
+                             thresholdTotalCount='{!v.thresholdTotalCount}'
+                             toastMessageDuration='{!v.toastMessageDuration}'
+                             lineItemsLabel='{!v.lineItemsLabel}'
+                             workspaceLabel='{!v.workspaceLabel}'
+                             scopeJSON='{!v.scopeJSON}'
+                             isSynchronousPersistEnabled="{!v.isSynchronousPersistEnabled}"
+                             showCurrencySymbolInsteadOfIsoCode="{!v.showCurrencySymbolInsteadOfIsoCode}"
+    />
+</aura:component>

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Start_Price__c</fullName>
+    <description>Created 12/2017 to capture Start Price as passed over from Zilliant in the GetPrice call on a Quote. To be shown on the QLI table, Additional Details, and Fetch P&amp;A table. Value always comes from Zilliant but will be overwritten in our code to = 0 if the Shipment_Method__c on the Quote is Direct.</description>
+    <externalId>false</externalId>
+    <inlineHelpText>Start Price from Zilliant</inlineHelpText>
+    <label>Start Price</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>3</scale>
+    <trackTrending>false</trackTrending>
+    <type>Currency</type>
+</CustomField>

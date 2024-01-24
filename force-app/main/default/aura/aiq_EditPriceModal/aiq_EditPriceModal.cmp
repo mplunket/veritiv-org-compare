@@ -1,0 +1,26 @@
+<aura:component implements="force:hasRecordId,lightning:isUrlAddressable,flexipage:availableForRecordHome,zpl:ActionEventHandler"
+                access="global"
+>
+    <aura:attribute name = "isCopyActionFinalized" type = "Boolean" default = "false" access = "global" description="outbound action finalized flag"/>
+    <aura:attribute name="recordIds" type="String[]" access="global" description="outbound list of records ids changed by action component"/>
+    <aura:attribute name="originalRecordIds" type="String[]" access="global" description="original list of records ids that does not change"/>
+    <aura:attribute name="prodSelectorConfigNickname" type="String" access="global" default="DefaultContract"/>
+    <aura:attribute name="actionComponent" type="Aura.Component[]" access="global" />
+    <aura:attribute name="priceModalComponent" type="Aura.Component[]" access="global" />
+    <aura:attribute name="overLibCmp" type="Aura.Action" access="global" />
+
+    <aura:handler name="change" value="{!v.isCopyActionFinalized}" action="{!c.handleCopyFinish}"/>
+    <aura:handler name="actionCompleteEvent" event="c:AIQqa_ActionCompleteEvent" action="{!c.handleActionCompleteEvent}" />
+    <aura:handler name="closedOnCancelEvent" event="zpl:ProductSelectorClosedEvent" action="{!c.handleClose}"/>
+    <aura:handler name="closedOnSaveEvent" event="zpl:ProductSelectorClosedEvent" action="{!c.handleSave}"/>
+
+    <aura:registerEvent name="refreshLineItemsEvent" type="zpl:RefreshComponentEvent" access = "global"/>
+
+    <lightning:overlayLibrary aura:id="overlayLib" />
+
+    <div>
+        {!v.priceModalComponent}
+        {!v.actionComponent}
+    </div>
+    
+</aura:component>

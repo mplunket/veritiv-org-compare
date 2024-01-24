@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Queue xmlns="http://soap.sforce.com/2006/04/metadata">
+    <doesSendEmailToMembers>false</doesSendEmailToMembers>
+    <email>sfcasereply@veritivcorp.com.invalid</email>
+    <name>EQUIP PARTS AND SERVICE3 - E2C</name>
+    <queueMembers>
+        <roles>
+            <role>EQUIPMENT_PARTS_SERVICE1</role>
+            <role>EQUIPMENT_PARTS_SERVICE2</role>
+            <role>EQUIPMENT_PARTS_SERVICE3</role>
+            <role>EQUIPMENT_PARTS_SERVICE4</role>
+            <role>SpecialistMgr</role>
+        </roles>
+    </queueMembers>
+    <queueSobject>
+        <sobjectType>Case</sobjectType>
+    </queueSobject>
+    <queueSobject>
+        <sobjectType>Fax_To_Case_Queue_Assignment__c</sobjectType>
+    </queueSobject>
+</Queue>

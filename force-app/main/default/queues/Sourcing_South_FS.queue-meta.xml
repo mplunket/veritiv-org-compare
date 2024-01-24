@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Queue xmlns="http://soap.sforce.com/2006/04/metadata">
+    <doesSendEmailToMembers>false</doesSendEmailToMembers>
+    <email>sm-fsfieldsourcingsouth@veritivcorp.com</email>
+    <name>Sourcing - South - FS</name>
+    <queueMembers>
+        <roleAndSubordinatesInternal>
+            <roleAndSubordinateInternal>CSVP</roleAndSubordinateInternal>
+            <roleAndSubordinateInternal>MKTG_JAX_Inside_Sales_Manager_JS</roleAndSubordinateInternal>
+        </roleAndSubordinatesInternal>
+    </queueMembers>
+    <queueSobject>
+        <sobjectType>Quote__c</sobjectType>
+    </queueSobject>
+</Queue>

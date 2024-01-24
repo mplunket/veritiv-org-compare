@@ -1,0 +1,574 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionCalls>
+        <description>Convert semi-colon delimited field of Ids (NIR Divisions) to a String collection of Servicing Division Ids</description>
+        <name>Get_Division_Ids</name>
+        <label>Get Division Ids</label>
+        <locationX>50</locationX>
+        <locationY>1295</locationY>
+        <actionName>ConvertCSVToStringCollection</actionName>
+        <actionType>apex</actionType>
+        <connector>
+            <targetReference>Get_Servicing_Divisions</targetReference>
+        </connector>
+        <flowTransactionModel>CurrentTransaction</flowTransactionModel>
+        <inputParameters>
+            <name>csvString</name>
+            <value>
+                <elementReference>$Record.NIR_Divisions__c</elementReference>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>delimiter</name>
+            <value>
+                <stringValue>;</stringValue>
+            </value>
+        </inputParameters>
+        <nameSegment>ConvertCSVToStringCollection</nameSegment>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+        <versionSegment>1</versionSegment>
+    </actionCalls>
+    <actionCalls>
+        <name>Send_NIR_Complete_Notification</name>
+        <label>Send NIR Complete Notification</label>
+        <locationX>226</locationX>
+        <locationY>2111</locationY>
+        <actionName>emailSimple</actionName>
+        <actionType>emailSimple</actionType>
+        <flowTransactionModel>CurrentTransaction</flowTransactionModel>
+        <inputParameters>
+            <name>emailAddressesArray</name>
+            <value>
+                <elementReference>var_RecipientAddresses</elementReference>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>senderType</name>
+            <value>
+                <stringValue>OrgWideEmailAddress</stringValue>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>senderAddress</name>
+            <value>
+                <stringValue>noreply-sfdc@veritivcorp.com</stringValue>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>emailSubject</name>
+            <value>
+                <elementReference>text_EmailSubject</elementReference>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>emailBody</name>
+            <value>
+                <elementReference>text_EmailBody</elementReference>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>sendRichBody</name>
+            <value>
+                <booleanValue>true</booleanValue>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>relatedRecordId</name>
+            <value>
+                <elementReference>$Record.Id</elementReference>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>logEmailOnSend</name>
+            <value>
+                <booleanValue>true</booleanValue>
+            </value>
+        </inputParameters>
+        <nameSegment>emailSimple</nameSegment>
+        <versionSegment>1</versionSegment>
+    </actionCalls>
+    <apiVersion>59.0</apiVersion>
+    <assignments>
+        <description>Add PSR to recipient collection (and remove first to ensure no duplicates with Submitter if PSR and Submitter are the same)</description>
+        <name>Add_PSR_to_Recipient_Collection</name>
+        <label>Add PSR to Recipient Collection</label>
+        <locationX>226</locationX>
+        <locationY>863</locationY>
+        <assignmentItems>
+            <assignToReference>var_RecipientAddresses</assignToReference>
+            <operator>RemoveAll</operator>
+            <value>
+                <elementReference>Get_PSR.Email__c</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>var_RecipientAddresses</assignToReference>
+            <operator>Add</operator>
+            <value>
+                <elementReference>Get_PSR.Email__c</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Get_New_Item</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>Add_Selling_Division_Row</name>
+        <label>Add Selling Division Row</label>
+        <locationX>490</locationX>
+        <locationY>1727</locationY>
+        <assignmentItems>
+            <assignToReference>var_SellingDivisions</assignToReference>
+            <operator>Add</operator>
+            <value>
+                <elementReference>text_SellingDivisionTableRow</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Loop_Supply_Planner_WOLIs</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>Add_Selling_Division_Table_Footer</name>
+        <label>Add Selling Division Table Footer</label>
+        <locationX>402</locationX>
+        <locationY>1919</locationY>
+        <assignmentItems>
+            <assignToReference>var_SellingDivisions</assignToReference>
+            <operator>Add</operator>
+            <value>
+                <stringValue>&lt;/td&gt;&lt;/tr&gt;</stringValue>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Send_NIR_Complete_Notification</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>Add_Servicing_Division_Table_Row</name>
+        <label>Add Servicing Division Table Row</label>
+        <locationX>138</locationX>
+        <locationY>1619</locationY>
+        <assignmentItems>
+            <assignToReference>var_SellingDivisions</assignToReference>
+            <operator>Add</operator>
+            <value>
+                <elementReference>text_ServicingDivisionTableRow</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Loop_Servicing_Divisions</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>Add_Submitter_to_Recipient_Collection</name>
+        <label>Add Submitter to Recipient Collection</label>
+        <locationX>226</locationX>
+        <locationY>647</locationY>
+        <assignmentItems>
+            <assignToReference>var_RecipientAddresses</assignToReference>
+            <operator>Add</operator>
+            <value>
+                <elementReference>Get_Submitter.Email</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Get_PSR</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>Set_Supply_Planner_Projected_Order_Date_Header</name>
+        <label>Set Supply Planner Projected Order Date Header</label>
+        <locationX>402</locationX>
+        <locationY>1511</locationY>
+        <assignmentItems>
+            <assignToReference>var_SellingDivisions</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>text_SellingDivisionTableHeader</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Loop_Supply_Planner_WOLIs</targetReference>
+        </connector>
+    </assignments>
+    <decisions>
+        <name>Direct_or_Stocking</name>
+        <label>Direct or Stocking?</label>
+        <locationX>226</locationX>
+        <locationY>1187</locationY>
+        <defaultConnector>
+            <targetReference>Get_Supply_Planner_WOLI_Record_Type</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Stocking</defaultConnectorLabel>
+        <rules>
+            <name>Direct</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>Get_NIR_WOLI.Delivery_Product_Type__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Direct</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Get_Division_Ids</targetReference>
+            </connector>
+            <label>Direct</label>
+        </rules>
+    </decisions>
+    <description>When an NIR WO Status is marked Complete, send notifications</description>
+    <environments>Default</environments>
+    <interviewLabel>Work Order [RT] - NIR WO Status is Marked Complete {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>Work Order - [RT] NIR WO Status is Marked Complete</label>
+    <loops>
+        <name>Loop_Servicing_Divisions</name>
+        <label>Loop Servicing Divisions</label>
+        <locationX>50</locationX>
+        <locationY>1511</locationY>
+        <collectionReference>Get_Servicing_Divisions</collectionReference>
+        <iterationOrder>Asc</iterationOrder>
+        <nextValueConnector>
+            <targetReference>Add_Servicing_Division_Table_Row</targetReference>
+        </nextValueConnector>
+        <noMoreValuesConnector>
+            <targetReference>Send_NIR_Complete_Notification</targetReference>
+        </noMoreValuesConnector>
+    </loops>
+    <loops>
+        <name>Loop_Supply_Planner_WOLIs</name>
+        <label>Loop Supply Planner WOLIs</label>
+        <locationX>402</locationX>
+        <locationY>1619</locationY>
+        <collectionReference>Get_Supply_Planner_WOLIs</collectionReference>
+        <iterationOrder>Asc</iterationOrder>
+        <nextValueConnector>
+            <targetReference>Add_Selling_Division_Row</targetReference>
+        </nextValueConnector>
+        <noMoreValuesConnector>
+            <targetReference>Add_Selling_Division_Table_Footer</targetReference>
+        </noMoreValuesConnector>
+    </loops>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>CanvasMode</name>
+        <value>
+            <stringValue>AUTO_LAYOUT_CANVAS</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>OriginBuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>AutoLaunchedFlow</processType>
+    <recordLookups>
+        <name>Get_New_Item</name>
+        <label>Get New Item</label>
+        <locationX>226</locationX>
+        <locationY>971</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>Get_Vendor</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>Id</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>Get_NIR_WOLI.New_Product__c</elementReference>
+            </value>
+        </filters>
+        <getFirstRecordOnly>true</getFirstRecordOnly>
+        <object>Product2</object>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordLookups>
+    <recordLookups>
+        <name>Get_NIR_WOLI</name>
+        <label>Get NIR WOLI</label>
+        <locationX>226</locationX>
+        <locationY>431</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>Get_Submitter</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>WorkOrderId</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>$Record.Id</elementReference>
+            </value>
+        </filters>
+        <filters>
+            <field>RecordTypeId</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>Get_NIR_WOLI_Record_Type.Id</elementReference>
+            </value>
+        </filters>
+        <getFirstRecordOnly>true</getFirstRecordOnly>
+        <object>WorkOrderLineItem</object>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordLookups>
+    <recordLookups>
+        <description>Get Record Type Id for NIR WOLI</description>
+        <name>Get_NIR_WOLI_Record_Type</name>
+        <label>Get NIR WOLI Record Type</label>
+        <locationX>226</locationX>
+        <locationY>323</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>Get_NIR_WOLI</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>SobjectType</field>
+            <operator>EqualTo</operator>
+            <value>
+                <stringValue>WorkOrderLineItem</stringValue>
+            </value>
+        </filters>
+        <filters>
+            <field>DeveloperName</field>
+            <operator>EqualTo</operator>
+            <value>
+                <stringValue>NIR_Work_Order_Line_Items</stringValue>
+            </value>
+        </filters>
+        <getFirstRecordOnly>true</getFirstRecordOnly>
+        <object>RecordType</object>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordLookups>
+    <recordLookups>
+        <name>Get_PSR</name>
+        <label>Get PSR</label>
+        <locationX>226</locationX>
+        <locationY>755</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>Add_PSR_to_Recipient_Collection</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>Id</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>$Record.Primary_Sales_Rep_2__c</elementReference>
+            </value>
+        </filters>
+        <getFirstRecordOnly>true</getFirstRecordOnly>
+        <object>Primary_Sales_Rep__c</object>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordLookups>
+    <recordLookups>
+        <name>Get_Servicing_Divisions</name>
+        <label>Get Servicing Divisions</label>
+        <locationX>50</locationX>
+        <locationY>1403</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>Loop_Servicing_Divisions</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>Id</field>
+            <operator>In</operator>
+            <value>
+                <elementReference>Get_Division_Ids.stringCollection</elementReference>
+            </value>
+        </filters>
+        <getFirstRecordOnly>false</getFirstRecordOnly>
+        <object>Servicing_Division__c</object>
+        <sortField>Division_Name_Formula__c</sortField>
+        <sortOrder>Asc</sortOrder>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordLookups>
+    <recordLookups>
+        <name>Get_Submitter</name>
+        <label>Get Submitter</label>
+        <locationX>226</locationX>
+        <locationY>539</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>Add_Submitter_to_Recipient_Collection</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>Id</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>$Record.WO_Submitted_By__c</elementReference>
+            </value>
+        </filters>
+        <getFirstRecordOnly>true</getFirstRecordOnly>
+        <object>User</object>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordLookups>
+    <recordLookups>
+        <name>Get_Supply_Planner_WOLI_Record_Type</name>
+        <label>Get Supply Planner WOLI Record Type</label>
+        <locationX>402</locationX>
+        <locationY>1295</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>Get_Supply_Planner_WOLIs</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>SobjectType</field>
+            <operator>EqualTo</operator>
+            <value>
+                <stringValue>WorkOrderLineItem</stringValue>
+            </value>
+        </filters>
+        <filters>
+            <field>DeveloperName</field>
+            <operator>EqualTo</operator>
+            <value>
+                <stringValue>Supply_Planner_Work_Order_Line_Items</stringValue>
+            </value>
+        </filters>
+        <getFirstRecordOnly>true</getFirstRecordOnly>
+        <object>RecordType</object>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordLookups>
+    <recordLookups>
+        <name>Get_Supply_Planner_WOLIs</name>
+        <label>Get Supply Planner WOLIs</label>
+        <locationX>402</locationX>
+        <locationY>1403</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>Set_Supply_Planner_Projected_Order_Date_Header</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>WorkOrderId</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>$Record.Id</elementReference>
+            </value>
+        </filters>
+        <filters>
+            <field>RecordTypeId</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>Get_Supply_Planner_WOLI_Record_Type.Id</elementReference>
+            </value>
+        </filters>
+        <getFirstRecordOnly>false</getFirstRecordOnly>
+        <object>WorkOrderLineItem</object>
+        <sortField>Projected_Order_Date__c</sortField>
+        <sortOrder>Asc</sortOrder>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordLookups>
+    <recordLookups>
+        <name>Get_Vendor</name>
+        <label>Get Vendor</label>
+        <locationX>226</locationX>
+        <locationY>1079</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>Direct_or_Stocking</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>Id</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>Get_New_Item.Vendor__c</elementReference>
+            </value>
+        </filters>
+        <getFirstRecordOnly>true</getFirstRecordOnly>
+        <object>Vendor_Detail__c</object>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordLookups>
+    <start>
+        <locationX>100</locationX>
+        <locationY>0</locationY>
+        <connector>
+            <targetReference>Get_NIR_WOLI_Record_Type</targetReference>
+        </connector>
+        <doesRequireRecordChangedToMeetCriteria>true</doesRequireRecordChangedToMeetCriteria>
+        <filterFormula>{!$Record.RecordType.Name} = &quot;NIR - New Item Request&quot; &amp;&amp;
+TEXT({!$Record.Status}) = &quot;Complete&quot;</filterFormula>
+        <object>WorkOrder</object>
+        <recordTriggerType>Update</recordTriggerType>
+        <triggerType>RecordAfterSave</triggerType>
+    </start>
+    <status>Active</status>
+    <textTemplates>
+        <name>text_DirectSellingDivisions</name>
+        <isViewedAsPlainText>false</isViewedAsPlainText>
+        <text>&lt;p&gt;&amp;lt;tr&amp;gt;&amp;lt;td&amp;gt;&amp;lt;b&amp;gt;Selling Division(s)&amp;lt;/b&amp;gt;:&amp;lt;/td&amp;gt;&amp;lt;td&amp;gt;{!$Record.Servicing_Divisions__c}&amp;lt;/td&amp;gt;&amp;lt;/tr&amp;gt;&lt;/p&gt;</text>
+    </textTemplates>
+    <textTemplates>
+        <description>Email Body</description>
+        <name>text_EmailBody</name>
+        <isViewedAsPlainText>true</isViewedAsPlainText>
+        <text>&lt;p&gt;&lt;b&gt;NIR - Work Order #{!$Record.WorkOrderNumber}&lt;/b&gt;&lt;/p&gt;
+&lt;table&gt;
+&lt;tr&gt;&lt;td colspan=&quot;2&quot;&gt;&lt;p&gt;&lt;b&gt;&lt;u&gt;Request Information&lt;/u&gt;&lt;/b&gt;&lt;/p&gt;&lt;/td&gt;&lt;/tr&gt;
+&lt;tr&gt;&lt;td&gt;&lt;b&gt;Customer Name&lt;/b&gt;: &lt;/td&gt;&lt;td&gt;{!$Record.Account.Name}&lt;/td&gt;&lt;/tr&gt;
+&lt;tr&gt;&lt;td&gt;&lt;b&gt;Bill To #&lt;/b&gt;: &lt;/td&gt;&lt;td&gt;{!$Record.Account_Billto_Number__c}&lt;/td&gt;&lt;/tr&gt;
+&lt;tr&gt;&lt;td&gt;&lt;b&gt;PSR&lt;/b&gt;: &lt;/td&gt;&lt;td&gt;{!Get_PSR.Name}&lt;/td&gt;&lt;/tr&gt;
+&lt;tr&gt;&lt;td&gt;&lt;b&gt;Request Date&lt;/b&gt;: &lt;/td&gt;&lt;td&gt;{!$Record.CreatedDate}&lt;/td&gt;&lt;/tr&gt;
+&lt;tr&gt;&lt;td&gt;&lt;b&gt;Requested By&lt;/b&gt;: &lt;/td&gt;&lt;td&gt;{!Get_Submitter.Name}&lt;/td&gt;&lt;/tr&gt;
+&lt;tr&gt;&lt;td&gt;&lt;b&gt;Item Type&lt;/b&gt;: &lt;/td&gt;&lt;td&gt;{!$Record.Delivery_Product_Type__c}&lt;/td&gt;&lt;/tr&gt;
+&lt;tr&gt;&lt;td&gt;&lt;b&gt;Submitter Comments&lt;/b&gt;: &lt;/td&gt;&lt;td&gt;{!$Record.Submitter_Comments__c}&lt;/td&gt;&lt;/tr&gt;
+&lt;tr&gt;&lt;td colspan=&quot;2&quot;&gt;&lt;br&gt;&lt;p&gt;&lt;b&gt;&lt;u&gt;Product Information&lt;/u&gt;&lt;/b&gt;&lt;/p&gt;&lt;/td&gt;&lt;/tr&gt;
+&lt;tr&gt;&lt;td&gt;&lt;b&gt;Vendor Name&lt;/b&gt;: &lt;/td&gt;&lt;td&gt;{!Get_Vendor.Name}&lt;/td&gt;&lt;/tr&gt;
+&lt;tr&gt;&lt;td&gt;&lt;b&gt;Product Number&lt;/b&gt;: &lt;/td&gt;&lt;td&gt;{!Get_New_Item.ProductCode}&lt;/td&gt;&lt;/tr&gt;
+&lt;tr&gt;&lt;td&gt;&lt;b&gt;Product Description&lt;/b&gt;: &lt;/td&gt;&lt;td&gt;{!Get_New_Item.Description}&lt;/td&gt;&lt;/tr&gt;
+&lt;tr&gt;&lt;td&gt;&lt;b&gt;Category 1&lt;/b&gt;: &lt;/td&gt;&lt;td&gt;{!$Record.Product_Category_1__c}&lt;/td&gt;&lt;/tr&gt;
+&lt;tr&gt;&lt;td&gt;&lt;b&gt;Category 2&lt;/b&gt;: &lt;/td&gt;&lt;td&gt;{!$Record.Product_Category_2__c}&lt;/td&gt;&lt;/tr&gt;
+&lt;tr&gt;&lt;td colspan=&quot;2&quot;&gt;&lt;br&gt;&lt;p&gt;&lt;b&gt;&lt;u&gt;Selling Divisions&lt;/u&gt;&lt;/b&gt;&lt;/p&gt;&lt;/td&gt;&lt;/tr&gt;
+{!var_SellingDivisions}
+&lt;/table&gt;</text>
+    </textTemplates>
+    <textTemplates>
+        <name>text_EmailSubject</name>
+        <isViewedAsPlainText>true</isViewedAsPlainText>
+        <text>NIR Complete - Work Order #{!$Record.WorkOrderNumber}</text>
+    </textTemplates>
+    <textTemplates>
+        <name>text_SellingDivisionTableHeader</name>
+        <isViewedAsPlainText>true</isViewedAsPlainText>
+        <text>&lt;tr&gt;&lt;td colspan=&quot;3&quot;&gt;&lt;table style=&quot;border-collapse: collapse;&quot;&gt;&lt;tr&gt;&lt;th style=&quot;border: 1px solid; padding: 5px;&quot;&gt;&lt;b&gt;Division Name&lt;/b&gt;&lt;/th&gt;&lt;th style=&quot;border: 1px solid; padding: 5px;&quot;&gt;&lt;b&gt;Projected Order Date&lt;/b&gt;&lt;/th&gt;&lt;th style=&quot;border: 1px solid; padding: 5px;&quot;&gt;&lt;b&gt;Supply Planner&lt;/b&gt;&lt;/th&gt;&lt;/tr&gt;&lt;tr&gt;</text>
+    </textTemplates>
+    <textTemplates>
+        <description>Division Name Formula - Projected Order Date</description>
+        <name>text_SellingDivisionTableRow</name>
+        <isViewedAsPlainText>true</isViewedAsPlainText>
+        <text>&lt;tr&gt;&lt;td style=&quot;border: 1px solid; padding: 5px;&quot;&gt;{!Loop_Supply_Planner_WOLIs.Servicing_Division_Lookup__r.Division_Name_Formula__c} &lt;/td&gt;&lt;td style=&quot;border: 1px solid; padding: 5px;&quot;&gt;{!Loop_Supply_Planner_WOLIs.Projected_Order_Date__c}&lt;/td&gt;&lt;td style=&quot;border: 1px solid; padding: 5px;&quot;&gt;{!Loop_Supply_Planner_WOLIs.Owner_Name__c}&lt;/td&gt;&lt;/tr&gt;</text>
+    </textTemplates>
+    <textTemplates>
+        <name>text_ServicingDivisionTableRow</name>
+        <isViewedAsPlainText>true</isViewedAsPlainText>
+        <text>&lt;tr&gt;&lt;td colspan=&quot;2&quot;&gt;&lt;b&gt;{!Loop_Servicing_Divisions.Division_Name_Formula__c}&lt;/b&gt;&lt;/td&gt;&lt;/tr&gt;</text>
+    </textTemplates>
+    <variables>
+        <description>String collection of recipient email addresses</description>
+        <name>var_RecipientAddresses</name>
+        <dataType>String</dataType>
+        <isCollection>true</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+    <variables>
+        <description>For Direct, list Servicing Divisions from request
+For Stocking, display a table of Servicing Divisions with Projected Order Date</description>
+        <name>var_SellingDivisions</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+</Flow>

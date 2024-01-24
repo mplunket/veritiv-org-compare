@@ -1,0 +1,54 @@
+<apex:page standardController="Quote_Line_Item__c" recordSetVar="quoteLineItems" extensions="PandAQLIControllerExtension" tabStyle="Quote_Line_Item__c">
+    <apex:sectionHeader title="Quote Line Items on Quote {!quote.Name}" subtitle="for Account {!quote.Account__r.Name}"/>
+    <apex:outputPanel id="msgs">
+        <apex:pageMessages />
+    </apex:outputPanel>
+    <apex:form >
+        <apex:pageBlock title="Pricing & Availability">
+            <apex:pageBlockButtons >
+                <apex:commandButton value="Back" action="{!cancel}"/>
+            </apex:pageBlockButtons>
+            <apex:pageBlockTable value="{!pricingProducts}" var="prodWrapper" rendered="{!hasSelectedRecords}">
+                <apex:column value="{!prodWrapper.product.ProductCode}"/>
+                <apex:column value="{!prodWrapper.product.Description}"/>
+                <apex:column headerValue="Vendor Prod Code" value="{!prodWrapper.product.Vendor_Product_Code__c}"/>
+                <apex:column headerValue="Cost" value="{!prodWrapper.cost.Amount}" style="text-align:right"/>
+                <apex:column headerValue="UOM" value="{!prodWrapper.uom}"/>
+                <apex:column headerValue="Price" value="{!prodWrapper.price.Amount}" style="text-align:right"/>
+                <apex:column headerValue="Sys-Div" style="text-align:right">
+                    <apex:repeat value="{!prodWrapper.systemDivisions}" var="sysDiv">
+                        <apex:outputText value="{!sysDiv}"/><br/>
+                    </apex:repeat>
+                </apex:column>
+                <apex:column headerValue="Qty Onhand" style="text-align:right">
+                    <apex:repeat value="{!prodWrapper.quantityOnhand}" var="qtyOnhand">
+                        <apex:outputText value="{!qtyOnhand}"/><br/>
+                    </apex:repeat>
+                </apex:column>
+                <apex:column headerValue="UOM">
+                    <apex:repeat value="{!prodWrapper.stockingUOMs}" var="stockUOM">
+                        <apex:outputText value="{!stockUOM}"/><br/>
+                    </apex:repeat>
+                </apex:column>
+                <apex:column headerValue="Division">
+                    <apex:repeat value="{!prodWrapper.divisions}" var="div">
+                        <nobr><apex:outputText value="{!div}"/></nobr><br/>
+                    </apex:repeat>
+                </apex:column>
+                <apex:column headerValue="Transfer Days">
+                    <apex:repeat value="{!prodWrapper.transferDays}" var="xferDays">
+                        <apex:outputText value="{!xferDays}"/><br/>
+                    </apex:repeat>
+                </apex:column>
+            </apex:pageBlockTable>
+            <apex:pageBlockTable value="{!selected}" var="qli" rendered="false">
+                <!-- Hidden fields required by Apex controller extension to bind to the data -->
+                <apex:outputText value="{!qli.Special_Item__c}
+                {!qli.Product__c}
+                {!qli.Product_Code__c}
+                {!qli.Product_Description__c}" rendered="false"/>
+                <!-- End of hidden fields -->
+            </apex:pageBlockTable>
+        </apex:pageBlock>
+    </apex:form>
+</apex:page>

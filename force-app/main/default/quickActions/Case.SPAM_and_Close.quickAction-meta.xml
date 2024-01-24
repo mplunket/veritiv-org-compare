@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<QuickAction xmlns="http://soap.sforce.com/2006/04/metadata">
+    <description>CLASSIC CONSOLE This action sets predefined values to mark a case as spam and the values trigger a process builder that change the account and set the owner to the spam queue</description>
+    <fieldOverrides>
+        <field>Information_Email__c</field>
+        <formula>false</formula>
+    </fieldOverrides>
+    <fieldOverrides>
+        <field>Is_Spam__c</field>
+        <formula>TRUE</formula>
+    </fieldOverrides>
+    <fieldOverrides>
+        <field>Priority</field>
+        <literalValue>Low</literalValue>
+    </fieldOverrides>
+    <fieldOverrides>
+        <field>Status</field>
+        <literalValue>Closed</literalValue>
+    </fieldOverrides>
+    <fieldOverrides>
+        <field>Type</field>
+        <literalValue>SPAM</literalValue>
+    </fieldOverrides>
+    <label>Not Applicable</label>
+    <optionsCreateFeedItem>false</optionsCreateFeedItem>
+    <quickActionLayout>
+        <layoutSectionStyle>TwoColumnsLeftToRight</layoutSectionStyle>
+        <quickActionLayoutColumns/>
+        <quickActionLayoutColumns/>
+    </quickActionLayout>
+    <successMessage>Success! Case Closed!</successMessage>
+    <type>Update</type>
+</QuickAction>

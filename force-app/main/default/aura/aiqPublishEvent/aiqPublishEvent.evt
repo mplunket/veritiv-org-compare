@@ -1,0 +1,5 @@
+<!--c:aiqPublishEvent-->
+<aura:event type="APPLICATION" >
+    <aura:attribute name="recordIds" type="Id" />
+    <aura:attribute name="actionName" type="String" default="Publish Line"/>
+</aura:event>

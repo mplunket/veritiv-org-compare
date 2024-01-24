@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>My_active_and_monitoring_issues</fullName>
+    <columns>Priority__c</columns>
+    <columns>NAME</columns>
+    <columns>Status__c</columns>
+    <columns>CREATEDBY_USER</columns>
+    <columns>CREATED_DATE</columns>
+    <columns>LAST_UPDATE</columns>
+    <columns>UPDATEDBY_USER</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>Responsible_Party__c</field>
+        <operation>equals</operation>
+        <value>Angie Lasher</value>
+    </filters>
+    <filters>
+        <field>Status__c</field>
+        <operation>notEqual</operation>
+        <value>,10 - Resolved,86 - Requirement Canceled,97 - Wish List / Enhancement Tracking</value>
+    </filters>
+    <label>My active and monitoring issues</label>
+    <language>en_US</language>
+</ListView>

@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Sell_Price_To_Margin__c</fullName>
+    <description>This field to capture key details for decisioning on the CLIA page layout. Originally named Start Target Floor. Per Rob on 10/2, &quot;A like message would be used for the “Sell Price to Margin”.  However, we would need a Calculation.  The Calculation needed would be Margin percent.  So here is the calc:
+
+ 
+
+Sales Rep Proposed Price
+
+Minus
+
+Current Commissionable Cost
+
+Divided by
+
+Sales Rep Proposed Price
+
+ 
+
+EXAMPLE (103-100)/103 = .029126 or .03 (when rounded to the second decimal)
+
+ 
+
+If Minimum Margin was 10% using the above examples we would trigger a message of “Less Than Margin Min”&quot;</description>
+    <externalId>false</externalId>
+    <formula>IF( (Sales_Requested_Price__c  - Campaign_Recommended_Cost__c )/Sales_Requested_Price__c &lt; Contract_Line_Item__r.Margin__c ,
+&quot;Less Than Margin Min&quot;,
+&quot;Greater Than Margin Min&quot;
+)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Sell Price To Margin</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

@@ -1,0 +1,123 @@
+body {
+	background-color: #fff;
+	font-family: Arial, sans-serif;
+	color: #666;
+	font-size: 12px;
+	margin: 0;
+}
+
+a {
+	color: #1797c0;
+	text-decoration: none;
+}
+
+a:hover {
+	text-decoration: underline;
+}
+
+div#page-wrapper {
+	margin: 0 auto;
+	margin-top: 80px;
+	width: 640px;
+}
+
+div.form {
+	float: left;
+	width: 256px;
+}
+
+img.smartsync-logo {
+	display: block;
+}
+
+form.login-form {
+	padding-top: 40px;
+}
+
+input.field {
+	width: 250px;
+	margin-bottom: 18px;
+}
+
+input.login-button {
+	font-size: 14px;
+}
+
+div#help {
+	width: 256px;
+	margin-top: 40px;
+	border-top: 1px dotted #999;
+	padding-top: 20px;
+}
+
+div.login-image {
+	float: right;
+}
+
+div#footer {
+	clear: both;
+	padding-top: 20px;
+}
+
+img.unisource-logo {
+	padding-right: 40px;
+}
+
+.copyright {
+	font-size: 10px;
+	color: #999;
+}
+
+.errorMessage {
+	color: red;
+	width: 100%;
+}
+
+@media only screen and (max-width: 480px), only screen and (max-device-width: 480px) {
+
+	div#page-wrapper {
+		margin-top: 10px;
+		width: 220px;
+	}
+
+	div.form {
+		clear: both;
+	}
+
+	img.smartsync-logo {
+		width: 220px;
+	}
+
+	form.login-form {
+		padding-top: 20px;
+	}
+
+	input.field {
+		width: 216px;
+		margin-bottom: 9px;
+	}
+
+	div#help {
+		width: 218px;
+		margin-top: 20px;
+		padding-top: 10px;
+	}
+
+	div.login-image {
+		display: none;
+	}
+
+	div#footer {
+		padding-top: 10px;
+		font-size: 12px;
+		text-align: center;
+	}
+
+	div#help a {
+		font-size: 10px;
+	}
+
+	.copyright {
+		display: none;
+	}
+}

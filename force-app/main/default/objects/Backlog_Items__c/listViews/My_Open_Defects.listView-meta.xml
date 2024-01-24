@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>My_Open_Defects</fullName>
+    <columns>NAME</columns>
+    <columns>Title__c</columns>
+    <columns>Assigned__c</columns>
+    <columns>OWNER.LAST_NAME</columns>
+    <columns>Status__c</columns>
+    <columns>Parent_User_Story__c</columns>
+    <filterScope>Mine</filterScope>
+    <filters>
+        <field>Status__c</field>
+        <operation>notEqual</operation>
+        <value>Released,Canceled,Pass,Closed</value>
+    </filters>
+    <filters>
+        <field>RECORDTYPE</field>
+        <operation>equals</operation>
+        <value>Backlog_Items__c.Defect,Backlog_Items__c.Production_Issue</value>
+    </filters>
+    <label>*My Open Defects</label>
+</ListView>

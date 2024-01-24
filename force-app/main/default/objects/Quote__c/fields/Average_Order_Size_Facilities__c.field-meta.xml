@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Average_Order_Size_Facilities__c</fullName>
+    <description>Selection is to be passed in the GetPrice call for Prospects</description>
+    <externalId>false</externalId>
+    <inlineHelpText>Select the customer&apos;s average order size in the Facilities segment.</inlineHelpText>
+    <label>Average Order Size: Facilities</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetName>Spend_and_Order_Size</valueSetName>
+    </valueSet>
+</CustomField>

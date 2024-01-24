@@ -1,0 +1,22 @@
+<apex:page standardController="Quote__c" extensions="QuoteControllerExtension" action="{!findShipToAddresses}">
+    <apex:sectionHeader title="Ship To Address" subtitle="Quote: {!Quote__c.Name}"/>
+    <apex:outputPanel id="msgs">
+        <apex:pageMessages />
+    </apex:outputPanel>
+    <apex:form >
+        <apex:pageBlock title="Account: {!Quote__c.Account__r.Name}" rendered="{!isValidQuote}">
+            <apex:pageBlockButtons >
+                <apex:commandButton value="Save" action="{!saveShipToAddress}" disabled="{!NOT(foundAddresses)}"/>
+                <apex:commandButton value="Back to Quote" action="{!cancel}" rendered="{!NOT(foundAddresses)}"/>
+            </apex:pageBlockButtons>
+            <apex:pageBlockSection columns="1" title="Select Address" collapsible="false">
+                <apex:selectRadio value="{!shipToAccountID}" layout="pageDirection">
+                    <apex:selectOptions value="{!shipToAddresses}"/>
+                </apex:selectRadio>
+            </apex:pageBlockSection>
+        </apex:pageBlock>
+    </apex:form>
+    <!-- Hidden fields required by Apex controller extension to bind to the data -->
+    <apex:outputText value="{!Quote__c.Bill_To_Number__c}{!Quote__c.Account__r.AccountNumber}{!Quote__c.Ship_To_Number__c}" rendered="false"/>
+    <!-- End of hidden fields -->
+</apex:page>

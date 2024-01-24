@@ -1,0 +1,172 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Users_Affected__c</fullName>
+    <externalId>false</externalId>
+    <label>Users Affected</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>MultiselectPicklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>true</sorted>
+            <value>
+                <fullName>3PL</fullName>
+                <default>false</default>
+                <label>3PL</label>
+            </value>
+            <value>
+                <fullName>All Users</fullName>
+                <default>false</default>
+                <label>All Users</label>
+            </value>
+            <value>
+                <fullName>Core</fullName>
+                <default>false</default>
+                <label>Core</label>
+            </value>
+            <value>
+                <fullName>Credit</fullName>
+                <default>false</default>
+                <label>Credit</label>
+            </value>
+            <value>
+                <fullName>CS</fullName>
+                <default>false</default>
+                <label>CS</label>
+            </value>
+            <value>
+                <fullName>eBusiness</fullName>
+                <default>false</default>
+                <label>eBusiness</label>
+            </value>
+            <value>
+                <fullName>Execs</fullName>
+                <default>false</default>
+                <label>Execs</label>
+            </value>
+            <value>
+                <fullName>Field Sales</fullName>
+                <default>false</default>
+                <label>Field Sales</label>
+            </value>
+            <value>
+                <fullName>Finance</fullName>
+                <default>false</default>
+                <label>Finance</label>
+            </value>
+            <value>
+                <fullName>Individual User</fullName>
+                <default>false</default>
+                <label>Individual User</label>
+            </value>
+            <value>
+                <fullName>Inside Sales</fullName>
+                <default>false</default>
+                <label>Inside Sales</label>
+            </value>
+            <value>
+                <fullName>IT</fullName>
+                <default>false</default>
+                <label>IT</label>
+            </value>
+            <value>
+                <fullName>Marketing</fullName>
+                <default>false</default>
+                <label>Marketing</label>
+            </value>
+            <value>
+                <fullName>Merchandisers</fullName>
+                <default>false</default>
+                <label>Merchandisers</label>
+            </value>
+            <value>
+                <fullName>National Accounts</fullName>
+                <default>false</default>
+                <label>National Accounts</label>
+            </value>
+            <value>
+                <fullName>New User Group</fullName>
+                <default>false</default>
+                <label>New User Group</label>
+            </value>
+            <value>
+                <fullName>Operations</fullName>
+                <default>false</default>
+                <label>Operations</label>
+            </value>
+            <value>
+                <fullName>Sales</fullName>
+                <default>false</default>
+                <label>Sales</label>
+            </value>
+            <value>
+                <fullName>Sales Managers</fullName>
+                <default>false</default>
+                <label>Sales Managers</label>
+            </value>
+            <value>
+                <fullName>Segment - FS</fullName>
+                <default>false</default>
+                <label>Segment - FS</label>
+            </value>
+            <value>
+                <fullName>Segment - Paper</fullName>
+                <default>false</default>
+                <label>Segment - Paper</label>
+            </value>
+            <value>
+                <fullName>Segment - PKG</fullName>
+                <default>false</default>
+                <label>Segment - PKG</label>
+            </value>
+            <value>
+                <fullName>Segment - Publishing</fullName>
+                <default>false</default>
+                <label>Segment - Publishing</label>
+            </value>
+            <value>
+                <fullName>SF Administrators</fullName>
+                <default>false</default>
+                <label>SF Administrators</label>
+            </value>
+            <value>
+                <fullName>Sourcing</fullName>
+                <default>false</default>
+                <label>Sourcing</label>
+            </value>
+            <value>
+                <fullName>Specialists</fullName>
+                <default>false</default>
+                <label>Specialists</label>
+            </value>
+            <value>
+                <fullName>Spec Reps</fullName>
+                <default>false</default>
+                <label>Spec Reps</label>
+            </value>
+            <value>
+                <fullName>Strategy</fullName>
+                <default>false</default>
+                <label>Strategy</label>
+            </value>
+            <value>
+                <fullName>Supply Chain</fullName>
+                <default>false</default>
+                <label>Supply Chain</label>
+            </value>
+            <value>
+                <fullName>TSB</fullName>
+                <default>false</default>
+                <label>TSB</label>
+            </value>
+            <value>
+                <fullName>UES/UGS</fullName>
+                <default>false</default>
+                <label>UES/UGS</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+    <visibleLines>6</visibleLines>
+</CustomField>

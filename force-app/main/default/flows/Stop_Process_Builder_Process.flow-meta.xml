@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>52.0</apiVersion>
+    <assignments>
+        <description>Do Nothing</description>
+        <name>Do_Nothing</name>
+        <label>Do Nothing</label>
+        <locationX>176</locationX>
+        <locationY>158</locationY>
+        <assignmentItems>
+            <assignToReference>DoNothing</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <stringValue>0</stringValue>
+            </value>
+        </assignmentItems>
+    </assignments>
+    <description>Stop Process Builder Process on Running</description>
+    <interviewLabel>Stop Process Builder Process {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>Stop Process Builder Process</label>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>CanvasMode</name>
+        <value>
+            <stringValue>AUTO_LAYOUT_CANVAS</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>OriginBuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>AutoLaunchedFlow</processType>
+    <start>
+        <locationX>50</locationX>
+        <locationY>0</locationY>
+        <connector>
+            <targetReference>Do_Nothing</targetReference>
+        </connector>
+    </start>
+    <status>Active</status>
+    <variables>
+        <name>DoNothing</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+        <value>
+            <stringValue>0</stringValue>
+        </value>
+    </variables>
+</Flow>

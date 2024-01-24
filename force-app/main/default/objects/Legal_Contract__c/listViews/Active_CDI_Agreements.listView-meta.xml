@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Active_CDI_Agreements</fullName>
+    <columns>NAME</columns>
+    <columns>Account__c</columns>
+    <columns>Contract_Type__c</columns>
+    <columns>Agreement_Number__c</columns>
+    <columns>contract_status__c</columns>
+    <columns>LAST_UPDATE</columns>
+    <columns>UPDATEDBY_USER</columns>
+    <columns>Effective_Date__c</columns>
+    <columns>CREATEDBY_USER</columns>
+    <columns>CREATED_DATE</columns>
+    <columns>Contract_Source__c</columns>
+    <columns>OWNER.LAST_NAME</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>Contract_Type__c</field>
+        <operation>equals</operation>
+        <value>CDI Agreement,CDI Agreement EXCEPTION</value>
+    </filters>
+    <filters>
+        <field>contract_status__c</field>
+        <operation>equals</operation>
+        <value>Fully Executed/Active</value>
+    </filters>
+    <label>Active CDI Agreements</label>
+</ListView>

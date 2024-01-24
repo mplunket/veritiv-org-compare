@@ -1,0 +1,24 @@
+<apex:page controller="DnBAccountVFSyncController">
+    <apex:includeLightning />
+
+    <div style="width: 100%; text-align: center;">
+        <a href="{!'/' + account.Id}">Return to Account</a>
+    </div>
+
+    <div id="sync-account-with-dnb-lightning" style="width: 600px; margin: 0 auto;"/>
+    
+    <script>
+        $Lightning.use("c:SyncAccountWithDnBApp", function() {
+            $Lightning.createComponent("c:SyncAccountWithDnBQuickAction", 
+                { 
+                    recordId : '{!account.Id}',
+                    isClassic : true
+                },
+                "sync-account-with-dnb-lightning",
+                function(cmp) {
+
+                }
+            );
+        });
+    </script>
+</apex:page>

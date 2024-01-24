@@ -1,0 +1,3621 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Workflow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <alerts>
+        <fullName>Cannabis_Opportunity_created</fullName>
+        <ccEmails>salesforce@unisourcelink.com</ccEmails>
+        <description>Cannabis Opportunity created</description>
+        <protected>false</protected>
+        <recipients>
+            <recipient>michael.parks@veritivcorp.com</recipient>
+            <type>user</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>Workflow_Alert_Emails/Cannabis_Opportunity</template>
+    </alerts>
+    <alerts>
+        <fullName>Closed_Opp_for_Cold_Chain</fullName>
+        <ccEmails>salesforce@unisourcelink.com</ccEmails>
+        <description>Closed Opp for Cold Chain</description>
+        <protected>false</protected>
+        <recipients>
+            <recipient>christopher.baum@veritivcorp.com</recipient>
+            <type>user</type>
+        </recipients>
+        <recipients>
+            <recipient>christopher.kennedy@veritivcorp.com</recipient>
+            <type>user</type>
+        </recipients>
+        <recipients>
+            <recipient>ron.ramsey@veritivcorp.com</recipient>
+            <type>user</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>Workflow_Alert_Emails/Opportunity_Closed</template>
+    </alerts>
+    <alerts>
+        <fullName>Closed_Opp_for_Corrugated</fullName>
+        <ccEmails>salesforce@unisourcelink.com</ccEmails>
+        <description>Closed Opp for Corrugated</description>
+        <protected>false</protected>
+        <recipients>
+            <recipient>christopher.baum@veritivcorp.com</recipient>
+            <type>user</type>
+        </recipients>
+        <recipients>
+            <recipient>christopher.kennedy@veritivcorp.com</recipient>
+            <type>user</type>
+        </recipients>
+        <recipients>
+            <recipient>kevin.perry@veritivcorp.com</recipient>
+            <type>user</type>
+        </recipients>
+        <recipients>
+            <recipient>lon.boruff2@veritivcorp.com</recipient>
+            <type>user</type>
+        </recipients>
+        <recipients>
+            <recipient>tory.cruse@veritivcorp.com</recipient>
+            <type>user</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>Workflow_Alert_Emails/Opportunity_Closed</template>
+    </alerts>
+    <alerts>
+        <fullName>Closed_Opp_for_Equipment</fullName>
+        <ccEmails>salesforce@unisourcelink.com</ccEmails>
+        <description>Closed Opp for Equipment</description>
+        <protected>false</protected>
+        <recipients>
+            <recipient>andrew.ritterskamp@veritivcorp.com</recipient>
+            <type>user</type>
+        </recipients>
+        <recipients>
+            <recipient>christopher.baum@veritivcorp.com</recipient>
+            <type>user</type>
+        </recipients>
+        <recipients>
+            <recipient>christopher.kennedy@veritivcorp.com</recipient>
+            <type>user</type>
+        </recipients>
+        <recipients>
+            <recipient>donald.abbey@veritivcorp.com</recipient>
+            <type>user</type>
+        </recipients>
+        <recipients>
+            <recipient>james.wynne@veritivcorp.com</recipient>
+            <type>user</type>
+        </recipients>
+        <recipients>
+            <recipient>kevin.perry@veritivcorp.com</recipient>
+            <type>user</type>
+        </recipients>
+        <recipients>
+            <recipient>todd.thompson2@veritivcorp.com</recipient>
+            <type>user</type>
+        </recipients>
+        <recipients>
+            <recipient>tory.cruse@veritivcorp.com</recipient>
+            <type>user</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>Workflow_Alert_Emails/Opportunity_Closed</template>
+    </alerts>
+    <alerts>
+        <fullName>Closed_Opp_for_Food</fullName>
+        <ccEmails>salesforce@unisourcelink.com</ccEmails>
+        <description>Closed Opp for Food</description>
+        <protected>false</protected>
+        <recipients>
+            <recipient>christopher.baum@veritivcorp.com</recipient>
+            <type>user</type>
+        </recipients>
+        <recipients>
+            <recipient>christopher.kennedy@veritivcorp.com</recipient>
+            <type>user</type>
+        </recipients>
+        <recipients>
+            <recipient>ron.ramsey@veritivcorp.com</recipient>
+            <type>user</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>Workflow_Alert_Emails/Opportunity_Closed</template>
+    </alerts>
+    <alerts>
+        <fullName>Kitting_Lost_Opportunity</fullName>
+        <description>Kitting Lost Opportunity</description>
+        <protected>false</protected>
+        <recipients>
+            <recipient>holly.phillips@veritivcorp.com</recipient>
+            <type>user</type>
+        </recipients>
+        <recipients>
+            <recipient>keli.parker@veritivcorp.com</recipient>
+            <type>user</type>
+        </recipients>
+        <recipients>
+            <recipient>nicole.garciduenas@veritivcorp.com</recipient>
+            <type>user</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>Workflow_Alert_Emails/LostOpportunity</template>
+    </alerts>
+    <alerts>
+        <fullName>Kitting_Opportunity_Created_Notification2</fullName>
+        <ccEmails>DL-kitting@veritivcorp.com</ccEmails>
+        <description>Kitting Opportunity Created Notification2</description>
+        <protected>false</protected>
+        <senderType>CurrentUser</senderType>
+        <template>Workflow_Alert_Emails/Kitting_Opportunity_Created</template>
+    </alerts>
+    <alerts>
+        <fullName>Kitting_Submit_Confirmation2</fullName>
+        <description>Kitting Submit Confirmation2</description>
+        <protected>false</protected>
+        <recipients>
+            <field>Initial_Submitter__c</field>
+            <type>email</type>
+        </recipients>
+        <recipients>
+            <type>owner</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>Workflow_Alert_Emails/Kitting_Submit_Confirmation</template>
+    </alerts>
+    <alerts>
+        <fullName>Kitting_Won_Opportunity</fullName>
+        <description>Kitting Won Opportunity</description>
+        <protected>false</protected>
+        <recipients>
+            <recipient>holly.phillips@veritivcorp.com</recipient>
+            <type>user</type>
+        </recipients>
+        <recipients>
+            <recipient>nicole.garciduenas@veritivcorp.com</recipient>
+            <type>user</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>Workflow_Alert_Emails/OpportunityisWon</template>
+    </alerts>
+    <alerts>
+        <fullName>Lost_100_250k_Facilities</fullName>
+        <description>Lost 100-250k, Facilities</description>
+        <protected>false</protected>
+        <recipients>
+            <field>Email_PSR_Dir__c</field>
+            <type>email</type>
+        </recipients>
+        <recipients>
+            <field>PSR_GSM_Email__c</field>
+            <type>email</type>
+        </recipients>
+        <recipients>
+            <field>PSR_ZM_SM_Email__c</field>
+            <type>email</type>
+        </recipients>
+        <recipients>
+            <recipient>National Accts Manager</recipient>
+            <type>opportunityTeam</type>
+        </recipients>
+        <recipients>
+            <recipient>Specialist Corrugated</recipient>
+            <type>opportunityTeam</type>
+        </recipients>
+        <recipients>
+            <recipient>Specialist FS Equipment</recipient>
+            <type>opportunityTeam</type>
+        </recipients>
+        <recipients>
+            <recipient>Specialist Facility Supplies</recipient>
+            <type>opportunityTeam</type>
+        </recipients>
+        <recipients>
+            <recipient>Specialist Folding Carton</recipient>
+            <type>opportunityTeam</type>
+        </recipients>
+        <recipients>
+            <recipient>Specialist Food</recipient>
+            <type>opportunityTeam</type>
+        </recipients>
+        <recipients>
+            <recipient>Specialist Graphic Arts</recipient>
+            <type>opportunityTeam</type>
+        </recipients>
+        <recipients>
+            <recipient>Specialist Load Containment</recipient>
+            <type>opportunityTeam</type>
+        </recipients>
+        <recipients>
+            <recipient>Specialist Packaging</recipient>
+            <type>opportunityTeam</type>
+        </recipients>
+        <recipients>
+            <recipient>Specialist Paper Board</recipient>
+            <type>opportunityTeam</type>
+        </recipients>
+        <recipients>
+            <recipient>Specialist Wide Format</recipient>
+            <type>opportunityTeam</type>
+        </recipients>
+        <recipients>
+            <type>owner</type>
+        </recipients>
+        <recipients>
+            <recipient>daniella.land@veritivcorp.com</recipient>
+            <type>user</type>
+        </recipients>
+        <recipients>
+            <recipient>kristen.ream@veritivcorp.com</recipient>
+            <type>user</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>Workflow_Alert_Emails/LostOpportunity</template>
+    </alerts>
+    <alerts>
+        <fullName>Lost_100_250k_Packaging</fullName>
+        <description>Lost 100-250k, Packaging</description>
+        <protected>false</protected>
+        <recipients>
+            <field>Email_PSR_Dir__c</field>
+            <type>email</type>
+        </recipients>
+        <recipients>
+            <field>PSR_GSM_Email__c</field>
+            <type>email</type>
+        </recipients>
+        <recipients>
+            <field>PSR_ZM_SM_Email__c</field>
+            <type>email</type>
+        </recipients>
+        <recipients>
+            <recipient>PKG_Product_Managers_Email_Alerts</recipient>
+            <type>group</type>
+        </recipients>
+        <recipients>
+            <recipient>National Accts Manager</recipient>
+            <type>opportunityTeam</type>
+        </recipients>
+        <recipients>
+            <recipient>Packaging Equipment Specialist</recipient>
+            <type>opportunityTeam</type>
+        </recipients>
+        <recipients>
+            <recipient>Specialist Corrugated</recipient>
+            <type>opportunityTeam</type>
+        </recipients>
+        <recipients>
+            <recipient>Specialist FS Equipment</recipient>
+            <type>opportunityTeam</type>
+        </recipients>
+        <recipients>
+            <recipient>Specialist Facility Supplies</recipient>
+            <type>opportunityTeam</type>
+        </recipients>
+        <recipients>
+            <recipient>Specialist Folding Carton</recipient>
+            <type>opportunityTeam</type>
+        </recipients>
+        <recipients>
+            <recipient>Specialist Food</recipient>
+            <type>opportunityTeam</type>
+        </recipients>
+        <recipients>
+            <recipient>Specialist Graphic Arts</recipient>
+            <type>opportunityTeam</type>
+        </recipients>
+        <recipients>
+            <recipient>Specialist Load Containment</recipient>
+            <type>opportunityTeam</type>
+        </recipients>
+        <recipients>
+            <recipient>Specialist Packaging</recipient>
+            <type>opportunityTeam</type>
+        </recipients>
+        <recipients>
+            <recipient>Specialist Paper Board</recipient>
+            <type>opportunityTeam</type>
+        </recipients>
+        <recipients>
+            <recipient>Specialist Wide Format</recipient>
+            <type>opportunityTeam</type>
+        </recipients>
+        <recipients>
+            <type>owner</type>
+        </recipients>
+        <recipients>
+            <recipient>tobi.rightnour@veritivcorp.com</recipient>
+            <type>user</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>Workflow_Alert_Emails/LostOpportunity</template>
+    </alerts>
+    <alerts>
+        <fullName>Lost_100_250k_Print_Pub</fullName>
+        <description>Lost 100-250k, Print</description>
+        <protected>false</protected>
+        <recipients>
+            <field>Email_PSR_Dir__c</field>
+            <type>email</type>
+        </recipients>
+        <recipients>
+            <field>PSR_GSM_Email__c</field>
+            <type>email</type>
+        </recipients>
+        <recipients>
+            <field>PSR_ZM_SM_Email__c</field>
+            <type>email</type>
+        </recipients>
+        <recipients>
+            <recipient>Coated Board Specialist</recipient>
+            <type>opportunityTeam</type>
+        </recipients>
+        <recipients>
+            <recipient>National Accts Manager</recipient>
+            <type>opportunityTeam</type>
+        </recipients>
+        <recipients>
+            <recipient>Packaging Equipment Specialist</recipient>
+            <type>opportunityTeam</type>
+        </recipients>
+        <recipients>
+            <recipient>Specialist Corrugated</recipient>
+            <type>opportunityTeam</type>
+        </recipients>
+        <recipients>
+            <recipient>Specialist FS Equipment</recipient>
+            <type>opportunityTeam</type>
+        </recipients>
+        <recipients>
+            <recipient>Specialist Facility Supplies</recipient>
+            <type>opportunityTeam</type>
+        </recipients>
+        <recipients>
+            <recipient>Specialist Folding Carton</recipient>
+            <type>opportunityTeam</type>
+        </recipients>
+        <recipients>
+            <recipient>Specialist Food</recipient>
+            <type>opportunityTeam</type>
+        </recipients>
+        <recipients>
+            <recipient>Specialist Graphic Arts</recipient>
+            <type>opportunityTeam</type>
+        </recipients>
+        <recipients>
+            <recipient>Specialist Load Containment</recipient>
+            <type>opportunityTeam</type>
+        </recipients>
+        <recipients>
+            <recipient>Specialist Packaging</recipient>
+            <type>opportunityTeam</type>
+        </recipients>
+        <recipients>
+            <recipient>Specialist Paper Board</recipient>
+            <type>opportunityTeam</type>
+        </recipients>
+        <recipients>
+            <recipient>Specialist Wide Format</recipient>
+            <type>opportunityTeam</type>
+        </recipients>
+        <recipients>
+            <type>owner</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>Workflow_Alert_Emails/LostOpportunity</template>
+    </alerts>
+    <alerts>
+        <fullName>Lost_250k_750k_Facilities</fullName>
+        <description>Lost 250k-750k, Facilities</description>
+        <protected>false</protected>
+        <recipients>
+            <field>Email_PSR_Dir__c</field>
+            <type>email</type>
+        </recipients>
+        <recipients>
+            <field>PSR_GSM_Email__c</field>
+            <type>email</type>
+        </recipients>
+        <recipients>
+            <field>PSR_VP_Email__c</field>
+            <type>email</type>
+        </recipients>
+        <recipients>
+            <field>PSR_ZM_SM_Email__c</field>
+            <type>email</type>
+        </recipients>
+        <recipients>
+            <recipient>National Accts Manager</recipient>
+            <type>opportunityTeam</type>
+        </recipients>
+        <recipients>
+            <recipient>Specialist Corrugated</recipient>
+            <type>opportunityTeam</type>
+        </recipients>
+        <recipients>
+            <recipient>Specialist FS Equipment</recipient>
+            <type>opportunityTeam</type>
+        </recipients>
+        <recipients>
+            <recipient>Specialist Facility Supplies</recipient>
+            <type>opportunityTeam</type>
+        </recipients>
+        <recipients>
+            <recipient>Specialist Folding Carton</recipient>
+            <type>opportunityTeam</type>
+        </recipients>
+        <recipients>
+            <recipient>Specialist Food</recipient>
+            <type>opportunityTeam</type>
+        </recipients>
+        <recipients>
+            <recipient>Specialist Graphic Arts</recipient>
+            <type>opportunityTeam</type>
+        </recipients>
+        <recipients>
+            <recipient>Specialist Load Containment</recipient>
+            <type>opportunityTeam</type>
+        </recipients>
+        <recipients>
+            <recipient>Specialist Packaging</recipient>
+            <type>opportunityTeam</type>
+        </recipients>
+        <recipients>
+            <recipient>Specialist Paper Board</recipient>
+            <type>opportunityTeam</type>
+        </recipients>
+        <recipients>
+            <recipient>Specialist Wide Format</recipient>
+            <type>opportunityTeam</type>
+        </recipients>
+        <recipients>
+            <type>owner</type>
+        </recipients>
+        <recipients>
+            <recipient>kristen.ream@veritivcorp.com</recipient>
+            <type>user</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>Workflow_Alert_Emails/LostOpportunity</template>
+    </alerts>
+    <alerts>
+        <fullName>Lost_250k_750k_Packaging</fullName>
+        <description>Lost 250k-750k, Packaging</description>
+        <protected>false</protected>
+        <recipients>
+            <field>Email_PSR_Dir__c</field>
+            <type>email</type>
+        </recipients>
+        <recipients>
+            <field>PSR_GSM_Email__c</field>
+            <type>email</type>
+        </recipients>
+        <recipients>
+            <field>PSR_VP_Email__c</field>
+            <type>email</type>
+        </recipients>
+        <recipients>
+            <field>PSR_ZM_SM_Email__c</field>
+            <type>email</type>
+        </recipients>
+        <recipients>
+            <recipient>PKG_Product_Managers_Email_Alerts</recipient>
+            <type>group</type>
+        </recipients>
+        <recipients>
+            <recipient>National Accts Manager</recipient>
+            <type>opportunityTeam</type>
+        </recipients>
+        <recipients>
+            <recipient>Packaging Equipment Specialist</recipient>
+            <type>opportunityTeam</type>
+        </recipients>
+        <recipients>
+            <recipient>Specialist Corrugated</recipient>
+            <type>opportunityTeam</type>
+        </recipients>
+        <recipients>
+            <recipient>Specialist FS Equipment</recipient>
+            <type>opportunityTeam</type>
+        </recipients>
+        <recipients>
+            <recipient>Specialist Facility Supplies</recipient>
+            <type>opportunityTeam</type>
+        </recipients>
+        <recipients>
+            <recipient>Specialist Folding Carton</recipient>
+            <type>opportunityTeam</type>
+        </recipients>
+        <recipients>
+            <recipient>Specialist Food</recipient>
+            <type>opportunityTeam</type>
+        </recipients>
+        <recipients>
+            <recipient>Specialist Graphic Arts</recipient>
+            <type>opportunityTeam</type>
+        </recipients>
+        <recipients>
+            <recipient>Specialist Load Containment</recipient>
+            <type>opportunityTeam</type>
+        </recipients>
+        <recipients>
+            <recipient>Specialist Packaging</recipient>
+            <type>opportunityTeam</type>
+        </recipients>
+        <recipients>
+            <recipient>Specialist Paper Board</recipient>
+            <type>opportunityTeam</type>
+        </recipients>
+        <recipients>
+            <recipient>Specialist Wide Format</recipient>
+            <type>opportunityTeam</type>
+        </recipients>
+        <recipients>
+            <type>owner</type>
+        </recipients>
+        <recipients>
+            <recipient>tobi.rightnour@veritivcorp.com</recipient>
+            <type>user</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>Workflow_Alert_Emails/LostOpportunity</template>
+    </alerts>
+    <alerts>
+        <fullName>Lost_250k_Facilities</fullName>
+        <description>Lost 250k+, Facilities</description>
+        <protected>false</protected>
+        <recipients>
+            <field>Email_PSR_Dir__c</field>
+            <type>email</type>
+        </recipients>
+        <recipients>
+            <field>PSR_GSM_Email__c</field>
+            <type>email</type>
+        </recipients>
+        <recipients>
+            <field>PSR_VP_Email__c</field>
+            <type>email</type>
+        </recipients>
+        <recipients>
+            <field>PSR_ZM_SM_Email__c</field>
+            <type>email</type>
+        </recipients>
+        <recipients>
+            <recipient>National Accts Manager</recipient>
+            <type>opportunityTeam</type>
+        </recipients>
+        <recipients>
+            <recipient>Specialist Corrugated</recipient>
+            <type>opportunityTeam</type>
+        </recipients>
+        <recipients>
+            <recipient>Specialist FS Equipment</recipient>
+            <type>opportunityTeam</type>
+        </recipients>
+        <recipients>
+            <recipient>Specialist Facility Supplies</recipient>
+            <type>opportunityTeam</type>
+        </recipients>
+        <recipients>
+            <recipient>Specialist Folding Carton</recipient>
+            <type>opportunityTeam</type>
+        </recipients>
+        <recipients>
+            <recipient>Specialist Food</recipient>
+            <type>opportunityTeam</type>
+        </recipients>
+        <recipients>
+            <recipient>Specialist Graphic Arts</recipient>
+            <type>opportunityTeam</type>
+        </recipients>
+        <recipients>
+            <recipient>Specialist Load Containment</recipient>
+            <type>opportunityTeam</type>
+        </recipients>
+        <recipients>
+            <recipient>Specialist Packaging</recipient>
+            <type>opportunityTeam</type>
+        </recipients>
+        <recipients>
+            <recipient>Specialist Paper Board</recipient>
+            <type>opportunityTeam</type>
+        </recipients>
+        <recipients>
+            <recipient>Specialist Wide Format</recipient>
+            <type>opportunityTeam</type>
+        </recipients>
+        <recipients>
+            <type>owner</type>
+        </recipients>
+        <recipients>
+            <recipient>kristen.ream@veritivcorp.com</recipient>
+            <type>user</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>Workflow_Alert_Emails/LostOpportunity</template>
+    </alerts>
+    <alerts>
+        <fullName>Lost_250k_Packaging</fullName>
+        <description>Lost 250k+, Packaging</description>
+        <protected>false</protected>
+        <recipients>
+            <field>Email_PSR_Dir__c</field>
+            <type>email</type>
+        </recipients>
+        <recipients>
+            <field>PSR_GSM_Email__c</field>
+            <type>email</type>
+        </recipients>
+        <recipients>
+            <field>PSR_VP_Email__c</field>
+            <type>email</type>
+        </recipients>
+        <recipients>
+            <field>PSR_ZM_SM_Email__c</field>
+            <type>email</type>
+        </recipients>
+        <recipients>
+            <recipient>PKG_Product_Managers_Email_Alerts</recipient>
+            <type>group</type>
+        </recipients>
+        <recipients>
+            <recipient>National Accts Manager</recipient>
+            <type>opportunityTeam</type>
+        </recipients>
+        <recipients>
+            <recipient>Packaging Equipment Specialist</recipient>
+            <type>opportunityTeam</type>
+        </recipients>
+        <recipients>
+            <recipient>Specialist Corrugated</recipient>
+            <type>opportunityTeam</type>
+        </recipients>
+        <recipients>
+            <recipient>Specialist FS Equipment</recipient>
+            <type>opportunityTeam</type>
+        </recipients>
+        <recipients>
+            <recipient>Specialist Facility Supplies</recipient>
+            <type>opportunityTeam</type>
+        </recipients>
+        <recipients>
+            <recipient>Specialist Folding Carton</recipient>
+            <type>opportunityTeam</type>
+        </recipients>
+        <recipients>
+            <recipient>Specialist Food</recipient>
+            <type>opportunityTeam</type>
+        </recipients>
+        <recipients>
+            <recipient>Specialist Graphic Arts</recipient>
+            <type>opportunityTeam</type>
+        </recipients>
+        <recipients>
+            <recipient>Specialist Load Containment</recipient>
+            <type>opportunityTeam</type>
+        </recipients>
+        <recipients>
+            <recipient>Specialist Packaging</recipient>
+            <type>opportunityTeam</type>
+        </recipients>
+        <recipients>
+            <recipient>Specialist Paper Board</recipient>
+            <type>opportunityTeam</type>
+        </recipients>
+        <recipients>
+            <recipient>Specialist Wide Format</recipient>
+            <type>opportunityTeam</type>
+        </recipients>
+        <recipients>
+            <type>owner</type>
+        </recipients>
+        <recipients>
+            <recipient>tobi.rightnour@veritivcorp.com</recipient>
+            <type>user</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>Workflow_Alert_Emails/LostOpportunity</template>
+    </alerts>
+    <alerts>
+        <fullName>Lost_250k_Print_Pub</fullName>
+        <description>Lost 250k+, Print</description>
+        <protected>false</protected>
+        <recipients>
+            <field>Email_PSR_Dir__c</field>
+            <type>email</type>
+        </recipients>
+        <recipients>
+            <field>PSR_GSM_Email__c</field>
+            <type>email</type>
+        </recipients>
+        <recipients>
+            <field>PSR_Pres_Email__c</field>
+            <type>email</type>
+        </recipients>
+        <recipients>
+            <field>PSR_VP_Email__c</field>
+            <type>email</type>
+        </recipients>
+        <recipients>
+            <field>PSR_ZM_SM_Email__c</field>
+            <type>email</type>
+        </recipients>
+        <recipients>
+            <recipient>Coated Board Specialist</recipient>
+            <type>opportunityTeam</type>
+        </recipients>
+        <recipients>
+            <recipient>National Accts Manager</recipient>
+            <type>opportunityTeam</type>
+        </recipients>
+        <recipients>
+            <recipient>Packaging Equipment Specialist</recipient>
+            <type>opportunityTeam</type>
+        </recipients>
+        <recipients>
+            <recipient>Specialist Corrugated</recipient>
+            <type>opportunityTeam</type>
+        </recipients>
+        <recipients>
+            <recipient>Specialist FS Equipment</recipient>
+            <type>opportunityTeam</type>
+        </recipients>
+        <recipients>
+            <recipient>Specialist Facility Supplies</recipient>
+            <type>opportunityTeam</type>
+        </recipients>
+        <recipients>
+            <recipient>Specialist Folding Carton</recipient>
+            <type>opportunityTeam</type>
+        </recipients>
+        <recipients>
+            <recipient>Specialist Food</recipient>
+            <type>opportunityTeam</type>
+        </recipients>
+        <recipients>
+            <recipient>Specialist Graphic Arts</recipient>
+            <type>opportunityTeam</type>
+        </recipients>
+        <recipients>
+            <recipient>Specialist Load Containment</recipient>
+            <type>opportunityTeam</type>
+        </recipients>
+        <recipients>
+            <recipient>Specialist Packaging</recipient>
+            <type>opportunityTeam</type>
+        </recipients>
+        <recipients>
+            <recipient>Specialist Paper Board</recipient>
+            <type>opportunityTeam</type>
+        </recipients>
+        <recipients>
+            <recipient>Specialist Wide Format</recipient>
+            <type>opportunityTeam</type>
+        </recipients>
+        <recipients>
+            <type>owner</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>Workflow_Alert_Emails/LostOpportunity</template>
+    </alerts>
+    <alerts>
+        <fullName>Lost_25k_100k</fullName>
+        <description>Lost 25k-100k</description>
+        <protected>false</protected>
+        <recipients>
+            <field>Email_PSR_Dir__c</field>
+            <type>email</type>
+        </recipients>
+        <recipients>
+            <field>PSR_ZM_SM_Email__c</field>
+            <type>email</type>
+        </recipients>
+        <recipients>
+            <recipient>National Accts Manager</recipient>
+            <type>opportunityTeam</type>
+        </recipients>
+        <recipients>
+            <recipient>Packaging Equipment Specialist</recipient>
+            <type>opportunityTeam</type>
+        </recipients>
+        <recipients>
+            <recipient>Specialist Corrugated</recipient>
+            <type>opportunityTeam</type>
+        </recipients>
+        <recipients>
+            <recipient>Specialist FS Equipment</recipient>
+            <type>opportunityTeam</type>
+        </recipients>
+        <recipients>
+            <recipient>Specialist Facility Supplies</recipient>
+            <type>opportunityTeam</type>
+        </recipients>
+        <recipients>
+            <recipient>Specialist Folding Carton</recipient>
+            <type>opportunityTeam</type>
+        </recipients>
+        <recipients>
+            <recipient>Specialist Food</recipient>
+            <type>opportunityTeam</type>
+        </recipients>
+        <recipients>
+            <recipient>Specialist Graphic Arts</recipient>
+            <type>opportunityTeam</type>
+        </recipients>
+        <recipients>
+            <recipient>Specialist Load Containment</recipient>
+            <type>opportunityTeam</type>
+        </recipients>
+        <recipients>
+            <recipient>Specialist Packaging</recipient>
+            <type>opportunityTeam</type>
+        </recipients>
+        <recipients>
+            <recipient>Specialist Paper Board</recipient>
+            <type>opportunityTeam</type>
+        </recipients>
+        <recipients>
+            <recipient>Specialist Wide Format</recipient>
+            <type>opportunityTeam</type>
+        </recipients>
+        <recipients>
+            <type>owner</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>Workflow_Alert_Emails/LostOpportunity</template>
+    </alerts>
+    <alerts>
+        <fullName>Lost_750k_Facilities</fullName>
+        <description>Lost 750k+, Facilities</description>
+        <protected>false</protected>
+        <recipients>
+            <field>Email_PSR_Dir__c</field>
+            <type>email</type>
+        </recipients>
+        <recipients>
+            <field>PSR_GSM_Email__c</field>
+            <type>email</type>
+        </recipients>
+        <recipients>
+            <field>PSR_Pres_Email__c</field>
+            <type>email</type>
+        </recipients>
+        <recipients>
+            <field>PSR_VP_Email__c</field>
+            <type>email</type>
+        </recipients>
+        <recipients>
+            <field>PSR_ZM_SM_Email__c</field>
+            <type>email</type>
+        </recipients>
+        <recipients>
+            <recipient>National Accts Manager</recipient>
+            <type>opportunityTeam</type>
+        </recipients>
+        <recipients>
+            <recipient>Specialist Corrugated</recipient>
+            <type>opportunityTeam</type>
+        </recipients>
+        <recipients>
+            <recipient>Specialist FS Equipment</recipient>
+            <type>opportunityTeam</type>
+        </recipients>
+        <recipients>
+            <recipient>Specialist Facility Supplies</recipient>
+            <type>opportunityTeam</type>
+        </recipients>
+        <recipients>
+            <recipient>Specialist Folding Carton</recipient>
+            <type>opportunityTeam</type>
+        </recipients>
+        <recipients>
+            <recipient>Specialist Food</recipient>
+            <type>opportunityTeam</type>
+        </recipients>
+        <recipients>
+            <recipient>Specialist Load Containment</recipient>
+            <type>opportunityTeam</type>
+        </recipients>
+        <recipients>
+            <recipient>Specialist Packaging</recipient>
+            <type>opportunityTeam</type>
+        </recipients>
+        <recipients>
+            <type>owner</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>Workflow_Alert_Emails/LostOpportunity</template>
+    </alerts>
+    <alerts>
+        <fullName>Lost_750k_Packaging</fullName>
+        <description>Lost 750k+, Packaging</description>
+        <protected>false</protected>
+        <recipients>
+            <field>Email_PSR_Dir__c</field>
+            <type>email</type>
+        </recipients>
+        <recipients>
+            <field>PSR_GSM_Email__c</field>
+            <type>email</type>
+        </recipients>
+        <recipients>
+            <field>PSR_Pres_Email__c</field>
+            <type>email</type>
+        </recipients>
+        <recipients>
+            <field>PSR_VP_Email__c</field>
+            <type>email</type>
+        </recipients>
+        <recipients>
+            <field>PSR_ZM_SM_Email__c</field>
+            <type>email</type>
+        </recipients>
+        <recipients>
+            <recipient>PKG_Product_Managers_Email_Alerts</recipient>
+            <type>group</type>
+        </recipients>
+        <recipients>
+            <recipient>National Accts Manager</recipient>
+            <type>opportunityTeam</type>
+        </recipients>
+        <recipients>
+            <recipient>Packaging Equipment Specialist</recipient>
+            <type>opportunityTeam</type>
+        </recipients>
+        <recipients>
+            <recipient>Specialist Corrugated</recipient>
+            <type>opportunityTeam</type>
+        </recipients>
+        <recipients>
+            <recipient>Specialist FS Equipment</recipient>
+            <type>opportunityTeam</type>
+        </recipients>
+        <recipients>
+            <recipient>Specialist Facility Supplies</recipient>
+            <type>opportunityTeam</type>
+        </recipients>
+        <recipients>
+            <recipient>Specialist Folding Carton</recipient>
+            <type>opportunityTeam</type>
+        </recipients>
+        <recipients>
+            <recipient>Specialist Food</recipient>
+            <type>opportunityTeam</type>
+        </recipients>
+        <recipients>
+            <recipient>Specialist Graphic Arts</recipient>
+            <type>opportunityTeam</type>
+        </recipients>
+        <recipients>
+            <recipient>Specialist Load Containment</recipient>
+            <type>opportunityTeam</type>
+        </recipients>
+        <recipients>
+            <recipient>Specialist Packaging</recipient>
+            <type>opportunityTeam</type>
+        </recipients>
+        <recipients>
+            <recipient>Specialist Paper Board</recipient>
+            <type>opportunityTeam</type>
+        </recipients>
+        <recipients>
+            <recipient>Specialist Wide Format</recipient>
+            <type>opportunityTeam</type>
+        </recipients>
+        <recipients>
+            <type>owner</type>
+        </recipients>
+        <recipients>
+            <recipient>tobi.rightnour@veritivcorp.com</recipient>
+            <type>user</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>Workflow_Alert_Emails/LostOpportunity</template>
+    </alerts>
+    <alerts>
+        <fullName>Opportunity_Date_to_Revisit_Reminder</fullName>
+        <description>Opportunity Date to Revisit Reminder</description>
+        <protected>false</protected>
+        <recipients>
+            <type>owner</type>
+        </recipients>
+        <senderType>DefaultWorkflowUser</senderType>
+        <template>Workflow_Alert_Emails/Opportunity_Revisit_Reminder</template>
+    </alerts>
+    <alerts>
+        <fullName>OpportunityiscreatedatlocallevelassociatedwithNationalAccount</fullName>
+        <ccEmails>salesforce@unisourcelink.com</ccEmails>
+        <description>Opportunity is created at local level associated with National Account</description>
+        <protected>false</protected>
+        <recipients>
+            <recipient>National Accts Manager</recipient>
+            <type>accountTeam</type>
+        </recipients>
+        <recipients>
+            <recipient>Program Manager</recipient>
+            <type>accountTeam</type>
+        </recipients>
+        <recipients>
+            <recipient>Program Manager</recipient>
+            <type>opportunityTeam</type>
+        </recipients>
+        <recipients>
+            <type>owner</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>Workflow_Alert_Emails/Opportunityhasbeencreated</template>
+    </alerts>
+    <alerts>
+        <fullName>Oppty_Alert_when_close_date_is_tomorrow</fullName>
+        <description>Oppty - Alert when close date is tomorrow</description>
+        <protected>false</protected>
+        <recipients>
+            <recipient>Packaging Equipment Specialist</recipient>
+            <type>accountTeam</type>
+        </recipients>
+        <recipients>
+            <recipient>Specialist Corrugated</recipient>
+            <type>accountTeam</type>
+        </recipients>
+        <recipients>
+            <recipient>Specialist Folding Carton</recipient>
+            <type>accountTeam</type>
+        </recipients>
+        <recipients>
+            <recipient>Specialist Food</recipient>
+            <type>accountTeam</type>
+        </recipients>
+        <recipients>
+            <recipient>Specialist Packaging</recipient>
+            <type>accountTeam</type>
+        </recipients>
+        <recipients>
+            <type>owner</type>
+        </recipients>
+        <senderType>DefaultWorkflowUser</senderType>
+        <template>Workflow_Alert_Emails/Opportunity_close_date_is_TOMORROW</template>
+    </alerts>
+    <alerts>
+        <fullName>Packaging_for_Funderburk</fullName>
+        <description>Packaging for Funderburk</description>
+        <protected>false</protected>
+        <recipients>
+            <recipient>jay.funderburk@veritivcorp.com</recipient>
+            <type>user</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>Workflow_Alert_Emails/Opportunity_Closed</template>
+    </alerts>
+    <alerts>
+        <fullName>Strategic_Opportunity_Closed</fullName>
+        <description>Strategic Opportunity Closed</description>
+        <protected>false</protected>
+        <recipients>
+            <recipient>jennifer.frederick@veritivcorp.com</recipient>
+            <type>user</type>
+        </recipients>
+        <recipients>
+            <recipient>meagan.hansen@veritivcorp.com</recipient>
+            <type>user</type>
+        </recipients>
+        <recipients>
+            <recipient>susan.bingnear@veritivcorp.com</recipient>
+            <type>user</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>Workflow_Alert_Emails/Strategic_Opportunity_Closed</template>
+    </alerts>
+    <alerts>
+        <fullName>Won_100_250k_Facilities</fullName>
+        <description>Won 100-250k, Facilities</description>
+        <protected>false</protected>
+        <recipients>
+            <field>Email_PSR_Dir__c</field>
+            <type>email</type>
+        </recipients>
+        <recipients>
+            <field>PSR_GSM_Email__c</field>
+            <type>email</type>
+        </recipients>
+        <recipients>
+            <field>PSR_ZM_SM_Email__c</field>
+            <type>email</type>
+        </recipients>
+        <recipients>
+            <recipient>National Accts Manager</recipient>
+            <type>opportunityTeam</type>
+        </recipients>
+        <recipients>
+            <recipient>Specialist Corrugated</recipient>
+            <type>opportunityTeam</type>
+        </recipients>
+        <recipients>
+            <recipient>Specialist FS Equipment</recipient>
+            <type>opportunityTeam</type>
+        </recipients>
+        <recipients>
+            <recipient>Specialist Facility Supplies</recipient>
+            <type>opportunityTeam</type>
+        </recipients>
+        <recipients>
+            <recipient>Specialist Folding Carton</recipient>
+            <type>opportunityTeam</type>
+        </recipients>
+        <recipients>
+            <recipient>Specialist Food</recipient>
+            <type>opportunityTeam</type>
+        </recipients>
+        <recipients>
+            <recipient>Specialist Graphic Arts</recipient>
+            <type>opportunityTeam</type>
+        </recipients>
+        <recipients>
+            <recipient>Specialist Load Containment</recipient>
+            <type>opportunityTeam</type>
+        </recipients>
+        <recipients>
+            <recipient>Specialist Packaging</recipient>
+            <type>opportunityTeam</type>
+        </recipients>
+        <recipients>
+            <recipient>Specialist Paper Board</recipient>
+            <type>opportunityTeam</type>
+        </recipients>
+        <recipients>
+            <recipient>Specialist Wide Format</recipient>
+            <type>opportunityTeam</type>
+        </recipients>
+        <recipients>
+            <type>owner</type>
+        </recipients>
+        <recipients>
+            <recipient>daniella.land@veritivcorp.com</recipient>
+            <type>user</type>
+        </recipients>
+        <recipients>
+            <recipient>kristen.ream@veritivcorp.com</recipient>
+            <type>user</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>Workflow_Alert_Emails/OpportunityisWon</template>
+    </alerts>
+    <alerts>
+        <fullName>Won_100_250k_Packaging</fullName>
+        <description>Won 100-250k, Packaging</description>
+        <protected>false</protected>
+        <recipients>
+            <field>Email_PSR_Dir__c</field>
+            <type>email</type>
+        </recipients>
+        <recipients>
+            <field>PSR_GSM_Email__c</field>
+            <type>email</type>
+        </recipients>
+        <recipients>
+            <field>PSR_ZM_SM_Email__c</field>
+            <type>email</type>
+        </recipients>
+        <recipients>
+            <recipient>PKG_Product_Managers_Email_Alerts</recipient>
+            <type>group</type>
+        </recipients>
+        <recipients>
+            <recipient>National Accts Manager</recipient>
+            <type>opportunityTeam</type>
+        </recipients>
+        <recipients>
+            <recipient>Packaging Equipment Specialist</recipient>
+            <type>opportunityTeam</type>
+        </recipients>
+        <recipients>
+            <recipient>Specialist Corrugated</recipient>
+            <type>opportunityTeam</type>
+        </recipients>
+        <recipients>
+            <recipient>Specialist FS Equipment</recipient>
+            <type>opportunityTeam</type>
+        </recipients>
+        <recipients>
+            <recipient>Specialist Facility Supplies</recipient>
+            <type>opportunityTeam</type>
+        </recipients>
+        <recipients>
+            <recipient>Specialist Folding Carton</recipient>
+            <type>opportunityTeam</type>
+        </recipients>
+        <recipients>
+            <recipient>Specialist Food</recipient>
+            <type>opportunityTeam</type>
+        </recipients>
+        <recipients>
+            <recipient>Specialist Graphic Arts</recipient>
+            <type>opportunityTeam</type>
+        </recipients>
+        <recipients>
+            <recipient>Specialist Load Containment</recipient>
+            <type>opportunityTeam</type>
+        </recipients>
+        <recipients>
+            <recipient>Specialist Packaging</recipient>
+            <type>opportunityTeam</type>
+        </recipients>
+        <recipients>
+            <recipient>Specialist Paper Board</recipient>
+            <type>opportunityTeam</type>
+        </recipients>
+        <recipients>
+            <recipient>Specialist Wide Format</recipient>
+            <type>opportunityTeam</type>
+        </recipients>
+        <recipients>
+            <type>owner</type>
+        </recipients>
+        <recipients>
+            <recipient>tobi.rightnour@veritivcorp.com</recipient>
+            <type>user</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>Workflow_Alert_Emails/OpportunityisWon</template>
+    </alerts>
+    <alerts>
+        <fullName>Won_100_250k_Print_Pub</fullName>
+        <description>Won 100-250k, Print</description>
+        <protected>false</protected>
+        <recipients>
+            <field>Email_PSR_Dir__c</field>
+            <type>email</type>
+        </recipients>
+        <recipients>
+            <field>PSR_GSM_Email__c</field>
+            <type>email</type>
+        </recipients>
+        <recipients>
+            <field>PSR_ZM_SM_Email__c</field>
+            <type>email</type>
+        </recipients>
+        <recipients>
+            <recipient>Coated Board Specialist</recipient>
+            <type>opportunityTeam</type>
+        </recipients>
+        <recipients>
+            <recipient>National Accts Manager</recipient>
+            <type>opportunityTeam</type>
+        </recipients>
+        <recipients>
+            <recipient>Packaging Equipment Specialist</recipient>
+            <type>opportunityTeam</type>
+        </recipients>
+        <recipients>
+            <recipient>Specialist Corrugated</recipient>
+            <type>opportunityTeam</type>
+        </recipients>
+        <recipients>
+            <recipient>Specialist FS Equipment</recipient>
+            <type>opportunityTeam</type>
+        </recipients>
+        <recipients>
+            <recipient>Specialist Facility Supplies</recipient>
+            <type>opportunityTeam</type>
+        </recipients>
+        <recipients>
+            <recipient>Specialist Folding Carton</recipient>
+            <type>opportunityTeam</type>
+        </recipients>
+        <recipients>
+            <recipient>Specialist Food</recipient>
+            <type>opportunityTeam</type>
+        </recipients>
+        <recipients>
+            <recipient>Specialist Graphic Arts</recipient>
+            <type>opportunityTeam</type>
+        </recipients>
+        <recipients>
+            <recipient>Specialist Load Containment</recipient>
+            <type>opportunityTeam</type>
+        </recipients>
+        <recipients>
+            <recipient>Specialist Packaging</recipient>
+            <type>opportunityTeam</type>
+        </recipients>
+        <recipients>
+            <recipient>Specialist Paper Board</recipient>
+            <type>opportunityTeam</type>
+        </recipients>
+        <recipients>
+            <recipient>Specialist Wide Format</recipient>
+            <type>opportunityTeam</type>
+        </recipients>
+        <recipients>
+            <type>owner</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>Workflow_Alert_Emails/OpportunityisWon</template>
+    </alerts>
+    <alerts>
+        <fullName>Won_250k_750k_Facilities</fullName>
+        <description>Won 250k-750k, Facilities</description>
+        <protected>false</protected>
+        <recipients>
+            <field>Email_PSR_Dir__c</field>
+            <type>email</type>
+        </recipients>
+        <recipients>
+            <field>PSR_GSM_Email__c</field>
+            <type>email</type>
+        </recipients>
+        <recipients>
+            <field>PSR_VP_Email__c</field>
+            <type>email</type>
+        </recipients>
+        <recipients>
+            <field>PSR_ZM_SM_Email__c</field>
+            <type>email</type>
+        </recipients>
+        <recipients>
+            <recipient>National Accts Manager</recipient>
+            <type>opportunityTeam</type>
+        </recipients>
+        <recipients>
+            <recipient>Specialist Corrugated</recipient>
+            <type>opportunityTeam</type>
+        </recipients>
+        <recipients>
+            <recipient>Specialist FS Equipment</recipient>
+            <type>opportunityTeam</type>
+        </recipients>
+        <recipients>
+            <recipient>Specialist Facility Supplies</recipient>
+            <type>opportunityTeam</type>
+        </recipients>
+        <recipients>
+            <recipient>Specialist Folding Carton</recipient>
+            <type>opportunityTeam</type>
+        </recipients>
+        <recipients>
+            <recipient>Specialist Food</recipient>
+            <type>opportunityTeam</type>
+        </recipients>
+        <recipients>
+            <recipient>Specialist Graphic Arts</recipient>
+            <type>opportunityTeam</type>
+        </recipients>
+        <recipients>
+            <recipient>Specialist Load Containment</recipient>
+            <type>opportunityTeam</type>
+        </recipients>
+        <recipients>
+            <recipient>Specialist Packaging</recipient>
+            <type>opportunityTeam</type>
+        </recipients>
+        <recipients>
+            <recipient>Specialist Paper Board</recipient>
+            <type>opportunityTeam</type>
+        </recipients>
+        <recipients>
+            <recipient>Specialist Wide Format</recipient>
+            <type>opportunityTeam</type>
+        </recipients>
+        <recipients>
+            <type>owner</type>
+        </recipients>
+        <recipients>
+            <recipient>kristen.ream@veritivcorp.com</recipient>
+            <type>user</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>Workflow_Alert_Emails/OpportunityisWon</template>
+    </alerts>
+    <alerts>
+        <fullName>Won_250k_750k_Packaging</fullName>
+        <description>Won 250k-750k, Packaging</description>
+        <protected>false</protected>
+        <recipients>
+            <field>Email_PSR_Dir__c</field>
+            <type>email</type>
+        </recipients>
+        <recipients>
+            <field>PSR_GSM_Email__c</field>
+            <type>email</type>
+        </recipients>
+        <recipients>
+            <field>PSR_VP_Email__c</field>
+            <type>email</type>
+        </recipients>
+        <recipients>
+            <field>PSR_ZM_SM_Email__c</field>
+            <type>email</type>
+        </recipients>
+        <recipients>
+            <recipient>PKG_Product_Managers_Email_Alerts</recipient>
+            <type>group</type>
+        </recipients>
+        <recipients>
+            <recipient>National Accts Manager</recipient>
+            <type>opportunityTeam</type>
+        </recipients>
+        <recipients>
+            <recipient>Packaging Equipment Specialist</recipient>
+            <type>opportunityTeam</type>
+        </recipients>
+        <recipients>
+            <recipient>Specialist Corrugated</recipient>
+            <type>opportunityTeam</type>
+        </recipients>
+        <recipients>
+            <recipient>Specialist FS Equipment</recipient>
+            <type>opportunityTeam</type>
+        </recipients>
+        <recipients>
+            <recipient>Specialist Facility Supplies</recipient>
+            <type>opportunityTeam</type>
+        </recipients>
+        <recipients>
+            <recipient>Specialist Folding Carton</recipient>
+            <type>opportunityTeam</type>
+        </recipients>
+        <recipients>
+            <recipient>Specialist Food</recipient>
+            <type>opportunityTeam</type>
+        </recipients>
+        <recipients>
+            <recipient>Specialist Graphic Arts</recipient>
+            <type>opportunityTeam</type>
+        </recipients>
+        <recipients>
+            <recipient>Specialist Load Containment</recipient>
+            <type>opportunityTeam</type>
+        </recipients>
+        <recipients>
+            <recipient>Specialist Packaging</recipient>
+            <type>opportunityTeam</type>
+        </recipients>
+        <recipients>
+            <recipient>Specialist Paper Board</recipient>
+            <type>opportunityTeam</type>
+        </recipients>
+        <recipients>
+            <recipient>Specialist Wide Format</recipient>
+            <type>opportunityTeam</type>
+        </recipients>
+        <recipients>
+            <type>owner</type>
+        </recipients>
+        <recipients>
+            <recipient>tobi.rightnour@veritivcorp.com</recipient>
+            <type>user</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>Workflow_Alert_Emails/OpportunityisWon</template>
+    </alerts>
+    <alerts>
+        <fullName>Won_250k_Facilities</fullName>
+        <description>Won 250k+, Facilities</description>
+        <protected>false</protected>
+        <recipients>
+            <field>Email_PSR_Dir__c</field>
+            <type>email</type>
+        </recipients>
+        <recipients>
+            <field>PSR_GSM_Email__c</field>
+            <type>email</type>
+        </recipients>
+        <recipients>
+            <field>PSR_VP_Email__c</field>
+            <type>email</type>
+        </recipients>
+        <recipients>
+            <field>PSR_ZM_SM_Email__c</field>
+            <type>email</type>
+        </recipients>
+        <recipients>
+            <recipient>National Accts Manager</recipient>
+            <type>opportunityTeam</type>
+        </recipients>
+        <recipients>
+            <recipient>Specialist Corrugated</recipient>
+            <type>opportunityTeam</type>
+        </recipients>
+        <recipients>
+            <recipient>Specialist FS Equipment</recipient>
+            <type>opportunityTeam</type>
+        </recipients>
+        <recipients>
+            <recipient>Specialist Facility Supplies</recipient>
+            <type>opportunityTeam</type>
+        </recipients>
+        <recipients>
+            <recipient>Specialist Folding Carton</recipient>
+            <type>opportunityTeam</type>
+        </recipients>
+        <recipients>
+            <recipient>Specialist Food</recipient>
+            <type>opportunityTeam</type>
+        </recipients>
+        <recipients>
+            <recipient>Specialist Graphic Arts</recipient>
+            <type>opportunityTeam</type>
+        </recipients>
+        <recipients>
+            <recipient>Specialist Load Containment</recipient>
+            <type>opportunityTeam</type>
+        </recipients>
+        <recipients>
+            <recipient>Specialist Packaging</recipient>
+            <type>opportunityTeam</type>
+        </recipients>
+        <recipients>
+            <recipient>Specialist Paper Board</recipient>
+            <type>opportunityTeam</type>
+        </recipients>
+        <recipients>
+            <recipient>Specialist Wide Format</recipient>
+            <type>opportunityTeam</type>
+        </recipients>
+        <recipients>
+            <type>owner</type>
+        </recipients>
+        <recipients>
+            <recipient>kristen.ream@veritivcorp.com</recipient>
+            <type>user</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>Workflow_Alert_Emails/OpportunityisWon</template>
+    </alerts>
+    <alerts>
+        <fullName>Won_250k_Packaging</fullName>
+        <description>Won 250k+, Packaging</description>
+        <protected>false</protected>
+        <recipients>
+            <field>Email_PSR_Dir__c</field>
+            <type>email</type>
+        </recipients>
+        <recipients>
+            <field>PSR_GSM_Email__c</field>
+            <type>email</type>
+        </recipients>
+        <recipients>
+            <field>PSR_VP_Email__c</field>
+            <type>email</type>
+        </recipients>
+        <recipients>
+            <field>PSR_ZM_SM_Email__c</field>
+            <type>email</type>
+        </recipients>
+        <recipients>
+            <recipient>PKG_Product_Managers_Email_Alerts</recipient>
+            <type>group</type>
+        </recipients>
+        <recipients>
+            <recipient>National Accts Manager</recipient>
+            <type>opportunityTeam</type>
+        </recipients>
+        <recipients>
+            <recipient>Packaging Equipment Specialist</recipient>
+            <type>opportunityTeam</type>
+        </recipients>
+        <recipients>
+            <recipient>Specialist Corrugated</recipient>
+            <type>opportunityTeam</type>
+        </recipients>
+        <recipients>
+            <recipient>Specialist FS Equipment</recipient>
+            <type>opportunityTeam</type>
+        </recipients>
+        <recipients>
+            <recipient>Specialist Facility Supplies</recipient>
+            <type>opportunityTeam</type>
+        </recipients>
+        <recipients>
+            <recipient>Specialist Folding Carton</recipient>
+            <type>opportunityTeam</type>
+        </recipients>
+        <recipients>
+            <recipient>Specialist Food</recipient>
+            <type>opportunityTeam</type>
+        </recipients>
+        <recipients>
+            <recipient>Specialist Graphic Arts</recipient>
+            <type>opportunityTeam</type>
+        </recipients>
+        <recipients>
+            <recipient>Specialist Load Containment</recipient>
+            <type>opportunityTeam</type>
+        </recipients>
+        <recipients>
+            <recipient>Specialist Packaging</recipient>
+            <type>opportunityTeam</type>
+        </recipients>
+        <recipients>
+            <recipient>Specialist Paper Board</recipient>
+            <type>opportunityTeam</type>
+        </recipients>
+        <recipients>
+            <recipient>Specialist Wide Format</recipient>
+            <type>opportunityTeam</type>
+        </recipients>
+        <recipients>
+            <type>owner</type>
+        </recipients>
+        <recipients>
+            <recipient>tobi.rightnour@veritivcorp.com</recipient>
+            <type>user</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>Workflow_Alert_Emails/OpportunityisWon</template>
+    </alerts>
+    <alerts>
+        <fullName>Won_250k_Print_Pub</fullName>
+        <description>Won 250k+, Print</description>
+        <protected>false</protected>
+        <recipients>
+            <field>Email_PSR_Dir__c</field>
+            <type>email</type>
+        </recipients>
+        <recipients>
+            <field>PSR_GSM_Email__c</field>
+            <type>email</type>
+        </recipients>
+        <recipients>
+            <field>PSR_Pres_Email__c</field>
+            <type>email</type>
+        </recipients>
+        <recipients>
+            <field>PSR_VP_Email__c</field>
+            <type>email</type>
+        </recipients>
+        <recipients>
+            <field>PSR_ZM_SM_Email__c</field>
+            <type>email</type>
+        </recipients>
+        <recipients>
+            <recipient>Coated Board Specialist</recipient>
+            <type>opportunityTeam</type>
+        </recipients>
+        <recipients>
+            <recipient>National Accts Manager</recipient>
+            <type>opportunityTeam</type>
+        </recipients>
+        <recipients>
+            <recipient>Packaging Equipment Specialist</recipient>
+            <type>opportunityTeam</type>
+        </recipients>
+        <recipients>
+            <recipient>Specialist Corrugated</recipient>
+            <type>opportunityTeam</type>
+        </recipients>
+        <recipients>
+            <recipient>Specialist FS Equipment</recipient>
+            <type>opportunityTeam</type>
+        </recipients>
+        <recipients>
+            <recipient>Specialist Facility Supplies</recipient>
+            <type>opportunityTeam</type>
+        </recipients>
+        <recipients>
+            <recipient>Specialist Folding Carton</recipient>
+            <type>opportunityTeam</type>
+        </recipients>
+        <recipients>
+            <recipient>Specialist Food</recipient>
+            <type>opportunityTeam</type>
+        </recipients>
+        <recipients>
+            <recipient>Specialist Graphic Arts</recipient>
+            <type>opportunityTeam</type>
+        </recipients>
+        <recipients>
+            <recipient>Specialist Load Containment</recipient>
+            <type>opportunityTeam</type>
+        </recipients>
+        <recipients>
+            <recipient>Specialist Packaging</recipient>
+            <type>opportunityTeam</type>
+        </recipients>
+        <recipients>
+            <recipient>Specialist Paper Board</recipient>
+            <type>opportunityTeam</type>
+        </recipients>
+        <recipients>
+            <recipient>Specialist Wide Format</recipient>
+            <type>opportunityTeam</type>
+        </recipients>
+        <recipients>
+            <type>owner</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>Workflow_Alert_Emails/OpportunityisWon</template>
+    </alerts>
+    <alerts>
+        <fullName>Won_25k_100k</fullName>
+        <description>Won 25k-100k</description>
+        <protected>false</protected>
+        <recipients>
+            <field>Email_PSR_Dir__c</field>
+            <type>email</type>
+        </recipients>
+        <recipients>
+            <field>PSR_ZM_SM_Email__c</field>
+            <type>email</type>
+        </recipients>
+        <recipients>
+            <recipient>National Accts Manager</recipient>
+            <type>opportunityTeam</type>
+        </recipients>
+        <recipients>
+            <recipient>Packaging Equipment Specialist</recipient>
+            <type>opportunityTeam</type>
+        </recipients>
+        <recipients>
+            <recipient>Specialist Corrugated</recipient>
+            <type>opportunityTeam</type>
+        </recipients>
+        <recipients>
+            <recipient>Specialist FS Equipment</recipient>
+            <type>opportunityTeam</type>
+        </recipients>
+        <recipients>
+            <recipient>Specialist Facility Supplies</recipient>
+            <type>opportunityTeam</type>
+        </recipients>
+        <recipients>
+            <recipient>Specialist Folding Carton</recipient>
+            <type>opportunityTeam</type>
+        </recipients>
+        <recipients>
+            <recipient>Specialist Food</recipient>
+            <type>opportunityTeam</type>
+        </recipients>
+        <recipients>
+            <recipient>Specialist Graphic Arts</recipient>
+            <type>opportunityTeam</type>
+        </recipients>
+        <recipients>
+            <recipient>Specialist Load Containment</recipient>
+            <type>opportunityTeam</type>
+        </recipients>
+        <recipients>
+            <recipient>Specialist Packaging</recipient>
+            <type>opportunityTeam</type>
+        </recipients>
+        <recipients>
+            <recipient>Specialist Paper Board</recipient>
+            <type>opportunityTeam</type>
+        </recipients>
+        <recipients>
+            <recipient>Specialist Wide Format</recipient>
+            <type>opportunityTeam</type>
+        </recipients>
+        <recipients>
+            <type>owner</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>Workflow_Alert_Emails/OpportunityisWon</template>
+    </alerts>
+    <alerts>
+        <fullName>Won_750k_Facilities</fullName>
+        <description>Won 750k+, Facilities</description>
+        <protected>false</protected>
+        <recipients>
+            <field>Email_PSR_Dir__c</field>
+            <type>email</type>
+        </recipients>
+        <recipients>
+            <field>PSR_GSM_Email__c</field>
+            <type>email</type>
+        </recipients>
+        <recipients>
+            <field>PSR_Pres_Email__c</field>
+            <type>email</type>
+        </recipients>
+        <recipients>
+            <field>PSR_VP_Email__c</field>
+            <type>email</type>
+        </recipients>
+        <recipients>
+            <field>PSR_ZM_SM_Email__c</field>
+            <type>email</type>
+        </recipients>
+        <recipients>
+            <recipient>National Accts Manager</recipient>
+            <type>opportunityTeam</type>
+        </recipients>
+        <recipients>
+            <recipient>Specialist Corrugated</recipient>
+            <type>opportunityTeam</type>
+        </recipients>
+        <recipients>
+            <recipient>Specialist FS Equipment</recipient>
+            <type>opportunityTeam</type>
+        </recipients>
+        <recipients>
+            <recipient>Specialist Facility Supplies</recipient>
+            <type>opportunityTeam</type>
+        </recipients>
+        <recipients>
+            <recipient>Specialist Folding Carton</recipient>
+            <type>opportunityTeam</type>
+        </recipients>
+        <recipients>
+            <recipient>Specialist Food</recipient>
+            <type>opportunityTeam</type>
+        </recipients>
+        <recipients>
+            <recipient>Specialist Graphic Arts</recipient>
+            <type>opportunityTeam</type>
+        </recipients>
+        <recipients>
+            <recipient>Specialist Load Containment</recipient>
+            <type>opportunityTeam</type>
+        </recipients>
+        <recipients>
+            <recipient>Specialist Packaging</recipient>
+            <type>opportunityTeam</type>
+        </recipients>
+        <recipients>
+            <recipient>Specialist Paper Board</recipient>
+            <type>opportunityTeam</type>
+        </recipients>
+        <recipients>
+            <recipient>Specialist Wide Format</recipient>
+            <type>opportunityTeam</type>
+        </recipients>
+        <recipients>
+            <type>owner</type>
+        </recipients>
+        <recipients>
+            <recipient>kristen.ream@veritivcorp.com</recipient>
+            <type>user</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>Workflow_Alert_Emails/OpportunityisWon</template>
+    </alerts>
+    <alerts>
+        <fullName>Won_750k_Packaging</fullName>
+        <description>Won 750k+, Packaging</description>
+        <protected>false</protected>
+        <recipients>
+            <field>Email_PSR_Dir__c</field>
+            <type>email</type>
+        </recipients>
+        <recipients>
+            <field>PSR_GSM_Email__c</field>
+            <type>email</type>
+        </recipients>
+        <recipients>
+            <field>PSR_Pres_Email__c</field>
+            <type>email</type>
+        </recipients>
+        <recipients>
+            <field>PSR_VP_Email__c</field>
+            <type>email</type>
+        </recipients>
+        <recipients>
+            <field>PSR_ZM_SM_Email__c</field>
+            <type>email</type>
+        </recipients>
+        <recipients>
+            <recipient>PKG_Product_Managers_Email_Alerts</recipient>
+            <type>group</type>
+        </recipients>
+        <recipients>
+            <recipient>National Accts Manager</recipient>
+            <type>opportunityTeam</type>
+        </recipients>
+        <recipients>
+            <recipient>Packaging Equipment Specialist</recipient>
+            <type>opportunityTeam</type>
+        </recipients>
+        <recipients>
+            <recipient>Specialist Corrugated</recipient>
+            <type>opportunityTeam</type>
+        </recipients>
+        <recipients>
+            <recipient>Specialist FS Equipment</recipient>
+            <type>opportunityTeam</type>
+        </recipients>
+        <recipients>
+            <recipient>Specialist Facility Supplies</recipient>
+            <type>opportunityTeam</type>
+        </recipients>
+        <recipients>
+            <recipient>Specialist Folding Carton</recipient>
+            <type>opportunityTeam</type>
+        </recipients>
+        <recipients>
+            <recipient>Specialist Food</recipient>
+            <type>opportunityTeam</type>
+        </recipients>
+        <recipients>
+            <recipient>Specialist Graphic Arts</recipient>
+            <type>opportunityTeam</type>
+        </recipients>
+        <recipients>
+            <recipient>Specialist Load Containment</recipient>
+            <type>opportunityTeam</type>
+        </recipients>
+        <recipients>
+            <recipient>Specialist Packaging</recipient>
+            <type>opportunityTeam</type>
+        </recipients>
+        <recipients>
+            <recipient>Specialist Paper Board</recipient>
+            <type>opportunityTeam</type>
+        </recipients>
+        <recipients>
+            <recipient>Specialist Wide Format</recipient>
+            <type>opportunityTeam</type>
+        </recipients>
+        <recipients>
+            <type>owner</type>
+        </recipients>
+        <recipients>
+            <recipient>tobi.rightnour@veritivcorp.com</recipient>
+            <type>user</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>Workflow_Alert_Emails/OpportunityisWon</template>
+    </alerts>
+    <fieldUpdates>
+        <fullName>Opp_Closed_Stage_Changed</fullName>
+        <field>Closed_Stage_Changed__c</field>
+        <literalValue>1</literalValue>
+        <name>Opp Closed Stage Changed</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Pass_Opp_Bill_to_Number_to_Prospect2</fullName>
+        <field>Bill_To_Number_to_Merge_With__c</field>
+        <formula>Bill_to_Number__c</formula>
+        <name>Pass Opp Bill to Number to Prospect</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+        <targetObject>AccountId</targetObject>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Populate_Opportunity_Close_Date</fullName>
+        <field>Opportunity_Close_Date__c</field>
+        <formula>Today()</formula>
+        <name>Populate Opportunity Close Date</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>true</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Rank_is_Cold</fullName>
+        <description>Built By BW March 2018</description>
+        <field>Rank__c</field>
+        <literalValue>Cold</literalValue>
+        <name>Rank is Cold</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>true</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Rank_is_Hot</fullName>
+        <description>Built By BW March 2018</description>
+        <field>Rank__c</field>
+        <literalValue>Hot</literalValue>
+        <name>Rank is Hot</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>true</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Rank_is_Null</fullName>
+        <description>Built By BW March 2018</description>
+        <field>Rank__c</field>
+        <name>Rank is Null</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>true</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Rank_is_Warm</fullName>
+        <description>Built By BW March 2018</description>
+        <field>Rank__c</field>
+        <literalValue>Warm</literalValue>
+        <name>Rank is Warm</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>true</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>StageChange</fullName>
+        <field>Stage_Age__c</field>
+        <formula>Today()</formula>
+        <name>Stage Change</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Update_Bill_To_Number</fullName>
+        <field>Bill_to_Number__c</field>
+        <formula>Account.AccountNumber</formula>
+        <name>Update Bill To Number</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Update_Billto_with_BillTo_to_Merge_With</fullName>
+        <field>Bill_to_Number__c</field>
+        <formula>Account.Bill_To_Number_to_Merge_With__c</formula>
+        <name>Update Billto with BillTo to Merge With</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Update_Last_Upd_Date_Non_Sysadmin</fullName>
+        <description>Update the Last Updated Date by Non-System Admin</description>
+        <field>Date_Last_Modified_by_Non_Admin__c</field>
+        <formula>Today()</formula>
+        <name>Update Last Upd Date Non Sysadmin</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Update_PSR_BDM_RVP</fullName>
+        <field>PSR_BDM_RVP_Email__c</field>
+        <formula>Primary_Sales_Rep_Name__r.email_bdm_rvp__c</formula>
+        <name>Update PSR BDM/RVP</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Update_PSR_DMD</fullName>
+        <field>Email_PSR_DMD__c</field>
+        <formula>Primary_Sales_Rep_Name__r.Email_DMD__c</formula>
+        <name>Update PSR DMD</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Update_PSR_Dir</fullName>
+        <field>Email_PSR_Dir__c</field>
+        <formula>Primary_Sales_Rep_Name__r.email_dir__c</formula>
+        <name>Update PSR Dir</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Update_PSR_GSM</fullName>
+        <field>PSR_GSM_Email__c</field>
+        <formula>Primary_Sales_Rep_Name__r.GSM_Email__c</formula>
+        <name>Update PSR GSM</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Update_PSR_Pres</fullName>
+        <field>PSR_Pres_Email__c</field>
+        <formula>Primary_Sales_Rep_Name__r.email_pres__c</formula>
+        <name>Update PSR Pres</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Update_PSR_TL</fullName>
+        <field>PSR_TL_Email__c</field>
+        <formula>Primary_Sales_Rep_Name__r.Email_TL__c</formula>
+        <name>Update PSR TL</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Update_PSR_VP</fullName>
+        <field>PSR_VP_Email__c</field>
+        <formula>Primary_Sales_Rep_Name__r.email_vp__c</formula>
+        <name>Update PSR VP</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Update_PSR_ZM_SM</fullName>
+        <field>PSR_ZM_SM_Email__c</field>
+        <formula>Primary_Sales_Rep_Name__r.email_zm_sm__c</formula>
+        <name>Update PSR ZM/SM</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <rules>
+        <fullName>*Lost 100k-250k%2C Facilities</fullName>
+        <actions>
+            <name>Lost_100_250k_Facilities</name>
+            <type>Alert</type>
+        </actions>
+        <active>true</active>
+        <booleanFilter>1 AND 2 AND 3 AND 4 AND 5 AND 6 AND 7 AND 8</booleanFilter>
+        <criteriaItems>
+            <field>Opportunity.Amount</field>
+            <operation>lessThan</operation>
+            <value>&quot;USD 250,000&quot;</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Opportunity.Amount</field>
+            <operation>greaterOrEqual</operation>
+            <value>&quot;USD 100,000&quot;</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Opportunity.StageName</field>
+            <operation>equals</operation>
+            <value>0- Closed Lost</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Opportunity.Lost_Reason__c</field>
+            <operation>notEqual</operation>
+            <value>Oppty - Duplicate Record,Oppty - Transferred Between Reps,Oppty - Expired (System)</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Opportunity.Country__c</field>
+            <operation>equals</operation>
+            <value>USA</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Opportunity.Opportunity_Segment__c</field>
+            <operation>equals</operation>
+            <value>Facility Solutions</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Opportunity.Closed_Stage_Changed__c</field>
+            <operation>equals</operation>
+            <value>False</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Account.Confidential_Account__c</field>
+            <operation>equals</operation>
+            <value>False</value>
+        </criteriaItems>
+        <description>Email alert for Lost opps 100k - 250k, Facilities</description>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+    </rules>
+    <rules>
+        <fullName>*Lost 100k-250k%2C Packaging</fullName>
+        <actions>
+            <name>Lost_100_250k_Packaging</name>
+            <type>Alert</type>
+        </actions>
+        <active>true</active>
+        <booleanFilter>1 AND 2 AND 3 AND 4 AND 5 AND 6 AND 7 AND 8</booleanFilter>
+        <criteriaItems>
+            <field>Opportunity.Amount</field>
+            <operation>lessThan</operation>
+            <value>&quot;USD 250,000&quot;</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Opportunity.Amount</field>
+            <operation>greaterOrEqual</operation>
+            <value>&quot;USD 100,000&quot;</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Opportunity.StageName</field>
+            <operation>equals</operation>
+            <value>0- Closed Lost</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Opportunity.Lost_Reason__c</field>
+            <operation>notEqual</operation>
+            <value>Oppty - Duplicate Record,Oppty - Transferred Between Reps,Oppty - Expired (System)</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Opportunity.Country__c</field>
+            <operation>equals</operation>
+            <value>USA</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Opportunity.Opportunity_Segment__c</field>
+            <operation>equals</operation>
+            <value>Packaging</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Opportunity.Closed_Stage_Changed__c</field>
+            <operation>equals</operation>
+            <value>False</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Account.Confidential_Account__c</field>
+            <operation>equals</operation>
+            <value>False</value>
+        </criteriaItems>
+        <description>Email alert for Lost opps 100k - 250k, Packaging</description>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+    </rules>
+    <rules>
+        <fullName>*Lost 100k-250k%2C Print</fullName>
+        <actions>
+            <name>Lost_100_250k_Print_Pub</name>
+            <type>Alert</type>
+        </actions>
+        <active>true</active>
+        <booleanFilter>1 AND 2 AND 3 AND 4 AND 5 AND 6 AND 7 AND 8</booleanFilter>
+        <criteriaItems>
+            <field>Opportunity.Amount</field>
+            <operation>lessThan</operation>
+            <value>&quot;USD 250,000&quot;</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Opportunity.Amount</field>
+            <operation>greaterOrEqual</operation>
+            <value>&quot;USD 100,000&quot;</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Opportunity.StageName</field>
+            <operation>equals</operation>
+            <value>0- Closed Lost</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Opportunity.Lost_Reason__c</field>
+            <operation>notEqual</operation>
+            <value>Oppty - Duplicate Record,Oppty - Transferred Between Reps,Oppty - Expired (System)</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Opportunity.Country__c</field>
+            <operation>equals</operation>
+            <value>USA</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Opportunity.Opportunity_Segment__c</field>
+            <operation>equals</operation>
+            <value>Print</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Opportunity.Closed_Stage_Changed__c</field>
+            <operation>equals</operation>
+            <value>False</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Account.Confidential_Account__c</field>
+            <operation>equals</operation>
+            <value>False</value>
+        </criteriaItems>
+        <description>Email alert for Lost opps 100k - 250k, Print</description>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+    </rules>
+    <rules>
+        <fullName>*Lost 250k%2B%2CPrint</fullName>
+        <actions>
+            <name>Lost_250k_Print_Pub</name>
+            <type>Alert</type>
+        </actions>
+        <active>true</active>
+        <booleanFilter>1 AND 2 AND 3 AND 4 AND 5 and 6 and 7</booleanFilter>
+        <criteriaItems>
+            <field>Opportunity.Amount</field>
+            <operation>greaterOrEqual</operation>
+            <value>&quot;USD 250,000&quot;</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Opportunity.Lost_Reason__c</field>
+            <operation>notEqual</operation>
+            <value>Oppty - Duplicate Record,Oppty - Transferred Between Reps,Oppty - Expired (System)</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Opportunity.Country__c</field>
+            <operation>equals</operation>
+            <value>USA</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Opportunity.StageName</field>
+            <operation>equals</operation>
+            <value>0- Closed Lost</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Account.Confidential_Account__c</field>
+            <operation>equals</operation>
+            <value>False</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Opportunity.Closed_Stage_Changed__c</field>
+            <operation>equals</operation>
+            <value>False</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Opportunity.Opportunity_Segment__c</field>
+            <operation>equals</operation>
+            <value>Print</value>
+        </criteriaItems>
+        <description>Alert when an opp is Lost 250k+ for Print</description>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+    </rules>
+    <rules>
+        <fullName>*Lost 250k-750k%2CFacilities</fullName>
+        <actions>
+            <name>Lost_250k_750k_Facilities</name>
+            <type>Alert</type>
+        </actions>
+        <active>true</active>
+        <booleanFilter>1 AND 2 AND 3 AND 4 AND 5 AND 6 AND 7 AND 8</booleanFilter>
+        <criteriaItems>
+            <field>Opportunity.Amount</field>
+            <operation>greaterOrEqual</operation>
+            <value>&quot;USD 250,000&quot;</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Opportunity.Lost_Reason__c</field>
+            <operation>notEqual</operation>
+            <value>Oppty - Duplicate Record,Oppty - Transferred Between Reps,Oppty - Expired (System)</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Opportunity.Country__c</field>
+            <operation>equals</operation>
+            <value>USA</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Opportunity.StageName</field>
+            <operation>equals</operation>
+            <value>0- Closed Lost</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Account.Confidential_Account__c</field>
+            <operation>equals</operation>
+            <value>False</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Opportunity.Closed_Stage_Changed__c</field>
+            <operation>equals</operation>
+            <value>False</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Opportunity.Opportunity_Segment__c</field>
+            <operation>equals</operation>
+            <value>Facility Solutions</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Opportunity.Amount</field>
+            <operation>lessThan</operation>
+            <value>&quot;USD 750,000&quot;</value>
+        </criteriaItems>
+        <description>Alert when an opp is Lost 250k-750k for Facilities</description>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+    </rules>
+    <rules>
+        <fullName>*Lost 250k-750k%2CPackaging</fullName>
+        <actions>
+            <name>Lost_250k_750k_Packaging</name>
+            <type>Alert</type>
+        </actions>
+        <active>true</active>
+        <booleanFilter>1 AND 2 AND 3 AND 4 AND 5 AND 6 AND 7 AND 8</booleanFilter>
+        <criteriaItems>
+            <field>Opportunity.Amount</field>
+            <operation>greaterOrEqual</operation>
+            <value>&quot;USD 250,000&quot;</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Opportunity.Lost_Reason__c</field>
+            <operation>notEqual</operation>
+            <value>Oppty - Duplicate Record,Oppty - Transferred Between Reps,Oppty - Expired (System)</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Opportunity.Country__c</field>
+            <operation>equals</operation>
+            <value>USA</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Opportunity.StageName</field>
+            <operation>equals</operation>
+            <value>0- Closed Lost</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Account.Confidential_Account__c</field>
+            <operation>equals</operation>
+            <value>False</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Opportunity.Closed_Stage_Changed__c</field>
+            <operation>equals</operation>
+            <value>False</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Opportunity.Opportunity_Segment__c</field>
+            <operation>equals</operation>
+            <value>Packaging</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Opportunity.Amount</field>
+            <operation>lessThan</operation>
+            <value>&quot;USD 750,000&quot;</value>
+        </criteriaItems>
+        <description>Alert when an opp is Lost 250k-750k for Packaging</description>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+    </rules>
+    <rules>
+        <fullName>*Lost 25k-100k</fullName>
+        <actions>
+            <name>Lost_25k_100k</name>
+            <type>Alert</type>
+        </actions>
+        <active>true</active>
+        <booleanFilter>1 AND 2 AND 3 AND 4 AND 5 AND 6 AND 7 AND 8</booleanFilter>
+        <criteriaItems>
+            <field>Opportunity.Amount</field>
+            <operation>lessThan</operation>
+            <value>&quot;USD 100,000&quot;</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Opportunity.Amount</field>
+            <operation>greaterOrEqual</operation>
+            <value>&quot;USD 25,000&quot;</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Opportunity.StageName</field>
+            <operation>equals</operation>
+            <value>0- Closed Lost</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Opportunity.Lost_Reason__c</field>
+            <operation>notEqual</operation>
+            <value>Oppty - Duplicate Record,Oppty - Transferred Between Reps,Oppty - Expired (System)</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Opportunity.Country__c</field>
+            <operation>equals</operation>
+            <value>USA</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Account.Confidential_Account__c</field>
+            <operation>equals</operation>
+            <value>False</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Opportunity.Closed_Stage_Changed__c</field>
+            <operation>equals</operation>
+            <value>False</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Opportunity.Opportunity_Segment__c</field>
+            <operation>notEqual</operation>
+            <value>Publishing</value>
+        </criteriaItems>
+        <description>Alert when an opp is Lost with a value between 25k-100k, except for Publishing</description>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+    </rules>
+    <rules>
+        <fullName>*Lost 750k%2B%2CFacilities</fullName>
+        <actions>
+            <name>Lost_750k_Facilities</name>
+            <type>Alert</type>
+        </actions>
+        <active>true</active>
+        <booleanFilter>1 AND 2 AND 3 AND 4 AND 5 AND 6 AND 7</booleanFilter>
+        <criteriaItems>
+            <field>Opportunity.Amount</field>
+            <operation>greaterOrEqual</operation>
+            <value>&quot;USD 750,000&quot;</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Opportunity.Lost_Reason__c</field>
+            <operation>notEqual</operation>
+            <value>Oppty - Duplicate Record,Oppty - Transferred Between Reps,Oppty - Expired (System)</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Opportunity.Country__c</field>
+            <operation>equals</operation>
+            <value>USA</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Opportunity.StageName</field>
+            <operation>equals</operation>
+            <value>0- Closed Lost</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Account.Confidential_Account__c</field>
+            <operation>equals</operation>
+            <value>False</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Opportunity.Closed_Stage_Changed__c</field>
+            <operation>equals</operation>
+            <value>False</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Opportunity.Opportunity_Segment__c</field>
+            <operation>equals</operation>
+            <value>Facility Solutions</value>
+        </criteriaItems>
+        <description>Alert when an opp is Lost 750k+ for Facilities</description>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+    </rules>
+    <rules>
+        <fullName>*Lost 750k%2B%2CPackaging</fullName>
+        <actions>
+            <name>Lost_750k_Packaging</name>
+            <type>Alert</type>
+        </actions>
+        <active>true</active>
+        <booleanFilter>1 AND 2 AND 3 AND 4 AND 5 AND 6 AND 7</booleanFilter>
+        <criteriaItems>
+            <field>Opportunity.Amount</field>
+            <operation>greaterOrEqual</operation>
+            <value>&quot;USD 750,000&quot;</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Opportunity.Lost_Reason__c</field>
+            <operation>notEqual</operation>
+            <value>Oppty - Duplicate Record,Oppty - Transferred Between Reps,Oppty - Expired (System)</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Opportunity.Country__c</field>
+            <operation>equals</operation>
+            <value>USA</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Opportunity.StageName</field>
+            <operation>equals</operation>
+            <value>0- Closed Lost</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Account.Confidential_Account__c</field>
+            <operation>equals</operation>
+            <value>False</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Opportunity.Closed_Stage_Changed__c</field>
+            <operation>equals</operation>
+            <value>False</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Opportunity.Opportunity_Segment__c</field>
+            <operation>equals</operation>
+            <value>Packaging</value>
+        </criteriaItems>
+        <description>Alert when an opp is Lost 750k+ for Packaging</description>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+    </rules>
+    <rules>
+        <fullName>*Won 100k-250k%2C Facilities</fullName>
+        <actions>
+            <name>Won_100_250k_Facilities</name>
+            <type>Alert</type>
+        </actions>
+        <active>true</active>
+        <booleanFilter>1 AND 2 AND 3 AND 4 AND 5 AND 6 AND 7</booleanFilter>
+        <criteriaItems>
+            <field>Opportunity.Amount</field>
+            <operation>greaterOrEqual</operation>
+            <value>&quot;USD 100,000&quot;</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Opportunity.Country__c</field>
+            <operation>equals</operation>
+            <value>USA</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Opportunity.StageName</field>
+            <operation>equals</operation>
+            <value>8- Closed Won,6- Closed Won</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Opportunity.Closed_Stage_Changed__c</field>
+            <operation>equals</operation>
+            <value>False</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Account.Confidential_Account__c</field>
+            <operation>equals</operation>
+            <value>False</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Opportunity.Amount</field>
+            <operation>lessThan</operation>
+            <value>&quot;USD 250,000&quot;</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Opportunity.Opportunity_Segment__c</field>
+            <operation>equals</operation>
+            <value>Facility Solutions</value>
+        </criteriaItems>
+        <description>Email alert on Won Opp for Facilities, 100k to 250k</description>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+    </rules>
+    <rules>
+        <fullName>*Won 100k-250k%2C Packaging</fullName>
+        <actions>
+            <name>Won_100_250k_Packaging</name>
+            <type>Alert</type>
+        </actions>
+        <active>true</active>
+        <booleanFilter>1 AND 2 AND 3 AND 4 AND 5 AND 6 AND 7</booleanFilter>
+        <criteriaItems>
+            <field>Opportunity.Amount</field>
+            <operation>greaterOrEqual</operation>
+            <value>&quot;USD 100,000&quot;</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Opportunity.Country__c</field>
+            <operation>equals</operation>
+            <value>USA</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Opportunity.StageName</field>
+            <operation>equals</operation>
+            <value>8- Closed Won,6- Closed Won</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Opportunity.Closed_Stage_Changed__c</field>
+            <operation>equals</operation>
+            <value>False</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Account.Confidential_Account__c</field>
+            <operation>equals</operation>
+            <value>False</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Opportunity.Amount</field>
+            <operation>lessThan</operation>
+            <value>&quot;USD 250,000&quot;</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Opportunity.Opportunity_Segment__c</field>
+            <operation>equals</operation>
+            <value>Packaging</value>
+        </criteriaItems>
+        <description>Email alert on Won Opp for Packaging, 100k to 250k</description>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+    </rules>
+    <rules>
+        <fullName>*Won 100k-250k%2C Print</fullName>
+        <actions>
+            <name>Won_100_250k_Print_Pub</name>
+            <type>Alert</type>
+        </actions>
+        <active>true</active>
+        <booleanFilter>1 AND 2 AND 3 AND 4 AND 5 AND 6 AND 7</booleanFilter>
+        <criteriaItems>
+            <field>Opportunity.Amount</field>
+            <operation>greaterOrEqual</operation>
+            <value>&quot;USD 100,000&quot;</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Opportunity.Country__c</field>
+            <operation>equals</operation>
+            <value>USA</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Opportunity.StageName</field>
+            <operation>equals</operation>
+            <value>8- Closed Won,6- Closed Won</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Opportunity.Closed_Stage_Changed__c</field>
+            <operation>equals</operation>
+            <value>False</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Account.Confidential_Account__c</field>
+            <operation>equals</operation>
+            <value>False</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Opportunity.Amount</field>
+            <operation>lessThan</operation>
+            <value>&quot;USD 250,000&quot;</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Opportunity.Opportunity_Segment__c</field>
+            <operation>equals</operation>
+            <value>Print</value>
+        </criteriaItems>
+        <description>Email alert on Won Opp for Print, 100k to 250k</description>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+    </rules>
+    <rules>
+        <fullName>*Won 250k%2B%2C Print</fullName>
+        <actions>
+            <name>Won_250k_Print_Pub</name>
+            <type>Alert</type>
+        </actions>
+        <active>true</active>
+        <booleanFilter>1 AND 2 AND 3 AND 4 AND 5 AND 6</booleanFilter>
+        <criteriaItems>
+            <field>Opportunity.Amount</field>
+            <operation>greaterOrEqual</operation>
+            <value>&quot;USD 250,000&quot;</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Opportunity.Country__c</field>
+            <operation>equals</operation>
+            <value>USA</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Opportunity.StageName</field>
+            <operation>equals</operation>
+            <value>8- Closed Won,6- Closed Won</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Opportunity.Closed_Stage_Changed__c</field>
+            <operation>equals</operation>
+            <value>False</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Account.Confidential_Account__c</field>
+            <operation>equals</operation>
+            <value>False</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Opportunity.Opportunity_Segment__c</field>
+            <operation>equals</operation>
+            <value>Print</value>
+        </criteriaItems>
+        <description>Email alert on Won Opp for Print, 250k+</description>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+    </rules>
+    <rules>
+        <fullName>*Won 250k-750k%2C Facilities</fullName>
+        <actions>
+            <name>Won_250k_750k_Facilities</name>
+            <type>Alert</type>
+        </actions>
+        <active>true</active>
+        <booleanFilter>1 AND 2 AND 3 AND 4 AND 5 AND 6 AND 7</booleanFilter>
+        <criteriaItems>
+            <field>Opportunity.Amount</field>
+            <operation>greaterOrEqual</operation>
+            <value>&quot;USD 250,000&quot;</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Opportunity.Country__c</field>
+            <operation>equals</operation>
+            <value>USA</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Opportunity.StageName</field>
+            <operation>equals</operation>
+            <value>8- Closed Won,6- Closed Won</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Opportunity.Closed_Stage_Changed__c</field>
+            <operation>equals</operation>
+            <value>False</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Account.Confidential_Account__c</field>
+            <operation>equals</operation>
+            <value>False</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Opportunity.Opportunity_Segment__c</field>
+            <operation>equals</operation>
+            <value>Facility Solutions</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Opportunity.Amount</field>
+            <operation>lessThan</operation>
+            <value>&quot;USD 750,000&quot;</value>
+        </criteriaItems>
+        <description>Email alert on Won Opp for Facilities, 250k-750k</description>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+    </rules>
+    <rules>
+        <fullName>*Won 250k-750k%2C Packaging</fullName>
+        <actions>
+            <name>Won_250k_750k_Packaging</name>
+            <type>Alert</type>
+        </actions>
+        <active>true</active>
+        <booleanFilter>1 AND 2 AND 3 AND 4 AND 5 AND 6 AND 7</booleanFilter>
+        <criteriaItems>
+            <field>Opportunity.Amount</field>
+            <operation>greaterOrEqual</operation>
+            <value>&quot;USD 250,000&quot;</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Opportunity.Country__c</field>
+            <operation>equals</operation>
+            <value>USA</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Opportunity.StageName</field>
+            <operation>equals</operation>
+            <value>8- Closed Won,6- Closed Won</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Opportunity.Closed_Stage_Changed__c</field>
+            <operation>equals</operation>
+            <value>False</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Account.Confidential_Account__c</field>
+            <operation>equals</operation>
+            <value>False</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Opportunity.Opportunity_Segment__c</field>
+            <operation>equals</operation>
+            <value>Packaging</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Opportunity.Amount</field>
+            <operation>lessThan</operation>
+            <value>&quot;USD 750,000&quot;</value>
+        </criteriaItems>
+        <description>Email alert on Won Opp for Packaging, 250k-750k</description>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+    </rules>
+    <rules>
+        <fullName>*Won 25k-100k</fullName>
+        <actions>
+            <name>Won_25k_100k</name>
+            <type>Alert</type>
+        </actions>
+        <active>true</active>
+        <booleanFilter>1 AND 2 AND 3 AND 4 and 5 and 6 AND 7</booleanFilter>
+        <criteriaItems>
+            <field>Opportunity.Amount</field>
+            <operation>lessThan</operation>
+            <value>&quot;USD 100,000&quot;</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Opportunity.Amount</field>
+            <operation>greaterOrEqual</operation>
+            <value>&quot;USD 25,000&quot;</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Opportunity.Country__c</field>
+            <operation>equals</operation>
+            <value>USA</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Opportunity.StageName</field>
+            <operation>equals</operation>
+            <value>8- Closed Won,6- Closed Won</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Opportunity.Closed_Stage_Changed__c</field>
+            <operation>equals</operation>
+            <value>False</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Account.Confidential_Account__c</field>
+            <operation>equals</operation>
+            <value>False</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Opportunity.Opportunity_Segment__c</field>
+            <operation>notContain</operation>
+            <value>Publishing</value>
+        </criteriaItems>
+        <description>Alert when an opp is Won with a value between 25k-100k, except for Publishing</description>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+    </rules>
+    <rules>
+        <fullName>*Won 750k%2B%2C Facilities</fullName>
+        <actions>
+            <name>Won_750k_Facilities</name>
+            <type>Alert</type>
+        </actions>
+        <active>true</active>
+        <booleanFilter>1 AND 2 AND 3 AND 4 AND 5 AND 6</booleanFilter>
+        <criteriaItems>
+            <field>Opportunity.Amount</field>
+            <operation>greaterOrEqual</operation>
+            <value>&quot;USD 750,000&quot;</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Opportunity.Country__c</field>
+            <operation>equals</operation>
+            <value>USA</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Opportunity.StageName</field>
+            <operation>equals</operation>
+            <value>8- Closed Won,6- Closed Won</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Opportunity.Closed_Stage_Changed__c</field>
+            <operation>equals</operation>
+            <value>False</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Account.Confidential_Account__c</field>
+            <operation>equals</operation>
+            <value>False</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Opportunity.Opportunity_Segment__c</field>
+            <operation>equals</operation>
+            <value>Facility Solutions</value>
+        </criteriaItems>
+        <description>Email alert on Won Opp for Facilities, 750k+</description>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+    </rules>
+    <rules>
+        <fullName>*Won 750k%2B%2C Packaging</fullName>
+        <actions>
+            <name>Won_750k_Packaging</name>
+            <type>Alert</type>
+        </actions>
+        <active>true</active>
+        <booleanFilter>1 AND 2 AND 3 AND 4 AND 5 AND 6</booleanFilter>
+        <criteriaItems>
+            <field>Opportunity.Amount</field>
+            <operation>greaterOrEqual</operation>
+            <value>&quot;USD 750,000&quot;</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Opportunity.Country__c</field>
+            <operation>equals</operation>
+            <value>USA</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Opportunity.StageName</field>
+            <operation>equals</operation>
+            <value>8- Closed Won,6- Closed Won</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Opportunity.Closed_Stage_Changed__c</field>
+            <operation>equals</operation>
+            <value>False</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Account.Confidential_Account__c</field>
+            <operation>equals</operation>
+            <value>False</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Opportunity.Opportunity_Segment__c</field>
+            <operation>equals</operation>
+            <value>Packaging</value>
+        </criteriaItems>
+        <description>Email alert on Won Opp for Packaging, 750k+</description>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+    </rules>
+    <rules>
+        <fullName>Cannabis New Opportunity</fullName>
+        <actions>
+            <name>Cannabis_Opportunity_created</name>
+            <type>Alert</type>
+        </actions>
+        <active>true</active>
+        <criteriaItems>
+            <field>Opportunity.Prod_Category__c</field>
+            <operation>equals</operation>
+            <value>CANNABIS PACKAGING</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Account.Confidential_Account__c</field>
+            <operation>equals</operation>
+            <value>False</value>
+        </criteriaItems>
+        <description>Email alert when a cannabis opportunity is entered</description>
+        <triggerType>onCreateOnly</triggerType>
+    </rules>
+    <rules>
+        <fullName>Cold Chain Won or Lost Opps</fullName>
+        <actions>
+            <name>Closed_Opp_for_Cold_Chain</name>
+            <type>Alert</type>
+        </actions>
+        <active>true</active>
+        <booleanFilter>1 AND 3 AND 4 AND ((2 or 5) or (2 and 5)) and 6 and 7</booleanFilter>
+        <criteriaItems>
+            <field>Opportunity.IsClosed</field>
+            <operation>equals</operation>
+            <value>True</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Opportunity.Prod_Category__c</field>
+            <operation>includes</operation>
+            <value>COLD CHAIN</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Opportunity.Country__c</field>
+            <operation>equals</operation>
+            <value>USA</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Opportunity.Amount</field>
+            <operation>greaterOrEqual</operation>
+            <value>&quot;USD 100,000&quot;</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Opportunity.CampaignId</field>
+            <operation>contains</operation>
+            <value>Cold Chain</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Opportunity.Closed_Stage_Changed__c</field>
+            <operation>equals</operation>
+            <value>False</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Account.Confidential_Account__c</field>
+            <operation>equals</operation>
+            <value>False</value>
+        </criteriaItems>
+        <description>Alert for Cold Chain VP when a US Opp with Cold Chain is closed.</description>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+    </rules>
+    <rules>
+        <fullName>Corrugated Won or Lost Opps</fullName>
+        <actions>
+            <name>Closed_Opp_for_Corrugated</name>
+            <type>Alert</type>
+        </actions>
+        <active>true</active>
+        <booleanFilter>1 AND 3 AND 4 AND ((2 or 5) or (2 and 5)) and 6 and 7</booleanFilter>
+        <criteriaItems>
+            <field>Opportunity.IsClosed</field>
+            <operation>equals</operation>
+            <value>True</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Opportunity.Prod_Category__c</field>
+            <operation>includes</operation>
+            <value>CORRUGATED</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Opportunity.Country__c</field>
+            <operation>equals</operation>
+            <value>USA</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Opportunity.Amount</field>
+            <operation>greaterOrEqual</operation>
+            <value>&quot;USD 100,000&quot;</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Opportunity.CampaignId</field>
+            <operation>contains</operation>
+            <value>corrugated</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Opportunity.Closed_Stage_Changed__c</field>
+            <operation>equals</operation>
+            <value>False</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Account.Confidential_Account__c</field>
+            <operation>equals</operation>
+            <value>False</value>
+        </criteriaItems>
+        <description>Alert for Corrugated VP when a US opp with Corrugated is closed.</description>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+    </rules>
+    <rules>
+        <fullName>Equipment Won or Lost Opps</fullName>
+        <actions>
+            <name>Closed_Opp_for_Equipment</name>
+            <type>Alert</type>
+        </actions>
+        <active>true</active>
+        <criteriaItems>
+            <field>Opportunity.IsClosed</field>
+            <operation>equals</operation>
+            <value>True</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Opportunity.Prod_Category__c</field>
+            <operation>includes</operation>
+            <value>EQUIPMENT - PACKAGING</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Opportunity.Country__c</field>
+            <operation>equals</operation>
+            <value>USA</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Opportunity.Amount</field>
+            <operation>greaterOrEqual</operation>
+            <value>&quot;USD 100,000&quot;</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Account.Confidential_Account__c</field>
+            <operation>equals</operation>
+            <value>False</value>
+        </criteriaItems>
+        <description>Alert for Equipment Specialist managers when a US opp with Equipment is closed.</description>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+    </rules>
+    <rules>
+        <fullName>Food Won or Lost Opps</fullName>
+        <actions>
+            <name>Closed_Opp_for_Food</name>
+            <type>Alert</type>
+        </actions>
+        <active>true</active>
+        <booleanFilter>1 AND 3 AND 4 AND ((2 or 5) or (2 and 5)) and 6 and 7</booleanFilter>
+        <criteriaItems>
+            <field>Opportunity.IsClosed</field>
+            <operation>equals</operation>
+            <value>True</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Opportunity.Prod_Category__c</field>
+            <operation>includes</operation>
+            <value>FOOD PACKAGING,FOOD SERVICE,FOOD SERVICE-PRIVATE BRAND</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Opportunity.Country__c</field>
+            <operation>equals</operation>
+            <value>USA</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Opportunity.Amount</field>
+            <operation>greaterOrEqual</operation>
+            <value>&quot;USD 100,000&quot;</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Opportunity.CampaignId</field>
+            <operation>contains</operation>
+            <value>Food</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Opportunity.Closed_Stage_Changed__c</field>
+            <operation>equals</operation>
+            <value>False</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Account.Confidential_Account__c</field>
+            <operation>equals</operation>
+            <value>False</value>
+        </criteriaItems>
+        <description>Alert for Food VP when a US Opp with Food is closed.</description>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+    </rules>
+    <rules>
+        <fullName>Kitting Lost Opportunity</fullName>
+        <actions>
+            <name>Kitting_Lost_Opportunity</name>
+            <type>Alert</type>
+        </actions>
+        <active>true</active>
+        <booleanFilter>2 AND (1 OR 3)</booleanFilter>
+        <criteriaItems>
+            <field>Opportunity.RecordTypeId</field>
+            <operation>equals</operation>
+            <value>Kitting Opportunity - Lightning</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Opportunity.StageName</field>
+            <operation>equals</operation>
+            <value>0- Closed Lost</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Opportunity.Kitting__c</field>
+            <operation>equals</operation>
+            <value>True</value>
+        </criteriaItems>
+        <description>When a kitting opportunity is Lost, notify Kitting Team</description>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+    </rules>
+    <rules>
+        <fullName>Kitting Won Opportunity</fullName>
+        <actions>
+            <name>Kitting_Won_Opportunity</name>
+            <type>Alert</type>
+        </actions>
+        <active>true</active>
+        <booleanFilter>(1 OR 3) AND 2</booleanFilter>
+        <criteriaItems>
+            <field>Opportunity.RecordTypeId</field>
+            <operation>equals</operation>
+            <value>Kitting Opportunity - Lightning</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Opportunity.StageName</field>
+            <operation>equals</operation>
+            <value>6- Closed Won</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Opportunity.Kitting__c</field>
+            <operation>equals</operation>
+            <value>True</value>
+        </criteriaItems>
+        <description>When a kitting opportunity is won, notify the kitting team</description>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+    </rules>
+    <rules>
+        <fullName>L - Rank Update - Cold</fullName>
+        <actions>
+            <name>Rank_is_Cold</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <criteriaItems>
+            <field>Opportunity.StageName</field>
+            <operation>equals</operation>
+            <value>1- Research,2- Qualify,1- Prospect,2- Qualify/Audit</value>
+        </criteriaItems>
+        <description>Lightning - Update the Rank to Cold for Stages 1 and 2</description>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+    </rules>
+    <rules>
+        <fullName>L - Rank Update - Hot</fullName>
+        <actions>
+            <name>Rank_is_Hot</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <criteriaItems>
+            <field>Opportunity.StageName</field>
+            <operation>equals</operation>
+            <value>4- Propose,5- Implement,6-Closing Presentation to Decision Maker,7- Verbal Commitment</value>
+        </criteriaItems>
+        <description>Lightning - Update Rank to Hot for Stages 4 and 5</description>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+    </rules>
+    <rules>
+        <fullName>L - Rank Update - Warm</fullName>
+        <actions>
+            <name>Rank_is_Warm</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <criteriaItems>
+            <field>Opportunity.StageName</field>
+            <operation>equals</operation>
+            <value>3- Develop Solution,3- Project Identified,4- Demo/RFQ,5- Proposal</value>
+        </criteriaItems>
+        <description>Lightning - Update Rank to Warm for Stage 3</description>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+    </rules>
+    <rules>
+        <fullName>L - Rank Update upon Close</fullName>
+        <actions>
+            <name>Rank_is_Null</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <criteriaItems>
+            <field>Opportunity.StageName</field>
+            <operation>equals</operation>
+            <value>6- Closed Won,0- Closed Lost,8- Closed Won</value>
+        </criteriaItems>
+        <description>Lightning - Update Rank to Null for Closed Won and Closed Lost</description>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+    </rules>
+    <rules>
+        <fullName>L - Stage Changed from Closed</fullName>
+        <actions>
+            <name>Opp_Closed_Stage_Changed</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <description>Lightning - mark a flag on the opportunity whenever a closed Opportunity is reopened.  This flag is used in other workflows, to exclude reopened opportunities from notifications.</description>
+        <formula>AND(  ISCHANGED(StageName),   OR (  ISPICKVAL(PRIORVALUE(StageName) , &quot;6- Closed Won&quot;),
+ISPICKVAL(PRIORVALUE(StageName) , &quot;8- Closed Won&quot;),  ISPICKVAL(PRIORVALUE(StageName) , &quot;0- Closed Lost&quot;)  )  )</formula>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+    <rules>
+        <fullName>Opportunity Stage Change</fullName>
+        <actions>
+            <name>StageChange</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <formula>OR(ISNEW(),
+ISCHANGED( StageName))</formula>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+    <rules>
+        <fullName>Opportunity created at local level</fullName>
+        <actions>
+            <name>OpportunityiscreatedatlocallevelassociatedwithNationalAccount</name>
+            <type>Alert</type>
+        </actions>
+        <active>true</active>
+        <criteriaItems>
+            <field>Account.National_Account__c</field>
+            <operation>equals</operation>
+            <value>True</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Account.ParentId</field>
+            <operation>notEqual</operation>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Opportunity.Amount</field>
+            <operation>greaterThan</operation>
+            <value>USD 1</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Opportunity.Country__c</field>
+            <operation>equals</operation>
+            <value>USA</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Account.Confidential_Account__c</field>
+            <operation>equals</operation>
+            <value>False</value>
+        </criteriaItems>
+        <description>Applies when a local account associated with a national account has an opportunity created against it</description>
+        <triggerType>onCreateOnly</triggerType>
+    </rules>
+    <rules>
+        <fullName>Opps%3A Date to Revisit Reminder</fullName>
+        <active>true</active>
+        <criteriaItems>
+            <field>Opportunity.Date_to_Revisit__c</field>
+            <operation>notEqual</operation>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Account.Confidential_Account__c</field>
+            <operation>equals</operation>
+            <value>False</value>
+        </criteriaItems>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+        <workflowTimeTriggers>
+            <actions>
+                <name>Opportunity_Date_to_Revisit_Reminder</name>
+                <type>Alert</type>
+            </actions>
+            <offsetFromField>Opportunity.Date_to_Revisit__c</offsetFromField>
+            <timeLength>0</timeLength>
+            <workflowTimeTriggerUnit>Days</workflowTimeTriggerUnit>
+        </workflowTimeTriggers>
+    </rules>
+    <rules>
+        <fullName>Oppty - Alert when close date is tomorrow %28New%29</fullName>
+        <active>true</active>
+        <criteriaItems>
+            <field>Opportunity.IsClosed</field>
+            <operation>equals</operation>
+            <value>False</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Opportunity.Country__c</field>
+            <operation>equals</operation>
+            <value>USA</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Opportunity.CreatedDate</field>
+            <operation>notEqual</operation>
+            <value>TODAY</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Account.Confidential_Account__c</field>
+            <operation>equals</operation>
+            <value>False</value>
+        </criteriaItems>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+        <workflowTimeTriggers>
+            <actions>
+                <name>Oppty_Alert_when_close_date_is_tomorrow</name>
+                <type>Alert</type>
+            </actions>
+            <offsetFromField>Opportunity.CloseDate</offsetFromField>
+            <timeLength>-1</timeLength>
+            <workflowTimeTriggerUnit>Days</workflowTimeTriggerUnit>
+        </workflowTimeTriggers>
+    </rules>
+    <rules>
+        <fullName>Packaging for Funderburk</fullName>
+        <actions>
+            <name>Packaging_for_Funderburk</name>
+            <type>Alert</type>
+        </actions>
+        <active>true</active>
+        <criteriaItems>
+            <field>Opportunity.IsClosed</field>
+            <operation>equals</operation>
+            <value>True</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Opportunity.Prod_Category__c</field>
+            <operation>notEqual</operation>
+            <value>CORRUGATED,RETAIL PACKAGING - FOLDING CARTON</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Opportunity.Country__c</field>
+            <operation>equals</operation>
+            <value>USA</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Opportunity.Amount</field>
+            <operation>greaterOrEqual</operation>
+            <value>&quot;USD 100,000&quot;</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Opportunity.Opportunity_Segment__c</field>
+            <operation>equals</operation>
+            <value>Packaging</value>
+        </criteriaItems>
+        <description>Email alert on Won or Lost Opps over $100k, Packaging Segment, excluding Corrugated and Folding Carton.  US only</description>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+    </rules>
+    <rules>
+        <fullName>Pass Cust BillTo to Opp</fullName>
+        <actions>
+            <name>Update_Bill_To_Number</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <criteriaItems>
+            <field>Account.Account_Type__c</field>
+            <operation>equals</operation>
+            <value>Customer</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Opportunity.RecordTypeId</field>
+            <operation>equals</operation>
+            <value>Engineered Packaging (PDN) Lightning,Standard Opportunity Lightning</value>
+        </criteriaItems>
+        <description>If the opportunity is related to customer account, pass the customer billto to the opportunity</description>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+    <rules>
+        <fullName>Pass Opp Bill to Number to Prospect</fullName>
+        <actions>
+            <name>Pass_Opp_Bill_to_Number_to_Prospect2</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <criteriaItems>
+            <field>Account.Account_Type__c</field>
+            <operation>equals</operation>
+            <value>Prospect</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Opportunity.RecordTypeId</field>
+            <operation>contains</operation>
+            <value>Engineered Packaging (PDN) Lightning,Standard Opportunity Lightning</value>
+        </criteriaItems>
+        <description>When a prospect opportunity is updated, pass the bill to number to the account bill to number to merge with.</description>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+    <rules>
+        <fullName>Pass Prospect Billto to Merge With to Opp</fullName>
+        <actions>
+            <name>Update_Billto_with_BillTo_to_Merge_With</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <criteriaItems>
+            <field>Opportunity.Account_Type__c</field>
+            <operation>equals</operation>
+            <value>Prospect</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Opportunity.RecordTypeId</field>
+            <operation>equals</operation>
+            <value>Engineered Packaging (PDN) Lightning,Standard Opportunity Lightning</value>
+        </criteriaItems>
+        <description>If an opportunity is created against a Prospect, pass the Billto Number To Merge With into the opportunity Bill To Number field</description>
+        <triggerType>onCreateOnly</triggerType>
+    </rules>
+    <rules>
+        <fullName>Populate Opportunity Close Date</fullName>
+        <actions>
+            <name>Populate_Opportunity_Close_Date</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <criteriaItems>
+            <field>Opportunity.IsClosed</field>
+            <operation>equals</operation>
+            <value>True</value>
+        </criteriaItems>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+    </rules>
+    <rules>
+        <fullName>Update Last Upd Date Non Sysadmin</fullName>
+        <actions>
+            <name>Update_Last_Upd_Date_Non_Sysadmin</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <description>Update the Last Update Date by Non-System Admins</description>
+        <formula>and ($Profile.Name &lt;&gt; &quot;Analytics Cloud Integration User&quot;, $Profile.Name &lt;&gt; &quot;Analytics Cloud Security User&quot;, 
+$Profile.Name &lt;&gt; &quot;Genesis Profile&quot;, 
+$Profile.Name &lt;&gt; &quot;Marketo Sync&quot;, 
+$Profile.Name &lt;&gt; &quot;Premier Support User&quot;, 
+$Profile.Name &lt;&gt; &quot;Sales Insights Integration User&quot;,
+ $Profile.Name &lt;&gt; &quot;SalesforceIQ Integration User&quot;,
+ $Profile.Name &lt;&gt; &quot;SmartSync Mobile Profile&quot;,
+ $Profile.Name &lt;&gt; &quot;SmartSync Profile&quot;, 
+$Profile.Name &lt;&gt; &quot;System Admin - API&quot;,
+$Profile.Name &lt;&gt; &quot;API admin&quot;,  
+$Profile.Name &lt;&gt; &quot;System Administrator&quot;)</formula>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+    <rules>
+        <fullName>Update PSR Email Fields - On Change</fullName>
+        <actions>
+            <name>Update_PSR_BDM_RVP</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <actions>
+            <name>Update_PSR_DMD</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <actions>
+            <name>Update_PSR_Dir</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <actions>
+            <name>Update_PSR_GSM</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <actions>
+            <name>Update_PSR_Pres</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <actions>
+            <name>Update_PSR_TL</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <actions>
+            <name>Update_PSR_VP</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <actions>
+            <name>Update_PSR_ZM_SM</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>false</active>
+        <description>Update all PSR Email fields if the PSR on the Opportunity changed</description>
+        <formula>ISCHANGED(Primary_Sales_Rep_Name__c )</formula>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+    <rules>
+        <fullName>Update PSR Email Fields - On Create</fullName>
+        <actions>
+            <name>Update_PSR_BDM_RVP</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <actions>
+            <name>Update_PSR_DMD</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <actions>
+            <name>Update_PSR_Dir</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <actions>
+            <name>Update_PSR_GSM</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <actions>
+            <name>Update_PSR_Pres</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <actions>
+            <name>Update_PSR_TL</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <actions>
+            <name>Update_PSR_VP</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <actions>
+            <name>Update_PSR_ZM_SM</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>false</active>
+        <description>Update all PSR Email fields on Create if the PSR is identified on the Opportunity</description>
+        <formula>NOT(ISBLANK(Primary_Sales_Rep_Name__c))</formula>
+        <triggerType>onCreateOnly</triggerType>
+    </rules>
+</Workflow>

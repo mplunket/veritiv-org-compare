@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<QuickAction xmlns="http://soap.sforce.com/2006/04/metadata">
+    <description>Changes CLIA status to reject which will trigger process builder to update CLI to draft</description>
+    <fieldOverrides>
+        <field>Actioned_By__c</field>
+        <formula>$User.FirstName &amp;&quot; &quot;&amp;  $User.LastName</formula>
+    </fieldOverrides>
+    <fieldOverrides>
+        <field>Actioned_Date__c</field>
+        <formula>NOW()</formula>
+    </fieldOverrides>
+    <fieldOverrides>
+        <field>Status__c</field>
+        <literalValue>Rejected</literalValue>
+    </fieldOverrides>
+    <icon>RejectCross</icon>
+    <label>Reject</label>
+    <optionsCreateFeedItem>false</optionsCreateFeedItem>
+    <quickActionLayout>
+        <layoutSectionStyle>TwoColumnsLeftToRight</layoutSectionStyle>
+        <quickActionLayoutColumns>
+            <quickActionLayoutItems>
+                <emptySpace>false</emptySpace>
+                <field>Comments__c</field>
+                <uiBehavior>Edit</uiBehavior>
+            </quickActionLayoutItems>
+        </quickActionLayoutColumns>
+        <quickActionLayoutColumns/>
+    </quickActionLayout>
+    <type>Update</type>
+</QuickAction>

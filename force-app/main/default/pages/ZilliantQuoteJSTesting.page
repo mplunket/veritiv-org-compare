@@ -1,0 +1,52 @@
+<apex:page sidebar="false" showHeader="false" cache="false" standardStylesheets="false">
+	
+	<head>
+		<apex:includeScript value="https://code.jquery.com/qunit/qunit-1.15.0.js" />
+	    <apex:stylesheet value="https://code.jquery.com/qunit/qunit-1.15.0.css" />
+	    <apex:includeScript value="{!URLFOR($Resource.blanket)}"/>
+	    
+	    <!-- <script type="text/javascript" src="{!$Resource.Ext_3_2_1}/src/ext-core/src/core/Ext.js"></script> -->
+	
+		
+		
+		<apex:includeScript value="{!URLFOR($Resource.Ext_3_2_1, '/adapter/ext/ext-base.js')}"/>
+		<apex:includeScript value="{!URLFOR($Resource.Ext_3_2_1, '/ext-all.js')}"/>
+		
+	    <apex:includeScript value="{!URLFOR($Resource.jquery1_8_2)}"/>
+	    <apex:includeScript value="{!URLFOR($Resource.Unisource)}" html-data-cover="true"/>
+	    <apex:includeScript value="{!URLFOR($Resource.UnisourceAdditionalDetails)}"/>
+	    
+	    <apex:includeScript value="{!$Resource.JS_TestUtils}" />
+	    <apex:includeScript value="{!$Resource.JSUnitTests}" />
+    </head>
+    
+    <!-- Javascript Price Matrix Remote Objects Definition -->
+	<apex:remoteObjects jsNamespace="RemoteObjectModel">
+		<apex:remoteObjectModel name="PricingMatrix__c" jsShorthand="Matrix" fields="Id">
+			<apex:remoteObjectField name="CWT_Dependent__c" jsShorthand="cwtDependent" />
+			<apex:remoteObjectField name="CWT_Dependent_Field__c" jsShorthand="cwDependentField" />
+			<apex:remoteObjectField name="Error_To_Display__c" jsShorthand="errorToDisplay" />
+			<apex:remoteObjectField name="Fields_To_Blank__c" jsShorthand="fieldsToBlank" />
+			<apex:remoteObjectField name="Fields_To_Grey__c" jsShorthand="fieldsToGrey" />
+			<apex:remoteObjectField name="Policy_Type_Value__c" jsShorthand="policyTypeValue" />
+			<apex:remoteObjectField name="Price_Level_Value__c" jsShorthand="priceLevelValue" />
+		</apex:remoteObjectModel>
+	</apex:remoteObjects>
+      
+    <body>
+    <div id="qunit"></div>
+	    <div id="qunit-fixture">
+	      <table>
+	        <thead>
+	          <tr><td><input id="selAll" type="checkbox"/>Toggle All</td></tr>
+	        </thead>
+	        <tbody>
+	          <tr><td><input class="selOne" type="checkbox"/><span>1</span></td></tr>
+	          <tr><td><input class="selOne" type="checkbox"/><span>2</span></td></tr>
+	        </tbody>
+	      </table>
+
+	    </div>
+	</body>
+	
+</apex:page>

@@ -1,0 +1,354 @@
+<apex:page id="QLIPricingDetails"
+		name="Pricing Details"
+		title="{!$Label.Pricing_Details}" 
+		showHeader="false"
+		standardController="Quote__c"
+		extensions="UpdatePricingDetailsQuoteContExt"
+		docType="html-5.0"> 
+
+	<!-- Styling -->
+	<apex:stylesheet value="{!URLFOR($Resource.SLDS103, 'assets/styles/salesforce-lightning-design-system-vf.css')}" />
+	<style type="text/css">
+        .errorMessage {
+            width:50rem;
+            height:10rem;
+            margin:auto;
+            position:absolute;
+            top:0;bottom:0; 
+            left:0;right:0;
+            max-width:100%;
+            max-height:100%;
+            overflow:auto;
+            text-align: center;
+        	font-size: 1.2rem;
+        }
+		.negativeValue { color: red; }
+		.highlightedValue { color: blue;}
+		
+		/*copied from slds-select to force override of select styling */
+		select 
+		{
+			background-color: white;
+		    color: #16325c;
+		    border: 1px solid #d8dde6;
+		    border-radius: 4px;
+		    /*width: 100%;*/
+		    transition: border 0.1s linear, background-color 0.1s linear;
+		    height: 34px;
+		}
+		select[disabled]
+		{
+			background-color: #e0e5ee;
+		    border-color: #a8b7c7;
+		    cursor: not-allowed;
+		    -webkit-user-select: none;
+		}
+		.cwtChckBx { background-color: transparent !important; }
+		td.Future_Dev_Cost_Starts__c span.dateFormat { display: none; }
+		select::-ms-expand { display: none; }
+	</style>
+
+	<!-- Javascript library -->
+	<script type="text/javascript" src="{!$Resource.Ext_3_2_1}/adapter/ext/ext-base.js"></script>
+	<script type="text/javascript" src="{!$Resource.Ext_3_2_1}/ext-all.js"></script>
+	<script type="text/javascript" src="{!$Resource.UnisourceAdditionalDetails}"></script>
+	<apex:includeScript value="{!URLFOR($Resource.jquery1_8_2)}"  />
+	
+	<!-- Javascript Price Matrix Remote Objects Definition -->
+	<apex:remoteObjects jsNamespace="RemoteObjectModel">
+		<apex:remoteObjectModel name="PricingMatrix__c" jsShorthand="Matrix" fields="Id">
+			<apex:remoteObjectField name="CWT_Dependent__c" jsShorthand="cwtDependent" />
+			<apex:remoteObjectField name="CWT_Dependent_Field__c" jsShorthand="cwDependentField" />
+			<apex:remoteObjectField name="Error_To_Display__c" jsShorthand="errorToDisplay" />
+			<apex:remoteObjectField name="Fields_To_Blank__c" jsShorthand="fieldsToBlank" />
+			<apex:remoteObjectField name="Fields_To_Grey__c" jsShorthand="fieldsToGrey" />
+			<apex:remoteObjectField name="Policy_Type_Value__c" jsShorthand="policyTypeValue" />
+			<apex:remoteObjectField name="Price_Level_Value__c" jsShorthand="priceLevelValue" />
+		</apex:remoteObjectModel>
+		
+		<apex:remoteObjectModel name="Quote_Line_Item__c" jsShorthand="QLIs" fields="Id">
+            <apex:remoteObjectField name="Price__c" jsShorthand="qliPrice" />
+            <apex:remoteObjectField name="Quantity_unit_of_measure__c" jsShorthand="qliQUOM" />
+            <apex:remoteObjectField name="Price_unit_of_measure__c" jsShorthand="qliPUOM" />
+            <apex:remoteObjectField name="Product_Code__c" jsShorthand="qliProductCode" />
+            <apex:remoteObjectField name="GTM_percent__c" jsShorthand="qliGTMPercent" />
+            <apex:remoteObjectField name="Product__c" jsShorthand="qliProduct" />
+            <apex:remoteObjectField name="Pricing_Start_Date__c" jsShorthand="qliPricingStartDate" />
+        </apex:remoteObjectModel>
+        
+        <apex:remoteObjectModel name="Product2" jsShorthand="Prods" fields="Id">
+            <apex:remoteObjectField name="Brand__c" jsShorthand="pBrand" />
+            <apex:remoteObjectField name="Class__c" jsShorthand="pClass" />
+            <apex:remoteObjectField name="Set__c" jsShorthand="pSet" />
+            <apex:remoteObjectField name="Subset__c" jsShorthand="pSubset" />
+        </apex:remoteObjectModel>
+	</apex:remoteObjects>
+	
+	<apex:sectionHeader id="shUpdatePricing" title="{!$Label.Quote_Line_Items}" subtitle="{!Quote__c.Name}" rendered="{!isSaalfeldUser}" />
+	
+	<div class="slds" > 
+            <apex:outputText value="{!$Label.Inactive_Account_Page_Error}" rendered="{!!isAccountActive}" styleClass="errorMessage" />
+            <apex:outputText value="{!$Label.Saalfeld_Pricing_Page_Error}" rendered="{!AND(!isSaalfeldUser,isAccountActive)}" styleClass="errorMessage" />
+        <apex:form id="frmMain" rendered="{!AND(isSaalfeldUser, isAccountActive)}">
+            <div class="">
+        
+                <!-- Action Functions -->
+                <apex:actionStatus id="actStat">
+                    <apex:facet name="start">
+                    
+                        <div style="position: absolute; opacity: 0.75; z-index: 1000; background-color: grey; width:100%; height:250%; " id="facetDiv">
+                            <div style="text-align: center; vertical-align: bottom;"> <img src="{!$Resource.spinning_loader}" style="margin-top:25%;"  /> </div>
+                        </div>
+                        
+                    </apex:facet>
+                </apex:actionStatus>
+            
+                <apex:actionFunction name="resetPageErrors" action="{!resetErrors}" rerender="qliStatus, sendToZilliant" immediate="true">
+                    <apex:param name="index" assignTo="{!qliIndex}" value="" />
+                </apex:actionFunction>
+            
+                                        <!-- addErrorMessageWithMessage -->
+                <apex:actionFunction name="addToPageMessage" action="{!addErrorToPage}" status="actStat"  rerender="qliStatus, sendToZilliant">
+                    <apex:param name="errorLevel" assignTo="{!errorLevel}" value="" />
+                    <apex:param name="messageName" assignTo="{!message}" value="" />
+                    <apex:param name="index" assignTo="{!qliIndex}" value="" />
+                    <apex:param name="addOrRemoveError" assignTo="{!isNewError}" value="" />
+                </apex:actionFunction>
+                
+                <apex:pageBlock id="pbAdditionalDetails" title="{!$Label.Pricing_Details}">
+                    <apex:pageBlockButtons location="bottom">
+                        <apex:commandButton value="{!$Label.Send_Update_Pricing_Details}" action="{!updatePricingDetails}" status="actStat" rerender="qliStatus, sendToZilliant" styleClass="btn slds-button slds-button--neutral" disabled="{!renderSendButton}" id="sendToZilliant" /> <!-- disabled="{!renderSendButton}" -->
+                        <input type="button" value="{!$Label.Close_Additional_Details}" onclick="window.top.close(); return false;" class="btn slds-button slds-button--neutral" />
+                    </apex:pageBlockButtons>
+                    
+                    
+                        <table id="quoteLineItems" >
+                            <apex:variable var="rowNumber" value="{!0}"/>
+                            <apex:repeat value="{!qliModels}" var="selectedProduct"  id="productInformationRowId">
+                                <tr >
+                                    <td>
+                                        <br />
+                                        <table style="width:100%" class="slds-table slds-table slds-table--cell-buffer" >
+                                                <!-- Description Section -->
+                                                <tr class="slds-text-heading--label">
+                                                    <td colspan="6" style="vertical-align:bottom;width:100%"><strong>{!$Label.Product_Description}</strong></td>
+                                                </tr>
+                                                <tr >
+                                                    <td colspan="6" class="{!IF(selectedProduct.quoteLineItem.Locked__c,'negativeValue','')}">
+                                                        <apex:outputField value="{!selectedProduct.quoteLineItem.Product_Description__c}"
+                                                            rendered="{!OR(NOT(selectedProduct.quoteLineItem.Special_Item__c),selectedProduct.quoteLineItem.Locked__c)}"/>
+                                                        <apex:inputField value="{!selectedProduct.quoteLineItem.Product_Description__c}" style="width:350px"
+                                                            styleClass="slds-input" rendered="{!AND(selectedProduct.quoteLineItem.Special_Item__c,NOT(selectedProduct.quoteLineItem.Locked__c))}"/>
+                                                    </td>
+                                                    <td>
+                                                        <apex:commandButton status="actStat"  oncomplete="resetPricingUI(); resetPageErrors({!currentPageRow})" value="Refresh" rerender="qliStatus" styleClass="btn slds-button slds-button--neutral">
+                                                            <apex:param name="rowIndex" value="{!rowNumber}" assignTo="{!currentPageRow}" />
+                                                        </apex:commandButton> 
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr class="slds-text-heading--label--bordered">
+                                                    <td style="vertical-align:bottom"><strong>{!$ObjectType.Quote_Line_Item__c.Fields.Product_Code__c.Label}</strong></td>
+                                                    <td style="vertical-align:bottom"><strong>{!$ObjectType.PricingMatrix__c.Fields.Price_Level_Value__c.Label}</strong></td>
+                                                    <td style="vertical-align:bottom"><strong>{!$ObjectType.PricingMatrix__c.Fields.Policy_Type_Value__c.Label}</strong></td>
+                                                    <td style="vertical-align:bottom" title="Quantity Unit of Measure"><strong>{!$ObjectType.Quote_Line_Item__c.Fields.Quantity_unit_of_measure__c.Label}</strong></td>
+                                                    <td style="vertical-align:bottom"><strong>{!$ObjectType.Quote_Line_Item__c.Fields.Price__c.Label}</strong></td>
+                                                    <td style="vertical-align:bottom" title="Price/Cost Unit of Measure"><strong>{!$ObjectType.Quote_Line_Item__c.Fields.Price_unit_of_measure__c.Label}</strong></td>
+                                                    <td style="vertical-align:bottom"><strong>{!$ObjectType.Quote_Line_Item__c.Fields.Cost__c.Label}</strong></td>
+                                                    <td style="vertical-align:bottom;width:100px"><strong><apex:outputText value="{!$Label.GTM_percent}"/></strong></td>
+                                                    <td style="vertical-align:bottom;width:100px"><strong><apex:outputText value="Cost Up %"/></strong></td>
+                                                    <td style="vertical-align:bottom;width:100px"><strong><apex:outputText value="List Down %"/></strong></td>
+                                                </tr>
+                                            <tbody class="lineParentBody" id="qliBody">
+                                                <tr class="lineItemRow">
+                                                    <td class="{!IF(selectedProduct.quoteLineItem.Locked__c,'negativeValue','')}">
+                                                        <input type="hidden" value="{!selectedProduct.ExtendedCost.Amount}" class="extAmountField" />
+                                                        <input type="hidden" value="{!selectedProduct.quoteLineItem.Special_Item__c}" class="specialItemField" />
+                                                        <input type="hidden" value="{!selectedProduct.quoteLineItem.Quantity_Unit_Factor__c}" class="qtyFactorField" />
+                                                        <input type="hidden" value="{!selectedProduct.quoteLineItem.Price_Unit_Factor__c}" class="priceFactorField" />
+                                                        <input type="hidden" value="{!selectedProduct.quoteLineItem.Cost_Unit_Factor__c}" class="costFactorField" />
+                                                        
+                                                        <apex:inputHidden value="{!selectedProduct.quoteLineItem.Quantity_unit_of_measure__c}" id="hidden_Quantity_unit_of_measure__c" />
+                                                        <apex:inputHidden value="{!selectedProduct.quoteLineItem.Price_unit_of_measure__c}" id="hidden_Price_unit_of_measure__c" />
+                                                        <apex:inputHidden value="{!selectedProduct.quoteLineItem.Product_Code__c}" id="Product_Code__c" />
+                                                        <apex:inputHidden value="{!selectedProduct.quoteLineItem.Id}" id="Id" />
+                                                        
+                                                        
+                                                        <apex:outputField value="{!selectedProduct.quoteLineItem.Product_Code__c}" id="Text_Product_Code__c"
+                                                            rendered="{!OR(NOT(selectedProduct.quoteLineItem.Special_Item__c),selectedProduct.quoteLineItem.Locked__c)}"/>
+                                                        <!-- <apex:inputField value="{!selectedProduct.quoteLineItem.Product_Code__c}" style="width:90px" 
+                                                            styleClass="slds-input" rendered="{!AND(selectedProduct.quoteLineItem.Special_Item__c,NOT(selectedProduct.quoteLineItem.Locked__c))}"/> -->
+                                                    </td>
+                                                    
+                                                    <td>
+                                                        <div class="slds-form-element__control">
+                                                            <apex:inputField value="{!selectedProduct.matrix.Price_Level_Value__c}" id="idPriceLevelValue" 
+                                                                rendered="{!NOT(selectedProduct.quoteLineItem.Locked__c)}" onchange="updatePriceLevelValue('{!rowNumber}'); "/>
+                                                        </div>
+                                                    </td>
+                                                    
+                                                    <td>
+                                                        <div class="slds-form-element__control">
+                                                            <apex:inputField value="{!selectedProduct.matrix.Policy_Type_Value__c}" id="idPolicyTypeValue" 
+                                                                rendered="{!NOT(selectedProduct.quoteLineItem.Locked__c)}" onchange="updatePolicyTypeValue('{!rowNumber}'); "  />
+                                                        </div>
+                                                    </td>
+                                                    
+                                                    <td title="Quantity Unit of Measure">
+                                                        <!-- <apex:outputField value="{!selectedProduct.quoteLineItem.Quantity_unit_of_measure__c}" style="width:50px"
+                                                            rendered="{!OR(selectedProduct.quoteLineItem.Locked__c,AND(NOT(selectedProduct.quoteLineItem.Special_Item__c),NOT(selectedProduct.enableUOM)))}"/> -->
+                                                        <apex:inputField value="{!selectedProduct.quoteLineItem.Quantity_unit_of_measure__c}" type="text"
+                                                                    onchange="updateCurrentQLI({!rowNumber});" styleClass="slds-input" id="Quantity_unit_of_measure__c" />
+                                                    </td>
+                                                    
+                                                    <td>
+                                                        <apex:outputText value="{0,number,0.00}" style="width:100px" rendered="{!selectedProduct.quoteLineItem.Locked__c}">
+                                                            <apex:param value="{!ROUND(selectedProduct.quoteLineItem.Price__c, 2)}"/>
+                                                        </apex:outputText>
+                                                        
+                                                        <apex:inputField value="{!selectedProduct.quoteLineItem.Price__c}" type="auto" styleClass="priceField slds-input" id="Price__c"
+                                                            onchange="updateCurrentQLI({!rowNumber});" rendered="{!NOT(selectedProduct.quoteLineItem.Locked__c)}"/>
+                                                    </td>
+                                                    
+                                                    
+                                                    
+                                                    <td title="Price/Cost Unit of Measure">
+                                                        <!-- <apex:outputField value="{!selectedProduct.quoteLineItem.Price_unit_of_measure__c}" style="width:50px"
+                                                            rendered="{!OR(selectedProduct.quoteLineItem.Locked__c,AND(NOT(selectedProduct.quoteLineItem.Special_Item__c),NOT(selectedProduct.enableUOM)))}"/> -->
+                                                        <apex:inputField value="{!selectedProduct.quoteLineItem.Price_unit_of_measure__c}" type="text" styleClass="slds-input" 
+                                                            onchange="updateCurrentQLI({!rowNumber});" id="Price_unit_of_measure__c"/>
+                                                    </td> 
+                                                    
+                                                    <td>
+                                                        <apex:outputText style="width:70px"
+                                                            rendered="{!selectedProduct.quoteLineItem.Locked__c}" styleClass="costFieldText" value="{0,number,0.000}">
+                                                            <apex:param value="{!ROUND(selectedProduct.quoteLineItem.Cost__c, 3)}" />
+                                                        </apex:outputText>
+                                                        <apex:inputField value="{!selectedProduct.quoteLineItem.Cost__c}" styleClass="costField slds-input" id="Cost__c" onchange="updateCurrentQLI({!rowNumber});"
+                                                            rendered="{!NOT(selectedProduct.quoteLineItem.Locked__c)}"/>
+                                                    </td> 
+                                                    <td>
+                                                        <apex:outputText value="{!selectedProduct.GTMPercentValue}" styleClass="{!IF(selectedProduct.quoteLineItem.GTM_percent__c<=0,'negativeValue','')}"
+                                                            rendered="{!selectedProduct.quoteLineItem.Locked__c}" style="width: 70px;"/>
+                                                        <apex:inputText value="{!selectedProduct.GTMPercentValue}" styleClass="gtmPercentField slds-input {!IF(selectedProduct.quoteLineItem.GTM_percent__c<=0,'negativeValue','')}" id="GTM_percent__c"
+                                                            rendered="{!NOT(selectedProduct.quoteLineItem.Locked__c)}" onchange="updateCurrentQLI({!rowNumber});" />
+                                                    </td>
+                                                    <td>
+                                                        <apex:outputText value="{!selectedProduct.costUp}" 
+                                                            rendered="{!selectedProduct.quoteLineItem.Locked__c}" style="width: 70px;"/>
+                                                        <apex:inputText value="{!selectedProduct.costUp}"  id="Cost_Up_Percent__c" onchange="updateCurrentQLI({!rowNumber});"
+                                                            rendered="{!NOT(selectedProduct.quoteLineItem.Locked__c)}" styleclass="costUpField slds-input"/>
+                                                    </td>
+                                                    <td>
+                                                        <apex:outputText value="{!selectedProduct.listDown}" 
+                                                            rendered="{!selectedProduct.quoteLineItem.Locked__c}" style="width: 70px;"/>
+                                                        <apex:inputText value="{!selectedProduct.listDown}"  id="List_Down_Percent__c" styleClass="listDownField slds-input" onchange="updateCurrentQLI({!rowNumber});"
+                                                            rendered="{!NOT(selectedProduct.quoteLineItem.Locked__c)}" />
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>
+                                                        <strong>Allow for CWT -> </strong>
+                                                        
+                                                    </td> 
+                                                    <td>
+                                                        
+                                                        <apex:inputField style="width:1.25em;" value="{!selectedProduct.quoteLineItem.Product__r.CWT_Item_Level_Pricing_Allowed__c}" id="CWT_Item_Level_Pricing_Allowed__c" styleClass="cwtChckBx slds-input"/>
+                                                    </td>
+                                                    
+                                                    
+                                                </tr>
+                                                
+                                                    <tr class="slds-text-heading--label">
+                                                        <td><strong>{!$ObjectType.Product2.fields.Class__c.label}</strong></td>
+                                                        <td><strong>{!$ObjectType.Product2.fields.Brand__c.Label}</strong></td>
+                                                        <td><strong>{!$ObjectType.Product2.fields.Set__c.Label}</strong></td>
+                                                        <td><strong>{!$ObjectType.Product2.fields.Subset__c.Label}</strong></td>
+                                                        <td><strong>{!$ObjectType.Quote_Line_Item__c.Fields.Target_Price__c.Label}</strong></td>
+                                                        <td><strong>{!$ObjectType.Quote_Line_Item__c.Fields.Future_Dev_Cost__c.Label}</strong></td>
+                                                        <td><strong>{!$ObjectType.Quote_Line_Item__c.Fields.Future_Dev_Cost_Starts__c.Label}</strong></td>
+                                                        <td><strong>{!$ObjectType.Quote_Line_Item__c.Fields.Pricing_Start_Date__c.Label}</strong></td>
+                                                    </tr>
+                                                    <tr >
+                                                        <td>
+                                                            <!-- <apex:outputField value="{!selectedProduct.quoteLineItem.Product__r.Class__c}" /> -->
+                                                            <apex:inputField value="{!selectedProduct.quoteLineItem.Product__r.Class__c}" id="Class__c"
+                                                                styleClass="slds-input" rendered="{!NOT(selectedProduct.quoteLineItem.Locked__c)}" /> 
+                                                        </td>
+                                                        <td>
+                                                            <!-- <apex:outputField value="{!selectedProduct.quoteLineItem.Product__r.Brand__c}" style="width:75px" /> -->
+                                                            <apex:inputField value="{!selectedProduct.quoteLineItem.Product__r.Brand__c}" id="Brand__c" 
+                                                                styleClass="slds-input" rendered="{!NOT(selectedProduct.quoteLineItem.Locked__c)}" /> 
+                                                        </td>
+                                                        <td>
+                                                            <!-- <apex:outputField value="{!selectedProduct.quoteLineItem.Product__r.Set__c}" style="width:75px" /> -->
+                                                            <apex:inputField value="{!selectedProduct.quoteLineItem.Product__r.Set__c}" id="Set__c"
+                                                                styleClass="slds-input" rendered="{!NOT(selectedProduct.quoteLineItem.Locked__c)}" /> 
+                                                        </td>
+                                                        <td>
+                                                            <!--  <apex:outputField value="{!selectedProduct.quoteLineItem.Product__r.Subset__c}" style="width:75px" /> -->
+                                                            <apex:inputField value="{!selectedProduct.quoteLineItem.Product__r.Subset__c}" id="Subset__c"
+                                                                styleClass="slds-input" rendered="{!NOT(selectedProduct.quoteLineItem.Locked__c)}"  /> 
+                                                        </td>
+                                                        <td>
+                                                            <apex:outputField value="{!selectedProduct.quoteLineItem.Target_Price__c}" style="width:75px"
+                                                                rendered="{!selectedProduct.quoteLineItem.Locked__c}"/>
+                                                            <apex:inputField value="{!selectedProduct.quoteLineItem.Target_Price__c}" id="Target_Price__c"
+                                                                styleClass="slds-input" rendered="{!NOT(selectedProduct.quoteLineItem.Locked__c)}"  />
+                                                        </td>
+                                                        <td>
+                                                            <apex:outputField value="{!selectedProduct.quoteLineItem.Future_Dev_Cost__c}" style="width:75px"
+                                                                rendered="{!selectedProduct.quoteLineItem.Locked__c}"/>
+                                                            <apex:inputField value="{!selectedProduct.quoteLineItem.Future_Dev_Cost__c}"  id="Future_Dev_Cost__c"
+                                                                styleClass="slds-input" rendered="{!NOT(selectedProduct.quoteLineItem.Locked__c)}" />
+                                                        </td>
+                                                        <td class="Future_Dev_Cost_Starts__c">
+                                                            <apex:outputField value="{!selectedProduct.quoteLineItem.Future_Dev_Cost_Starts__c}" style="width:75px"
+                                                                rendered="{!selectedProduct.quoteLineItem.Locked__c}"/>
+                                                            <apex:inputField value="{!selectedProduct.quoteLineItem.Future_Dev_Cost_Starts__c}" id="Future_Dev_Cost_Starts__c"
+                                                                styleClass="slds-input" rendered="{!NOT(selectedProduct.quoteLineItem.Locked__c)}" />
+                                                        </td>
+                                                        <td>
+                                                            <apex:outputField value="{!selectedProduct.quoteLineItem.Pricing_Start_Date__c}" style="width:75px"
+                                                                rendered="{!selectedProduct.quoteLineItem.Locked__c}"/> <!--  onchange="updatePricingUI_ExistingValues()" -->
+                                                            <apex:inputField value="{!selectedProduct.quoteLineItem.Pricing_Start_Date__c}" id="Pricing_Start_Date__c" onchange="updatePolicyTypeValue('{!rowNumber}');"
+                                                                styleClass="slds-input" rendered="{!NOT(selectedProduct.quoteLineItem.Locked__c)}" />
+                                                        </td>
+                                                    </tr>
+                                                    <tr> <div class="slds-form-element"> 
+                                                        <td>
+                                                            <strong>Allow for CWT -> </strong>
+                                                        </td> 
+                                                        <td />
+                                                        <td>
+                                                            <apex:inputField style="width:1.25em;" value="{!selectedProduct.quoteLineItem.Product__r.CWT_Set_Level_Pricing_Allowed__c}" id="CWT_Set_Level_Pricing_Allowed__c" styleClass="cwtChckBx slds-input"/>
+                                                        </td>
+                                                        <td>
+                                                            <apex:inputField style="width:1.25em;" value="{!selectedProduct.quoteLineItem.Product__r.CWT_Subset_Level_Pricing_Allowed__c}" id="CWT_Subset_Level_Pricing_Allowed__c" styleClass="cwtChckBx slds-input"/> 
+                                                        </td>
+                                                        </div> 
+                                                    </tr>
+                                                    
+                                            </tbody>
+                                            <table>
+                                                <tr> <apex:outputPanel > 
+                                                    <td > <apex:outputPanel id="qliStatus" style="{!IF(selectedProduct.qliErrors.size == 0, 'visibility:hidden;', 'visibility:visible;')}">
+                                                        <ul class="slds-box slds-theme--error">
+                                                            <apex:repeat value="{!selectedProduct.qliErrors}" var="currError">
+                                                                <li> <strong> <apex:outputText escape="false" value="{!currError}" /> </strong> </li>
+                                                            </apex:repeat>
+                                                        </ul>
+                                                    </apex:outputPanel> </td>
+                                                </apex:outputPanel> </tr>
+                                            </table>
+                                        </table>
+                                    </td>
+                                </tr>
+                                <apex:variable value="{!rowNumber+1}" var="rowNumber" />
+                        </apex:repeat>
+                    </table>
+                </apex:pageBlock>
+            </div>
+        </apex:form> 
+    </div>
+</apex:page>

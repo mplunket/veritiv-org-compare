@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PermissionSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <description>Allows only Pricing Managers the ability to access</description>
+    <hasActivationRequired>false</hasActivationRequired>
+    <label>Security: Strategic Interface Button</label>
+</PermissionSet>

@@ -1,0 +1,61 @@
+<aura:component controller="DnBLeadSyncQuickActionController" implements="flexipage:availableForRecordHome,force:hasRecordId" access="global">
+    <aura:attribute name="recordId" type="String" />
+    <aura:attribute name="lead" type="Object" />
+    <aura:attribute name="searchResults" type="Object" />
+    <aura:attribute name="error" type="String" />
+    <aura:attribute name="translatedCountry" type="String" />
+
+    <aura:handler name="change" value="{!v.lead}" action="{!c.translateCountry}" />
+    <c:CountryNormalizationAPI aura:id="countryNormalizationAPI" />
+
+    <h1 class="slds-text-heading_large slds-p-bottom_small">Search</h1>
+    <span>
+        <aura:if isTrue="{!v.lead}">
+            <div class="slds-form slds-form_stacked">
+                <lightning:input label="Company" value="{!v.lead.Company}" required="true" />
+                <lightning:input label="Phone" type="tel" value="{!v.lead.Phone}" />
+                <lightning:input label="Website" value="{!v.lead.Website}" />
+                <lightning:input label="Street" value="{!v.lead.Street}" />
+                <lightning:input label="City" value="{!v.lead.City}" />
+                <div class="slds-form-element custom-field-label">
+                    <label class="slds-form-element__label help-label" for="state-field">State/Province</label>
+                    <div class="slds-form-element help-icon">
+                        <div class="slds-form-element__icon slds-align-middle">
+                            <button id="state-helptext-icon" class="slds-button slds-button_icon slds-button slds-button_icon" aria-describedby="help" onmouseover="{!c.showHelpText}" onmouseout="{!c.hideHelpText}">
+                                <lightning:icon iconName="utility:info" size="x-small" />
+                            </button>
+                        </div>
+                        <div class="slds-popover slds-popover_tooltip slds-nubbin_bottom-left help-text" role="tooltip" id="state-helptext-tooltip" style="display: none; position: absolute;">
+                            <div class="slds-popover__body">{!$Label.c.DnB_Search_Form_State_Region_Help_Text}</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="custom-lightning-input">
+                    <lightning:input label="State" maxlength="2" pattern="^[A-Z][A-Z]$" value="{!v.lead.State}" messageWhenPatternMismatch="Your entry must be a valid state or region code." variant="label-hidden" />
+                </div>
+                <lightning:input label="Zip/Postal Code" value="{!v.lead.PostalCode}" />
+                <div class="slds-form-element custom-field-label">
+                    <label class="slds-form-element__label help-label" for="country-field">
+                        <abbr class="slds-required" title="required">*</abbr>Country                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            
+                    </label>
+                    <div class="slds-form-element help-icon">
+                        <div class="slds-form-element__icon slds-align-middle">
+                            <button id="country-helptext-icon" class="slds-button slds-button_icon slds-button slds-button_icon" aria-describedby="help" onmouseover="{!c.showHelpText}" onmouseout="{!c.hideHelpText}">
+                                <lightning:icon iconName="utility:info" size="x-small" />
+                            </button>
+                        </div>
+                        <div class="slds-popover slds-popover_tooltip slds-nubbin_bottom-left help-text" role="tooltip" id="country-helptext-tooltip" style="display: none; position: absolute;">
+                            <div class="slds-popover__body">{!$Label.c.DnB_Search_Form_Country_Help_Text}</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="custom-lightning-input">
+                    <lightning:input label="Country" maxlength="2" value="{!v.translatedCountry}" required="true" pattern="^(US|CA|MX)$" messageWhenPatternMismatch="Your entry must be one of the following country codes: US, CA, or MX." variant="label-hidden"/>
+                </div>
+                <div class="button-container slds-p-top_x-small">
+                    <lightning:button label="Search" class="slds-col slds-size_1-of-1" variant="brand" onclick="{!c.search}" />
+                </div>
+            </div>
+        </aura:if>
+    </span>
+</aura:component>

@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>55.0</apiVersion>
+    <description>Deletes records sitting in the &apos;Flow Processing Queue&apos; that were created greater than 1 hour ago. These are typically records that were left in the Queue because the user canceled (clicked the &apos;X&apos;) to close the window of the Flow, after the Work Order record was created while the Flow was in process.</description>
+    <environments>Default</environments>
+    <formulas>
+        <description>Calculates the time one hour before NOW</description>
+        <name>fx_NowMinus1Hour</name>
+        <dataType>DateTime</dataType>
+        <expression>NOW() - (1/24)</expression>
+    </formulas>
+    <interviewLabel>Work Order [ST] Delete Abandoned Records {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>Work Order [ST] Delete Abandoned Records</label>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>CanvasMode</name>
+        <value>
+            <stringValue>FREE_FORM_CANVAS</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>OriginBuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>AutoLaunchedFlow</processType>
+    <recordDeletes>
+        <description>Deletes Work Order (and child) record owned by the &apos;Flow Processing Queue&apos;</description>
+        <name>del_Work_Order_Records</name>
+        <label>Work Order Records</label>
+        <locationX>777</locationX>
+        <locationY>303</locationY>
+        <inputReference>$Record</inputReference>
+    </recordDeletes>
+    <start>
+        <locationX>651</locationX>
+        <locationY>46</locationY>
+        <connector>
+            <targetReference>del_Work_Order_Records</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>OwnerId</field>
+            <operator>EqualTo</operator>
+            <value>
+                <stringValue>00G5w000008Xh7eEAC</stringValue>
+            </value>
+        </filters>
+        <filters>
+            <field>Age_in_Hours__c</field>
+            <operator>GreaterThan</operator>
+            <value>
+                <numberValue>1.0</numberValue>
+            </value>
+        </filters>
+        <object>WorkOrder</object>
+        <schedule>
+            <frequency>Daily</frequency>
+            <startDate>2022-10-06</startDate>
+            <startTime>23:00:00.000Z</startTime>
+        </schedule>
+        <triggerType>Scheduled</triggerType>
+    </start>
+    <status>Active</status>
+</Flow>

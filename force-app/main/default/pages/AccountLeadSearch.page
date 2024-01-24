@@ -1,0 +1,14 @@
+<apex:page showHeader="true" sidebar="true">
+	<apex:includeLightning />
+
+    <div id="searchComponent" />
+
+    <script>
+        $Lightning.use("c:LightningObjectSearchApp", function () {
+            $Lightning.createComponent("c:AccountLeadSearch",
+                null,
+                "searchComponent"
+            );
+        });
+    </script>
+</apex:page>

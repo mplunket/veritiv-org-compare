@@ -1,0 +1,204 @@
+<apex:page id="emailLookup" controller="EmailLookupController" sidebar="false"  showHeader="true">
+	<style>
+		.cellHeader
+		{
+			font-weight:bold;
+		}
+		
+		.mv_btn
+		{
+			width: 35px;
+		}
+	</style>
+	<script>
+		var selectedToId = 'selectedTo';
+		var selectedCcId = 'selectedCc';
+		var selectedBccId = 'selectedBcc';
+		
+		var emailToId = 'qEmail:sendQuoteForm:pbSendQuote:editEmail:toSI:txtAddiontalTo';
+		var emailCcId = 'qEmail:sendQuoteForm:pbSendQuote:editEmail:ccSI:txtCC';
+		var emailBccId = 'qEmail:sendQuoteForm:pbSendQuote:editEmail:bccSI:txtBCC';
+		
+		var EMAIL_ADDR_DELIM = ';';
+		
+		function populateAllAddresses()
+		{
+			populateAddresses(selectedToId, emailToId);
+			populateAddresses(selectedCcId, emailCcId);
+			populateAddresses(selectedBccId, emailBccId);
+		}
+		
+		/**
+			populates addresses on field with targetFieldId from
+			select list with id selectListId   
+		*/
+		function populateAddresses(selectListId, targetFieldId)
+		{
+			var toAddresses = getSelectedAddresses(selectListId);
+			if(toAddresses == '')
+			{
+				return;
+			}
+			var targetEle = top.window.opener.document.getElementById(targetFieldId);
+			if(!!targetEle)
+			{
+				if(!!targetEle.value != '')
+					toAddresses = EMAIL_ADDR_DELIM + toAddresses
+				targetEle.value += toAddresses;	
+			}
+		}
+		
+		/**
+			returns the selected email addresses as a semi-colon delimited string
+		*/
+		function getSelectedAddresses(selectListId)
+		{
+			var selectList = document.getElementById(selectListId);
+			var selectedAddresses = [];
+			if(!!selectList && selectList.length > 0)
+			{
+				for(var i=0; i< selectList.length; i++)
+				{
+					selectedAddresses.push(selectList.options[i].value);
+				}
+			}
+			
+			return selectedAddresses.join(EMAIL_ADDR_DELIM);
+		}
+		
+		function createAddressSelect()
+		{
+			var addressJSON =  document.getElementById('emailLookup:mainForm:possibleAddressJSON').value;
+			var addresses = JSON.parse(addressJSON);
+			var htmlString = '<select size="18" multiple="multiple" name="allAddresses" id="allAddresses">';
+			for(var i = 0; i < addresses.length; i++)
+			{
+				htmlString += '<option value="' + decodeURIComponent(addresses[i].email.replace(/\+/g, ' ')) + '">'+ decodeURIComponent(addresses[i].name.replace(/\+/g, ' ')) +'</option>';
+			}
+			htmlString += '</select>';
+			var addressContainer = document.getElementById('addressSelectContainer');
+			addressContainer.innerHTML = htmlString;
+			
+		}
+		
+		/**
+			function taken from http://simonwillison.net/2004/May/26/addLoadEvent/
+		*/
+		function addLoadEvent(func) 
+		{
+			var oldonload = window.onload;
+			if (typeof window.onload != 'function') {
+		    	window.onload = func;
+		 	}
+		 	else
+		 	{
+		    	window.onload = function() {
+			    	if (oldonload) {
+			        	oldonload();
+			    	}
+			    	func();
+		    	}
+		 	}
+		}
+		
+		
+		function copySelectedOptionsTo(targetSelectOptionId)
+		{
+			var allAddressesSelect = document.getElementById('allAddresses');
+			var targetSelect = document.getElementById(targetSelectOptionId);
+			if (allAddressesSelect.selectedIndex < 0)
+				return;
+			for(var i = 0; i < allAddressesSelect.options.length; i++)
+			{
+				var currentOption = allAddressesSelect.options[i]; 
+				if(currentOption.selected)
+				{
+					var newOption = new Option(currentOption.text, currentOption.value);
+					targetSelect.options[targetSelect.options.length] = newOption;
+				}
+			}
+			allAddressesSelect.selectedIndex = -1;
+		}
+		
+		function removeSelectedOptionsFrom(targetSelectOptionId)
+		{
+			var targetSelect = document.getElementById(targetSelectOptionId);
+			if (targetSelect.selectedIndex < 0)
+				return;
+			for(var i = targetSelect.options.length - 1; i > -1; i--)
+			{
+				var currentOption = targetSelect.options[i]; 
+				if(currentOption.selected)
+				{
+					targetSelect.options[i] = null;
+				}
+			}
+		}
+		
+
+	</script>
+	<apex:sectionHeader title="Email Address Lookup" />
+	<apex:form id="mainForm">
+		<apex:outputPanel id="messagePanel">
+				<apex:pageMessages />
+			</apex:outputPanel>
+		<div id="selectUsers">
+			<apex:outputPanel id="projectPanel">
+				<table>	
+					<tr>
+						<th>Contacts</th>
+						<th>&nbsp;</th>
+						<th>Additional To Recipients:</th>
+					</tr>
+					<tr>
+						<td rowspan="5">
+							 <div id="addressSelectContainer">
+							 </div>
+						</td>
+						<td>
+							<div><input class="btn mv_btn" type="button" title="Add addresses to Additional To" onclick="javascript: copySelectedOptionsTo('selectedTo');" value=" >> "/></div>
+							<div><input class="btn mv_btn" type="button" title="Remove addresses from Additional To" onclick="javascript: removeSelectedOptionsFrom('selectedTo');" value=" << " style="margin-top:5px;"/></div>
+						</td>
+						<td>
+							<select id="selectedTo" title="Additional To Recipients:" size="5" name="selectedTo" multiple="MULTIPLE" />
+						</td>
+					</tr>
+					<tr>
+						<td>&nbsp;</td>
+						<td><span class="cellHeader">CC Recipients:</span></td>
+					</tr>
+					<tr>
+						<td>
+							<div><input class="btn mv_btn" type="button" title="Add addresses to CC" onclick="copySelectedOptionsTo('selectedCc');" value=" >> " /></div>
+							<div><input class="btn mv_btn" type="button" title="Remove addresses to CC" onclick="removeSelectedOptionsFrom('selectedCc');" style="margin-top:5px;" value=" << " /></div>
+						</td>
+						<td>
+							<select id="selectedCc" title="CC Recipients:" size="5" name="selectedTo" multiple="MULTIPLE" />
+						</td>
+					</tr>
+					<tr>
+						<td>&nbsp;</td>
+						<td><span class="cellHeader">BCC Recipients:</span></td>
+					</tr>
+					<tr>
+						<td>
+							<div><input class="btn mv_btn" type="button" title="Add addresses to BCC" onclick="copySelectedOptionsTo('selectedBcc');" value=" >> " /></div>
+							<div><input class="btn mv_btn" type="button" title="Remove addresses from BCC" onclick="javascript: removeSelectedOptionsFrom('selectedTo');" value=" << " style="margin-top:5px;"/></div>
+						</td>
+						<td>
+							<select id="selectedBcc" title="BCC Recipients:" size="5" name="selectedTo" multiple="MULTIPLE" />
+						</td>
+					</tr>
+				</table>	
+			</apex:outputPanel>
+		</div>
+		<div id="btnPanel">
+			<input type="button" class="btn" value="Save" onclick="populateAllAddresses();window.close();"/>
+			<input type="button" class="btn" value="Cancel" onclick="window.close();"/>
+		</div> 
+		<apex:inputHidden id="possibleAddressJSON" value="{!addressJSON}" />
+	</apex:form>
+	<script>
+		addLoadEvent(createAddressSelect);
+	</script>
+</apex:page>

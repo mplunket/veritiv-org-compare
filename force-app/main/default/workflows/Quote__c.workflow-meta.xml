@@ -1,0 +1,198 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Workflow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <alerts>
+        <fullName>Alert_Quote_Owner_of_no_QLI</fullName>
+        <description>Alert Quote Owner of no QLI</description>
+        <protected>false</protected>
+        <recipients>
+            <type>owner</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>Workflow_Alert_Emails/Alert_if_No_QLI</template>
+    </alerts>
+    <alerts>
+        <fullName>Quote_Expiration_Date_Notification</fullName>
+        <description>Quote - Expiration Date Notification</description>
+        <protected>false</protected>
+        <recipients>
+            <type>creator</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>Quotes/Quote_Expiration_Notification</template>
+    </alerts>
+    <alerts>
+        <fullName>Quote_Stage_updated_to_Won_or_Lost_by_non_creater</fullName>
+        <description>Quote Stage updated to Won or Lost by non-creater</description>
+        <protected>false</protected>
+        <recipients>
+            <type>creator</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>V_CS_Business_Processes/Quote_Won_Lost_Update</template>
+    </alerts>
+    <fieldUpdates>
+        <fullName>Quote_Clone_Submitted</fullName>
+        <description>Ensure the &apos;Order Request Submitted&apos; checkbox is unchecked for new records - should only be an issue with Clones</description>
+        <field>Order_Request_Submitted__c</field>
+        <literalValue>0</literalValue>
+        <name>Quote Clone - Submitted</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Quote_PO_Reqd_TRUE</fullName>
+        <description>BW-2012
+Populate the PO Required field on the Quote</description>
+        <field>PO_Reqd__c</field>
+        <literalValue>1</literalValue>
+        <name>Quote_PO Reqd_TRUE</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Quote_Stage_Updated_to_Expired</fullName>
+        <description>Quote stage is updated to expired 30 days after expiration date</description>
+        <field>Quote_Stage__c</field>
+        <literalValue>Expired</literalValue>
+        <name>Quote Stage Updated to Expired</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>true</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Set_TSB_Account_Value</fullName>
+        <field>TSB_Account__c</field>
+        <formula>TEXT( Account__r.TSB__c )</formula>
+        <name>Set TSB Account Value</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <rules>
+        <fullName>Catch Clone - Quote</fullName>
+        <actions>
+            <name>Quote_Clone_Submitted</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <criteriaItems>
+            <field>Quote__c.CreatedById</field>
+            <operation>notEqual</operation>
+        </criteriaItems>
+        <description>Catch a Cloned Quote - to ensure Clones are created with the &apos;Order Request Submitted&apos; checkbox UNchecked</description>
+        <triggerType>onCreateOnly</triggerType>
+    </rules>
+    <rules>
+        <fullName>PO Required Field</fullName>
+        <actions>
+            <name>Quote_PO_Reqd_TRUE</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <description>QUOTE</description>
+        <formula>Account__r.PO_Reqd__c =TRUE</formula>
+        <triggerType>onCreateOnly</triggerType>
+    </rules>
+    <rules>
+        <fullName>Quote Expiration Notification</fullName>
+        <active>true</active>
+        <description>Notifies users if quote stage is not Won or Lost; one week before expiration.</description>
+        <formula>AND(  NOT(  OR(  ISPICKVAL( Quote_Stage__c , &quot;Won&quot;) ,  ISPICKVAL( Quote_Stage__c , &quot;Lost&quot;)))  ,  NOT( ISBLANK( Expiration_Date__c ) )  ,  OR( CONTAINS(Owner:User.Profile.Id, &apos;00e5w000001xwik&apos;) ,  		 CONTAINS(Owner:User.Profile.Id, &apos;00e5w000001xyQb&apos;) , 		 CONTAINS(Owner:User.Profile.Id, &apos;00e70000000jiZo&apos;) , 		 CONTAINS(Owner:User.Profile.Id, &apos;00e70000000jcuu&apos;) , 		 CONTAINS(Owner:User.Profile.Id, &apos;00e39000000xVgZ&apos;) , 		 CONTAINS(Owner:User.Profile.Id, &apos;00e39000001BiUW&apos;) , 		 CONTAINS(Owner:User.Profile.Id, &apos;00e39000001BiUR&apos;) , 		 CONTAINS(Owner:User.Profile.Id, &apos;00e70000000jjgw&apos;) , 		 CONTAINS(Owner:User.Profile.Id, &apos;00e70000001JmsF&apos;) ) )</formula>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+        <workflowTimeTriggers>
+            <actions>
+                <name>Quote_Expiration_Date_Notification</name>
+                <type>Alert</type>
+            </actions>
+            <offsetFromField>Quote__c.Expiration_Date__c</offsetFromField>
+            <timeLength>-7</timeLength>
+            <workflowTimeTriggerUnit>Days</workflowTimeTriggerUnit>
+        </workflowTimeTriggers>
+    </rules>
+    <rules>
+        <fullName>Quote Stage %3D Reqs Addtl Follow-up</fullName>
+        <actions>
+            <name>Quote_Requires_Additional_Follow_up</name>
+            <type>Task</type>
+        </actions>
+        <active>true</active>
+        <criteriaItems>
+            <field>Quote__c.Quote_Stage__c</field>
+            <operation>equals</operation>
+            <value>Requires Additional Follow-up</value>
+        </criteriaItems>
+        <description>Creates a Task when the Quote Stage = Requires Additional Follow-Up</description>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+    </rules>
+    <rules>
+        <fullName>Quote Stage Change to Expired</fullName>
+        <active>true</active>
+        <description>Quote stage updated to expired 30 days after expiration date</description>
+        <formula>AND( 
+NOT( 
+OR( 
+ISPICKVAL( Quote_Stage__c , &quot;Won&quot;) , 
+ISPICKVAL( Quote_Stage__c , &quot;Lost&quot;)))  
+, 
+
+NOT( BEGINS( OwnerId , &quot;00G&quot;)) 
+)</formula>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+        <workflowTimeTriggers>
+            <actions>
+                <name>Quote_Stage_Updated_to_Expired</name>
+                <type>FieldUpdate</type>
+            </actions>
+            <offsetFromField>Quote__c.Expiration_Date__c</offsetFromField>
+            <timeLength>30</timeLength>
+            <workflowTimeTriggerUnit>Days</workflowTimeTriggerUnit>
+        </workflowTimeTriggers>
+    </rules>
+    <rules>
+        <fullName>Send Alert if No QLI</fullName>
+        <active>true</active>
+        <description>QUOTE - Sends a reminder email to the owner of a quote if there are no line items added after 8 hours.</description>
+        <formula>AND(
+ Count_of_Line_Items__c =0,
+NOT(BEGINS(OwnerId,&quot;00G&quot;)))</formula>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+        <workflowTimeTriggers>
+            <actions>
+                <name>Alert_Quote_Owner_of_no_QLI</name>
+                <type>Alert</type>
+            </actions>
+            <timeLength>8</timeLength>
+            <workflowTimeTriggerUnit>Hours</workflowTimeTriggerUnit>
+        </workflowTimeTriggers>
+    </rules>
+    <rules>
+        <fullName>TSB Account</fullName>
+        <actions>
+            <name>Set_TSB_Account_Value</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <criteriaItems>
+            <field>Quote__c.CreatedDate</field>
+            <operation>notEqual</operation>
+        </criteriaItems>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+    <tasks>
+        <fullName>Quote_Requires_Additional_Follow_up</fullName>
+        <assignedToType>owner</assignedToType>
+        <description>Reminder to follow-up on Quote.</description>
+        <dueDateOffset>1</dueDateOffset>
+        <notifyAssignee>false</notifyAssignee>
+        <priority>High</priority>
+        <protected>false</protected>
+        <status>Not Started</status>
+        <subject>Quote Requires Additional Follow-up</subject>
+    </tasks>
+</Workflow>

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Sales_Increase_Decrease_PCT__c</fullName>
+    <externalId>false</externalId>
+    <formula>if(or( ISNULL(Current_FY_Slaes__c ), isnull( FY_Sales_Budget__c)),0, Current_FY_Slaes__c / FY_Sales_Budget__c)</formula>
+    <label>Sales Increase/Decrease %</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>0</scale>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Percent</type>
+</CustomField>

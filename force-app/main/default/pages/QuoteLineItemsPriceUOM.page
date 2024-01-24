@@ -1,0 +1,9 @@
+<apex:page title="QuoteLineItemsPriceUOM" 
+           contentType="application/x-javascript; charset=utf-8" 
+           showHeader="false"
+           sidebar="false" 
+           standardStylesheets="false"
+           controller="QuoteLineItemsCont"
+           action="{!doPriceUOM}">
+    <apex:outputText value="{!json}" />
+</apex:page>

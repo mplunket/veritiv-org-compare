@@ -1,0 +1,14 @@
+<apex:page controller="OsmInfo">
+<h1>Opportunity Specialist Mapping info</h1>
+<apex:form >
+	<div>Enter a user:<apex:inputField id="userId" value="{!opp.OwnerId}" /><apex:commandButton value="Lookup" action="{!calcMApping}" rerender="mappingDisplay"/></div>
+
+<br />
+<apex:outputPanel id="mappingDisplay">
+	
+	<apex:repeat value="{!mappingStrings}" var="mapping">
+		<apex:outputText value="{!mapping}" /> <br />
+	</apex:repeat>
+</apex:outputPanel>
+</apex:form>
+</apex:page>

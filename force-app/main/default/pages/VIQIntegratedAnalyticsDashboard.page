@@ -1,0 +1,9 @@
+<apex:page controller="VIQIntegratedAnalyticsDashboard" action="{!getDashboardUrl}">
+    <!--<div id="pageHeight" style="height:600px;overflow:hidden"> -->
+    <div id="pageHeight" style="height:700px;overflow:hidden">
+        <apex:pageMessages id="pageMessages"/>
+        <!--<apex:outputText value="{!dashboardEmbeddedUrl}" rendered="true" />
+        <apex:outputText value="{!user.Name}" rendered="true" />-->
+        <apex:iframe id="embeddedAnalytics" height="100%" scrolling="true" src="{!dashboardEmbeddedUrl}" rendered="true"/>
+    </div>
+</apex:page>

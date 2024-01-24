@@ -1,0 +1,27 @@
+<apex:page tabStyle="Campaign" standardController="Campaign" extensions="SharePromoToUsers">
+
+
+<apex:form >
+  <apex:pageBlock title="Share To User" id="out">
+  <apex:pageBlockButtons >
+            <apex:commandButton value="Submit" action="{!save}" rerender="out" status="actStatusId"/>
+            <apex:actionStatus id="actStatusId">
+                <apex:facet name="start">
+                    <img src="/img/loading.gif" />
+                </apex:facet>
+            </apex:actionStatus>
+        </apex:pageBlockButtons>
+  <apex:pageBlockSection title="Share Records with selected user">
+
+
+
+<apex:inputfield value="{!campRecd.User__c}" label="Selected User"/>
+  </apex:pageBlockSection>
+
+
+  </apex:pageBlock>
+  <apex:pageBlock >
+
+  </apex:pageBlock>
+  </apex:form>  
+</apex:page>

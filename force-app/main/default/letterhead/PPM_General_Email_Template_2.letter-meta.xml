@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Letterhead xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <backgroundColor>#CCCCCC</backgroundColor>
+    <bodyColor>#FFFFFF</bodyColor>
+    <bottomLine>
+        <color>#FFFFFF</color>
+        <height>0</height>
+    </bottomLine>
+    <description>PPM Publishing and Print Management General Email Template 2</description>
+    <footer>
+        <backgroundColor>#FFFFFF</backgroundColor>
+        <height>30</height>
+        <horizontalAlignment>Left</horizontalAlignment>
+        <logo>Templates/Veritiv_Blank_Green_Footer.jpg</logo>
+        <verticalAlignment>Top</verticalAlignment>
+    </footer>
+    <header>
+        <backgroundColor>#FFFFFF</backgroundColor>
+        <height>100</height>
+        <horizontalAlignment>Left</horizontalAlignment>
+        <logo>Templates/PPM_Header_2.jpg</logo>
+        <verticalAlignment>Top</verticalAlignment>
+    </header>
+    <middleLine>
+        <color>#FFFFFF</color>
+        <height>0</height>
+    </middleLine>
+    <name>PPM General Email Template 2</name>
+    <topLine>
+        <color>#FFFFFF</color>
+        <height>0</height>
+    </topLine>
+</Letterhead>

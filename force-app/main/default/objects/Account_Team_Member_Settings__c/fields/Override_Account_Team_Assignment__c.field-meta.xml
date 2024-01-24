@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Override_Account_Team_Assignment__c</fullName>
+    <defaultValue>false</defaultValue>
+    <description>Checked: updates the account team for accounts and chain accounts on edit even if the chain account field was not updated.
+
+Unchecked: Updates the account team for accounts and chain accounts on edit only if the chain account field was updated.</description>
+    <externalId>false</externalId>
+    <inlineHelpText>Checked: updates the account team for accounts and chain accounts on edit even if the chain account field was not updated.
+
+Unchecked: Updates the account team for accounts and chain accounts on edit only if the chain account field was updated.</inlineHelpText>
+    <label>Override Account Team Assignment</label>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

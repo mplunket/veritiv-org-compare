@@ -1,0 +1,16 @@
+.THIS .input-field .slds-form-element {
+    min-height: 4.5em;
+}
+
+.THIS .strike-input-field {
+    min-height: 4.5em;
+}
+
+.THIS .preview-border {
+    border: 1px solid rgb(221, 219, 218);
+    border-radius: 4px;
+}
+
+.THIS .preview-header-border {
+    border-bottom: 1px solid rgb(221, 219, 218);
+}

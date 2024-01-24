@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Cust_Dedicated_Inv_RepReport_CUID__c</fullName>
+    <description>CUID of the  Customer Dedicated Inventory Sales Rep Detail Report in SAP, as viewed in the General Properties. Each report that we need to open up via a link in salesforce needs its own field within this custom setting for a CUID.</description>
+    <externalId>false</externalId>
+    <inlineHelpText>CUID of the   Customer Dedicated Inventory Sales Rep Detail Report in SAP, as viewed in the General Properties.</inlineHelpText>
+    <label>Cust Dedicated Inv - RepReport CUID</label>
+    <length>255</length>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

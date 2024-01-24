@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>In_Flight_National</fullName>
+    <columns>NAME</columns>
+    <columns>Account_Name__c</columns>
+    <columns>equip_Equipment_Specialist__c</columns>
+    <columns>contract_status__c</columns>
+    <columns>Contract_Type__c</columns>
+    <columns>OWNER.LAST_NAME</columns>
+    <columns>Program_Manager__c</columns>
+    <columns>Submitted_By_Email__c</columns>
+    <columns>CREATED_DATE</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>Contract_Type__c</field>
+        <operation>notEqual</operation>
+        <value>Equipment Proposal</value>
+    </filters>
+    <filters>
+        <field>contract_status__c</field>
+        <operation>equals</operation>
+        <value>New,With Admin,Under Management Review,Under Legal Review,With Customer for Redlining,Final Internal Reviews,Out for Signatures</value>
+    </filters>
+    <filters>
+        <field>OWNER.ALIAS</field>
+        <operation>notContain</operation>
+        <value>Flow</value>
+    </filters>
+    <filters>
+        <field>Field_Sales_or_NA__c</field>
+        <operation>contains</operation>
+        <value>National</value>
+    </filters>
+    <label>In Flight - National</label>
+</ListView>

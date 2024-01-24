@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>MarginUserCreatedLine__c</fullName>
+    <description>Margin on the user created contract line</description>
+    <externalId>false</externalId>
+    <label>MarginUserCreatedLine</label>
+    <precision>16</precision>
+    <required>false</required>
+    <scale>4</scale>
+    <trackTrending>false</trackTrending>
+    <type>Percent</type>
+</CustomField>

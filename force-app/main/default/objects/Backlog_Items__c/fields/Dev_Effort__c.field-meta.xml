@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Dev_Effort__c</fullName>
+    <externalId>false</externalId>
+    <inlineHelpText>1 = &lt; 1hr - Simple config, clear reqmts
+2 = half day
+3 = 1 day - minor reqmts questions, more complex config
+5 = ~3 days - complex config/testing
+8 = ~5 days
+13 = 10+ days - Complex customization, unclear solution, research needed, heavy testing</inlineHelpText>
+    <label>Dev Effort</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>0</scale>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackTrending>false</trackTrending>
+    <type>Number</type>
+    <unique>false</unique>
+</CustomField>

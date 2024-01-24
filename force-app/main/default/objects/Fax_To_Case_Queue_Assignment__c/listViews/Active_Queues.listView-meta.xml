@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Active_Queues</fullName>
+    <columns>NAME</columns>
+    <columns>Group_Mailbox_Email_Address__c</columns>
+    <columns>Team_Lead_Name__c</columns>
+    <columns>Active__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>Active__c</field>
+        <operation>equals</operation>
+        <value>1</value>
+    </filters>
+    <label>ALL ACTIVE QUEUES</label>
+</ListView>

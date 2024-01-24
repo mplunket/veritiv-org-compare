@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>C360_Group_by_field__c</fullName>
+    <description>C360: This field specifies the field on related objects that will group records by their related C360 parent.  Once the records are grouped, the data within is aggregated in the function determined by the &quot;Aggregation Type&quot; field in the custom setting.</description>
+    <externalId>false</externalId>
+    <inlineHelpText>C360: This field specifies the field on related objects that will group records by their related C360 parent.  Once the records are grouped, the data within is aggregated in the function determined by the &quot;Aggregation Type&quot; field in the custom setting.</inlineHelpText>
+    <label>Group by field</label>
+    <length>100</length>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

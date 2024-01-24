@@ -1,0 +1,20 @@
+<apex:page controller="ShipToLookupController">
+	<apex:sectionHeader title="Ship To Address" subtitle="{!target.objectType}: {!target.name}"/>
+    <apex:outputPanel id="msgs">
+        <apex:pageMessages />
+    </apex:outputPanel>	
+	<apex:form >
+		<apex:pageBlock title="Account: {!target.accountName}">
+            <apex:pageBlockButtons >
+                <apex:commandButton value="Save" action="{!saveShipTo}" disabled="{!NOT(showShipTos)}"/>
+                <apex:commandButton value="Back" action="{!cancel}" />
+            </apex:pageBlockButtons>		
+			<apex:pageBlockSection columns="1" title="Select Address" collapsible="false">
+				<apex:selectRadio value="{!shipToId}" layout="pageDirection" rendered="{!showShipTos}">
+				    <apex:selectOptions value="{!shipTos}"/>
+				</apex:selectRadio>
+				<apex:outputText value="There are no active Ship Tos associated with this account." rendered="{!NOT(showShipTos)}"/>		
+			</apex:pageBlockSection>
+		</apex:pageBlock>
+	</apex:form>
+</apex:page>

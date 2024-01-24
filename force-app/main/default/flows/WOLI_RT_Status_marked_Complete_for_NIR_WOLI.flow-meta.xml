@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>59.0</apiVersion>
+    <decisions>
+        <name>Sourcing_Approved</name>
+        <label>Sourcing Approved?</label>
+        <locationX>182</locationX>
+        <locationY>431</locationY>
+        <defaultConnectorLabel>No</defaultConnectorLabel>
+        <rules>
+            <name>Yes</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.WorkOrder.Sourcing_Status__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Approved</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>WOLI_Complete_and_Sourcing_Approved</targetReference>
+            </connector>
+            <label>Yes</label>
+        </rules>
+    </decisions>
+    <environments>Default</environments>
+    <interviewLabel>Work Orde {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>WOLI - [RT] Status marked Complete for NIR WOLI</label>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>CanvasMode</name>
+        <value>
+            <stringValue>AUTO_LAYOUT_CANVAS</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>OriginBuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>AutoLaunchedFlow</processType>
+    <recordUpdates>
+        <description>* New Product
+*</description>
+        <name>Update_Fields_on_WO</name>
+        <label>Update Fields on WO</label>
+        <locationX>182</locationX>
+        <locationY>323</locationY>
+        <connector>
+            <targetReference>Sourcing_Approved</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>Id</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>$Record.WorkOrderId</elementReference>
+            </value>
+        </filters>
+        <inputAssignments>
+            <field>New_Product__c</field>
+            <value>
+                <elementReference>$Record.New_Product__c</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>PIM_Status__c</field>
+            <value>
+                <elementReference>$Record.PIM_Status__c</elementReference>
+            </value>
+        </inputAssignments>
+        <object>WorkOrder</object>
+    </recordUpdates>
+    <start>
+        <locationX>56</locationX>
+        <locationY>0</locationY>
+        <connector>
+            <targetReference>Update_Fields_on_WO</targetReference>
+        </connector>
+        <filterFormula>{!$Record.RecordType.DeveloperName} = &quot;NIR_Work_Order_Line_Items&quot; &amp;&amp;
+ISCHANGED({!$Record.PIM_Status__c}) &amp;&amp;
+TEXT({!$Record.PIM_Status__c}) = &quot;Complete&quot;</filterFormula>
+        <object>WorkOrderLineItem</object>
+        <recordTriggerType>Update</recordTriggerType>
+        <triggerType>RecordAfterSave</triggerType>
+    </start>
+    <status>Active</status>
+    <subflows>
+        <name>WOLI_Complete_and_Sourcing_Approved</name>
+        <label>WOLI Complete and Sourcing Approved</label>
+        <locationX>50</locationX>
+        <locationY>539</locationY>
+        <flowName>WOLI_NIR_Complete_and_Sourcing_Approved</flowName>
+        <inputAssignments>
+            <name>workOrderLineItemId</name>
+            <value>
+                <elementReference>$Record.Id</elementReference>
+            </value>
+        </inputAssignments>
+    </subflows>
+</Flow>

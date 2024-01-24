@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Queue xmlns="http://soap.sforce.com/2006/04/metadata">
+    <doesSendEmailToMembers>false</doesSendEmailToMembers>
+    <name>RFP RFQ</name>
+    <queueMembers>
+        <publicGroups>
+            <publicGroup>RFx_Work_Order_Users</publicGroup>
+        </publicGroups>
+        <roles>
+            <role>SOURCING_Mgr</role>
+            <role>SOURCING_Specialists_FS</role>
+            <role>SOURCING_Specialists_Packaging</role>
+        </roles>
+        <users>
+            <user>jennifer.frederick@veritivcorp.com</user>
+            <user>meagan.hansen@veritivcorp.com</user>
+        </users>
+    </queueMembers>
+    <queueSobject>
+        <sobjectType>WorkOrder</sobjectType>
+    </queueSobject>
+</Queue>

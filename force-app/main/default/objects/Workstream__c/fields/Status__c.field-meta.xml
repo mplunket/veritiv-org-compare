@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Status__c</fullName>
+    <externalId>false</externalId>
+    <inlineHelpText>Bluewolf will only receive an email notification when the Status = 2 - Investigating and Scoping</inlineHelpText>
+    <label>Status</label>
+    <required>false</required>
+    <trackFeedHistory>true</trackFeedHistory>
+    <trackHistory>true</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>1 - Reported</fullName>
+                <default>true</default>
+                <label>1 - Reported</label>
+            </value>
+            <value>
+                <fullName>2 - Investigating/Scoping</fullName>
+                <default>false</default>
+                <label>2 - Investigating/Scoping</label>
+            </value>
+            <value>
+                <fullName>3 - Fix in Progress</fullName>
+                <default>false</default>
+                <label>3 - Fix in Progress</label>
+            </value>
+            <value>
+                <fullName>4 - Testing</fullName>
+                <default>false</default>
+                <label>4 - Testing</label>
+            </value>
+            <value>
+                <fullName>7 - Awaiting Deployment</fullName>
+                <default>false</default>
+                <label>7 - Awaiting Deployment</label>
+            </value>
+            <value>
+                <fullName>8 - Promoted</fullName>
+                <default>false</default>
+                <label>8 - Promoted</label>
+            </value>
+            <value>
+                <fullName>10 - Resolved</fullName>
+                <default>false</default>
+                <label>10 - Resolved</label>
+            </value>
+            <value>
+                <fullName>86 - Requirement Canceled</fullName>
+                <default>false</default>
+                <label>86 - Requirement Canceled</label>
+            </value>
+            <value>
+                <fullName>97 - Wish List / Enhancement Tracking</fullName>
+                <default>false</default>
+                <label>97 - Wish List / Enhancement Tracking</label>
+            </value>
+            <value>
+                <fullName>98 - Merged</fullName>
+                <default>false</default>
+                <label>98 - Merged</label>
+            </value>
+            <value>
+                <fullName>99 - Monitoring</fullName>
+                <default>false</default>
+                <label>99 - Monitoring</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

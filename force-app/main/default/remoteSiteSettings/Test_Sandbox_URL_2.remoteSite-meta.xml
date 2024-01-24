@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<RemoteSiteSetting xmlns="http://soap.sforce.com/2006/04/metadata">
+    <description>URL for the .Test sandbox environment after sandbox refresh on 10/2/2019</description>
+    <disableProtocolSecurity>false</disableProtocolSecurity>
+    <isActive>true</isActive>
+    <url>https://veritiv--test.cs27.my.salesforce.com</url>
+</RemoteSiteSetting>

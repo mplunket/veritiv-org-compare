@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Account__c</fullName>
+    <deleteConstraint>SetNull</deleteConstraint>
+    <externalId>false</externalId>
+    <inlineHelpText>Quotes should be attached to a prospect or customer account.  It is not possible to associate a quote with a Unisource account.  If you can&apos;t find the account you need, please create a new prospect.</inlineHelpText>
+    <label>Account</label>
+    <lookupFilter>
+        <active>true</active>
+        <errorMessage>The account you searched for is not available for quotes either because it does not yet exist or it is a Unisource account.  Please go to the Account tab, click New, and create a Prospect if necessary.</errorMessage>
+        <filterItems>
+            <field>Account.UWW_Account__c</field>
+            <operation>equals</operation>
+            <value>0</value>
+        </filterItems>
+        <isOptional>false</isOptional>
+    </lookupFilter>
+    <referenceTo>Account</referenceTo>
+    <relationshipLabel>Quotes</relationshipLabel>
+    <relationshipName>Quotes</relationshipName>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Lookup</type>
+</CustomField>

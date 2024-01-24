@@ -1,0 +1,2189 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    <actionCalls>
+        <description>Email alert that provides a confirmation of the Work Order details</description>
+        <name>apx_StratAccts_Qualified_EmailAlert</name>
+        <label>Email Confirmation</label>
+        <locationX>974</locationX>
+        <locationY>2546</locationY>
+        <actionName>emailSimple</actionName>
+        <actionType>emailSimple</actionType>
+        <connector>
+            <targetReference>Strategic_on_Opp_is_True</targetReference>
+        </connector>
+        <flowTransactionModel>CurrentTransaction</flowTransactionModel>
+        <inputParameters>
+            <name>emailAddressesArray</name>
+            <value>
+                <elementReference>col_StratAccts_Qualified_EmailRecipientCollection</elementReference>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>emailSubject</name>
+            <value>
+                <stringValue>{!ipt_StratAccts_RequestTypeChoice.value} Work Order# {!get_StratAccts_Qualified_NewWorkOrder.WorkOrderNumber} has been created</stringValue>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>emailBody</name>
+            <value>
+                <elementReference>tmp_StratAccts_EmailTemplate</elementReference>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>sendRichBody</name>
+            <value>
+                <booleanValue>true</booleanValue>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>relatedRecordId</name>
+            <value>
+                <elementReference>get_StratAccts_Qualified_NewWorkOrder.Id</elementReference>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>recipientId</name>
+        </inputParameters>
+        <nameSegment>emailSimple</nameSegment>
+        <versionSegment>1</versionSegment>
+    </actionCalls>
+    <apiVersion>58.0</apiVersion>
+    <assignments>
+        <description>Assigns the current Product Category values from the Opportunity to a variable to be used later in the Flow</description>
+        <name>asn_Oppy_ProdCatsString</name>
+        <label>Prod Cats String</label>
+        <locationX>1675</locationX>
+        <locationY>242</locationY>
+        <assignmentItems>
+            <assignToReference>var_ProdCats_DelimitedParse</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>get_Opportunity.Prod_Category__c</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>dec_RequestEvent_ParseValues</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>asn_RequestEvent_CollectionStringUpdate</name>
+        <label>Collection String Update</label>
+        <locationX>2426</locationX>
+        <locationY>566</locationY>
+        <assignmentItems>
+            <assignToReference>var_ProdCats_DelimitedParse</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>fx_RequestEvent_CollectionString_RightValue</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <isGoTo>true</isGoTo>
+            <targetReference>dec_RequestEvent_ParseValues</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>asn_RequestEvent_ProdCats_CSV</name>
+        <label>Prod Cats CSV</label>
+        <locationX>2426</locationX>
+        <locationY>458</locationY>
+        <assignmentItems>
+            <assignToReference>var_ProdCats_DelimitedList</assignToReference>
+            <operator>Add</operator>
+            <value>
+                <elementReference>fx_RequestEvent_CollectionString_LeftValue</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>asn_RequestEvent_CollectionStringUpdate</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>asn_StratAccts_CollectionStringUpdate</name>
+        <label>Collection String Update</label>
+        <locationX>2162</locationX>
+        <locationY>1322</locationY>
+        <assignmentItems>
+            <assignToReference>var_ProdCats_DelimitedParse</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>fx_StratAccts_CollectionString_RightValue</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <isGoTo>true</isGoTo>
+            <targetReference>dec_StratAccts_ParseValues</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>asn_StratAccts_ProdCats_CSV</name>
+        <label>Prod Cats CSV</label>
+        <locationX>2162</locationX>
+        <locationY>1214</locationY>
+        <assignmentItems>
+            <assignToReference>var_ProdCats_DelimitedList</assignToReference>
+            <operator>Add</operator>
+            <value>
+                <elementReference>fx_StratAccts_CollectionString_LeftValue</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>asn_StratAccts_CollectionStringUpdate</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <description>Assigns the current Product Category values from the user selection to a variable to be used later in the Flow</description>
+        <name>asn_StratAccts_ProdCatsString</name>
+        <label>Prod Cats String</label>
+        <locationX>1799</locationX>
+        <locationY>998</locationY>
+        <assignmentItems>
+            <assignToReference>var_ProdCats_DelimitedParse</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>ipt_StratAccts_ProdCats.selectedOptionsCSV</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>var_ProdCats_DelimitedList</assignToReference>
+            <operator>Assign</operator>
+        </assignmentItems>
+        <connector>
+            <targetReference>dec_StratAccts_ParseValues</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>asn_StratAccts_Qualified_FileCollection</name>
+        <label>File Collection</label>
+        <locationX>1656</locationX>
+        <locationY>1646</locationY>
+        <assignmentItems>
+            <assignToReference>var_StratAccts_Qualified_FileCollection</assignToReference>
+            <operator>Add</operator>
+            <value>
+                <elementReference>var_FileSingle</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>lop_StratAccts_Qualified_FilesLoop</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>asn_StratAccts_Qualified_FileSingle</name>
+        <label>Single File Variables</label>
+        <locationX>1656</locationX>
+        <locationY>1538</locationY>
+        <assignmentItems>
+            <assignToReference>var_FileSingle.ContentDocumentId</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>lop_StratAccts_Qualified_FilesLoop</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>var_FileSingle.LinkedEntityId</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>var_StratAccts_NewWO.Id</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>asn_StratAccts_Qualified_FileCollection</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <description>Assigns email addresses to the collection variable to be used in the email alert action</description>
+        <name>asn_StratAccts_Qualified_RFPEmailRecipients_PROD</name>
+        <label>[PROD] RFP Email Recipients</label>
+        <locationX>1106</locationX>
+        <locationY>2354</locationY>
+        <assignmentItems>
+            <assignToReference>col_StratAccts_Qualified_EmailRecipientCollection</assignToReference>
+            <operator>Add</operator>
+            <value>
+                <stringValue>Jennifer.Frederick@veritivcorp.com</stringValue>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>col_StratAccts_Qualified_EmailRecipientCollection</assignToReference>
+            <operator>Add</operator>
+            <value>
+                <stringValue>solutions@veritivcorp.com</stringValue>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>col_StratAccts_Qualified_EmailRecipientCollection</assignToReference>
+            <operator>Add</operator>
+            <value>
+                <elementReference>$User.Email</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>apx_StratAccts_Qualified_EmailAlert</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <description>Assigns email addresses to the collection variable to be used in the email alert action</description>
+        <name>asn_StratAccts_Qualified_RFPEmailRecipients_TEST</name>
+        <label>[TEST] RFP Email Recipients</label>
+        <locationX>314</locationX>
+        <locationY>2354</locationY>
+        <assignmentItems>
+            <assignToReference>col_StratAccts_Qualified_EmailRecipientCollection</assignToReference>
+            <operator>Add</operator>
+            <value>
+                <stringValue>Jennifer.Frederick@veritivcorp.com.invalid</stringValue>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>col_StratAccts_Qualified_EmailRecipientCollection</assignToReference>
+            <operator>Add</operator>
+            <value>
+                <stringValue>solutions@veritivcorp.com.invalid</stringValue>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>col_StratAccts_Qualified_EmailRecipientCollection</assignToReference>
+            <operator>Add</operator>
+            <value>
+                <elementReference>$User.Email</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>col_StratAccts_Qualified_EmailRecipientCollection</assignToReference>
+            <operator>Add</operator>
+            <value>
+                <stringValue>adam.ross@veritivcorp.com</stringValue>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>apx_StratAccts_Qualified_EmailAlert</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <description>Assigns email addresses to the collection variable to be used in the email alert action</description>
+        <name>asn_StratAccts_Qualified_RFQFSEmailRecipients_PROD</name>
+        <label>[PROD] RFQ-FS Email Recipients</label>
+        <locationX>1370</locationX>
+        <locationY>2354</locationY>
+        <assignmentItems>
+            <assignToReference>col_StratAccts_Qualified_EmailRecipientCollection</assignToReference>
+            <operator>Add</operator>
+            <value>
+                <stringValue>Jennifer.Frederick@veritivcorp.com</stringValue>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>col_StratAccts_Qualified_EmailRecipientCollection</assignToReference>
+            <operator>Add</operator>
+            <value>
+                <stringValue>Ellen.Williams@veritivcorp.com</stringValue>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>col_StratAccts_Qualified_EmailRecipientCollection</assignToReference>
+            <operator>Add</operator>
+            <value>
+                <elementReference>$User.Email</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>apx_StratAccts_Qualified_EmailAlert</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <description>Assigns email addresses to the collection variable to be used in the email alert action</description>
+        <name>asn_StratAccts_Qualified_RFQFSEmailRecipients_TEST</name>
+        <label>[TEST] RFQ-FS Email Recipients</label>
+        <locationX>578</locationX>
+        <locationY>2354</locationY>
+        <assignmentItems>
+            <assignToReference>col_StratAccts_Qualified_EmailRecipientCollection</assignToReference>
+            <operator>Add</operator>
+            <value>
+                <stringValue>Jennifer.Frederick@veritivcorp.com.invalid</stringValue>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>col_StratAccts_Qualified_EmailRecipientCollection</assignToReference>
+            <operator>Add</operator>
+            <value>
+                <stringValue>Ellen.Williams@veritivcorp.com.invalid</stringValue>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>col_StratAccts_Qualified_EmailRecipientCollection</assignToReference>
+            <operator>Add</operator>
+            <value>
+                <elementReference>$User.Email</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>col_StratAccts_Qualified_EmailRecipientCollection</assignToReference>
+            <operator>Add</operator>
+            <value>
+                <stringValue>adam.ross@veritivcorp.com</stringValue>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>apx_StratAccts_Qualified_EmailAlert</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <description>Assigns email addresses to the collection variable to be used in the email alert action</description>
+        <name>asn_StratAccts_Qualified_RFQPKGEmailRecipients_PROD</name>
+        <label>[PROD] RFQ-PKG Email Recipients</label>
+        <locationX>1634</locationX>
+        <locationY>2354</locationY>
+        <assignmentItems>
+            <assignToReference>col_StratAccts_Qualified_EmailRecipientCollection</assignToReference>
+            <operator>Add</operator>
+            <value>
+                <stringValue>Jennifer.Frederick@veritivcorp.com</stringValue>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>col_StratAccts_Qualified_EmailRecipientCollection</assignToReference>
+            <operator>Add</operator>
+            <value>
+                <stringValue>Lee.Yost@veritivcorp.com</stringValue>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>col_StratAccts_Qualified_EmailRecipientCollection</assignToReference>
+            <operator>Add</operator>
+            <value>
+                <elementReference>$User.Email</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>apx_StratAccts_Qualified_EmailAlert</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <description>Assigns email addresses to the collection variable to be used in the email alert action</description>
+        <name>asn_StratAccts_Qualified_RFQPKGEmailRecipients_TEST</name>
+        <label>[TEST] RFQ-PKG Email Recipients</label>
+        <locationX>842</locationX>
+        <locationY>2354</locationY>
+        <assignmentItems>
+            <assignToReference>col_StratAccts_Qualified_EmailRecipientCollection</assignToReference>
+            <operator>Add</operator>
+            <value>
+                <stringValue>Jennifer.Frederick@veritivcorp.com.invalid</stringValue>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>col_StratAccts_Qualified_EmailRecipientCollection</assignToReference>
+            <operator>Add</operator>
+            <value>
+                <stringValue>Lee.Yost@veritivcorp.com.invalid</stringValue>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>col_StratAccts_Qualified_EmailRecipientCollection</assignToReference>
+            <operator>Add</operator>
+            <value>
+                <elementReference>$User.Email</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>col_StratAccts_Qualified_EmailRecipientCollection</assignToReference>
+            <operator>Add</operator>
+            <value>
+                <stringValue>adam.ross@veritivcorp.com</stringValue>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>apx_StratAccts_Qualified_EmailAlert</targetReference>
+        </connector>
+    </assignments>
+    <choices>
+        <name>chc_RequestEvent_Confirmation_No</name>
+        <choiceText>{!tmp_RequestCriteriaNo}</choiceText>
+        <dataType>String</dataType>
+        <value>
+            <stringValue>No</stringValue>
+        </value>
+    </choices>
+    <choices>
+        <name>chc_RequestEvent_Confirmation_Yes</name>
+        <choiceText>Yes, this request is for a Corporate Account or an MLA opportunity over &lt;strong&gt;$2M (FS)&lt;/strong&gt; or &lt;strong&gt;$5M (PKG)&lt;/strong&gt;</choiceText>
+        <dataType>String</dataType>
+        <value>
+            <stringValue>Yes</stringValue>
+        </value>
+    </choices>
+    <choices>
+        <name>chc_RequestEvent_Type_Field</name>
+        <choiceText>&lt;strong&gt;Field&lt;/strong&gt;&lt;em&gt; - Field Sales (including MLA opportunities under $2M (FS) or $5M (PKG))&lt;/em&gt;</choiceText>
+        <dataType>String</dataType>
+        <value>
+            <stringValue>Field</stringValue>
+        </value>
+    </choices>
+    <choices>
+        <name>chc_RequestEvent_Type_Strategic</name>
+        <choiceText>&lt;strong&gt;Strategic&lt;/strong&gt;&lt;em&gt; - Corporate accounts and MLA opportunities over $2M (FS) or $5M (PKG)&lt;/em&gt;</choiceText>
+        <dataType>String</dataType>
+        <value>
+            <stringValue>Strategic</stringValue>
+        </value>
+    </choices>
+    <decisions>
+        <description>Determines if the variable string contains values to parse</description>
+        <name>dec_RequestEvent_ParseValues</name>
+        <label>Parse Values</label>
+        <locationX>1675</locationX>
+        <locationY>350</locationY>
+        <defaultConnector>
+            <targetReference>asn_RequestEvent_ProdCats_CSV</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Yes</defaultConnectorLabel>
+        <rules>
+            <name>ocm_RequestEvent_ProdCats_Parse_No</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>var_ProdCats_DelimitedParse</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>scn_RequestEvent</targetReference>
+            </connector>
+            <label>No</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <description>Determines the path, based on the user input in the previous screen</description>
+        <name>dec_RequestPath</name>
+        <label>Request Path</label>
+        <locationX>924</locationX>
+        <locationY>566</locationY>
+        <defaultConnector>
+            <targetReference>get_StratAccts_RecordType</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Strategic</defaultConnectorLabel>
+        <rules>
+            <name>ocm_FieldSourcing</name>
+            <conditionLogic>1 OR (2 AND 3)</conditionLogic>
+            <conditions>
+                <leftValueReference>ipt_RequestEvent_Selection</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Field</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>ipt_RequestEvent_Selection</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Strategic</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>ipt_RequestEvent_Confirmation</leftValueReference>
+                <operator>StartsWith</operator>
+                <rightValue>
+                    <stringValue>No</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>sub_FieldSourcingWOFlow</targetReference>
+            </connector>
+            <label>Field</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <description>Determines if the variable string contains values to parse</description>
+        <name>dec_StratAccts_ParseValues</name>
+        <label>Parse Values</label>
+        <locationX>1799</locationX>
+        <locationY>1106</locationY>
+        <defaultConnector>
+            <targetReference>asn_StratAccts_ProdCats_CSV</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Yes</defaultConnectorLabel>
+        <rules>
+            <name>ocm_StratAccts_ProdCats_Parse_No</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>var_ProdCats_DelimitedParse</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>crt_StratAccts_Qualified_WorkOrder</targetReference>
+            </connector>
+            <label>No</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <description>Determines which users or groups to send an email alert</description>
+        <name>dec_StratAccts_Qualified_EmailAlertGroup</name>
+        <label>Email Alert Group</label>
+        <locationX>974</locationX>
+        <locationY>2246</locationY>
+        <defaultConnector>
+            <targetReference>asn_StratAccts_Qualified_RFQPKGEmailRecipients_PROD</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>[PROD] RFQ - PKG</defaultConnectorLabel>
+        <rules>
+            <name>ocm_StratAccts_Qualified_EmailAlertGroup_RFP_TEST</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>ipt_StratAccts_RequestTypeChoice.value</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>RFP</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Organization.Id</leftValueReference>
+                <operator>NotEqualTo</operator>
+                <rightValue>
+                    <stringValue>00D7000000091qn</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>asn_StratAccts_Qualified_RFPEmailRecipients_TEST</targetReference>
+            </connector>
+            <label>[TEST] RFP</label>
+        </rules>
+        <rules>
+            <name>ocm_StratAccts_Qualified_EmailAlertGroup_RFQFS_TEST</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>ipt_StratAccts_RequestTypeChoice.value</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>RFQ</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>get_Opportunity.Opportunity_Segment__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Facility Solutions</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Organization.Id</leftValueReference>
+                <operator>NotEqualTo</operator>
+                <rightValue>
+                    <stringValue>00D7000000091qn</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>asn_StratAccts_Qualified_RFQFSEmailRecipients_TEST</targetReference>
+            </connector>
+            <label>[TEST] RFQ - FS</label>
+        </rules>
+        <rules>
+            <name>ocm_StratAccts_Qualified_EmailAlertGroup_RFQPKG_TEST</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>ipt_StratAccts_RequestTypeChoice.value</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>RFQ</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>get_Opportunity.Opportunity_Segment__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Packaging</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Organization.Id</leftValueReference>
+                <operator>NotEqualTo</operator>
+                <rightValue>
+                    <stringValue>00D7000000091qn</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>asn_StratAccts_Qualified_RFQPKGEmailRecipients_TEST</targetReference>
+            </connector>
+            <label>[TEST] RFQ - PKG</label>
+        </rules>
+        <rules>
+            <name>ocm_StratAccts_Qualified_EmailAlertGroup_RFP_PROD</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>ipt_StratAccts_RequestTypeChoice.value</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>RFP</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>asn_StratAccts_Qualified_RFPEmailRecipients_PROD</targetReference>
+            </connector>
+            <label>[PROD] RFP</label>
+        </rules>
+        <rules>
+            <name>ocm_StratAccts_Qualified_EmailAlertGroup_RFQFS_PROD</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>ipt_StratAccts_RequestTypeChoice.value</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>RFQ</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>get_Opportunity.Opportunity_Segment__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Facility Solutions</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>asn_StratAccts_Qualified_RFQFSEmailRecipients_PROD</targetReference>
+            </connector>
+            <label>[PROD] RFQ - FS</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <description>Determines if Files were uploaded in the previous screen</description>
+        <name>dec_StratAccts_Qualified_FilesUploaded</name>
+        <label>Files Uploaded</label>
+        <locationX>1436</locationX>
+        <locationY>1322</locationY>
+        <defaultConnector>
+            <targetReference>lop_StratAccts_Qualified_FilesLoop</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Yes</defaultConnectorLabel>
+        <rules>
+            <name>ocm_StratAccts_Qualified_FilesUploaded_No</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>col_StratAccts_ContentDocumentIdsUploadedTextCollection</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>get_StratAccts_Qualified_NewWorkOrder</targetReference>
+            </connector>
+            <label>No</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <description>Determines</description>
+        <name>dec_StratAccts_QualifiedRequest</name>
+        <label>Qualified</label>
+        <locationX>1436</locationX>
+        <locationY>2138</locationY>
+        <defaultConnector>
+            <targetReference>scn_StratAccts_Unqualified</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>No</defaultConnectorLabel>
+        <rules>
+            <name>ocm_StratAccts_QualifiedYes</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>fx_StratAccts_Score</leftValueReference>
+                <operator>GreaterThanOrEqualTo</operator>
+                <rightValue>
+                    <numberValue>65.0</numberValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>dec_StratAccts_Qualified_EmailAlertGroup</targetReference>
+            </connector>
+            <label>Yes</label>
+        </rules>
+    </decisions>
+    <description>Used to initiate a Work Order request that confirms whether the request should be handled as either a Corporate or Field Sourcing request. This is only available from the Opportunity. This Flow uses a subflow to call the &apos;Work Order [SF] Sourcing Work Order Creation&apos; Flow if the request should be going through the process previously built to handle Field Sourcing requests.</description>
+    <dynamicChoiceSets>
+        <name>chc_RequestEvent_ProdCats</name>
+        <dataType>Multipicklist</dataType>
+        <displayField xsi:nil="true"/>
+        <object xsi:nil="true"/>
+        <picklistField>Prod_Categories__c</picklistField>
+        <picklistObject>WorkOrder</picklistObject>
+        <sortOrder>Asc</sortOrder>
+    </dynamicChoiceSets>
+    <dynamicChoiceSets>
+        <name>chc_StratAccts_BidType</name>
+        <dataType>Multipicklist</dataType>
+        <displayField xsi:nil="true"/>
+        <object xsi:nil="true"/>
+        <picklistField>Bid_Type__c</picklistField>
+        <picklistObject>WorkOrder</picklistObject>
+    </dynamicChoiceSets>
+    <dynamicChoiceSets>
+        <name>chc_StratAccts_BusinessEventDrivingRequest</name>
+        <dataType>Picklist</dataType>
+        <displayField xsi:nil="true"/>
+        <object xsi:nil="true"/>
+        <picklistField>Business_Event_Driving_Request__c</picklistField>
+        <picklistObject>WorkOrder</picklistObject>
+    </dynamicChoiceSets>
+    <dynamicChoiceSets>
+        <name>chc_StratAccts_DefendingBusinessWithThisRequest</name>
+        <dataType>Picklist</dataType>
+        <displayField xsi:nil="true"/>
+        <object xsi:nil="true"/>
+        <picklistField>Defending_Business_with_this_Request__c</picklistField>
+        <picklistObject>WorkOrder</picklistObject>
+    </dynamicChoiceSets>
+    <dynamicChoiceSets>
+        <name>chc_StratAccts_ExistingBusinessRelationship</name>
+        <dataType>Picklist</dataType>
+        <displayField xsi:nil="true"/>
+        <object xsi:nil="true"/>
+        <picklistField>Existing_Business_Relationship__c</picklistField>
+        <picklistObject>WorkOrder</picklistObject>
+    </dynamicChoiceSets>
+    <dynamicChoiceSets>
+        <name>chc_StratAccts_HaveOrderAndDeliveryMetrics</name>
+        <dataType>Picklist</dataType>
+        <displayField xsi:nil="true"/>
+        <object xsi:nil="true"/>
+        <picklistField>Have_Order_and_Delivery_Metrics__c</picklistField>
+        <picklistObject>WorkOrder</picklistObject>
+    </dynamicChoiceSets>
+    <dynamicChoiceSets>
+        <name>chc_StratAccts_InOurKeyVerticals</name>
+        <dataType>Picklist</dataType>
+        <displayField xsi:nil="true"/>
+        <object xsi:nil="true"/>
+        <picklistField>In_our_Key_Verticals__c</picklistField>
+        <picklistObject>WorkOrder</picklistObject>
+    </dynamicChoiceSets>
+    <dynamicChoiceSets>
+        <name>chc_StratAccts_LocationUSorMexico</name>
+        <dataType>Picklist</dataType>
+        <displayField xsi:nil="true"/>
+        <object xsi:nil="true"/>
+        <picklistField>Location_is_US_or_Mexico__c</picklistField>
+        <picklistObject>WorkOrder</picklistObject>
+    </dynamicChoiceSets>
+    <dynamicChoiceSets>
+        <name>chc_StratAccts_MeetRequestRequirements</name>
+        <dataType>Picklist</dataType>
+        <displayField xsi:nil="true"/>
+        <object xsi:nil="true"/>
+        <picklistField>Meet_RFP_Requirements__c</picklistField>
+        <picklistObject>WorkOrder</picklistObject>
+    </dynamicChoiceSets>
+    <dynamicChoiceSets>
+        <name>chc_StratAccts_PortalSubmission</name>
+        <dataType>Picklist</dataType>
+        <displayField xsi:nil="true"/>
+        <object xsi:nil="true"/>
+        <picklistField>Use_Portal_for_Submission__c</picklistField>
+        <picklistObject>WorkOrder</picklistObject>
+    </dynamicChoiceSets>
+    <dynamicChoiceSets>
+        <name>chc_StratAccts_ProductsInOurCore</name>
+        <dataType>Picklist</dataType>
+        <displayField xsi:nil="true"/>
+        <object xsi:nil="true"/>
+        <picklistField>Products_in_our_Core__c</picklistField>
+        <picklistObject>WorkOrder</picklistObject>
+    </dynamicChoiceSets>
+    <dynamicChoiceSets>
+        <name>chc_StratAccts_ReviewedAndApprovedByLeadership</name>
+        <dataType>Picklist</dataType>
+        <displayField xsi:nil="true"/>
+        <object xsi:nil="true"/>
+        <picklistField>Reviewed_and_Approved_by_Leadership__c</picklistField>
+        <picklistObject>WorkOrder</picklistObject>
+    </dynamicChoiceSets>
+    <dynamicChoiceSets>
+        <name>chc_StratAccts_SufficientInformationProvided</name>
+        <dataType>Picklist</dataType>
+        <displayField xsi:nil="true"/>
+        <object xsi:nil="true"/>
+        <picklistField>Sufficient_Information_Provided__c</picklistField>
+        <picklistObject>WorkOrder</picklistObject>
+    </dynamicChoiceSets>
+    <dynamicChoiceSets>
+        <name>chc_StratAccts_ValuePropositionFit</name>
+        <dataType>Picklist</dataType>
+        <displayField xsi:nil="true"/>
+        <object xsi:nil="true"/>
+        <picklistField>Value_Proposition_Fit__c</picklistField>
+        <picklistObject>WorkOrder</picklistObject>
+    </dynamicChoiceSets>
+    <dynamicChoiceSets>
+        <name>chc_StratAccts_VeritivAcceptsTerms</name>
+        <dataType>Picklist</dataType>
+        <displayField xsi:nil="true"/>
+        <object xsi:nil="true"/>
+        <picklistField>Veritiv_accepts_their_Terms__c</picklistField>
+        <picklistObject>WorkOrder</picklistObject>
+    </dynamicChoiceSets>
+    <environments>Default</environments>
+    <formulas>
+        <name>fx_RequestEvent_CollectionString_LeftValue</name>
+        <dataType>String</dataType>
+        <expression>IF(CONTAINS({!var_ProdCats_DelimitedParse},&quot;;&quot;),
+TRIM(
+SUBSTITUTE(
+LEFT( {!var_ProdCats_DelimitedParse}, FIND(&quot;;&quot;, {!var_ProdCats_DelimitedParse})),
+&quot;;&quot;,
+&quot;&quot;))&amp;&quot;,&quot;,
+{!var_ProdCats_DelimitedParse})</expression>
+    </formulas>
+    <formulas>
+        <name>fx_RequestEvent_CollectionString_RightValue</name>
+        <dataType>String</dataType>
+        <expression>IF(CONTAINS({!var_ProdCats_DelimitedParse},&quot;;&quot;),
+RIGHT({!var_ProdCats_DelimitedParse},LEN({!var_ProdCats_DelimitedParse})-FIND(&quot;;&quot;,{!var_ProdCats_DelimitedParse})),
+&quot;&quot;)</expression>
+    </formulas>
+    <formulas>
+        <name>fx_StratAccts_CollectionString_LeftValue</name>
+        <dataType>String</dataType>
+        <expression>IF(CONTAINS({!var_ProdCats_DelimitedParse},&quot;,&quot;),
+TRIM(
+SUBSTITUTE(
+LEFT( {!var_ProdCats_DelimitedParse}, FIND(&quot;,&quot;, {!var_ProdCats_DelimitedParse})),
+&quot;,&quot;,
+&quot;&quot;))&amp;&quot;;&quot;,
+{!var_ProdCats_DelimitedParse})</expression>
+    </formulas>
+    <formulas>
+        <name>fx_StratAccts_CollectionString_RightValue</name>
+        <dataType>String</dataType>
+        <expression>IF(CONTAINS({!var_ProdCats_DelimitedParse},&quot;,&quot;),
+RIGHT({!var_ProdCats_DelimitedParse},LEN({!var_ProdCats_DelimitedParse})-FIND(&quot;,&quot;,{!var_ProdCats_DelimitedParse})),
+&quot;&quot;)</expression>
+    </formulas>
+    <formulas>
+        <description>Calculates the hyperlink to be used in the Text Template resource</description>
+        <name>fx_StratAccts_Hyperlink</name>
+        <dataType>String</dataType>
+        <expression>LEFT({!$Api.Partner_Server_URL_260}, FIND(&apos;/services&apos;, {!$Api.Partner_Server_URL_260}))</expression>
+    </formulas>
+    <formulas>
+        <description>Calculates the score to be used for qualification</description>
+        <name>fx_StratAccts_Score</name>
+        <dataType>Number</dataType>
+        <expression>IF({!ipt_StratAccts_ReviewedAndApprovedByLeadership}=&apos;Yes&apos;,10,0)
++
+IF({!ipt_StratAccts_ExistingBusinessRelationship}=&apos;Yes&apos;,10,0)
++
+IF({!ipt_StratAccts_BusinessEventDrivingRequest}=&apos;Yes&apos;,10,0)
++
+IF({!ipt_StratAccts_DefendingBusinessWithThisRequest}=&apos;Yes&apos;,10,0)
++
+IF({!ipt_StratAccts_MeetRequestRequirements}=&apos;Yes&apos;,10,0)
++
+IF({!ipt_StratAccts_VeritivAcceptsTerms}=&apos;Yes&apos;,10,0)
++
+IF({!ipt_StratAccts_SufficientInformationProvided}=&apos;Yes&apos;,10,0)
++
+IF({!ipt_StratAccts_ValuePropositionFit}=&apos;Yes&apos;,10,0)
++
+IF({!ipt_StratAccts_InOurKeyVerticals}=&apos;Yes&apos;,5,0)
++
+IF({!ipt_StratAccts_LocationUSorMexico}=&apos;Yes&apos;,5,0)
++
+IF({!ipt_StratAccts_ProductsInOurCore}=&apos;Yes&apos;,5,0)
++
+IF({!ipt_StratAccts_HaveOrderAndDeliveryMetrics}=&apos;Yes&apos;,5,0)</expression>
+        <scale>2</scale>
+    </formulas>
+    <formulas>
+        <description>Based on the calculated score, determines the Status value to be used when creating the Work Order record</description>
+        <name>fx_StratAccts_ScoreStatus</name>
+        <dataType>String</dataType>
+        <expression>IF({!fx_StratAccts_Score}&lt;65, &apos;Unqualified&apos;, &apos;New&apos;)</expression>
+    </formulas>
+    <interviewLabel>Work Order - Initial Sourcing {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>Work Order - Initial Sourcing Request from Opportunity</label>
+    <loops>
+        <description>Loops through File collection</description>
+        <name>lop_StratAccts_Qualified_FilesLoop</name>
+        <label>Files</label>
+        <locationX>1568</locationX>
+        <locationY>1430</locationY>
+        <collectionReference>col_StratAccts_ContentDocumentIdsUploadedTextCollection</collectionReference>
+        <iterationOrder>Asc</iterationOrder>
+        <nextValueConnector>
+            <targetReference>asn_StratAccts_Qualified_FileSingle</targetReference>
+        </nextValueConnector>
+        <noMoreValuesConnector>
+            <targetReference>File_Links</targetReference>
+        </noMoreValuesConnector>
+    </loops>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>CanvasMode</name>
+        <value>
+            <stringValue>AUTO_LAYOUT_CANVAS</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>OriginBuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>Flow</processType>
+    <recordCreates>
+        <description>Creates a Work Order record that has been determined to be a Strategic Accounts Sourcing Work Order</description>
+        <name>crt_StratAccts_Qualified_WorkOrder</name>
+        <label>Work Order</label>
+        <locationX>1436</locationX>
+        <locationY>1214</locationY>
+        <assignRecordIdToReference>var_StratAccts_NewWO.Id</assignRecordIdToReference>
+        <connector>
+            <targetReference>dec_StratAccts_Qualified_FilesUploaded</targetReference>
+        </connector>
+        <inputAssignments>
+            <field>AccountId</field>
+            <value>
+                <elementReference>get_Opportunity.AccountId</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Bid_Type__c</field>
+            <value>
+                <elementReference>ipt_StratAccts_BidType</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Business_Event_Driving_Request__c</field>
+            <value>
+                <elementReference>ipt_StratAccts_BusinessEventDrivingRequest</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Defending_Business_with_this_Request__c</field>
+            <value>
+                <elementReference>ipt_StratAccts_DefendingBusinessWithThisRequest</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Existing_Business_Relationship__c</field>
+            <value>
+                <elementReference>ipt_StratAccts_ExistingBusinessRelationship</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Have_Order_and_Delivery_Metrics__c</field>
+            <value>
+                <elementReference>ipt_StratAccts_HaveOrderAndDeliveryMetrics</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>In_our_Key_Verticals__c</field>
+            <value>
+                <elementReference>ipt_StratAccts_InOurKeyVerticals</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Location_is_US_or_Mexico__c</field>
+            <value>
+                <elementReference>ipt_StratAccts_LocationUSorMexico</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Meet_RFP_Requirements__c</field>
+            <value>
+                <elementReference>ipt_StratAccts_MeetRequestRequirements</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Opportunity_del__c</field>
+            <value>
+                <elementReference>recordId</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>OwnerId</field>
+            <value>
+                <elementReference>get_StratAccts_QueueId.Id</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Portal_Address__c</field>
+            <value>
+                <elementReference>ipt_StratAccts_URLportal</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Prod_Categories__c</field>
+            <value>
+                <elementReference>var_ProdCats_DelimitedList</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Products_in_our_Core__c</field>
+            <value>
+                <elementReference>ipt_StratAccts_ProductsInOurCore</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>RFx_Customer_Due_Date__c</field>
+            <value>
+                <elementReference>ipt_StratAccts_CustomerRequestedCompleteDate</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>RFx_Qualifying_Score__c</field>
+            <value>
+                <elementReference>fx_StratAccts_Score</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>RecordTypeId</field>
+            <value>
+                <elementReference>get_StratAccts_RecordType.Id</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Rep_Bid_Value_Defending__c</field>
+            <value>
+                <elementReference>ipt_StratAccts_BidValueDefending</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Rep_Bid_Value_New_Share__c</field>
+            <value>
+                <elementReference>ipt_StratAccts_BidValueNewShare</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Reviewed_and_Approved_by_Leadership__c</field>
+            <value>
+                <elementReference>ipt_StratAccts_ReviewedAndApprovedByLeadership</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Segment__c</field>
+            <value>
+                <elementReference>get_Opportunity.Opportunity_Segment__c</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Status</field>
+            <value>
+                <elementReference>fx_StratAccts_ScoreStatus</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Subject</field>
+            <value>
+                <elementReference>ipt_StratAccts_RequestTypeChoice.value</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Submitter_Comments__c</field>
+            <value>
+                <elementReference>ipt_StratAccts_Comments</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Submitter_Email_Address__c</field>
+            <value>
+                <elementReference>$User.Email</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Sufficient_Information_Provided__c</field>
+            <value>
+                <elementReference>ipt_StratAccts_SufficientInformationProvided</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Type_of_Request__c</field>
+            <value>
+                <elementReference>ipt_StratAccts_RequestTypeChoice.value</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Use_Portal_for_Submission__c</field>
+            <value>
+                <elementReference>ipt_StratAccts_PortalSubmission</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Value_Proposition_Fit__c</field>
+            <value>
+                <elementReference>ipt_StratAccts_ValuePropositionFit</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Value_of_Opportunity__c</field>
+            <value>
+                <elementReference>ipt_RequestEvent_OppyAmount</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Veritiv_accepts_their_Terms__c</field>
+            <value>
+                <elementReference>ipt_StratAccts_VeritivAcceptsTerms</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>WO_Submitted_By__c</field>
+            <value>
+                <elementReference>$User.Id</elementReference>
+            </value>
+        </inputAssignments>
+        <object>WorkOrder</object>
+    </recordCreates>
+    <recordCreates>
+        <description>Creates File (ContentDocumentLink) linked records to relate the uploaded File(s) to the Work Order</description>
+        <name>File_Links</name>
+        <label>File Links</label>
+        <locationX>1568</locationX>
+        <locationY>1838</locationY>
+        <connector>
+            <targetReference>get_StratAccts_Qualified_NewWorkOrder</targetReference>
+        </connector>
+        <inputReference>var_StratAccts_Qualified_FileCollection</inputReference>
+    </recordCreates>
+    <recordLookups>
+        <description>Gets the Opportunity record that was used to launch the Flow</description>
+        <name>get_Opportunity</name>
+        <label>Opportunity</label>
+        <locationX>1675</locationX>
+        <locationY>134</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>asn_Oppy_ProdCatsString</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>Id</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>recordId</elementReference>
+            </value>
+        </filters>
+        <getFirstRecordOnly>true</getFirstRecordOnly>
+        <object>Opportunity</object>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordLookups>
+    <recordLookups>
+        <description>Gets the new Work Order record that was created</description>
+        <name>get_StratAccts_Qualified_NewWorkOrder</name>
+        <label>New Work Order</label>
+        <locationX>1436</locationX>
+        <locationY>2030</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>dec_StratAccts_QualifiedRequest</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>Id</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>var_StratAccts_NewWO.Id</elementReference>
+            </value>
+        </filters>
+        <getFirstRecordOnly>true</getFirstRecordOnly>
+        <object>WorkOrder</object>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordLookups>
+    <recordLookups>
+        <description>Gets the Queue Id for the Strategic Accounts team</description>
+        <name>get_StratAccts_QueueId</name>
+        <label>Queue Id</label>
+        <locationX>1799</locationX>
+        <locationY>782</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>scn_StratAccts_QualifyingScreen</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>Type</field>
+            <operator>EqualTo</operator>
+            <value>
+                <stringValue>Queue</stringValue>
+            </value>
+        </filters>
+        <filters>
+            <field>DeveloperName</field>
+            <operator>EqualTo</operator>
+            <value>
+                <stringValue>RFP_RFQ</stringValue>
+            </value>
+        </filters>
+        <getFirstRecordOnly>true</getFirstRecordOnly>
+        <object>Group</object>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordLookups>
+    <recordLookups>
+        <description>Gets the record type ID for to be used for a Strategic Account Work Order</description>
+        <name>get_StratAccts_RecordType</name>
+        <label>Record Type</label>
+        <locationX>1799</locationX>
+        <locationY>674</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>get_StratAccts_QueueId</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>SobjectType</field>
+            <operator>EqualTo</operator>
+            <value>
+                <stringValue>WorkOrder</stringValue>
+            </value>
+        </filters>
+        <filters>
+            <field>DeveloperName</field>
+            <operator>EqualTo</operator>
+            <value>
+                <stringValue>RFP_RFQ</stringValue>
+            </value>
+        </filters>
+        <getFirstRecordOnly>true</getFirstRecordOnly>
+        <object>RecordType</object>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordLookups>
+    <recordUpdates>
+        <description>Update the Strategic Opportunity checkbox when a qualified RFP or RFQ is created</description>
+        <name>Strategic_on_Opp_is_True</name>
+        <label>Strategic on Opp is True</label>
+        <locationX>974</locationX>
+        <locationY>2654</locationY>
+        <connector>
+            <targetReference>scn_StratAccts_Qualified</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>Id</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>get_Opportunity.Id</elementReference>
+            </value>
+        </filters>
+        <inputAssignments>
+            <field>Strategic_Opportunity__c</field>
+            <value>
+                <booleanValue>true</booleanValue>
+            </value>
+        </inputAssignments>
+        <object>Opportunity</object>
+    </recordUpdates>
+    <runInMode>SystemModeWithoutSharing</runInMode>
+    <screens>
+        <description>Prompts user to select the path to follow for the appropriate request</description>
+        <name>scn_RequestEvent</name>
+        <label>Request Event</label>
+        <locationX>924</locationX>
+        <locationY>458</locationY>
+        <allowBack>false</allowBack>
+        <allowFinish>true</allowFinish>
+        <allowPause>false</allowPause>
+        <connector>
+            <targetReference>dec_RequestPath</targetReference>
+        </connector>
+        <fields>
+            <name>ipt_RequestEvent_Selection</name>
+            <choiceReferences>chc_RequestEvent_Type_Field</choiceReferences>
+            <choiceReferences>chc_RequestEvent_Type_Strategic</choiceReferences>
+            <dataType>String</dataType>
+            <fieldText>What type of sourcing event is being requested?</fieldText>
+            <fieldType>DropdownBox</fieldType>
+            <isRequired>true</isRequired>
+        </fields>
+        <fields>
+            <name>ipt_RequestEvent_Confirmation</name>
+            <choiceReferences>chc_RequestEvent_Confirmation_No</choiceReferences>
+            <choiceReferences>chc_RequestEvent_Confirmation_Yes</choiceReferences>
+            <dataType>String</dataType>
+            <fieldText>Please confirm this request meets the following criteria</fieldText>
+            <fieldType>DropdownBox</fieldType>
+            <isRequired>true</isRequired>
+            <visibilityRule>
+                <conditionLogic>and</conditionLogic>
+                <conditions>
+                    <leftValueReference>ipt_RequestEvent_Selection</leftValueReference>
+                    <operator>EqualTo</operator>
+                    <rightValue>
+                        <stringValue>Strategic</stringValue>
+                    </rightValue>
+                </conditions>
+            </visibilityRule>
+        </fields>
+        <fields>
+            <name>scn_RequestEvent_Section1</name>
+            <fieldType>RegionContainer</fieldType>
+            <fields>
+                <name>scn_RequestEvent_Section1_Column1</name>
+                <fieldType>Region</fieldType>
+                <inputParameters>
+                    <name>width</name>
+                    <value>
+                        <stringValue>12</stringValue>
+                    </value>
+                </inputParameters>
+                <isRequired>false</isRequired>
+            </fields>
+            <isRequired>false</isRequired>
+            <regionContainerType>SectionWithoutHeader</regionContainerType>
+        </fields>
+        <fields>
+            <name>ipt_RequestEvent_OppyAmount</name>
+            <dataType>Currency</dataType>
+            <defaultValue>
+                <elementReference>get_Opportunity.Amount</elementReference>
+            </defaultValue>
+            <fieldText>What is the value of the sourcing request for this opportunity?</fieldText>
+            <fieldType>InputField</fieldType>
+            <isRequired>true</isRequired>
+            <scale>0</scale>
+        </fields>
+        <showFooter>true</showFooter>
+        <showHeader>false</showHeader>
+    </screens>
+    <screens>
+        <description>Notifies user the request qualified and provides additional information</description>
+        <name>scn_StratAccts_Qualified</name>
+        <label>Qualified Message</label>
+        <locationX>974</locationX>
+        <locationY>2762</locationY>
+        <allowBack>false</allowBack>
+        <allowFinish>true</allowFinish>
+        <allowPause>false</allowPause>
+        <fields>
+            <name>txt_StratAccts_Qualified_Message</name>
+            <fieldText>&lt;p style=&quot;text-align: center;&quot;&gt;&lt;span style=&quot;color: rgb(68, 68, 68); background-color: rgb(255, 255, 255);&quot;&gt;Your request has qualified for the the Strategic Accounts team to assist.&lt;/span&gt;&lt;/p&gt;&lt;p style=&quot;text-align: center;&quot;&gt;&lt;span style=&quot;color: rgb(68, 68, 68); background-color: rgb(255, 255, 255);&quot;&gt;You will receive a confirmation email with this information, for your reference.&lt;/span&gt;&lt;/p&gt;&lt;p style=&quot;text-align: center;&quot;&gt;&lt;br&gt;&lt;/p&gt;&lt;p style=&quot;text-align: center;&quot;&gt;&lt;span style=&quot;font-size: 14px; color: rgb(68, 68, 68); background-color: rgb(255, 255, 255);&quot;&gt;{!ipt_StratAccts_RequestTypeChoice.value} Work Order# &lt;/span&gt;&lt;a href=&quot;/{!var_StratAccts_NewWO.Id}&quot; rel=&quot;noopener noreferrer&quot; target=&quot;_blank&quot; style=&quot;font-size: 14px; color: rgb(1, 118, 211); background-color: rgb(255, 255, 255);&quot;&gt;&lt;strong&gt;{!get_StratAccts_Qualified_NewWorkOrder.WorkOrderNumber}&lt;/strong&gt;&lt;/a&gt;&lt;/p&gt;&lt;p style=&quot;text-align: center;&quot;&gt;&lt;br&gt;&lt;/p&gt;</fieldText>
+            <fieldType>DisplayText</fieldType>
+        </fields>
+        <nextOrFinishButtonLabel>Close</nextOrFinishButtonLabel>
+        <showFooter>true</showFooter>
+        <showHeader>false</showHeader>
+    </screens>
+    <screens>
+        <description>Qualifying questions the user must answer to score the request to be used later in the Flow</description>
+        <name>scn_StratAccts_QualifyingScreen</name>
+        <label>Qualifying Questions</label>
+        <locationX>1799</locationX>
+        <locationY>890</locationY>
+        <allowBack>true</allowBack>
+        <allowFinish>true</allowFinish>
+        <allowPause>false</allowPause>
+        <connector>
+            <targetReference>asn_StratAccts_ProdCatsString</targetReference>
+        </connector>
+        <fields>
+            <name>scn_StratAccts_QualifyingScreen_Section1</name>
+            <fieldType>RegionContainer</fieldType>
+            <fields>
+                <name>scn_StratAccts_QualifyingScreen_Section1_Column1</name>
+                <fieldType>Region</fieldType>
+                <fields>
+                    <name>ipt_StratAccts_RequestTypeChoice</name>
+                    <extensionName>c:fsc_quickChoiceFSC</extensionName>
+                    <fieldType>ComponentInstance</fieldType>
+                    <inputParameters>
+                        <name>displayMode</name>
+                        <value>
+                            <stringValue>Visual</stringValue>
+                        </value>
+                    </inputParameters>
+                    <inputParameters>
+                        <name>numberOfColumns</name>
+                        <value>
+                            <stringValue>2</stringValue>
+                        </value>
+                    </inputParameters>
+                    <inputParameters>
+                        <name>iconSize</name>
+                        <value>
+                            <stringValue>medium</stringValue>
+                        </value>
+                    </inputParameters>
+                    <inputParameters>
+                        <name>inputMode</name>
+                        <value>
+                            <stringValue>Static Choices</stringValue>
+                        </value>
+                    </inputParameters>
+                    <inputParameters>
+                        <name>required</name>
+                        <value>
+                            <booleanValue>true</booleanValue>
+                        </value>
+                    </inputParameters>
+                    <inputParameters>
+                        <name>staticChoicesString</name>
+                        <value>
+                            <stringValue>[{&quot;label&quot;:&quot;RFP&quot;,&quot;value&quot;:&quot;Request for Proposal&quot;},{&quot;label&quot;:&quot;RFQ&quot;,&quot;value&quot;:&quot;Request for Quote&quot;}]</stringValue>
+                        </value>
+                    </inputParameters>
+                    <inputParameters>
+                        <name>masterLabel</name>
+                        <value>
+                            <stringValue>What is the sourcing event request type?</stringValue>
+                        </value>
+                    </inputParameters>
+                    <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
+                    <isRequired>true</isRequired>
+                    <storeOutputAutomatically>true</storeOutputAutomatically>
+                </fields>
+                <inputParameters>
+                    <name>width</name>
+                    <value>
+                        <stringValue>7</stringValue>
+                    </value>
+                </inputParameters>
+                <isRequired>false</isRequired>
+            </fields>
+            <fields>
+                <name>scn_StratAccts_QualifyingScreen_Section1_Column2</name>
+                <fieldType>Region</fieldType>
+                <inputParameters>
+                    <name>width</name>
+                    <value>
+                        <stringValue>5</stringValue>
+                    </value>
+                </inputParameters>
+                <isRequired>false</isRequired>
+            </fields>
+            <isRequired>false</isRequired>
+            <regionContainerType>SectionWithoutHeader</regionContainerType>
+        </fields>
+        <fields>
+            <name>scn_StratAccts_QualifyingScreen_Section2</name>
+            <fieldType>RegionContainer</fieldType>
+            <fields>
+                <name>scn_StratAccts_QualifyingScreen_Section2_Column1</name>
+                <fieldType>Region</fieldType>
+                <inputParameters>
+                    <name>width</name>
+                    <value>
+                        <stringValue>12</stringValue>
+                    </value>
+                </inputParameters>
+                <isRequired>false</isRequired>
+            </fields>
+            <isRequired>false</isRequired>
+            <regionContainerType>SectionWithoutHeader</regionContainerType>
+        </fields>
+        <fields>
+            <name>scn_StratAccts_QualifyingScreen_Section3</name>
+            <fieldType>RegionContainer</fieldType>
+            <fields>
+                <name>scn_StratAccts_QualifyingScreen_Section3_Column1</name>
+                <fieldType>Region</fieldType>
+                <fields>
+                    <name>ipt_StratAccts_BidType</name>
+                    <choiceReferences>chc_StratAccts_BidType</choiceReferences>
+                    <dataType>String</dataType>
+                    <fieldText>What is the bid type?</fieldText>
+                    <fieldType>MultiSelectPicklist</fieldType>
+                    <helpText>&lt;p&gt;&lt;span style=&quot;background-color: var(--slds-g-color-neutral-base-100, var(--lwc-colorBackgroundInput,rgb(255, 255, 255))); color: var(--slds-g-color-neutral-base-30, var(--lwc-colorTextWeak,rgb(68, 68, 68))); font-size: var(--lwc-fontSize3,0.8125rem); font-family: var(--lwc-fontFamily,-apple-system, BlinkMacSystemFont, &apos;Segoe UI&apos;, Roboto, Helvetica, Arial, sans-serif, &apos;Apple Color Emoji&apos;, &apos;Segoe UI Emoji&apos;, &apos;Segoe UI Symbol&apos;);&quot;&gt;To select multiple values, h&lt;/span&gt;old &lt;strong&gt;ctrl+click&lt;/strong&gt;&lt;/p&gt;</helpText>
+                    <isRequired>true</isRequired>
+                </fields>
+                <fields>
+                    <name>ipt_StratAccts_BidValueNewShare</name>
+                    <dataType>Currency</dataType>
+                    <fieldText>What is the bid value of new/share business?</fieldText>
+                    <fieldType>InputField</fieldType>
+                    <helpText>&lt;p&gt;New customer or expanding share of wallet business&lt;/p&gt;</helpText>
+                    <isRequired>false</isRequired>
+                    <scale>0</scale>
+                    <visibilityRule>
+                        <conditionLogic>or</conditionLogic>
+                        <conditions>
+                            <leftValueReference>ipt_StratAccts_BidType</leftValueReference>
+                            <operator>Contains</operator>
+                            <rightValue>
+                                <stringValue>New</stringValue>
+                            </rightValue>
+                        </conditions>
+                        <conditions>
+                            <leftValueReference>ipt_StratAccts_BidType</leftValueReference>
+                            <operator>Contains</operator>
+                            <rightValue>
+                                <stringValue>Share</stringValue>
+                            </rightValue>
+                        </conditions>
+                    </visibilityRule>
+                </fields>
+                <fields>
+                    <name>ipt_StratAccts_BidValueDefending</name>
+                    <dataType>Currency</dataType>
+                    <fieldText>What is the bid value of defending business?</fieldText>
+                    <fieldType>InputField</fieldType>
+                    <helpText>&lt;p&gt;&lt;span style=&quot;background-color: rgb(255, 255, 255); color: rgb(68, 68, 68);&quot;&gt;Existing business on existing customer&lt;/span&gt;&lt;/p&gt;</helpText>
+                    <isRequired>false</isRequired>
+                    <scale>0</scale>
+                    <visibilityRule>
+                        <conditionLogic>and</conditionLogic>
+                        <conditions>
+                            <leftValueReference>ipt_StratAccts_BidType</leftValueReference>
+                            <operator>Contains</operator>
+                            <rightValue>
+                                <stringValue>Defending</stringValue>
+                            </rightValue>
+                        </conditions>
+                    </visibilityRule>
+                </fields>
+                <inputParameters>
+                    <name>width</name>
+                    <value>
+                        <stringValue>6</stringValue>
+                    </value>
+                </inputParameters>
+                <isRequired>false</isRequired>
+            </fields>
+            <fields>
+                <name>scn_StratAccts_QualifyingScreen_Section3_Column2</name>
+                <fieldType>Region</fieldType>
+                <fields>
+                    <name>ipt_StratAccts_CustomerRequestedCompleteDate</name>
+                    <dataType>Date</dataType>
+                    <fieldText>What is the customer requested complete date?</fieldText>
+                    <fieldType>InputField</fieldType>
+                    <isRequired>true</isRequired>
+                    <validationRule>
+                        <errorMessage>&lt;p&gt;Please provide a future date&lt;/p&gt;</errorMessage>
+                        <formulaExpression>{!ipt_StratAccts_CustomerRequestedCompleteDate}&gt;TODAY()</formulaExpression>
+                    </validationRule>
+                </fields>
+                <fields>
+                    <name>ipt_StratAccts_PortalSubmission</name>
+                    <choiceReferences>chc_StratAccts_PortalSubmission</choiceReferences>
+                    <dataType>String</dataType>
+                    <fieldText>Does this request require a portal submission?</fieldText>
+                    <fieldType>DropdownBox</fieldType>
+                    <isRequired>true</isRequired>
+                </fields>
+                <fields>
+                    <name>ipt_StratAccts_URLportal</name>
+                    <dataType>String</dataType>
+                    <fieldText>What is the portal URL address?</fieldText>
+                    <fieldType>InputField</fieldType>
+                    <helpText>&lt;p&gt;Please use a valid URL format (&lt;em&gt;eg: https://www.siteaddress.com&lt;/em&gt;). 255 character limit.&lt;/p&gt;</helpText>
+                    <isRequired>false</isRequired>
+                    <visibilityRule>
+                        <conditionLogic>and</conditionLogic>
+                        <conditions>
+                            <leftValueReference>ipt_StratAccts_PortalSubmission</leftValueReference>
+                            <operator>EqualTo</operator>
+                            <rightValue>
+                                <stringValue>Yes</stringValue>
+                            </rightValue>
+                        </conditions>
+                    </visibilityRule>
+                </fields>
+                <inputParameters>
+                    <name>width</name>
+                    <value>
+                        <stringValue>6</stringValue>
+                    </value>
+                </inputParameters>
+                <isRequired>false</isRequired>
+            </fields>
+            <isRequired>false</isRequired>
+            <regionContainerType>SectionWithoutHeader</regionContainerType>
+        </fields>
+        <fields>
+            <name>ipt_StratAccts_ProdCats</name>
+            <extensionName>c:fsc_dualListBox3</extensionName>
+            <fieldType>ComponentInstance</fieldType>
+            <inputParameters>
+                <name>disableReordering</name>
+                <value>
+                    <booleanValue>true</booleanValue>
+                </value>
+            </inputParameters>
+            <inputParameters>
+                <name>allOptionsStringFormat</name>
+                <value>
+                    <stringValue>csv</stringValue>
+                </value>
+            </inputParameters>
+            <inputParameters>
+                <name>allOptionsCSV</name>
+                <value>
+                    <elementReference>var_ProdCats_DelimitedList</elementReference>
+                </value>
+            </inputParameters>
+            <inputParameters>
+                <name>selectedOptionsCSV</name>
+                <value>
+                    <elementReference>var_ProdCats_DelimitedList</elementReference>
+                </value>
+            </inputParameters>
+            <inputParameters>
+                <name>size</name>
+                <value>
+                    <numberValue>3.0</numberValue>
+                </value>
+            </inputParameters>
+            <inputParameters>
+                <name>label</name>
+                <value>
+                    <stringValue>Which Product Categories apply to this request?</stringValue>
+                </value>
+            </inputParameters>
+            <inputParameters>
+                <name>sourceLabel</name>
+                <value>
+                    <stringValue>Available</stringValue>
+                </value>
+            </inputParameters>
+            <inputParameters>
+                <name>selectedLabel</name>
+                <value>
+                    <stringValue>Selected (opportunity values selected by default)</stringValue>
+                </value>
+            </inputParameters>
+            <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
+            <isRequired>true</isRequired>
+            <storeOutputAutomatically>true</storeOutputAutomatically>
+            <visibilityRule>
+                <conditionLogic>and</conditionLogic>
+                <conditions>
+                    <leftValueReference>var_ProdCats_DelimitedList</leftValueReference>
+                    <operator>IsNull</operator>
+                    <rightValue>
+                        <booleanValue>false</booleanValue>
+                    </rightValue>
+                </conditions>
+            </visibilityRule>
+        </fields>
+        <fields>
+            <name>scn_StratAccts_QualifyingScreen_Section4</name>
+            <fieldType>RegionContainer</fieldType>
+            <fields>
+                <name>scn_StratAccts_QualifyingScreen_Section4_Column1</name>
+                <fieldType>Region</fieldType>
+                <inputParameters>
+                    <name>width</name>
+                    <value>
+                        <stringValue>12</stringValue>
+                    </value>
+                </inputParameters>
+                <isRequired>false</isRequired>
+            </fields>
+            <isRequired>false</isRequired>
+            <regionContainerType>SectionWithoutHeader</regionContainerType>
+        </fields>
+        <fields>
+            <name>sxn_StratAccts_QualifyingSection</name>
+            <fieldText>Qualifying Questions</fieldText>
+            <fieldType>RegionContainer</fieldType>
+            <fields>
+                <name>sxn_StratAccts_QualifyingSection_Column1</name>
+                <fieldType>Region</fieldType>
+                <fields>
+                    <name>ipt_StratAccts_ReviewedAndApprovedByLeadership</name>
+                    <choiceReferences>chc_StratAccts_ReviewedAndApprovedByLeadership</choiceReferences>
+                    <dataType>String</dataType>
+                    <fieldText>Has this been reviewed and approved by your direct / Sales leadership?</fieldText>
+                    <fieldType>DropdownBox</fieldType>
+                    <helpText>&lt;p&gt;If third party fees, must be pre-approved&lt;/p&gt;</helpText>
+                    <isRequired>true</isRequired>
+                </fields>
+                <fields>
+                    <name>ipt_StratAccts_ExistingBusinessRelationship</name>
+                    <choiceReferences>chc_StratAccts_ExistingBusinessRelationship</choiceReferences>
+                    <dataType>String</dataType>
+                    <fieldText>Do we have an existing business relationship, direct knowledge of contact and business, or access to the C-level?</fieldText>
+                    <fieldType>DropdownBox</fieldType>
+                    <isRequired>true</isRequired>
+                </fields>
+                <fields>
+                    <name>ipt_StratAccts_BusinessEventDrivingRequest</name>
+                    <choiceReferences>chc_StratAccts_BusinessEventDrivingRequest</choiceReferences>
+                    <dataType>String</dataType>
+                    <fieldText>Do we know what business event is driving this request?</fieldText>
+                    <fieldType>DropdownBox</fieldType>
+                    <isRequired>true</isRequired>
+                </fields>
+                <fields>
+                    <name>ipt_StratAccts_DefendingBusinessWithThisRequest</name>
+                    <choiceReferences>chc_StratAccts_DefendingBusinessWithThisRequest</choiceReferences>
+                    <dataType>String</dataType>
+                    <fieldText>Are we defending business with this request?</fieldText>
+                    <fieldType>DropdownBox</fieldType>
+                    <isRequired>true</isRequired>
+                </fields>
+                <fields>
+                    <name>ipt_StratAccts_MeetRequestRequirements</name>
+                    <choiceReferences>chc_StratAccts_MeetRequestRequirements</choiceReferences>
+                    <dataType>String</dataType>
+                    <fieldText>Can we meet the request requirements?</fieldText>
+                    <fieldType>DropdownBox</fieldType>
+                    <helpText>&lt;p&gt;Timeline, necessary info, financial model&lt;/p&gt;</helpText>
+                    <isRequired>true</isRequired>
+                </fields>
+                <fields>
+                    <name>ipt_StratAccts_VeritivAcceptsTerms</name>
+                    <choiceReferences>chc_StratAccts_VeritivAcceptsTerms</choiceReferences>
+                    <dataType>String</dataType>
+                    <fieldText>Is Veritiv willing to accept the requested terms?</fieldText>
+                    <fieldType>DropdownBox</fieldType>
+                    <helpText>&lt;p&gt;Pricing terms, delivery needs, etc. If there are T&amp;amp;Cs required to quote, legal review is needed before proceeding.&lt;/p&gt;</helpText>
+                    <isRequired>true</isRequired>
+                </fields>
+                <inputParameters>
+                    <name>width</name>
+                    <value>
+                        <stringValue>6</stringValue>
+                    </value>
+                </inputParameters>
+                <isRequired>false</isRequired>
+            </fields>
+            <fields>
+                <name>sxn_StratAccts_QualifyingSection_Column2</name>
+                <fieldType>Region</fieldType>
+                <fields>
+                    <name>ipt_StratAccts_SufficientInformationProvided</name>
+                    <choiceReferences>chc_StratAccts_SufficientInformationProvided</choiceReferences>
+                    <dataType>String</dataType>
+                    <fieldText>Has sufficient usage information and/or detailed specs necessary to quote been provided? If not, can we acquire additional information?</fieldText>
+                    <fieldType>DropdownBox</fieldType>
+                    <isRequired>true</isRequired>
+                </fields>
+                <fields>
+                    <name>ipt_StratAccts_ValuePropositionFit</name>
+                    <choiceReferences>chc_StratAccts_ValuePropositionFit</choiceReferences>
+                    <dataType>String</dataType>
+                    <fieldText>Does this opportunity fit our ability to sell our value proposition?</fieldText>
+                    <fieldType>DropdownBox</fieldType>
+                    <isRequired>true</isRequired>
+                </fields>
+                <fields>
+                    <name>ipt_StratAccts_InOurKeyVerticals</name>
+                    <choiceReferences>chc_StratAccts_InOurKeyVerticals</choiceReferences>
+                    <dataType>String</dataType>
+                    <fieldText>Is this opportunity in one of our key Verticals?</fieldText>
+                    <fieldType>DropdownBox</fieldType>
+                    <helpText>&lt;p&gt;Heavy MFG, Light MFG, Food &amp;amp; Beverage, Entertainment &amp;amp; Hospitality, Healthcare, Logistics, Office Like, Wholesale/Retail, Government&lt;/p&gt;</helpText>
+                    <isRequired>true</isRequired>
+                </fields>
+                <fields>
+                    <name>ipt_StratAccts_LocationUSorMexico</name>
+                    <choiceReferences>chc_StratAccts_LocationUSorMexico</choiceReferences>
+                    <dataType>String</dataType>
+                    <fieldText>Are the customer locations majority US &amp; Mexico?</fieldText>
+                    <fieldType>DropdownBox</fieldType>
+                    <isRequired>true</isRequired>
+                </fields>
+                <fields>
+                    <name>ipt_StratAccts_ProductsInOurCore</name>
+                    <choiceReferences>chc_StratAccts_ProductsInOurCore</choiceReferences>
+                    <dataType>String</dataType>
+                    <fieldText>Are the majority of the products within our core? If not, can we quote subs?</fieldText>
+                    <fieldType>DropdownBox</fieldType>
+                    <isRequired>true</isRequired>
+                </fields>
+                <fields>
+                    <name>ipt_StratAccts_HaveOrderAndDeliveryMetrics</name>
+                    <choiceReferences>chc_StratAccts_HaveOrderAndDeliveryMetrics</choiceReferences>
+                    <dataType>String</dataType>
+                    <fieldText>Do we have the information to determine order &amp; delivery metrics?</fieldText>
+                    <fieldType>DropdownBox</fieldType>
+                    <helpText>&lt;p&gt;Number of locations and usage&lt;/p&gt;</helpText>
+                    <isRequired>true</isRequired>
+                </fields>
+                <inputParameters>
+                    <name>width</name>
+                    <value>
+                        <stringValue>6</stringValue>
+                    </value>
+                </inputParameters>
+                <isRequired>false</isRequired>
+            </fields>
+            <isRequired>false</isRequired>
+            <regionContainerType>SectionWithHeader</regionContainerType>
+        </fields>
+        <fields>
+            <name>ipt_StratAccts_Comments</name>
+            <dataType>String</dataType>
+            <fieldText>Comments</fieldText>
+            <fieldType>InputField</fieldType>
+            <isRequired>false</isRequired>
+            <validationRule>
+                <errorMessage>&lt;p&gt;Character limit is 1,000&lt;/p&gt;</errorMessage>
+                <formulaExpression>LEN({!ipt_StratAccts_Comments})&lt;1000</formulaExpression>
+            </validationRule>
+        </fields>
+        <fields>
+            <name>ipt_StratAccts_FIleUpload</name>
+            <extensionName>c:fileUploadImproved</extensionName>
+            <fieldType>ComponentInstance</fieldType>
+            <inputParameters>
+                <name>required</name>
+                <value>
+                    <booleanValue>true</booleanValue>
+                </value>
+            </inputParameters>
+            <inputParameters>
+                <name>cb_required</name>
+                <value>
+                    <stringValue>CB_TRUE</stringValue>
+                </value>
+            </inputParameters>
+            <inputParameters>
+                <name>requiredMessage</name>
+                <value>
+                    <stringValue>Please upload at least one file</stringValue>
+                </value>
+            </inputParameters>
+            <inputParameters>
+                <name>allowMultiple</name>
+                <value>
+                    <booleanValue>true</booleanValue>
+                </value>
+            </inputParameters>
+            <inputParameters>
+                <name>cb_allowMultiple</name>
+                <value>
+                    <stringValue>CB_TRUE</stringValue>
+                </value>
+            </inputParameters>
+            <inputParameters>
+                <name>label</name>
+                <value>
+                    <stringValue>Please upload all relevant files</stringValue>
+                </value>
+            </inputParameters>
+            <inputParameters>
+                <name>sessionKey</name>
+                <value>
+                    <elementReference>$Flow.InterviewGuid</elementReference>
+                </value>
+            </inputParameters>
+            <inputParameters>
+                <name>visibleToAllUsers</name>
+                <value>
+                    <booleanValue>true</booleanValue>
+                </value>
+            </inputParameters>
+            <inputParameters>
+                <name>cb_visibleToAllUsers</name>
+                <value>
+                    <stringValue>CB_TRUE</stringValue>
+                </value>
+            </inputParameters>
+            <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
+            <isRequired>true</isRequired>
+            <outputParameters>
+                <assignToReference>col_StratAccts_ContentDocumentIdsUploadedTextCollection</assignToReference>
+                <name>contentDocumentIds</name>
+            </outputParameters>
+        </fields>
+        <showFooter>true</showFooter>
+        <showHeader>false</showHeader>
+    </screens>
+    <screens>
+        <description>Screen to notify the user the request did not score high enough to qualify</description>
+        <name>scn_StratAccts_Unqualified</name>
+        <label>Unqualified Message</label>
+        <locationX>1898</locationX>
+        <locationY>2246</locationY>
+        <allowBack>false</allowBack>
+        <allowFinish>true</allowFinish>
+        <allowPause>false</allowPause>
+        <fields>
+            <name>txt_StratAccts_Unqualified_Message</name>
+            <fieldText>&lt;p style=&quot;text-align: center;&quot;&gt;&lt;span style=&quot;color: rgb(68, 68, 68);&quot;&gt;Your request does not meet the minimum requirements to qualify for the Strategic Accounts team to assist.&lt;/span&gt;&lt;/p&gt;&lt;p style=&quot;text-align: center;&quot;&gt;&lt;span style=&quot;color: rgb(68, 68, 68);&quot;&gt;Please work with your management team to obtain additional information in order to qualify your opportunity and then re-submit your request.&lt;/span&gt;&lt;/p&gt;</fieldText>
+            <fieldType>DisplayText</fieldType>
+        </fields>
+        <nextOrFinishButtonLabel>Exit</nextOrFinishButtonLabel>
+        <showFooter>true</showFooter>
+        <showHeader>false</showHeader>
+    </screens>
+    <start>
+        <locationX>1549</locationX>
+        <locationY>0</locationY>
+        <connector>
+            <targetReference>get_Opportunity</targetReference>
+        </connector>
+    </start>
+    <status>Active</status>
+    <subflows>
+        <description>Calls the &apos;Work Order - [SF] Sourcing Work Order Creation&apos; Flow for Field Sourcing requests</description>
+        <name>sub_FieldSourcingWOFlow</name>
+        <label>Field Sourcing WO Creation</label>
+        <locationX>50</locationX>
+        <locationY>674</locationY>
+        <flowName>Work_Order_SF_Sourcing_Work_Order_Creation</flowName>
+        <inputAssignments>
+            <name>recordId</name>
+            <value>
+                <elementReference>recordId</elementReference>
+            </value>
+        </inputAssignments>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </subflows>
+    <textTemplates>
+        <description>Received an error that the text in the body below exceeded 255 characters when attempting to use as a label in a picklist, although it does not. This template was created to circumvent that issue.</description>
+        <name>tmp_RequestCriteriaNo</name>
+        <isViewedAsPlainText>false</isViewedAsPlainText>
+        <text>&lt;p&gt;&lt;span style=&quot;background-color: rgb(255, 255, 255); color: rgb(68, 68, 68);&quot;&gt;No, this request is not for a Corporate Account and not an MLA opportunity over&lt;/span&gt;&lt;strong style=&quot;background-color: rgb(255, 255, 255); color: rgb(68, 68, 68);&quot;&gt; $2M (FS) or $5M (PKG)&lt;/strong&gt;&lt;span style=&quot;background-color: rgb(255, 255, 255); color: rgb(68, 68, 68);&quot;&gt;.  I would like to create a Field opportunity Work Order instead.&lt;/span&gt;&lt;/p&gt;</text>
+    </textTemplates>
+    <textTemplates>
+        <description>TESTING</description>
+        <name>tmp_StratAccts_EmailTemplate</name>
+        <isViewedAsPlainText>true</isViewedAsPlainText>
+        <text>&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+	&lt;head&gt;
+		&lt;meta http-equiv=&quot;Content-Type&quot; content=&quot;text/html; charset=utf-8&quot;&gt;
+		&lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initialscale=1.0&quot;&gt;
+		&lt;meta http-equiv=&quot;X-UA-Compatible&quot; content=&quot;IE=edge&quot;&gt;
+		&lt;style type=&quot;text/css&quot;&gt;@media screen and (max-width: 480px) {slot[style] {margin-right: 0 !important;}.columnDiv {margin-right: 0 !important;}}@media screen and (min-width: 480px) {slot[style] {margin-bottom: 0 !important;}.columnDiv {margin-bottom: 0 !important;}}&lt;/style&gt;
+		&lt;style type=&quot;text/css&quot;&gt;@media screen and (max-width: 480px) {.contentbuilderBaseColumnRow .columnCell {display:inline-block;width:100%}}&lt;/style&gt;
+		&lt;style type=&quot;text/css&quot;&gt;.contentpageDefaultEmailTemplatePageTemplate .contentRoot {width: 600px;}@media only screen and (max-width: 480px) {.contentpageDefaultEmailTemplatePageTemplate .contentRoot {width: 320px;}}&lt;/style&gt;
+	&lt;/head&gt;
+	&lt;body&gt;
+		&lt;table class=&quot;contentpageDefaultEmailTemplatePageTemplate&quot;
+				style=&quot;background-color: #E9EAEC;&quot;
+				role=&quot;presentation&quot;
+				id=&quot;contentpage_emailTemplateBodyContent&quot;
+				width=&quot;100%&quot;
+				cellpadding=&quot;0&quot;
+				cellspacing=&quot;0&quot;&gt;
+			&lt;tr&gt;
+				&lt;td width=&quot;100%&quot; align=&quot;center&quot;&gt;
+					&lt;table class=&quot;contentRoot&quot;
+							style=&quot;background-color: #FFFFFF;&quot;
+							role=&quot;presentation&quot;
+							width=&quot;600&quot;
+							cellpadding=&quot;0&quot;
+							cellspacing=&quot;0&quot;&gt;
+						&lt;tr&gt;
+							&lt;td style=&quot;padding-top: 10px; padding-bottom: 10px; padding-left: 10px; padding-right: 10px;&quot;&gt;
+								&lt;table class=&quot;contentbuilderBaseColumnRow&quot;
+										style=&quot;align-items: flex-start; width: 100%;&quot;
+										role=&quot;presentation&quot;
+										width=&quot;100%&quot;
+										cellpadding=&quot;0&quot;
+										cellspacing=&quot;0&quot;&gt;
+									&lt;tr valign=&quot;top&quot;&gt;
+										&lt;td width=&quot;100%&quot;
+											class=&quot;columnCell&quot;
+											style=&quot;vertical-align: top;display: inline-block; float:left&quot;&gt;
+											&lt;table cellpadding=&quot;0&quot;
+													cellspacing=&quot;0&quot;
+													style=&quot;width: 100%; border-collapse: collapse; word-break:break-word;&quot;&gt;
+												&lt;tr&gt;
+													&lt;td&gt;
+														&lt;table style=&quot;width: 100%; border-collapse: collapse; word-break: break-word; font-size: 14px&quot;
+																id=&quot;contentRegion&quot;
+																role=&quot;presentation&quot;
+																cellspacing=&quot;0&quot;
+																cellpadding=&quot;0&quot;
+																locked=&quot;1&quot;&gt;
+															&lt;tr&gt;
+																&lt;td style=&quot;font-family: Arial, Helvetica, sans-serif;padding-top: 25px;padding-bottom: 25px;&quot;&gt;
+																	&lt;p&gt;The following {!ipt_StratAccts_RequestTypeChoice.value} Work Order request has been created. Please click the button below to view the record in Salesforce.&lt;/p&gt;
+																&lt;/td&gt;
+															&lt;/tr&gt;
+														&lt;/table&gt;
+													&lt;/td&gt;
+												&lt;/tr&gt;
+											&lt;/table&gt;
+										&lt;/td&gt;
+									&lt;/tr&gt;
+								&lt;/table&gt;
+								&lt;table class=&quot;contentbuilderBaseColumnRow&quot;
+										style=&quot;align-items: flex-start; width: 100%;&quot;
+										role=&quot;presentation&quot;
+										width=&quot;100%&quot;
+										cellpadding=&quot;0px&quot;
+										cellspacing=&quot;0&quot;&gt;
+									&lt;tr valign=&quot;top&quot;&gt;
+										&lt;td width=&quot;100%&quot;
+											class=&quot;columnCell&quot;
+											style=&quot;vertical-align: top;display: inline-block; float:left&quot;&gt;
+											&lt;div class=&quot;columnDiv&quot;
+												style=&quot;margin-left: 20px;margin-right: 5px;margin-bottom: 0px;&quot;&gt;
+												&lt;table cellpadding=&quot;0px&quot;
+													cellspacing=&quot;0&quot;
+													style=&quot;width: 100%; border-collapse: collapse; word-break:break-word;&quot;&gt;
+													&lt;tr&gt;
+														&lt;td&gt;
+															&lt;table style=&quot;width: 100%; border-collapse: collapse; word-break: break-word; font-size: 14px&quot;
+																id=&quot;contentRegion&quot;
+																role=&quot;presentation&quot;
+																cellspacing=&quot;0&quot;
+																cellpadding=&quot;0px&quot;
+																locked=&quot;0&quot;&gt;
+																&lt;tr&gt;
+																	&lt;td style=&quot;font-family: Arial, Helvetica, sans-serif;&quot;&gt;
+																		&lt;span style=&quot;font-size:14px;&quot;&gt;
+																			&lt;p&gt;Account:&amp;nbsp;{!get_StratAccts_Qualified_NewWorkOrder.Account.Name}&lt;br /&gt;
+																			Opportunity:&amp;nbsp;{!get_StratAccts_Qualified_NewWorkOrder.Opportunity_del__r.Name}&lt;br /&gt;
+																			Segment:&amp;nbsp;{!get_StratAccts_Qualified_NewWorkOrder.Segment__c}&lt;br /&gt;
+																			Sourcing Product Category:&amp;nbsp;{!get_StratAccts_Qualified_NewWorkOrder.Prod_Categories__c}&lt;br /&gt;
+																		&lt;/span&gt;
+																	&lt;/td&gt;
+																&lt;/tr&gt;
+															&lt;/table&gt;
+														&lt;/td&gt;
+													&lt;/tr&gt;
+												&lt;/table&gt;
+											&lt;/div&gt;
+										&lt;/td&gt;
+									&lt;/tr&gt;
+								&lt;/table&gt;
+								&lt;br&gt;							
+								&lt;table class=&quot;contentbuilderBaseColumnRow&quot;
+										style=&quot;align-items: flex-start; width: 100%;&quot;
+										role=&quot;presentation&quot;
+										width=&quot;100%&quot;
+										cellpadding=&quot;0&quot;
+										cellspacing=&quot;0&quot;&gt;
+									&lt;tr valign=&quot;top&quot;&gt;
+										&lt;td width=&quot;100%&quot;
+											class=&quot;columnCell&quot;
+											style=&quot;vertical-align: top;display: inline-block; float:left&quot;&gt;
+											&lt;table cellpadding=&quot;0&quot;
+												cellspacing=&quot;0&quot;
+												style=&quot;width: 100%; border-collapse: collapse; word-break:break-word;&quot;&gt;
+												&lt;tr&gt;
+													&lt;td&gt;
+														&lt;table style=&quot;border: 0; width: 100%; border-collapse: collapse; mso-table-lspace:0pt;mso-table-rspace:0pt;&quot;
+															locked=&quot;1&quot;&gt;
+															&lt;tr&gt;
+																&lt;td style=&quot;mso-table-lspace:0pt;mso-table-rspace:0pt;&quot;&gt;
+																	&lt;div style=&quot;word-break:break-word; border: 0; mso-border-alt: 0; text-align:center; &quot;&gt;
+																		&lt;div style=&quot;display: inline-block; border: 0; mso-border-alt: 0; &quot;&gt;
+																			&lt;a style=&quot;direction:ltr;display:block;text-align:center;margin:0; font-family:Arial, Helvetica, sans-serif; font-size:16px; padding-top: 10px;padding-right: 20px;padding-bottom: 10px;padding-left: 20px; color:#FFFFFF;font-weight:normal;font-style:normal;text-decoration:none;border:0;background-color:#007940;border-radius:15px;mso-padding-alt:0;&quot;
+																				href=&quot;{!fx_StratAccts_Hyperlink}{!get_StratAccts_Qualified_NewWorkOrder.Id}&quot;
+																				rel=&quot;noopener noreferrer&quot;
+																				target=&quot;_blank&quot;&gt;
+																				&lt;i style=&quot;background-color:#007940; letter-spacing: 20px; mso-text-raise: 10px; mso-font-width: -100%;&quot;&gt;&amp;nbsp;&lt;/i&gt;
+																				&lt;span&gt;{!get_StratAccts_Qualified_NewWorkOrder.WorkOrderNumber}&lt;/span&gt;
+																				&lt;i style=&quot;background-color:#007940; letter-spacing: 20px; mso-text-raise: -10px; mso-font-width: -100%;&quot;&gt;&amp;nbsp;&lt;/i&gt;
+																			&lt;/a&gt;
+																		&lt;/div&gt;
+																	&lt;/div&gt;
+																&lt;/td&gt;
+															&lt;/tr&gt;
+														&lt;/table&gt;
+													&lt;/td&gt;
+												&lt;/tr&gt;
+											&lt;/table&gt;
+										&lt;/td&gt;
+									&lt;/tr&gt;
+								&lt;/table&gt;
+							&lt;/td&gt;
+						&lt;/tr&gt;
+					&lt;/table&gt;
+				&lt;/td&gt;
+			&lt;/tr&gt;
+		&lt;/table&gt;
+	&lt;/body&gt;
+&lt;/html&gt;</text>
+    </textTemplates>
+    <textTemplates>
+        <description>Email template to be used to send an email to the submitter</description>
+        <name>tmp_StratAccts_EmailTemplateCLASSICSSTYLE</name>
+        <isViewedAsPlainText>false</isViewedAsPlainText>
+        <text>&lt;p&gt;&lt;span style=&quot;font-size: 14px;&quot;&gt;The following {!ipt_StratAccts_RequestTypeChoice.value} Work Order request has been created.&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot;font-size: 14px;&quot;&gt;Account:&amp;nbsp;{!get_StratAccts_Qualified_NewWorkOrder.Account.Name}&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot;font-size: 14px;&quot;&gt;Opportunity: {!get_StratAccts_Qualified_NewWorkOrder.Opportunity_del__r.Name}&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot;font-size: 14px;&quot;&gt;Segment: {!get_StratAccts_Qualified_NewWorkOrder.Segment__c}&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot;font-size: 14px;&quot;&gt;Sourcing Product Category:&amp;nbsp;{!get_StratAccts_Qualified_NewWorkOrder.Prod_Categories__c}&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot;font-size: 14px;&quot;&gt;Work Order Number:&lt;/span&gt;&lt;strong style=&quot;font-size: 14px;&quot;&gt;&amp;nbsp;&lt;/strong&gt;&lt;a href=&quot;{!fx_StratAccts_Hyperlink}{!get_StratAccts_Qualified_NewWorkOrder.Id}&quot; rel=&quot;noopener noreferrer&quot; target=&quot;_blank&quot; style=&quot;font-size: 14px;&quot;&gt;&lt;strong&gt;{!get_StratAccts_Qualified_NewWorkOrder.WorkOrderNumber}&lt;/strong&gt;&lt;/a&gt;&lt;/p&gt;</text>
+    </textTemplates>
+    <variables>
+        <name>col_Oppy_ProdCats</name>
+        <dataType>Multipicklist</dataType>
+        <isCollection>true</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+    <variables>
+        <description>update</description>
+        <name>col_StratAccts_ContentDocumentCollection</name>
+        <dataType>SObject</dataType>
+        <isCollection>true</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+        <objectType>ContentDocument</objectType>
+    </variables>
+    <variables>
+        <description>Stores the list of Content Document Ids that were uploaded</description>
+        <name>col_StratAccts_ContentDocumentIdsUploadedTextCollection</name>
+        <dataType>String</dataType>
+        <isCollection>true</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+    <variables>
+        <description>Stores the list of email address recipients to be used in the email alert action</description>
+        <name>col_StratAccts_Qualified_EmailRecipientCollection</name>
+        <dataType>String</dataType>
+        <isCollection>true</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+    <variables>
+        <name>recordId</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>true</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+    <variables>
+        <name>var_FileSingle</name>
+        <dataType>SObject</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+        <objectType>ContentDocumentLink</objectType>
+    </variables>
+    <variables>
+        <description>Stores Product Category values from the Opportunity to present to user to include/exclude in the screen multi-select picklist</description>
+        <name>var_ProdCats_DelimitedList</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+    <variables>
+        <name>var_ProdCats_DelimitedParse</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+    <variables>
+        <description>Stores the new Work Order record that was created</description>
+        <name>var_StratAccts_NewWO</name>
+        <dataType>SObject</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+        <objectType>WorkOrder</objectType>
+    </variables>
+    <variables>
+        <name>var_StratAccts_Qualified_FileCollection</name>
+        <dataType>SObject</dataType>
+        <isCollection>true</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+        <objectType>ContentDocumentLink</objectType>
+    </variables>
+    <variables>
+        <description>Stores the Work Order record variables to be used in the Flow</description>
+        <name>var_WorkOrderRecordVariable</name>
+        <dataType>SObject</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+        <objectType>WorkOrder</objectType>
+    </variables>
+</Flow>

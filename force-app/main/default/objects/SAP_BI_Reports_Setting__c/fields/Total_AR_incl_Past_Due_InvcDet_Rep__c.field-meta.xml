@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Total_AR_incl_Past_Due_InvcDet_Rep__c</fullName>
+    <description>A detail-level report that shows Account Receivable assigned to a sales representative. The report provides total amount outstanding, current and aging buckets by customer and the list of past due invoices with invoice details.</description>
+    <externalId>false</externalId>
+    <inlineHelpText>CUID of the  Total AR Past Due incl Invc Details Rep Report in SAP, as viewed in the General Properties.</inlineHelpText>
+    <label>Total AR incl Past Due InvcDet-RepCUID</label>
+    <length>255</length>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

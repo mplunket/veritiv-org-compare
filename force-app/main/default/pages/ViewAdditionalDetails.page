@@ -1,0 +1,499 @@
+<apex:page id="QLIAdditionalDetails"
+        name="Additional Details"
+        title="{!$Label.Additional_Details}"
+        showHeader="false"
+        standardController="Quote__c"
+        extensions="ViewAdditionalDetailsQuoteContExt">
+
+    <!-- Javascript library -->
+    <script type="text/javascript" src="{!$Resource.Ext_3_2_1}/adapter/ext/ext-base.js"></script>
+    <script type="text/javascript" src="{!$Resource.Ext_3_2_1}/ext-all.js"></script>
+    <script type="text/javascript" src="{!$Resource.UnisourceAdditionalDetails}"></script>
+    
+    <apex:includeScript value="{!URLFOR($Resource.jquery1_8_2)}"  />
+    <!-- Javascript Price Matrix Remote Objects Definition -->
+    <apex:remoteObjects jsNamespace="RemoteObjectModel">
+        <apex:remoteObjectModel name="PricingMatrix__c" jsShorthand="Matrix" fields="Id">
+            <apex:remoteObjectField name="CWT_Dependent__c" jsShorthand="cwtDependent" />
+            <apex:remoteObjectField name="CWT_Dependent_Field__c" jsShorthand="cwDependentField" />
+            <apex:remoteObjectField name="Error_To_Display__c" jsShorthand="errorToDisplay" />
+            <apex:remoteObjectField name="Fields_To_Blank__c" jsShorthand="fieldsToBlank" />
+            <apex:remoteObjectField name="Fields_To_Grey__c" jsShorthand="fieldsToGrey" />
+            <apex:remoteObjectField name="Policy_Type_Value__c" jsShorthand="policyTypeValue" />
+            <apex:remoteObjectField name="Price_Level_Value__c" jsShorthand="priceLevelValue" />
+        </apex:remoteObjectModel>
+    </apex:remoteObjects>
+
+    <style type="text/css">
+        .negativeValue { color: red; }
+        .highlightedValue { color: blue;}
+    </style>
+
+<apex:sectionHeader id="shAdditionalDetails" title="{!$Label.Quote_Line_Items}" subtitle="{!Quote__c.Name}"/>
+<apex:pageMessages id="pmAdditionalDetails" />
+
+<apex:form id="frmMain">
+    <apex:actionFunction action="{!saveQLI}" name="saveQLI" rerender="pmAdditionalDetails">
+    </apex:actionFunction>
+
+    <apex:pageBlock id="pbAdditionalDetails" title="{!$Label.Additional_Details}">
+        <apex:pageBlockButtons location="bottom">
+            <input type="button" value="{!$Label.Save_and_Validate}" onclick="saveQLI()" class="btn" />
+            <input type="button" value="{!$Label.Close_Additional_Details}" onclick="window.top.close(); return false;" class="btn" />
+        </apex:pageBlockButtons>
+            <table id="quoteLineItems">
+                <apex:repeat value="{!qliModel.selectedProducts}" var="selectedProduct"  id="productInformationRowId">
+                    <tr onmouseover="if (window.hiOn){hiOn(this);}" onmouseout="if (window.hiOff){hiOff(this);}" onblur="if (window.hiOff){hiOff(this);}" onfocus="if (window.hiOn){hiOn(this);}">
+                            <td>
+                                <hr/>
+                                <table style="width:100%">
+                                    <!-- <thead> -->
+                                        <tr>
+                                            <td colspan="6" style="vertical-align:bottom;width:100%"><strong>{!$Label.Product_Description}</strong></td>
+                                            <td colspan="2">
+                                                <strong><apex:outputText value="{!$ObjectType.Quote_Line_Item__c.fields.Cust_Item_Code__c.label}" rendered="{!NOT(selectedProduct.quoteLineItem.Special_Item__c)}"/></strong>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td colspan="6" class="{!IF(selectedProduct.quoteLineItem.Locked__c,'negativeValue','')}">
+                                                <apex:outputField value="{!selectedProduct.quoteLineItem.Product_Description__c}"
+                                                    rendered="{!OR(NOT(selectedProduct.quoteLineItem.Special_Item__c),selectedProduct.quoteLineItem.Locked__c)}"/>
+                                                <apex:inputField value="{!selectedProduct.quoteLineItem.Product_Description__c}" style="width:350px"
+                                                    rendered="{!AND(selectedProduct.quoteLineItem.Special_Item__c,NOT(selectedProduct.quoteLineItem.Locked__c))}"/>
+                                            </td>
+                                            <td colspan="2">
+                                                <apex:outputField value="{!selectedProduct.quoteLineItem.Cust_Item_Code__c}" rendered="{!NOT(selectedProduct.quoteLineItem.Special_Item__c)}"/>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td style="vertical-align:bottom"><strong>{!$ObjectType.Quote_Line_Item__c.Fields.Product_Code__c.Label}</strong></td>
+                                            <td style="vertical-align:bottom"><strong>{!$ObjectType.Quote_Line_Item__c.Fields.Qty__c.Label}</strong></td>
+                                            <td style="vertical-align:bottom" title="Quantity Unit of Measure"><strong>{!$ObjectType.Quote_Line_Item__c.Fields.Quantity_unit_of_measure__c.Label}</strong></td>
+                                            <td style="vertical-align:bottom"><strong>{!$ObjectType.Quote_Line_Item__c.Fields.Price__c.Label}</strong></td>
+                                            <td style="vertical-align:bottom" title="Price/Cost Unit of Measure"><strong>{!$ObjectType.Quote_Line_Item__c.Fields.Price_unit_of_measure__c.Label}</strong></td>
+                                            <td style="vertical-align:bottom"><strong>{!$ObjectType.Quote_Line_Item__c.Fields.Cost__c.Label}</strong></td>
+                                            <td style="vertical-align:bottom;width:100px"><strong><apex:outputText value="{!$Label.GTM_percent}"/></strong></td>
+                                            <td style="vertical-align:bottom;width:100px"><strong>{!$ObjectType.Quote_Line_Item__c.Fields.Extended_Price__c.Label}</strong></td>
+                                            <td style="vertical-align:bottom;width:100px"><strong>{!$Label.GTM_CAS}</strong></td>
+                                            <td style="vertical-align:bottom;width:100px"><strong>{!$Label.Vendor_Name}</strong></td>
+                                        </tr>
+                                    <!-- </thead>-->
+                                    <tbody class="lineParentBody">
+                                        <tr class="lineItemRow">
+                                            <td class="{!IF(selectedProduct.quoteLineItem.Locked__c,'negativeValue','')}">
+                                                <input type="hidden" value="{!selectedProduct.ExtendedCost.Amount}" class="extAmountField" />
+                                                <input type="hidden" value="{!selectedProduct.quoteLineItem.Special_Item__c}" class="specialItemField" />
+                                                <input type="hidden" value="{!selectedProduct.quoteLineItem.Quantity_Unit_Factor__c}" class="qtyFactorField" />
+                                                <input type="hidden" value="{!selectedProduct.quoteLineItem.Price_Unit_Factor__c}" class="priceFactorField" />
+                                                <input type="hidden" value="{!selectedProduct.quoteLineItem.Cost_Unit_Factor__c}" class="costFactorField" />
+                                                <apex:outputField value="{!selectedProduct.quoteLineItem.Product_Code__c}"
+                                                    rendered="{!OR(NOT(selectedProduct.quoteLineItem.Special_Item__c),selectedProduct.quoteLineItem.Locked__c)}"/>
+                                                <apex:inputField value="{!selectedProduct.quoteLineItem.Product_Code__c}" style="width:90px"
+                                                    rendered="{!AND(selectedProduct.quoteLineItem.Special_Item__c,NOT(selectedProduct.quoteLineItem.Locked__c))}"/>
+                                            </td>
+                                            <td>
+                                                <apex:outputText style="width:75px"
+                                                    rendered="{!selectedProduct.quoteLineItem.Locked__c}" styleClass="qtyFieldText" value="{0,number,0.00}">
+                                                    <apex:param value="{!ROUND(selectedProduct.quoteLineItem.Qty__c, 2)}" />
+                                                </apex:outputText>
+                                                <apex:inputField value="{!selectedProduct.quoteLineItem.Qty__c}" style="width:75px" styleClass="qtyField"
+                                                    rendered="{!NOT(selectedProduct.quoteLineItem.Locked__c)}"/>
+                                            </td>
+                                            <td title="Quantity Unit of Measure">
+                                                <apex:outputField value="{!selectedProduct.quoteLineItem.Quantity_unit_of_measure__c}" style="width:50px"
+                                                    rendered="{!OR(selectedProduct.quoteLineItem.Locked__c,AND(NOT(selectedProduct.quoteLineItem.Special_Item__c),NOT(selectedProduct.enableUOM)))}"/>
+                                                <apex:inputField value="{!selectedProduct.quoteLineItem.Quantity_unit_of_measure__c}" style="width:50px" styleClass="qtyUOMField"
+                                                    rendered="{!AND(selectedProduct.quoteLineItem.Special_Item__c,NOT(selectedProduct.quoteLineItem.Locked__c))}"/>
+                                                <apex:selectList id="quom" value="{!selectedProduct.quoteLineItem.Quantity_unit_of_measure__c}" size="1" rendered="{!IF(selectedProduct.quoteLineItem.Special_Item__c,NOT(selectedProduct.quoteLineItem.Special_Item__c),selectedProduct.enableUOM)}">
+                                                    <apex:selectOptions value="{!selectedProduct.quantityUOMs}"/>
+                                                </apex:selectList>
+                                            </td>
+                                            <td>
+                                                <apex:outputText value="{0,number,0.00}" style="width:100px" rendered="{!selectedProduct.quoteLineItem.Locked__c}">
+                                                    <apex:param value="{!ROUND(selectedProduct.quoteLineItem.Price__c, 2)}"/>
+                                                </apex:outputText>
+                                                <apex:inputField id="price" value="{!selectedProduct.quoteLineItem.Price__c}" style="width:100px" styleClass="priceField"
+                                                    rendered="{!NOT(selectedProduct.quoteLineItem.Locked__c)}"/>
+                                            </td>
+                                            <td title="Price/Cost Unit of Measure">
+                                                <apex:outputField value="{!selectedProduct.quoteLineItem.Price_unit_of_measure__c}" style="width:50px"
+                                                    rendered="{!OR(selectedProduct.quoteLineItem.Locked__c,AND(NOT(selectedProduct.quoteLineItem.Special_Item__c),NOT(selectedProduct.enableUOM)))}"/>
+                                                <apex:inputField value="{!selectedProduct.quoteLineItem.Price_unit_of_measure__c}" style="width:50px" styleClass="priceUOMField"
+                                                    rendered="{!AND(selectedProduct.quoteLineItem.Special_Item__c,NOT(selectedProduct.quoteLineItem.Locked__c))}"/>
+                                                <apex:selectList id="puom" value="{!selectedProduct.quoteLineItem.Price_unit_of_measure__c}" size="1" rendered="{!IF(selectedProduct.quoteLineItem.Special_Item__c,NOT(selectedProduct.quoteLineItem.Special_Item__c),selectedProduct.enableUOM)}">
+                                                    <apex:selectOptions value="{!selectedProduct.priceUOMs}"/>
+                                                </apex:selectList>
+                                            </td>
+                                            <td>
+                                                <apex:outputText style="width:70px"
+                                                    rendered="{!selectedProduct.quoteLineItem.Locked__c}" styleClass="costFieldText" value="{0,number,0.000}">
+                                                    <apex:param value="{!ROUND(selectedProduct.quoteLineItem.Cost__c, 3)}" />
+                                                </apex:outputText>
+                                                <apex:inputField value="{!selectedProduct.quoteLineItem.Cost__c}" style="width:70px" id="cost" styleClass="costField"
+                                                    rendered="{!NOT(selectedProduct.quoteLineItem.Locked__c)}"/>
+                                            </td>
+                                            <td>
+                                                <apex:outputText value="{!selectedProduct.gtmPercent}" styleClass="{!IF(selectedProduct.quoteLineItem.GTM_percent__c<=0,'negativeValue','')}"
+                                                    rendered="{!selectedProduct.quoteLineItem.Locked__c}" style="width: 70px;"/>
+                                                <apex:inputText id="gtmPerc" value="{!selectedProduct.gtmPercent}" styleClass="gtmPercentField {!IF(selectedProduct.quoteLineItem.GTM_percent__c<=0,'negativeValue','')}"
+                                                    rendered="{!NOT(selectedProduct.quoteLineItem.Locked__c)}" style="width: 70px;"/>
+                                            </td>
+                                            <td>
+                                                <apex:outputText styleClass="extPriceField" id="extendedPrice" value="{0,number,0.000}"
+                                                    rendered="{!OR(NOT(selectedProduct.quoteLineItem.Special_Item__c),selectedProduct.quoteLineItem.Locked__c)}" >
+                                                    <apex:param value="{!ROUND( selectedProduct.quoteLineItem.Extended_Price__c, 3)}" />
+                                                </apex:outputText>
+                                                <apex:inputField styleClass="extPriceField" value="{!selectedProduct.quoteLineItem.Extended_Price__c}" style="width:70px"
+                                                    rendered="{!AND(selectedProduct.quoteLineItem.Special_Item__c,NOT(selectedProduct.quoteLineItem.Locked__c))}"/>
+                                            </td>
+                                            <td>
+                                                <apex:outputText id="gtmPrice" value="{0,number,0.000}" styleClass="gtmPriceField" >
+                                                    <apex:param value="{!ROUND( selectedProduct.quoteLineItem.GTM_CAS__c, 3)}" />
+                                                </apex:outputText>
+                                            </td>
+                                            <td>
+                                                <apex:outputField value="{!selectedProduct.quoteLineItem.Vendor_Name__c}"
+                                                    rendered="{!selectedProduct.quoteLineItem.Locked__c}"/>
+                                                <apex:inputField id="vendor" value="{!selectedProduct.quoteLineItem.Vendor_Name__c}"
+                                                    rendered="{!NOT(selectedProduct.quoteLineItem.Locked__c)}"/>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td><strong>{!$Label.Comments}</strong></td>
+                                            <td>
+                                                <!--  <strong><apex:outputText value="{!$ObjectType.Quote_Line_Item__c.fields.Brokerage__c.label}" rendered="{!selectedProduct.quoteLineItem.Special_Item__c}"/></strong> -->
+                                                <strong><apex:outputText value="{!$ObjectType.Quote_Line_Item__c.fields.Start_Price__c.label}" rendered="{!NOT(selectedProduct.quoteLineItem.Special_Item__c)}"/></strong>
+                                            </td>
+                                            <td>
+                                                <!--  <strong><apex:outputText value="{!$ObjectType.Quote_Line_Item__c.fields.Duty__c.label}" rendered="{!selectedProduct.quoteLineItem.Special_Item__c}"/></strong> -->
+                                            </td>
+                                            <td>
+                                                <strong><apex:outputText value="{!$ObjectType.Quote_Line_Item__c.fields.Target_Price__c.label}" rendered="{!NOT(selectedProduct.quoteLineItem.Special_Item__c)}"/></strong>
+                                                <!--  <strong><apex:outputText value="{!$ObjectType.Quote_Line_Item__c.fields.Exchange__c.label}" rendered="{!selectedProduct.quoteLineItem.Special_Item__c}"/></strong> -->
+                                                <!-- <strong><apex:outputText value="{!$ObjectType.Quote_Line_Item__c.fields.Floor_Price__c.label}" rendered="{!NOT(selectedProduct.quoteLineItem.Special_Item__c)}"/></strong>  -->
+                                            </td>
+                                            <td>
+                                                <strong><apex:outputText value="{!$ObjectType.Quote_Line_Item__c.fields.Floor_Price__c.label}" rendered="{!NOT(selectedProduct.quoteLineItem.Special_Item__c)}"/></strong>
+                                            </td>
+                                            <td>
+                                                <strong><apex:outputText value="{!$ObjectType.Quote_Line_Item__c.fields.Future_Dev_Cost__c.label}" rendered="{!NOT(selectedProduct.quoteLineItem.Special_Item__c)}"/></strong>
+                                            </td>
+                                            <td>
+                                                <strong><apex:outputText value="{!$ObjectType.Quote_Line_Item__c.fields.Future_Dev_Cost_Starts__c.label}" rendered="{!NOT(selectedProduct.quoteLineItem.Special_Item__c)}"/></strong>
+                                            </td>
+                                            <td>
+                                                <strong><apex:outputText value="{!$ObjectType.Quote_Line_Item__c.fields.Extended_Cost__c.label}"/></strong>
+                                            </td>
+                                            <td><b>{!$ObjectType.Quote_Line_Item__c.fields.Bid_number_Contract_number__c.label}</b></td>
+                                            <td><strong>{!$Label.Vendor_Item_Number}</strong></td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <apex:outputField value="{!selectedProduct.quoteLineItem.Comments_Short__c}"
+                                                    rendered="{!selectedProduct.quoteLineItem.Locked__c}"/>
+                                                <apex:inputField value="{!selectedProduct.quoteLineItem.Comments_Short__c}"
+                                                    rendered="{!NOT(selectedProduct.quoteLineItem.Locked__c)}"/>
+                                            </td>
+                                            <td>
+                                                <!--
+                                                <apex:outputText value="{0,number,0.000}" styleClass="dutyField"
+                                                    rendered="{!AND(selectedProduct.quoteLineItem.Special_Item__c,selectedProduct.quoteLineItem.Locked__c)}" >
+                                                    <apex:param value="{!selectedProduct.quoteLineItem.Duty__c}" />
+                                                </apex:outputText>
+                                                <apex:inputField value="{!selectedProduct.quoteLineItem.Duty__c}" style="width:70px;" styleClass="dutyField"
+                                                    rendered="{!AND(selectedProduct.quoteLineItem.Special_Item__c,NOT(selectedProduct.quoteLineItem.Locked__c))}"/>
+                                                -->
+                                                <apex:outputText value="{0,number,0.00}" rendered="{!NOT(selectedProduct.quoteLineItem.Special_Item__c)}">
+                                                    <apex:param value="{!selectedProduct.quoteLineItem.Start_Price__c}" />
+                                                </apex:outputText>
+                                            </td>
+                                            <td>
+                                                <!--
+                                                <apex:outputText value="{0,number,0.000}" styleClass="exchangeField"
+                                                    rendered="{!AND(selectedProduct.quoteLineItem.Special_Item__c,selectedProduct.quoteLineItem.Locked__c)}" >
+                                                    <apex:param value="{!selectedProduct.quoteLineItem.Exchange__c}" />
+                                                </apex:outputText>
+                                                <apex:inputField value="{!selectedProduct.quoteLineItem.Exchange__c}" style="width:70px;" styleClass="exchangeField"
+                                                    rendered="{!AND(selectedProduct.quoteLineItem.Special_Item__c,NOT(selectedProduct.quoteLineItem.Locked__c))}"/>
+                                                    
+                                                <apex:outputText value="{0,number,0.00}" rendered="{!NOT(selectedProduct.quoteLineItem.Special_Item__c)}">
+                                                    <apex:param value="{!selectedProduct.quoteLineItem.Floor_Price__c}" />
+                                                </apex:outputText> -->
+                                            </td>
+                                            <td>
+                                                <!--
+                                                <apex:outputText value="{0,number,0.000}" styleClass="brokerageField"
+                                                    rendered="{!AND(selectedProduct.quoteLineItem.Special_Item__c,selectedProduct.quoteLineItem.Locked__c)}" >
+                                                    <apex:param value="{!selectedProduct.quoteLineItem.Brokerage__c}" />
+                                                </apex:outputText>
+                                                <apex:inputField value="{!selectedProduct.quoteLineItem.Brokerage__c}" style="width:70px;" styleClass="brokerageField"
+                                                    rendered="{!AND(selectedProduct.quoteLineItem.Special_Item__c,NOT(selectedProduct.quoteLineItem.Locked__c))}"/>
+                                                --> 
+                                                <apex:outputText value="{0,number,0.00}" rendered="{!NOT(selectedProduct.quoteLineItem.Special_Item__c)}">
+                                                    <apex:param value="{!selectedProduct.quoteLineItem.Target_Price__c}" />
+                                                </apex:outputText>
+                                            </td>
+                                            <td>
+                                                <apex:outputText value="{0,number,0.00}" rendered="{!NOT(selectedProduct.quoteLineItem.Special_Item__c)}">
+                                                    <apex:param value="{!selectedProduct.quoteLineItem.Floor_Price__c}" />
+                                                </apex:outputText>
+                                            </td>
+                                            <td> 
+                                                <apex:outputText value="{0,number,0.00}" rendered="{!NOT(selectedProduct.quoteLineItem.Special_Item__c)}" 
+                                                        styleClass="{!IF(NOT(ISNULL(selectedProduct.quoteLineItem.Future_Dev_Cost__c)) && selectedProduct.quoteLineItem.Future_Dev_Cost__c>0,'highlightedValue','')}">
+                                                    <apex:param value="{!selectedProduct.quoteLineItem.Future_Dev_Cost__c}" />
+                                                </apex:outputText>
+                                            </td>
+                                            <td>
+                                                <apex:outputField value="{!selectedProduct.quoteLineItem.Future_Dev_Cost_Starts__c}" rendered="{!NOT(selectedProduct.quoteLineItem.Special_Item__c)}"/>
+                                            </td>
+                                            <td>
+                                                <apex:outputText value="{0,number,0.000}" styleClass="extCostField"
+                                                    rendered="{!OR(NOT(selectedProduct.quoteLineItem.Special_Item__c),selectedProduct.quoteLineItem.Locked__c)}" >
+                                                    <apex:param value="{!ROUND( selectedProduct.quoteLineItem.Extended_Cost__c, 3)}" />
+                                                </apex:outputText>
+                                                <apex:inputField value="{!selectedProduct.quoteLineItem.Extended_Cost__c}" style="width:70px;" styleClass="extCostField"
+                                                    rendered="{!AND(selectedProduct.quoteLineItem.Special_Item__c,NOT(selectedProduct.quoteLineItem.Locked__c))}"/>
+                                            </td>
+                                            <td>
+                                                <apex:outputField value="{!selectedProduct.quoteLineItem.Bid_number_Contract_number__c}" style="width:75px"
+                                                    rendered="{!selectedProduct.quoteLineItem.Locked__c}"/>
+                                                <apex:inputField value="{!selectedProduct.quoteLineItem.Bid_number_Contract_number__c}" style="width:75px"
+                                                    rendered="{!NOT(selectedProduct.quoteLineItem.Locked__c)}"/>
+                                            </td>
+                                            <td>
+                                                <apex:outputField value="{!selectedProduct.quoteLineItem.Vendor_Item__c}"
+                                                    rendered="{!OR(NOT(selectedProduct.quoteLineItem.Special_Item__c),selectedProduct.quoteLineItem.Locked__c)}"/>
+                                                <apex:inputField value="{!selectedProduct.quoteLineItem.Vendor_Item__c}"
+                                                    rendered="{!AND(selectedProduct.quoteLineItem.Special_Item__c,NOT(selectedProduct.quoteLineItem.Locked__c))}"/>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td><strong>{!$Label.Line_Item_Comments_No_Print}</strong></td>
+                                            <td><strong><apex:outputText value="{!$ObjectType.Quote_Line_Item__c.fields.Price_Origin__c.label}" rendered="{!NOT(selectedProduct.quoteLineItem.Special_Item__c)}"/></strong></td>
+                                            <td>
+                                                <strong><apex:outputText value="{!$ObjectType.Quote_Line_Item__c.fields.Contract_Price_Cd__c.label}" rendered="{!NOT(selectedProduct.quoteLineItem.Special_Item__c)}"/></strong>
+                                            </td>
+                                            <td>
+                                                <strong><apex:outputText value="{!$ObjectType.Quote_Line_Item__c.fields.Rebate_Code_Desc__c.label}" rendered="{!NOT(selectedProduct.quoteLineItem.Special_Item__c)}"/></strong>
+                                            </td>
+                                            <td>
+                                                <strong><apex:outputText value="{!$ObjectType.Quote_Line_Item__c.fields.Rebate_Starts__c.label}" rendered="{!NOT(selectedProduct.quoteLineItem.Special_Item__c)}"/></strong>
+                                            </td>
+                                            <td>
+                                                <strong><apex:outputText value="{!$ObjectType.Quote_Line_Item__c.fields.Rebate_Ends__c.label}" rendered="{!NOT(selectedProduct.quoteLineItem.Special_Item__c)}"/></strong>
+                                            </td>
+                                            <td title="Minimum Manufacturing Quantity">
+                                                <b>{!$Label.Min_Mfg_Qty}</b>
+                                            </td>
+                                            <td><strong>{!$Label.Mfg_Tolerance}</strong></td>
+                                            <td><strong>{!$Label.Proj_Del_Date}</strong></td>
+                                            <td><strong>{!$Label.Vendor_Contact}</strong></td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <apex:outputField value="{!selectedProduct.quoteLineItem.Comments__c}"
+                                                    rendered="{!selectedProduct.quoteLineItem.Locked__c}"/>
+                                                <apex:inputField value="{!selectedProduct.quoteLineItem.Comments__c}"
+                                                    rendered="{!NOT(selectedProduct.quoteLineItem.Locked__c)}"/>
+                                            </td>
+                                            <td>
+                                                <apex:outputField value="{!selectedProduct.quoteLineItem.Price_Origin__c}" rendered="{!NOT(selectedProduct.quoteLineItem.Special_Item__c)}"/>
+                                            </td>
+                                            <td>
+                                                <apex:outputField value="{!selectedProduct.quoteLineItem.Contract_Price_Cd__c}" rendered="{!NOT(selectedProduct.quoteLineItem.Special_Item__c)}"/>
+                                            </td>
+                                            <td style="width: 100px;">
+                                                <apex:outputField value="{!selectedProduct.quoteLineItem.Rebate_Code_Desc__c}" rendered="{!NOT(selectedProduct.quoteLineItem.Special_Item__c)}"/> 
+                                            </td>
+                                            <td>
+                                                <apex:outputField value="{!selectedProduct.quoteLineItem.Rebate_Starts__c}" rendered="{!NOT(selectedProduct.quoteLineItem.Special_Item__c)}"/>
+                                            </td>
+                                            <td>
+                                                <apex:outputField value="{!selectedProduct.quoteLineItem.Rebate_Ends__c}" rendered="{!NOT(selectedProduct.quoteLineItem.Special_Item__c)}"/>
+                                            </td>
+                                            <td title="Minimum Manufacturing Quantity">
+                                                <apex:outputField value="{!selectedProduct.quoteLineItem.Minimum_mfg_quantity__c}" style="width:75px"
+                                                    rendered="{!selectedProduct.quoteLineItem.Locked__c}"/>
+                                                <apex:inputField value="{!selectedProduct.quoteLineItem.Minimum_mfg_quantity__c}" style="width:75px"
+                                                    rendered="{!NOT(selectedProduct.quoteLineItem.Locked__c)}"/>
+                                            </td>
+                                            <td>
+                                                <apex:outputField value="{!selectedProduct.quoteLineItem.mfg_tolerance__c}" style="width:75px"
+                                                    rendered="{!selectedProduct.quoteLineItem.Locked__c}"/>
+                                                <apex:inputField value="{!selectedProduct.quoteLineItem.mfg_tolerance__c}" style="width:75px"
+                                                    rendered="{!NOT(selectedProduct.quoteLineItem.Locked__c)}"/>
+                                            </td>
+                                            <td title="Projected Delivery Date">
+                                                <apex:outputField value="{!selectedProduct.quoteLineItem.Projected_Delivery_Date__c}"
+                                                    rendered="{!selectedProduct.quoteLineItem.Locked__c}"/>
+                                                <apex:inputField value="{!selectedProduct.quoteLineItem.Projected_Delivery_Date__c}"
+                                                    rendered="{!NOT(selectedProduct.quoteLineItem.Locked__c)}"/>
+                                            </td>
+                                        <!--
+                                            <td>
+                                                <apex:outputField value="{!selectedProduct.quoteLineItem.Last_Date_of_Change__c}"
+                                                    rendered="{!selectedProduct.quoteLineItem.Locked__c}"/>
+                                                <apex:inputField value="{!selectedProduct.quoteLineItem.Last_Date_of_Change__c}"
+                                                    rendered="{!NOT(selectedProduct.quoteLineItem.Locked__c)}"/>
+                                            </td>
+                                        -->
+                                            <td>
+                                                <apex:outputField value="{!selectedProduct.quoteLineItem.Vendor_Contact__c}"
+                                                    rendered="{!selectedProduct.quoteLineItem.Locked__c}"/>
+                                                <apex:inputField value="{!selectedProduct.quoteLineItem.Vendor_Contact__c}"
+                                                    rendered="{!NOT(selectedProduct.quoteLineItem.Locked__c)}"/>
+                                            </td>
+                                        </tr>
+                                        <tr style="background-color:white">
+                                            <td colspan="2"/>
+                                            <td colspan="4">
+                                                <apex:dataTable value="{!selectedProduct.PandA.Response.Availability}" var="available" cellpadding="3px" rendered="{!selectedProduct.enableUOM}">
+                                                    <apex:column headerValue="Sys-Div" value="{!available.ItemSystemId}-{!available.ItemDivisionId}"/>
+                                                    <apex:column headerValue="Qty Onhand" value="{!available.ItemQuantityOnhand}" style="text-align:right"/>
+                                                    <apex:column headerValue="UOM" value="{!available.ItemStockingUOM}"/>
+                                                    <apex:column headerValue="Division" value="{!available.Division}"/>
+                                                    <apex:column headerValue="Transfer Days" value="{!available.ItemTransferDays}"/>
+                                                </apex:dataTable>
+                                            </td>
+                                            <td colspan="2"/>
+                                        </tr>
+                                        <apex:outputPanel rendered="{!selectedProduct.quoteLineItem.Special_Item__c}">
+                                            <tr>
+                                                <td><strong>{!$ObjectType.Quote_Line_Item__c.Fields.Stock_Manufactured__c.Label}</strong></td>
+                                                <td><strong>{!$ObjectType.Quote_Line_Item__c.Fields.Type_Of_Quote__c.Label}</strong></td>
+                                                <td><strong>{!$ObjectType.Quote_Line_Item__c.Fields.Item_Origin__c.Label}</strong></td>
+                                                <td><strong>{!$ObjectType.Quote_Line_Item__c.Fields.Roll_Size__c.Label}</strong></td>
+                                                <td><strong>{!$ObjectType.Quote_Line_Item__c.Fields.Brightness__c.Label}</strong></td>
+                                                <td><strong>{!$ObjectType.Quote_Line_Item__c.Fields.Color__c.Label}</strong></td>
+                                                <td><strong>{!$ObjectType.Quote_Line_Item__c.Fields.Finish__c.Label}</strong></td> 
+                                                <td><strong>{!$ObjectType.Quote_Line_Item__c.Fields.Brand__c.Label}</strong></td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    <apex:outputField value="{!selectedProduct.quoteLineItem.Stock_Manufactured__c}"
+                                                        rendered="{!selectedProduct.quoteLineItem.Locked__c}"/>
+                                                    <apex:inputField value="{!selectedProduct.quoteLineItem.Stock_Manufactured__c}"
+                                                        rendered="{!NOT(selectedProduct.quoteLineItem.Locked__c)}"/>
+                                                </td>
+                                                <td>
+                                                    <apex:outputField value="{!selectedProduct.quoteLineItem.Type_Of_Quote__c}"
+                                                        rendered="{!selectedProduct.quoteLineItem.Locked__c}"/>
+                                                    <apex:inputField value="{!selectedProduct.quoteLineItem.Type_Of_Quote__c}"
+                                                        rendered="{!NOT(selectedProduct.quoteLineItem.Locked__c)}"/>
+                                                </td>
+                                                <td>
+                                                    <apex:outputField value="{!selectedProduct.quoteLineItem.Item_Origin__c}"
+                                                        rendered="{!selectedProduct.quoteLineItem.Locked__c}"/>
+                                                    <apex:inputField value="{!selectedProduct.quoteLineItem.Item_Origin__c}"
+                                                        rendered="{!NOT(selectedProduct.quoteLineItem.Locked__c)}"/>
+                                                </td>
+                                                <td>
+                                                    <apex:outputField value="{!selectedProduct.quoteLineItem.Roll_Size__c}" style="width:65px"
+                                                        rendered="{!selectedProduct.quoteLineItem.Locked__c}"/>
+                                                    <apex:inputField value="{!selectedProduct.quoteLineItem.Roll_Size__c}" style="width:65px"
+                                                        rendered="{!NOT(selectedProduct.quoteLineItem.Locked__c)}"/>
+                                                </td>
+                                                <td>
+                                                    <apex:outputField value="{!selectedProduct.quoteLineItem.Brightness__c}" style="width:65px"
+                                                        rendered="{!selectedProduct.quoteLineItem.Locked__c}"/>
+                                                    <apex:inputField value="{!selectedProduct.quoteLineItem.Brightness__c}" style="width:65px"
+                                                        rendered="{!NOT(selectedProduct.quoteLineItem.Locked__c)}"/>
+                                                </td>
+                                                <td>
+                                                    <apex:outputField value="{!selectedProduct.quoteLineItem.Color__c}" style="width:65px"
+                                                        rendered="{!selectedProduct.quoteLineItem.Locked__c}"/>
+                                                    <apex:inputField value="{!selectedProduct.quoteLineItem.Color__c}" style="width:65px"
+                                                        rendered="{!NOT(selectedProduct.quoteLineItem.Locked__c)}"/>
+                                                </td>
+                                                <td>
+                                                    <apex:outputField value="{!selectedProduct.quoteLineItem.Finish__c}" style="width:70px"
+                                                        rendered="{!selectedProduct.quoteLineItem.Locked__c}"/>
+                                                    <apex:inputField value="{!selectedProduct.quoteLineItem.Finish__c}" style="width:70px"
+                                                        rendered="{!NOT(selectedProduct.quoteLineItem.Locked__c)}"/>
+                                                </td>
+                                                <td>
+                                                    <apex:outputField value="{!selectedProduct.quoteLineItem.Brand__c}" style="width:75px"
+                                                        rendered="{!selectedProduct.quoteLineItem.Locked__c}"/>
+                                                    <apex:inputField value="{!selectedProduct.quoteLineItem.Brand__c}" style="width:75px"
+                                                        rendered="{!NOT(selectedProduct.quoteLineItem.Locked__c)}"/>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td><strong>{!$ObjectType.Quote_Line_Item__c.fields.Grade_Name_Class__c.label}</strong></td>
+                                                <td><strong>{!$ObjectType.Quote_Line_Item__c.fields.Basis_Weight__c.label}</strong></td>
+                                                <td><strong>{!$ObjectType.Quote_Line_Item__c.fields.Outer_Diameter__c.label}</strong></td>
+                                                <td><strong>{!$ObjectType.Quote_Line_Item__c.fields.Core__c.label}</strong></td>
+                                                <td><strong>{!$ObjectType.Quote_Line_Item__c.fields.Recycled_Content__c.label}</strong></td>
+                                                <td><strong>{!$ObjectType.Quote_Line_Item__c.fields.PCW_Content__c.label}</strong></td>
+                                                <td><strong>{!$ObjectType.Quote_Line_Item__c.fields.Coc_Required__c.label}</strong></td>
+                                                <td><strong>{!$ObjectType.Quote_Line_Item__c.fields.CostCommision__c.label}</strong></td>
+                                                <td><strong>{!$ObjectType.Quote_Line_Item__c.fields.Last_Date_To_Order__c.label}</strong></td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    <apex:outputField value="{!selectedProduct.quoteLineItem.Grade_Name_Class__c}"
+                                                        rendered="{!selectedProduct.quoteLineItem.Locked__c}"/>
+                                                    <apex:inputField value="{!selectedProduct.quoteLineItem.Grade_Name_Class__c}"
+                                                        rendered="{!NOT(selectedProduct.quoteLineItem.Locked__c)}"/>
+                                                </td>
+                                                <td>
+                                                    <apex:outputField value="{!selectedProduct.quoteLineItem.Basis_Weight__c}" style="width:65px"
+                                                        rendered="{!selectedProduct.quoteLineItem.Locked__c}"/>
+                                                    <apex:inputField value="{!selectedProduct.quoteLineItem.Basis_Weight__c}" style="width:65px"
+                                                        rendered="{!NOT(selectedProduct.quoteLineItem.Locked__c)}"/>
+                                                </td>
+                                                <td>
+                                                    <apex:outputField value="{!selectedProduct.quoteLineItem.Outer_Diameter__c}" style="width:65px"
+                                                        rendered="{!selectedProduct.quoteLineItem.Locked__c}"/>
+                                                    <apex:inputField value="{!selectedProduct.quoteLineItem.Outer_Diameter__c}" style="width:65px"
+                                                        rendered="{!NOT(selectedProduct.quoteLineItem.Locked__c)}"/>
+                                                </td>
+                                                <td>
+                                                    <apex:outputField value="{!selectedProduct.quoteLineItem.Core__c}" style="width:65px"
+                                                        rendered="{!selectedProduct.quoteLineItem.Locked__c}"/>
+                                                    <apex:inputField value="{!selectedProduct.quoteLineItem.Core__c}" style="width:65px"
+                                                        rendered="{!NOT(selectedProduct.quoteLineItem.Locked__c)}"/>
+                                                </td>
+                                                <td>
+                                                    <apex:outputField value="{!selectedProduct.quoteLineItem.Recycled_Content__c}" style="width:65px"
+                                                        rendered="{!selectedProduct.quoteLineItem.Locked__c}"/>
+                                                    <apex:inputField value="{!selectedProduct.quoteLineItem.Recycled_Content__c}" style="width:65px"
+                                                        rendered="{!NOT(selectedProduct.quoteLineItem.Locked__c)}"/>
+                                                </td>
+                                                <td>
+                                                    <apex:outputField value="{!selectedProduct.quoteLineItem.PCW_Content__c}" style="width:65px"
+                                                        rendered="{!selectedProduct.quoteLineItem.Locked__c}"/>
+                                                    <apex:inputField value="{!selectedProduct.quoteLineItem.PCW_Content__c}" style="width:65px"
+                                                        rendered="{!NOT(selectedProduct.quoteLineItem.Locked__c)}"/>
+                                                </td>
+                                                <td>
+                                                    <apex:outputField value="{!selectedProduct.quoteLineItem.Coc_Required__c}"
+                                                        rendered="{!selectedProduct.quoteLineItem.Locked__c}"/>
+                                                    <apex:inputField value="{!selectedProduct.quoteLineItem.Coc_Required__c}"
+                                                        rendered="{!NOT(selectedProduct.quoteLineItem.Locked__c)}"/>
+                                                </td>
+                                                <td>
+                                                    <apex:outputField value="{!selectedProduct.quoteLineItem.CostCommision__c}" style="width:74px"
+                                                        rendered="{!selectedProduct.quoteLineItem.Locked__c}"/>
+                                                    <apex:inputField value="{!selectedProduct.quoteLineItem.CostCommision__c}" style="width:74px"
+                                                        rendered="{!NOT(selectedProduct.quoteLineItem.Locked__c)}"/>
+                                                </td>
+                                                <td>
+                                                    <apex:outputField value="{!selectedProduct.quoteLineItem.Last_Date_To_Order__c}"
+                                                        rendered="{!selectedProduct.quoteLineItem.Locked__c}"/>
+                                                    <apex:inputField value="{!selectedProduct.quoteLineItem.Last_Date_To_Order__c}"
+                                                        rendered="{!NOT(selectedProduct.quoteLineItem.Locked__c)}"/>
+                                                </td>
+                                            </tr>
+                                        </apex:outputPanel>
+                                    </tbody>
+                                </table>
+                            </td>
+                        </tr>
+                </apex:repeat>
+            </table>
+    </apex:pageBlock>
+
+</apex:form>
+</apex:page>

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Contact_Record_for_Contender__c</fullName>
+    <deleteConstraint>SetNull</deleteConstraint>
+    <externalId>false</externalId>
+    <inlineHelpText>If the Contender also has a Contact record, you can link the two records by selecting the Contact here.</inlineHelpText>
+    <label>Contact Record for Contender</label>
+    <referenceTo>Contact</referenceTo>
+    <relationshipLabel>Contenders</relationshipLabel>
+    <relationshipName>Contenders</relationshipName>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Lookup</type>
+</CustomField>

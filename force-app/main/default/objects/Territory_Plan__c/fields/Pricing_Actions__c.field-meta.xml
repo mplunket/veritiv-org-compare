@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Pricing_Actions__c</fullName>
+    <externalId>false</externalId>
+    <label>Margin Management Actions</label>
+    <required>false</required>
+    <trackHistory>true</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>MultiselectPicklist</type>
+    <valueSet>
+        <controllingField>Improve_Pricing__c</controllingField>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Improve pricing to target</fullName>
+                <default>false</default>
+                <label>Improve pricing to target</label>
+            </value>
+            <value>
+                <fullName>Maximize utilization of Zilliant</fullName>
+                <default>false</default>
+                <label>Maximize utilization of Zilliant</label>
+            </value>
+            <value>
+                <fullName>Obtain deviated mill pricing</fullName>
+                <default>false</default>
+                <label>Obtain deviated mill pricing</label>
+            </value>
+            <value>
+                <fullName>Review contracts, deviations, pricebooks</fullName>
+                <default>false</default>
+                <label>Review contracts, deviations, pricebooks</label>
+            </value>
+            <value>
+                <fullName>Sales Rep margin review</fullName>
+                <default>false</default>
+                <label>Sales Rep margin review</label>
+            </value>
+            <value>
+                <fullName>Sell Unisource focus brands</fullName>
+                <default>false</default>
+                <label>Sell Unisource focus brands</label>
+            </value>
+            <value>
+                <fullName>Other</fullName>
+                <default>false</default>
+                <label>Other</label>
+            </value>
+        </valueSetDefinition>
+        <valueSettings>
+            <controllingFieldValue>checked</controllingFieldValue>
+            <valueName>Improve pricing to target</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>checked</controllingFieldValue>
+            <valueName>Maximize utilization of Zilliant</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>checked</controllingFieldValue>
+            <valueName>Obtain deviated mill pricing</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>checked</controllingFieldValue>
+            <valueName>Review contracts, deviations, pricebooks</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>checked</controllingFieldValue>
+            <valueName>Sales Rep margin review</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>checked</controllingFieldValue>
+            <valueName>Sell Unisource focus brands</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>checked</controllingFieldValue>
+            <valueName>Other</valueName>
+        </valueSettings>
+    </valueSet>
+    <visibleLines>8</visibleLines>
+</CustomField>

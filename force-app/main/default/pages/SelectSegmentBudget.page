@@ -1,0 +1,7 @@
+<apex:page standardController="Territory_Plan__c" extensions="SelectSegmentBudgetController" action="{!setSegmentBudget}">
+	<apex:pageMessages />
+	
+	<apex:form >
+		<apex:commandButton action="{!cancel}" value="Return"/>
+	</apex:form>
+</apex:page>

@@ -1,0 +1,74 @@
+<apex:page standardController="opportunity" extensions="VIQOppurtunityVisualizationsController">
+    <apex:slds />
+    <img style="display:none" id="auth"/>
+    <div id="sections" class="slds-scope" />
+    <script>
+        var visualizationJson = {!SalesIqVisualizations};
+    
+        var authFrame = document.getElementById("auth");
+        authFrame.onerror = function(){
+            var outputDiv = document.getElementById("sections");
+            var sectionDiv = document.createElement("div");
+            sectionDiv.setAttribute("class", "slds-tabs_default");
+            var sectionUl =  document.createElement("ul");
+            sectionUl.setAttribute("class", "slds-tabs_default__nav");
+            visualizationJson.sections.forEach(function(section){
+                var sectionList = document.createElement("li");
+                sectionList.setAttribute("id", "tab-section-"+section.sectionOrder);
+                if (section.sectionOrder === 0) 
+                    sectionList.setAttribute("class", "slds-tabs_default__item slds-is-active");
+                else
+                    sectionList.setAttribute("class", "slds-tabs_default__item");
+                var sectionAnchor = document.createElement("a");
+                sectionAnchor.setAttribute("class", "slds-tabs_default__link");
+                sectionAnchor.innerHTML = section.sectionName;
+                sectionAnchor.onclick = function(){
+                        switchTab(section.sectionOrder);
+                }
+                sectionList.appendChild(sectionAnchor);
+                sectionUl.appendChild(sectionList);
+            })
+            sectionDiv.appendChild(sectionUl);
+
+            visualizationJson.sections.forEach(function(section){
+                var tabDiv = document.createElement("div");
+                tabDiv.setAttribute("id", "tab-contents-"+section.sectionOrder);
+                if (section.sectionOrder === 0) 
+                    tabDiv.setAttribute("class", "slds-tabs_default__content slds-show");
+                else 
+                    tabDiv.setAttribute("class", "slds-tabs_default__content slds-hide");
+                section.extracts.forEach(function(extract) {
+                    var outputImage = document.createElement("img");
+                    outputImage.setAttribute("src", extract.extractUrl);
+                    tabDiv.appendChild(outputImage);
+                    tabDiv.appendChild(document.createElement("br"));
+                })
+                sectionDiv.appendChild(tabDiv);
+            })
+            
+            outputDiv.appendChild(sectionDiv);
+            
+        }
+        authFrame.setAttribute("src", visualizationJson.authenticationUrl);
+    
+        function switchTab(sectionOrder) {
+            var activeSectionList = document.getElementsByClassName("slds-is-active");
+            for (var idx = 0; idx < activeSectionList.length; idx++) {
+                var section = activeSectionList[idx];
+                section.className = section.className.replace("slds-is-active", "");
+            }
+            var activeTabDiv = document.getElementsByClassName("slds-show");
+            for (var idx = 0; idx < activeTabDiv.length; idx++) {
+                var div = activeTabDiv[idx];
+                div.className = div.className.replace("slds-show", "slds-hide");
+            }
+            var newActiveSection = document.getElementById("tab-section-"+sectionOrder);
+            console.log(newActiveSection);
+            newActiveSection.className = newActiveSection.className + " slds-is-active";
+            var newTabDiv = document.getElementById("tab-contents-"+sectionOrder);
+            newTabDiv.className = newTabDiv.className.replace("slds-hide", "slds-show");
+            
+        }
+    </script>
+
+</apex:page>

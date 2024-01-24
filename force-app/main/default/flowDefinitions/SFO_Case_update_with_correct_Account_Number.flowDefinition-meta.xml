@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<FlowDefinition xmlns="http://soap.sforce.com/2006/04/metadata">
+    <description>Use to clarify which Account should be used on a SFO created Case when there are duplicate Account Numbers.</description>
+    <masterLabel>Case - SFO - Case update with correct Account Number</masterLabel>
+</FlowDefinition>

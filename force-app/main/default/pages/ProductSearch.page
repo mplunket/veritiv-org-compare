@@ -1,0 +1,9 @@
+<apex:page title="ProductSearch" 
+           contentType="application/x-javascript; charset=utf-8" 
+           showHeader="false"
+           sidebar="false" 
+           standardStylesheets="false"
+           controller="ProductSearchCont"
+           action="{!doSearch}">
+    <apex:outputText value="{!json}" />
+</apex:page>

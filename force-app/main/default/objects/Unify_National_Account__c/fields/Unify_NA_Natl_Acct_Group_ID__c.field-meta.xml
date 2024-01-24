@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Unify_NA_Natl_Acct_Group_ID__c</fullName>
+    <description>Contract Group ID - ID created by Unify- Candy calls this the National Account Group ID) – Identifies the contract associated to the customer</description>
+    <externalId>false</externalId>
+    <label>Unify NA Natl Acc Group ID</label>
+    <length>10</length>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

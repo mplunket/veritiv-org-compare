@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>View_Teams_Account_Diagnostic_Report__c</fullName>
+    <description>Item-3167: link to the Account Diagnostic Report for the Sales Playbook initiative</description>
+    <externalId>false</externalId>
+    <formula>HYPERLINK(&quot;/lightning/r/Report/00O5w00000AV5XeEAL/view&quot;,
+
+/* link text */
+&quot;View Team&apos;s Account Diagnostic Report&quot;,
+
+/* Keep it in the same browser tab to avoid full page reload */
+&quot;_self&quot;
+)</formula>
+    <label>View Team&apos;s Account Diagnostic Report</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

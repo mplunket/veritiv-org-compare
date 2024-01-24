@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Cust_Link_only_allowed_on_flagged_Accts</fullName>
+    <active>true</active>
+    <description>Only allow them to create a Customer Link Account Plan if customer is flagged for this program.
+Item-3167: Added criteria to exclude &apos;Account Diagnostic&apos; record types</description>
+    <errorConditionFormula>AND(
+Account__r.Customer_Link_Account__c &lt;&gt; True,
+RecordType.DeveloperName &lt;&gt; &apos;Account_Diagnostic&apos;
+)</errorConditionFormula>
+    <errorMessage>You cannot enter a Customer Link Account Plan for this Customer.  Please make sure you have located the correct Billto that is flagged specifically for this program, using the Account List View &quot;My Customer Link Accounts&quot;.</errorMessage>
+</ValidationRule>

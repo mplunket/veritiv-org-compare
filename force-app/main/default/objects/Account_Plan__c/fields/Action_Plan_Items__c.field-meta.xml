@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Action_Plan_Items__c</fullName>
+    <externalId>false</externalId>
+    <label>Action Plan Items</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>MultiselectPicklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Bring in specialist or spec rep</fullName>
+                <default>false</default>
+                <label>Bring in specialist or spec rep</label>
+            </value>
+            <value>
+                <fullName>Change product mix</fullName>
+                <default>false</default>
+                <label>Change product mix</label>
+            </value>
+            <value>
+                <fullName>Improve credit standing</fullName>
+                <default>false</default>
+                <label>Improve credit standing</label>
+            </value>
+            <value>
+                <fullName>Increase average order size</fullName>
+                <default>false</default>
+                <label>Increase average order size</label>
+            </value>
+            <value>
+                <fullName>Increase price</fullName>
+                <default>false</default>
+                <label>Increase price</label>
+            </value>
+            <value>
+                <fullName>Switch to private label</fullName>
+                <default>false</default>
+                <label>Switch to private label</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+    <visibleLines>6</visibleLines>
+</CustomField>

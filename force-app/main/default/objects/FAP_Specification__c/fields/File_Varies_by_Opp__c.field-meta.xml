@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>File_Varies_by_Opp__c</fullName>
+    <defaultValue>false</defaultValue>
+    <description>if this box is checked then the contract will be attached to the opportunity</description>
+    <externalId>false</externalId>
+    <label>File Varies by Opp</label>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

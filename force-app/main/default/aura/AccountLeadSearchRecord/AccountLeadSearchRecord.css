@@ -1,0 +1,38 @@
+.THIS {
+    margin-bottom: 20px;
+    border: 1px solid #AAA;
+}
+
+.THIS .header-container {
+    padding: 15px 5px 5px 5px;
+}
+
+
+.THIS .field-container > div {
+    display: inline-block;
+}
+
+.THIS .field-label {
+    font-weight: 600;
+}
+
+.THIS .subheader-container {
+    font-size: 12px;
+    margin-top: 20px;
+}
+
+.THIS .detail-container {
+    border-top: 1px solid #AAA;
+    padding: 5px;
+}
+
+.THIS .expand-button-container {
+    background-color: #EEE;
+    border-top: 1px solid #AAA;
+    text-align: center;
+}
+
+.THIS .expand-button-container:hover {
+    background-color: #DDD;
+    cursor: pointer;
+}

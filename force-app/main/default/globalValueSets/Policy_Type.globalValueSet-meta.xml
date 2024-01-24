@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GlobalValueSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <customValue>
+        <fullName>Fixed</fullName>
+        <default>true</default>
+        <label>Fixed</label>
+    </customValue>
+    <customValue>
+        <fullName>Maintain Margin</fullName>
+        <default>false</default>
+        <label>Maintain Margin</label>
+    </customValue>
+    <customValue>
+        <fullName>CWT Fixed</fullName>
+        <default>false</default>
+        <label>CWT Fixed</label>
+    </customValue>
+    <customValue>
+        <fullName>Cost Up</fullName>
+        <default>false</default>
+        <label>Cost Up</label>
+    </customValue>
+    <customValue>
+        <fullName>List Down</fullName>
+        <default>false</default>
+        <label>List Down</label>
+    </customValue>
+    <masterLabel>Policy Type</masterLabel>
+    <sorted>false</sorted>
+</GlobalValueSet>

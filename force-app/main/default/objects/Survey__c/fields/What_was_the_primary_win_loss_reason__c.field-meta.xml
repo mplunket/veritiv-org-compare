@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>What_was_the_primary_win_loss_reason__c</fullName>
+    <externalId>false</externalId>
+    <label>What was the primary win/loss reason?</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <controllingField>Did_we_win_the_business__c</controllingField>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Price</fullName>
+                <default>false</default>
+                <label>Price</label>
+            </value>
+            <value>
+                <fullName>Lead time</fullName>
+                <default>false</default>
+                <label>Lead time</label>
+            </value>
+            <value>
+                <fullName>Quoted quickly</fullName>
+                <default>false</default>
+                <label>Quoted quickly</label>
+            </value>
+            <value>
+                <fullName>Veritiv&apos;s existing relationship with the customer</fullName>
+                <default>false</default>
+                <label>Veritiv&apos;s existing relationship with the customer</label>
+            </value>
+            <value>
+                <fullName>Customer having issue with current Vendor</fullName>
+                <default>false</default>
+                <label>Customer having issue with current Vendor</label>
+            </value>
+            <value>
+                <fullName>Quote was late</fullName>
+                <default>false</default>
+                <label>Quote was late</label>
+            </value>
+            <value>
+                <fullName>Customer decided on another Vendor</fullName>
+                <default>false</default>
+                <label>Customer decided on another Vendor</label>
+            </value>
+            <value>
+                <fullName>Veritiv did not have the exact product requested</fullName>
+                <default>false</default>
+                <label>Veritiv did not have the exact product requested</label>
+            </value>
+            <value>
+                <fullName>Other</fullName>
+                <default>false</default>
+                <label>Other</label>
+            </value>
+        </valueSetDefinition>
+        <valueSettings>
+            <controllingFieldValue>Yes</controllingFieldValue>
+            <controllingFieldValue>No</controllingFieldValue>
+            <valueName>Price</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Yes</controllingFieldValue>
+            <controllingFieldValue>No</controllingFieldValue>
+            <valueName>Lead time</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Yes</controllingFieldValue>
+            <valueName>Quoted quickly</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Yes</controllingFieldValue>
+            <valueName>Veritiv&apos;s existing relationship with the customer</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Yes</controllingFieldValue>
+            <valueName>Customer having issue with current Vendor</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Yes</controllingFieldValue>
+            <controllingFieldValue>No</controllingFieldValue>
+            <valueName>Other</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>No</controllingFieldValue>
+            <valueName>Quote was late</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>No</controllingFieldValue>
+            <valueName>Customer decided on another Vendor</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>No</controllingFieldValue>
+            <valueName>Veritiv did not have the exact product requested</valueName>
+        </valueSettings>
+    </valueSet>
+</CustomField>

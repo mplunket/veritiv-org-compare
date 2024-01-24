@@ -1,0 +1,3 @@
+<design:component label="Home Page Links">
+    <design:attribute name="homePageLinksType" label="Links Name" datasource="apex://HomePageLinksPicklist" description="Choose the category of links that should appear in this compomnent." />
+</design:component>

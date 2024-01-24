@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>C360_Is_Processed__c</fullName>
+    <defaultValue>false</defaultValue>
+    <description>C360:IS Processed is checked after processing.  This field is controlled through the automated batch process.  The default value is &quot;unchecked&quot;.  
+
+When the batch runs, it checks the box of the object once all fields on the object have been processed.  
+
+At the end of the batch cycle, all of the checkboxes are unchecked to prepare for the next cycle.</description>
+    <externalId>false</externalId>
+    <inlineHelpText>C360:IS Processed is checked after processing by the scheduled batch &quot;Cust360AggregatorBatchService&quot;.</inlineHelpText>
+    <label>Is Processed</label>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

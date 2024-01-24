@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Avg_Probability_of_Open_Opps__c</fullName>
+    <externalId>false</externalId>
+    <formula>Account__r.Avg_Prob_of_All_Open_Opps__c</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <inlineHelpText>Average Probability of Open Opportunities associated with this Account.  Pulls directly from the Account Page.  A value of #ERROR is a result of the formula dividing by 0 (a result of  there being  no open opportunities).</inlineHelpText>
+    <label>Avg Probability (%) of Open Opps</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>0</scale>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Percent</type>
+</CustomField>

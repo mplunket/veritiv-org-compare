@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Requires_Test_Script__c</fullName>
+    <externalId>false</externalId>
+    <label>Requires Test Script?</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Not Required</fullName>
+                <default>false</default>
+                <label>Not Required</label>
+            </value>
+            <value>
+                <fullName>Req&apos;d - Not Started</fullName>
+                <default>false</default>
+                <label>Req&apos;d - Not Started</label>
+            </value>
+            <value>
+                <fullName>Req&apos;d - In Progress</fullName>
+                <default>false</default>
+                <label>Req&apos;d - In Progress</label>
+            </value>
+            <value>
+                <fullName>Req&apos;d - Complete</fullName>
+                <default>false</default>
+                <label>Req&apos;d - Complete</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

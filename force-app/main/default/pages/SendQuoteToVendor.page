@@ -1,0 +1,107 @@
+<apex:page id="qEmail" standardController="Quote_Line_Item__c" recordSetVar="quoteLineItems" extensions="SendToVendorQLIControllerExtension" tabStyle="Task">
+    <apex:sectionHeader title="Send Quote {!quote.Name} to Vendor" subtitle="for Account {!quote.Account__r.Name}"/>
+   
+      <script>
+          function loadImageLoading()
+          {
+            
+            var disImage = document.getElementById('loadingimage');
+            disImage.style.display="block";
+                    
+          }
+          
+          function openEmailLookup()
+          {
+            //function openPopup(url, name, pWidth, pHeight, features, snapToLastMousePosition)
+            openPopup('/apex/EmailLookup?id={!quote.Id}', '',  800, 600, 'width=800,height=600,toolbar=no,status=no,directories=no,menubar=no,resizable=yes,scrollable=no', true);
+          } 
+      </script>
+
+     <apex:outputPanel id="displayloadingGif">
+      <img style="display:none" src="/img/waiting_dots.gif" id="loadingimage"/>
+     </apex:outputPanel>
+
+    <apex:outputPanel id="msgs">
+        <apex:pageMessages />
+    </apex:outputPanel>
+    
+    <apex:outputPanel id="updateStatusDiv" style="display:block; margin-left:15px;float:left;">
+        <apex:actionStatus id="updateStatus" style="height:20px;"
+            startStyle="font-weight:bold">
+            <apex:facet name="start">
+                <apex:image alt="Loading..." title="Loading..."
+                    value="/img/waiting_dots.gif" />
+            </apex:facet>
+            <apex:facet name="stop">
+                <apex:image alt="" style="display:none;" title=""
+                    value="/img/waiting_dots.gif" />
+            </apex:facet>
+        </apex:actionStatus>
+    </apex:outputPanel>
+                
+                
+    <apex:form id="sendQuoteForm">
+        <apex:pageBlock id="pbSendQuote" title="Send Quote" mode="edit">
+            <apex:pageBlockButtons >
+                <apex:commandButton value="Send Quote" action="{!sendQuote}" rendered="{!IF(isValidQuote,IF(hasSelectedRecords,'true','false'),'false')}" status="status" onclick="loadImageLoading();" />
+                <apex:commandButton value="Back" action="{!cancel}"/>
+            </apex:pageBlockButtons>
+            <apex:pageBlockSection title="Edit Email" id="editEmail" columns="1" rendered="{!IF(isValidQuote,IF(hasSelectedRecords,'true','false'),'false')}">
+                <apex:pageBlockSectionItem >
+                    <apex:outputLabel for="txtContact" value="To"/>
+                    <apex:inputField id="txtContact" required="true" value="{!email.Vendor_Contact__c}"/>
+                </apex:pageBlockSectionItem>
+                <apex:pageBlockSectionItem >
+                    <apex:outputLabel for="inputFileId" value="Choose file: "/>
+                <apex:inputFile value="{!attachment.body}" id="inputFileId" filename="{!attachment.name}"/>
+                 </apex:pageBlockSectionItem>
+                 <apex:pageBlockSectionItem >
+                    <apex:outputLabel for="addanotheratt" value=""/>
+                    <apex:commandButton style="margin-left:0px;" value="Add to email" id="addanotheratt" action="{!addAttachment}"/>
+                 </apex:pageBlockSectionItem> 
+                 
+                     
+                  <apex:pageBlockSectionItem id="AttachmentsBlock" rendered="{!hasExistingAttachments}" >
+                    <apex:outputLabel rendered="{!hasExistingAttachments}"  for="attachmentTable" value="Attachments"/>
+                    <apex:dataTable value="{!existingAttachments}" var="attachment" id="attachmentTable" title="Existing Files" rendered="{!hasExistingAttachments}" width="400px">
+                        <apex:column headerValue="File Name" value="{!attachment.Name}" />
+                        <apex:column headerValue="File Size" value="{!attachment.BodyLength}" />
+                        <apex:column headerValue="Action">
+                            <a href="#" onClick="removeAttachment('{!attachment.Id}')">Remove</a>
+                        </apex:column>
+                    </apex:dataTable>
+                </apex:pageBlockSectionItem>
+             
+             
+                <apex:outputField value="{!quote.Name}"/>
+                <apex:pageBlockSectionItem id="toSI">
+                    <a title="Additional To (New Window)" onclick="javascript: setLastMousePosition(event);" href="javascript: javascript: openEmailLookup();">Additional To:</a>
+                    <apex:inputTextarea id="txtAddiontalTo" value="{!emailAdditionalTo}" title="Use ; as separator" style="width:400px;height:60px;white-space:pre;overflow:auto"/>
+                </apex:pageBlockSectionItem>
+                 <apex:pageBlockSectionItem id="ccSI">
+                    <a title="CC (New Window)" onclick="javascript: setLastMousePosition(event);" href="javascript: openEmailLookup();">CC:</a>
+                    <apex:inputTextarea id="txtCC" value="{!emailCC}" title="Use ; as separator" style="width:400px;height:60px;white-space:pre;overflow:auto"/>
+                </apex:pageBlockSectionItem>
+                <apex:pageBlockSectionItem id="bccSI">
+                    <a title="BCC (New Window)" onclick="javascript: setLastMousePosition(event);" href="javascript: openEmailLookup();">BCC:</a>
+                    <apex:inputTextarea id="txtBCC" value="{!emailBCC}" title="Use ; as separator" style="width:400px;height:60px;white-space:pre;overflow:auto"/>
+                </apex:pageBlockSectionItem>
+            </apex:pageBlockSection>
+            <apex:pageBlockTable value="{!selected}" var="qli" rendered="false">
+                <!-- Hidden fields required by Apex controller extension to bind to the data -->
+                <apex:outputText value="{!qli.Vendor_Name__c}{!qli.Vendor_Name__r.Name}{!qli.Vendor_Contact__c}" rendered="false"/>
+                <!-- End of hidden fields -->
+            </apex:pageBlockTable>
+        </apex:pageBlock>
+    </apex:form>
+      <apex:form >
+           <apex:actionFunction action="{!removeAttachment}" 
+                name="removeAttachment"
+                status="updateStatus" 
+                rerender="qEmail:sendQouteForm:pbSendQuote">
+                <apex:param name="firstParam" assignTo="{!currentAttId}"  value="" />
+            </apex:actionFunction>
+    </apex:form>
+        
+        
+</apex:page>

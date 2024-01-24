@@ -1,0 +1,150 @@
+<apex:page controller="SegmentBudgetsController" tabStyle="Primary_Sales_Rep__c">
+    <script type="text/javascript">
+        function selectStatus(id, show)
+        {
+            if(show)
+            {
+                document.getElementById(id).style.display = 'none';
+                document.getElementById(id + 'Loader').style.display = '';
+            }
+            else
+            {
+                document.getElementById(id).style.display = '';
+                document.getElementById(id + 'Loader').style.display = 'none';
+            }       
+        }
+    </script>
+    <apex:sectionHeader title="Budget Allocation: {!currentUser.rep.Name}"/>
+    <apex:form >
+        
+        <apex:pageBlock title="An error has occurred" rendered="{!hasErrored}">
+            <apex:pageMessage summary="{!messageBlock}" severity="error" strength="2" escape="false" />          
+        </apex:pageBlock>
+        <apex:pageMessages id="formMessages"/>
+        
+        <apex:pageBlock title="Important Information">
+        	<ul>
+				<li><b>Save each segment’s budget</b> before selecting another segment</li>
+				<li><b>Enter numbers without punctuation</b> (no commas, no dollar signs)</li>
+				<li><b>Do not use the “Back” button</b> in your browser or you will lose any allocations you have not already saved</li>
+				<li><b>Avoid sending multiple allocation emails to your AVP</b> by updating all budgets, THEN unchecking the “Draft” box and clicking Save once more</li>
+			</ul>
+		</apex:pageBlock>
+        
+        <apex:pageBlock title="Annual Budget" rendered="{!NOT(hasErrored)}" id="filterBlock">
+            <table cellspacing="5">
+                <tr>
+                    <th>
+                        <apex:outputLabel value="Segment" for="segmentList"/>
+                    </th>
+                    <th>
+                        <apex:selectList id="segmentList" value="{!selectedSegment}" size="1">
+                            <apex:actionSupport action="{!findSelectedBudgets}" event="onchange" rerender="goalBlock"/>
+                            <apex:selectOptions value="{!segmentOptions}"/>
+                        </apex:selectList>
+                    </th>                   
+                    <th>
+                        <apex:outputLabel value="Year" for="yearList"/>
+                    </th>
+                    <th>
+                        <apex:selectList id="yearList" value="{!selectedYear}" size="1">
+                            <apex:actionSupport action="{!findSelectedBudgets}" event="onchange" rerender="goalBlock"/> 
+                            <apex:selectOptions value="{!yearOptions}"/>
+                        </apex:selectList>
+                    </th>
+                    <th>
+                        <apex:outputLabel value="Draft - do not email" for="isDraft"/>
+                        <apex:inputCheckbox value="{!isDraft}" disabled="{!NOT(isAppEnabled)}"/>
+                    </th>
+                    <th>
+                    	<apex:outputPanel id="saveBtnPanel" style="margin-left:10px">
+			                <span id="saveBtn">
+			                     <apex:commandButton value="Save" action="{!saveAll}" disabled="{!OR(overAllocated, NOT(isAppEnabled))}" onclick="selectStatus('saveBtn', true);" oncomplete="selectStatus('saveBtn', false);" rerender="goalBlock, formMessages"/>
+			                </span>
+			                <span id="saveBtnLoader" style="display:none;">
+			                    <apex:image value="{!$Resource.GoalLoader}" />
+			                </span>
+			            </apex:outputPanel>
+                    </th>
+                </tr>   
+            </table>
+            
+        </apex:pageBlock>
+            
+        <apex:pageBlock rendered="{!NOT(hasErrored)}" id="goalBlock">
+            <apex:outputPanel id="totals">
+                <apex:outputPanel id="msgs" rendered="{!overAllocated}">
+                    <apex:pageMessages />
+                </apex:outputPanel>
+                <table>         
+                    <tr>
+                        <th>&nbsp;</th>
+                        <th>Sales $</th>
+                        <th>CGTM $</th>
+                    </tr>
+                    <tr>
+                        <th><apex:outputLabel value="Total Goal" for="salesGoal"/></th>
+                        <td>
+                            <apex:outputText id="salesGoal" value="${!currentUser.activeTotalBudget}"/>
+                        </td>
+                        <td>
+                            <apex:outputText id="gtmGoal" value="${!currentUser.activeGtmTotalBudget}"/>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th><apex:outputLabel value="Amount Allocated" for="totalAllocated"/></th>
+                        <td>
+                            <apex:outputText id="totalAllocated" value="${!totalAllocatedString}"/>
+                        </td>
+                        <td>
+                            <apex:outputText id="totalGtmAllocated" value="${!totalGtmAllocatedString}"/>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th><apex:outputLabel style="color:red;" value="Difference" for="totalUnallocated"/></th>
+                        <td>
+                            <apex:outputText id="totalUnallocated" style="color:red;" value="${!totalUnallocatedString}"/>
+                        </td>
+                        <td>
+                            <apex:outputText id="totalGtmUnallocated" style="color:red;" value="${!totalGtmUnallocatedString}"/>
+                        </td>
+                    </tr>
+                </table>
+            </apex:outputPanel>
+        
+            <apex:pageBlockSection id="directReportSection" title="" collapsible="false">
+             
+                <apex:pageBlockTable value="{!directReports}" var="directReport">                   
+                    <apex:column >
+                        <a href="/{!directReport.rep.Id}">{!directReport.rep.Name}</a>
+                    </apex:column>
+                    <apex:column headerValue="Segment">
+                        <apex:outputText value="{!directReport.activeSegment}"/>
+                    </apex:column>
+                    <apex:column headerValue="Sales $">
+                        <apex:inputText value="{!directReport.activeBudget}" rendered="{!NOT(isTotal)}" disabled="{!NOT(isAppEnabled)}">
+                            <apex:actionSupport event="onchange" action="{!calcTotals}" rerender="totals, saveBtnPanel"/>
+                        </apex:inputText>
+                        <apex:outputText value="{!directReport.activeBudget}" rendered="{!isTotal}"/>
+                    </apex:column>
+                    <apex:column headerValue="CGTM $">
+                        <apex:inputText value="{!directReport.activeGtmBudget}" rendered="{!NOT(isTotal)}" disabled="{!NOT(isAppEnabled)}">
+                            <apex:actionSupport event="onchange" action="{!calcTotals}" rerender="totals, saveBtnPanel"/>
+                        </apex:inputText>
+                        <apex:outputText value="{!directReport.activeGtmBudget}" rendered="{!isTotal}"/>
+                    </apex:column>
+                </apex:pageBlockTable> 
+             
+            </apex:pageBlockSection>
+            <apex:pageBlockSection >
+	            <apex:outputPanel style="margin-right:10px">                 
+	                <a href="/01570000001B9Rx">Help Documentation</a>
+	            </apex:outputPanel>
+	            <apex:outputPanel style="margin-right:10px">                 
+	                <a href="/apex/SegmentBudget?year={!selectedYear}">Export to Excel</a>
+	            </apex:outputPanel>
+            </apex:pageBlockSection>
+        </apex:pageBlock>
+    
+    </apex:form>
+</apex:page>

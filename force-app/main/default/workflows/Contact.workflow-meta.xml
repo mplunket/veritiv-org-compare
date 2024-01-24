@@ -1,0 +1,212 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Workflow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fieldUpdates>
+        <fullName>Clear_out_Bounce_Date</fullName>
+        <field>Bounced_Date__c</field>
+        <name>Clear out Bounce Date</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Null</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Clear_out_Bounce_Reason</fullName>
+        <field>Bounced_Reason__c</field>
+        <name>Clear out Bounce Reason</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Null</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Clear_out_HasBounced</fullName>
+        <field>HasBounced__c</field>
+        <literalValue>0</literalValue>
+        <name>Clear out HasBounced</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Clear_out_Inactive_Date</fullName>
+        <field>Inactive_Date__c</field>
+        <name>Clear out Inactive Date</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Null</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Copy_Email_Bounce_Date</fullName>
+        <field>Bounced_Date__c</field>
+        <formula>EmailBouncedDate</formula>
+        <name>Copy Email Bounce Date</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Copy_Email_Bounce_Reason</fullName>
+        <field>Bounced_Reason__c</field>
+        <formula>EmailBouncedReason</formula>
+        <name>Copy Email Bounce Reason</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Mark_as_Bounced</fullName>
+        <field>HasBounced__c</field>
+        <literalValue>1</literalValue>
+        <name>Mark as Bounced</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Reset_Bypass_Validation_Checkbox</fullName>
+        <description>Clear the bypass validation checkbox.</description>
+        <field>Bypass_Validation_Rule__c</field>
+        <literalValue>0</literalValue>
+        <name>Reset Bypass Validation Checkbox</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Update_Contact_Sync_to_False</fullName>
+        <field>Sync_with_Marketing_Automation__c</field>
+        <literalValue>0</literalValue>
+        <name>Update Contact Sync to False</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>true</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Update_Contact_Sync_to_True</fullName>
+        <description>if criteria met, make Sync to mktg automation True</description>
+        <field>Sync_with_Marketing_Automation__c</field>
+        <literalValue>1</literalValue>
+        <name>Update Contact Sync to True</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>true</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Update_Inactive_Date</fullName>
+        <field>Inactive_Date__c</field>
+        <formula>Today()</formula>
+        <name>Update Inactive Date</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <rules>
+        <fullName>Contact Marketing Automation Sync - False</fullName>
+        <actions>
+            <name>Update_Contact_Sync_to_False</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <description>If the sync field is true and criteria on the contact changes to where it shouldn&apos;t be synced, this workflow will update field to false.</description>
+        <formula>OR (  Email = &quot;&quot;,  Account.Owner_Country__c = &quot;CAN&quot;,   (CONTAINS( LOWER(Email),&quot;unknown&quot;)),  RecordTypeId =&quot;012700000009TST&quot;,  (CONTAINS( LOWER(Email),&quot;a.b@c.com&quot;)),   (CONTAINS( LOWER(Email),&quot;a@b.com&quot;)),   (CONTAINS( LOWER(Email),&quot;@americancontainers.com&quot;)),   (CONTAINS( LOWER(Email),&quot;@bulkleydunton.com&quot;)),  (CONTAINS( LOWER(Email),&quot;@fake.com&quot;)),   (CONTAINS( LOWER(Email),&quot;@fordis.ca&quot;)),   (CONTAINS( LOWER(Email),&quot;@fordis.com&quot;)),   (CONTAINS( LOWER(Email),&quot;@graphiccommunications.com&quot;)),   (CONTAINS( LOWER(Email),&quot;@mondrianhall.com&quot;)),   (CONTAINS( LOWER(Email),&quot;noemail&quot;)),   (CONTAINS( LOWER(Email),&quot;@saalfeldcorp.com&quot;)),   (CONTAINS( LOWER(Email),&quot;@saalfeldre-d.com&quot;)),  (CONTAINS( LOWER(Email),&quot;@tbd.com&quot;)),   (CONTAINS( LOWER(Email),&quot;@test.com&quot;)),   (CONTAINS( LOWER(Email),&quot;@unisource.ca&quot;)),   (CONTAINS( LOWER(Email),&quot;@unisourcelink.com&quot;)),   (CONTAINS( LOWER(Email),&quot;@unisourceworldwide.com&quot;)),  (CONTAINS( LOWER(Email),&quot;@veritivcorp.com&quot;)),   (CONTAINS( LOWER(Email),&quot;@xpedx.com&quot;)),   Account.Legacy_System_Cd__c = &quot;VE&quot;, Account.Legacy_System_Cd__c = &quot;X&quot;, Account.Name = &quot;Veritiv Headquarters&quot;)</formula>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+    <rules>
+        <fullName>Contact Marketing Automation Sync - True</fullName>
+        <actions>
+            <name>Update_Contact_Sync_to_True</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <description>The sync field will default to unchecked.  if it meets criteria, this workflow will update it to true</description>
+        <formula>OR( AND (      Email &lt;&gt; &quot;&quot;,      Account.Owner_Country__c &lt;&gt; &quot;CAN&quot;,      NOT (CONTAINS(LOWER(Email),&quot;unknown&quot;)),        RecordTypeId &lt;&gt; &quot;012700000009TST&quot;,      NOT (CONTAINS(LOWER(Email),&quot;a.b@c.com&quot;)),      NOT (CONTAINS(LOWER(Email),&quot;a@b.com&quot;)),      NOT (CONTAINS(LOWER(Email),&quot;@americancontainers.com&quot;)),      NOT (CONTAINS(LOWER(Email),&quot;@bulkleydunton.com&quot;)),      NOT (CONTAINS(LOWER(Email),&quot;@fake.com&quot;)),      NOT (CONTAINS(LOWER(Email),&quot;@fordis.ca&quot;)),      NOT (CONTAINS(LOWER(Email),&quot;@fordis.com&quot;)),      NOT (CONTAINS(LOWER(Email),&quot;@graphiccommunications.com&quot;)),      NOT (CONTAINS(LOWER(Email),&quot;@mondrianhall.com&quot;)),      NOT (CONTAINS(LOWER(Email),&quot;noemail&quot;)),      NOT (CONTAINS(LOWER(Email),&quot;@saalfeldcorp.com&quot;)),      NOT (CONTAINS(LOWER(Email),&quot;@saalfeldre-d.com&quot;)),      NOT (CONTAINS(LOWER(Email),&quot;@tbd.com&quot;)),      NOT (CONTAINS(LOWER(Email),&quot;@test.com&quot;)),      NOT (CONTAINS(LOWER(Email),&quot;@unisource.ca&quot;)),      NOT (CONTAINS(LOWER(Email),&quot;@unisourcelink.com&quot;)),      NOT (CONTAINS(LOWER(Email),&quot;@unisourceworldwide.com&quot;)),      NOT (CONTAINS(LOWER(Email),&quot;@veritivcorp.com&quot;)),      NOT (CONTAINS(LOWER(Email),&quot;@xpedx.com&quot;)),      Eloqua_Unmarketable_Checkbox__c = FALSE,      Account.Legacy_System_Cd__c  &lt;&gt; &quot;VE&quot;,      Account.Legacy_System_Cd__c  &lt;&gt; &quot;X&quot;,      Account.Name &lt;&gt; &quot;Veritiv Headquarters&quot;), WebCollect__c != TRUE)</formula>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+    <rules>
+        <fullName>Contact is inactivated</fullName>
+        <actions>
+            <name>Update_Inactive_Date</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <description>If a contact is inactivated, stamp today&apos;s date in this field</description>
+        <formula>ISCHANGED( Inactive__c ) &amp;&amp;  Inactive__c = True</formula>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+    <rules>
+        <fullName>Contact is reactivated</fullName>
+        <actions>
+            <name>Clear_out_Inactive_Date</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <description>If a contact is reactivated, clear out the Inactive Date field</description>
+        <formula>ISCHANGED( Inactive__c ) &amp;&amp;  Inactive__c = False</formula>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+    <rules>
+        <fullName>Copy Email Bounce data to displayable field</fullName>
+        <actions>
+            <name>Copy_Email_Bounce_Date</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <actions>
+            <name>Copy_Email_Bounce_Reason</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <actions>
+            <name>Mark_as_Bounced</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <criteriaItems>
+            <field>Contact.EmailBouncedDate</field>
+            <operation>notEqual</operation>
+        </criteriaItems>
+        <description>When SFDC detects a bounced email, it updates some standard fields.  But those fields are not displayable on the page layout, so we&apos;ll copy them to the custom fields that display</description>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+    <rules>
+        <fullName>Reset Bypass Validation Checkbox</fullName>
+        <actions>
+            <name>Reset_Bypass_Validation_Checkbox</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <criteriaItems>
+            <field>Contact.Bypass_Validation_Rule__c</field>
+            <operation>equals</operation>
+            <value>True</value>
+        </criteriaItems>
+        <description>Clears the checkbox that is being used to bypass any applicable validation rules.</description>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+    </rules>
+    <rules>
+        <fullName>Unmark Email as Bounced if Email Changes</fullName>
+        <actions>
+            <name>Clear_out_Bounce_Date</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <actions>
+            <name>Clear_out_Bounce_Reason</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <actions>
+            <name>Clear_out_HasBounced</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <description>If an email is marked as having bounced and the email address is update, clear out all bounced data</description>
+        <formula>ISCHANGED(Email)</formula>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+</Workflow>

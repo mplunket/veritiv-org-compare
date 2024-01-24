@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<FlowDefinition xmlns="http://soap.sforce.com/2006/04/metadata">
+    <description>2023/11/04: Replaced by Flow: &apos;Case - Create Related Team Case&apos;
+Allows teams to create a new related Case for another team from an existing Case
+&lt;Credit &amp; Collections removed until this team starts using Cases in SFDC&gt;</description>
+    <masterLabel>Case - Screen - New Team Related Case [DEPRECATED]</masterLabel>
+</FlowDefinition>

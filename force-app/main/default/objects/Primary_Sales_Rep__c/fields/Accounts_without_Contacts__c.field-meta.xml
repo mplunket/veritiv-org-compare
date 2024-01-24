@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Accounts_without_Contacts__c</fullName>
+    <externalId>false</externalId>
+    <formula>HYPERLINK(
+
+/* If they&apos;re in Lightning */
+IF($User.UIThemeDisplayed=&quot;Theme4d&quot;,
+
+/* Use Lightning syntax, optimized to avoid full page reload */
+&quot;/lightning/r/Report/00O5w00000AVewKEAT/view?&amp;fv2=&quot;,
+
+/* Otherwise use Classic syntax */
+&quot;/00O5w00000AVewKEAT?pv2=&quot;)
+
+/* Append the PSR Name?fv2= */
+&amp;   Name   ,
+ 
+/* Specify the link text */
+&quot;Accounts -  without Contacts&quot;,
+
+/* Keep it in the same browser tab to avoid full page reload */
+&quot;_self&quot;
+)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Accounts -  without Contacts</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

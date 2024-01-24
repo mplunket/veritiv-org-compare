@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Final_Request_Type__c</fullName>
+    <description>If the Request Type changes during the life of the Request, this is the final disposition.</description>
+    <externalId>false</externalId>
+    <inlineHelpText>If the Request Type should be updated during the life of the Request, enter the final request type here.</inlineHelpText>
+    <label>Final Request Type</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Question/Research</fullName>
+                <default>false</default>
+                <label>Question/Research</label>
+            </value>
+            <value>
+                <fullName>Enhancement</fullName>
+                <default>false</default>
+                <label>Enhancement</label>
+            </value>
+            <value>
+                <fullName>New Feature</fullName>
+                <default>false</default>
+                <label>New Feature</label>
+            </value>
+            <value>
+                <fullName>Bug/Issue</fullName>
+                <default>false</default>
+                <label>Bug/Issue</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

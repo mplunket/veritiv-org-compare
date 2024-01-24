@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>My_Legal_Contracts_in_Flight</fullName>
+    <columns>NAME</columns>
+    <columns>Document_Type__c</columns>
+    <columns>contract_status__c</columns>
+    <columns>Field_Sales_or_NA__c</columns>
+    <columns>Is_Program_Managed__c</columns>
+    <columns>Account_Name__c</columns>
+    <columns>Account_Owner__c</columns>
+    <columns>Account_Owner_SM__c</columns>
+    <columns>Account_Owner_RVP__c</columns>
+    <columns>OWNER.LAST_NAME</columns>
+    <columns>CREATED_DATE</columns>
+    <filterScope>Mine</filterScope>
+    <filters>
+        <field>contract_status__c</field>
+        <operation>notEqual</operation>
+        <value>Fully Executed/Active,Cancelled,Terminated,Expired</value>
+    </filters>
+    <label>My Legal Contracts in Flight</label>
+</ListView>

@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<RecordType xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Salesforce</fullName>
+    <active>true</active>
+    <description>Salesforce specific components.</description>
+    <label>Salesforce</label>
+    <picklistValues>
+        <picklist>Currency__c</picklist>
+        <values>
+            <fullName>CurrencyIsoCode</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Picklist</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Last_Modified_Users__c</picklist>
+        <values>
+            <fullName>Picklist %28Multi-Select%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>alm_pm2%5F%5FLast_Modified_Users%5F%5Fc</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Source_Instances__c</picklist>
+        <values>
+            <fullName>Picklist %28Multi-Select%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>alm_pm2%5F%5FSource_Instances%5F%5Fc</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Type__c</picklist>
+        <values>
+            <fullName>Picklist</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>alm_pm2%5F%5FType%5F%5Fc</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+</RecordType>

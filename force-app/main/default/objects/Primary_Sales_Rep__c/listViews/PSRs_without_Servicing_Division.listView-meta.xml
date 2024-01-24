@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>PSRs_without_Servicing_Division</fullName>
+    <columns>NAME</columns>
+    <columns>name_zm_sm__c</columns>
+    <columns>user_role__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>Servicing_Division__c</field>
+        <operation>equals</operation>
+    </filters>
+    <filters>
+        <field>user_role__c</field>
+        <operation>contains</operation>
+        <value>sale,core</value>
+    </filters>
+    <filters>
+        <field>Country__c</field>
+        <operation>notEqual</operation>
+        <value>CAN</value>
+    </filters>
+    <filters>
+        <field>deactivated_user__c</field>
+        <operation>equals</operation>
+        <value>0</value>
+    </filters>
+    <filters>
+        <field>user_role__c</field>
+        <operation>notContain</operation>
+        <value>CS,3PL,VP,GRAPHCOMM</value>
+    </filters>
+    <label>PSRs without Servicing Division</label>
+    <language>en_US</language>
+    <sharedTo>
+        <group>SFDCAdminAccount</group>
+        <group>SF_Team</group>
+    </sharedTo>
+</ListView>

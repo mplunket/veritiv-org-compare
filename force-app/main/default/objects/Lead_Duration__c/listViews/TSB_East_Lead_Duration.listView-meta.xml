@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>TSB_East_Lead_Duration</fullName>
+    <filterScope>Queue</filterScope>
+    <label>TSB East</label>
+    <queue>TSB_East</queue>
+    <sharedTo>
+        <allInternalUsers></allInternalUsers>
+    </sharedTo>
+</ListView>

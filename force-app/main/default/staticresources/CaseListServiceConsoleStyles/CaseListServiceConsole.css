@@ -1,0 +1,17 @@
+div[id$="mainBlock"] {
+    background-color:white !important;    
+    min-width: 280px;
+}
+
+.loadingBox{
+	background: #fff url(images/loading.gif) 36px 19px no-repeat;
+}
+.loadingText {
+	color: #27282e;
+	font-size: 1.2em;
+	font-weight: bold;
+	line-height: 70px;
+	text-align: center;
+	position: relative; 
+	left:+20px;
+}

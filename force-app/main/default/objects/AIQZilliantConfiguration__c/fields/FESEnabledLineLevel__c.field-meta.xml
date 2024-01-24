@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>FESEnabledLineLevel__c</fullName>
+    <description>line separated list of Line Level Names that FES has to run for</description>
+    <externalId>false</externalId>
+    <inlineHelpText>line separated list of Line Level Names that FES has to run for</inlineHelpText>
+    <label>FESEnabledLineLevel</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>TextArea</type>
+</CustomField>

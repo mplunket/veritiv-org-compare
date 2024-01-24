@@ -1,0 +1,8 @@
+<design:component label="External View Visualizer">
+    
+    <design:attribute name="reportIdField" label="Report Id Field" description="Report id field from VBO custom setting" />
+    <design:attribute name="ResourceURI" label="Resource URI" description="External resource that has to be visualized" />
+    <design:attribute name="height" label="Height" description="IFrame height (pixels)" />
+    
+    
+</design:component>

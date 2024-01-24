@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<FlowDefinition xmlns="http://soap.sforce.com/2006/04/metadata">
+    <activeVersionNumber>8</activeVersionNumber>
+    <description>Captures input via screenflow for Work Orders using the &apos;Sourcing US - Lightning&apos; record type. May be launched from the Account or Opportunity via the &apos;Sourcing&apos; quick action button. Flow runs as system so that the field level security on &apos;Type of Request&apos; field on the Work Order object may be edited in the Flow, while keeping the field read only outside of the Flow for all but admin users.</description>
+    <masterLabel>Work Order - Field Sourcing Work Order Request</masterLabel>
+</FlowDefinition>

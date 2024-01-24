@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Camp_Cost_Change_50__c</fullName>
+    <externalId>false</externalId>
+    <formula>if(CampCostChangePct__c &gt; 0.5, 1, if(CampCostChangePct__c &lt; -0.5, 1, 0))</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Camp Cost Change &gt;50%</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>4</scale>
+    <trackTrending>false</trackTrending>
+    <type>Number</type>
+    <unique>false</unique>
+</CustomField>

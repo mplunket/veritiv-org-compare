@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Customer_Email__c</fullName>
+    <description>Free-form email address section</description>
+    <externalId>false</externalId>
+    <inlineHelpText>This field is required to schedule a CPL.
+
+Use a line break to separate multiple email recipients.</inlineHelpText>
+    <label>Customer Email</label>
+    <required>true</required>
+    <trackTrending>false</trackTrending>
+    <type>TextArea</type>
+</CustomField>

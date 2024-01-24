@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Material__c</fullName>
+    <externalId>false</externalId>
+    <label>Material</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>32 ECT E Flute MW2S</fullName>
+                <default>false</default>
+                <label>32 ECT E Flute MW2S</label>
+            </value>
+            <value>
+                <fullName>32 ECT E Flute Kraft</fullName>
+                <default>false</default>
+                <label>32 ECT E Flute Kraft</label>
+            </value>
+            <value>
+                <fullName>32 ECT B Flute Kraft</fullName>
+                <default>false</default>
+                <label>32 ECT B Flute Kraft</label>
+            </value>
+            <value>
+                <fullName>32 ECT B Flute MW1S</fullName>
+                <default>false</default>
+                <label>32 ECT B Flute MW1S</label>
+            </value>
+            <value>
+                <fullName>32 ECT C Flute Kraft</fullName>
+                <default>false</default>
+                <label>32 ECT C Flute Kraft</label>
+            </value>
+            <value>
+                <fullName>44 ECT C Flute Kraft</fullName>
+                <default>false</default>
+                <label>44 ECT C Flute Kraft</label>
+            </value>
+            <value>
+                <fullName>51 ECT BC Flute Kraft</fullName>
+                <default>false</default>
+                <label>51 ECT BC Flute Kraft</label>
+            </value>
+            <value>
+                <fullName>Folding Carton</fullName>
+                <default>false</default>
+                <label>Folding Carton</label>
+            </value>
+            <value>
+                <fullName>Other</fullName>
+                <default>false</default>
+                <label>Other</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

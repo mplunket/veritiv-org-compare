@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>C360_Data_Warning__c</fullName>
+    <externalId>false</externalId>
+    <formula>IMAGE(&quot;/servlet/servlet.FileDownload?file=01570000002lMCt&quot;, &quot;Stop&quot;,60,535)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Note</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

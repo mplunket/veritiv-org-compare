@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Reassignment_Status__c</fullName>
+    <externalId>false</externalId>
+    <formula>IF(
+OR(
+ISPICKVAL(Reassignment_Stage__c, &quot;Observation Complete - Stay with Rep&quot;),
+ISPICKVAL(Reassignment_Stage__c, &quot;No Reassignment Needed&quot;),
+ISPICKVAL(Reassignment_Stage__c, &quot;Reassigned - House&quot;),
+ISPICKVAL(Reassignment_Stage__c, &quot;Reassigned - Inside Sales&quot;),
+ISPICKVAL(Reassignment_Stage__c, &quot;Reassigned - House / Inside Sales&quot;)
+),
+&quot;Closed&quot;,
+&quot;Open&quot;)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Reassignment Status</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

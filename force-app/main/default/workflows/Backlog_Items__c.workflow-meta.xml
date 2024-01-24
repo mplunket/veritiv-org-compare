@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Workflow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <alerts>
+        <fullName>QA_Ready_Email_Backlog_ItemsV</fullName>
+        <description>QA Ready Email</description>
+        <protected>false</protected>
+        <recipients>
+            <type>owner</type>
+        </recipients>
+        <recipients>
+            <field>QA_Tester__c</field>
+            <type>userLookup</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>SDLC_Email_Templates/QA_Ready</template>
+    </alerts>
+    <alerts>
+        <fullName>QA_Verified_Email_Alert_Backlog_ItemsV_2</fullName>
+        <description>QA Verified Email Alert</description>
+        <protected>false</protected>
+        <recipients>
+            <type>owner</type>
+        </recipients>
+        <recipients>
+            <field>Assigned__c</field>
+            <type>userLookup</type>
+        </recipients>
+        <recipients>
+            <field>QA_Tester__c</field>
+            <type>userLookup</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>SDLC_Email_Templates/QA_Verified</template>
+    </alerts>
+    <alerts>
+        <fullName>Simplus_Portal_Email_to_Case_Backlog</fullName>
+        <ccEmails>john+msc@o-1vzgr55ktbiaw0s3bmz8z9n4c0l5cuoio33fndgub8stoucxkx.5-jve6eag.na84.case.salesforce.com</ccEmails>
+        <ccEmails>rodney.ballener@simplus.com</ccEmails>
+        <ccEmails>christina.nguyen@simplus.com</ccEmails>
+        <ccEmails>heidi.coffee@simplus.com</ccEmails>
+        <description>Simplus Portal Email to Case Backlog</description>
+        <protected>false</protected>
+        <recipients>
+            <recipient>heidi.coffee@simplus.com.veritiv</recipient>
+            <type>user</type>
+        </recipients>
+        <recipients>
+            <recipient>rodney.ballener@simplus.com.veritiv</recipient>
+            <type>user</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>Admin_Communications/Simplus_Portal_Email_to_Case_Template_Backlog</template>
+    </alerts>
+    <rules>
+        <fullName>Simplus Portal Email to Case Backlog</fullName>
+        <actions>
+            <name>Simplus_Portal_Email_to_Case_Backlog</name>
+            <type>Alert</type>
+        </actions>
+        <active>false</active>
+        <formula>CONTAINS(Assigned__r.FirstName, &quot;Simplus&quot;)</formula>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+    </rules>
+</Workflow>

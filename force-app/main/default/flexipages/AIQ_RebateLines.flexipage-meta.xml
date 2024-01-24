@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<FlexiPage xmlns="http://soap.sforce.com/2006/04/metadata">
+    <flexiPageRegions>
+        <itemInstances>
+            <componentInstance>
+                <componentInstanceProperties>
+                    <name>ResourceURI</name>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>height</name>
+                    <value>800</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>reportIdField</name>
+                    <value>Contract_Rebate_Expiry_Report__c</value>
+                </componentInstanceProperties>
+                <componentName>aiqEmbeddedExternalReport</componentName>
+                <identifier>aiqEmbeddedExternalReport</identifier>
+            </componentInstance>
+        </itemInstances>
+        <name>main</name>
+        <type>Region</type>
+    </flexiPageRegions>
+    <masterLabel>Rebate Lines</masterLabel>
+    <template>
+        <name>flexipage:defaultAppHomeTemplate</name>
+    </template>
+    <type>AppPage</type>
+</FlexiPage>

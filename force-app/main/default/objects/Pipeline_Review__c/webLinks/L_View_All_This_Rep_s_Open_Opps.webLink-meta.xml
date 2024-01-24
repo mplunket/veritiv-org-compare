@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<WebLink xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>L_View_All_This_Rep_s_Open_Opps</fullName>
+    <availability>online</availability>
+    <description>Built for Lightning</description>
+    <displayType>massActionButton</displayType>
+    <encodingKey>UTF-8</encodingKey>
+    <linkType>url</linkType>
+    <masterLabel>See Rep&apos;s Open Opps</masterLabel>
+    <openType>replace</openType>
+    <protected>false</protected>
+    <requireRowSelection>true</requireRowSelection>
+    <url>https://veritiv.lightning.force.com/lightning/r/Report/00O70000002vSYcEAM/view?fv0={!Primary_Sales_Rep__c.Name}&amp;fv1={!Primary_Sales_Rep__c.Name}&amp;fv2={!Primary_Sales_Rep__c.Name}</url>
+</WebLink>

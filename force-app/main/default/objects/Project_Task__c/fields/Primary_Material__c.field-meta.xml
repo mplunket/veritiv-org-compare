@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Primary_Material__c</fullName>
+    <externalId>false</externalId>
+    <label>Primary Material</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Fabricated Foam</fullName>
+                <default>false</default>
+                <label>Fabricated Foam</label>
+            </value>
+            <value>
+                <fullName>Molded Foam</fullName>
+                <default>false</default>
+                <label>Molded Foam</label>
+            </value>
+            <value>
+                <fullName>Paper Corrugated</fullName>
+                <default>false</default>
+                <label>Paper Corrugated</label>
+            </value>
+            <value>
+                <fullName>Plastic Corrugated</fullName>
+                <default>false</default>
+                <label>Plastic Corrugated</label>
+            </value>
+            <value>
+                <fullName>Folding Carton</fullName>
+                <default>false</default>
+                <label>Folding Carton</label>
+            </value>
+            <value>
+                <fullName>Bio-Pulp</fullName>
+                <default>false</default>
+                <label>Bio-Pulp</label>
+            </value>
+            <value>
+                <fullName>Bio-Polymer</fullName>
+                <default>false</default>
+                <label>Bio-Polymer</label>
+            </value>
+            <value>
+                <fullName>Wood</fullName>
+                <default>false</default>
+                <label>Wood</label>
+            </value>
+            <value>
+                <fullName>Cloth</fullName>
+                <default>false</default>
+                <label>Cloth</label>
+            </value>
+            <value>
+                <fullName>Hexacomb</fullName>
+                <default>false</default>
+                <label>Hexacomb</label>
+            </value>
+            <value>
+                <fullName>Thermoform</fullName>
+                <default>false</default>
+                <label>Thermoform</label>
+            </value>
+            <value>
+                <fullName>Returnable</fullName>
+                <default>false</default>
+                <label>Returnable</label>
+            </value>
+            <value>
+                <fullName>Injection Molding</fullName>
+                <default>false</default>
+                <label>Injection Molding</label>
+            </value>
+            <value>
+                <fullName>Rack Systems</fullName>
+                <default>false</default>
+                <label>Rack Systems</label>
+            </value>
+            <value>
+                <fullName>Assembly</fullName>
+                <default>false</default>
+                <label>Assembly</label>
+            </value>
+            <value>
+                <fullName>Other</fullName>
+                <default>false</default>
+                <label>Other</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

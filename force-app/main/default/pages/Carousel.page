@@ -1,0 +1,183 @@
+<apex:page controller="CarouselController" sidebar="false" showHeader="false">
+
+    <apex:includeScript value="{!$Resource.jquery1_8_2}" />
+    <apex:includeScript value="{!$Resource.slidesjs}" />
+
+
+     <style type="text/css" media="screen">
+
+        #container {
+            width:980px;
+            padding:10px;
+            margin:0 auto;
+            position:relative;
+            z-index:0;
+        }
+
+        /*
+            Slideshow style
+        */
+
+        #slides {
+            position:absolute;
+            top:15px;
+            left:4px;
+            z-index:100;
+
+        }
+
+        /*
+            Slides container
+            Important:
+            Set the width of your slides container
+            If height not specified height will be set by the slide content
+            Set to display none, prevents content flash
+        */
+
+        .slides_container {
+            width:970px;
+            height:300px;
+            overflow:hidden;
+            position:relative;
+            display:none;
+        }
+
+        /*
+            Each slide
+            Important:
+            Set the width of your slides
+            Offeset for the 20px of padding
+            If height not specified height will be set by the slide content
+            Set to display block
+        */
+
+        #slides .slide {
+            overflow-y:auto;
+            padding:20px;
+            width:930px;
+            height:290px;
+            display:block;
+        }
+
+        /*
+            Next/prev buttons
+        */
+        #slides .next,#slides .prev {
+            position:absolute;
+            top:55px;
+            left:-39px;
+            width:24px;
+            height:43px;
+            display:block;
+            z-index:101;
+        }
+
+        #slides .next {
+            left:985px;
+        }
+
+        /*
+            Pagination
+        */
+
+        .pagination {
+            margin: 0 auto 0;
+            width:100px;
+        }
+
+        .pagination li {
+            float:left;
+            margin:0 1px;
+            list-style:none;
+        }
+
+        .pagination li a {
+            display:block;
+            width:12px;
+            height:0;
+            padding-top:12px;
+            background-image:  url('{!URLFOR($Resource.CarouselHomepage, 'img/pagination.png')}') ;
+            background-position:0 0;
+            float:left;
+            overflow:hidden;
+        }
+
+        .pagination li.current a {
+            background-position:0 -12px;
+        }
+
+        /*
+            Type and anchors
+        */
+
+        a:link,a:visited {
+            color:#599100;
+            text-decoration:none;
+        }
+
+        a:hover,a:active {
+            color:#599100;
+            text-decoration:underline;
+        }
+
+        h1 {
+            font-size:2em;
+        }
+
+        p {
+            font-size:1.3em;
+        }
+
+        #slides .link {
+            display:block;
+            margin-top:10px;
+            font-weight:800;
+        }
+    </style>
+
+    <script>
+
+        var $j = jQuery.noConflict();
+
+
+        $j(function(){
+            var startSlide = 1;
+            // Get slide number if it exists
+            if (window.location.hash) {
+                    startSlide = window.location.hash.replace('#','');
+            }
+            // Initialize Slides
+            $j('#slides').slides({
+                preload: false,
+                preloadImage: '{!URLFOR($Resource.CarouselHomepage, 'img/loading.gif')}',
+                generatePagination: true,
+                play: 5000,
+                pause: 2500,
+                hoverPause: true,
+                // Get the starting slide
+                start: startSlide,
+                animationComplete: function(current){
+                    // Set the slide number as a hash
+                    window.location.hash = '#' + current;
+                }
+            });
+        });
+
+
+    </script>
+    <div id="container">
+        <div id="slides">
+            <div class="slides_container">
+                <apex:repeat value="{!announcements}" var="announcement" >
+                    <div class="slide">
+                        <apex:outputText value="{!announcement.content}" escape="false"/>
+                        <br/><br/>
+                        <apex:outputLink value="http://{!announcement.url}" target="_blank" >{!announcement.url}</apex:outputLink>
+                    </div>
+                </apex:repeat>
+            </div>
+            <a href="javascript: void(0);" class="prev"><img src="{!URLFOR($Resource.CarouselHomepage, 'img/arrow-prev.png')}" width="24" height="43" alt="Arrow Prev"/></a>
+            <a href="javascript: void(0);" class="next"><img src="{!URLFOR($Resource.CarouselHomepage, 'img/arrow-next.png')}" width="24" height="43" alt="Arrow Next"/></a>
+        </div>
+    </div>
+</apex:page>

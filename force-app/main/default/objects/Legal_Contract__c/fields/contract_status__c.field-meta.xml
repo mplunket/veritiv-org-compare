@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>contract_status__c</fullName>
+    <description>New - status when intake form is completed in Salesforce
+With Admin - changed when owner goes from Queue to a User in Salesforce
+All other statuses are fed in from CLM</description>
+    <externalId>false</externalId>
+    <label>Contract Status</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>New</fullName>
+                <default>false</default>
+                <label>New</label>
+            </value>
+            <value>
+                <fullName>With Admin</fullName>
+                <default>false</default>
+                <label>With Admin</label>
+            </value>
+            <value>
+                <fullName>Under Management Review</fullName>
+                <default>false</default>
+                <label>Under Management Review</label>
+            </value>
+            <value>
+                <fullName>Under Legal Review</fullName>
+                <default>false</default>
+                <label>Under Legal Review</label>
+            </value>
+            <value>
+                <fullName>With Customer for Redlining</fullName>
+                <default>false</default>
+                <label>With Customer for Redlining</label>
+            </value>
+            <value>
+                <fullName>Final Internal Reviews</fullName>
+                <default>false</default>
+                <label>Final Internal Reviews</label>
+            </value>
+            <value>
+                <fullName>Out for Signatures</fullName>
+                <default>false</default>
+                <label>Out for Signatures</label>
+            </value>
+            <value>
+                <fullName>Fully Executed/Active</fullName>
+                <default>false</default>
+                <label>Fully Executed/Active</label>
+            </value>
+            <value>
+                <fullName>Cancelled</fullName>
+                <default>false</default>
+                <label>Cancelled</label>
+            </value>
+            <value>
+                <fullName>Terminated</fullName>
+                <default>false</default>
+                <label>Terminated</label>
+            </value>
+            <value>
+                <fullName>Expired</fullName>
+                <default>false</default>
+                <label>Expired</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

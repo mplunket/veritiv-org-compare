@@ -1,0 +1,1040 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomLabels xmlns="http://soap.sforce.com/2006/04/metadata">
+    <labels>
+        <fullName>AIQAccountMissing</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Account Missing</shortDescription>
+        <value>Account Is Not Selected</value>
+    </labels>
+    <labels>
+        <fullName>AIQActionUnsuccessful</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>E</shortDescription>
+        <value>Action unsuccessful</value>
+    </labels>
+    <labels>
+        <fullName>AIQCancelCampRejected</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Cancel Camp Rejected</shortDescription>
+        <value>Line Does Not Have Campaign</value>
+    </labels>
+    <labels>
+        <fullName>AIQCancelCampSuccess</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Cancel Camp Success</shortDescription>
+        <value>Cancel Campaign Action Succeeded</value>
+    </labels>
+    <labels>
+        <fullName>AIQCopyContractContent</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Copy Contract Content</shortDescription>
+        <value>Please select account and click &quot;OK&quot; to create a copy, otherwise click &quot;Cancel&quot;</value>
+    </labels>
+    <labels>
+        <fullName>AIQCopyContractHeader</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Copy Contract Header</shortDescription>
+        <value>Copy Pricing Contract</value>
+    </labels>
+    <labels>
+        <fullName>AIQCopyLineContent</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Copy Line Content</shortDescription>
+        <value>Please Confirm Copy Line(s) Action</value>
+    </labels>
+    <labels>
+        <fullName>AIQCopyLineHeader</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Copy Line Header</shortDescription>
+        <value>Copy Line</value>
+    </labels>
+    <labels>
+        <fullName>AIQCopyRejected</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Copy Rejected</shortDescription>
+        <value>Cannot Copy Draft Line!</value>
+    </labels>
+    <labels>
+        <fullName>AIQCopySuccess</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>AIQCopyRejected</shortDescription>
+        <value>Copied Successfully!</value>
+    </labels>
+    <labels>
+        <fullName>AIQCreateContractContent</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Create Contract Content</shortDescription>
+        <value>Please Select Account For Contract</value>
+    </labels>
+    <labels>
+        <fullName>AIQCreateContractHeader</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Create Contract Header</shortDescription>
+        <value>Create Pricing Contract</value>
+    </labels>
+    <labels>
+        <fullName>AIQDeleteLineContent</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Delete Line Content</shortDescription>
+        <value>This  will delete the currently  selected line(s) pricing, any prior published pricing will become the current pricing once these are deleted.</value>
+    </labels>
+    <labels>
+        <fullName>AIQDeleteLineHeader</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Delete Line Header</shortDescription>
+        <value>Delete Line</value>
+    </labels>
+    <labels>
+        <fullName>AIQDeleteRejected</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Delete Rejected</shortDescription>
+        <value>Cannot Delete Line(s)</value>
+    </labels>
+    <labels>
+        <fullName>AIQDownSyncBypassIntegrationUser</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>DownSyncBypassIntegrationUser</shortDescription>
+        <value>api_cs_zilliant@zilliant.com</value>
+    </labels>
+    <labels>
+        <fullName>AIQHardDeleteSuccess</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Hard Delete Success</shortDescription>
+        <value>Deleted Successfully!</value>
+    </labels>
+    <labels>
+        <fullName>AIQPublishLineContent</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Publish Line Content</shortDescription>
+        <value>Please Confirm Publishing Line(s)</value>
+    </labels>
+    <labels>
+        <fullName>AIQPublishLineHeader</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Publish Line Header</shortDescription>
+        <value>Publish Line</value>
+    </labels>
+    <labels>
+        <fullName>AIQPublishRejected</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Publish Rejected</shortDescription>
+        <value>Only Draft Line Can Be Published</value>
+    </labels>
+    <labels>
+        <fullName>AIQPublishSuccess</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Publish Success</shortDescription>
+        <value>Publishing...</value>
+    </labels>
+    <labels>
+        <fullName>AIQRedirectMessage</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Redirect Message</shortDescription>
+        <value>Redirecting...</value>
+    </labels>
+    <labels>
+        <fullName>AIQRefreshContractContent</fullName>
+        <categories>ActionFrameworkLabels</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>AIQRefreshContractContent</shortDescription>
+        <value>This action will initiate a process updating cost and pricing guidance for entire contract. Please click &quot;OK&quot; to continue, otherwise click &quot;Cancel&quot;</value>
+    </labels>
+    <labels>
+        <fullName>AIQRefreshContractHeader</fullName>
+        <categories>ActionFrameworkLabels</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>AIQRefreshContractHeader</shortDescription>
+        <value>Refresh Pricing Contract</value>
+    </labels>
+    <labels>
+        <fullName>AIQSoftDeleteSuccess</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Soft Delete Success</shortDescription>
+        <value>Changed Status To &quot;Deleted&quot;!</value>
+    </labels>
+    <labels>
+        <fullName>AIQVacatePricingContent</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Remove Pricing Content</shortDescription>
+        <value>You have selected record(s) to delete.  If a Draft status record is selected; only that record will be deleted.  If a Published record is selected; all associated pricing records will be removed from the contract.</value>
+    </labels>
+    <labels>
+        <fullName>AIQVacatePricingRejected</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Vacate Pricing Rejected</shortDescription>
+        <value>Can Only Vacate Prices For Active Line(s)</value>
+    </labels>
+    <labels>
+        <fullName>AIQVacatePricingSuccess</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Vacate Pricing Success</shortDescription>
+        <value>Vacated Pricing For Active Line(s)</value>
+    </labels>
+    <labels>
+        <fullName>AIQ_PublishOnlyDraft</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Publish Only Draft</shortDescription>
+        <value>Publishing Only Draft Line...</value>
+    </labels>
+    <labels>
+        <fullName>AIQ_Vew_Exp_Rebates</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Vew All Lable for Exp Rebates</shortDescription>
+        <value>Link: Expiring Rebate/Dev Rpt</value>
+    </labels>
+    <labels>
+        <fullName>Additional_Details</fullName>
+        <categories>Quote Line Item - Additional Details</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Additional Details</shortDescription>
+        <value>Additional Details</value>
+    </labels>
+    <labels>
+        <fullName>Apex_Batch_Email_Message</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Apex Batch Email Message</shortDescription>
+        <value>The batch has completed, but you should still double check your objects for any errors.</value>
+    </labels>
+    <labels>
+        <fullName>AscentLogin_IncorrectPassword</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Ascent Login - Incorrect Password Message</shortDescription>
+        <value>Incorrect Password!
+&lt;br&gt;&lt;br&gt;
+Need help? Call 866-285-0155</value>
+    </labels>
+    <labels>
+        <fullName>CEIVeritivCaseExceptionUsers</fullName>
+        <categories>User IDs</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>CEIVeritivCaseExceptionUsers</shortDescription>
+        <value>00570000004U0By,00570000003HR8W,005390000067B9M</value>
+    </labels>
+    <labels>
+        <fullName>CLIA_Closed_Record_Type_ID</fullName>
+        <categories>Variables</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>CLIA Closed Record Type ID</shortDescription>
+        <value>012f2000000KsL2AAK</value>
+    </labels>
+    <labels>
+        <fullName>CLIA_Open_Record_Type_ID</fullName>
+        <categories>Variables</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>CLIA Open Record Type ID</shortDescription>
+        <value>012f2000000KsL3AAK</value>
+    </labels>
+    <labels>
+        <fullName>CLIA_Zilliant_Pricing_Team</fullName>
+        <categories>Variables</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>CLIA Zilliant Pricing Team</shortDescription>
+        <value>00Ge0000001jnhs</value>
+    </labels>
+    <labels>
+        <fullName>CPL_Brand_Help_Text</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>CPL Brand Help Text</shortDescription>
+        <value>Search All Brands within the agreement or search to filter the results.</value>
+    </labels>
+    <labels>
+        <fullName>CPL_Class_Help_Text</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>CPL Class Help Text</shortDescription>
+        <value>Search All Classes within the agreement or search to filter the results.</value>
+    </labels>
+    <labels>
+        <fullName>CPL_Division_Help_Text</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>CPL Division Help Text</shortDescription>
+        <value>Search All Divisions within the agreement or search to filter the results.</value>
+    </labels>
+    <labels>
+        <fullName>CPL_Footer_Terms</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>CPL Footer Terms</shortDescription>
+        <value>Seller’s Terms and Conditions are incorporated by reference and are available at https://www.veritivcorp.com/termsandconditions-sellers. Buyer’s acceptance of Seller’s Terms and Conditions is a condition precedent to Seller’s acceptance of customers order.</value>
+    </labels>
+    <labels>
+        <fullName>CPL_Sales_Rep_Help_Text</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>CPL Sales Rep Help Text</shortDescription>
+        <value>Whose name and email should appear on the CPL?</value>
+    </labels>
+    <labels>
+        <fullName>CPL_Segment_Help_Text</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>CPL Segment Help Text</shortDescription>
+        <value>Search All Segments within the agreement or search to filter the results.</value>
+    </labels>
+    <labels>
+        <fullName>Close_Additional_Details</fullName>
+        <categories>Additional Details</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Close</shortDescription>
+        <value>Close</value>
+    </labels>
+    <labels>
+        <fullName>Comments</fullName>
+        <categories>Additional Details</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Comments on Details</shortDescription>
+        <value>Line Item Comments(Print on Quote)</value>
+    </labels>
+    <labels>
+        <fullName>ConsoleEmailTemplateDisclaimer</fullName>
+        <categories>Variables</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>ConsoleEmailTemplateDisclaimer</shortDescription>
+        <value>.</value>
+    </labels>
+    <labels>
+        <fullName>CreateOrder_ErrorAccountInactive</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Create Order Error Account Inactive</shortDescription>
+        <value>&gt;&gt;&gt;ACCOUNT IS INACTIVE.&lt;&lt;&lt; 
+PLEASE SELECT AN ACTIVE ACCOUNT. 
+Disregard all other warnings until you have selected an active account.</value>
+    </labels>
+    <labels>
+        <fullName>CreateOrder_ErrorCostRequiredForDirect</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Create Order - Error - Cost Required For Direct</shortDescription>
+        <value>Cost is missing on selected Product Code, add cost to selected items.</value>
+    </labels>
+    <labels>
+        <fullName>CreateOrder_ErrorExpirationDateRequired</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Create Order - Error - Expiration Date Required</shortDescription>
+        <value>Expiration Date is missing, this field is required for order processing to proceed.</value>
+    </labels>
+    <labels>
+        <fullName>CreateOrder_ErrorExpiredQuote</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Create Order - Error - Expired Quote</shortDescription>
+        <value>Expiration Date is expired, check with Vendor that cost information is still valid.</value>
+    </labels>
+    <labels>
+        <fullName>CreateOrder_ErrorExpiredRequestedDeliveryDate</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Create Order - Error - Expired Delivery Date</shortDescription>
+        <value>Requested Delivery Date is in the past, update to Today or a future date.</value>
+    </labels>
+    <labels>
+        <fullName>CreateOrder_ErrorFreightItemsRequiredForDirect</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Create Order - Error - Freight Items Required For Direct</shortDescription>
+        <value>A Freight Line is required when processing a Direct Quote to create an order.</value>
+    </labels>
+    <labels>
+        <fullName>CreateOrder_ErrorLockedItemsNotAllowed</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Create Order - Error - Locked Items Not Allowed</shortDescription>
+        <value>Locked line items cannot be sent to order.</value>
+    </labels>
+    <labels>
+        <fullName>CreateOrder_ErrorNoQuotesForProspects</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Create Order - Error - No Quotes for Prospects</shortDescription>
+        <value>Orders cannot be created for Prospect accounts.</value>
+    </labels>
+    <labels>
+        <fullName>CreateOrder_ErrorPONumberRequired</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Create Order - Error - PO Number Required</shortDescription>
+        <value>PO Number is missing, this Customer requires a PO Number for order processing.</value>
+    </labels>
+    <labels>
+        <fullName>CreateOrder_ErrorRequestedDeliveryDateRequired</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Create Order - Error - Requested Delivery Date Required</shortDescription>
+        <value>Requested Delivery Date is missing, this field is required for order processing.</value>
+    </labels>
+    <labels>
+        <fullName>CreateOrder_ErrorShipToAddressRequired</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Create Order - Error - Ship To Address Required</shortDescription>
+        <value>Ship To Address is missing, a Ship To Address is required for order processing.</value>
+    </labels>
+    <labels>
+        <fullName>CreateOrder_ErrorShipmentMethodRequired</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Create Order - Error - Shipment Method Required</shortDescription>
+        <value>Shipment Method is missing, this field is required for order processing to proceed.</value>
+    </labels>
+    <labels>
+        <fullName>CreateOrder_ErrorSpecialItemsNotAllowed</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Create Order - Error - Special Items Not Allowed</shortDescription>
+        <value>Orders cannot be created for Special Line Items.  Please return to the quote and add/select the appropriate Product Code instead.</value>
+    </labels>
+    <labels>
+        <fullName>Custom_Notification_Specialist_Design_Request</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Custom Notification ID for Specialist Notification on Design Request</shortDescription>
+        <value>0ML5w0000008PhhGAE</value>
+    </labels>
+    <labels>
+        <fullName>Customer_Price_List_Email_Body</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Customer Price List Email Body</shortDescription>
+        <value>Thank you for your continued business with Veritiv, we value your business and are committed to providing you the best service available.  Attached is your Customer Price List detailing items and price.  Please note that prices may be subject to change prior to your order.</value>
+    </labels>
+    <labels>
+        <fullName>Customer_Price_List_Email_Subject</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Customer Price List Email Subject</shortDescription>
+        <value>Veritiv Customer Price List</value>
+    </labels>
+    <labels>
+        <fullName>Customer_Price_List_No_Results_Message</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Customer Price List No Results Message</shortDescription>
+        <value>There are no agreement line items that match the current filters.</value>
+    </labels>
+    <labels>
+        <fullName>DE_Print_Orphan_Account</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>DE_Print_Orphan_Account</shortDescription>
+        <value>0013900001bWaMK</value>
+    </labels>
+    <labels>
+        <fullName>Default_Corrugated_Owner</fullName>
+        <categories>Owner IDs</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Default Corrugated Owner</shortDescription>
+        <value>00G39000004MFz1</value>
+    </labels>
+    <labels>
+        <fullName>DnB_API_Error_00040</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>D&amp;B API Error 00040: Token Expired</shortDescription>
+        <value>Access token has expired. Please generate a new token with your consumer key and secret.</value>
+    </labels>
+    <labels>
+        <fullName>DnB_API_Error_20502</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>D&amp;B API Error 20502: Invalid Country Code</shortDescription>
+        <value>Specified country code is invalid. Country code is the two-letter country code.  US, MX or CA (must be all caps)</value>
+    </labels>
+    <labels>
+        <fullName>DnB_API_Error_20504</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>D&amp;B API Error 20504: Invalid State/Region</shortDescription>
+        <value>The Region provided in the request is invalid.  Be sure its the two character State or Province.  Must be ALL CAPS.</value>
+    </labels>
+    <labels>
+        <fullName>DnB_API_Error_20505</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>D&amp;B API Error 20505: No Results</shortDescription>
+        <value>No candidates were found for the specified criteria.</value>
+    </labels>
+    <labels>
+        <fullName>DnB_Search_Form_Country_Help_Text</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>D&amp;B Search Form Country Help Text</shortDescription>
+        <value>Your entry must be one of the following country codes: US, CA, or MX (must be ALL CAPS)</value>
+    </labels>
+    <labels>
+        <fullName>DnB_Search_Form_State_Region_Help_Text</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>D&amp;B Search Form State/Region Help Text</shortDescription>
+        <value>This is the 2-character code associated with the state or region (must be ALL CAPS)</value>
+    </labels>
+    <labels>
+        <fullName>DnB_Sync_Status_Error</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>D&amp;B Sync Status Error</shortDescription>
+        <value>The Company Name and Prospect Address search did not find any matches in D&amp;B. Please ensure you entered in the data correctly. Additionally, you can add to the search with the following fields:
+  Phone
+  Website</value>
+    </labels>
+    <labels>
+        <fullName>EnrollmentFlowPromoID</fullName>
+        <categories>Variables</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>EnrollmentFlowPromoID</shortDescription>
+        <value>701f2000000Rv9H</value>
+    </labels>
+    <labels>
+        <fullName>Field_Sourcing_Orphan_Account</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Field_Sourcing_Orphan_Account</shortDescription>
+        <value>0013900001TuOox</value>
+    </labels>
+    <labels>
+        <fullName>GTM_CAS</fullName>
+        <categories>Quote Line Item</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>GTM/CAS</shortDescription>
+        <value>GTM($)</value>
+    </labels>
+    <labels>
+        <fullName>GTM_percent</fullName>
+        <categories>Quote Line Item</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>GTM %</shortDescription>
+        <value>GTM %</value>
+    </labels>
+    <labels>
+        <fullName>Get_D_B_Data</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Get D&amp;B Data</shortDescription>
+        <value>Get D&amp;B Data</value>
+    </labels>
+    <labels>
+        <fullName>Inactive_Account_Page_Error</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Inactive account page error</shortDescription>
+        <value>This Quote was created on an Account in Inactive / DD status or a Prospect account.  Pricing can&apos;t be submitted to VPM.  If there is an existing Customer account that is not in Inactive / DD status, change the account name to the Customer account name, Save then submit</value>
+    </labels>
+    <labels>
+        <fullName>IneligibleQuoteErrorMessage</fullName>
+        <categories>Error Messages</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>IneligibleQuoteErrorMessage</shortDescription>
+        <value>Update P&amp;A is required before emailing a quote or creating an order.</value>
+    </labels>
+    <labels>
+        <fullName>LDC</fullName>
+        <categories>Additional Details</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>LDC</shortDescription>
+        <value>LDC</value>
+    </labels>
+    <labels>
+        <fullName>LEAN_Campaign_Email_1</fullName>
+        <categories>Variables</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>LEAN Campaign Email 1</shortDescription>
+        <value>{!Recipient_First_Name}&lt;br/&gt; &lt;br/&gt;
+
+Everyone wants to be more productive at work, right? LEAN can help you with that.&lt;br/&gt; &lt;br/&gt;
+
+It helps you do more with what you already have—for example, make&lt;br/&gt;
+your team more productive by understanding non-value added waste and eliminating it.&lt;br/&gt; &lt;br/&gt;
+
+Curious how LEAN can help you? I think you might like this &lt;b&gt;&lt;a href=&quot;https://go.veritivcorp.com/rs/822-ZPW-685/images/Veritiv-LEAN-is-more-than-just-a-process-WP-EN-0519.pdf&quot; style=&quot;color:green;&quot;&gt;whitepaper&lt;/a&gt; &lt;/b&gt;. It offers some real-life, applicable ideas. &lt;br/&gt; &lt;br/&gt;
+
+{!Sender_First_Name} {!Sender_Last_Name}&lt;br/&gt;
+Veritiv Certified LEAN Advisor
+{!vSenderPhone}&lt;br/&gt;
+&lt;a href = &quot;mailto:{!vSenderEmail}&quot;&gt;{!vSenderEmail}&lt;/a&gt;</value>
+    </labels>
+    <labels>
+        <fullName>LegacyQuoteErrorMessage</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Error message for attempting to send Quotes that were created before 9/21/17</shortDescription>
+        <value>Since this Quote was created before September 21, 2017, you’ll need to clone the quote and select the update P&amp;A button before sending it to a customer or creating an order.</value>
+    </labels>
+    <labels>
+        <fullName>Line_Item_Comments_No_Print</fullName>
+        <categories>Additional Details</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Line Item Comments(Don&apos;t print on Quote)</shortDescription>
+        <value>Line Item Comments(Don&apos;t print on Quote)</value>
+    </labels>
+    <labels>
+        <fullName>Mfg_Tolerance</fullName>
+        <categories>Additional Details</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Mfg Tolerance</shortDescription>
+        <value>Mfg Tolerance</value>
+    </labels>
+    <labels>
+        <fullName>Min_Mfg_Qty</fullName>
+        <categories>Additional Details</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Min Mfg Qty</shortDescription>
+        <value>Min Mfg Qty</value>
+    </labels>
+    <labels>
+        <fullName>Missing_Files_Error</fullName>
+        <categories>Contract File Management Page</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Missing Files Error</shortDescription>
+        <value>Please Attach these files to close win the opportunity :</value>
+    </labels>
+    <labels>
+        <fullName>NewLine</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>NewLine</shortDescription>
+        <value>-
+-</value>
+    </labels>
+    <labels>
+        <fullName>Pricing_Details</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Pricing Details</shortDescription>
+        <value>Update Pricing Details</value>
+    </labels>
+    <labels>
+        <fullName>Product_Description</fullName>
+        <categories>Quote Line Item - Additional Details</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Product Description</shortDescription>
+        <value>Description</value>
+    </labels>
+    <labels>
+        <fullName>Proj_Del_Date</fullName>
+        <categories>Additional Details</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Proj Del Date</shortDescription>
+        <value>Proj Del Date</value>
+    </labels>
+    <labels>
+        <fullName>Quick_Add_Message</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Quick Add Message</shortDescription>
+        <value>Quick Add accepts Product Codes in the &lt;br&gt; Account’s Servicing Division.  &lt;br&gt; Red items = Unavailable in division.</value>
+    </labels>
+    <labels>
+        <fullName>QuotePDFAttention</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Quote PDF - Attention</shortDescription>
+        <value>Seller’s Terms and Conditions are incorporated by reference and are available at www.veritivcorp.com/termsandconditions-sellers. Buyer’s acceptance of Seller’s Terms and Conditions is a condition precedent to Seller’s acceptance of customers order.</value>
+    </labels>
+    <labels>
+        <fullName>Quote_Line_Items</fullName>
+        <categories>Quote Line Item - Additional Details</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Quote Line Items</shortDescription>
+        <value>Quote Line Items</value>
+    </labels>
+    <labels>
+        <fullName>Saalfeld_Pricing_Page_Error</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Saalfeld Pricing Page Error</shortDescription>
+        <value>This functionality is only designed for Saalfeld users. If you believe that you have received this message in error please contact your system administrator.</value>
+    </labels>
+    <labels>
+        <fullName>Save_and_Validate</fullName>
+        <categories>Additional Details</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Save and Validate</shortDescription>
+        <value>Save and Validate</value>
+    </labels>
+    <labels>
+        <fullName>SendToFieldSourcingErrorEmailBody</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>SendToFieldSourcingErrorEmailBody</shortDescription>
+        <value>There was an error during the attempt to send a work order request to field sourcing.</value>
+    </labels>
+    <labels>
+        <fullName>SendToFieldSourcingErrorEmailSubject</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>SendToFieldSourcingErrorEmailSubject</shortDescription>
+        <value>Work order request to field sourcing error.</value>
+    </labels>
+    <labels>
+        <fullName>SendToFieldSourcingErrorText</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>SendToFieldSourcingErrorText</shortDescription>
+        <value>There was an error during the attempt to send this work order request to field sourcing.  Please reach out to your system administrator for support.</value>
+    </labels>
+    <labels>
+        <fullName>SendToFieldSourcingExistingWorkOrder</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>SendToFieldSourcingExistingWorkOrder</shortDescription>
+        <value>already exists for this quote.  Contact field sourcing. Please hit ‘Go Back’ to return to the Quote.</value>
+    </labels>
+    <labels>
+        <fullName>SendToFieldSourcingSuccess</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>SendToFieldSourcingSuccess</shortDescription>
+        <value>Success, you&apos;ve created a work order!</value>
+    </labels>
+    <labels>
+        <fullName>Send_Update_Pricing_Details</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Send Update Pricing Details</shortDescription>
+        <value>Send to Zilliant</value>
+    </labels>
+    <labels>
+        <fullName>Smartsync_Copyright</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Smartsync Copyright</shortDescription>
+        <value>©Veritiv Corporation</value>
+    </labels>
+    <labels>
+        <fullName>Smartsync_Email_Address</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Smartsync Email Address</shortDescription>
+        <value>Smartsyncsupport@veritivcorp.com</value>
+    </labels>
+    <labels>
+        <fullName>Smartsync_Number</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Smartsync Number</shortDescription>
+        <value>1-866-285-0155</value>
+    </labels>
+    <labels>
+        <fullName>Smartsync_Title</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Smartsync Title</shortDescription>
+        <value>SmartSync | Veritiv Operating Company</value>
+    </labels>
+    <labels>
+        <fullName>Testing_Cara_Profile</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Testing Cara Profile</shortDescription>
+        <value>00e39000001K6ZL</value>
+    </labels>
+    <labels>
+        <fullName>VIQ_Default_Account_Id</fullName>
+        <categories>Record IDs</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>VIQ Default Account Id</shortDescription>
+        <value>0013900001aWRwy</value>
+    </labels>
+    <labels>
+        <fullName>VRTB2B_DeclinedBy</fullName>
+        <categories>B2B ECOM</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>VRTB2B_DeclinedBy</shortDescription>
+        <value>Declined By:</value>
+    </labels>
+    <labels>
+        <fullName>VRTB2B_Disclaimer</fullName>
+        <categories>B2B ECOM</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>VRTB2B_Disclaimer</shortDescription>
+        <value>Please do not reply to this email. The mailbox is not monitored. If you require assistance, please email ebusiness@imperialdade-canada.com or call 866-285-0155.</value>
+    </labels>
+    <labels>
+        <fullName>VRTB2B_OrderBy</fullName>
+        <categories>B2B ECOM</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>VRTB2B_OrderBy</shortDescription>
+        <value>Ordered By:</value>
+    </labels>
+    <labels>
+        <fullName>VRTB2B_OrderDeclined</fullName>
+        <categories>B2B ECOM</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>VRTB2B_OrderDeclined</shortDescription>
+        <value>Order Declined</value>
+    </labels>
+    <labels>
+        <fullName>VRTB2B_OrderNumber</fullName>
+        <categories>B2B ECOM</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>VRTB2B_OrderNumber</shortDescription>
+        <value>Order #</value>
+    </labels>
+    <labels>
+        <fullName>VRTB2B_billTo</fullName>
+        <categories>B2B ECOM</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>VRTB2B_billTo</shortDescription>
+        <value>Bill To</value>
+    </labels>
+    <labels>
+        <fullName>VRTB2B_shipTo</fullName>
+        <categories>B2B ECOM</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>VRTB2B_shipTo</shortDescription>
+        <value>Ship To</value>
+    </labels>
+    <labels>
+        <fullName>Vendor_Contact</fullName>
+        <categories>Additional Details</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Vendor Contact</shortDescription>
+        <value>Vendor Contact</value>
+    </labels>
+    <labels>
+        <fullName>Vendor_Item_Number</fullName>
+        <categories>Additional Details</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Vendor Item#</shortDescription>
+        <value>Vendor Item#</value>
+    </labels>
+    <labels>
+        <fullName>Vendor_Name</fullName>
+        <categories>Quote Line Item</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Vendor</shortDescription>
+        <value>Vendor</value>
+    </labels>
+    <labels>
+        <fullName>VeritivIQDefaultOwner</fullName>
+        <categories>Record IDs</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>VeritivIQDefaultOwner</shortDescription>
+        <value>00539000005lXpT</value>
+    </labels>
+    <labels>
+        <fullName>VeritivIQRecordTypeID</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>VeritivIQRecordTypeID</shortDescription>
+        <value>01239000000Alp4</value>
+    </labels>
+    <labels>
+        <fullName>Veritiv_IQ_Campaign_ID</fullName>
+        <categories>Record IDs</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Veritiv IQ Campaign ID</shortDescription>
+        <value>70139000000w21z</value>
+    </labels>
+    <labels>
+        <fullName>WebCenterEmailAddress</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Webcenter Email Address</shortDescription>
+        <value>WebCenter@unisourceworldwide.com</value>
+    </labels>
+    <labels>
+        <fullName>WorkOrder_Identifier_Report</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>WorkOrder Identifier Report</shortDescription>
+        <value>00O390000057AsS</value>
+    </labels>
+    <labels>
+        <fullName>actionCardPrimCount</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>actionCardPrimCount</shortDescription>
+        <value>Number Of Lines</value>
+    </labels>
+    <labels>
+        <fullName>actionCardTitle1</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Actionable Campaign Created Lines</shortDescription>
+        <value>Campaign Initiatives to Review</value>
+    </labels>
+    <labels>
+        <fullName>actionCardTitle2</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Lines Rejected</shortDescription>
+        <value>Lines Rejected</value>
+    </labels>
+    <labels>
+        <fullName>actionCardTitle3</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Count of Pending Approvals</shortDescription>
+        <value>Count of Pending Approvals</value>
+    </labels>
+    <labels>
+        <fullName>actionCardTitle4</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Count of Expiring Rebates</shortDescription>
+        <value>Count of Expiring Rebates</value>
+    </labels>
+    <labels>
+        <fullName>actionCardTitle5</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Count of Expiring Contract Lines</shortDescription>
+        <value>Count of Expiring Contract Lines</value>
+    </labels>
+    <labels>
+        <fullName>actionCardTitle6</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Lines Accepted + Partially Accepted</shortDescription>
+        <value>Lines Accepted + Partially Accepted</value>
+    </labels>
+    <labels>
+        <fullName>aiq_CampaignDashboardDisplayInterval</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Campaign Dashboard Display Interval</shortDescription>
+        <value>-13</value>
+    </labels>
+    <labels>
+        <fullName>aiq_CopyLinesAccountsBatchSize</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Amount of accounts loading on copy contract popup</shortDescription>
+        <value>10</value>
+    </labels>
+    <labels>
+        <fullName>aiq_CopyLinesBatchSize</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Using when user copy contract</shortDescription>
+        <value>100</value>
+    </labels>
+    <labels>
+        <fullName>aiq_DefaultReasonCode</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Predefined Reason Code</shortDescription>
+        <value>0 - not selected</value>
+    </labels>
+    <labels>
+        <fullName>aiq_DeleteAndVacatePricing</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Using when user delete draft and published lines</shortDescription>
+        <value>Deleted Draft Line(s) and  Vacated Pricing For Active Line(s)</value>
+    </labels>
+    <labels>
+        <fullName>aiq_InvalidArgumentsErrorMessage</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Invalid Arguments Error Message</shortDescription>
+        <value>Required arguments are invalid</value>
+    </labels>
+    <labels>
+        <fullName>aiq_PublishError</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>General parameterized error label</shortDescription>
+        <value>Code failed with error {0}</value>
+    </labels>
+    <labels>
+        <fullName>aiq_ReasonCodeErrorMessage</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Add Line Reason Code Error Message</shortDescription>
+        <value>Please select a reason code</value>
+    </labels>
+    <labels>
+        <fullName>aiq_SyncDownBypassConfigName</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Config name that scip sync downon trigger</shortDescription>
+        <value>runCLIZcloudSync__c</value>
+    </labels>
+    <labels>
+        <fullName>anticipatedLostSalesLabel</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Anticipated Lost Sales</shortDescription>
+        <value>Anticipated Lost Sales</value>
+    </labels>
+    <labels>
+        <fullName>carousel_no_messages</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Default message when there are no messages to display</shortDescription>
+        <value>There are no messages today.  Please check back later!</value>
+    </labels>
+</CustomLabels>

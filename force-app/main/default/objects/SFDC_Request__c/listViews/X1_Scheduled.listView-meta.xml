@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>X1_Scheduled</fullName>
+    <columns>NAME</columns>
+    <columns>request_priority__c</columns>
+    <columns>date_start__c</columns>
+    <columns>request_status__c</columns>
+    <columns>Users_Affected__c</columns>
+    <columns>Area__c</columns>
+    <columns>request_owner_user__c</columns>
+    <columns>Requested_By_User__c</columns>
+    <columns>Project_Lead__c</columns>
+    <columns>Project_Business_Analyst__c</columns>
+    <columns>Project_Communications_Lead__c</columns>
+    <columns>Project_Configuration_Lead__c</columns>
+    <columns>Level_of_Effort__c</columns>
+    <columns>Request_Scale__c</columns>
+    <columns>date_end__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>request_status__c</field>
+        <operation>equals</operation>
+        <value>1. Scheduled</value>
+    </filters>
+    <filters>
+        <field>NAME</field>
+        <operation>notContain</operation>
+        <value>iss -</value>
+    </filters>
+    <label>X - 1. Scheduled</label>
+    <language>en_US</language>
+</ListView>

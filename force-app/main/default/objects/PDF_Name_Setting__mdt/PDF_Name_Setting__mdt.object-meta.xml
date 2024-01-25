@@ -1,7 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
-    <description>This custom metadata will allow admins to manage and update any file and attachment names to be referenced in code.</description>
-    <label>PDF Name Setting</label>
-    <pluralLabel>PDF Name Settings</pluralLabel>
-    <visibility>Public</visibility>
-</CustomObject>

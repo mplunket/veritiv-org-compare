@@ -1,8 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<CompactLayout xmlns="http://soap.sforce.com/2006/04/metadata">
-    <fullName>Servicing_Division_Highlights</fullName>
-    <fields>Name</fields>
-    <fields>System_Code__c</fields>
-    <fields>Division_Code__c</fields>
-    <label>Servicing Division - Highlights</label>
-</CompactLayout>

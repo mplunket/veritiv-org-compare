@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<CompactLayout xmlns="http://soap.sforce.com/2006/04/metadata">
-    <fullName>Sales_Support_WH_Only_Vendor_Claim_FS_PKG</fullName>
-    <fields>CaseNumber</fields>
-    <fields>Case_Category__c</fields>
-    <fields>Vendor_Name__c</fields>
-    <fields>Vendor_PO_Number__c</fields>
-    <label>Sales Support - WH Only Vendor Claim FS&amp;PKG</label>
-</CompactLayout>

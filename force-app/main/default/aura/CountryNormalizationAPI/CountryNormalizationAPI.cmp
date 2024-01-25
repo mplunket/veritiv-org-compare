@@ -1,5 +1,0 @@
-<aura:component>
-    <aura:method name="getCode" action="{!c.getCode}">
-        <aura:attribute name="country" type="String" />
-    </aura:method>
-</aura:component>

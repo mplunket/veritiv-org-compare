@@ -1,7 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<RemoteSiteSetting xmlns="http://soap.sforce.com/2006/04/metadata">
-    <description>Auth for prod SAP</description>
-    <disableProtocolSecurity>false</disableProtocolSecurity>
-    <isActive>true</isActive>
-    <url>http://sfvbo.veritivcorp.com</url>
-</RemoteSiteSetting>

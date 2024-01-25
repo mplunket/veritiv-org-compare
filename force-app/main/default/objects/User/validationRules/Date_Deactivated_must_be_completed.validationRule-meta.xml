@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
-    <fullName>Date_Deactivated_must_be_completed</fullName>
-    <active>true</active>
-    <description>Used for weekly reports on newly deactivated users.  - REACTIVATE on 2/26/2011</description>
-    <errorConditionFormula>AND ( NOT( IsActive), ISNULL( Date_Deactivated__c ))</errorConditionFormula>
-    <errorDisplayField>Date_Deactivated__c</errorDisplayField>
-    <errorMessage>You must enter a Deactivation Date when you deactivate a user.</errorMessage>
-</ValidationRule>

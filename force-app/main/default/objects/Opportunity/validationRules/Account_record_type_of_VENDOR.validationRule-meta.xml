@@ -1,7 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
-    <fullName>Account_record_type_of_VENDOR</fullName>
-    <active>true</active>
-    <errorConditionFormula>AND(ISNEW(), Account.RecordTypeId=&quot;012700000009TNj&quot;)</errorConditionFormula>
-    <errorMessage>You can not create an opportunity for a VENDOR! Opportunities can only be created for a CUSTOMER or PROSPECT!</errorMessage>
-</ValidationRule>

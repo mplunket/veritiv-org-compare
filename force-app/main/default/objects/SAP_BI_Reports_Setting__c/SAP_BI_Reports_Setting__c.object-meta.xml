@@ -1,8 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
-    <customSettingsType>Hierarchy</customSettingsType>
-    <description>Settings for SAP BI Reports</description>
-    <enableFeeds>false</enableFeeds>
-    <label>SAP BI Reports Setting</label>
-    <visibility>Public</visibility>
-</CustomObject>

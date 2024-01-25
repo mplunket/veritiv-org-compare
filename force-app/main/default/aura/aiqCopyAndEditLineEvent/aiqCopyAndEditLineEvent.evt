@@ -1,6 +1,0 @@
-<!--c:aiqCopyAndEditLineEvent-->
-<aura:event type="APPLICATION" access = "global">
-    <aura:attribute name="parentId" type="Id" />
-    <aura:attribute name="recordIds" type="Id" />
-    <aura:attribute name="actionName" type="String" default="Update Campaign"/>
-</aura:event>

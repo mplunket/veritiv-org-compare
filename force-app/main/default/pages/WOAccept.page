@@ -1,3 +1,0 @@
-<apex:page standardController="Workorder" extensions="WOAcceptController"  action="{!init}">
-  
-</apex:page>

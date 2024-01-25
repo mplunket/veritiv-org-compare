@@ -1,5 +1,0 @@
-<!--c:aiqDeleteLineEvent-->
-<aura:event type="APPLICATION" >
-    <aura:attribute name="recordIds" type="Id" />
-    <aura:attribute name="actionName" type="String" default="Delete Line"/>
-</aura:event>

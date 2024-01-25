@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
-    <fullName>TFN_Must_Be_Phone_Number</fullName>
-    <active>true</active>
-    <description>This validation rules ensures that the name field must be [0-9]{3}-[0-9]{3}-[0-9]{4}</description>
-    <errorConditionFormula>NOT(REGEX(  Name  , &quot;[0-9]{3}-[0-9]{3}-[0-9]{4}&quot;))</errorConditionFormula>
-    <errorDisplayField>Name</errorDisplayField>
-    <errorMessage>The field must be exactly 12 characters long in a phone number format: 3 digits, hyphen, 3 digits, hyphen, 4 digits. Example: 123-456-7890</errorMessage>
-</ValidationRule>

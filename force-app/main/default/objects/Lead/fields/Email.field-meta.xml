@@ -1,7 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
-    <fullName>Email</fullName>
-    <inlineHelpText>While not required to enter a new Lead, it&apos;s important to include the email address when known as Salesforce.com is the record for customer contacts at Veritiv.</inlineHelpText>
-    <trackFeedHistory>false</trackFeedHistory>
-    <trackHistory>false</trackHistory>
-</CustomField>

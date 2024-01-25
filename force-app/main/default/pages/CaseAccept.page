@@ -1,3 +1,0 @@
-<apex:page standardController="Case" extensions="CaseAcceptController"  action="{!init}">
-  
-</apex:page>

@@ -1,8 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
-    <fullName>Check_Account_is_Customer_or_Prospect</fullName>
-    <active>true</active>
-    <errorConditionFormula>AND(Account__r.RecordTypeId &lt;&gt; &quot;012700000009Ovo&quot;, Account__r.RecordTypeId &lt;&gt; &quot;012700000009OvZ&quot;)</errorConditionFormula>
-    <errorDisplayField>Account__c</errorDisplayField>
-    <errorMessage>Quotes can be created only for Customer or Prospect Accounts!</errorMessage>
-</ValidationRule>

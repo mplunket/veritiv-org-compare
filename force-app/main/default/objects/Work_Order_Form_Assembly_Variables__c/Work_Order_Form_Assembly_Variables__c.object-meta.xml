@@ -1,8 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
-    <customSettingsType>Hierarchy</customSettingsType>
-    <description>These are for variables to be passed in the work order buttons so that the report link in the response page on form assembly works</description>
-    <enableFeeds>false</enableFeeds>
-    <label>Work Order Form Assembly Variables</label>
-    <visibility>Public</visibility>
-</CustomObject>

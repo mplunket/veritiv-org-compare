@@ -1,7 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<RemoteSiteSetting xmlns="http://soap.sforce.com/2006/04/metadata">
-    <description>URL to connect to to retrieve auth token</description>
-    <disableProtocolSecurity>false</disableProtocolSecurity>
-    <isActive>true</isActive>
-    <url>http://sfmyreportstest.veritivcorp.com</url>
-</RemoteSiteSetting>

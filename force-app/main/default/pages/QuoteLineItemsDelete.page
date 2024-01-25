@@ -1,9 +1,0 @@
-<apex:page title="QuoteLineItems" 
-           contentType="application/x-javascript; charset=utf-8" 
-           showHeader="false"
-           sidebar="false" 
-           standardStylesheets="false"
-           controller="QuoteLineItemsCont"
-           action="{!doDelete}">
-    <apex:outputText value="{!json}" />
-</apex:page>

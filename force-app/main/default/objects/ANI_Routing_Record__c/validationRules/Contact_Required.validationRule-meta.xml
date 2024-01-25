@@ -1,8 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
-    <fullName>Contact_Required</fullName>
-    <active>true</active>
-    <description>This validation rule ensures no routing records are dataloaded without a contact lookup</description>
-    <errorConditionFormula>ISBLANK( ANI_Contact__c )</errorConditionFormula>
-    <errorMessage>You must insert a value in the Contact field.</errorMessage>
-</ValidationRule>

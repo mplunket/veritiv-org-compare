@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
-    <fullName>DEAD_REASON_MANDATORY</fullName>
-    <active>true</active>
-    <description>Reject Reason is mandatory if the Lead status is changed to 0_Dead</description>
-    <errorConditionFormula>AND(ISPICKVAL(Dead_Reason__c,&quot;&quot;),OR(ISPICKVAL(Status,&apos;0_Dead&apos;),ISPICKVAL(Status,&apos;0-Dead&apos;)))</errorConditionFormula>
-    <errorDisplayField>Dead_Reason__c</errorDisplayField>
-    <errorMessage>The Reject Reason must be entered when setting the status to 0-Dead.</errorMessage>
-</ValidationRule>

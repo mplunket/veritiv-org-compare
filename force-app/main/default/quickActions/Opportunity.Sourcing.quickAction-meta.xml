@@ -1,8 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<QuickAction xmlns="http://soap.sforce.com/2006/04/metadata">
-    <description>Calls the Work Order - Initial Sourcing Request from Opportunity Screen Flow</description>
-    <flowDefinition>Work_Order_Initial_Sourcing_Request_from_Opportunity</flowDefinition>
-    <label>Sourcing</label>
-    <optionsCreateFeedItem>false</optionsCreateFeedItem>
-    <type>Flow</type>
-</QuickAction>

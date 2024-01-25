@@ -1,6 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<FlowDefinition xmlns="http://soap.sforce.com/2006/04/metadata">
-    <activeVersionNumber>1</activeVersionNumber>
-    <description>Updates the Email_Template_Text__c field on the parent Work Order record when specific changes are made to the Work Order Line Item record. The text field will be used to populate an email template that is sent to internal users.</description>
-    <masterLabel>Work Order - [RT] Sourcing Email Text Update for WOLIs</masterLabel>
-</FlowDefinition>

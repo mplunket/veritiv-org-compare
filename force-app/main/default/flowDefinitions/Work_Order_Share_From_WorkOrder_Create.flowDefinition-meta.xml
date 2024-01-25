@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<FlowDefinition xmlns="http://soap.sforce.com/2006/04/metadata">
-    <activeVersionNumber>9</activeVersionNumber>
-    <description>Called from Process Builder when a Work Order is Created or the Owner is Changed
-
-Edit 11/7 to proof out sharing with submitter if needed.
-Edit 11/13 fault path to continue for test purposes</description>
-    <masterLabel>Work Order - Share From WorkOrder Create</masterLabel>
-</FlowDefinition>

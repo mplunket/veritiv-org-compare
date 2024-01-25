@@ -1,5 +1,0 @@
-<aura:event type="APPLICATION" description="Event template">
-    <aura:Attribute Name="isOpen" Type="Boolean"/>
-	  <aura:Attribute Name="isEmpty" Type="Boolean"/>
-
-</aura:event>

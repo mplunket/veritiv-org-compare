@@ -1,8 +1,0 @@
-<aura:component implements="force:hasRecordId,lightning:isUrlAddressable,flexipage:availableForRecordHome"
-                access="global"
-                extends="c:AIQqa_QuickAction"
->
-    <aura:attribute name = "isActionFinalized" type = "Boolean" default = "false" access = "global" />    
-    <aura:handler name="init" value="{!this}" action="{!c.doInit}" closable="false" />
-   
-</aura:component>

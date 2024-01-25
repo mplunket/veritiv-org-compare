@@ -1,5 +1,0 @@
-<!--c:aiqCopyLineEvent-->
-<aura:event type="APPLICATION" >
-    <aura:attribute name="recordIds" type="Id" />
-    <aura:attribute name="actionName" type="String" default="Copy Line"/>
-</aura:event>

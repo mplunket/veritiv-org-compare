@@ -1,8 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<FlowDefinition xmlns="http://soap.sforce.com/2006/04/metadata">
-    <activeVersionNumber>3</activeVersionNumber>
-    <description>Populate Prior Case Owner removed and to be reverted back to workflow
-
-2022.02.25 - excluded the &apos;Merged&apos; value from Status (criteria 10) in the last decision element (LC - Status Update to In Process when Return to Agent ID changed and Email counter &gt;1)</description>
-    <masterLabel>Case - Console CS – Lightning record updates for B&amp;S routing</masterLabel>
-</FlowDefinition>

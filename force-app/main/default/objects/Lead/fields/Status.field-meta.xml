@@ -1,8 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
-    <fullName>Status</fullName>
-    <inlineHelpText>For reporting, use the Status__c field.  Before lightning, this field would remain as 2-working, even after converting, so the Status__c field will handle that and give a truer interpretation of status.</inlineHelpText>
-    <trackFeedHistory>true</trackFeedHistory>
-    <trackHistory>true</trackHistory>
-    <type>Picklist</type>
-</CustomField>

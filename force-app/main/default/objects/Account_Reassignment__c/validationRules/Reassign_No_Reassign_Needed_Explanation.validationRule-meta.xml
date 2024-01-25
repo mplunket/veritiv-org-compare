@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
-    <fullName>Reassign_No_Reassign_Needed_Explanation</fullName>
-    <active>true</active>
-    <description>If Account Reassignment Status reflects &quot;No Reassignment Needed&quot; the user must explain the reason in the &quot;No Reassignment Needed Explanation&quot; field.</description>
-    <errorConditionFormula>AND(ispickval( Reassignment_Stage__c ,&quot;No Reassignment Needed&quot;),isblank(  No_Reassignment_Needed_Explanation__c ))</errorConditionFormula>
-    <errorDisplayField>No_Reassignment_Needed_Explanation__c</errorDisplayField>
-    <errorMessage>The Account Reassignment Stage field shows you have chosen to to keep the Account with the current owner. You must fill out the No Reassignment Needed Explanation field.</errorMessage>
-</ValidationRule>

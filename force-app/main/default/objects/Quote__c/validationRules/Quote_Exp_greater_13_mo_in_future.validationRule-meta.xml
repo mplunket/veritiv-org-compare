@@ -1,8 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
-    <fullName>Quote_Exp_greater_13_mo_in_future</fullName>
-    <active>true</active>
-    <errorConditionFormula>Expiration_Date__c -  DATEVALUE(CreatedDate) &gt; 396 &amp;&amp;  ISPICKVAL(Account__r.TSB__c, &quot;no&quot;) &amp;&amp; $User.ProfileId &lt;&gt; &quot;00e70000000swa5&quot; &amp;&amp; $User.ProfileId &lt;&gt; &quot;00e70000000jhij&quot;</errorConditionFormula>
-    <errorDisplayField>Expiration_Date__c</errorDisplayField>
-    <errorMessage>Quote expiration dates can not be more than 13 months after the quote created date.</errorMessage>
-</ValidationRule>

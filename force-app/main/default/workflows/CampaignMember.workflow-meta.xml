@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Workflow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <rules>
+        <fullName>Campaign Enrollee Completed Nurture Campaign</fullName>
+        <active>false</active>
+        <criteriaItems>
+            <field>CampaignMember.Status</field>
+            <operation>equals</operation>
+            <value>Email 4 Sent</value>
+        </criteriaItems>
+        <description>Workflow fires when Campaign Member has been sent the final nurture campaign email (Email 4).</description>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+    </rules>
+    <rules>
+        <fullName>Campaign Enrollee Responded to Marketo</fullName>
+        <active>false</active>
+        <description>Works in conjunction with the Marketo / Enroll in Campaign Pilot to identify when someone clicks on a link in emails 2-4</description>
+        <formula>AND( ISCHANGED( Status ), OR( ISPICKVAL(Status, &quot;Email 2 Responded&quot;), ISPICKVAL(Status, &quot;Email 3 Responded&quot;), ISPICKVAL(Status, &quot;Email 4 Responded&quot;) ) )</formula>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+</Workflow>

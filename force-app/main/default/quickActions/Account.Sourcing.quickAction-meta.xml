@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<QuickAction xmlns="http://soap.sforce.com/2006/04/metadata">
+    <description>Calls the Work Order [SF] Sourcing Work Order Creation Screen Flow</description>
+    <flowDefinition>Work_Order_SF_Sourcing_Work_Order_Creation</flowDefinition>
+    <label>Sourcing</label>
+    <optionsCreateFeedItem>false</optionsCreateFeedItem>
+    <type>Flow</type>
+</QuickAction>

@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<HomePageComponent xmlns="http://soap.sforce.com/2006/04/metadata">
+    <links>Customer_Business_Review_Meeting_Template</links>
+    <links>Customer_Onboarding_Checklist</links>
+    <links>Sales_Effectiveness_Sales_Hub</links>
+    <links>VOS_Sales_Reporting_Documentation</links>
+    <links>Sales_Contacts_for_Print_Sourcing</links>
+    <pageComponentType>links</pageComponentType>
+</HomePageComponent>

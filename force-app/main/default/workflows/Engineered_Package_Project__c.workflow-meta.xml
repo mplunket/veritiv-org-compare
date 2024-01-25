@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Workflow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fieldUpdates>
+        <fullName>Copy_Box_com_URL_to_Opp</fullName>
+        <field>Box_com_URL__c</field>
+        <formula>Box_com_URL__c</formula>
+        <name>Copy Box.com URL to Opportunity</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+        <targetObject>Opportunity__c</targetObject>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Update_Opp_s_AtTask_Project</fullName>
+        <description>Copies AtTask Project # from AtTask Project.</description>
+        <field>AtTask_Project__c</field>
+        <formula>UWW_Part_Number__c</formula>
+        <name>Update Opp&apos;s AtTask Project #</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+        <targetObject>Opportunity__c</targetObject>
+    </fieldUpdates>
+    <rules>
+        <fullName>Copy Box%2Ecom URL to Opportunity</fullName>
+        <actions>
+            <name>Copy_Box_com_URL_to_Opp</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>false</active>
+        <criteriaItems>
+            <field>Engineered_Package_Project__c.Box_com_URL__c</field>
+            <operation>notEqual</operation>
+        </criteriaItems>
+        <description>Copy box.com url to Opportunity, so it can be passed on to PIM Work Order</description>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+    </rules>
+    <rules>
+        <fullName>Copy EPP Part Number to Opp</fullName>
+        <actions>
+            <name>Update_Opp_s_AtTask_Project</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>false</active>
+        <criteriaItems>
+            <field>Engineered_Package_Project__c.UWW_Part_Number__c</field>
+            <operation>notEqual</operation>
+        </criteriaItems>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+</Workflow>

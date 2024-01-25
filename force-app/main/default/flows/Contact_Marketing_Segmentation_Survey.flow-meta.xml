@@ -1,0 +1,963 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>59.0</apiVersion>
+    <assignments>
+        <description>Assignment may be unnecessary, but was added to ensure the final calculation was referencing the correct output of calculations it is dependent upon.</description>
+        <name>asn_Variables</name>
+        <label>Variables</label>
+        <locationX>176</locationX>
+        <locationY>350</locationY>
+        <assignmentItems>
+            <assignToReference>var_Seg_Customizers</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>fx_Seg_Customizers</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>var_Seg_Minimalists</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>fx_Seg_Minimalists</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>var_Seg_Optimizers</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>fx_Seg_Optimizers</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>var_Seg_Savers</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>fx_Seg_Savers</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>udt_Contact_Record</targetReference>
+        </connector>
+    </assignments>
+    <choices>
+        <name>chc_1NotAtAllImportant</name>
+        <choiceText>(1) Not At All Important</choiceText>
+        <dataType>Number</dataType>
+        <value>
+            <numberValue>1.0</numberValue>
+        </value>
+    </choices>
+    <choices>
+        <name>chc_2NotVeryImportant</name>
+        <choiceText>(2) Not Very Important</choiceText>
+        <dataType>Number</dataType>
+        <value>
+            <numberValue>2.0</numberValue>
+        </value>
+    </choices>
+    <choices>
+        <name>chc_3SomewhatImportant</name>
+        <choiceText>(3) Somewhat Important</choiceText>
+        <dataType>Number</dataType>
+        <value>
+            <numberValue>3.0</numberValue>
+        </value>
+    </choices>
+    <choices>
+        <name>chc_4VeryImportant</name>
+        <choiceText>(4) Very Important</choiceText>
+        <dataType>Number</dataType>
+        <value>
+            <numberValue>4.0</numberValue>
+        </value>
+    </choices>
+    <choices>
+        <name>chc_5ExtremelyImportant</name>
+        <choiceText>(5) Extremely Important</choiceText>
+        <dataType>Number</dataType>
+        <value>
+            <numberValue>5.0</numberValue>
+        </value>
+    </choices>
+    <choices>
+        <name>chc_No</name>
+        <choiceText>No</choiceText>
+        <dataType>String</dataType>
+        <value>
+            <stringValue>No</stringValue>
+        </value>
+    </choices>
+    <choices>
+        <name>chc_Yes</name>
+        <choiceText>Yes</choiceText>
+        <dataType>String</dataType>
+        <value>
+            <stringValue>Yes</stringValue>
+        </value>
+    </choices>
+    <description>Survey with Likert scale user responses used to calculate Marketing Segmentation that is saved to the Contact record for Marketing Team outreach</description>
+    <environments>Default</environments>
+    <formulas>
+        <name>admin_fx_Seg_Assignment</name>
+        <dataType>String</dataType>
+        <expression>IF( MAX({!fx_Seg_Customizers}, {!fx_Seg_Minimalists}, {!fx_Seg_Optimizers}, {!fx_Seg_Savers})={!fx_Seg_Customizers}, &quot;Customizers&quot;,
+     IF( MAX({!fx_Seg_Customizers}, {!fx_Seg_Minimalists}, {!fx_Seg_Optimizers}, {!fx_Seg_Savers})={!fx_Seg_Minimalists}, &quot;Minimalists&quot;,
+          IF( MAX({!fx_Seg_Customizers}, {!fx_Seg_Minimalists}, {!fx_Seg_Optimizers}, {!fx_Seg_Savers})={!fx_Seg_Optimizers}, &quot;Optimizers&quot;, &quot;Savers&quot;)
+     )
+)</expression>
+    </formulas>
+    <formulas>
+        <description>Determines the Marketing Segmentation value</description>
+        <name>fx_Seg_Assignment</name>
+        <dataType>String</dataType>
+        <expression>IF( MAX({!var_Seg_Customizers}, {!var_Seg_Minimalists}, {!var_Seg_Optimizers}, {!var_Seg_Savers})={!var_Seg_Customizers}, &quot;Customizers&quot;,
+     IF( MAX({!var_Seg_Customizers}, {!var_Seg_Minimalists}, {!var_Seg_Optimizers}, {!var_Seg_Savers})={!var_Seg_Minimalists}, &quot;Minimalists&quot;,
+          IF( MAX({!var_Seg_Customizers}, {!var_Seg_Minimalists}, {!var_Seg_Optimizers}, {!var_Seg_Savers})={!var_Seg_Optimizers}, &quot;Optimizers&quot;, &quot;Savers&quot;)
+     )
+)</expression>
+    </formulas>
+    <formulas>
+        <description>Customizers calculation</description>
+        <name>fx_Seg_Customizers</name>
+        <dataType>Number</dataType>
+        <expression>/*QUESTION 1*/
+IF( ISBLANK({!ipt_Seg_Survey_Q1_at1_6_rec}), 0, 
+     IF(OR({!ipt_Seg_Survey_Q1_at1_6_rec} = 1, {!ipt_Seg_Survey_Q1_at1_6_rec} = 2, {!ipt_Seg_Survey_Q1_at1_6_rec} = 3), 1,
+          IF({!ipt_Seg_Survey_Q1_at1_6_rec} = 4, 2, 
+          3) 
+     )
+)*8.2570
++
+/*QUESTION 2*/
+IF( ISBLANK({!ipt_Seg_Survey_Q2_at1_7_rec}), 0, 
+     IF(OR({!ipt_Seg_Survey_Q2_at1_7_rec} = 1, {!ipt_Seg_Survey_Q2_at1_7_rec} = 2, {!ipt_Seg_Survey_Q2_at1_7_rec} = 3), 1,
+          IF({!ipt_Seg_Survey_Q2_at1_7_rec} = 4, 2, 
+          3) 
+     )
+)*7.4135
++
+/*QUESTION 3*/
+IF( ISBLANK({!ipt_Seg_Survey_Q3_at1_11_rec}), 0, 
+     IF(OR({!ipt_Seg_Survey_Q3_at1_11_rec} = 1, {!ipt_Seg_Survey_Q3_at1_11_rec} = 2, {!ipt_Seg_Survey_Q3_at1_11_rec} = 3), 1,
+          IF({!ipt_Seg_Survey_Q3_at1_11_rec} = 4, 2, 
+          3) 
+     )
+)*8.8491
++
+/*QUESTION 4*/
+IF( ISBLANK({!ipt_Seg_Survey_Q4_at1_12_rec}), 0, 
+     IF(OR({!ipt_Seg_Survey_Q4_at1_12_rec} = 1, {!ipt_Seg_Survey_Q4_at1_12_rec} = 2, {!ipt_Seg_Survey_Q4_at1_12_rec} = 3), 1,
+          IF({!ipt_Seg_Survey_Q4_at1_12_rec} = 4, 2, 
+          3) 
+     )
+)*8.6052
++
+/*QUESTION 5*/
+IF( ISBLANK({!ipt_Seg_Survey_Q5_at1_19_rec}), 0, 
+     IF(OR({!ipt_Seg_Survey_Q5_at1_19_rec} = 1, {!ipt_Seg_Survey_Q5_at1_19_rec} = 2, {!ipt_Seg_Survey_Q5_at1_19_rec} = 3), 1,
+          IF({!ipt_Seg_Survey_Q5_at1_19_rec} = 4, 2, 
+          3) 
+     )
+)*7.1296
++
+/*QUESTION 6*/
+IF( ISBLANK({!ipt_Seg_Survey_Q6_p3b_1}), 0, 
+     IF({!ipt_Seg_Survey_Q6_p3b_1} = &quot;No&quot;, 0, 2.6626)
+)
++
+/*QUESTION 7*/
+IF( ISBLANK({!ipt_Seg_Survey_Q7_p3b_2}), 0, 
+     IF({!ipt_Seg_Survey_Q7_p3b_2} = &quot;No&quot;, 0, 2.5899)
+)
++
+/*QUESTION 8*/
+IF( ISBLANK({!ipt_Seg_Survey_Q8_p3b_3}), 0, 
+     IF({!ipt_Seg_Survey_Q8_p3b_3} = &quot;No&quot;, 0, 13.0580)
+)
++
+/*CONSTANT*/
+-63.2887</expression>
+        <scale>4</scale>
+    </formulas>
+    <formulas>
+        <description>Minimalists calculation</description>
+        <name>fx_Seg_Minimalists</name>
+        <dataType>Number</dataType>
+        <expression>/*QUESTION 1*/
+IF( ISBLANK({!ipt_Seg_Survey_Q1_at1_6_rec}), 0, 
+     IF(OR({!ipt_Seg_Survey_Q1_at1_6_rec} = 1, {!ipt_Seg_Survey_Q1_at1_6_rec} = 2, {!ipt_Seg_Survey_Q1_at1_6_rec} = 3), 1,
+          IF({!ipt_Seg_Survey_Q1_at1_6_rec} = 4, 2, 
+          3) 
+     )
+)*8.9956
++
+/*QUESTION 2*/
+IF( ISBLANK({!ipt_Seg_Survey_Q2_at1_7_rec}), 0, 
+     IF(OR({!ipt_Seg_Survey_Q2_at1_7_rec} = 1, {!ipt_Seg_Survey_Q2_at1_7_rec} = 2, {!ipt_Seg_Survey_Q2_at1_7_rec} = 3), 1,
+          IF({!ipt_Seg_Survey_Q2_at1_7_rec} = 4, 2, 
+          3) 
+     )
+)*7.1801
++
+/*QUESTION 3*/
+IF( ISBLANK({!ipt_Seg_Survey_Q3_at1_11_rec}), 0, 
+     IF(OR({!ipt_Seg_Survey_Q3_at1_11_rec} = 1, {!ipt_Seg_Survey_Q3_at1_11_rec} = 2, {!ipt_Seg_Survey_Q3_at1_11_rec} = 3), 1,
+          IF({!ipt_Seg_Survey_Q3_at1_11_rec} = 4, 2, 
+          3) 
+     )
+)*7.5324
++
+/*QUESTION 4*/
+IF( ISBLANK({!ipt_Seg_Survey_Q4_at1_12_rec}), 0, 
+     IF(OR({!ipt_Seg_Survey_Q4_at1_12_rec} = 1, {!ipt_Seg_Survey_Q4_at1_12_rec} = 2, {!ipt_Seg_Survey_Q4_at1_12_rec} = 3), 1,
+          IF({!ipt_Seg_Survey_Q4_at1_12_rec} = 4, 2, 
+          3) 
+     )
+)*7.8069
++
+/*QUESTION 5*/
+IF( ISBLANK({!ipt_Seg_Survey_Q5_at1_19_rec}), 0, 
+     IF(OR({!ipt_Seg_Survey_Q5_at1_19_rec} = 1, {!ipt_Seg_Survey_Q5_at1_19_rec} = 2, {!ipt_Seg_Survey_Q5_at1_19_rec} = 3), 1,
+          IF({!ipt_Seg_Survey_Q5_at1_19_rec} = 4, 2, 
+          3) 
+     )
+)*6.0825
++
+/*QUESTION 6*/
+IF( ISBLANK({!ipt_Seg_Survey_Q6_p3b_1}), 0, 
+     IF({!ipt_Seg_Survey_Q6_p3b_1} = &quot;No&quot;, 0, 1.1233)
+)
++
+/*QUESTION 7*/
+IF( ISBLANK({!ipt_Seg_Survey_Q7_p3b_2}), 0, 
+     IF({!ipt_Seg_Survey_Q7_p3b_2} = &quot;No&quot;, 0, 5.3559)
+)
++
+/*QUESTION 8*/
+IF( ISBLANK({!ipt_Seg_Survey_Q8_p3b_3}), 0, 
+     IF({!ipt_Seg_Survey_Q8_p3b_3} = &quot;No&quot;, 0, 3.8598)
+)
++
+/*CONSTANT*/
+-51.0011</expression>
+        <scale>4</scale>
+    </formulas>
+    <formulas>
+        <description>Optimizers calculation</description>
+        <name>fx_Seg_Optimizers</name>
+        <dataType>Number</dataType>
+        <expression>/*QUESTION 1*/
+IF( ISBLANK({!ipt_Seg_Survey_Q1_at1_6_rec}), 0, 
+     IF(OR({!ipt_Seg_Survey_Q1_at1_6_rec} = 1, {!ipt_Seg_Survey_Q1_at1_6_rec} = 2, {!ipt_Seg_Survey_Q1_at1_6_rec} = 3), 1,
+          IF({!ipt_Seg_Survey_Q1_at1_6_rec} = 4, 2, 
+          3) 
+     )
+)*8.8419
++
+/*QUESTION 2*/
+IF( ISBLANK({!ipt_Seg_Survey_Q2_at1_7_rec}), 0, 
+     IF(OR({!ipt_Seg_Survey_Q2_at1_7_rec} = 1, {!ipt_Seg_Survey_Q2_at1_7_rec} = 2, {!ipt_Seg_Survey_Q2_at1_7_rec} = 3), 1,
+          IF({!ipt_Seg_Survey_Q2_at1_7_rec} = 4, 2, 
+          3) 
+     )
+)*7.1189
++
+/*QUESTION 3*/
+IF( ISBLANK({!ipt_Seg_Survey_Q3_at1_11_rec}), 0, 
+     IF(OR({!ipt_Seg_Survey_Q3_at1_11_rec} = 1, {!ipt_Seg_Survey_Q3_at1_11_rec} = 2, {!ipt_Seg_Survey_Q3_at1_11_rec} = 3), 1,
+          IF({!ipt_Seg_Survey_Q3_at1_11_rec} = 4, 2, 
+          3) 
+     )
+)*7.6621
++
+/*QUESTION 4*/
+IF( ISBLANK({!ipt_Seg_Survey_Q4_at1_12_rec}), 0, 
+     IF(OR({!ipt_Seg_Survey_Q4_at1_12_rec} = 1, {!ipt_Seg_Survey_Q4_at1_12_rec} = 2, {!ipt_Seg_Survey_Q4_at1_12_rec} = 3), 1,
+          IF({!ipt_Seg_Survey_Q4_at1_12_rec} = 4, 2, 
+          3) 
+     )
+)*8.5726
++
+/*QUESTION 5*/
+IF( ISBLANK({!ipt_Seg_Survey_Q5_at1_19_rec}), 0, 
+     IF(OR({!ipt_Seg_Survey_Q5_at1_19_rec} = 1, {!ipt_Seg_Survey_Q5_at1_19_rec} = 2, {!ipt_Seg_Survey_Q5_at1_19_rec} = 3), 1,
+          IF({!ipt_Seg_Survey_Q5_at1_19_rec} = 4, 2, 
+          3) 
+     )
+)*6.1663
++
+/*QUESTION 6*/
+IF( ISBLANK({!ipt_Seg_Survey_Q6_p3b_1}), 0, 
+     IF({!ipt_Seg_Survey_Q6_p3b_1} = &quot;No&quot;, 0, 4.7559)
+)
++
+/*QUESTION 7*/
+IF( ISBLANK({!ipt_Seg_Survey_Q7_p3b_2}), 0, 
+     IF({!ipt_Seg_Survey_Q7_p3b_2} = &quot;No&quot;, 0, -3.8121)
+)
++
+/*QUESTION 8*/
+IF( ISBLANK({!ipt_Seg_Survey_Q8_p3b_3}), 0, 
+     IF({!ipt_Seg_Survey_Q8_p3b_3} = &quot;No&quot;, 0, 5.6234)
+)
++
+/*CONSTANT*/
+-51.7686</expression>
+        <scale>4</scale>
+    </formulas>
+    <formulas>
+        <description>Savers calculation</description>
+        <name>fx_Seg_Savers</name>
+        <dataType>Number</dataType>
+        <expression>/*QUESTION 1*/
+IF( ISBLANK({!ipt_Seg_Survey_Q1_at1_6_rec}), 0, 
+     IF(OR({!ipt_Seg_Survey_Q1_at1_6_rec} = 1, {!ipt_Seg_Survey_Q1_at1_6_rec} = 2, {!ipt_Seg_Survey_Q1_at1_6_rec} = 3), 1,
+          IF({!ipt_Seg_Survey_Q1_at1_6_rec} = 4, 2, 
+          3) 
+     )
+)*6.0414
++
+/*QUESTION 2*/
+IF( ISBLANK({!ipt_Seg_Survey_Q2_at1_7_rec}), 0, 
+     IF(OR({!ipt_Seg_Survey_Q2_at1_7_rec} = 1, {!ipt_Seg_Survey_Q2_at1_7_rec} = 2, {!ipt_Seg_Survey_Q2_at1_7_rec} = 3), 1,
+          IF({!ipt_Seg_Survey_Q2_at1_7_rec} = 4, 2, 
+          3) 
+     )
+)*4.9015
++
+/*QUESTION 3*/
+IF( ISBLANK({!ipt_Seg_Survey_Q3_at1_11_rec}), 0, 
+     IF(OR({!ipt_Seg_Survey_Q3_at1_11_rec} = 1, {!ipt_Seg_Survey_Q3_at1_11_rec} = 2, {!ipt_Seg_Survey_Q3_at1_11_rec} = 3), 1,
+          IF({!ipt_Seg_Survey_Q3_at1_11_rec} = 4, 2, 
+          3) 
+     )
+)*6.1848
++
+/*QUESTION 4*/
+IF( ISBLANK({!ipt_Seg_Survey_Q4_at1_12_rec}), 0, 
+     IF(OR({!ipt_Seg_Survey_Q4_at1_12_rec} = 1, {!ipt_Seg_Survey_Q4_at1_12_rec} = 2, {!ipt_Seg_Survey_Q4_at1_12_rec} = 3), 1,
+          IF({!ipt_Seg_Survey_Q4_at1_12_rec} = 4, 2, 
+          3) 
+     )
+)*5.9147
++
+/*QUESTION 5*/
+IF( ISBLANK({!ipt_Seg_Survey_Q5_at1_19_rec}), 0, 
+     IF(OR({!ipt_Seg_Survey_Q5_at1_19_rec} = 1, {!ipt_Seg_Survey_Q5_at1_19_rec} = 2, {!ipt_Seg_Survey_Q5_at1_19_rec} = 3), 1,
+          IF({!ipt_Seg_Survey_Q5_at1_19_rec} = 4, 2, 
+          3) 
+     )
+)*4.9108
++
+/*QUESTION 6*/
+IF( ISBLANK({!ipt_Seg_Survey_Q6_p3b_1}), 0, 
+     IF({!ipt_Seg_Survey_Q6_p3b_1} = &quot;No&quot;, 0, 1.9247)
+)
++
+/*QUESTION 7*/
+IF( ISBLANK({!ipt_Seg_Survey_Q7_p3b_2}), 0, 
+     IF({!ipt_Seg_Survey_Q7_p3b_2} = &quot;No&quot;, 0, 4.0357)
+)
++
+/*QUESTION 8*/
+IF( ISBLANK({!ipt_Seg_Survey_Q8_p3b_3}), 0, 
+     IF({!ipt_Seg_Survey_Q8_p3b_3} = &quot;No&quot;, 0, 7.0320)
+)
++
+/*CONSTANT*/
+-30.5078</expression>
+        <scale>4</scale>
+    </formulas>
+    <interviewLabel>Contact - Marketing Segmentation Survey {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>Contact - Marketing Segmentation Survey</label>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>CanvasMode</name>
+        <value>
+            <stringValue>AUTO_LAYOUT_CANVAS</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>OriginBuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>Flow</processType>
+    <recordLookups>
+        <description>Gets running User record</description>
+        <name>get_User</name>
+        <label>$User</label>
+        <locationX>176</locationX>
+        <locationY>134</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>scn_Seg_Survey</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>Id</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>$User.Id</elementReference>
+            </value>
+        </filters>
+        <getFirstRecordOnly>true</getFirstRecordOnly>
+        <object>User</object>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordLookups>
+    <recordUpdates>
+        <name>udt_Contact_Record</name>
+        <label>Contact Record</label>
+        <locationX>176</locationX>
+        <locationY>458</locationY>
+        <connector>
+            <targetReference>scn_Seg_Assignment</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>Id</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>recordId</elementReference>
+            </value>
+        </filters>
+        <inputAssignments>
+            <field>Marketing_Segmentation_LastModifiedBy__c</field>
+            <value>
+                <elementReference>$User.Id</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Marketing_Segmentation_LastModifiedDate__c</field>
+            <value>
+                <elementReference>$Flow.InterviewStartTime</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Marketing_Segmentation__c</field>
+            <value>
+                <elementReference>fx_Seg_Assignment</elementReference>
+            </value>
+        </inputAssignments>
+        <object>Contact</object>
+    </recordUpdates>
+    <runInMode>SystemModeWithSharing</runInMode>
+    <screens>
+        <name>scn_Seg_Assignment</name>
+        <label>Marketing Segmentation Assignment</label>
+        <locationX>176</locationX>
+        <locationY>566</locationY>
+        <allowBack>false</allowBack>
+        <allowFinish>true</allowFinish>
+        <allowPause>false</allowPause>
+        <fields>
+            <name>txt_Seg_Customizers</name>
+            <fieldText>&lt;p style=&quot;text-align: center;&quot;&gt;&lt;strong style=&quot;font-size: 26px; color: rgb(99, 197, 100);&quot;&gt;Customizers&lt;/strong&gt;&lt;/p&gt;</fieldText>
+            <fieldType>DisplayText</fieldType>
+            <visibilityRule>
+                <conditionLogic>and</conditionLogic>
+                <conditions>
+                    <leftValueReference>fx_Seg_Assignment</leftValueReference>
+                    <operator>EqualTo</operator>
+                    <rightValue>
+                        <stringValue>Customizers</stringValue>
+                    </rightValue>
+                </conditions>
+            </visibilityRule>
+        </fields>
+        <fields>
+            <name>txt_Seg_Minimalists</name>
+            <fieldText>&lt;p style=&quot;text-align: center;&quot;&gt;&lt;strong style=&quot;font-size: 26px; color: rgb(33, 158, 212);&quot;&gt;Minimalists&lt;/strong&gt;&lt;/p&gt;</fieldText>
+            <fieldType>DisplayText</fieldType>
+            <visibilityRule>
+                <conditionLogic>and</conditionLogic>
+                <conditions>
+                    <leftValueReference>fx_Seg_Assignment</leftValueReference>
+                    <operator>EqualTo</operator>
+                    <rightValue>
+                        <stringValue>Minimalists</stringValue>
+                    </rightValue>
+                </conditions>
+            </visibilityRule>
+        </fields>
+        <fields>
+            <name>txt_Seg_Optimizers</name>
+            <fieldText>&lt;p style=&quot;text-align: center;&quot;&gt;&lt;strong style=&quot;color: rgb(173, 80, 148); font-size: 26px;&quot;&gt;Optimizers&lt;/strong&gt;&lt;/p&gt;</fieldText>
+            <fieldType>DisplayText</fieldType>
+            <visibilityRule>
+                <conditionLogic>and</conditionLogic>
+                <conditions>
+                    <leftValueReference>fx_Seg_Assignment</leftValueReference>
+                    <operator>EqualTo</operator>
+                    <rightValue>
+                        <stringValue>Optimizers</stringValue>
+                    </rightValue>
+                </conditions>
+            </visibilityRule>
+        </fields>
+        <fields>
+            <name>txt_Seg_Savers</name>
+            <fieldText>&lt;p style=&quot;text-align: center;&quot;&gt;&lt;strong style=&quot;color: rgb(112, 48, 160); font-size: 26px;&quot;&gt;Savers&lt;/strong&gt;&lt;/p&gt;</fieldText>
+            <fieldType>DisplayText</fieldType>
+            <visibilityRule>
+                <conditionLogic>and</conditionLogic>
+                <conditions>
+                    <leftValueReference>fx_Seg_Assignment</leftValueReference>
+                    <operator>EqualTo</operator>
+                    <rightValue>
+                        <stringValue>Savers</stringValue>
+                    </rightValue>
+                </conditions>
+            </visibilityRule>
+        </fields>
+        <nextOrFinishButtonLabel>Close</nextOrFinishButtonLabel>
+        <showFooter>true</showFooter>
+        <showHeader>false</showHeader>
+    </screens>
+    <screens>
+        <description>Screen prompts user with Likert scale questions that will be used to calculate the Marketing Segmentation.</description>
+        <name>scn_Seg_Survey</name>
+        <label>Marketing Segmentation Survey</label>
+        <locationX>176</locationX>
+        <locationY>242</locationY>
+        <allowBack>true</allowBack>
+        <allowFinish>true</allowFinish>
+        <allowPause>false</allowPause>
+        <connector>
+            <targetReference>asn_Variables</targetReference>
+        </connector>
+        <fields>
+            <name>admin_fxResult</name>
+            <dataType>String</dataType>
+            <defaultValue>
+                <elementReference>admin_fx_Seg_Assignment</elementReference>
+            </defaultValue>
+            <fieldText>fx Result</fieldText>
+            <fieldType>InputField</fieldType>
+            <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
+            <isRequired>false</isRequired>
+            <visibilityRule>
+                <conditionLogic>and</conditionLogic>
+                <conditions>
+                    <leftValueReference>get_User.Profile.Name</leftValueReference>
+                    <operator>EqualTo</operator>
+                    <rightValue>
+                        <stringValue>System Administrator</stringValue>
+                    </rightValue>
+                </conditions>
+            </visibilityRule>
+        </fields>
+        <fields>
+            <name>scn_Seg_Survey_Section1</name>
+            <fieldType>RegionContainer</fieldType>
+            <fields>
+                <name>scn_Seg_Survey_Section1_Column1</name>
+                <fieldType>Region</fieldType>
+                <fields>
+                    <name>admin_calc_Minimalists</name>
+                    <dataType>Number</dataType>
+                    <defaultValue>
+                        <elementReference>fx_Seg_Minimalists</elementReference>
+                    </defaultValue>
+                    <fieldText>∑  Minimalists</fieldText>
+                    <fieldType>InputField</fieldType>
+                    <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
+                    <isRequired>false</isRequired>
+                    <scale>4</scale>
+                </fields>
+                <fields>
+                    <name>admin_arrow_Minimalists</name>
+                    <fieldText>&lt;p style=&quot;text-align: center;&quot;&gt;&lt;span style=&quot;font-size: 28px;&quot;&gt;⬆️&lt;/span&gt;&lt;/p&gt;</fieldText>
+                    <fieldType>DisplayText</fieldType>
+                    <visibilityRule>
+                        <conditionLogic>and</conditionLogic>
+                        <conditions>
+                            <leftValueReference>admin_calc_Minimalists</leftValueReference>
+                            <operator>GreaterThan</operator>
+                            <rightValue>
+                                <elementReference>admin_calc_Customizers</elementReference>
+                            </rightValue>
+                        </conditions>
+                        <conditions>
+                            <leftValueReference>admin_calc_Minimalists</leftValueReference>
+                            <operator>GreaterThan</operator>
+                            <rightValue>
+                                <elementReference>admin_calc_Savers</elementReference>
+                            </rightValue>
+                        </conditions>
+                        <conditions>
+                            <leftValueReference>admin_calc_Minimalists</leftValueReference>
+                            <operator>GreaterThan</operator>
+                            <rightValue>
+                                <elementReference>admin_calc_Optimizers</elementReference>
+                            </rightValue>
+                        </conditions>
+                    </visibilityRule>
+                </fields>
+                <inputParameters>
+                    <name>width</name>
+                    <value>
+                        <stringValue>3</stringValue>
+                    </value>
+                </inputParameters>
+                <isRequired>false</isRequired>
+            </fields>
+            <fields>
+                <name>scn_Seg_Survey_Section1_Column2</name>
+                <fieldType>Region</fieldType>
+                <fields>
+                    <name>admin_calc_Customizers</name>
+                    <dataType>Number</dataType>
+                    <defaultValue>
+                        <elementReference>fx_Seg_Customizers</elementReference>
+                    </defaultValue>
+                    <fieldText>∑  Customizers</fieldText>
+                    <fieldType>InputField</fieldType>
+                    <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
+                    <isRequired>false</isRequired>
+                    <scale>4</scale>
+                </fields>
+                <fields>
+                    <name>admin_arrow_Customizers</name>
+                    <fieldText>&lt;p style=&quot;text-align: center;&quot;&gt;&lt;span style=&quot;background-color: rgb(255, 255, 255); font-size: 28px; color: rgb(68, 68, 68);&quot;&gt;⬆️&lt;/span&gt;&lt;/p&gt;</fieldText>
+                    <fieldType>DisplayText</fieldType>
+                    <visibilityRule>
+                        <conditionLogic>and</conditionLogic>
+                        <conditions>
+                            <leftValueReference>admin_calc_Customizers</leftValueReference>
+                            <operator>GreaterThan</operator>
+                            <rightValue>
+                                <elementReference>admin_calc_Minimalists</elementReference>
+                            </rightValue>
+                        </conditions>
+                        <conditions>
+                            <leftValueReference>admin_calc_Customizers</leftValueReference>
+                            <operator>GreaterThan</operator>
+                            <rightValue>
+                                <elementReference>admin_calc_Savers</elementReference>
+                            </rightValue>
+                        </conditions>
+                        <conditions>
+                            <leftValueReference>admin_calc_Customizers</leftValueReference>
+                            <operator>GreaterThan</operator>
+                            <rightValue>
+                                <elementReference>admin_calc_Optimizers</elementReference>
+                            </rightValue>
+                        </conditions>
+                    </visibilityRule>
+                </fields>
+                <inputParameters>
+                    <name>width</name>
+                    <value>
+                        <stringValue>3</stringValue>
+                    </value>
+                </inputParameters>
+                <isRequired>false</isRequired>
+            </fields>
+            <fields>
+                <name>scn_Seg_Survey_Section1_Column3</name>
+                <fieldType>Region</fieldType>
+                <fields>
+                    <name>admin_calc_Savers</name>
+                    <dataType>Number</dataType>
+                    <defaultValue>
+                        <elementReference>fx_Seg_Savers</elementReference>
+                    </defaultValue>
+                    <fieldText>∑  Savers</fieldText>
+                    <fieldType>InputField</fieldType>
+                    <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
+                    <isRequired>false</isRequired>
+                    <scale>4</scale>
+                </fields>
+                <fields>
+                    <name>admin_arrow_Savers</name>
+                    <fieldText>&lt;p style=&quot;text-align: center;&quot;&gt;&lt;span style=&quot;background-color: rgb(255, 255, 255); font-size: 28px; color: rgb(68, 68, 68);&quot;&gt;⬆️&lt;/span&gt;&lt;/p&gt;</fieldText>
+                    <fieldType>DisplayText</fieldType>
+                    <visibilityRule>
+                        <conditionLogic>and</conditionLogic>
+                        <conditions>
+                            <leftValueReference>admin_calc_Savers</leftValueReference>
+                            <operator>GreaterThan</operator>
+                            <rightValue>
+                                <elementReference>admin_calc_Minimalists</elementReference>
+                            </rightValue>
+                        </conditions>
+                        <conditions>
+                            <leftValueReference>admin_calc_Savers</leftValueReference>
+                            <operator>GreaterThan</operator>
+                            <rightValue>
+                                <elementReference>admin_calc_Customizers</elementReference>
+                            </rightValue>
+                        </conditions>
+                        <conditions>
+                            <leftValueReference>admin_calc_Savers</leftValueReference>
+                            <operator>GreaterThan</operator>
+                            <rightValue>
+                                <elementReference>admin_calc_Optimizers</elementReference>
+                            </rightValue>
+                        </conditions>
+                    </visibilityRule>
+                </fields>
+                <inputParameters>
+                    <name>width</name>
+                    <value>
+                        <stringValue>3</stringValue>
+                    </value>
+                </inputParameters>
+                <isRequired>false</isRequired>
+            </fields>
+            <fields>
+                <name>scn_Seg_Survey_Section1_Column4</name>
+                <fieldType>Region</fieldType>
+                <fields>
+                    <name>admin_calc_Optimizers</name>
+                    <dataType>Number</dataType>
+                    <defaultValue>
+                        <elementReference>fx_Seg_Optimizers</elementReference>
+                    </defaultValue>
+                    <fieldText>∑  Optimizers</fieldText>
+                    <fieldType>InputField</fieldType>
+                    <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
+                    <isRequired>false</isRequired>
+                    <scale>4</scale>
+                </fields>
+                <fields>
+                    <name>admin_arrow_Optimizers</name>
+                    <fieldText>&lt;p style=&quot;text-align: center;&quot;&gt;&lt;span style=&quot;background-color: rgb(255, 255, 255); font-size: 28px; color: rgb(68, 68, 68);&quot;&gt;⬆️&lt;/span&gt;&lt;/p&gt;</fieldText>
+                    <fieldType>DisplayText</fieldType>
+                    <visibilityRule>
+                        <conditionLogic>and</conditionLogic>
+                        <conditions>
+                            <leftValueReference>admin_calc_Optimizers</leftValueReference>
+                            <operator>GreaterThan</operator>
+                            <rightValue>
+                                <elementReference>admin_calc_Minimalists</elementReference>
+                            </rightValue>
+                        </conditions>
+                        <conditions>
+                            <leftValueReference>admin_calc_Optimizers</leftValueReference>
+                            <operator>GreaterThan</operator>
+                            <rightValue>
+                                <elementReference>admin_calc_Customizers</elementReference>
+                            </rightValue>
+                        </conditions>
+                        <conditions>
+                            <leftValueReference>admin_calc_Optimizers</leftValueReference>
+                            <operator>GreaterThan</operator>
+                            <rightValue>
+                                <elementReference>admin_calc_Savers</elementReference>
+                            </rightValue>
+                        </conditions>
+                    </visibilityRule>
+                </fields>
+                <inputParameters>
+                    <name>width</name>
+                    <value>
+                        <stringValue>3</stringValue>
+                    </value>
+                </inputParameters>
+                <isRequired>false</isRequired>
+            </fields>
+            <isRequired>false</isRequired>
+            <regionContainerType>SectionWithoutHeader</regionContainerType>
+            <visibilityRule>
+                <conditionLogic>and</conditionLogic>
+                <conditions>
+                    <leftValueReference>get_User.Profile.Name</leftValueReference>
+                    <operator>EqualTo</operator>
+                    <rightValue>
+                        <stringValue>System Administrator</stringValue>
+                    </rightValue>
+                </conditions>
+            </visibilityRule>
+        </fields>
+        <fields>
+            <name>txt_Seg_Survey_Directions</name>
+            <fieldText>&lt;p&gt;&lt;span style=&quot;font-size: 16px;&quot;&gt;Below is a list of benefits that could be offered by providers of packaging supplies and solutions. &lt;/span&gt;&lt;span style=&quot;font-size: 16px; color: rgb(68, 68, 68); background-color: rgb(255, 255, 255);&quot;&gt;From the perspective of the prosect or customer, p&lt;/span&gt;&lt;span style=&quot;font-size: 16px;&quot;&gt;lease indicate which benefits are important when deciding who to partner with for their packaging supplies and solutions.&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot;font-size: 16px;&quot;&gt;Using the scale for each response, select the importance of each of these benefits in influencing the decision to partner with companies for your prospect or customer&apos;s packaging needs.&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;</fieldText>
+            <fieldType>DisplayText</fieldType>
+        </fields>
+        <fields>
+            <name>scn_Seg_Survey_Section2</name>
+            <fieldType>RegionContainer</fieldType>
+            <fields>
+                <name>scn_Seg_Survey_Section2_Column1</name>
+                <fieldType>Region</fieldType>
+                <fields>
+                    <name>ipt_Seg_Survey_Q1_at1_6_rec</name>
+                    <choiceReferences>chc_5ExtremelyImportant</choiceReferences>
+                    <choiceReferences>chc_4VeryImportant</choiceReferences>
+                    <choiceReferences>chc_3SomewhatImportant</choiceReferences>
+                    <choiceReferences>chc_2NotVeryImportant</choiceReferences>
+                    <choiceReferences>chc_1NotAtAllImportant</choiceReferences>
+                    <dataType>Number</dataType>
+                    <fieldText>Provides an economical cost structure / good value</fieldText>
+                    <fieldType>DropdownBox</fieldType>
+                    <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
+                    <isRequired>true</isRequired>
+                    <scale>0</scale>
+                </fields>
+                <fields>
+                    <name>ipt_Seg_Survey_Q2_at1_7_rec</name>
+                    <choiceReferences>chc_5ExtremelyImportant</choiceReferences>
+                    <choiceReferences>chc_4VeryImportant</choiceReferences>
+                    <choiceReferences>chc_3SomewhatImportant</choiceReferences>
+                    <choiceReferences>chc_2NotVeryImportant</choiceReferences>
+                    <choiceReferences>chc_1NotAtAllImportant</choiceReferences>
+                    <dataType>Number</dataType>
+                    <fieldText>Geographical proximity to multiple locations (has a nationwide or regional presence)</fieldText>
+                    <fieldType>DropdownBox</fieldType>
+                    <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
+                    <isRequired>true</isRequired>
+                    <scale>0</scale>
+                </fields>
+                <fields>
+                    <name>ipt_Seg_Survey_Q3_at1_11_rec</name>
+                    <choiceReferences>chc_5ExtremelyImportant</choiceReferences>
+                    <choiceReferences>chc_4VeryImportant</choiceReferences>
+                    <choiceReferences>chc_3SomewhatImportant</choiceReferences>
+                    <choiceReferences>chc_2NotVeryImportant</choiceReferences>
+                    <choiceReferences>chc_1NotAtAllImportant</choiceReferences>
+                    <dataType>Number</dataType>
+                    <fieldText>Provides packaging solutions that maintain the integrity of our products</fieldText>
+                    <fieldType>DropdownBox</fieldType>
+                    <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
+                    <isRequired>true</isRequired>
+                    <scale>0</scale>
+                </fields>
+                <fields>
+                    <name>ipt_Seg_Survey_Q4_at1_12_rec</name>
+                    <choiceReferences>chc_5ExtremelyImportant</choiceReferences>
+                    <choiceReferences>chc_4VeryImportant</choiceReferences>
+                    <choiceReferences>chc_3SomewhatImportant</choiceReferences>
+                    <choiceReferences>chc_2NotVeryImportant</choiceReferences>
+                    <choiceReferences>chc_1NotAtAllImportant</choiceReferences>
+                    <dataType>Number</dataType>
+                    <fieldText>Has good quality control</fieldText>
+                    <fieldType>DropdownBox</fieldType>
+                    <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
+                    <isRequired>true</isRequired>
+                    <scale>0</scale>
+                </fields>
+                <inputParameters>
+                    <name>width</name>
+                    <value>
+                        <stringValue>6</stringValue>
+                    </value>
+                </inputParameters>
+                <isRequired>false</isRequired>
+            </fields>
+            <fields>
+                <name>scn_Seg_Survey_Section2_Column2</name>
+                <fieldType>Region</fieldType>
+                <fields>
+                    <name>ipt_Seg_Survey_Q5_at1_19_rec</name>
+                    <choiceReferences>chc_5ExtremelyImportant</choiceReferences>
+                    <choiceReferences>chc_4VeryImportant</choiceReferences>
+                    <choiceReferences>chc_3SomewhatImportant</choiceReferences>
+                    <choiceReferences>chc_2NotVeryImportant</choiceReferences>
+                    <choiceReferences>chc_1NotAtAllImportant</choiceReferences>
+                    <dataType>Number</dataType>
+                    <fieldText>Uses safe materials for packaging solutions</fieldText>
+                    <fieldType>DropdownBox</fieldType>
+                    <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
+                    <isRequired>true</isRequired>
+                    <scale>0</scale>
+                </fields>
+                <fields>
+                    <name>ipt_Seg_Survey_Q6_p3b_1</name>
+                    <choiceReferences>chc_Yes</choiceReferences>
+                    <choiceReferences>chc_No</choiceReferences>
+                    <dataType>String</dataType>
+                    <fieldText>We have a corporate mandate to re-evaluate providers</fieldText>
+                    <fieldType>DropdownBox</fieldType>
+                    <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
+                    <isRequired>true</isRequired>
+                </fields>
+                <fields>
+                    <name>ipt_Seg_Survey_Q7_p3b_2</name>
+                    <choiceReferences>chc_Yes</choiceReferences>
+                    <choiceReferences>chc_No</choiceReferences>
+                    <dataType>String</dataType>
+                    <fieldText>We are constantly looking to reduce costs for the organization</fieldText>
+                    <fieldType>DropdownBox</fieldType>
+                    <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
+                    <isRequired>true</isRequired>
+                </fields>
+                <fields>
+                    <name>ipt_Seg_Survey_Q8_p3b_3</name>
+                    <choiceReferences>chc_Yes</choiceReferences>
+                    <choiceReferences>chc_No</choiceReferences>
+                    <dataType>String</dataType>
+                    <fieldText>We are constantly looking for more dynamic packaging solutions</fieldText>
+                    <fieldType>DropdownBox</fieldType>
+                    <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
+                    <isRequired>true</isRequired>
+                </fields>
+                <inputParameters>
+                    <name>width</name>
+                    <value>
+                        <stringValue>6</stringValue>
+                    </value>
+                </inputParameters>
+                <isRequired>false</isRequired>
+            </fields>
+            <isRequired>false</isRequired>
+            <regionContainerType>SectionWithoutHeader</regionContainerType>
+        </fields>
+        <showFooter>true</showFooter>
+        <showHeader>false</showHeader>
+    </screens>
+    <start>
+        <locationX>50</locationX>
+        <locationY>0</locationY>
+        <connector>
+            <targetReference>get_User</targetReference>
+        </connector>
+    </start>
+    <status>Active</status>
+    <variables>
+        <name>recordId</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>true</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+    <variables>
+        <name>var_Seg_Customizers</name>
+        <dataType>Number</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+        <scale>4</scale>
+    </variables>
+    <variables>
+        <name>var_Seg_Minimalists</name>
+        <dataType>Number</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+        <scale>4</scale>
+    </variables>
+    <variables>
+        <name>var_Seg_Optimizers</name>
+        <dataType>Number</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+        <scale>4</scale>
+    </variables>
+    <variables>
+        <name>var_Seg_Savers</name>
+        <dataType>Number</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+        <scale>4</scale>
+    </variables>
+</Flow>

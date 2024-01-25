@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Queue xmlns="http://soap.sforce.com/2006/04/metadata">
+    <doesSendEmailToMembers>false</doesSendEmailToMembers>
+    <email>sfcasereply@veritivcorp.com.invalid</email>
+    <name>LA-FS-ESC-LEX</name>
+    <queueMembers>
+        <roles>
+            <role>CS_CSC_Operations_Mgmt</role>
+            <role>CS_LA_FS_PKG_CXC_Mgr</role>
+            <role>CS_LA_FS_PKG_TM_TL</role>
+            <role>CS_LA_FS_PKG_TM1</role>
+            <role>CS_LA_FS_PKG_TM2</role>
+            <role>CS_LA_FS_PKG_TM3</role>
+            <role>CS_LA_FS_PKG_TM5</role>
+            <role>CS_LA_NAT_TM4</role>
+            <role>CS_LA_SUPPORT</role>
+        </roles>
+    </queueMembers>
+    <queueSobject>
+        <sobjectType>Case</sobjectType>
+    </queueSobject>
+    <queueSobject>
+        <sobjectType>Fax_To_Case_Queue_Assignment__c</sobjectType>
+    </queueSobject>
+</Queue>

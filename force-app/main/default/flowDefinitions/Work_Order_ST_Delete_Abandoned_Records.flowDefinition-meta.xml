@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<FlowDefinition xmlns="http://soap.sforce.com/2006/04/metadata">
+    <activeVersionNumber>4</activeVersionNumber>
+    <description>Deletes records sitting in the &apos;Flow Processing Queue&apos; that were created greater than 1 hour ago. These are typically records that were left in the Queue because the user canceled (clicked the &apos;X&apos;) to close the window of the Flow, after the Work Order record was created while the Flow was in process.</description>
+    <masterLabel>Work Order - [ST] Delete Abandoned Records</masterLabel>
+</FlowDefinition>

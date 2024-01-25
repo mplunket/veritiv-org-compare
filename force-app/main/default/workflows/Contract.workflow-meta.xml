@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Workflow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <alerts>
+        <fullName>ULS_Contract_Expiring_Soon</fullName>
+        <ccEmails>salesforce@unisourcelink.com</ccEmails>
+        <description>ULS Contract Expiring Soon!</description>
+        <protected>false</protected>
+        <recipients>
+            <field>Account_Manager_Email__c</field>
+            <type>email</type>
+        </recipients>
+        <recipients>
+            <field>Primary_Sales_Rep_Email__c</field>
+            <type>email</type>
+        </recipients>
+        <recipients>
+            <field>Project_Manager_Email__c</field>
+            <type>email</type>
+        </recipients>
+        <recipients>
+            <field>Transportation_Manager_Email__c</field>
+            <type>email</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>ULS_Templates/ULS_Contract_Expiring_Soon</template>
+    </alerts>
+    <fieldUpdates>
+        <fullName>Account_Manager_Email</fullName>
+        <field>Account_Manager_Email__c</field>
+        <formula>Account.Account_Manager__r.Email__c</formula>
+        <name>Account Manager Email</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Activate_Contract_at_Save</fullName>
+        <field>Status</field>
+        <literalValue>Activated</literalValue>
+        <name>Activate Contract at Save</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>PSR_Email</fullName>
+        <field>Primary_Sales_Rep_Email__c</field>
+        <formula>Opportunity__r.Primary_Sales_Rep_Name__r.Email__c</formula>
+        <name>PSR Email</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Project_Manager_Email</fullName>
+        <field>Project_Manager_Email__c</field>
+        <formula>Account.Project_Manager__r.Email__c</formula>
+        <name>Project Manager Email</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Transportation_Manager_Email</fullName>
+        <field>Transportation_Manager_Email__c</field>
+        <formula>Account.Transportation_Manager__r.Email__c</formula>
+        <name>Transportation Manager Email</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <rules>
+        <fullName>Contract Activated on Save</fullName>
+        <actions>
+            <name>Activate_Contract_at_Save</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <criteriaItems>
+            <field>Contract.Status</field>
+            <operation>notEqual</operation>
+            <value>Activated</value>
+        </criteriaItems>
+        <triggerType>onCreateOnly</triggerType>
+    </rules>
+    <rules>
+        <fullName>Contract Expiring Soon</fullName>
+        <active>false</active>
+        <criteriaItems>
+            <field>Contract.Document_Type__c</field>
+            <operation>equals</operation>
+            <value>Warehouse Agreement</value>
+        </criteriaItems>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+        <workflowTimeTriggers>
+            <actions>
+                <name>ULS_Contract_Expiring_Soon</name>
+                <type>Alert</type>
+            </actions>
+            <offsetFromField>Contract.EndDate</offsetFromField>
+            <timeLength>-30</timeLength>
+            <workflowTimeTriggerUnit>Days</workflowTimeTriggerUnit>
+        </workflowTimeTriggers>
+    </rules>
+    <rules>
+        <fullName>ULS Contract Expiring Soon%21</fullName>
+        <active>false</active>
+        <criteriaItems>
+            <field>Contract.Document_Type__c</field>
+            <operation>equals</operation>
+            <value>WH Cert. of Insurance (COI),TL Brokerage Agreement,WH Proposal/Quote,WH Agreement,TL Carrier Agreement</value>
+        </criteriaItems>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+        <workflowTimeTriggers>
+            <actions>
+                <name>ULS_Contract_Expiring_Soon</name>
+                <type>Alert</type>
+            </actions>
+            <offsetFromField>Contract.EndDate</offsetFromField>
+            <timeLength>-30</timeLength>
+            <workflowTimeTriggerUnit>Days</workflowTimeTriggerUnit>
+        </workflowTimeTriggers>
+    </rules>
+    <rules>
+        <fullName>ULS Emails</fullName>
+        <actions>
+            <name>Account_Manager_Email</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <actions>
+            <name>PSR_Email</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <actions>
+            <name>Project_Manager_Email</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <actions>
+            <name>Transportation_Manager_Email</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <criteriaItems>
+            <field>Contract.CreatedDate</field>
+            <operation>equals</operation>
+            <value>TODAY</value>
+        </criteriaItems>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+    </rules>
+</Workflow>

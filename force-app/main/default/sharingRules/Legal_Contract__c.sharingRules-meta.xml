@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<SharingRules xmlns="http://soap.sforce.com/2006/04/metadata">
+    <sharingOwnerRules>
+        <fullName>Coordinators_can_edit_all</fullName>
+        <accessLevel>Edit</accessLevel>
+        <label>Coordinators can edit all</label>
+        <sharedTo>
+            <role>PKG_EQUIPMENT_RETAIL</role>
+        </sharedTo>
+        <sharedFrom>
+            <roleAndSubordinatesInternal>Veritiv_Users</roleAndSubordinatesInternal>
+        </sharedFrom>
+    </sharingOwnerRules>
+</SharingRules>

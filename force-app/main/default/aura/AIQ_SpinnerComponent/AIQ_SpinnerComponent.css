@@ -1,0 +1,8 @@
+.THIS.spinner_position{
+    overflow: initial;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    display: block;
+    vertical-align: middle;
+}

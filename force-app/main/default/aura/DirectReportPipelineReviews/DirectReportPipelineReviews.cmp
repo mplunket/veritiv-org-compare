@@ -1,0 +1,49 @@
+<aura:component controller="PipelineReviewsComponentController" implements="flexipage:availableForAllPageTypes">
+    <aura:attribute name="currentPSR" type="Object" />
+    <aura:attribute name="psrs" type="List" />
+    <aura:handler name="init" value="{!this}" action="{!c.doInit}" />
+    <article class="slds-card">
+        <div class="slds-card__header slds-grid">
+            <header class="slds-media slds-media_center slds-has-flexi-truncate">
+                <div class="slds-media__body">
+                    <h2>
+                        <span class="slds-text-heading_small slds-truncate slds-card__header-link">Direct Report Pipeline Review</span>
+                    </h2>
+                </div>
+            </header>
+        </div>
+        <div class="slds-card__body slds-card__body_inner">
+            <p class="slds-m-bottom_small">
+                <a href="{!'/' + v.currentPSR.Id}"> {!v.currentPSR.Name}</a>
+            </p>
+            <table class="slds-table slds-table_col-bordered">
+                <thead>
+                    <tr class="slds-text-title_caps">
+                        <th scope="col">
+                            <div class="slds-truncate" title="PSR Name">PSR Name</div>
+                        </th>
+                        <th scope="col">
+                            <div class="slds-truncate" title="Pipeline Review">Pipeline Review</div>
+                        </th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <aura:iteration items="{!v.psrs}" var="psr">
+                        <tr>
+                            <td data-label="PSR Name">
+                                <div class="slds-truncate">
+                                    <a href="{!'/' + psr.Id}">{!psr.Name}</a>
+                                </div>
+                            </td>
+                            <td data-label="Pipeline Review">
+                                <div class="slds-truncate">
+                                    <a href="{!'/' + psr.Pipeline_Reviews__r[0].Id}">{!psr.Pipeline_Reviews__r[0].Name}</a>
+                                </div>
+                            </td>
+                        </tr>
+                    </aura:iteration>
+                </tbody>
+            </table>
+        </div>
+    </article>
+</aura:component>

@@ -1,0 +1,75 @@
+html {
+  background: #fff;
+}
+
+body {
+  max-width: 1080px;
+  margin-left: auto;
+  margin-right: auto;
+}
+hr {
+  width: 100%;
+  border: 1px solid #007934;
+  margin-top: 5px;
+}
+
+.card-section {
+  border-radius: 4px;
+  box-shadow: 5px 10px 8px #ededed;
+  padding-left: 20px !important;
+}
+
+th {
+  background: #b2e0209c;
+  color: #007934;
+  font-size: 20px !important;
+  font-weight: 600;
+  border: none;
+  padding: 4px;
+}
+
+<!--Header-- > .float-right-veritivLogo {
+  float: right;
+}
+
+.float-center {
+  margin: 0 auto;
+}
+
+#preview-header {
+  width: 100%;
+}
+
+.sub-header {
+  color: #1c5631 !important;
+  font-size: 16px !important;
+  font-weight: 700 !important;
+}
+
+.page-header {
+  color: #007934;
+  font-size: 24px !important;
+  font-weight: 500;
+}
+
+.header-text {
+  color: #007934;
+  font-size: 24px !important;
+  font-weight: 600;
+  text-align: center;
+}
+
+<!--Sub Head Data-- > .data-label {
+  color: #007934;
+}
+
+table td {
+  font-size: 12px;
+  padding: 4px;
+}
+
+table {
+  table-layout: fixed;
+  border-collapse: collapse;
+  margin-bottom: 10px;
+}

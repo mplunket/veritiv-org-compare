@@ -1,0 +1,781 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>59.0</apiVersion>
+    <choices>
+        <name>chc_1NotAtAllImportant</name>
+        <choiceText>(1) Not At All Important</choiceText>
+        <dataType>Number</dataType>
+        <value>
+            <numberValue>1.0</numberValue>
+        </value>
+    </choices>
+    <choices>
+        <name>chc_2NotVeryImportant</name>
+        <choiceText>(2) Not Very Important</choiceText>
+        <dataType>Number</dataType>
+        <value>
+            <numberValue>2.0</numberValue>
+        </value>
+    </choices>
+    <choices>
+        <name>chc_3SomewhatImportant</name>
+        <choiceText>(3) Somewhat Important</choiceText>
+        <dataType>Number</dataType>
+        <value>
+            <numberValue>3.0</numberValue>
+        </value>
+    </choices>
+    <choices>
+        <name>chc_4VeryImportant</name>
+        <choiceText>(4) Very Important</choiceText>
+        <dataType>Number</dataType>
+        <value>
+            <numberValue>4.0</numberValue>
+        </value>
+    </choices>
+    <choices>
+        <name>chc_5ExtremelyImportant</name>
+        <choiceText>(5) Extremely Important</choiceText>
+        <dataType>Number</dataType>
+        <value>
+            <numberValue>5.0</numberValue>
+        </value>
+    </choices>
+    <choices>
+        <name>chc_No</name>
+        <choiceText>No</choiceText>
+        <dataType>String</dataType>
+        <value>
+            <stringValue>No</stringValue>
+        </value>
+    </choices>
+    <choices>
+        <name>chc_Yes</name>
+        <choiceText>Yes</choiceText>
+        <dataType>String</dataType>
+        <value>
+            <stringValue>Yes</stringValue>
+        </value>
+    </choices>
+    <description>Survey with Likert scale user responses used to calculate Marketing Segmentation that is saved to the Account record</description>
+    <environments>Default</environments>
+    <formulas>
+        <description>Determines the Marketing Segmentation value</description>
+        <name>fx_mSeg_Assignment</name>
+        <dataType>String</dataType>
+        <expression>IF( MAX({!fx_mSeg_CollaborativeCustomizers}, {!fx_mSeg_MotivatedMinimalists}, {!fx_mSeg_ObedientOptimizers}, {!fx_mSeg_SystematicSavers})={!fx_mSeg_CollaborativeCustomizers}, &quot;Collaborative Customizers&quot;,
+     IF( MAX({!fx_mSeg_MotivatedMinimalists}, {!fx_mSeg_ObedientOptimizers}, {!fx_mSeg_SystematicSavers})={!fx_mSeg_MotivatedMinimalists}, &quot;Motivated Minimalists&quot;,
+          IF( MAX({!fx_mSeg_ObedientOptimizers}, {!fx_mSeg_SystematicSavers})={!fx_mSeg_ObedientOptimizers}, &quot;Obedient Optimizers&quot;, &quot;Systematic Savers&quot;)
+     )
+)</expression>
+    </formulas>
+    <formulas>
+        <description>Collaborative Customizers calculation</description>
+        <name>fx_mSeg_CollaborativeCustomizers</name>
+        <dataType>Number</dataType>
+        <expression>/*QUESTION 1*/
+IF( ISBLANK({!ipt_mSeg_Survey_Q1}), 0, 
+     IF(OR({!ipt_mSeg_Survey_Q1} = 1, {!ipt_mSeg_Survey_Q1} = 2, {!ipt_mSeg_Survey_Q1} = 3), 1,
+          IF({!ipt_mSeg_Survey_Q1} = 4, 2, 
+          3) 
+     )
+)*8.2570
++
+/*QUESTION 2*/
+IF( ISBLANK({!ipt_mSeg_Survey_Q2}), 0, 
+     IF(OR({!ipt_mSeg_Survey_Q2} = 1, {!ipt_mSeg_Survey_Q2} = 2, {!ipt_mSeg_Survey_Q2} = 3), 1,
+          IF({!ipt_mSeg_Survey_Q2} = 4, 2, 
+          3) 
+     )
+)*7.4135
++
+/*QUESTION 3*/
+IF( ISBLANK({!ipt_mSeg_Survey_Q3}), 0, 
+     IF(OR({!ipt_mSeg_Survey_Q3} = 1, {!ipt_mSeg_Survey_Q3} = 2, {!ipt_mSeg_Survey_Q3} = 3), 1,
+          IF({!ipt_mSeg_Survey_Q3} = 4, 2, 
+          3) 
+     )
+)*8.8491
++
+/*QUESTION 4*/
+IF( ISBLANK({!ipt_mSeg_Survey_Q4}), 0, 
+     IF(OR({!ipt_mSeg_Survey_Q4} = 1, {!ipt_mSeg_Survey_Q4} = 2, {!ipt_mSeg_Survey_Q4} = 3), 1,
+          IF({!ipt_mSeg_Survey_Q4} = 4, 2, 
+          3) 
+     )
+)*8.6052
++
+/*QUESTION 5*/
+IF( ISBLANK({!ipt_mSeg_Survey_Q5}), 0, 
+     IF(OR({!ipt_mSeg_Survey_Q5} = 1, {!ipt_mSeg_Survey_Q5} = 2, {!ipt_mSeg_Survey_Q5} = 3), 1,
+          IF({!ipt_mSeg_Survey_Q5} = 4, 2, 
+          3) 
+     )
+)*7.1296
++
+/*QUESTION 6*/
+IF( ISBLANK({!ipt_mSeg_Survey_Q6}), 0, 
+     IF({!ipt_mSeg_Survey_Q6} = &quot;No&quot;, 0, 2.6626)
+)
++
+/*QUESTION 7*/
+IF( ISBLANK({!ipt_mSeg_Survey_Q7}), 0, 
+     IF({!ipt_mSeg_Survey_Q7} = &quot;No&quot;, 0, 2.5899)
+)
++
+/*QUESTION 8*/
+IF( ISBLANK({!ipt_mSeg_Survey_Q8}), 0, 
+     IF({!ipt_mSeg_Survey_Q8} = &quot;No&quot;, 0, 13.0580)
+)
++
+/*CONSTANT*/
+-63.2887</expression>
+        <scale>4</scale>
+    </formulas>
+    <formulas>
+        <description>Motivated Minimalists calculation</description>
+        <name>fx_mSeg_MotivatedMinimalists</name>
+        <dataType>Number</dataType>
+        <expression>/*QUESTION 1*/
+IF( ISBLANK({!ipt_mSeg_Survey_Q1}), 0, 
+     IF(OR({!ipt_mSeg_Survey_Q1} = 1, {!ipt_mSeg_Survey_Q1} = 2, {!ipt_mSeg_Survey_Q1} = 3), 1,
+          IF({!ipt_mSeg_Survey_Q1} = 4, 2, 
+          3) 
+     )
+)*8.9956
++
+/*QUESTION 2*/
+IF( ISBLANK({!ipt_mSeg_Survey_Q2}), 0, 
+     IF(OR({!ipt_mSeg_Survey_Q2} = 1, {!ipt_mSeg_Survey_Q2} = 2, {!ipt_mSeg_Survey_Q2} = 3), 1,
+          IF({!ipt_mSeg_Survey_Q2} = 4, 2, 
+          3) 
+     )
+)*7.1801
++
+/*QUESTION 3*/
+IF( ISBLANK({!ipt_mSeg_Survey_Q3}), 0, 
+     IF(OR({!ipt_mSeg_Survey_Q3} = 1, {!ipt_mSeg_Survey_Q3} = 2, {!ipt_mSeg_Survey_Q3} = 3), 1,
+          IF({!ipt_mSeg_Survey_Q3} = 4, 2, 
+          3) 
+     )
+)*7.5324
++
+/*QUESTION 4*/
+IF( ISBLANK({!ipt_mSeg_Survey_Q4}), 0, 
+     IF(OR({!ipt_mSeg_Survey_Q4} = 1, {!ipt_mSeg_Survey_Q4} = 2, {!ipt_mSeg_Survey_Q4} = 3), 1,
+          IF({!ipt_mSeg_Survey_Q4} = 4, 2, 
+          3) 
+     )
+)*7.8069
++
+/*QUESTION 5*/
+IF( ISBLANK({!ipt_mSeg_Survey_Q5}), 0, 
+     IF(OR({!ipt_mSeg_Survey_Q5} = 1, {!ipt_mSeg_Survey_Q5} = 2, {!ipt_mSeg_Survey_Q5} = 3), 1,
+          IF({!ipt_mSeg_Survey_Q5} = 4, 2, 
+          3) 
+     )
+)*6.0825
++
+/*QUESTION 6*/
+IF( ISBLANK({!ipt_mSeg_Survey_Q6}), 0, 
+     IF({!ipt_mSeg_Survey_Q6} = &quot;No&quot;, 0, 1.1233)
+)
++
+/*QUESTION 7*/
+IF( ISBLANK({!ipt_mSeg_Survey_Q7}), 0, 
+     IF({!ipt_mSeg_Survey_Q7} = &quot;No&quot;, 0, 5.3559)
+)
++
+/*QUESTION 8*/
+IF( ISBLANK({!ipt_mSeg_Survey_Q8}), 0, 
+     IF({!ipt_mSeg_Survey_Q8} = &quot;No&quot;, 0, 3.8598)
+)
++
+/*CONSTANT*/
+-51.0011</expression>
+        <scale>0</scale>
+    </formulas>
+    <formulas>
+        <description>Obedient Optimizers calculation</description>
+        <name>fx_mSeg_ObedientOptimizers</name>
+        <dataType>Number</dataType>
+        <expression>/*QUESTION 1*/
+IF( ISBLANK({!ipt_mSeg_Survey_Q1}), 0, 
+     IF(OR({!ipt_mSeg_Survey_Q1} = 1, {!ipt_mSeg_Survey_Q1} = 2, {!ipt_mSeg_Survey_Q1} = 3), 1,
+          IF({!ipt_mSeg_Survey_Q1} = 4, 2, 
+          3) 
+     )
+)*8.8419
++
+/*QUESTION 2*/
+IF( ISBLANK({!ipt_mSeg_Survey_Q2}), 0, 
+     IF(OR({!ipt_mSeg_Survey_Q2} = 1, {!ipt_mSeg_Survey_Q2} = 2, {!ipt_mSeg_Survey_Q2} = 3), 1,
+          IF({!ipt_mSeg_Survey_Q2} = 4, 2, 
+          3) 
+     )
+)*7.1189
++
+/*QUESTION 3*/
+IF( ISBLANK({!ipt_mSeg_Survey_Q3}), 0, 
+     IF(OR({!ipt_mSeg_Survey_Q3} = 1, {!ipt_mSeg_Survey_Q3} = 2, {!ipt_mSeg_Survey_Q3} = 3), 1,
+          IF({!ipt_mSeg_Survey_Q3} = 4, 2, 
+          3) 
+     )
+)*7.6621
++
+/*QUESTION 4*/
+IF( ISBLANK({!ipt_mSeg_Survey_Q4}), 0, 
+     IF(OR({!ipt_mSeg_Survey_Q4} = 1, {!ipt_mSeg_Survey_Q4} = 2, {!ipt_mSeg_Survey_Q4} = 3), 1,
+          IF({!ipt_mSeg_Survey_Q4} = 4, 2, 
+          3) 
+     )
+)*8.5726
++
+/*QUESTION 5*/
+IF( ISBLANK({!ipt_mSeg_Survey_Q5}), 0, 
+     IF(OR({!ipt_mSeg_Survey_Q5} = 1, {!ipt_mSeg_Survey_Q5} = 2, {!ipt_mSeg_Survey_Q5} = 3), 1,
+          IF({!ipt_mSeg_Survey_Q5} = 4, 2, 
+          3) 
+     )
+)*6.1663
++
+/*QUESTION 6*/
+IF( ISBLANK({!ipt_mSeg_Survey_Q6}), 0, 
+     IF({!ipt_mSeg_Survey_Q6} = &quot;No&quot;, 0, 4.7559)
+)
++
+/*QUESTION 7*/
+IF( ISBLANK({!ipt_mSeg_Survey_Q7}), 0, 
+     IF({!ipt_mSeg_Survey_Q7} = &quot;No&quot;, 0, -3.8121)
+)
++
+/*QUESTION 8*/
+IF( ISBLANK({!ipt_mSeg_Survey_Q8}), 0, 
+     IF({!ipt_mSeg_Survey_Q8} = &quot;No&quot;, 0, 5.6234)
+)
++
+/*CONSTANT*/
+-51.7686</expression>
+        <scale>4</scale>
+    </formulas>
+    <formulas>
+        <description>Systematic Savers calculation</description>
+        <name>fx_mSeg_SystematicSavers</name>
+        <dataType>Number</dataType>
+        <expression>/*QUESTION 1*/
+IF( ISBLANK({!ipt_mSeg_Survey_Q1}), 0, 
+     IF(OR({!ipt_mSeg_Survey_Q1} = 1, {!ipt_mSeg_Survey_Q1} = 2, {!ipt_mSeg_Survey_Q1} = 3), 1,
+          IF({!ipt_mSeg_Survey_Q1} = 4, 2, 
+          3) 
+     )
+)*6.0414
++
+/*QUESTION 2*/
+IF( ISBLANK({!ipt_mSeg_Survey_Q2}), 0, 
+     IF(OR({!ipt_mSeg_Survey_Q2} = 1, {!ipt_mSeg_Survey_Q2} = 2, {!ipt_mSeg_Survey_Q2} = 3), 1,
+          IF({!ipt_mSeg_Survey_Q2} = 4, 2, 
+          3) 
+     )
+)*4.9015
++
+/*QUESTION 3*/
+IF( ISBLANK({!ipt_mSeg_Survey_Q3}), 0, 
+     IF(OR({!ipt_mSeg_Survey_Q3} = 1, {!ipt_mSeg_Survey_Q3} = 2, {!ipt_mSeg_Survey_Q3} = 3), 1,
+          IF({!ipt_mSeg_Survey_Q3} = 4, 2, 
+          3) 
+     )
+)*6.1848
++
+/*QUESTION 4*/
+IF( ISBLANK({!ipt_mSeg_Survey_Q4}), 0, 
+     IF(OR({!ipt_mSeg_Survey_Q4} = 1, {!ipt_mSeg_Survey_Q4} = 2, {!ipt_mSeg_Survey_Q4} = 3), 1,
+          IF({!ipt_mSeg_Survey_Q4} = 4, 2, 
+          3) 
+     )
+)*5.9147
++
+/*QUESTION 5*/
+IF( ISBLANK({!ipt_mSeg_Survey_Q5}), 0, 
+     IF(OR({!ipt_mSeg_Survey_Q5} = 1, {!ipt_mSeg_Survey_Q5} = 2, {!ipt_mSeg_Survey_Q5} = 3), 1,
+          IF({!ipt_mSeg_Survey_Q5} = 4, 2, 
+          3) 
+     )
+)*4.9108
++
+/*QUESTION 6*/
+IF( ISBLANK({!ipt_mSeg_Survey_Q6}), 0, 
+     IF({!ipt_mSeg_Survey_Q6} = &quot;No&quot;, 0, 1.9247)
+)
++
+/*QUESTION 7*/
+IF( ISBLANK({!ipt_mSeg_Survey_Q7}), 0, 
+     IF({!ipt_mSeg_Survey_Q7} = &quot;No&quot;, 0, 4.0357)
+)
++
+/*QUESTION 8*/
+IF( ISBLANK({!ipt_mSeg_Survey_Q8}), 0, 
+     IF({!ipt_mSeg_Survey_Q8} = &quot;No&quot;, 0, 7.0320)
+)
++
+/*CONSTANT*/
+-30.5078</expression>
+        <scale>4</scale>
+    </formulas>
+    <interviewLabel>Account - Marketing Segmentation Survey {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>Account - Marketing Segmentation Survey</label>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>CanvasMode</name>
+        <value>
+            <stringValue>AUTO_LAYOUT_CANVAS</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>OriginBuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>Flow</processType>
+    <recordUpdates>
+        <name>udt_Account_Record</name>
+        <label>Account Record</label>
+        <locationX>176</locationX>
+        <locationY>242</locationY>
+        <connector>
+            <targetReference>scn_mSeg_Assignment</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>Id</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>recordId</elementReference>
+            </value>
+        </filters>
+        <inputAssignments>
+            <field>Marketing_Segmentation_LastModifiedBy__c</field>
+            <value>
+                <elementReference>$User.Id</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Marketing_Segmentation_LastModifiedDate__c</field>
+            <value>
+                <elementReference>$Flow.CurrentDateTime</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Marketing_Segmentation__c</field>
+            <value>
+                <elementReference>fx_mSeg_Assignment</elementReference>
+            </value>
+        </inputAssignments>
+        <object>Account</object>
+    </recordUpdates>
+    <runInMode>SystemModeWithSharing</runInMode>
+    <screens>
+        <name>scn_mSeg_Assignment</name>
+        <label>Marketing Segmentation Assignment</label>
+        <locationX>176</locationX>
+        <locationY>350</locationY>
+        <allowBack>false</allowBack>
+        <allowFinish>true</allowFinish>
+        <allowPause>false</allowPause>
+        <fields>
+            <name>txt_mSeg_Confirmation</name>
+            <fieldText>&lt;p style=&quot;text-align: center;&quot;&gt;&lt;strong style=&quot;color: rgb(0, 162, 95); font-size: 14px;&quot;&gt;Marketing Segmentation&lt;/strong&gt;&lt;/p&gt;&lt;p style=&quot;text-align: center;&quot;&gt;&lt;br&gt;&lt;/p&gt;&lt;p style=&quot;text-align: center;&quot;&gt;&lt;strong style=&quot;font-size: 22px;&quot;&gt;{!fx_mSeg_Assignment}&lt;/strong&gt;&lt;/p&gt;</fieldText>
+            <fieldType>DisplayText</fieldType>
+        </fields>
+        <nextOrFinishButtonLabel>Close</nextOrFinishButtonLabel>
+        <showFooter>true</showFooter>
+        <showHeader>false</showHeader>
+    </screens>
+    <screens>
+        <description>Screen prompts user with Likert scale questions that will be used to calculate the Marketing Segmentation.</description>
+        <name>scn_mSeg_Survey</name>
+        <label>Marketing Segmentation Survey</label>
+        <locationX>176</locationX>
+        <locationY>134</locationY>
+        <allowBack>true</allowBack>
+        <allowFinish>true</allowFinish>
+        <allowPause>false</allowPause>
+        <connector>
+            <targetReference>udt_Account_Record</targetReference>
+        </connector>
+        <fields>
+            <name>scn_mSeg_Survey_Section1</name>
+            <fieldType>RegionContainer</fieldType>
+            <fields>
+                <name>scn_mSeg_Survey_Section1_Column1</name>
+                <fieldType>Region</fieldType>
+                <fields>
+                    <name>admin_MMcalcresult</name>
+                    <dataType>Number</dataType>
+                    <defaultValue>
+                        <elementReference>fx_mSeg_MotivatedMinimalists</elementReference>
+                    </defaultValue>
+                    <fieldText>∑ Motivated Minimalists</fieldText>
+                    <fieldType>InputField</fieldType>
+                    <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
+                    <isRequired>false</isRequired>
+                    <scale>4</scale>
+                </fields>
+                <fields>
+                    <name>admin_x1</name>
+                    <fieldText>&lt;p style=&quot;text-align: center;&quot;&gt;&lt;span style=&quot;font-size: 28px;&quot;&gt;⬆️&lt;/span&gt;&lt;/p&gt;</fieldText>
+                    <fieldType>DisplayText</fieldType>
+                    <visibilityRule>
+                        <conditionLogic>and</conditionLogic>
+                        <conditions>
+                            <leftValueReference>admin_MMcalcresult</leftValueReference>
+                            <operator>GreaterThan</operator>
+                            <rightValue>
+                                <elementReference>admin_CCcalcresult</elementReference>
+                            </rightValue>
+                        </conditions>
+                        <conditions>
+                            <leftValueReference>admin_MMcalcresult</leftValueReference>
+                            <operator>GreaterThan</operator>
+                            <rightValue>
+                                <elementReference>admin_SScalcresult</elementReference>
+                            </rightValue>
+                        </conditions>
+                        <conditions>
+                            <leftValueReference>admin_MMcalcresult</leftValueReference>
+                            <operator>GreaterThan</operator>
+                            <rightValue>
+                                <elementReference>admin_OOcalcresult</elementReference>
+                            </rightValue>
+                        </conditions>
+                    </visibilityRule>
+                </fields>
+                <inputParameters>
+                    <name>width</name>
+                    <value>
+                        <stringValue>3</stringValue>
+                    </value>
+                </inputParameters>
+                <isRequired>false</isRequired>
+            </fields>
+            <fields>
+                <name>scn_mSeg_Survey_Section1_Column2</name>
+                <fieldType>Region</fieldType>
+                <fields>
+                    <name>admin_CCcalcresult</name>
+                    <dataType>Number</dataType>
+                    <defaultValue>
+                        <elementReference>fx_mSeg_CollaborativeCustomizers</elementReference>
+                    </defaultValue>
+                    <fieldText>∑ Collaborative Customizers</fieldText>
+                    <fieldType>InputField</fieldType>
+                    <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
+                    <isRequired>false</isRequired>
+                    <scale>4</scale>
+                </fields>
+                <fields>
+                    <name>admin_x2</name>
+                    <fieldText>&lt;p style=&quot;text-align: center;&quot;&gt;&lt;span style=&quot;background-color: rgb(255, 255, 255); font-size: 28px; color: rgb(68, 68, 68);&quot;&gt;⬆️&lt;/span&gt;&lt;/p&gt;</fieldText>
+                    <fieldType>DisplayText</fieldType>
+                    <visibilityRule>
+                        <conditionLogic>and</conditionLogic>
+                        <conditions>
+                            <leftValueReference>admin_CCcalcresult</leftValueReference>
+                            <operator>GreaterThan</operator>
+                            <rightValue>
+                                <elementReference>admin_MMcalcresult</elementReference>
+                            </rightValue>
+                        </conditions>
+                        <conditions>
+                            <leftValueReference>admin_CCcalcresult</leftValueReference>
+                            <operator>GreaterThan</operator>
+                            <rightValue>
+                                <elementReference>admin_SScalcresult</elementReference>
+                            </rightValue>
+                        </conditions>
+                        <conditions>
+                            <leftValueReference>admin_CCcalcresult</leftValueReference>
+                            <operator>GreaterThan</operator>
+                            <rightValue>
+                                <elementReference>admin_OOcalcresult</elementReference>
+                            </rightValue>
+                        </conditions>
+                    </visibilityRule>
+                </fields>
+                <inputParameters>
+                    <name>width</name>
+                    <value>
+                        <stringValue>3</stringValue>
+                    </value>
+                </inputParameters>
+                <isRequired>false</isRequired>
+            </fields>
+            <fields>
+                <name>scn_mSeg_Survey_Section1_Column3</name>
+                <fieldType>Region</fieldType>
+                <fields>
+                    <name>admin_SScalcresult</name>
+                    <dataType>Number</dataType>
+                    <defaultValue>
+                        <elementReference>fx_mSeg_SystematicSavers</elementReference>
+                    </defaultValue>
+                    <fieldText>∑ Systematic Savers</fieldText>
+                    <fieldType>InputField</fieldType>
+                    <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
+                    <isRequired>false</isRequired>
+                    <scale>4</scale>
+                </fields>
+                <fields>
+                    <name>admin_x3</name>
+                    <fieldText>&lt;p style=&quot;text-align: center;&quot;&gt;&lt;span style=&quot;background-color: rgb(255, 255, 255); font-size: 28px; color: rgb(68, 68, 68);&quot;&gt;⬆️&lt;/span&gt;&lt;/p&gt;</fieldText>
+                    <fieldType>DisplayText</fieldType>
+                    <visibilityRule>
+                        <conditionLogic>and</conditionLogic>
+                        <conditions>
+                            <leftValueReference>admin_SScalcresult</leftValueReference>
+                            <operator>GreaterThan</operator>
+                            <rightValue>
+                                <elementReference>admin_MMcalcresult</elementReference>
+                            </rightValue>
+                        </conditions>
+                        <conditions>
+                            <leftValueReference>admin_SScalcresult</leftValueReference>
+                            <operator>GreaterThan</operator>
+                            <rightValue>
+                                <elementReference>admin_CCcalcresult</elementReference>
+                            </rightValue>
+                        </conditions>
+                        <conditions>
+                            <leftValueReference>admin_SScalcresult</leftValueReference>
+                            <operator>GreaterThan</operator>
+                            <rightValue>
+                                <elementReference>admin_OOcalcresult</elementReference>
+                            </rightValue>
+                        </conditions>
+                    </visibilityRule>
+                </fields>
+                <inputParameters>
+                    <name>width</name>
+                    <value>
+                        <stringValue>3</stringValue>
+                    </value>
+                </inputParameters>
+                <isRequired>false</isRequired>
+            </fields>
+            <fields>
+                <name>scn_mSeg_Survey_Section1_Column4</name>
+                <fieldType>Region</fieldType>
+                <fields>
+                    <name>admin_OOcalcresult</name>
+                    <dataType>Number</dataType>
+                    <defaultValue>
+                        <elementReference>fx_mSeg_ObedientOptimizers</elementReference>
+                    </defaultValue>
+                    <fieldText>∑ Obedient Optimizers</fieldText>
+                    <fieldType>InputField</fieldType>
+                    <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
+                    <isRequired>false</isRequired>
+                    <scale>4</scale>
+                </fields>
+                <fields>
+                    <name>admin_x4</name>
+                    <fieldText>&lt;p style=&quot;text-align: center;&quot;&gt;&lt;span style=&quot;background-color: rgb(255, 255, 255); font-size: 28px; color: rgb(68, 68, 68);&quot;&gt;⬆️&lt;/span&gt;&lt;/p&gt;</fieldText>
+                    <fieldType>DisplayText</fieldType>
+                    <visibilityRule>
+                        <conditionLogic>and</conditionLogic>
+                        <conditions>
+                            <leftValueReference>admin_OOcalcresult</leftValueReference>
+                            <operator>GreaterThan</operator>
+                            <rightValue>
+                                <elementReference>admin_MMcalcresult</elementReference>
+                            </rightValue>
+                        </conditions>
+                        <conditions>
+                            <leftValueReference>admin_OOcalcresult</leftValueReference>
+                            <operator>GreaterThan</operator>
+                            <rightValue>
+                                <elementReference>admin_CCcalcresult</elementReference>
+                            </rightValue>
+                        </conditions>
+                        <conditions>
+                            <leftValueReference>admin_OOcalcresult</leftValueReference>
+                            <operator>GreaterThan</operator>
+                            <rightValue>
+                                <elementReference>admin_SScalcresult</elementReference>
+                            </rightValue>
+                        </conditions>
+                    </visibilityRule>
+                </fields>
+                <inputParameters>
+                    <name>width</name>
+                    <value>
+                        <stringValue>3</stringValue>
+                    </value>
+                </inputParameters>
+                <isRequired>false</isRequired>
+            </fields>
+            <isRequired>false</isRequired>
+            <regionContainerType>SectionWithoutHeader</regionContainerType>
+        </fields>
+        <fields>
+            <name>admin_Spacer</name>
+            <fieldText>&lt;p style=&quot;text-align: center;&quot;&gt;________________________________________________________________&lt;span style=&quot;background-color: rgb(255, 255, 255); color: rgb(68, 68, 68);&quot;&gt;____________________________________________________&lt;/span&gt;&lt;/p&gt;&lt;p style=&quot;text-align: center;&quot;&gt;&lt;br&gt;&lt;/p&gt;&lt;p style=&quot;text-align: center;&quot;&gt;&lt;br&gt;&lt;/p&gt;</fieldText>
+            <fieldType>DisplayText</fieldType>
+        </fields>
+        <fields>
+            <name>txt_mSeg_Survey_Directions</name>
+            <fieldText>&lt;p&gt;&lt;strong style=&quot;color: rgb(0, 162, 95); font-size: 14px;&quot;&gt;Below is a list of benefits that could be offered by providers of packaging supplies and solutions. &lt;/strong&gt;&lt;strong style=&quot;color: rgb(0, 162, 95); font-size: 14px; background-color: rgb(255, 255, 255);&quot;&gt;From the perspective of the prosect or customer, p&lt;/strong&gt;&lt;strong style=&quot;color: rgb(0, 162, 95); font-size: 14px;&quot;&gt;lease indicate which benefits are important when deciding who to partner with for their packaging supplies and solutions.&lt;/strong&gt;&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;&lt;strong style=&quot;color: rgb(0, 162, 95); font-size: 14px;&quot;&gt;Using the scale for each response, select the importance of each of these benefits in influencing the decision to partner with companies for your prospect or customer&apos;s packaging needs.&lt;/strong&gt;&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;&lt;strong style=&quot;color: rgb(0, 162, 95); font-size: 14px;&quot;&gt;﻿&lt;/strong&gt;&lt;/p&gt;</fieldText>
+            <fieldType>DisplayText</fieldType>
+        </fields>
+        <fields>
+            <name>scn_mSeg_Survey_Section2</name>
+            <fieldType>RegionContainer</fieldType>
+            <fields>
+                <name>scn_mSeg_Survey_Section2_Column1</name>
+                <fieldType>Region</fieldType>
+                <fields>
+                    <name>ipt_mSeg_Survey_Q1</name>
+                    <choiceReferences>chc_5ExtremelyImportant</choiceReferences>
+                    <choiceReferences>chc_4VeryImportant</choiceReferences>
+                    <choiceReferences>chc_3SomewhatImportant</choiceReferences>
+                    <choiceReferences>chc_2NotVeryImportant</choiceReferences>
+                    <choiceReferences>chc_1NotAtAllImportant</choiceReferences>
+                    <dataType>Number</dataType>
+                    <fieldText>Provides an economical cost structure / good value</fieldText>
+                    <fieldType>DropdownBox</fieldType>
+                    <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
+                    <isRequired>true</isRequired>
+                    <scale>0</scale>
+                </fields>
+                <fields>
+                    <name>ipt_mSeg_Survey_Q2</name>
+                    <choiceReferences>chc_5ExtremelyImportant</choiceReferences>
+                    <choiceReferences>chc_4VeryImportant</choiceReferences>
+                    <choiceReferences>chc_3SomewhatImportant</choiceReferences>
+                    <choiceReferences>chc_2NotVeryImportant</choiceReferences>
+                    <choiceReferences>chc_1NotAtAllImportant</choiceReferences>
+                    <dataType>Number</dataType>
+                    <fieldText>Geographical proximity to multiple locations (has a nationwide or regional presence)</fieldText>
+                    <fieldType>DropdownBox</fieldType>
+                    <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
+                    <isRequired>true</isRequired>
+                    <scale>0</scale>
+                </fields>
+                <fields>
+                    <name>ipt_mSeg_Survey_Q3</name>
+                    <choiceReferences>chc_5ExtremelyImportant</choiceReferences>
+                    <choiceReferences>chc_4VeryImportant</choiceReferences>
+                    <choiceReferences>chc_3SomewhatImportant</choiceReferences>
+                    <choiceReferences>chc_2NotVeryImportant</choiceReferences>
+                    <choiceReferences>chc_1NotAtAllImportant</choiceReferences>
+                    <dataType>Number</dataType>
+                    <fieldText>Provides packaging solutions that maintain the integrity of our products</fieldText>
+                    <fieldType>DropdownBox</fieldType>
+                    <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
+                    <isRequired>true</isRequired>
+                    <scale>0</scale>
+                </fields>
+                <fields>
+                    <name>ipt_mSeg_Survey_Q4</name>
+                    <choiceReferences>chc_5ExtremelyImportant</choiceReferences>
+                    <choiceReferences>chc_4VeryImportant</choiceReferences>
+                    <choiceReferences>chc_3SomewhatImportant</choiceReferences>
+                    <choiceReferences>chc_2NotVeryImportant</choiceReferences>
+                    <choiceReferences>chc_1NotAtAllImportant</choiceReferences>
+                    <dataType>Number</dataType>
+                    <fieldText>Has good quality control</fieldText>
+                    <fieldType>DropdownBox</fieldType>
+                    <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
+                    <isRequired>true</isRequired>
+                    <scale>0</scale>
+                </fields>
+                <inputParameters>
+                    <name>width</name>
+                    <value>
+                        <stringValue>6</stringValue>
+                    </value>
+                </inputParameters>
+                <isRequired>false</isRequired>
+            </fields>
+            <fields>
+                <name>scn_mSeg_Survey_Section2_Column2</name>
+                <fieldType>Region</fieldType>
+                <fields>
+                    <name>ipt_mSeg_Survey_Q5</name>
+                    <choiceReferences>chc_5ExtremelyImportant</choiceReferences>
+                    <choiceReferences>chc_4VeryImportant</choiceReferences>
+                    <choiceReferences>chc_3SomewhatImportant</choiceReferences>
+                    <choiceReferences>chc_2NotVeryImportant</choiceReferences>
+                    <choiceReferences>chc_1NotAtAllImportant</choiceReferences>
+                    <dataType>Number</dataType>
+                    <fieldText>Uses safe materials for packaging solutions</fieldText>
+                    <fieldType>DropdownBox</fieldType>
+                    <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
+                    <isRequired>true</isRequired>
+                    <scale>0</scale>
+                </fields>
+                <fields>
+                    <name>ipt_mSeg_Survey_Q6</name>
+                    <choiceReferences>chc_Yes</choiceReferences>
+                    <choiceReferences>chc_No</choiceReferences>
+                    <dataType>String</dataType>
+                    <fieldText>We have a corporate mandate to re-evaluate providers</fieldText>
+                    <fieldType>DropdownBox</fieldType>
+                    <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
+                    <isRequired>true</isRequired>
+                </fields>
+                <fields>
+                    <name>ipt_mSeg_Survey_Q7</name>
+                    <choiceReferences>chc_Yes</choiceReferences>
+                    <choiceReferences>chc_No</choiceReferences>
+                    <dataType>String</dataType>
+                    <fieldText>We are constantly looking to reduce costs for the organization</fieldText>
+                    <fieldType>DropdownBox</fieldType>
+                    <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
+                    <isRequired>true</isRequired>
+                </fields>
+                <fields>
+                    <name>ipt_mSeg_Survey_Q8</name>
+                    <choiceReferences>chc_Yes</choiceReferences>
+                    <choiceReferences>chc_No</choiceReferences>
+                    <dataType>String</dataType>
+                    <fieldText>We are constantly looking for more dynamic packaging solutions</fieldText>
+                    <fieldType>DropdownBox</fieldType>
+                    <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
+                    <isRequired>true</isRequired>
+                </fields>
+                <inputParameters>
+                    <name>width</name>
+                    <value>
+                        <stringValue>6</stringValue>
+                    </value>
+                </inputParameters>
+                <isRequired>false</isRequired>
+            </fields>
+            <isRequired>false</isRequired>
+            <regionContainerType>SectionWithoutHeader</regionContainerType>
+        </fields>
+        <showFooter>true</showFooter>
+        <showHeader>false</showHeader>
+    </screens>
+    <start>
+        <locationX>50</locationX>
+        <locationY>0</locationY>
+        <connector>
+            <targetReference>scn_mSeg_Survey</targetReference>
+        </connector>
+    </start>
+    <status>Draft</status>
+    <variables>
+        <name>recordId</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>true</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+</Flow>

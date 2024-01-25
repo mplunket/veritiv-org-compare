@@ -1,0 +1,397 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>49.0</apiVersion>
+    <decisions>
+        <description>Did we find a PSR?</description>
+        <name>PSR_Found</name>
+        <label>PSR Found?</label>
+        <locationX>789</locationX>
+        <locationY>212</locationY>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>PSR_Found_In_Flow</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>vPSRQueryResultId</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Find_Case_Owner</targetReference>
+            </connector>
+            <label>PSR Found</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <description>Checks if the psr is already the owner.</description>
+        <name>PSR_is_Owner</name>
+        <label>PSR is Owner?</label>
+        <locationX>392</locationX>
+        <locationY>350</locationY>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>PSR_Not_Owner</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>vCaseOwnerID</leftValueReference>
+                <operator>NotEqualTo</operator>
+                <rightValue>
+                    <elementReference>vPSRUserID</elementReference>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Share_with_PSR</targetReference>
+            </connector>
+            <label>PSR Not Owner</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <description>Determines if we have the PSR id already or if the subject is filled in already. This will be populated on entry of the flow only if the case was created manually or via an ownership change.</description>
+        <name>Which_Flow</name>
+        <label>Which Flow</label>
+        <locationX>390</locationX>
+        <locationY>57</locationY>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Has_a_Subject</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>vSubject</leftValueReference>
+                <operator>NotEqualTo</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Find_Matching_PSR</targetReference>
+            </connector>
+            <label>Has a Subject</label>
+        </rules>
+        <rules>
+            <name>PSR_Id_Already</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>vPSRUserID</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Find_Case_Owner</targetReference>
+            </connector>
+            <label>PSR Id Already?</label>
+        </rules>
+    </decisions>
+    <description>PSR and Category matching for SS Cases
+Null instead of blank
+which flow decision updated
+changed second decision to only share if it finds the psr
+Update fCategory
+Update with running user to stop creation if psr is owner
+Update to use PSR id not running user - oops</description>
+    <formulas>
+        <description>Category to be applied to the case. Value is based on the subject as provided in the process builder</description>
+        <name>fCategory</name>
+        <dataType>String</dataType>
+        <expression>IF(
+OR(
+CONTAINS({!vSubject},&quot;REPORT&quot;),
+CONTAINS({!vSubject},&quot;REPT&quot;)),
+&quot;Reporting&quot;,
+
+IF(
+OR(
+CONTAINS({!vSubject},&quot;PRIC&quot;),
+CONTAINS({!vSubject},&quot;COST&quot;),
+CONTAINS({!vSubject},&quot;REBATE&quot;),
+CONTAINS({!vSubject},&quot;CONTRACT&quot;),
+CONTAINS({!vSubject},&quot;VPM&quot;),
+CONTAINS({!vSubject},&quot;DEAL&quot;)),
+&quot;Pricing/Rebate/Cost&quot;,
+
+IF(
+CONTAINS({!vSubject},&quot;ORDER&quot;),
+&quot;Order Resolution&quot;,
+
+IF(
+OR(
+CONTAINS({!vSubject},&quot;NIR&quot;),
+CONTAINS({!vSubject},&quot;ITEM&quot;),
+CONTAINS({!vSubject},&quot;MIF&quot;),
+CONTAINS({!vSubject},&quot;CDI&quot;),
+CONTAINS({!vSubject},&quot;D&amp;E&quot;),
+CONTAINS({!vSubject},&quot;PRODUCT&quot;)),
+&quot;Product Code/Item&quot;,
+
+IF(
+OR(
+CONTAINS({!vSubject},&quot;CLAIM&quot;),
+CONTAINS({!vSubject},&quot;CREDIT&quot;),
+CONTAINS({!vSubject},&quot;DEBIT&quot;),
+CONTAINS({!vSubject},&quot;RETURN&quot;),
+CONTAINS({!vSubject},&quot;VDM&quot;),
+CONTAINS({!vSubject},&quot;RMA&quot;)),
+&quot;Vendor Claim&quot;,
+
+IF(
+OR(
+CONTAINS({!vSubject},&quot;A/R&quot;),
+CONTAINS({!vSubject},&quot;INVOICE&quot;),
+CONTAINS({!vSubject},&quot;STATEMENT&quot;),
+CONTAINS({!vSubject},&quot;RECEIVABLE&quot;)),
+&quot;Account Receivable&quot;,
+
+IF(
+OR(
+CONTAINS({!vSubject},&quot;SOURCE&quot;),
+CONTAINS({!vSubject},&quot;RFQ&quot;),
+CONTAINS({!vSubject},&quot;QUOTE&quot;),
+CONTAINS({!vSubject},&quot;SOURCING&quot;),
+CONTAINS({!vSubject},&quot;QUOTING&quot;)),
+&quot;Sourcing/Quoting&quot;,
+
+IF(
+OR(
+CONTAINS({!vSubject},&quot;INFO&quot;),
+CONTAINS({!vSubject},&quot;RFI&quot;),
+CONTAINS({!vSubject},&quot;INQUIRY&quot;)),
+&quot;Information&quot;,
+
+IF(
+OR(
+CONTAINS({!vSubject},&quot;DESIGN&quot;),
+CONTAINS({!vSubject},&quot;CENTER&quot;)),
+&quot;Design Center&quot;,
+
+IF(
+OR(
+CONTAINS({!vSubject},&quot;POD&quot;),
+CONTAINS({!vSubject},&quot;PROOF&quot;)),
+&quot;Proof of Delivery&quot;,
+&quot;&quot;
+))))))))))</expression>
+    </formulas>
+    <formulas>
+        <description>Formula of the running user ID global variable for use in decisions</description>
+        <name>fRunningUserID</name>
+        <dataType>String</dataType>
+        <expression>{!$User.Id}</expression>
+    </formulas>
+    <interviewLabel>Sales Support Automation {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>Sales Support Automation</label>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>CanvasMode</name>
+        <value>
+            <stringValue>FREE_FORM_CANVAS</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>OriginBuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>AutoLaunchedFlow</processType>
+    <recordCreates>
+        <description>Shares the case with the PSR</description>
+        <name>Share_with_PSR</name>
+        <label>Share with PSR</label>
+        <locationX>396</locationX>
+        <locationY>533</locationY>
+        <inputAssignments>
+            <field>CaseAccessLevel</field>
+            <value>
+                <stringValue>Edit</stringValue>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>CaseId</field>
+            <value>
+                <elementReference>vCaseID</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>UserOrGroupId</field>
+            <value>
+                <elementReference>vPSRUserID</elementReference>
+            </value>
+        </inputAssignments>
+        <object>CaseShare</object>
+    </recordCreates>
+    <recordLookups>
+        <description>Finds the owner of the case</description>
+        <name>Find_Case_Owner</name>
+        <label>Find Case Owner</label>
+        <locationX>401</locationX>
+        <locationY>212</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>PSR_is_Owner</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>Id</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>vCaseID</elementReference>
+            </value>
+        </filters>
+        <object>Case</object>
+        <outputAssignments>
+            <assignToReference>vCaseOwnerID</assignToReference>
+            <field>OwnerId</field>
+        </outputAssignments>
+    </recordLookups>
+    <recordLookups>
+        <description>Queries for the PSR record matched on the inbound email</description>
+        <name>Find_Matching_PSR</name>
+        <label>Find Matching PSR</label>
+        <locationX>596</locationX>
+        <locationY>50</locationY>
+        <assignNullValuesIfNoRecordsFound>true</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>Update_Case</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>Email__c</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>vWebEmail</elementReference>
+            </value>
+        </filters>
+        <filters>
+            <field>Email__c</field>
+            <operator>NotEqualTo</operator>
+            <value>
+                <stringValue></stringValue>
+            </value>
+        </filters>
+        <object>Primary_Sales_Rep__c</object>
+        <outputAssignments>
+            <assignToReference>vPSRQueryResultId</assignToReference>
+            <field>Id</field>
+        </outputAssignments>
+        <outputAssignments>
+            <assignToReference>vPSRUserID</assignToReference>
+            <field>SF_userid__c</field>
+        </outputAssignments>
+    </recordLookups>
+    <recordUpdates>
+        <description>Updates the case with the PSR Id, PSR Email, and Category</description>
+        <name>Update_Case</name>
+        <label>Update Case</label>
+        <locationX>785</locationX>
+        <locationY>50</locationY>
+        <connector>
+            <targetReference>PSR_Found</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>Id</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>vCaseID</elementReference>
+            </value>
+        </filters>
+        <inputAssignments>
+            <field>AccountId</field>
+            <value>
+                <stringValue></stringValue>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Case_Category__c</field>
+            <value>
+                <elementReference>fCategory</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>ContactId</field>
+            <value>
+                <stringValue></stringValue>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Primary_Sales_Rep__c</field>
+            <value>
+                <elementReference>vPSRQueryResultId</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Primary_Sales_Rep_s_Email__c</field>
+            <value>
+                <elementReference>vWebEmail</elementReference>
+            </value>
+        </inputAssignments>
+        <object>Case</object>
+    </recordUpdates>
+    <start>
+        <locationX>50</locationX>
+        <locationY>49</locationY>
+        <connector>
+            <targetReference>Which_Flow</targetReference>
+        </connector>
+    </start>
+    <status>Active</status>
+    <variables>
+        <description>ID of the created case that started this process</description>
+        <name>vCaseID</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>true</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+    <variables>
+        <description>Id of the owner of the case</description>
+        <name>vCaseOwnerID</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+    <variables>
+        <description>Id of the PSR that is found in the Get Record element</description>
+        <name>vPSRQueryResultId</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+    <variables>
+        <description>PSR&apos;s user ID</description>
+        <name>vPSRUserID</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>true</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+    <variables>
+        <description>Subject of the case</description>
+        <name>vSubject</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>true</isInput>
+        <isOutput>false</isOutput>
+        <value>
+            <stringValue>false</stringValue>
+        </value>
+    </variables>
+    <variables>
+        <description>Web email passed in from process builder. Only populated on a case when it is created thru E2C</description>
+        <name>vWebEmail</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>true</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+</Flow>

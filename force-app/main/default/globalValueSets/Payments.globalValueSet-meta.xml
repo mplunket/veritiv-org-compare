@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GlobalValueSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <customValue>
+        <fullName>Inquiry - Customer</fullName>
+        <default>false</default>
+        <label>Inquiry - Customer</label>
+    </customValue>
+    <customValue>
+        <fullName>Inquiry - Sales</fullName>
+        <default>false</default>
+        <label>Inquiry - Sales</label>
+    </customValue>
+    <customValue>
+        <fullName>Over Payment</fullName>
+        <default>false</default>
+        <label>Over Payment</label>
+    </customValue>
+    <customValue>
+        <fullName>Remittance Request</fullName>
+        <default>false</default>
+        <label>Remittance Request</label>
+    </customValue>
+    <customValue>
+        <fullName>Short Payment - Freight</fullName>
+        <default>false</default>
+        <label>Short Payment - Freight</label>
+    </customValue>
+    <customValue>
+        <fullName>Short Payment  - Pricing/Quantity</fullName>
+        <default>false</default>
+        <label>Short Payment  - Pricing/Quantity</label>
+    </customValue>
+    <description>used for Credit and Collections</description>
+    <masterLabel>Payments</masterLabel>
+    <sorted>true</sorted>
+</GlobalValueSet>

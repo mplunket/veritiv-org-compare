@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Workflow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <outboundMessages>
+        <fullName>Chatter_Post_to_WF</fullName>
+        <apiVersion>57.0</apiVersion>
+        <description>When a FeedItem (Chatter Post) is created that is related to an Opportunity with a Workfront Program #, send it to Fusion via Outbound Message</description>
+        <endpointUrl>https://hook.app.workfrontfusion.com/6mv2oy5iqfkif2jg9ofc9nhh9mg1lpvs</endpointUrl>
+        <fields>BestCommentId</fields>
+        <fields>Body</fields>
+        <fields>CommentCount</fields>
+        <fields>ConnectionId</fields>
+        <fields>CreatedById</fields>
+        <fields>CreatedDate</fields>
+        <fields>HasContent</fields>
+        <fields>HasFeedEntity</fields>
+        <fields>HasLink</fields>
+        <fields>HasVerifiedComment</fields>
+        <fields>Id</fields>
+        <fields>InsertedById</fields>
+        <fields>IsClosed</fields>
+        <fields>IsDeleted</fields>
+        <fields>IsRichText</fields>
+        <fields>LastEditById</fields>
+        <fields>LastEditDate</fields>
+        <fields>LastModifiedDate</fields>
+        <fields>LikeCount</fields>
+        <fields>LinkUrl</fields>
+        <fields>NetworkScope</fields>
+        <fields>ParentId</fields>
+        <fields>RelatedRecordId</fields>
+        <fields>Revision</fields>
+        <fields>Status</fields>
+        <fields>SystemModstamp</fields>
+        <fields>Title</fields>
+        <fields>Type</fields>
+        <fields>Visibility</fields>
+        <includeSessionId>false</includeSessionId>
+        <integrationUser>svc_workfrontfusion@veritivcorp.com</integrationUser>
+        <name>Chatter Post to WF</name>
+        <protected>false</protected>
+        <useDeadLetterQueue>false</useDeadLetterQueue>
+    </outboundMessages>
+</Workflow>

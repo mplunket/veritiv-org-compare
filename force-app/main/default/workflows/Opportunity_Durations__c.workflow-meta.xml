@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Workflow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fieldUpdates>
+        <fullName>Opp_Stage_to_Current_Stage</fullName>
+        <field>To_Stage__c</field>
+        <formula>TEXT(Parent__r.StageName)</formula>
+        <name>Opp Stage to Current Stage</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <rules>
+        <fullName>Opportunity Duration Created</fullName>
+        <actions>
+            <name>Opp_Stage_to_Current_Stage</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <description>When an OD is created thru trigger. This is proof of concept.</description>
+        <formula>true</formula>
+        <triggerType>onCreateOnly</triggerType>
+    </rules>
+</Workflow>

@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomApplication xmlns="http://soap.sforce.com/2006/04/metadata">
+    <defaultLandingTab>standard-home</defaultLandingTab>
+    <description>Application designed for CSP Organization.</description>
+    <isNavAutoTempTabsDisabled>false</isNavAutoTempTabsDisabled>
+    <isNavPersonalizationDisabled>false</isNavPersonalizationDisabled>
+    <isNavTabPersistenceDisabled>false</isNavTabPersistenceDisabled>
+    <label>Veritiv Customer Service</label>
+    <logo>SharedDocuments/A_Veritiv_Company_Logo.png</logo>
+    <tabs>standard-Chatter</tabs>
+    <tabs>standard-File</tabs>
+    <tabs>standard-Account</tabs>
+    <tabs>standard-Case</tabs>
+    <tabs>standard-Contact</tabs>
+    <tabs>standard-Opportunity</tabs>
+    <tabs>Quote__c</tabs>
+    <tabs>standard-Document</tabs>
+    <tabs>standard-Dashboard</tabs>
+    <tabs>standard-report</tabs>
+    <tabs>standard-Lead</tabs>
+    <tabs>My_Toolbox</tabs>
+    <tabs>Infosource</tabs>
+    <tabs>Ship_To__c</tabs>
+    <tabs>Vendor_Detail__c</tabs>
+    <tabs>Operational_Data__c</tabs>
+    <tabs>Fax_To_Case_Queue_Assignment__c</tabs>
+    <tabs>User_out_of_office__c</tabs>
+    <tabs>Announcement__c</tabs>
+    <tabs>Release__c</tabs>
+    <tabs>LearningVKS</tabs>
+    <tabs>Legal_Contract_Lines__c</tabs>
+</CustomApplication>

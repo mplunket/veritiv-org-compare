@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Queue xmlns="http://soap.sforce.com/2006/04/metadata">
+    <doesSendEmailToMembers>false</doesSendEmailToMembers>
+    <name>Field Sourcing Print</name>
+    <queueMembers>
+        <roles>
+            <role>CAN_CS_Central_FP_WF_Manager</role>
+            <role>CAN_CS_Central_Corp_Accts_CSP</role>
+            <role>CAN_CS_Central_Corp_Accts_Manager</role>
+            <role>CAN_CS_Central_FORDIS_CSP</role>
+            <role>CAN_CS_Central_FORDIS_Manager</role>
+            <role>CAN_CS_Central_FP_WF_CSP</role>
+            <role>CAN_CS_Central_Sales_Support</role>
+            <role>CAN_CS_East_FP_CSP</role>
+            <role>CAN_CS_East_FS_CSP</role>
+            <role>CAN_CS_East_FS_Manager</role>
+            <role>CAN_CS_East_Sales_Support</role>
+            <role>CAN_CS_West_FP_PKG_CSP</role>
+            <role>CAN_CS_West_FP_PKG_Manager</role>
+            <role>CAN_CS_West_FS_CSP</role>
+            <role>CAN_CS_West_FS_Manager</role>
+            <role>CAN_CS_West_Sales_Support</role>
+            <role>CAN_Field_Sourcing</role>
+            <role>CAN_Field_Sourcing_Central</role>
+            <role>CAN_Sales_Program_Managers</role>
+        </roles>
+    </queueMembers>
+    <queueSobject>
+        <sobjectType>Quote__c</sobjectType>
+    </queueSobject>
+    <queueSobject>
+        <sobjectType>WorkOrder</sobjectType>
+    </queueSobject>
+</Queue>

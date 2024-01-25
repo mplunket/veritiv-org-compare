@@ -1,0 +1,176 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GlobalValueSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <customValue>
+        <fullName>Ancillary Packaging</fullName>
+        <default>false</default>
+        <label>Ancillary Packaging</label>
+    </customValue>
+    <customValue>
+        <fullName>Bags</fullName>
+        <default>false</default>
+        <label>Bags</label>
+    </customValue>
+    <customValue>
+        <fullName>Can Liners</fullName>
+        <default>false</default>
+        <label>Can Liners</label>
+    </customValue>
+    <customValue>
+        <fullName>Chemicals</fullName>
+        <default>false</default>
+        <label>Chemicals</label>
+    </customValue>
+    <customValue>
+        <fullName>Coated Board</fullName>
+        <default>false</default>
+        <label>Coated Board</label>
+    </customValue>
+    <customValue>
+        <fullName>Coated Freesheet</fullName>
+        <default>false</default>
+        <label>Coated Freesheet</label>
+    </customValue>
+    <customValue>
+        <fullName>Coated Groundwood</fullName>
+        <default>false</default>
+        <label>Coated Groundwood</label>
+    </customValue>
+    <customValue>
+        <fullName>Corrugated</fullName>
+        <default>false</default>
+        <label>Corrugated</label>
+    </customValue>
+    <customValue>
+        <fullName>Cushioning</fullName>
+        <default>false</default>
+        <label>Cushioning</label>
+    </customValue>
+    <customValue>
+        <fullName>Dispensers</fullName>
+        <default>false</default>
+        <label>Dispensers</label>
+    </customValue>
+    <customValue>
+        <fullName>Equipment / Parts</fullName>
+        <default>false</default>
+        <label>Equipment / Parts</label>
+    </customValue>
+    <customValue>
+        <fullName>Films</fullName>
+        <default>false</default>
+        <label>Films</label>
+    </customValue>
+    <customValue>
+        <fullName>Folding Carton</fullName>
+        <default>false</default>
+        <label>Folding Carton</label>
+    </customValue>
+    <customValue>
+        <fullName>Food Packaging</fullName>
+        <default>false</default>
+        <label>Food Packaging</label>
+    </customValue>
+    <customValue>
+        <fullName>Food Service</fullName>
+        <default>false</default>
+        <label>Food Service</label>
+    </customValue>
+    <customValue>
+        <fullName>Janitorial Power Equipment</fullName>
+        <default>false</default>
+        <label>Janitorial Power Equipment</label>
+    </customValue>
+    <customValue>
+        <fullName>Janitorial Supplies</fullName>
+        <default>false</default>
+        <label>Janitorial Supplies</label>
+    </customValue>
+    <customValue>
+        <fullName>Kitting</fullName>
+        <default>false</default>
+        <label>Kitting</label>
+    </customValue>
+    <customValue>
+        <fullName>Labeling / Identification</fullName>
+        <default>false</default>
+        <label>Labeling / Identification</label>
+    </customValue>
+    <customValue>
+        <fullName>Mailers</fullName>
+        <default>false</default>
+        <label>Mailers</label>
+    </customValue>
+    <customValue>
+        <fullName>Personal Hygiene</fullName>
+        <default>false</default>
+        <label>Personal Hygiene</label>
+    </customValue>
+    <customValue>
+        <fullName>Personal Protection and Safety</fullName>
+        <default>false</default>
+        <label>Personal Protection and Safety</label>
+    </customValue>
+    <customValue>
+        <fullName>Receptacles and Material Handling</fullName>
+        <default>false</default>
+        <label>Receptacles and Material Handling</label>
+    </customValue>
+    <customValue>
+        <fullName>Retail, Office and School Supplies</fullName>
+        <default>false</default>
+        <label>Retail, Office and School Supplies</label>
+    </customValue>
+    <customValue>
+        <fullName>Skincare</fullName>
+        <default>false</default>
+        <label>Skincare</label>
+    </customValue>
+    <customValue>
+        <fullName>Specialty</fullName>
+        <default>false</default>
+        <label>Specialty</label>
+    </customValue>
+    <customValue>
+        <fullName>Strapping</fullName>
+        <default>false</default>
+        <label>Strapping</label>
+    </customValue>
+    <customValue>
+        <fullName>Surface Protection</fullName>
+        <default>false</default>
+        <label>Surface Protection</label>
+    </customValue>
+    <customValue>
+        <fullName>Tapes</fullName>
+        <default>false</default>
+        <label>Tapes</label>
+    </customValue>
+    <customValue>
+        <fullName>Towels, Tissues</fullName>
+        <default>false</default>
+        <label>Towels, Tissues</label>
+    </customValue>
+    <customValue>
+        <fullName>Uncoated Freesheet</fullName>
+        <default>false</default>
+        <label>Uncoated Freesheet</label>
+    </customValue>
+    <customValue>
+        <fullName>Uncoated Groundwood</fullName>
+        <default>false</default>
+        <label>Uncoated Groundwood</label>
+    </customValue>
+    <customValue>
+        <fullName>Wide Format</fullName>
+        <default>false</default>
+        <label>Wide Format</label>
+    </customValue>
+    <customValue>
+        <fullName>Wipers</fullName>
+        <default>false</default>
+        <label>Wipers</label>
+    </customValue>
+    <description>Veritiv Product Category 1</description>
+    <masterLabel>Product Category 1</masterLabel>
+    <sorted>true</sorted>
+</GlobalValueSet>

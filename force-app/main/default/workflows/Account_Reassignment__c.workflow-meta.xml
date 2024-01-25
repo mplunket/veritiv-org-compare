@@ -1,0 +1,480 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Workflow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <alerts>
+        <fullName>EmailAlertforAccountReassignment</fullName>
+        <description>EmailAlertforAccountReassignment</description>
+        <protected>false</protected>
+        <recipients>
+            <type>owner</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>Account_Reassignment/SendEmailonAccountReassignment</template>
+    </alerts>
+    <alerts>
+        <fullName>Email_SM_after_180_days</fullName>
+        <description>Email SM after 180 days</description>
+        <protected>false</protected>
+        <recipients>
+            <type>owner</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>Account_Reassignment/Reassign_Email_SM_after_180_days</template>
+    </alerts>
+    <alerts>
+        <fullName>Email_SM_and_GM_30_days_after_180_day_observation_period</fullName>
+        <description>Email SM and GM 30 days after 180 day observation period</description>
+        <protected>false</protected>
+        <recipients>
+            <field>Email_PSR_GM__c</field>
+            <type>email</type>
+        </recipients>
+        <recipients>
+            <type>owner</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>Account_Reassignment/Reassign_Email_SM_and_GM_if_180_days_is_over_by_30_days</template>
+    </alerts>
+    <alerts>
+        <fullName>Email_SM_and_GM_30_days_after_90_day_observation_period</fullName>
+        <description>Email SM and GM 30 days after 90 day observation period</description>
+        <protected>false</protected>
+        <recipients>
+            <field>Email_PSR_GM__c</field>
+            <type>email</type>
+        </recipients>
+        <recipients>
+            <type>owner</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>Account_Reassignment/Reassign_Email_SM_and_GM_if_90_days_is_over_by_30_days</template>
+    </alerts>
+    <alerts>
+        <fullName>Reassign_Email_SM_14_days_after_Pending</fullName>
+        <description>Reassign - Email SM 14 days after Pending</description>
+        <protected>false</protected>
+        <recipients>
+            <type>owner</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>Account_Reassignment/Reassign_Email_SM_if_in_Reassignment_Pending_for_14_days</template>
+    </alerts>
+    <alerts>
+        <fullName>Reassign_Email_SM_GM_30_days_after_Pending</fullName>
+        <description>Reassign - Email SM &amp; GM 30 days after Pending</description>
+        <protected>false</protected>
+        <recipients>
+            <field>Email_PSR_GM__c</field>
+            <type>email</type>
+        </recipients>
+        <recipients>
+            <type>owner</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>Account_Reassignment/Reassign_Email_SM_and_GM_if_in_Reassignment_Pending_for_30_days</template>
+    </alerts>
+    <alerts>
+        <fullName>X90_Day_Observation_Complete</fullName>
+        <description>90 Day Observation Complete</description>
+        <protected>false</protected>
+        <recipients>
+            <type>owner</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>Account_Reassignment/Reassign_Email_SM_after_90_Days</template>
+    </alerts>
+    <fieldUpdates>
+        <fullName>Reassign_Closed_Date</fullName>
+        <field>Reassignment_Closed_Date__c</field>
+        <formula>Today()</formula>
+        <name>Reassign - Closed Date</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Reassign_Update_90_Day_Observe_Date</fullName>
+        <field>Reassign_Date_Curr_Rep_90_Day_Observe__c</field>
+        <formula>IF(ISPICKVAL(Reassignment_Stage__c, &quot;Current Rep - 90 Day Observation&quot;), Today(), null)</formula>
+        <name>Reassign - Update 90 Day Observe Date</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Reassign_Update_In_180_Day_Review_Date</fullName>
+        <field>Reassign_Date_In_180_Day_Review__c</field>
+        <formula>IF(ISPICKVAL(Reassignment_Stage__c, &quot;New Rep - In 180-Day Review&quot;), Today(), null)</formula>
+        <name>Reassign - Update In 180-Day Review Date</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>true</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Reassign_Update_InsideSales_House_Date</fullName>
+        <field>Reassign_Date_Inside_Sales_House__c</field>
+        <formula>IF(ISPICKVAL(Reassignment_Stage__c, &quot;Reassigned - House / Inside Sales&quot;), Today(), null)</formula>
+        <name>Reassign - Update InsideSales House Date</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Reassign_Update_No_Reassign_Need_Date</fullName>
+        <field>Reassign_Date_No_Reassignment_Needed__c</field>
+        <formula>IF(ISPICKVAL(Reassignment_Stage__c, &quot;No Reassignment Needed&quot;), Today(), null)</formula>
+        <name>Reassign - Update No Reassign Need Date</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Reassign_Update_Notes_Modified_By</fullName>
+        <field>Notes_Last_Modified_By__c</field>
+        <formula>$User.FirstName &amp; &quot; &quot; &amp;  $User.LastName</formula>
+        <name>Reassign - Update Notes Modified By</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Reassign_Update_Notes_Modified_Date</fullName>
+        <field>Notes_Last_Modified_Date__c</field>
+        <formula>Today()</formula>
+        <name>Reassign - Update Notes Modified Date</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Reassign_Update_Reassignment_Pending_D</fullName>
+        <field>Reassign_Date_Reassignment_Pending__c</field>
+        <formula>IF(ISPICKVAL(Reassignment_Stage__c, &quot;Reassignment Pending&quot;), Today(), null)</formula>
+        <name>Reassign - Update Reassignment Pending D</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>true</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Reassign_Update_Review_End_Date_180Day</fullName>
+        <field>Date_Review_Period_Ends__c</field>
+        <formula>Today() + 180</formula>
+        <name>Reassign - Update Review End Date 180Day</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Reassign_Update_Review_End_Date_90_Day</fullName>
+        <field>Date_Review_Period_Ends__c</field>
+        <formula>today() + 90</formula>
+        <name>Reassign - Update Review End Date 90 day</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Reassign_Update_Stay_w_Rep_Date</fullName>
+        <field>Reassign_Date_Ob_Complete_Stay_w_Rep__c</field>
+        <formula>IF(ISPICKVAL(Reassignment_Stage__c, &quot;Observation Complete - Stay with Rep&quot;), Today(), null)</formula>
+        <name>Reassign - Update Stay w Rep Date</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Update_Email_Address_Dir</fullName>
+        <description>Update email address for Director</description>
+        <field>Email_PSR_Dir__c</field>
+        <formula>Owner:User.Dir_Email__c</formula>
+        <name>Update Email Address - Dir</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Update_Email_Address_GM</fullName>
+        <description>Update email address for GM</description>
+        <field>Email_PSR_GM__c</field>
+        <formula>Owner:User.GSM_Email__c</formula>
+        <name>Update Email Address - GM</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Update_Email_Address_RVP</fullName>
+        <description>Update email address for RVP</description>
+        <field>Email_PSR_RVP__c</field>
+        <formula>Owner:User.Vice_President_Email__c</formula>
+        <name>Update Email Address - RVP</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Update_Email_Address_SM</fullName>
+        <description>Update Email Address for SM</description>
+        <field>Email_PSR_SM__c</field>
+        <formula>Owner:User.ZM_SM_Email__c</formula>
+        <name>Update Email Address - SM</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Update_Reassigned_House_Date</fullName>
+        <description>When House is chosen, update the date stamp</description>
+        <field>Reassign_Date_House__c</field>
+        <formula>Today()</formula>
+        <name>Update Reassigned House Date</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Update_Reassigned_Inside_Sales_Date</fullName>
+        <field>Reassign_Date_Inside_Sales__c</field>
+        <formula>Today()</formula>
+        <name>Update Reassigned Inside Sales Date</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <rules>
+        <fullName>Reassign - Closed Date</fullName>
+        <actions>
+            <name>Reassign_Closed_Date</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <criteriaItems>
+            <field>Account_Reassignment__c.Reassignment_Status__c</field>
+            <operation>equals</operation>
+            <value>Closed</value>
+        </criteriaItems>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+    </rules>
+    <rules>
+        <fullName>Reassign - Email SM 14 days after Pending</fullName>
+        <active>false</active>
+        <criteriaItems>
+            <field>Account_Reassignment__c.Reassignment_Stage__c</field>
+            <operation>equals</operation>
+            <value>Reassignment Pending</value>
+        </criteriaItems>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+        <workflowTimeTriggers>
+            <actions>
+                <name>Reassign_Email_SM_14_days_after_Pending</name>
+                <type>Alert</type>
+            </actions>
+            <timeLength>14</timeLength>
+            <workflowTimeTriggerUnit>Days</workflowTimeTriggerUnit>
+        </workflowTimeTriggers>
+        <workflowTimeTriggers>
+            <actions>
+                <name>Reassign_Email_SM_GM_30_days_after_Pending</name>
+                <type>Alert</type>
+            </actions>
+            <timeLength>30</timeLength>
+            <workflowTimeTriggerUnit>Days</workflowTimeTriggerUnit>
+        </workflowTimeTriggers>
+    </rules>
+    <rules>
+        <fullName>Reassign - Email SM After 180 Days</fullName>
+        <active>true</active>
+        <criteriaItems>
+            <field>Account_Reassignment__c.Reassignment_Stage__c</field>
+            <operation>equals</operation>
+            <value>New Rep - In 180-Day Review</value>
+        </criteriaItems>
+        <description>Email Sales Manager after 180 days of observation</description>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+        <workflowTimeTriggers>
+            <actions>
+                <name>Email_SM_after_180_days</name>
+                <type>Alert</type>
+            </actions>
+            <timeLength>180</timeLength>
+            <workflowTimeTriggerUnit>Days</workflowTimeTriggerUnit>
+        </workflowTimeTriggers>
+        <workflowTimeTriggers>
+            <actions>
+                <name>Email_SM_and_GM_30_days_after_180_day_observation_period</name>
+                <type>Alert</type>
+            </actions>
+            <timeLength>210</timeLength>
+            <workflowTimeTriggerUnit>Days</workflowTimeTriggerUnit>
+        </workflowTimeTriggers>
+    </rules>
+    <rules>
+        <fullName>Reassign - Email SM After 90 Days</fullName>
+        <active>false</active>
+        <criteriaItems>
+            <field>Account_Reassignment__c.Reassignment_Stage__c</field>
+            <operation>equals</operation>
+            <value>Current Rep - 90 Day Observation</value>
+        </criteriaItems>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+        <workflowTimeTriggers>
+            <actions>
+                <name>Email_SM_and_GM_30_days_after_90_day_observation_period</name>
+                <type>Alert</type>
+            </actions>
+            <timeLength>120</timeLength>
+            <workflowTimeTriggerUnit>Days</workflowTimeTriggerUnit>
+        </workflowTimeTriggers>
+        <workflowTimeTriggers>
+            <actions>
+                <name>X90_Day_Observation_Complete</name>
+                <type>Alert</type>
+            </actions>
+            <timeLength>90</timeLength>
+            <workflowTimeTriggerUnit>Days</workflowTimeTriggerUnit>
+        </workflowTimeTriggers>
+    </rules>
+    <rules>
+        <fullName>Reassign - Notes - Last Modified By</fullName>
+        <actions>
+            <name>Reassign_Update_Notes_Modified_By</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <actions>
+            <name>Reassign_Update_Notes_Modified_Date</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <formula>ISCHANGED( Reassignment_Notes__c )</formula>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+    <rules>
+        <fullName>Reassign - Update 90 Day Observe Date</fullName>
+        <actions>
+            <name>Reassign_Update_90_Day_Observe_Date</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <actions>
+            <name>Reassign_Update_Review_End_Date_90_Day</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <formula>AND(ISCHANGED( Reassignment_Stage__c ),ISPICKVAL(Reassignment_Stage__c, &quot;Current Rep - 90 Day Observation&quot;))</formula>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+    <rules>
+        <fullName>Reassign - Update House %2F Inside Sales Date</fullName>
+        <actions>
+            <name>Reassign_Update_InsideSales_House_Date</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <formula>AND(ISCHANGED( Reassignment_Stage__c), ISPICKVAL(Reassignment_Stage__c, &quot;Reassigned - House / Inside Sales&quot;))</formula>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+    <rules>
+        <fullName>Reassign - Update House Date</fullName>
+        <actions>
+            <name>Update_Reassigned_House_Date</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <description>Update Date whenHouse is chosen</description>
+        <formula>AND(ISCHANGED( Reassignment_Stage__c), ISPICKVAL(Reassignment_Stage__c, &quot;Reassigned - House&quot;))</formula>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+    <rules>
+        <fullName>Reassign - Update In 180-Day Review Date</fullName>
+        <actions>
+            <name>Reassign_Update_In_180_Day_Review_Date</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <actions>
+            <name>Reassign_Update_Review_End_Date_180Day</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <formula>AND(ISCHANGED( Reassignment_Stage__c), ISPICKVAL(Reassignment_Stage__c, &quot;New Rep - In 180-Day Review&quot;))</formula>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+    <rules>
+        <fullName>Reassign - Update Inside Sales Date</fullName>
+        <actions>
+            <name>Update_Reassigned_Inside_Sales_Date</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <description>Update Date when Inside Sales is chosen</description>
+        <formula>AND(ISCHANGED( Reassignment_Stage__c), ISPICKVAL(Reassignment_Stage__c, &quot;Reassigned - Inside Sales&quot;))</formula>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+    <rules>
+        <fullName>Reassign - Update No Reassignment Needed Date</fullName>
+        <actions>
+            <name>Reassign_Update_No_Reassign_Need_Date</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <formula>AND(ISCHANGED( Reassignment_Stage__c), ISPICKVAL(Reassignment_Stage__c, &quot;No Reassignment Needed&quot;))</formula>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+    <rules>
+        <fullName>Reassign - Update Reassignment Pending Date</fullName>
+        <actions>
+            <name>Reassign_Update_Reassignment_Pending_D</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <formula>AND(ISCHANGED( Reassignment_Stage__c), ISPICKVAL(Reassignment_Stage__c, &quot;Reassignment Pending&quot;))</formula>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+    <rules>
+        <fullName>Reassign - Update Stay with Rep Date</fullName>
+        <actions>
+            <name>Reassign_Update_Stay_w_Rep_Date</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <formula>AND(ISCHANGED( Reassignment_Stage__c), ISPICKVAL(Reassignment_Stage__c, &quot;Observation Complete - Stay with Rep&quot;))</formula>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+    <rules>
+        <fullName>Reassign - Updating Owner Email Addresses</fullName>
+        <actions>
+            <name>Update_Email_Address_Dir</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <actions>
+            <name>Update_Email_Address_GM</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <actions>
+            <name>Update_Email_Address_RVP</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <actions>
+            <name>Update_Email_Address_SM</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <description>Updating Owner Email Addresses within the hierarchy</description>
+        <formula>OR( ISNEW() , ISCHANGED( OwnerId ))</formula>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+</Workflow>

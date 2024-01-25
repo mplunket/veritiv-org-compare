@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GlobalValueSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <customValue>
+        <fullName>Entertainment &amp; Hospitality</fullName>
+        <default>false</default>
+        <label>Entertainment &amp; Hospitality</label>
+    </customValue>
+    <customValue>
+        <fullName>Food &amp; Beverage</fullName>
+        <default>false</default>
+        <label>Food &amp; Beverage</label>
+    </customValue>
+    <customValue>
+        <fullName>Government &amp; Education</fullName>
+        <default>false</default>
+        <label>Government &amp; Education</label>
+    </customValue>
+    <customValue>
+        <fullName>Healthcare</fullName>
+        <default>false</default>
+        <label>Healthcare</label>
+    </customValue>
+    <customValue>
+        <fullName>Heavy Manufacturing</fullName>
+        <default>false</default>
+        <label>Heavy Manufacturing</label>
+    </customValue>
+    <customValue>
+        <fullName>Light Manufacturing</fullName>
+        <default>false</default>
+        <label>Light Manufacturing</label>
+    </customValue>
+    <customValue>
+        <fullName>Logistics</fullName>
+        <default>false</default>
+        <label>Logistics</label>
+    </customValue>
+    <customValue>
+        <fullName>Office Like</fullName>
+        <default>false</default>
+        <label>Office Like</label>
+    </customValue>
+    <customValue>
+        <fullName>Paper</fullName>
+        <default>false</default>
+        <label>Paper</label>
+    </customValue>
+    <customValue>
+        <fullName>Publishing</fullName>
+        <default>false</default>
+        <label>Publishing</label>
+    </customValue>
+    <customValue>
+        <fullName>Wholesale &amp; Retail</fullName>
+        <default>false</default>
+        <label>Wholesale &amp; Retail</label>
+    </customValue>
+    <description>For use on Lead, Prospect, Account</description>
+    <masterLabel>Vertical Group</masterLabel>
+    <sorted>false</sorted>
+</GlobalValueSet>

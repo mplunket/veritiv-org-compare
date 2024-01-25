@@ -1,0 +1,674 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionCalls>
+        <description>Round robin assignment to the &apos;Tax Ops Tech Requests&apos; group</description>
+        <name>apx_RR_TechReq</name>
+        <label>RR - Tax Ops Tech Requests</label>
+        <locationX>578</locationX>
+        <locationY>1163</locationY>
+        <actionName>roundRobinAssigner</actionName>
+        <actionType>apex</actionType>
+        <connector>
+            <targetReference>udt_UpdateCaseFieldValues_RR</targetReference>
+        </connector>
+        <faultConnector>
+            <isGoTo>true</isGoTo>
+            <targetReference>get_TaxOpsQueue</targetReference>
+        </faultConnector>
+        <flowTransactionModel>CurrentTransaction</flowTransactionModel>
+        <inputParameters>
+            <name>groupName</name>
+            <value>
+                <stringValue>Tax Ops Tech Requests</stringValue>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>recordId</name>
+            <value>
+                <elementReference>$Record.Id</elementReference>
+            </value>
+        </inputParameters>
+        <nameSegment>roundRobinAssigner</nameSegment>
+        <versionSegment>1</versionSegment>
+    </actionCalls>
+    <apiVersion>58.0</apiVersion>
+    <assignments>
+        <description>Assigns values to variables to be used in the Case update element later in the Flow</description>
+        <name>asn_TaxOpsQueue_CaseVariables</name>
+        <label>Case Variables</label>
+        <locationX>1106</locationX>
+        <locationY>1271</locationY>
+        <assignmentItems>
+            <assignToReference>var_OwnerId</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>get_TaxOpsQueue.Id</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>var_AutoAssignMethod</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <stringValue>Default Queue</stringValue>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>udt_UpdateCaseFieldValues</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <description>Assigns values to variables to be used in the Case update element later in the Flow</description>
+        <name>asn_TaxResource_CaseVars_InOffice</name>
+        <label>Case Variables</label>
+        <locationX>2162</locationX>
+        <locationY>1055</locationY>
+        <assignmentItems>
+            <assignToReference>var_OwnerId</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>$Record.Account.Tax_Resource__c</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>var_AutoAssignMethod</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <stringValue>Account Tax Resource</stringValue>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>udt_UpdateCaseFieldValues</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <description>Assigns values to variables to be used in the Case update element later in the Flow</description>
+        <name>asn_VendReq_CaseVars_InOffice</name>
+        <label>Case Variables</label>
+        <locationX>50</locationX>
+        <locationY>1055</locationY>
+        <assignmentItems>
+            <assignToReference>var_OwnerId</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>get_VendReq_UserAprilAlzamora.Id</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>var_AutoAssignMethod</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <stringValue>Specified User</stringValue>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>udt_UpdateCaseFieldValues</targetReference>
+        </connector>
+    </assignments>
+    <decisions>
+        <description>Determines if an Entitlement should be added or updated</description>
+        <name>dec_AddUpdateEntitlement</name>
+        <label>Add/Update Entitlement</label>
+        <locationX>2046</locationX>
+        <locationY>323</locationY>
+        <defaultConnector>
+            <targetReference>dec_IsNewOrStatusChanged</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>No</defaultConnectorLabel>
+        <rules>
+            <name>ocm_AddUpdateEntitlementYes</name>
+            <conditionLogic>or</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.Category__c</leftValueReference>
+                <operator>IsChanged</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Category__c</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.RecordTypeId</leftValueReference>
+                <operator>IsChanged</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.EntitlementId</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>sub_InvokeEntitlementsFlow</targetReference>
+            </connector>
+            <label>Yes</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <description>Determines the Category</description>
+        <name>dec_Category</name>
+        <label>Category</label>
+        <locationX>1238</locationX>
+        <locationY>1055</locationY>
+        <defaultConnector>
+            <isGoTo>true</isGoTo>
+            <targetReference>get_TaxOpsQueue</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>General Inquiry</defaultConnectorLabel>
+        <rules>
+            <name>ocm_Category_TaxTechnologyRequest</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.Category__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Tax Technology Request</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>apx_RR_TechReq</targetReference>
+            </connector>
+            <label>Tax Technology Request</label>
+        </rules>
+        <rules>
+            <name>ocm_Category_AcctSetupMaint</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.Category__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Account Setup/Maintenance</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>get_TaxOpsQueue</targetReference>
+            </connector>
+            <label>Acct Setup/Maint</label>
+        </rules>
+        <rules>
+            <name>ocm_Category_BillingVerificationError</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.Category__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Billing Verification Error</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <isGoTo>true</isGoTo>
+                <targetReference>get_TaxOpsQueue</targetReference>
+            </connector>
+            <label>Billing Verification Error</label>
+        </rules>
+        <rules>
+            <name>ocm_Category_CustomerBillingQuestion</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.Category__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Customer Billing Question</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <isGoTo>true</isGoTo>
+                <targetReference>get_TaxOpsQueue</targetReference>
+            </connector>
+            <label>Customer Billing Question</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <description>Determines if the Case is new or if the Status was changed</description>
+        <name>dec_IsNewOrStatusChanged</name>
+        <label>IsNew or Status Changed</label>
+        <locationX>2046</locationX>
+        <locationY>731</locationY>
+        <defaultConnectorLabel>Status Unchanged</defaultConnectorLabel>
+        <rules>
+            <name>ocm_Status_New</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.Status</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>New</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>dec_VendorRequest</targetReference>
+            </connector>
+            <label>New</label>
+        </rules>
+        <rules>
+            <name>ocm_Status_InProcess</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.Status</leftValueReference>
+                <operator>IsChanged</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Status</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>In Process</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>udt_ResumeMilestone</targetReference>
+            </connector>
+            <label>In Process</label>
+        </rules>
+        <rules>
+            <name>ocm_Status_OnHold</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.Status</leftValueReference>
+                <operator>IsChanged</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Status</leftValueReference>
+                <operator>StartsWith</operator>
+                <rightValue>
+                    <stringValue>On Hold</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>udt_PauseMilestone</targetReference>
+            </connector>
+            <label>On Hold / Other</label>
+        </rules>
+        <rules>
+            <name>ocm_Status_Closed</name>
+            <conditionLogic>1 AND (2 OR 3 OR 4)</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.Status</leftValueReference>
+                <operator>IsChanged</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.IsClosed</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Status</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Closed</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Status</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Reviewed - No Action (Closed)</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>udt_CompleteMilestones</targetReference>
+            </connector>
+            <label>Closed</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <description>Determines if an active &apos;Tax Resource&apos; is assigned to the related account</description>
+        <name>dec_TaxResourceAssigned</name>
+        <label>Tax Resource Assigned to Account</label>
+        <locationX>1700</locationX>
+        <locationY>947</locationY>
+        <defaultConnector>
+            <targetReference>asn_TaxResource_CaseVars_InOffice</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Yes</defaultConnectorLabel>
+        <rules>
+            <name>ocm_TaxResourceAssignedNo</name>
+            <conditionLogic>or</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.AccountId</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Account.Tax_Resource__c</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Account.Tax_Resource__r.IsActive</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>dec_Category</targetReference>
+            </connector>
+            <label>No</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <description>Determines if the case is for a vendor-related request</description>
+        <name>dec_VendorRequest</name>
+        <label>Vendor Request</label>
+        <locationX>875</locationX>
+        <locationY>839</locationY>
+        <defaultConnector>
+            <targetReference>dec_TaxResourceAssigned</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>No</defaultConnectorLabel>
+        <rules>
+            <name>ocm_VendorRequestYes</name>
+            <conditionLogic>or</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.Category__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Vendor Request</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Contact.RecordType.DeveloperName</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>VendorContact</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>get_VendReq_UserAprilAlzamora</targetReference>
+            </connector>
+            <label>Yes</label>
+        </rules>
+    </decisions>
+    <description>Handles Case automation with Entitlement and Milestone support</description>
+    <environments>Default</environments>
+    <interviewLabel>Case - Tax Ops Automation {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>Case - Tax Ops Automation</label>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>CanvasMode</name>
+        <value>
+            <stringValue>AUTO_LAYOUT_CANVAS</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>OriginBuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>AutoLaunchedFlow</processType>
+    <recordLookups>
+        <name>get_TaxOpsQueue</name>
+        <label>Tax Ops Queue</label>
+        <locationX>1106</locationX>
+        <locationY>1163</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>asn_TaxOpsQueue_CaseVariables</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>Type</field>
+            <operator>EqualTo</operator>
+            <value>
+                <stringValue>Queue</stringValue>
+            </value>
+        </filters>
+        <filters>
+            <field>DeveloperName</field>
+            <operator>EqualTo</operator>
+            <value>
+                <stringValue>TAX_OPERATIONS</stringValue>
+            </value>
+        </filters>
+        <getFirstRecordOnly>true</getFirstRecordOnly>
+        <object>Group</object>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordLookups>
+    <recordLookups>
+        <description>Get the user record for the person currently assigned to manage vendor related cases</description>
+        <name>get_VendReq_UserAprilAlzamora</name>
+        <label>User - April Alzamora</label>
+        <locationX>50</locationX>
+        <locationY>947</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>asn_VendReq_CaseVars_InOffice</targetReference>
+        </connector>
+        <faultConnector>
+            <isGoTo>true</isGoTo>
+            <targetReference>get_TaxOpsQueue</targetReference>
+        </faultConnector>
+        <filterLogic>1 AND 2 AND (3 OR 4)</filterLogic>
+        <filters>
+            <field>IsActive</field>
+            <operator>EqualTo</operator>
+            <value>
+                <booleanValue>true</booleanValue>
+            </value>
+        </filters>
+        <filters>
+            <field>UserType</field>
+            <operator>EqualTo</operator>
+            <value>
+                <stringValue>Standard</stringValue>
+            </value>
+        </filters>
+        <filters>
+            <field>Username</field>
+            <operator>EqualTo</operator>
+            <value>
+                <stringValue>april.alzamora@veritivcorp.com</stringValue>
+            </value>
+        </filters>
+        <filters>
+            <field>Username</field>
+            <operator>EqualTo</operator>
+            <value>
+                <stringValue>april.alzamora@veritivcorp.com.test</stringValue>
+            </value>
+        </filters>
+        <getFirstRecordOnly>true</getFirstRecordOnly>
+        <object>User</object>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordLookups>
+    <recordUpdates>
+        <name>udt_CaseEntitlementID</name>
+        <label>Case EntitlementID</label>
+        <locationX>1914</locationX>
+        <locationY>539</locationY>
+        <connector>
+            <targetReference>dec_IsNewOrStatusChanged</targetReference>
+        </connector>
+        <inputAssignments>
+            <field>EntitlementId</field>
+            <value>
+                <elementReference>sub_InvokeEntitlementsFlow.entitlementId</elementReference>
+            </value>
+        </inputAssignments>
+        <inputReference>$Record</inputReference>
+    </recordUpdates>
+    <recordUpdates>
+        <description>Completes all Milestones related to the case</description>
+        <name>udt_CompleteMilestones</name>
+        <label>Complete Milestones</label>
+        <locationX>2954</locationX>
+        <locationY>839</locationY>
+        <inputAssignments>
+            <field>CompletionDate</field>
+            <value>
+                <elementReference>$Flow.CurrentDateTime</elementReference>
+            </value>
+        </inputAssignments>
+        <inputReference>$Record.CaseMilestones</inputReference>
+    </recordUpdates>
+    <recordUpdates>
+        <description>Pauses Milestone counter on the Case</description>
+        <name>udt_PauseMilestone</name>
+        <label>Pause Milestone</label>
+        <locationX>2690</locationX>
+        <locationY>839</locationY>
+        <inputAssignments>
+            <field>IsStopped</field>
+            <value>
+                <booleanValue>true</booleanValue>
+            </value>
+        </inputAssignments>
+        <inputReference>$Record</inputReference>
+    </recordUpdates>
+    <recordUpdates>
+        <description>Pauses Milestone counter on the Case</description>
+        <name>udt_ResumeMilestone</name>
+        <label>Resume Milestone</label>
+        <locationX>2426</locationX>
+        <locationY>839</locationY>
+        <inputAssignments>
+            <field>IsStopped</field>
+            <value>
+                <booleanValue>false</booleanValue>
+            </value>
+        </inputAssignments>
+        <inputReference>$Record</inputReference>
+    </recordUpdates>
+    <recordUpdates>
+        <description>Updates field values on the Case record</description>
+        <name>udt_UpdateCaseFieldValues</name>
+        <label>Update Case Field Values</label>
+        <locationX>875</locationX>
+        <locationY>1739</locationY>
+        <inputAssignments>
+            <field>Auto_Assign_Method__c</field>
+            <value>
+                <elementReference>var_AutoAssignMethod</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>IsStopped</field>
+            <value>
+                <booleanValue>false</booleanValue>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>OwnerId</field>
+            <value>
+                <elementReference>var_OwnerId</elementReference>
+            </value>
+        </inputAssignments>
+        <inputReference>$Record</inputReference>
+    </recordUpdates>
+    <recordUpdates>
+        <description>Updates field values on the Case record</description>
+        <name>udt_UpdateCaseFieldValues_RR</name>
+        <label>Update Case Field Values</label>
+        <locationX>578</locationX>
+        <locationY>1271</locationY>
+        <inputAssignments>
+            <field>Auto_Assign_Method__c</field>
+            <value>
+                <stringValue>Round Robin Assigner</stringValue>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>IsStopped</field>
+            <value>
+                <booleanValue>false</booleanValue>
+            </value>
+        </inputAssignments>
+        <inputReference>$Record</inputReference>
+    </recordUpdates>
+    <start>
+        <locationX>1920</locationX>
+        <locationY>0</locationY>
+        <connector>
+            <targetReference>dec_AddUpdateEntitlement</targetReference>
+        </connector>
+        <filterFormula>AND(
+        {!$Record.RecordType.DeveloperName} = &apos;Tax_Operations&apos;,
+        OR(
+              ISNEW(),
+              ISCHANGED({!$Record.Category__c}),
+              ISCHANGED({!$Record.Status}),
+              ISCHANGED({!$Record.RecordTypeId})
+        )
+)</filterFormula>
+        <object>Case</object>
+        <recordTriggerType>CreateAndUpdate</recordTriggerType>
+        <triggerType>RecordAfterSave</triggerType>
+    </start>
+    <status>Active</status>
+    <subflows>
+        <description>Invokes the &apos;Case - Tax Ops Entitlements&apos; Flow, which handles Entitlement changes</description>
+        <name>sub_InvokeEntitlementsFlow</name>
+        <label>Invoke Entitlements Flow</label>
+        <locationX>1914</locationX>
+        <locationY>431</locationY>
+        <connector>
+            <targetReference>udt_CaseEntitlementID</targetReference>
+        </connector>
+        <flowName>Case_Tax_Ops_Entitlements</flowName>
+        <inputAssignments>
+            <name>caseCategory</name>
+            <value>
+                <elementReference>$Record.Category__c</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <name>recordId</name>
+            <value>
+                <elementReference>$Record.Id</elementReference>
+            </value>
+        </inputAssignments>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </subflows>
+    <variables>
+        <description>Stores the record ID of the Entitlement. This will be passed from the &apos;Case - Tax Ops Entitlement&apos; subflow</description>
+        <name>entitlementId</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>true</isInput>
+        <isOutput>true</isOutput>
+    </variables>
+    <variables>
+        <description>Stores the Case Auto-assign Method applied</description>
+        <name>var_AutoAssignMethod</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+    <variables>
+        <description>Stores the Case OwnerId</description>
+        <name>var_OwnerId</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+</Flow>

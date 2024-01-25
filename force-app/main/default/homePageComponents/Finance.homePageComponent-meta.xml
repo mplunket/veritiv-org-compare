@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<HomePageComponent xmlns="http://soap.sforce.com/2006/04/metadata">
+    <links>CPASS_Customer_Profitability_Assessment_Self_Service</links>
+    <links>CPASS_Training</links>
+    <links>EVA_Request_Form</links>
+    <pageComponentType>links</pageComponentType>
+</HomePageComponent>

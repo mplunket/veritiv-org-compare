@@ -1,0 +1,1085 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Workflow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <alerts>
+        <fullName>Cannabis_Lead_Created</fullName>
+        <description>Cannabis Lead Created</description>
+        <protected>false</protected>
+        <recipients>
+            <recipient>michael.parks@veritivcorp.com</recipient>
+            <type>user</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>Workflow_Alert_Emails/Cannabis_Lead</template>
+    </alerts>
+    <alerts>
+        <fullName>EmailToLeadOwnerAlert</fullName>
+        <description>EmailToLeadOwnerAlert</description>
+        <protected>false</protected>
+        <recipients>
+            <type>owner</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>Leads/Unread_Lead_Notification1</template>
+    </alerts>
+    <alerts>
+        <fullName>Inside_Sales_Web_Lead_Notification</fullName>
+        <ccEmails>GRP_CA470.SalesforceInsideSalesLeads@veritivcorp.com.invalid</ccEmails>
+        <ccEmails>adam.ross@veritivcorp.com</ccEmails>
+        <description>Inside Sales Web Lead Notification</description>
+        <protected>false</protected>
+        <senderType>CurrentUser</senderType>
+        <template>Leads/Inside_Sales_Web_Lead_Notification</template>
+    </alerts>
+    <alerts>
+        <fullName>Lead_Assigned_to_Rep_CC_Assignor_G_Gerst</fullName>
+        <ccEmails>salesforce@unisourcelink.com</ccEmails>
+        <description>Lead Assigned to Rep (CC Assignor - G Gerst)</description>
+        <protected>false</protected>
+        <recipients>
+            <type>owner</type>
+        </recipients>
+        <recipients>
+            <field>LastModifiedById</field>
+            <type>userLookup</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>Leads/LeadsNewassignmentnotificationSAMPLE</template>
+    </alerts>
+    <alerts>
+        <fullName>Newly_Assigned_Lead_From_IS</fullName>
+        <description>Newly Assigned Lead - From IS</description>
+        <protected>false</protected>
+        <recipients>
+            <type>owner</type>
+        </recipients>
+        <senderType>DefaultWorkflowUser</senderType>
+        <template>Leads/LeadsNewassignmentnotificationSAMPLE</template>
+    </alerts>
+    <alerts>
+        <fullName>Owner_Change_Not_Chat_or_Tech_Lead</fullName>
+        <description>Owner Change Not Chat or Tech Lead</description>
+        <protected>false</protected>
+        <recipients>
+            <type>owner</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>Leads/New_Owner_Notification_Not_Chat_or_Tech_Lead</template>
+    </alerts>
+    <alerts>
+        <fullName>Owner_Change_and_Lead_Source_is_Chat</fullName>
+        <description>Owner Change and Lead Source is Chat</description>
+        <protected>false</protected>
+        <recipients>
+            <type>owner</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>Leads/New_Owner_Notification_Lead_Source_Chat</template>
+    </alerts>
+    <alerts>
+        <fullName>Rejected_Lead_Notification_to_IS</fullName>
+        <description>Rejected Lead Notification to IS</description>
+        <protected>false</protected>
+        <recipients>
+            <recipient>InsideSalesManagers</recipient>
+            <type>group</type>
+        </recipients>
+        <senderType>DefaultWorkflowUser</senderType>
+        <template>Leads/ISM_Rejected_Leads</template>
+    </alerts>
+    <alerts>
+        <fullName>Service_Tech_Lead_Email_When_Lead_Type_Equipment</fullName>
+        <ccEmails>EquipmentSpecialists@veritivcorp.com</ccEmails>
+        <description>Service Tech Lead- Email When Lead Type Equipment</description>
+        <protected>false</protected>
+        <recipients>
+            <field>Technician_Email__c</field>
+            <type>email</type>
+        </recipients>
+        <recipients>
+            <type>owner</type>
+        </recipients>
+        <recipients>
+            <recipient>angie.lasher@veritivcorp.com</recipient>
+            <type>user</type>
+        </recipients>
+        <recipients>
+            <recipient>robert.habermehl@veritivcorp.com</recipient>
+            <type>user</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>Workflow_Alert_Emails/Service_Tech_Leads_EquipmentEmail</template>
+    </alerts>
+    <alerts>
+        <fullName>Service_Tech_Leads_Lead_Owner_Notification</fullName>
+        <description>Service Tech Leads - Lead Owner Notification</description>
+        <protected>false</protected>
+        <recipients>
+            <type>owner</type>
+        </recipients>
+        <recipients>
+            <recipient>angie.lasher@veritivcorp.com</recipient>
+            <type>user</type>
+        </recipients>
+        <recipients>
+            <recipient>robert.habermehl@veritivcorp.com</recipient>
+            <type>user</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>Leads/Service_Tech_Leads_Lead_Owner_Notification</template>
+    </alerts>
+    <alerts>
+        <fullName>Service_Tech_Leads_Queue_Notification</fullName>
+        <description>Service Tech Leads - Queue Notification</description>
+        <protected>false</protected>
+        <recipients>
+            <field>Technician_Email__c</field>
+            <type>email</type>
+        </recipients>
+        <recipients>
+            <recipient>angela.mcknight@veritivcorp.com</recipient>
+            <type>user</type>
+        </recipients>
+        <recipients>
+            <recipient>robert.habermehl@veritivcorp.com</recipient>
+            <type>user</type>
+        </recipients>
+        <recipients>
+            <recipient>tina.lee@veritivcorp.com</recipient>
+            <type>user</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>Leads/Service_Tech_Leads_Lead_Owner_Notification</template>
+    </alerts>
+    <fieldUpdates>
+        <fullName>Clear_out_Bounce_Date</fullName>
+        <field>Bounced_Date__c</field>
+        <name>Clear out Bounce Date</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Null</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Clear_out_Bounce_Reason</fullName>
+        <field>Bounced_Reason__c</field>
+        <name>Clear out Bounce Reason</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Null</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Clear_out_HasBounced</fullName>
+        <field>HasBounced__c</field>
+        <literalValue>0</literalValue>
+        <name>Clear out HasBounced</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Copy_Email_Bounce_Date</fullName>
+        <field>Bounced_Date__c</field>
+        <formula>EmailBouncedDate</formula>
+        <name>Copy Email Bounce Date</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Copy_Email_Bounce_Reason</fullName>
+        <field>Bounced_Reason__c</field>
+        <formula>EmailBouncedReason</formula>
+        <name>Copy Email Bounce Reason</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Copy_Lead_Desc_to_Opp_Details_Field</fullName>
+        <description>Copies details of lead to a field that is mapped to an Opp field, &quot;Details from Lead&quot;</description>
+        <field>Opportunity_Details__c</field>
+        <formula>Description</formula>
+        <name>Copy Lead Desc to Opp Details Field</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Copy_Marketing_Desc_to_Opp_Marketing_De</fullName>
+        <description>Copies Marketing Description to Marketing Details after a Lead is converted.</description>
+        <field>MarketingDetailsfromLead__c</field>
+        <formula>MarketingDescription__c</formula>
+        <name>Copy Marketing Desc to Opp Marketing De</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Country_Canada</fullName>
+        <description>Update Country based on the State/Province</description>
+        <field>Country</field>
+        <formula>IF (ISBLANK(State),&quot; &quot;,&quot;Canada&quot;)</formula>
+        <name>Country - Canada</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>true</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Country_Mexico</fullName>
+        <description>Update Country based on the State/Province</description>
+        <field>Country</field>
+        <formula>IF (ISBLANK(State),&quot; &quot;,&quot;Mexico&quot;)</formula>
+        <name>Country - Mexico</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>true</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Country_United_States</fullName>
+        <description>Update Country based on the State/Province</description>
+        <field>Country</field>
+        <formula>IF (ISBLANK(State),&quot; &quot;,&quot;United States&quot;)</formula>
+        <name>Country - United States</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>true</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>IsLeadConverted_TRUE</fullName>
+        <description>Created by BW for Lightning migration</description>
+        <field>Lead_is_Converted__c</field>
+        <literalValue>1</literalValue>
+        <name>IsLeadConverted TRUE</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>true</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Lead_Owner_to_Queue_When_Dead</fullName>
+        <description>This workflow action transfers the owner of a lead to the generic marketing queue when the lead status = 0 Dead</description>
+        <field>OwnerId</field>
+        <lookupValue>Marketing_Owned_Dead_Leads</lookupValue>
+        <lookupValueType>Queue</lookupValueType>
+        <name>Lead Owner to Queue When Dead</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>LookupValue</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Lead_from_Eloqua</fullName>
+        <description>Updates the &quot;Lead from Eloqua&quot; checkbox when the Eloqua Lead rating field is not blank</description>
+        <field>Lead_from_Eloqua__c</field>
+        <literalValue>1</literalValue>
+        <name>Lead from Eloqua</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Mark_as_Bounced</fullName>
+        <field>HasBounced__c</field>
+        <literalValue>1</literalValue>
+        <name>Mark as Bounced</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Normalize_Canada_in_Country_field</fullName>
+        <field>Country</field>
+        <formula>&quot;CANADA&quot;</formula>
+        <name>Normalize Canada in Country field</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Nullify_Revisit_Date</fullName>
+        <description>Nulls the revisit date, which should be cleared when the lead switches from revisit to new or working.</description>
+        <field>Revisit_Date__c</field>
+        <name>Nullify Revisit Date</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Null</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Reassign_Rejected_Lead_to_IS</fullName>
+        <field>OwnerId</field>
+        <lookupValue>InsideSalesLeadQualification</lookupValue>
+        <lookupValueType>Queue</lookupValueType>
+        <name>Reassign Rejected Lead to IS</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>LookupValue</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Set_Owner_as_East</fullName>
+        <field>OwnerId</field>
+        <lookupValue>TSB_East</lookupValue>
+        <lookupValueType>Queue</lookupValueType>
+        <name>Set Owner as East</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>LookupValue</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Set_Owner_as_East_Central_Queue</fullName>
+        <field>OwnerId</field>
+        <lookupValue>TSB_East_Central</lookupValue>
+        <lookupValueType>Queue</lookupValueType>
+        <name>Set Owner as East Central Queue</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>LookupValue</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Set_Owner_to_West_Central_Queue</fullName>
+        <field>OwnerId</field>
+        <lookupValue>TSB_West_Central</lookupValue>
+        <lookupValueType>Queue</lookupValueType>
+        <name>Set Owner to West Central Queue</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>LookupValue</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Set_Owner_to_West_Queue</fullName>
+        <field>OwnerId</field>
+        <lookupValue>TSB_West</lookupValue>
+        <lookupValueType>Queue</lookupValueType>
+        <name>Set Owner to West Queue</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>LookupValue</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Set_Status_to_Recycle</fullName>
+        <field>Status</field>
+        <literalValue>3_Revisit_Leads</literalValue>
+        <name>Set Status to Recycle</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Set_Zombie_Lead_flag_to_False</fullName>
+        <description>SFDC will mark as False.  Only Marketo will  mark it true if it comes back to life.</description>
+        <field>Zombie_Lead__c</field>
+        <literalValue>0</literalValue>
+        <name>Set Zombie Lead flag to False</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Set_as_Assigned</fullName>
+        <field>Assigned__c</field>
+        <literalValue>1</literalValue>
+        <name>Set as Assigned</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Statuslastchanged</fullName>
+        <field>Status_Change_Date__c</field>
+        <formula>TODAY()</formula>
+        <name>Status last changed</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Update_DIR_Email</fullName>
+        <field>Email_DIR__c</field>
+        <formula>Owner:User.Dir_Email__c</formula>
+        <name>Update DIR Email</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Update_GM_Email</fullName>
+        <field>Email_GM__c</field>
+        <formula>Owner:User.GSM_Email__c</formula>
+        <name>Update GM Email</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Update_Last_Mod_Date_Non_Admin</fullName>
+        <field>Date_Last_Modified_by_Non_Admin__c</field>
+        <formula>Today()</formula>
+        <name>Update Last Mod Date Non-Admin</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>true</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Update_Lead_Sync_to_False</fullName>
+        <field>Sync_with_Marketing_Automation__c</field>
+        <literalValue>0</literalValue>
+        <name>Update Lead Sync to False</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Update_Lead_Sync_to_True</fullName>
+        <field>Sync_with_Marketing_Automation__c</field>
+        <literalValue>1</literalValue>
+        <name>Update Lead Sync to True</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Update_RVP_Email</fullName>
+        <field>Email_RVP__c</field>
+        <formula>Owner:User.Vice_President_Email__c</formula>
+        <name>Update RVP Email</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Update_SM_Email</fullName>
+        <field>Email_SM__c</field>
+        <formula>Owner:User.ZM_SM_Email__c</formula>
+        <name>Update SM Email</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Update_SVP_Email</fullName>
+        <field>Email_SVP__c</field>
+        <formula>Owner:User.Pres_Email__c</formula>
+        <name>Update SVP Email</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Update_State_Zip_Starts_0</fullName>
+        <description>IF Statement to populate the state based upon the USPS Zip Code range. This field update contains all bracketed ranges for states with zip codes starting with a 0</description>
+        <field>State</field>
+        <formula>IF(and( 
+VALUE( PostalCode )&gt;=7001,VALUE( PostalCode ) &lt;=8989),&quot;NJ&quot;, 
+IF(and( 
+VALUE( PostalCode )&gt;=6401,VALUE( PostalCode ) &lt;=6928),&quot;CT&quot;, 
+IF(and( 
+VALUE( PostalCode )&gt;=6390,VALUE( PostalCode ) &lt;=6390),&quot;NY&quot;, 
+IF(and( 
+VALUE( PostalCode )&gt;=6001,VALUE( PostalCode ) &lt;=6389),&quot;CT&quot;, 
+IF(and( 
+VALUE( PostalCode )&gt;=5601,VALUE( PostalCode ) &lt;=5907),&quot;VT&quot;, 
+IF(and( 
+VALUE( PostalCode )&gt;=5501,VALUE( PostalCode ) &lt;=5544),&quot;MA&quot;, 
+IF(and( 
+VALUE( PostalCode )&gt;=5001,VALUE( PostalCode ) &lt;=5495),&quot;VT&quot;, 
+IF(and( 
+VALUE( PostalCode )&gt;=3901,VALUE( PostalCode ) &lt;=4992),&quot;ME&quot;, 
+IF(and( 
+VALUE( PostalCode )&gt;=3031,VALUE( PostalCode ) &lt;=3897),&quot;NH&quot;, 
+IF(and( 
+VALUE( PostalCode )&gt;=2801,VALUE( PostalCode ) &lt;=2940),&quot;RI&quot;, 
+IF(and( 
+VALUE( PostalCode )&gt;=1001,VALUE( PostalCode ) &lt;=2791),&quot;MA&quot;,State)))))))))))</formula>
+        <name>Update State | Zip Starts 0</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>true</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Update_State_Zip_Starts_1_5</fullName>
+        <description>IF Statement to populate the state based upon the USPS Zip Code range. This field update contains all bracketed ranges for states with zip codes starting with a 1,2,3,4, or 5.</description>
+        <field>State</field>
+        <formula>IF(and( 
+VALUE( PostalCode )&gt;=59001,VALUE( PostalCode ) &lt;=59937),&quot;MT&quot;, 
+IF(and( 
+VALUE( PostalCode )&gt;=58001,VALUE( PostalCode ) &lt;=58856),&quot;ND&quot;, 
+IF(and( 
+VALUE( PostalCode )&gt;=57001,VALUE( PostalCode ) &lt;=57799),&quot;SD&quot;, 
+IF(and( 
+VALUE( PostalCode )&gt;=55001,VALUE( PostalCode ) &lt;=56763),&quot;MN&quot;, 
+IF(and( 
+VALUE( PostalCode )&gt;=53001,VALUE( PostalCode ) &lt;=54990),&quot;WI&quot;, 
+IF(and( 
+VALUE( PostalCode )&gt;=50001,VALUE( PostalCode ) &lt;=52809),&quot;IA&quot;, 
+IF(and( 
+VALUE( PostalCode )&gt;=48001,VALUE( PostalCode ) &lt;=49971),&quot;MI&quot;, 
+IF(and( 
+VALUE( PostalCode )&gt;=46001,VALUE( PostalCode ) &lt;=47997),&quot;IN&quot;, 
+IF(and( 
+VALUE( PostalCode )&gt;=43001,VALUE( PostalCode ) &lt;=45999),&quot;OH&quot;, 
+IF(and( 
+VALUE( PostalCode )&gt;=40003,VALUE( PostalCode ) &lt;=42788),&quot;KY&quot;, 
+IF(and( 
+VALUE( PostalCode )&gt;=39901,VALUE( PostalCode ) &lt;=39901),&quot;GA&quot;, 
+IF(and( 
+VALUE( PostalCode )&gt;=38601,VALUE( PostalCode ) &lt;=39776),&quot;MS&quot;, 
+IF(and( 
+VALUE( PostalCode )&gt;=37010,VALUE( PostalCode ) &lt;=38589),&quot;TN&quot;, 
+IF(and( 
+VALUE( PostalCode )&gt;=35004,VALUE( PostalCode ) &lt;=36925),&quot;AL&quot;, 
+IF(and( 
+VALUE( PostalCode )&gt;=32004,VALUE( PostalCode ) &lt;=34997),&quot;FL&quot;, 
+IF(and( 
+VALUE( PostalCode )&gt;=30001,VALUE( PostalCode ) &lt;=31999),&quot;GA&quot;, 
+IF(and( 
+VALUE( PostalCode )&gt;=29001,VALUE( PostalCode ) &lt;=29948),&quot;SC&quot;, 
+IF(and( 
+VALUE( PostalCode )&gt;=27006,VALUE( PostalCode ) &lt;=28909),&quot;NC&quot;, 
+IF(and( 
+VALUE( PostalCode )&gt;=24701,VALUE( PostalCode ) &lt;=26886),&quot;WV&quot;, 
+IF(and( 
+VALUE( PostalCode )&gt;=22001,VALUE( PostalCode ) &lt;=24658),&quot;VA&quot;, 
+IF(and( 
+VALUE( PostalCode )&gt;=20812,VALUE( PostalCode ) &lt;=21930),&quot;MD&quot;, 
+IF(and( 
+VALUE( PostalCode )&gt;=20799,VALUE( PostalCode ) &lt;=20799),&quot;DC&quot;, 
+IF(and( 
+VALUE( PostalCode )&gt;=20335,VALUE( PostalCode ) &lt;=20797),&quot;MD&quot;, 
+IF(and( 
+VALUE( PostalCode )&gt;=20331,VALUE( PostalCode ) &lt;=20331),&quot;MD&quot;, 
+
+IF(and( 
+VALUE( PostalCode )&gt;=20042,VALUE( PostalCode ) &lt;=20599),&quot;DC&quot;, 
+IF(and( 
+VALUE( PostalCode )&gt;=20040,VALUE( PostalCode ) &lt;=20167),&quot;VA&quot;, 
+IF(and( 
+VALUE( PostalCode )&gt;=20040,VALUE( PostalCode ) &lt;=20041),&quot;VA&quot;, 
+IF(and( 
+VALUE( PostalCode )&gt;=20001,VALUE( PostalCode ) &lt;=20039),&quot;DC&quot;, 
+IF(and( 
+VALUE( PostalCode )&gt;=19701,VALUE( PostalCode ) &lt;=19980),&quot;DE&quot;, 
+IF(and( 
+VALUE( PostalCode )&gt;=15001,VALUE( PostalCode ) &lt;=19640),&quot;PA&quot;, 
+IF(and( 
+VALUE( PostalCode )&gt;=10001,VALUE( PostalCode ) &lt;=14975),&quot;NY&quot;, State )))))))))))))))))))))))))))))))</formula>
+        <name>Update State | Zip Starts 1-5</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>true</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Update_State_Zip_Starts_6_9</fullName>
+        <description>IF Statement to populate the state based upon the USPS Zip Code range. This field update contains all bracketed ranges for states with zip codes starting with a 6,7,8,or9</description>
+        <field>State</field>
+        <formula>IF(and( 
+VALUE( PostalCode )&gt;=99501,VALUE( PostalCode ) &lt;=99950),&quot;AK&quot;, 
+IF(and( 
+VALUE( PostalCode )&gt;=98001,VALUE( PostalCode ) &lt;=99403),&quot;WA&quot;, 
+IF(and( 
+VALUE( PostalCode )&gt;=97001,VALUE( PostalCode ) &lt;=97920),&quot;OR&quot;, 
+IF(and( 
+VALUE( PostalCode )&gt;=96701,VALUE( PostalCode ) &lt;=96898),&quot;HI&quot;, 
+IF(and( 
+VALUE( PostalCode )&gt;=90001,VALUE( PostalCode ) &lt;=96162),&quot;CA&quot;, 
+IF(and( 
+VALUE( PostalCode )&gt;=88901,VALUE( PostalCode ) &lt;=89883),&quot;NV&quot;, 
+IF(and( 
+VALUE( PostalCode )&gt;=88510,VALUE( PostalCode ) &lt;=88589),&quot;TX&quot;, 
+IF(and( 
+VALUE( PostalCode )&gt;=87001,VALUE( PostalCode ) &lt;=88441),&quot;NM&quot;, 
+IF(and( 
+VALUE( PostalCode )&gt;=85001,VALUE( PostalCode ) &lt;=86556),&quot;AZ&quot;, 
+IF(and( 
+VALUE( PostalCode )&gt;=84001,VALUE( PostalCode ) &lt;=84784),&quot;UT&quot;, 
+IF(and( 
+VALUE( PostalCode )&gt;=83201,VALUE( PostalCode ) &lt;=83876),&quot;ID&quot;, 
+IF(and( 
+VALUE( PostalCode )&gt;=82001,VALUE( PostalCode ) &lt;=83128),&quot;WY&quot;, 
+IF(and( 
+VALUE( PostalCode )&gt;=80001,VALUE( PostalCode ) &lt;=81658),&quot;CO&quot;, 
+IF(and( 
+VALUE( PostalCode )&gt;=75503,VALUE( PostalCode ) &lt;=79999),&quot;TX&quot;, 
+IF(and( 
+VALUE( PostalCode )&gt;=75502,VALUE( PostalCode ) &lt;=75502),&quot;AR&quot;, 
+IF(and( 
+VALUE( PostalCode )&gt;=75001,VALUE( PostalCode ) &lt;=75501),&quot;TX&quot;, 
+IF(and( 
+VALUE( PostalCode )&gt;=73401,VALUE( PostalCode ) &lt;=74966),&quot;OK&quot;, 
+IF(and( 
+VALUE( PostalCode )&gt;=73301,VALUE( PostalCode ) &lt;=73301),&quot;TX&quot;, 
+IF(and( 
+VALUE( PostalCode )&gt;=73001,VALUE( PostalCode ) &lt;=73199),&quot;OK&quot;, 
+IF(and( 
+VALUE( PostalCode )&gt;=71601,VALUE( PostalCode ) &lt;=72959),&quot;AR&quot;, 
+IF(and( 
+VALUE( PostalCode )&gt;=71234,VALUE( PostalCode ) &lt;=71497),&quot;LA&quot;, 
+IF(and( 
+VALUE( PostalCode )&gt;=71233,VALUE( PostalCode ) &lt;=71233),&quot;MS&quot;, 
+IF(and( 
+VALUE( PostalCode )&gt;=70001,VALUE( PostalCode ) &lt;=71232),&quot;LA&quot;, 
+IF(and( 
+VALUE( PostalCode )&gt;=68122,VALUE( PostalCode ) &lt;=69367),&quot;NE&quot;, 
+IF(and( 
+VALUE( PostalCode )&gt;=68119,VALUE( PostalCode ) &lt;=68120),&quot;IA&quot;, 
+IF(and( 
+VALUE( PostalCode )&gt;=68001,VALUE( PostalCode ) &lt;=68118),&quot;NE&quot;, 
+IF(and( 
+VALUE( PostalCode )&gt;=66002,VALUE( PostalCode ) &lt;=67954),&quot;KS&quot;, 
+IF(and( 
+VALUE( PostalCode )&gt;=63001,VALUE( PostalCode ) &lt;=65899),&quot;MO&quot;, 
+IF(and( 
+VALUE( PostalCode )&gt;=60001,VALUE( PostalCode ) &lt;=62999),&quot;IL&quot;,State)))))))))))))))))))))))))))))</formula>
+        <name>Update State | Zip Starts 6-9</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>true</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Update_State_for_Lead</fullName>
+        <description>Update Address State Field whenever user save state in State picklist</description>
+        <field>State</field>
+        <formula>Text(State__c)</formula>
+        <name>Update State for Lead</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <rules>
+        <fullName>Cannabis Lead</fullName>
+        <actions>
+            <name>Cannabis_Lead_Created</name>
+            <type>Alert</type>
+        </actions>
+        <active>true</active>
+        <criteriaItems>
+            <field>Lead.Vertical__c</field>
+            <operation>equals</operation>
+            <value>Food - Cannabis</value>
+        </criteriaItems>
+        <description>Enail Alert when a Cannabis Lead is created</description>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+    </rules>
+    <rules>
+        <fullName>Copy Email Bounce data to displayable field</fullName>
+        <actions>
+            <name>Copy_Email_Bounce_Date</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <actions>
+            <name>Copy_Email_Bounce_Reason</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <actions>
+            <name>Mark_as_Bounced</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <criteriaItems>
+            <field>Lead.EmailBouncedDate</field>
+            <operation>notEqual</operation>
+        </criteriaItems>
+        <description>When SFDC detects a bounced email, it updates some standard fields.  But those fields are not displayable on the page layout, so we&apos;ll copy them to the custom fields that display</description>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+    <rules>
+        <fullName>Copy Lead Desc%2E to Opp Details Field</fullName>
+        <actions>
+            <name>Copy_Lead_Desc_to_Opp_Details_Field</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <criteriaItems>
+            <field>Lead.Description</field>
+            <operation>notEqual</operation>
+        </criteriaItems>
+        <description>Used to copy details from Lead Description to &quot;Opportunity Details.&quot;  Opp Details maps to a field on the Opp called &quot;Details from Lead.&quot;</description>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+    <rules>
+        <fullName>Copy Marketing Desc to Opp Marketing Details from Lead</fullName>
+        <actions>
+            <name>Copy_Marketing_Desc_to_Opp_Marketing_De</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <criteriaItems>
+            <field>Lead.MarketingDescription__c</field>
+            <operation>notEqual</operation>
+        </criteriaItems>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+    <rules>
+        <fullName>Dead Leads to Queue with delay</fullName>
+        <active>true</active>
+        <criteriaItems>
+            <field>Lead.Status</field>
+            <operation>equals</operation>
+            <value>0_Dead</value>
+        </criteriaItems>
+        <description>This workflow rule is in place to move all leads where Lead Status = 0 Dead</description>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+        <workflowTimeTriggers>
+            <actions>
+                <name>Lead_Owner_to_Queue_When_Dead</name>
+                <type>FieldUpdate</type>
+            </actions>
+            <actions>
+                <name>Set_Zombie_Lead_flag_to_False</name>
+                <type>FieldUpdate</type>
+            </actions>
+            <timeLength>1</timeLength>
+            <workflowTimeTriggerUnit>Hours</workflowTimeTriggerUnit>
+        </workflowTimeTriggers>
+    </rules>
+    <rules>
+        <fullName>Lead Marketing Automation Sync - True</fullName>
+        <actions>
+            <name>Update_Lead_Sync_to_True</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <description>Checkbox will default to false.  This WF will update it to true if it meets the criteria</description>
+        <formula>AND (  Email &lt;&gt; &quot;&quot;, Owner_Country__c &lt;&gt; &quot;CAN&quot;, NOT (CONTAINS( LOWER(Email),&quot;unknown&quot;)),  NOT (CONTAINS( LOWER(Email),&quot;a.b@c.com&quot;)),  NOT (CONTAINS( LOWER(Email),&quot;a@b.com&quot;)),  NOT (CONTAINS( LOWER(Email),&quot;@americancontainers.com&quot;)),  NOT (CONTAINS( LOWER(Email),&quot;@bulkleydunton.com&quot;)),  NOT (CONTAINS( LOWER(Email),&quot;@fake.com&quot;)),  NOT (CONTAINS( LOWER(Email),&quot;@fordis.ca&quot;)),  NOT (CONTAINS( LOWER(Email),&quot;@fordis.com&quot;)),  NOT (CONTAINS( LOWER(Email),&quot;@graphiccommunications.com&quot;)),  NOT (CONTAINS( LOWER(Email),&quot;@mondrianhall.com&quot;)),  NOT (CONTAINS( LOWER(Email),&quot;noemail&quot;)),  NOT (CONTAINS( LOWER(Email),&quot;@saalfeldcorp.com&quot;)),  NOT (CONTAINS( LOWER(Email),&quot;@saalfeldre-d.com&quot;)),  NOT (CONTAINS( LOWER(Email),&quot;@tbd.com&quot;)),  NOT (CONTAINS( LOWER(Email),&quot;@test.com&quot;)),  NOT (CONTAINS( LOWER(Email),&quot;@unisource.ca&quot;)),  NOT (CONTAINS( LOWER(Email),&quot;@unisourcelink.com&quot;)),  NOT (CONTAINS( LOWER(Email),&quot;@unisourceworldwide.com&quot;)),  NOT (CONTAINS( LOWER(Email),&quot;@veritivcorp.com&quot;)),  NOT (CONTAINS( LOWER(Email),&quot;@xpedx.com&quot;)),   EI_Eloqua_Unmarketable_Checkbox_Lead__c = FALSE)</formula>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+    <rules>
+        <fullName>Lead Marketing Automation Sync -False</fullName>
+        <actions>
+            <name>Update_Lead_Sync_to_False</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <description>If the sync field is true and criteria on the lead changes to where it shouldn&apos;t be synced, this workflow will update field to false.</description>
+        <formula>OR (  Email = &quot;&quot;,   Owner_Country__c = &quot;CAN&quot;,  (CONTAINS( LOWER(Email),&quot;unknown&quot;)),   (CONTAINS( LOWER(Email),&quot;a.b@c.com&quot;)),   (CONTAINS( LOWER(Email),&quot;a@b.com&quot;)),   (CONTAINS( LOWER(Email),&quot;@americancontainers.com&quot;)),   (CONTAINS( LOWER(Email),&quot;@bulkleydunton.com&quot;)),   (CONTAINS( LOWER(Email),&quot;@fake.com&quot;)),   (CONTAINS( LOWER(Email),&quot;@fordis.ca&quot;)),   (CONTAINS( LOWER(Email),&quot;@fordis.com&quot;)),   (CONTAINS( LOWER(Email),&quot;@graphiccommunications.com&quot;)),  (CONTAINS( LOWER(Email),&quot;@mondrianhall.com&quot;)),   (CONTAINS( LOWER(Email),&quot;noemail&quot;)),  (CONTAINS( LOWER(Email),&quot;@saalfeldcorp.com&quot;)),   (CONTAINS( LOWER(Email),&quot;@saalfeldre-d.com&quot;)),    (CONTAINS( LOWER(Email),&quot;@tbd.com&quot;)),   (CONTAINS( LOWER(Email),&quot;@test.com&quot;)),   (CONTAINS( LOWER(Email),&quot;@unisource.ca&quot;)),   (CONTAINS( LOWER(Email),&quot;@unisourcelink.com&quot;)),   (CONTAINS( LOWER(Email),&quot;@unisourceworldwide.com&quot;)),  (CONTAINS( LOWER(Email),&quot;@veritivcorp.com&quot;)),  (CONTAINS( LOWER(Email),&quot;@xpedx.com&quot;)) )</formula>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+    <rules>
+        <fullName>Lead from Eloqua</fullName>
+        <actions>
+            <name>Lead_from_Eloqua</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>false</active>
+        <criteriaItems>
+            <field>Lead.CreatedById</field>
+            <operation>equals</operation>
+            <value>Marketo Sync-User</value>
+        </criteriaItems>
+        <description>Triggers a field update to show that a lead is from Eloqua</description>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+    </rules>
+    <rules>
+        <fullName>Owner Change Not Chat or Tech Lead</fullName>
+        <actions>
+            <name>Owner_Change_Not_Chat_or_Tech_Lead</name>
+            <type>Alert</type>
+        </actions>
+        <active>false</active>
+        <description>Send notification to new owner when Lead Owner changes.  Email template is for leads that are not Chat or Tech Lead</description>
+        <formula>AND( ISCHANGED(  OwnerId ), NOT(ISPICKVAL( LeadSource , &quot;Tech Leads&quot;)), NOT(ISPICKVAL( LeadSource , &quot;Chat&quot;)),  NOT(ISPICKVAL( Status , &quot;0_Dead&quot;)) )</formula>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+    <rules>
+        <fullName>Owner Change and Lead Source is Chat</fullName>
+        <actions>
+            <name>Owner_Change_and_Lead_Source_is_Chat</name>
+            <type>Alert</type>
+        </actions>
+        <active>false</active>
+        <description>Send notification to new owner when Lead source is Chat, as it has it&apos;s own email template.</description>
+        <formula>AND( ISCHANGED(  OwnerId ), (ISPICKVAL( LeadSource , &quot;Chat&quot;)),  NOT(ISPICKVAL( Status , &quot;0_Dead&quot;)) )</formula>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+    <rules>
+        <fullName>Service Tech Leads - Email Queue</fullName>
+        <actions>
+            <name>Service_Tech_Leads_Queue_Notification</name>
+            <type>Alert</type>
+        </actions>
+        <active>false</active>
+        <formula>or( ISNEW() , ISCHANGED( OwnerId )) &amp;&amp; BEGINS(OwnerId , &quot;00G&quot;) &amp;&amp;  ISPICKVAL( LeadSource , &quot;Tech Leads&quot;)&amp;&amp;  NOT(ISPICKVAL( Status , &quot;0_Dead&quot;))</formula>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+    <rules>
+        <fullName>Service Tech Leads - Lead Owner Notification</fullName>
+        <actions>
+            <name>Service_Tech_Leads_Lead_Owner_Notification</name>
+            <type>Alert</type>
+        </actions>
+        <active>true</active>
+        <description>Emails the new owner of a Service Tech Lead when owner changes.</description>
+        <formula>or( ISNEW() , ISCHANGED( OwnerId )) &amp;&amp; ISPICKVAL( LeadSource , &quot;Tech Leads&quot;) &amp;&amp;   Equipment__c &lt;&gt; true  &amp;&amp;  NOT(ISPICKVAL( Status , &quot;0_Dead&quot;))</formula>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+    <rules>
+        <fullName>Service Tech Leads -Equipment Notification</fullName>
+        <actions>
+            <name>Service_Tech_Lead_Email_When_Lead_Type_Equipment</name>
+            <type>Alert</type>
+        </actions>
+        <active>false</active>
+        <description>Emails the new owner of a Service Tech Lead when owner changes and Lead Type is Equipment is true.</description>
+        <formula>or( ISNEW() , ISCHANGED( OwnerId )) &amp;&amp; ISPICKVAL( LeadSource , &quot;Tech Leads&quot;) &amp;&amp;   Equipment__c == true  &amp;&amp;  NOT(ISPICKVAL( Status , &quot;0_Dead&quot;))</formula>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+    <rules>
+        <fullName>State is Required</fullName>
+        <actions>
+            <name>Update_State_for_Lead</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <booleanFilter>1 AND 2</booleanFilter>
+        <criteriaItems>
+            <field>Lead.State</field>
+            <operation>equals</operation>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Lead.State__c</field>
+            <operation>notEqual</operation>
+        </criteriaItems>
+        <description>Whenever Address State/Province field is blank then update State field  from custom State__c field</description>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+    </rules>
+    <rules>
+        <fullName>Status From Revisit to New or Working</fullName>
+        <actions>
+            <name>Nullify_Revisit_Date</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <description>When the lead status switches from 3-Revisit to 1 or 2, nullify revisit date</description>
+        <formula>AND( OR( ISPICKVAL(Status,&quot;1_New&quot;), ISPICKVAL(Status,&quot;2_Working&quot;)), ISPICKVAL(PRIORVALUE(Status),&quot;3_Revisit&quot;) )</formula>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+    <rules>
+        <fullName>TSB Assignment - East</fullName>
+        <actions>
+            <name>Set_Owner_as_East</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <actions>
+            <name>Set_as_Assigned</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>false</active>
+        <booleanFilter>1 AND 2 AND (3 or 4)</booleanFilter>
+        <criteriaItems>
+            <field>Lead.TSB__c</field>
+            <operation>equals</operation>
+            <value>Yes</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Lead.Assigned__c</field>
+            <operation>equals</operation>
+            <value>False</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Lead.State</field>
+            <operation>equals</operation>
+            <value>WA,MT,OR,ID,WY,NV,VT,NH,ME,NY,PA,WV,VA,NC,SC,GA,FL,MA,RI,CT,NJ,DE,MD,DC</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Lead.State</field>
+            <operation>equals</operation>
+        </criteriaItems>
+        <description>Assign new Leads to the East Queue if they&apos;re in the following States:
+WA,MT,OR,ID,WY,NV,VT,NH,ME,NY,PA,WV,VA,NC,SC,GA,FL,MA,RI,CT,NJ,DE,MD,DC</description>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+    </rules>
+    <rules>
+        <fullName>TSB Assignment - East Central</fullName>
+        <actions>
+            <name>Set_Owner_as_East_Central_Queue</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <actions>
+            <name>Set_as_Assigned</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>false</active>
+        <criteriaItems>
+            <field>Lead.TSB__c</field>
+            <operation>equals</operation>
+            <value>Yes</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Lead.Assigned__c</field>
+            <operation>equals</operation>
+            <value>False</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Lead.State</field>
+            <operation>equals</operation>
+            <value>CA,WI,MI,MO,IL,IN,OH,KY,AR,TN,LA,MS,AL</value>
+        </criteriaItems>
+        <description>Assign new Leads to the East Central Queue if they&apos;re in the following States:
+CA,WI,MI,MO,IL,IN,OH,KY,AR,TN,LA,MS,AL</description>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+    </rules>
+    <rules>
+        <fullName>TSB Assignment - West Central</fullName>
+        <actions>
+            <name>Set_Owner_to_West_Central_Queue</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <actions>
+            <name>Set_as_Assigned</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>false</active>
+        <criteriaItems>
+            <field>Lead.TSB__c</field>
+            <operation>equals</operation>
+            <value>Yes</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Lead.Assigned__c</field>
+            <operation>equals</operation>
+            <value>False</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Lead.State</field>
+            <operation>equals</operation>
+            <value>ND,MN,SD,IA,NE,UT,CO,KS,AZ,NM,OK,TX</value>
+        </criteriaItems>
+        <description>Assign new Leads to the West Central Queue if they&apos;re in the following States:
+ND,MN,SD,IA,NE,UT,CO,KS,AZ,NM,OK,TX</description>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+    </rules>
+    <rules>
+        <fullName>TSB Lead Awarded</fullName>
+        <actions>
+            <name>Set_Status_to_Recycle</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>false</active>
+        <criteriaItems>
+            <field>Lead.Information_Type__c</field>
+            <operation>equals</operation>
+            <value>Award</value>
+        </criteriaItems>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+    </rules>
+    <rules>
+        <fullName>Unmark Email as Bounced if Email Changes</fullName>
+        <actions>
+            <name>Clear_out_Bounce_Date</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <actions>
+            <name>Clear_out_Bounce_Reason</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <actions>
+            <name>Clear_out_HasBounced</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <description>If the email address is changed, unmark all the bounced data</description>
+        <formula>ISCHANGED( Email )</formula>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+    <rules>
+        <fullName>Update Email Fields on Leads</fullName>
+        <actions>
+            <name>Update_DIR_Email</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <actions>
+            <name>Update_GM_Email</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <actions>
+            <name>Update_RVP_Email</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <actions>
+            <name>Update_SM_Email</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <actions>
+            <name>Update_SVP_Email</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <description>Updates the Email fields on Lead for the sales reporting hierarchy if the Owner is updated</description>
+        <formula>OR(ISNEW(), ISCHANGED( OwnerId ))</formula>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+    <rules>
+        <fullName>Update Last Mod Date Non-Admin</fullName>
+        <actions>
+            <name>Update_Last_Mod_Date_Non_Admin</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <criteriaItems>
+            <field>User.ProfileId</field>
+            <operation>notEqual</operation>
+            <value>System Administrator</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>User.ProfileId</field>
+            <operation>notEqual</operation>
+            <value>API Administrator</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>User.ProfileId</field>
+            <operation>notEqual</operation>
+            <value>Marketo Sync</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>User.ProfileId</field>
+            <operation>notEqual</operation>
+            <value>Premier Support User</value>
+        </criteriaItems>
+        <description>If the lead is updated by non-admin, copy last modified date here.  Used to identify when Sales is updating a lead</description>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+    <tasks>
+        <fullName>Follow_up_lead_marked_for_revisit</fullName>
+        <assignedToType>owner</assignedToType>
+        <description>Lead owner is assigned a task to follow up on a Lead a week prior to the revisit date.</description>
+        <dueDateOffset>-7</dueDateOffset>
+        <notifyAssignee>true</notifyAssignee>
+        <offsetFromField>Lead.Revisit_Date__c</offsetFromField>
+        <priority>Normal</priority>
+        <protected>false</protected>
+        <status>Not Started</status>
+        <subject>Follow up lead marked for revisit</subject>
+    </tasks>
+</Workflow>

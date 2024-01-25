@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Workflow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <alerts>
+        <fullName>Revisit_Task_Reminder_Email</fullName>
+        <description>Revisit Task Reminder Email</description>
+        <protected>false</protected>
+        <recipients>
+            <type>campaignMemberDerivedOwner</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>Workflow_Alert_Emails/New_Revisit_Task</template>
+    </alerts>
+    <alerts>
+        <fullName>Task_Creation</fullName>
+        <description>Task Creation</description>
+        <protected>false</protected>
+        <recipients>
+            <type>owner</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>Workflow_Alert_Emails/Task_Creation</template>
+    </alerts>
+    <fieldUpdates>
+        <fullName>Activity_Type</fullName>
+        <field>ActivityType__c</field>
+        <formula>TEXT(Type)</formula>
+        <name>Activity Type</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Copy_Task_Type_to_Activity</fullName>
+        <field>Task_Type__c</field>
+        <formula>TEXT(Type)</formula>
+        <name>Copy Task Type to Activity</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Task_Subject_to_Subject</fullName>
+        <field>Subject</field>
+        <formula>Subject__c</formula>
+        <name>Task Subject to Subject</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>true</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>UpdateSubjectDT</fullName>
+        <field>Status</field>
+        <literalValue>Completed</literalValue>
+        <name>Update Subject - DT</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <rules>
+        <fullName>Activity Type</fullName>
+        <actions>
+            <name>Activity_Type</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <criteriaItems>
+            <field>Task.Type</field>
+            <operation>notEqual</operation>
+        </criteriaItems>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+    <rules>
+        <fullName>Copy Task Type to Activity</fullName>
+        <actions>
+            <name>Copy_Task_Type_to_Activity</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <criteriaItems>
+            <field>Task.Type</field>
+            <operation>notEqual</operation>
+        </criteriaItems>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+    <rules>
+        <fullName>Demand Tools Error Task</fullName>
+        <actions>
+            <name>UpdateSubjectDT</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <criteriaItems>
+            <field>Task.Subject</field>
+            <operation>equals</operation>
+            <value>DemandTools Error</value>
+        </criteriaItems>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+    </rules>
+    <rules>
+        <fullName>Task Creation Email Notification</fullName>
+        <active>false</active>
+        <criteriaItems>
+            <field>Task.IsReminderSet</field>
+            <operation>equals</operation>
+            <value>True</value>
+        </criteriaItems>
+        <description>Triggers 1 hour after a task is created.</description>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+        <workflowTimeTriggers>
+            <actions>
+                <name>Task_Creation</name>
+                <type>Alert</type>
+            </actions>
+            <offsetFromField>Task.CreatedDate</offsetFromField>
+            <timeLength>1</timeLength>
+            <workflowTimeTriggerUnit>Hours</workflowTimeTriggerUnit>
+        </workflowTimeTriggers>
+    </rules>
+    <rules>
+        <fullName>Task Subject to Subject</fullName>
+        <actions>
+            <name>Task_Subject_to_Subject</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <criteriaItems>
+            <field>Task.Subject__c</field>
+            <operation>notEqual</operation>
+        </criteriaItems>
+        <description>Veritiv requested that the Subject field on the Global Action page layout be a free text instead of a dropdown. To get the information to populate on the task layout, once a task is created, we&apos;ve created this workflow rule.</description>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+    </rules>
+</Workflow>

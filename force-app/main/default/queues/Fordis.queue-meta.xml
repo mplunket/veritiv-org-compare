@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Queue xmlns="http://soap.sforce.com/2006/04/metadata">
+    <doesSendEmailToMembers>false</doesSendEmailToMembers>
+    <name>Fordis</name>
+    <queueMembers>
+        <users>
+            <user>elizabeth.rhoden@veritivcorp.com</user>
+            <user>emily.dressler@veritivcorp.com</user>
+            <user>kelsy.rogers@veritivcorp.com</user>
+            <user>lobrien@fordis.ca.invalid</user>
+        </users>
+    </queueMembers>
+    <queueSobject>
+        <sobjectType>Lead</sobjectType>
+    </queueSobject>
+    <queueSobject>
+        <sobjectType>Lead_Duration__c</sobjectType>
+    </queueSobject>
+</Queue>

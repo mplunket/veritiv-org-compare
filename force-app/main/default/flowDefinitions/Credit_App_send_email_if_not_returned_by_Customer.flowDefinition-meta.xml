@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<FlowDefinition xmlns="http://soap.sforce.com/2006/04/metadata">
+    <activeVersionNumber>3</activeVersionNumber>
+    <description>Time based flow to notify submitter if Customer doesn&apos;t return credit app after 7 days.  Reevaluate every 7 days for 4 weeks.</description>
+    <masterLabel>Account - Credit App - send email if not returned by Customer</masterLabel>
+</FlowDefinition>

@@ -1,0 +1,1311 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Workflow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <alerts>
+        <fullName>Cannabis_Work_Order_Created</fullName>
+        <description>Cannabis Work Order Created</description>
+        <protected>false</protected>
+        <recipients>
+            <recipient>jay.funderburk@veritivcorp.com</recipient>
+            <type>user</type>
+        </recipients>
+        <recipients>
+            <recipient>michael.parks@veritivcorp.com</recipient>
+            <type>user</type>
+        </recipients>
+        <recipients>
+            <recipient>trisha.clifford@veritivcorp.com</recipient>
+            <type>user</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>Workflow_Alert_Emails/Cannabis_Work_Order</template>
+    </alerts>
+    <alerts>
+        <fullName>Equip_Request_WO_is_assigned</fullName>
+        <description>Equip Request WO is assigned</description>
+        <protected>false</protected>
+        <recipients>
+            <type>accountOwner</type>
+        </recipients>
+        <recipients>
+            <field>WO_Submitted_By__c</field>
+            <type>userLookup</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>Workflow_Alert_Emails/Equip_Request_WO_is_assigned</template>
+    </alerts>
+    <alerts>
+        <fullName>Equip_Request_WO_is_created</fullName>
+        <ccEmails>team.proposal@veritivcorp.com.invalid</ccEmails>
+        <description>Equip Request WO is created</description>
+        <protected>false</protected>
+        <recipients>
+            <recipient>admin@unisource.com</recipient>
+            <type>user</type>
+        </recipients>
+        <recipients>
+            <recipient>angie.lasher@veritivcorp.com</recipient>
+            <type>user</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>Workflow_Alert_Emails/Equip_Request_WO_is_created</template>
+    </alerts>
+    <alerts>
+        <fullName>NIR_WO_Rejected_by_Sourcing</fullName>
+        <description>NIR WO Rejected by Sourcing</description>
+        <protected>false</protected>
+        <recipients>
+            <type>creator</type>
+        </recipients>
+        <recipients>
+            <field>PrimarySalesRepEmail__c</field>
+            <type>email</type>
+        </recipients>
+        <recipients>
+            <type>owner</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>Work_Order_NIR_Automated_Email/NIR_WO_Cancelled_by_Sourcing</template>
+    </alerts>
+    <alerts>
+        <fullName>NIR_WO_Request_Created</fullName>
+        <description>NIR WO - Request Created</description>
+        <protected>false</protected>
+        <recipients>
+            <type>creator</type>
+        </recipients>
+        <recipients>
+            <field>PrimarySalesRepEmail__c</field>
+            <type>email</type>
+        </recipients>
+        <senderAddress>salesforce@veritivcorp.com</senderAddress>
+        <senderType>OrgWideEmailAddress</senderType>
+        <template>Work_Order_NIR_Automated_Email/NIR_WO_Request_Created</template>
+    </alerts>
+    <alerts>
+        <fullName>Notifies_Print_Mill_Claim_Owner_that_Carrier_information_has_been_added</fullName>
+        <description>VCP - Notifies Vendor Claim Owner that Carrier information has been added</description>
+        <protected>false</protected>
+        <recipients>
+            <type>owner</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>Vendor_Claim_Workflows_Print/Carrier_Info_has_been_added_to_Vendor_Claim</template>
+    </alerts>
+    <alerts>
+        <fullName>Notify_Sourcing_Corr_Mgrs_when_WO_manually_assigned_to_Corr_Queue</fullName>
+        <description>Notify Sourcing Corr Mgrs when WO manually assigned to Corr Queue</description>
+        <protected>false</protected>
+        <recipients>
+            <recipient>eric.tollefsen@veritivcorp.com</recipient>
+            <type>user</type>
+        </recipients>
+        <recipients>
+            <recipient>steve.hogan@veritivcorp.com</recipient>
+            <type>user</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>Work_Order_Sourcing_Automated/WO_assigned_to_Corrugated_Queue_manually</template>
+    </alerts>
+    <alerts>
+        <fullName>Print_Mill_Claim_Email_to_Sales_Rep_and_Submitter</fullName>
+        <description>VCP - Print Vendor Claim Email to Sales Rep and Submitter</description>
+        <protected>false</protected>
+        <recipients>
+            <field>PrimarySalesRepEmail__c</field>
+            <type>email</type>
+        </recipients>
+        <recipients>
+            <field>WO_Submitted_By__c</field>
+            <type>userLookup</type>
+        </recipients>
+        <senderAddress>printmillclaims@veritivcorp.com</senderAddress>
+        <senderType>OrgWideEmailAddress</senderType>
+        <template>Vendor_Claim_Workflows_Print/Email_Notification_to_Rep_and_Submitter</template>
+    </alerts>
+    <alerts>
+        <fullName>Print_Mill_Claim_Reminder_to_Owner_for_Follow_Up</fullName>
+        <description>VCP - Print Vendor Claim Reminder to Owner for Follow Up</description>
+        <protected>false</protected>
+        <recipients>
+            <type>owner</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>Vendor_Claim_Workflows_Print/Print_Vendor_Claim_Reminder</template>
+    </alerts>
+    <alerts>
+        <fullName>Sourcing_Work_Order_Feedback_Request</fullName>
+        <description>Sourcing Work Order Feedback Request</description>
+        <protected>false</protected>
+        <recipients>
+            <field>PrimarySalesRepEmail__c</field>
+            <type>email</type>
+        </recipients>
+        <senderType>DefaultWorkflowUser</senderType>
+        <template>Surveys/Sourcing_Work_Order_Feedback_Survey_Request_1683808958940</template>
+    </alerts>
+    <alerts>
+        <fullName>VendorClaim_Email_Alert_Work_Order_is_still_in_a_Status_of_New_after_1_Hour</fullName>
+        <description>Vendor Claim Email Alert-Work Order is still in a Status of New after 1 Hour</description>
+        <protected>false</protected>
+        <recipients>
+            <type>owner</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>Vendor_Claim_Workflows_Print/Notification_1_Hr_StillNew</template>
+    </alerts>
+    <alerts>
+        <fullName>WO_Created_Confirmation_to_Creator_PSR</fullName>
+        <description>WO Created Confirmation to Creator &amp; PSR</description>
+        <protected>false</protected>
+        <recipients>
+            <type>creator</type>
+        </recipients>
+        <recipients>
+            <field>PrimarySalesRepEmail__c</field>
+            <type>email</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>Work_Order_Sourcing_Automated/WO_Created_Confirmation_to_Submitter</template>
+    </alerts>
+    <alerts>
+        <fullName>WO_Sourcing_Notify_group_of_MLA_FS</fullName>
+        <description>WO - Sourcing - Notify group of MLA - FS</description>
+        <protected>false</protected>
+        <recipients>
+            <recipient>ashley.forgit@veritivcorp.com</recipient>
+            <type>user</type>
+        </recipients>
+        <recipients>
+            <recipient>ellen.williams@veritivcorp.com</recipient>
+            <type>user</type>
+        </recipients>
+        <recipients>
+            <recipient>krista.emslie@veritivcorp.com</recipient>
+            <type>user</type>
+        </recipients>
+        <recipients>
+            <recipient>michele.bischof@veritivcorp.com</recipient>
+            <type>user</type>
+        </recipients>
+        <recipients>
+            <recipient>tobi.rightnour@veritivcorp.com</recipient>
+            <type>user</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>Work_Order_Sourcing_Automated/WO_Sourcing_Notify_group_of_MLA</template>
+    </alerts>
+    <alerts>
+        <fullName>WO_Sourcing_Notify_group_of_MLA_PKG</fullName>
+        <description>WO - Sourcing - Notify group of MLA - PKG</description>
+        <protected>false</protected>
+        <recipients>
+            <recipient>jennifer.frederick@veritivcorp.com</recipient>
+            <type>user</type>
+        </recipients>
+        <recipients>
+            <recipient>krista.emslie@veritivcorp.com</recipient>
+            <type>user</type>
+        </recipients>
+        <recipients>
+            <recipient>lee.yost@veritivcorp.com</recipient>
+            <type>user</type>
+        </recipients>
+        <recipients>
+            <recipient>tobi.rightnour@veritivcorp.com</recipient>
+            <type>user</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>Work_Order_Sourcing_Automated/WO_Sourcing_Notify_group_of_MLA</template>
+    </alerts>
+    <alerts>
+        <fullName>Work_Order_Email_to_Creator</fullName>
+        <description>Work Order - Email to Creator</description>
+        <protected>false</protected>
+        <recipients>
+            <field>PrimarySalesRepEmail__c</field>
+            <type>email</type>
+        </recipients>
+        <recipients>
+            <field>WO_Submitted_By__c</field>
+            <type>userLookup</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>Field_Sourcing/sys_Confirmation_Email</template>
+    </alerts>
+    <alerts>
+        <fullName>Work_Order_send_email_when_owner_changed</fullName>
+        <description>Work Order - Email to Owner and Creator</description>
+        <protected>false</protected>
+        <recipients>
+            <field>PrimarySalesRepEmail__c</field>
+            <type>email</type>
+        </recipients>
+        <recipients>
+            <type>owner</type>
+        </recipients>
+        <recipients>
+            <field>WO_Submitted_By__c</field>
+            <type>userLookup</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>Field_Sourcing/sys_Confirmation_Email</template>
+    </alerts>
+    <fieldUpdates>
+        <fullName>Assign_Canada_to_Sourcing_Group_field</fullName>
+        <field>Sourcing_Group__c</field>
+        <formula>&quot;Canada&quot;</formula>
+        <name>Assign Canada to Sourcing Group field</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Assign_Facilities_to_Sourcing_Group_fiel</fullName>
+        <field>Sourcing_Group__c</field>
+        <formula>&quot;Facilities&quot;</formula>
+        <name>Assign Facilities to Sourcing Group fiel</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Assign_Intl_Pkg_to_Sourcing_Group_field</fullName>
+        <field>Sourcing_Group__c</field>
+        <formula>&quot;Intl Pkg&quot;</formula>
+        <name>Assign Intl Pkg to Sourcing Group field</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Assign_Pkg_to_Sourcing_Group_field</fullName>
+        <field>Sourcing_Group__c</field>
+        <formula>&quot;Packaging&quot;</formula>
+        <name>Assign Pkg to Sourcing Group field</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Assign_to_Canada_Queue</fullName>
+        <field>OwnerId</field>
+        <lookupValue>Field_Sourcing_Canada</lookupValue>
+        <lookupValueType>Queue</lookupValueType>
+        <name>Assign to Canada Queue</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>LookupValue</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Assign_to_Corrugated_Queue</fullName>
+        <field>OwnerId</field>
+        <lookupValue>Field_Sourcing_Corrugated</lookupValue>
+        <lookupValueType>Queue</lookupValueType>
+        <name>Assign to Corrugated Queue</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>LookupValue</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Assign_to_Equipment_Requests_queue</fullName>
+        <field>OwnerId</field>
+        <lookupValue>Equipment_Requests</lookupValue>
+        <lookupValueType>Queue</lookupValueType>
+        <name>Assign to Equipment Requests queue</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>LookupValue</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Assign_to_Pkg_Queue</fullName>
+        <field>OwnerId</field>
+        <lookupValue>Packaging_Field_Sourcing</lookupValue>
+        <lookupValueType>Queue</lookupValueType>
+        <name>Assign to Pkg Queue</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>LookupValue</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Assign_to_Print_Queue</fullName>
+        <field>OwnerId</field>
+        <lookupValue>Print_Field_Sourcing</lookupValue>
+        <lookupValueType>Queue</lookupValueType>
+        <name>Assign to Print Queue</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>LookupValue</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Change_Intl_Pkg_flag_to_checked</fullName>
+        <field>Int_l_Pkg_Sourcing_Only__c</field>
+        <literalValue>1</literalValue>
+        <name>Change Intl Pkg flag to checked</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Change_Print_Subset_Group_to_Other_Print</fullName>
+        <field>Print_Subset_Group__c</field>
+        <literalValue>Other Print</literalValue>
+        <name>Change Print Subset Group to Other Print</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Change_Print_Subset_Group_to_WFG</fullName>
+        <field>Print_Subset_Group__c</field>
+        <literalValue>Wide Format Graphics</literalValue>
+        <name>Change Print Subset Group to WFG</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Change_Sourcing_Group_to_Corrugated</fullName>
+        <field>Sourcing_Group__c</field>
+        <formula>&quot;Corrugated&quot;</formula>
+        <name>Change Sourcing Group to Corrugated</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Change_Sourcing_Group_to_Facilites</fullName>
+        <field>Sourcing_Group__c</field>
+        <formula>&quot;Facilities&quot;</formula>
+        <name>Change Sourcing Group to Facilites</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Change_Sourcing_Group_to_Intl_Pkg</fullName>
+        <field>Sourcing_Group__c</field>
+        <formula>&quot;Intl Pkg&quot;</formula>
+        <name>Change Sourcing Group to Intl Pkg</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Change_Sourcing_Group_to_Other_Print</fullName>
+        <field>Sourcing_Group__c</field>
+        <formula>&quot;Other Print&quot;</formula>
+        <name>Change Sourcing Group to Other Print</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Change_Sourcing_Group_to_Pkg</fullName>
+        <field>Sourcing_Group__c</field>
+        <formula>&quot;Packaging&quot;</formula>
+        <name>Change Sourcing Group to Pkg</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Change_Sourcing_Group_to_VRP</fullName>
+        <field>Sourcing_Group__c</field>
+        <formula>&quot;Veritiv Retail Packaging&quot;</formula>
+        <name>Change Sourcing Group to VRP</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Change_Sourcing_Group_to_WFG</fullName>
+        <field>Sourcing_Group__c</field>
+        <formula>&quot;Wide Format Graphics&quot;</formula>
+        <name>Change Sourcing Group to WFG</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Change_Status_to_Assigned</fullName>
+        <field>Status</field>
+        <literalValue>Assigned</literalValue>
+        <name>Change Status to Assigned</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Clear_out_Print_Subset_Group</fullName>
+        <field>Print_Subset_Group__c</field>
+        <name>Clear out Print Subset Group</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Move_WFG_to_Sourcing_Group</fullName>
+        <field>Print_Subset_Group__c</field>
+        <literalValue>Wide Format Graphics</literalValue>
+        <name>Move WFG to Print Subset Group</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Move_print_subset_group_to_Sourcing_Grp</fullName>
+        <field>Sourcing_Group__c</field>
+        <formula>TEXT(Print_Subset_Group__c)</formula>
+        <name>Move print subset group to Sourcing Grp</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>PIM_Update_Owner_to_MIF_Queue</fullName>
+        <description>Product Item Maintenance</description>
+        <field>OwnerId</field>
+        <lookupValue>PIM_MIF_Team</lookupValue>
+        <lookupValueType>Queue</lookupValueType>
+        <name>PIM - Update Owner to MIF Queue</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>LookupValue</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>PIM_Update_Owner_to_Multiple_Item_Team</fullName>
+        <description>Product Item Maintenance</description>
+        <field>OwnerId</field>
+        <lookupValue>PIM_Multiple_Item_Team</lookupValue>
+        <lookupValueType>Queue</lookupValueType>
+        <name>PIM - Update Owner to Multiple Item Team</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>LookupValue</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>PIM_Update_Owner_to_Single_Item_Team</fullName>
+        <description>Product Item Maintenance</description>
+        <field>OwnerId</field>
+        <lookupValue>PIM_Single_Item_Team</lookupValue>
+        <lookupValueType>Queue</lookupValueType>
+        <name>PIM - Update Owner to Single Item Team</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>LookupValue</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>PSR_Email_to_PSR_Email</fullName>
+        <description>Populate the primary sales rep email with the PSR&apos;s email</description>
+        <field>PrimarySalesRepEmail__c</field>
+        <formula>Primary_Sales_Rep_2__r.Email__c</formula>
+        <name>PSR.Email to PSR Email</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Set_Owner_to_Field_Sourcing_VRP_queue</fullName>
+        <description>For use with FormAssembly</description>
+        <field>OwnerId</field>
+        <lookupValue>Field_Sourcing_Veritiv_Retail_Packaging</lookupValue>
+        <lookupValueType>Queue</lookupValueType>
+        <name>Set Owner to Field Sourcing VRP queue</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>LookupValue</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Uncheck_Intl_Pkg_Flag</fullName>
+        <field>Int_l_Pkg_Sourcing_Only__c</field>
+        <literalValue>0</literalValue>
+        <name>Uncheck Intl Pkg Flag</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Update_Completed_Date</fullName>
+        <field>Completed_Date__c</field>
+        <formula>Now()</formula>
+        <name>Update Completed Date</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Update_Status_Change_Date</fullName>
+        <field>Status_Changed_Date__c</field>
+        <formula>Now()</formula>
+        <name>Update Status Change Date</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Update_Status_Change_Date2</fullName>
+        <field>Status_Changed_Date__c</field>
+        <formula>Now()</formula>
+        <name>Update Status Change Date2</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>VCP_Update_Owner_to_Jenny_Perez</fullName>
+        <description>Vendor Claims Print - Update owner to Jenny Perez</description>
+        <field>OwnerId</field>
+        <lookupValue>jenny.perez@veritivcorp.com</lookupValue>
+        <lookupValueType>User</lookupValueType>
+        <name>VCP - Update Owner to Jenny Perez</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>LookupValue</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>VCP_Update_VCP_Status_to_NEW</fullName>
+        <field>VCP_Status__c</field>
+        <literalValue>New</literalValue>
+        <name>VCP - Update VCP Status to NEW</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Vendor_Claim_Print_Status_Change_False</fullName>
+        <field>Vendor_Claim_Print_on_Status_Change__c</field>
+        <literalValue>0</literalValue>
+        <name>Vendor Claim Print Status Change False</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Vendor_Claim_for_Print_Status_Change</fullName>
+        <field>Vendor_Claim_Print_on_Status_Change__c</field>
+        <literalValue>1</literalValue>
+        <name>Vendor Claim for Print Status Change</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>true</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>WO_VCP_Update_Owner_to_Jenny_Perez</fullName>
+        <field>OwnerId</field>
+        <lookupValue>jenny.perez@veritivcorp.com</lookupValue>
+        <lookupValueType>User</lookupValueType>
+        <name>WO - VCP - Update Owner to Jenny Perez</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>LookupValue</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Work_Order_Update_Checkbox_to_Default</fullName>
+        <field>Vendor_Claim_Print_on_Status_Change__c</field>
+        <literalValue>0</literalValue>
+        <name>Work Order: Update Checkbox to Default</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>true</reevaluateOnChange>
+    </fieldUpdates>
+    <rules>
+        <fullName>Field Sourcing - Canada - Corrugated</fullName>
+        <actions>
+            <name>Assign_to_Corrugated_Queue</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <booleanFilter>1 AND 2 AND 3 AND (4 OR 5)</booleanFilter>
+        <criteriaItems>
+            <field>WorkOrder.Region__c</field>
+            <operation>equals</operation>
+            <value>Canada</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>WorkOrder.Int_l_Pkg_Sourcing_Only__c</field>
+            <operation>equals</operation>
+            <value>False,True</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>WorkOrder.Sourcing_Group__c</field>
+            <operation>equals</operation>
+            <value>Corrugated</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>WorkOrder.MLA__c</field>
+            <operation>equals</operation>
+            <value>Yes,No</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>WorkOrder.MLA__c</field>
+            <operation>equals</operation>
+        </criteriaItems>
+        <description>CAN - CORRUGATED - FIELD SOURCING CORRUGATED</description>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+    </rules>
+    <rules>
+        <fullName>Field Sourcing - Canada - Veritiv Retail Packaging2</fullName>
+        <actions>
+            <name>Set_Owner_to_Field_Sourcing_VRP_queue</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <booleanFilter>1 AND 2 AND 3 AND (4 OR 5)</booleanFilter>
+        <criteriaItems>
+            <field>WorkOrder.Region__c</field>
+            <operation>equals</operation>
+            <value>Canada</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>WorkOrder.Int_l_Pkg_Sourcing_Only__c</field>
+            <operation>equals</operation>
+            <value>False,True</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>WorkOrder.Sourcing_Group__c</field>
+            <operation>equals</operation>
+            <value>Veritiv Retail Packaging</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>WorkOrder.MLA__c</field>
+            <operation>equals</operation>
+            <value>Yes,No</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>WorkOrder.MLA__c</field>
+            <operation>equals</operation>
+        </criteriaItems>
+        <description>CAN - CORRUGATED - FIELD SOURCING VERITIV RETAIL PACKAGING VRP</description>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+    </rules>
+    <rules>
+        <fullName>Field Sourcing - Canada - assign queue</fullName>
+        <actions>
+            <name>Assign_Canada_to_Sourcing_Group_field</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <actions>
+            <name>Assign_to_Canada_Queue</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <booleanFilter>1 AND 2 AND 3 AND (4 OR 5)</booleanFilter>
+        <criteriaItems>
+            <field>WorkOrder.Region__c</field>
+            <operation>equals</operation>
+            <value>Canada</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>WorkOrder.Int_l_Pkg_Sourcing_Only__c</field>
+            <operation>equals</operation>
+            <value>False</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>WorkOrder.Sourcing_Group__c</field>
+            <operation>notEqual</operation>
+            <value>Corrugated,Veritiv Retail Packaging</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>WorkOrder.MLA__c</field>
+            <operation>equals</operation>
+            <value>Yes,No</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>WorkOrder.MLA__c</field>
+            <operation>equals</operation>
+        </criteriaItems>
+        <description>CAN - OTHER PKG - CAN SOURCING</description>
+        <triggerType>onCreateOnly</triggerType>
+    </rules>
+    <rules>
+        <fullName>Field Sourcing - Cannabis Work Order</fullName>
+        <active>false</active>
+        <criteriaItems>
+            <field>WorkOrder.Prod_Categories__c</field>
+            <operation>equals</operation>
+            <value>CANNABIS PACKAGING</value>
+        </criteriaItems>
+        <description>Email alert when a Cannabis Work Order is created - put on a delay because there are other workflows that update data and we want this to run last</description>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+        <workflowTimeTriggers>
+            <actions>
+                <name>Cannabis_Work_Order_Created</name>
+                <type>Alert</type>
+            </actions>
+            <offsetFromField>WorkOrder.CreatedDate</offsetFromField>
+            <timeLength>1</timeLength>
+            <workflowTimeTriggerUnit>Hours</workflowTimeTriggerUnit>
+        </workflowTimeTriggers>
+    </rules>
+    <rules>
+        <fullName>Field Sourcing - Intl Pkg - assign queue</fullName>
+        <actions>
+            <name>Assign_Intl_Pkg_to_Sourcing_Group_field</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <actions>
+            <name>Assign_to_Pkg_Queue</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <booleanFilter>1 AND (2 OR 3) AND 4</booleanFilter>
+        <criteriaItems>
+            <field>WorkOrder.Int_l_Pkg_Sourcing_Only__c</field>
+            <operation>equals</operation>
+            <value>True</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>WorkOrder.MLA__c</field>
+            <operation>equals</operation>
+            <value>No</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>WorkOrder.MLA__c</field>
+            <operation>equals</operation>
+        </criteriaItems>
+        <criteriaItems>
+            <field>WorkOrder.RecordTypeId</field>
+            <operation>notEqual</operation>
+            <value>Sourcing US - Lightning</value>
+        </criteriaItems>
+        <description>When a Field Sourcing work order is created, assign it to a queue based on Segment, country and Intl Pkg flag
+
+12/2017 -  change this to send Int&apos;l Pkg to the Packaging queue for that team to evaluate first
+10/2021 - excludes &apos;Sourcing US - Lightning&apos;</description>
+        <triggerType>onCreateOnly</triggerType>
+    </rules>
+    <rules>
+        <fullName>Field Sourcing - Print - Canada - Assign to Queue</fullName>
+        <actions>
+            <name>Assign_to_Canada_Queue</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <criteriaItems>
+            <field>WorkOrder.Segment__c</field>
+            <operation>equals</operation>
+            <value>Print</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>WorkOrder.RecordTypeId</field>
+            <operation>equals</operation>
+            <value>Field Sourcing</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>WorkOrder.Region__c</field>
+            <operation>equals</operation>
+            <value>Canada</value>
+        </criteriaItems>
+        <description>Assign all CAN, with Print segment to the CAN FIELD SOURCING QUEUE</description>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+    </rules>
+    <rules>
+        <fullName>Field Sourcing - Print - assign queue</fullName>
+        <actions>
+            <name>Assign_to_Print_Queue</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <criteriaItems>
+            <field>WorkOrder.Sourcing_Group__c</field>
+            <operation>equals</operation>
+            <value>Other Print</value>
+        </criteriaItems>
+        <description>CANADA Assign all Print segments to the proper queue, based on the Sourcing Group field</description>
+        <triggerType>onCreateOnly</triggerType>
+    </rules>
+    <rules>
+        <fullName>Field Sourcing - Print - move Print Src Grp to Source Grp</fullName>
+        <actions>
+            <name>Move_print_subset_group_to_Sourcing_Grp</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <criteriaItems>
+            <field>WorkOrder.Segment__c</field>
+            <operation>equals</operation>
+            <value>Print</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>WorkOrder.Region__c</field>
+            <operation>notEqual</operation>
+            <value>Canada</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>WorkOrder.Int_l_Pkg_Sourcing_Only__c</field>
+            <operation>equals</operation>
+            <value>False</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>WorkOrder.Sourcing_Group__c</field>
+            <operation>equals</operation>
+        </criteriaItems>
+        <criteriaItems>
+            <field>WorkOrder.RecordTypeId</field>
+            <operation>equals</operation>
+            <value>Field Sourcing</value>
+        </criteriaItems>
+        <description>CANADA this will run when a sourcing person enters the work order from SFDC and has to select a print Subset group.  Skip this if the sourcing field is already updated (which indicates the work order would have come in from the Form Assembly form)</description>
+        <triggerType>onCreateOnly</triggerType>
+    </rules>
+    <rules>
+        <fullName>Field Sourcing - Update Int%27l Pkg field</fullName>
+        <actions>
+            <name>Change_Intl_Pkg_flag_to_checked</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <criteriaItems>
+            <field>WorkOrder.Int_l_Packaging_Location__c</field>
+            <operation>notEqual</operation>
+        </criteriaItems>
+        <description>The form does not appear to be updating this flag appropriately in Prod and we&apos;ve been unable to resolve it, so creating this workflow to update the flag when Int&apos;l Pkg data is filled out</description>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+    </rules>
+    <rules>
+        <fullName>Field Sourcing - Updated Queue to Other Print</fullName>
+        <actions>
+            <name>Assign_to_Print_Queue</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <actions>
+            <name>Change_Print_Subset_Group_to_Other_Print</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <actions>
+            <name>Change_Sourcing_Group_to_Other_Print</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <actions>
+            <name>Uncheck_Intl_Pkg_Flag</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <booleanFilter>1 OR 2</booleanFilter>
+        <criteriaItems>
+            <field>WorkOrder.OwnerId</field>
+            <operation>equals</operation>
+            <value>Field Sourcing Print</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>WorkOrder.Print_Subset_Group__c</field>
+            <operation>equals</operation>
+            <value>Other Print</value>
+        </criteriaItems>
+        <description>CANADA</description>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+    </rules>
+    <rules>
+        <fullName>Field Sourcing - Updated Queue to Print D%26E</fullName>
+        <actions>
+            <name>Uncheck_Intl_Pkg_Flag</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <booleanFilter>1 OR 2</booleanFilter>
+        <criteriaItems>
+            <field>WorkOrder.OwnerId</field>
+            <operation>equals</operation>
+            <value>Field Sourcing Print D&amp;E</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>WorkOrder.Print_Subset_Group__c</field>
+            <operation>equals</operation>
+            <value>Print D&amp;E</value>
+        </criteriaItems>
+        <description>CANADA</description>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+    </rules>
+    <rules>
+        <fullName>Field Sourcing - Updated Sourcing Group to Canada</fullName>
+        <actions>
+            <name>Assign_Canada_to_Sourcing_Group_field</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <actions>
+            <name>Clear_out_Print_Subset_Group</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <actions>
+            <name>Uncheck_Intl_Pkg_Flag</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <criteriaItems>
+            <field>WorkOrder.OwnerId</field>
+            <operation>equals</operation>
+            <value>Field Sourcing Canada</value>
+        </criteriaItems>
+        <description>CANADA</description>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+    </rules>
+    <rules>
+        <fullName>Field Sourcing - Work Order - Change status to Assigned</fullName>
+        <actions>
+            <name>Change_Status_to_Assigned</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <actions>
+            <name>Update_Status_Change_Date2</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <formula>AND( ISPICKVAL( Status , &quot;New&quot;),   LEFT(Owner:Queue.Id,3)  &lt;&gt; &quot;00G&quot;,   ISCHANGED( OwnerId ),  OR(RecordType.DeveloperName = &quot;Field_Sourcing&quot;, RecordType.DeveloperName = &quot;Equipment_Requests&quot;, RecordType.DeveloperName = &quot;CLM_Intake&quot;, RecordType.DeveloperName = &quot;RFP_RFQ&quot;,RecordType.DeveloperName = &quot;Sourcing_US_Lightning&quot;))</formula>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+    <rules>
+        <fullName>Field Sourcing - Work Order - Owner is reassigned to Queue</fullName>
+        <actions>
+            <name>Work_Order_Email_to_Creator</name>
+            <type>Alert</type>
+        </actions>
+        <active>false</active>
+        <description>Triggers when a work order owner is edited, the status &lt;&gt; &quot;New&quot;, and the work order is a queue not a user</description>
+        <formula>AND( NOT(ISPICKVAL( Status , &quot;New&quot;)), RecordType.DeveloperName &lt;&gt; &quot;Vendor_Claim&quot;,  RecordType.DeveloperName &lt;&gt; &quot;Product_Item_Maintance&quot;,  ISCHANGED( OwnerId ), (BEGINS(OwnerId,&quot;00G&quot;))  )</formula>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+    <rules>
+        <fullName>Field Sourcing - Work Order - Owner is reassigned to User</fullName>
+        <actions>
+            <name>Work_Order_send_email_when_owner_changed</name>
+            <type>Alert</type>
+        </actions>
+        <active>false</active>
+        <description>Triggers when a work order owner is edited, the status &lt;&gt; &quot;New&quot;, and the work order is an individual user not a queue</description>
+        <formula>AND( NOT(ISPICKVAL( Status , &quot;New&quot;)), RecordType.DeveloperName &lt;&gt; &quot;Pricing&quot;, RecordType.DeveloperName &lt;&gt; &quot;Vendor_Claim&quot;, RecordType.DeveloperName &lt;&gt; &quot;Product_Item_Maintenance&quot;,  ISCHANGED( OwnerId ), NOT(BEGINS(OwnerId,&quot;00G&quot;))   )</formula>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+    <rules>
+        <fullName>Field Sourcing - Work Order - Status Change Date</fullName>
+        <actions>
+            <name>Update_Status_Change_Date</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <formula>ISCHANGED( Status )</formula>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+    <rules>
+        <fullName>Sourcing - Corrugated Work Order - Owner is reassigned to Queue</fullName>
+        <actions>
+            <name>Notify_Sourcing_Corr_Mgrs_when_WO_manually_assigned_to_Corr_Queue</name>
+            <type>Alert</type>
+        </actions>
+        <active>false</active>
+        <description>Triggers when a work order owner is edited and the work order is a queue not a user</description>
+        <formula>AND(  NOT(PRIORVALUE(OwnerId) = &apos;00G5w000008Xh7e&apos;) , RecordType.DeveloperName = &quot;Sourcing_US_Lightning&quot; , ISCHANGED( OwnerId ) , BEGINS(OwnerId,&quot;00G&quot;) , INCLUDES(Prod_Categories__c, &apos;CORRUGATED&apos;)  )</formula>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+    <rules>
+        <fullName>Vendor Claim Print - 15%2C 30%2C 60 Day Reminders after Samples Shipped date</fullName>
+        <active>false</active>
+        <criteriaItems>
+            <field>WorkOrder.VCP_Status__c</field>
+            <operation>notEqual</operation>
+            <value>Cancelled,Complete</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>WorkOrder.RecordTypeId</field>
+            <operation>equals</operation>
+            <value>Vendor Claim</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>WorkOrder.Vendor_Claim_Print_on_Status_Change__c</field>
+            <operation>equals</operation>
+            <value>False</value>
+        </criteriaItems>
+        <description>Time based workflow to trigger 15, 30, &amp; 60 days after the Samples Shipped date has been added.</description>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+        <workflowTimeTriggers>
+            <actions>
+                <name>Print_Mill_Claim_Reminder_to_Owner_for_Follow_Up</name>
+                <type>Alert</type>
+            </actions>
+            <offsetFromField>WorkOrder.Date_Samples_Shipped__c</offsetFromField>
+            <timeLength>15</timeLength>
+            <workflowTimeTriggerUnit>Days</workflowTimeTriggerUnit>
+        </workflowTimeTriggers>
+        <workflowTimeTriggers>
+            <actions>
+                <name>Print_Mill_Claim_Reminder_to_Owner_for_Follow_Up</name>
+                <type>Alert</type>
+            </actions>
+            <offsetFromField>WorkOrder.Date_Samples_Shipped__c</offsetFromField>
+            <timeLength>60</timeLength>
+            <workflowTimeTriggerUnit>Days</workflowTimeTriggerUnit>
+        </workflowTimeTriggers>
+        <workflowTimeTriggers>
+            <actions>
+                <name>Print_Mill_Claim_Reminder_to_Owner_for_Follow_Up</name>
+                <type>Alert</type>
+            </actions>
+            <offsetFromField>WorkOrder.Date_Samples_Shipped__c</offsetFromField>
+            <timeLength>30</timeLength>
+            <workflowTimeTriggerUnit>Days</workflowTimeTriggerUnit>
+        </workflowTimeTriggers>
+    </rules>
+    <rules>
+        <fullName>Vendor Claim Print - 30%2C 60%2C 90 Day Reminder %28Status Change to In Progress%29</fullName>
+        <active>false</active>
+        <criteriaItems>
+            <field>WorkOrder.Vendor_Claim_Print_on_Status_Change__c</field>
+            <operation>equals</operation>
+            <value>True</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>WorkOrder.RecordTypeId</field>
+            <operation>equals</operation>
+            <value>Vendor Claim</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>WorkOrder.VCP_Status__c</field>
+            <operation>notEqual</operation>
+            <value>Cancelled,Complete,Complete - Policy Credit,Complete - Denied</value>
+        </criteriaItems>
+        <description>Reminders based on status change to In Progress after the Work Order VCP Status = Cancelled,Complete,Complete - Policy Credit,Complete - Denied</description>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+        <workflowTimeTriggers>
+            <actions>
+                <name>Print_Mill_Claim_Reminder_to_Owner_for_Follow_Up</name>
+                <type>Alert</type>
+            </actions>
+            <timeLength>30</timeLength>
+            <workflowTimeTriggerUnit>Days</workflowTimeTriggerUnit>
+        </workflowTimeTriggers>
+        <workflowTimeTriggers>
+            <actions>
+                <name>Print_Mill_Claim_Reminder_to_Owner_for_Follow_Up</name>
+                <type>Alert</type>
+            </actions>
+            <timeLength>60</timeLength>
+            <workflowTimeTriggerUnit>Days</workflowTimeTriggerUnit>
+        </workflowTimeTriggers>
+        <workflowTimeTriggers>
+            <actions>
+                <name>Print_Mill_Claim_Reminder_to_Owner_for_Follow_Up</name>
+                <type>Alert</type>
+            </actions>
+            <actions>
+                <name>Work_Order_Update_Checkbox_to_Default</name>
+                <type>FieldUpdate</type>
+            </actions>
+            <timeLength>90</timeLength>
+            <workflowTimeTriggerUnit>Days</workflowTimeTriggerUnit>
+        </workflowTimeTriggers>
+    </rules>
+    <rules>
+        <fullName>Vendor Claim Print - Email Notification to Rep and Submitter</fullName>
+        <actions>
+            <name>Print_Mill_Claim_Email_to_Sales_Rep_and_Submitter</name>
+            <type>Alert</type>
+        </actions>
+        <active>false</active>
+        <criteriaItems>
+            <field>WorkOrder.VCP_Status__c</field>
+            <operation>equals</operation>
+            <value>New</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>WorkOrder.RecordTypeId</field>
+            <operation>equals</operation>
+            <value>Vendor Claim</value>
+        </criteriaItems>
+        <description>Workflow to send email to Sales rep and person submitting the claim</description>
+        <triggerType>onCreateOnly</triggerType>
+    </rules>
+    <rules>
+        <fullName>Vendor Claim Print - Update Checkbox</fullName>
+        <actions>
+            <name>Vendor_Claim_for_Print_Status_Change</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <description>Used to send email alert based on the day a Print Vendor Claim is changed back to Status = In Process after it was Status = Cancelled, Complete, Complete - Policy Credit, or Complete - Denied.</description>
+        <formula>AND(OR( ISPICKVAL(PRIORVALUE(VCP_Status__c), &quot;Complete&quot;), ISPICKVAL(PRIORVALUE(VCP_Status__c), &quot;Cancelled&quot;), ISPICKVAL(PRIORVALUE(VCP_Status__c), &quot;Complete - Policy Credit&quot;), ISPICKVAL(PRIORVALUE(VCP_Status__c), &quot;Complete - Policy Denied&quot;) )&amp;&amp; AND(ISPICKVAL(VCP_Status__c, &quot;In Progress&quot;)) )</formula>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+    <rules>
+        <fullName>Vendor Claim Print - Update VCP Status to NEW</fullName>
+        <actions>
+            <name>VCP_Update_VCP_Status_to_NEW</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <criteriaItems>
+            <field>WorkOrder.RecordTypeId</field>
+            <operation>equals</operation>
+            <value>Vendor Claim</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>WorkOrder.VCP_Status__c</field>
+            <operation>equals</operation>
+        </criteriaItems>
+        <description>VCP team needed different Status selections so created a different field for them to track status - this will update the Status to New when created</description>
+        <triggerType>onCreateOnly</triggerType>
+    </rules>
+    <rules>
+        <fullName>Vendor Claim Print - When Work Order is Complete or Cancelled</fullName>
+        <actions>
+            <name>Vendor_Claim_Print_Status_Change_False</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <criteriaItems>
+            <field>WorkOrder.VCP_Status__c</field>
+            <operation>equals</operation>
+            <value>Cancelled,Complete,Complete - Policy Credit,Complete - Denied</value>
+        </criteriaItems>
+        <description>Updates when VCP Status is Cancelled,Complete,Complete - Policy Credit,Complete - Denied</description>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+    </rules>
+    <rules>
+        <fullName>Vendor Claim Print Work Order New-1 Hour</fullName>
+        <active>false</active>
+        <criteriaItems>
+            <field>WorkOrder.RecordTypeId</field>
+            <operation>equals</operation>
+            <value>Vendor Claim</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>WorkOrder.VCP_Status__c</field>
+            <operation>equals</operation>
+            <value>New</value>
+        </criteriaItems>
+        <description>Vendor Claim Print Work Order was received an hour ago, but is still in a Status of New.</description>
+        <triggerType>onCreateOnly</triggerType>
+        <workflowTimeTriggers>
+            <actions>
+                <name>VendorClaim_Email_Alert_Work_Order_is_still_in_a_Status_of_New_after_1_Hour</name>
+                <type>Alert</type>
+            </actions>
+            <offsetFromField>WorkOrder.CreatedDate</offsetFromField>
+            <timeLength>1</timeLength>
+            <workflowTimeTriggerUnit>Hours</workflowTimeTriggerUnit>
+        </workflowTimeTriggers>
+    </rules>
+    <rules>
+        <fullName>Vendor Claim for Print - 30%2C 60%2C 90 Day Reminder</fullName>
+        <active>false</active>
+        <criteriaItems>
+            <field>WorkOrder.VCP_Status__c</field>
+            <operation>notEqual</operation>
+            <value>Cancelled,Complete</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>WorkOrder.RecordTypeId</field>
+            <operation>equals</operation>
+            <value>Vendor Claim</value>
+        </criteriaItems>
+        <description>Reminder sent to Print Mill Claim Owner to follow up on open Mill Claim</description>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+        <workflowTimeTriggers>
+            <actions>
+                <name>Print_Mill_Claim_Reminder_to_Owner_for_Follow_Up</name>
+                <type>Alert</type>
+            </actions>
+            <offsetFromField>WorkOrder.Date_Samples_Shipped__c</offsetFromField>
+            <timeLength>60</timeLength>
+            <workflowTimeTriggerUnit>Days</workflowTimeTriggerUnit>
+        </workflowTimeTriggers>
+        <workflowTimeTriggers>
+            <actions>
+                <name>Print_Mill_Claim_Reminder_to_Owner_for_Follow_Up</name>
+                <type>Alert</type>
+            </actions>
+            <offsetFromField>WorkOrder.Date_Samples_Shipped__c</offsetFromField>
+            <timeLength>30</timeLength>
+            <workflowTimeTriggerUnit>Days</workflowTimeTriggerUnit>
+        </workflowTimeTriggers>
+        <workflowTimeTriggers>
+            <actions>
+                <name>Print_Mill_Claim_Reminder_to_Owner_for_Follow_Up</name>
+                <type>Alert</type>
+            </actions>
+            <offsetFromField>WorkOrder.Date_Samples_Shipped__c</offsetFromField>
+            <timeLength>90</timeLength>
+            <workflowTimeTriggerUnit>Days</workflowTimeTriggerUnit>
+        </workflowTimeTriggers>
+    </rules>
+    <rules>
+        <fullName>Vendor Claim for Print - Carrier Info has been added</fullName>
+        <actions>
+            <name>Notifies_Print_Mill_Claim_Owner_that_Carrier_information_has_been_added</name>
+            <type>Alert</type>
+        </actions>
+        <active>false</active>
+        <criteriaItems>
+            <field>WorkOrder.RecordTypeId</field>
+            <operation>equals</operation>
+            <value>Vendor Claim</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>WorkOrder.Carrier_Used_to_Submit_Samples__c</field>
+            <operation>notEqual</operation>
+        </criteriaItems>
+        <description>Will notify the Vendor Claim Coordinator that owns the Vendor Claim that the shipping carrier information has been added to the Vendor Claim Work Order</description>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+    </rules>
+    <rules>
+        <fullName>Vendor Claims Print - Update Work Order Owner</fullName>
+        <actions>
+            <name>VCP_Update_Owner_to_Jenny_Perez</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <criteriaItems>
+            <field>WorkOrder.RecordTypeId</field>
+            <operation>equals</operation>
+            <value>Vendor Claim</value>
+        </criteriaItems>
+        <triggerType>onCreateOnly</triggerType>
+    </rules>
+    <rules>
+        <fullName>zzField Sourcing - Work Order - Completed</fullName>
+        <actions>
+            <name>Update_Completed_Date</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>false</active>
+        <description>Update Completed Date</description>
+        <formula>OR(  ISPICKVAL(Status,&quot;Complete&quot;),  ISPICKVAL(Status,&quot;Canceled&quot;),    ISCHANGED( Status ) )</formula>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+</Workflow>

@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>49.0</apiVersion>
+    <decisions>
+        <description>Decision to either proceed and update the case or end the flow based upon the success of the fast lookup</description>
+        <name>Case_Found_Owned_by_Chatter_Poster</name>
+        <label>Case Found, Owned by Chatter Poster?</label>
+        <locationX>319</locationX>
+        <locationY>269</locationY>
+        <defaultConnectorLabel>[Default Outcome]</defaultConnectorLabel>
+        <rules>
+            <name>Case_Found</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>socvClosedCase</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Update_the_Last_Activity_Date</targetReference>
+            </connector>
+            <label>Case Found</label>
+        </rules>
+    </decisions>
+    <description>Flow that is launched from a process builder to stamp the last activity date field on a case if the case&apos;s owner posts to chatter on the case</description>
+    <interviewLabel>Console: Case Post Updates Time {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>Console: Case Post Updates Time</label>
+    <processType>AutoLaunchedFlow</processType>
+    <recordLookups>
+        <description>Finds the case related to the chatter post if and only if the chatter poster is the case owner.</description>
+        <name>Find_Case_Related_to_Chatter_Post</name>
+        <label>Find Case Related to Chatter Post</label>
+        <locationX>319</locationX>
+        <locationY>128</locationY>
+        <assignNullValuesIfNoRecordsFound>true</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>Case_Found_Owned_by_Chatter_Poster</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>Id</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>varParentID</elementReference>
+            </value>
+        </filters>
+        <filters>
+            <field>OwnerId</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>varCreatorID</elementReference>
+            </value>
+        </filters>
+        <object>Case</object>
+        <outputReference>socvClosedCase</outputReference>
+        <queriedFields>Id</queriedFields>
+    </recordLookups>
+    <recordUpdates>
+        <description>Stamps Case.LastActivityDate with the CreatedDate of the Chatter Post</description>
+        <name>Update_the_Last_Activity_Date</name>
+        <label>Update the Last Activity Date</label>
+        <locationX>318</locationX>
+        <locationY>399</locationY>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>Id</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>varParentID</elementReference>
+            </value>
+        </filters>
+        <inputAssignments>
+            <field>Last_Activity_Date__c</field>
+            <value>
+                <elementReference>varCreated</elementReference>
+            </value>
+        </inputAssignments>
+        <object>Case</object>
+    </recordUpdates>
+    <startElementReference>Find_Case_Related_to_Chatter_Post</startElementReference>
+    <status>Obsolete</status>
+    <variables>
+        <description>the socv for the closed case in the fast lookup</description>
+        <name>socvClosedCase</name>
+        <dataType>SObject</dataType>
+        <isCollection>true</isCollection>
+        <isInput>true</isInput>
+        <isOutput>false</isOutput>
+        <objectType>Case</objectType>
+    </variables>
+    <variables>
+        <name>varCreated</name>
+        <dataType>DateTime</dataType>
+        <isCollection>false</isCollection>
+        <isInput>true</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+    <variables>
+        <name>varCreatorID</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>true</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+    <variables>
+        <name>varParentID</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>true</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+    <variables>
+        <description>Default value</description>
+        <name>varReason</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+        <value>
+            <stringValue>Re-opened by Inbound Call</stringValue>
+        </value>
+    </variables>
+    <variables>
+        <description>Should be a case ID</description>
+        <name>varW</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>true</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+</Flow>

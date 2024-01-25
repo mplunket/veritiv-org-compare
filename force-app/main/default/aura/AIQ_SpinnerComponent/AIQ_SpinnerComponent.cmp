@@ -1,0 +1,16 @@
+<aura:component description="AIQ_SpinnerComponent">
+    <aura:attribute name="loadingInProgress" type="Boolean"/>
+    <aura:html tag="style">
+        .slds-modal__content { overflow: initial !important; height: 0 !important; wight: 0!important;
+        background-color: transparent !important}
+    </aura:html>
+
+    <aura:if isTrue="{!v.loadingInProgress}">
+        <div class="spinner_position">
+            <lightning:spinner
+                    variant="brand"
+                    size="large"
+                    alternativeText="Loading data from server."/>
+        </div>
+    </aura:if>
+</aura:component>

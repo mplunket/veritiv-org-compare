@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Workflow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fieldUpdates>
+        <fullName>Error_Message_Translate_Error_Code</fullName>
+        <description>Stamps the error log with the error message based on the error code</description>
+        <field>Error_Message__c</field>
+        <formula>IF( Error_Code__c =&quot;1&quot;, 
+&quot;No match found on AccountSysDivBillTo. Opp created on default account; Ship To blank; WFR set the PSR to a null value and the Owner to the default owner.&quot;, 
+ IF( Error_Code__c =&quot;2&quot;, 
+&quot;No matching ShipTo for the BillTo. Opp created with a blank Ship To.&quot;,
+ IF( Error_Code__c =&quot;3&quot;, 
+&quot;Multiple matching ShipTos with the same Ship To Code for the BillTo. Opp created with the first found Ship To.&quot;, 
+ IF( Error_Code__c =&quot;4&quot;, 
+&quot;No custom object mapping record found for this product category #. Reference this list view: https://cs3.salesforce.com/a2w?fcf=00BQ0000001TOTv ; if none exists, a new record will need to be created with the correct ProductGroupingKey relating to Zilliant. Before this opportunity is set to won, confirm the VIQ Return Products has all ProductGroupingKeys for this recovery/growth insight.&quot;,
+ IF( Error_Code__c =&quot;5&quot;, 
+&quot;No active user found with the NetworkId. Opp created to be owned by default user.&quot;,
+ IF( Error_Code__c =&quot;6&quot;, 
+&quot;Multiple matching BillTos found. Opp created with the first found BillTo.&quot;,
+ IF( Error_Code__c =&quot;7&quot;, 
+&quot;No matching PSR found for this NetworkId. Opp created on with a blank PSR.&quot;,
+ IF( Error_Code__c =&quot;8&quot;, 
+&quot;Multiple PSRs found for this NetworkId. Opp created on with a blank PSR.&quot;,
+ IF( Error_Code__c =&quot;9&quot;, 
+&quot;Multiple active users found for this NetworkId. Opp created to be owned by default user.&quot;,
+ IF( Error_Code__c =&quot;10&quot;, 
+&quot;Duplicate insight. Already created. You may dismiss this message.&quot;,
+&quot;&quot;
+))))))))))</formula>
+        <name>Error Message Translate Error Code</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <rules>
+        <fullName>Error Code %3C%3E 99</fullName>
+        <actions>
+            <name>Error_Message_Translate_Error_Code</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <criteriaItems>
+            <field>Error_Log__c.Error_Code__c</field>
+            <operation>notEqual</operation>
+            <value>99</value>
+        </criteriaItems>
+        <description>Whenever an error log is created and the code is not 99. Error Logs are created progressively through the batch functionality and error codes are assigned for specific scenarios. When the error code is 99, SFDC/Zilliant provides the error message.</description>
+        <triggerType>onCreateOnly</triggerType>
+    </rules>
+</Workflow>

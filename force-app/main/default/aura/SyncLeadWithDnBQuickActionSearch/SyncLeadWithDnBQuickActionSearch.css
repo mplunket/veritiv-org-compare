@@ -1,0 +1,30 @@
+.THIS .help-icon {
+    float: left;
+}
+
+.THIS .help-label {
+    float: left;
+}
+
+.THIS .help-text {
+    bottom: 30px;
+    left: -15px;
+    width: 400px;
+}
+
+.THIS .custom-field-label {
+    height: 20px;
+}
+
+.THIS .custom-lightning-input {
+    width: 100%;
+    margin-bottom: 10px;
+}
+
+.THIS .custom-lightning-input .slds-form-element__control {
+    width: 100%;
+}
+
+.THIS .custom-lightning-input abbr {
+    display: none;
+}

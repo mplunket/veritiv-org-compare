@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Queue xmlns="http://soap.sforce.com/2006/04/metadata">
+    <doesSendEmailToMembers>false</doesSendEmailToMembers>
+    <email>michelle.anderson@veritivcorp.com</email>
+    <name>Pilot Queue</name>
+    <queueMembers>
+        <roles>
+            <role>CS_CSC_Operations_Mgmt</role>
+        </roles>
+        <users>
+            <user>angie.lasher@veritivcorp.com</user>
+            <user>christina.harris@veritivcorp.com</user>
+            <user>ma@veritivcorp.com</user>
+            <user>synthia.beauvais@veritivcorp.com</user>
+        </users>
+    </queueMembers>
+    <queueSobject>
+        <sobjectType>Case</sobjectType>
+    </queueSobject>
+    <queueSobject>
+        <sobjectType>Fax_To_Case_Queue_Assignment__c</sobjectType>
+    </queueSobject>
+</Queue>

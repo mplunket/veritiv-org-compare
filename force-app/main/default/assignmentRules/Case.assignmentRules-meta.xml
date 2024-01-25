@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<AssignmentRules xmlns="http://soap.sforce.com/2006/04/metadata">
+    <assignmentRule>
+        <fullName>Fax To Case Updated</fullName>
+        <active>true</active>
+        <ruleEntry>
+            <assignedTo>Default_Case_Queue</assignedTo>
+            <assignedToType>Queue</assignedToType>
+            <formula>AND(
+ISNEW(),
+CreatedById = &quot;005700000016aec&quot;,
+Is_Spam__c = FALSE,
+(OR(
+RecordType.DeveloperName = &quot;Console_Case&quot;,
+RecordType.DeveloperName = &quot;Console_CS_Lightning&quot;)))</formula>
+        </ruleEntry>
+        <ruleEntry>
+            <criteriaItems>
+                <field>Case.Owner_Assigned_by_Code__c</field>
+                <operation>equals</operation>
+                <value>True</value>
+            </criteriaItems>
+        </ruleEntry>
+        <ruleEntry>
+            <assignedTo>DL_UWPEPUSSALL</assignedTo>
+            <assignedToType>Queue</assignedToType>
+            <formula>AND(
+OR(
+CONTAINS(Email_Origin__c , &quot;UGSDCOMMUNICATIONS&quot;),
+CONTAINS(Email_Origin__c , &quot;ITINCIDENTNOTIFICATIONS&quot;),
+CONTAINS(Email_Origin__c , &quot;GRP_UGSD.COMMUNICATIONS&quot;),
+CONTAINS(Email_Origin__c , &quot;DL_UWPEPUSSALL&quot;),
+CONTAINS(Email_Origin__c , &quot;ITINCIDENTNOTIFICATIONS&quot;), 
+CONTAINS(Email_Origin__c , &quot;PCLAN&quot;)),
+RecordTypeId = &quot;01270000000DyVG&quot;
+)</formula>
+        </ruleEntry>
+    </assignmentRule>
+</AssignmentRules>

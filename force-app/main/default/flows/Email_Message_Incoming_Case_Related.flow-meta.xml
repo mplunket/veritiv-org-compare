@@ -1,0 +1,177 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>54.0</apiVersion>
+    <decisions>
+        <description>Determines if the Case was just created with this Email Message via Email-to-Case, if the Case already existed and is Open, or if the Case already existed and is Closed</description>
+        <name>dec_Case_CreatedViaE2C</name>
+        <label>Email Received</label>
+        <locationX>182</locationX>
+        <locationY>335</locationY>
+        <defaultConnector>
+            <targetReference>udt_Related_Case_ExistingCaseClosed</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Existing Case OR Created (not E2C)</defaultConnectorLabel>
+        <rules>
+            <name>ocm_EmailReceived_CaseCreate</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.CreatedDate</leftValueReference>
+                <operator>GreaterThanOrEqualTo</operator>
+                <rightValue>
+                    <elementReference>$Record.Parent.CreatedDate</elementReference>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.CreatedDate</leftValueReference>
+                <operator>LessThanOrEqualTo</operator>
+                <rightValue>
+                    <elementReference>fx_Case_CreatedDatePlus1</elementReference>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Parent.SuppliedEmail</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>udt_Related_Case_CaseCreate</targetReference>
+            </connector>
+            <label>Case Created (E2C)</label>
+        </rules>
+    </decisions>
+    <description>Inbound Email Message automation</description>
+    <environments>Default</environments>
+    <formulas>
+        <description>Adds 1 minute to the Parent Case CreatedDate to be used to determine if the Parent Case is being created via Email-to-Case initially with this email</description>
+        <name>fx_Case_CreatedDatePlus1</name>
+        <dataType>DateTime</dataType>
+        <expression>{!$Record.Parent.CreatedDate}+ (1/1440)</expression>
+    </formulas>
+    <formulas>
+        <description>Adds 1 to the current value of the &apos;Email Counter&apos; field on the related Case</description>
+        <name>fx_EmailCounter</name>
+        <dataType>Number</dataType>
+        <expression>{!$Record.Parent.Email_Counter__c} +1</expression>
+        <scale>0</scale>
+    </formulas>
+    <formulas>
+        <description>Gets the current email count from the &apos;New Email Flag&apos; field on the related parent Case record and adds 1. This field was originally created to only track new emails on closed Cases, so updating this field will retain that pre-existing functionality.</description>
+        <name>fx_NewEmailFlag</name>
+        <dataType>Number</dataType>
+        <expression>{!$Record.Parent.New_Email_Flag__c}+1</expression>
+        <scale>0</scale>
+    </formulas>
+    <interviewLabel>Email Message - Incoming Case Related {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>Email Message - Incoming Case Related</label>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>CanvasMode</name>
+        <value>
+            <stringValue>AUTO_LAYOUT_CANVAS</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>OriginBuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>AutoLaunchedFlow</processType>
+    <recordUpdates>
+        <name>udt_Related_Case_CaseCreate</name>
+        <label>Update Related Case</label>
+        <locationX>50</locationX>
+        <locationY>455</locationY>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>Id</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>$Record.ParentId</elementReference>
+            </value>
+        </filters>
+        <inputAssignments>
+            <field>Email_Counter__c</field>
+            <value>
+                <elementReference>fx_EmailCounter</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Last_Inbound_Email_Time__c</field>
+            <value>
+                <elementReference>$Record.CreatedDate</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>New_Email_Flag__c</field>
+            <value>
+                <elementReference>fx_NewEmailFlag</elementReference>
+            </value>
+        </inputAssignments>
+        <object>Case</object>
+    </recordUpdates>
+    <recordUpdates>
+        <name>udt_Related_Case_ExistingCaseClosed</name>
+        <label>Update Related Case</label>
+        <locationX>314</locationX>
+        <locationY>455</locationY>
+        <inputAssignments>
+            <field>Email_Counter__c</field>
+            <value>
+                <elementReference>fx_EmailCounter</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Last_Inbound_Email_Time__c</field>
+            <value>
+                <elementReference>$Record.CreatedDate</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>New_Email_Flag__c</field>
+            <value>
+                <elementReference>fx_NewEmailFlag</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Unread_New_Email_on_Closed_Case__c</field>
+            <value>
+                <booleanValue>true</booleanValue>
+            </value>
+        </inputAssignments>
+        <inputReference>$Record.Parent</inputReference>
+    </recordUpdates>
+    <start>
+        <locationX>56</locationX>
+        <locationY>0</locationY>
+        <connector>
+            <targetReference>dec_Case_CreatedViaE2C</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>ParentId</field>
+            <operator>IsNull</operator>
+            <value>
+                <booleanValue>false</booleanValue>
+            </value>
+        </filters>
+        <filters>
+            <field>Incoming</field>
+            <operator>EqualTo</operator>
+            <value>
+                <booleanValue>true</booleanValue>
+            </value>
+        </filters>
+        <object>EmailMessage</object>
+        <recordTriggerType>Create</recordTriggerType>
+        <triggerType>RecordAfterSave</triggerType>
+    </start>
+    <status>Active</status>
+</Flow>

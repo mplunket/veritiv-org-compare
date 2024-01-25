@@ -1,0 +1,320 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>49.0</apiVersion>
+    <decisions>
+        <name>Active_Corrugated</name>
+        <label>Active/Corrugated?</label>
+        <locationX>257</locationX>
+        <locationY>458</locationY>
+        <defaultConnectorLabel>[Default Outcome]</defaultConnectorLabel>
+        <rules>
+            <name>Active_Corrugated_Specialist_Corrugated</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>varWorkOrderProdCats</leftValueReference>
+                <operator>Contains</operator>
+                <rightValue>
+                    <stringValue>Corrugated</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>varServicingDivRecordId</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Update_WO_with_Owner_and_Division</targetReference>
+            </connector>
+            <label>SD Found; Corrugated</label>
+        </rules>
+        <rules>
+            <name>Corrugated_No_Division_Found</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>varWorkOrderProdCats</leftValueReference>
+                <operator>Contains</operator>
+                <rightValue>
+                    <stringValue>Corrugated</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>varServicingDivRecordId</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Update_WO_with_Owner</targetReference>
+            </connector>
+            <label>No SD Found; Corrugated</label>
+        </rules>
+        <rules>
+            <name>SD_Found_No_Corrugated</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>varServicingDivRecordId</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>varWorkOrderProdCats</leftValueReference>
+                <operator>NotEqualTo</operator>
+                <rightValue>
+                    <stringValue>Corrugated</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Update_WO_with_Division</targetReference>
+            </connector>
+            <label>SD Found; No Corrugated</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>Servicing_Division_Found</name>
+        <label>Servicing Division Found?</label>
+        <locationX>260</locationX>
+        <locationY>213</locationY>
+        <defaultConnector>
+            <targetReference>Active_Corrugated</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>[Default Outcome]</defaultConnectorLabel>
+        <rules>
+            <name>D_Servicing_Division_Found</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>varServicingDivRecordId</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Active_User_Check</targetReference>
+            </connector>
+            <label>Servicing Division Found</label>
+        </rules>
+    </decisions>
+    <description>For work orders submitted by the work order formassembly form. If prod cat = Corrugated, it will populate the owner and the servicing division. If not, it will populate the servicing division.
+
+Edit 7/19 to fix decision logic
+Edit 7/19 to remove Courrgated Specialist null check
+Edit 7/20 to replace default outcome with decision path
+Edit 10/31 to set the WO to assigned</description>
+    <formulas>
+        <description>Looks at the Custom Label Default_Corrugated_Owner. This is who owns the corrugated work orders if no active user is found or not servicing division is found in the respective lookups.</description>
+        <name>fDefaultCorrugatedOwner</name>
+        <dataType>String</dataType>
+        <expression>{!$Label.Default_Corrugated_Owner}</expression>
+    </formulas>
+    <interviewLabel>WO:Servicing Division Lookup {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>WO:Servicing Division LookupV2</label>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>AutoLaunchedFlow</processType>
+    <recordLookups>
+        <description>Looks-up active users with IDs matching the Corrugated Specialist lookup field. If none are found, it will default to the variable&apos;s default value.</description>
+        <name>Active_User_Check</name>
+        <label>Active User Check</label>
+        <locationX>102</locationX>
+        <locationY>339</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>Active_Corrugated</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>Id</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>varCorrugatedSpecUserId</elementReference>
+            </value>
+        </filters>
+        <filters>
+            <field>IsActive</field>
+            <operator>EqualTo</operator>
+            <value>
+                <booleanValue>true</booleanValue>
+            </value>
+        </filters>
+        <object>User</object>
+        <outputAssignments>
+            <assignToReference>varActiveFutureOwnerId</assignToReference>
+            <field>Id</field>
+        </outputAssignments>
+    </recordLookups>
+    <recordLookups>
+        <description>Start of the flow. Looks up the servicing division where the Name equals the field value of Division Lookup Helper passed through from FormAssembly.</description>
+        <name>Find_the_Matching_Servicing_Division</name>
+        <label>Find the Matching Servicing Division</label>
+        <locationX>265</locationX>
+        <locationY>110</locationY>
+        <assignNullValuesIfNoRecordsFound>true</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>Servicing_Division_Found</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>Name</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>varDivisionNameText</elementReference>
+            </value>
+        </filters>
+        <object>Servicing_Division__c</object>
+        <outputAssignments>
+            <assignToReference>varCorrugatedSpecUserId</assignToReference>
+            <field>Corrugated_Specialist__c</field>
+        </outputAssignments>
+        <outputAssignments>
+            <assignToReference>varServicingDivRecordId</assignToReference>
+            <field>Id</field>
+        </outputAssignments>
+    </recordLookups>
+    <recordUpdates>
+        <description>Updates the work order with the division</description>
+        <name>Update_WO_with_Division</name>
+        <label>Update WO with  Division</label>
+        <locationX>489</locationX>
+        <locationY>589</locationY>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>Id</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>varWorkOrderId</elementReference>
+            </value>
+        </filters>
+        <inputAssignments>
+            <field>Corrugated_Servicing_Division__c</field>
+            <value>
+                <elementReference>varServicingDivRecordId</elementReference>
+            </value>
+        </inputAssignments>
+        <object>WorkOrder</object>
+    </recordUpdates>
+    <recordUpdates>
+        <description>Updates the work order with the correct owner.</description>
+        <name>Update_WO_with_Owner</name>
+        <label>Update WO with Owner</label>
+        <locationX>252</locationX>
+        <locationY>665</locationY>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>Id</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>varWorkOrderId</elementReference>
+            </value>
+        </filters>
+        <filters>
+            <field>MLA__c</field>
+            <operator>NotEqualTo</operator>
+            <value>
+                <stringValue>Yes</stringValue>
+            </value>
+        </filters>
+        <inputAssignments>
+            <field>OwnerId</field>
+            <value>
+                <elementReference>varActiveFutureOwnerId</elementReference>
+            </value>
+        </inputAssignments>
+        <object>WorkOrder</object>
+    </recordUpdates>
+    <recordUpdates>
+        <description>Updates the work order with the division that was found and with the correct owner.</description>
+        <name>Update_WO_with_Owner_and_Division</name>
+        <label>Update WO with Owner and Division</label>
+        <locationX>27</locationX>
+        <locationY>581</locationY>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>Id</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>varWorkOrderId</elementReference>
+            </value>
+        </filters>
+        <inputAssignments>
+            <field>Corrugated_Servicing_Division__c</field>
+            <value>
+                <elementReference>varServicingDivRecordId</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>OwnerId</field>
+            <value>
+                <elementReference>varActiveFutureOwnerId</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Status</field>
+            <value>
+                <stringValue>Assigned</stringValue>
+            </value>
+        </inputAssignments>
+        <object>WorkOrder</object>
+    </recordUpdates>
+    <startElementReference>Find_the_Matching_Servicing_Division</startElementReference>
+    <status>Active</status>
+    <variables>
+        <description>Id of the corrugated specialist user. Will be the same value as the lookup field that is returned in the lookup, but only populated if the user is active. Stores a default value.</description>
+        <name>varActiveFutureOwnerId</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+        <value>
+            <elementReference>fDefaultCorrugatedOwner</elementReference>
+        </value>
+    </variables>
+    <variables>
+        <description>Populated with the User Id of the user in the lookup value of the Corrugated Specialist field on the matching servicing division performed in the initial record lookup.</description>
+        <name>varCorrugatedSpecUserId</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+    <variables>
+        <description>The name of the division, as entered on the formassembly picklist and mapped to the created work order on field Division Lookup Helper. This variable is supplied from a work order in the process builder.</description>
+        <name>varDivisionNameText</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>true</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+    <variables>
+        <description>ID of the matching servicing division found on the name match performed in the initial record lookup</description>
+        <name>varServicingDivRecordId</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+    <variables>
+        <description>ID of the work order that started this flow</description>
+        <name>varWorkOrderId</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>true</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+    <variables>
+        <description>Product categories of the work order</description>
+        <name>varWorkOrderProdCats</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>true</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+</Flow>

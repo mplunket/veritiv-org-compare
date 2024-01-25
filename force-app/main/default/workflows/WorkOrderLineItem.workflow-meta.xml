@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Workflow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <alerts>
+        <fullName>NIR_Supply_Planner_WOLI_Created</fullName>
+        <description>NIR - Supply Planner WOLI Created</description>
+        <protected>false</protected>
+        <recipients>
+            <field>Owner__c</field>
+            <type>userLookup</type>
+        </recipients>
+        <senderAddress>salesforce@veritivcorp.com</senderAddress>
+        <senderType>OrgWideEmailAddress</senderType>
+        <template>Work_Order_NIR_Automated_Email/NIR_Supply_Planner_WOLI_Created</template>
+    </alerts>
+    <alerts>
+        <fullName>NIR_WOLI_Canceled_by_PIM</fullName>
+        <description>NIR WOLI Canceled by PIM</description>
+        <protected>false</protected>
+        <recipients>
+            <type>creator</type>
+        </recipients>
+        <recipients>
+            <field>PrimarySalesRep_Email__c</field>
+            <type>email</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>Work_Order_NIR_Automated_Email/NIR_WO_and_WOLI_Cancelled_by_PIM</template>
+    </alerts>
+</Workflow>

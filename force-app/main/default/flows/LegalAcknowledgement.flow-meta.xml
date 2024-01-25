@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>49.0</apiVersion>
+    <interviewLabel>LegalAcknowledgement {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>LegalAcknowledgement</label>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>Flow</processType>
+    <screens>
+        <name>Authentication</name>
+        <label>Authentication</label>
+        <locationX>374</locationX>
+        <locationY>78</locationY>
+        <allowBack>true</allowBack>
+        <allowFinish>true</allowFinish>
+        <allowPause>true</allowPause>
+        <fields>
+            <name>LegalAcknowledgementtext</name>
+            <fieldText>This is a private system and is to be used only by authorized users for purposes approved by management. Information in this system is considered confidential and proprietary Veritiv information. Individuals using this system without authority or who engage in activities in violation of company policy or applicable law are subject in violation of including termination and potential prosecution.</fieldText>
+            <fieldType>DisplayText</fieldType>
+        </fields>
+        <fields>
+            <name>Accept1</name>
+            <dataType>Boolean</dataType>
+            <defaultValue>
+                <elementReference>Accept1</elementReference>
+            </defaultValue>
+            <fieldText>Accept</fieldText>
+            <fieldType>InputField</fieldType>
+            <isRequired>true</isRequired>
+            <validationRule>
+                <errorMessage>Please select Accept to acknowledge and login into Salesforce.</errorMessage>
+                <formulaExpression>{!Accept1}</formulaExpression>
+            </validationRule>
+        </fields>
+        <showFooter>true</showFooter>
+        <showHeader>false</showHeader>
+    </screens>
+    <startElementReference>Authentication</startElementReference>
+    <status>Obsolete</status>
+    <variables>
+        <name>Accept</name>
+        <dataType>Boolean</dataType>
+        <isCollection>false</isCollection>
+        <isInput>true</isInput>
+        <isOutput>false</isOutput>
+        <value>
+            <booleanValue>false</booleanValue>
+        </value>
+    </variables>
+</Flow>

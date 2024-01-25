@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<QuickAction xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fieldOverrides>
+        <field>Inactivated_By__c</field>
+        <formula>$User.Id</formula>
+    </fieldOverrides>
+    <fieldOverrides>
+        <field>Inactivated_Date__c</field>
+        <formula>NOW()</formula>
+    </fieldOverrides>
+    <fieldOverrides>
+        <field>isCurrent__c</field>
+        <formula>False</formula>
+    </fieldOverrides>
+    <fieldOverrides>
+        <field>Name</field>
+        <formula>zpl__ContractLineItem__c.Name</formula>
+    </fieldOverrides>
+    <fieldOverrides>
+        <field>zpl__Contract__c</field>
+        <formula>zpl__ContractLineItem__c.zpl__Contract__c</formula>
+    </fieldOverrides>
+    <fieldOverrides>
+        <field>zpl__Status__c</field>
+        <literalValue>Deleted Camp</literalValue>
+    </fieldOverrides>
+    <label>Delete Selected</label>
+    <optionsCreateFeedItem>false</optionsCreateFeedItem>
+    <quickActionLayout>
+        <layoutSectionStyle>TwoColumnsLeftToRight</layoutSectionStyle>
+        <quickActionLayoutColumns>
+            <quickActionLayoutItems>
+                <emptySpace>false</emptySpace>
+                <field>StatusUpdate__c</field>
+                <uiBehavior>Readonly</uiBehavior>
+            </quickActionLayoutItems>
+        </quickActionLayoutColumns>
+        <quickActionLayoutColumns/>
+    </quickActionLayout>
+    <successMessage>You have rejected Agreement Lines</successMessage>
+    <type>Update</type>
+</QuickAction>

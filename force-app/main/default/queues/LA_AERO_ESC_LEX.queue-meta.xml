@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Queue xmlns="http://soap.sforce.com/2006/04/metadata">
+    <doesSendEmailToMembers>false</doesSendEmailToMembers>
+    <name>LA-AERO-ESC-LEX</name>
+    <queueMembers>
+        <roleAndSubordinatesInternal>
+            <roleAndSubordinateInternal>CS_LA_AERO_TM6</roleAndSubordinateInternal>
+            <roleAndSubordinateInternal>CS_LA_FS_PKG_CXC_Mgr</roleAndSubordinateInternal>
+        </roleAndSubordinatesInternal>
+    </queueMembers>
+    <queueSobject>
+        <sobjectType>Case</sobjectType>
+    </queueSobject>
+    <queueSobject>
+        <sobjectType>Fax_To_Case_Queue_Assignment__c</sobjectType>
+    </queueSobject>
+</Queue>

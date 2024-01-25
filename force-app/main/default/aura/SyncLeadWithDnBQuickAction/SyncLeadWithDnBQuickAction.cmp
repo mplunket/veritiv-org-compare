@@ -1,0 +1,62 @@
+<aura:component controller="DnBLeadSyncQuickActionController" implements="flexipage:availableForRecordHome,force:hasRecordId,force:lightningQuickAction"
+    access="global">
+    <aura:attribute name="recordId" type="String" />
+    <aura:attribute name="lead" type="Object" />
+    <aura:attribute name="searchResults" type="Object" />
+    <aura:attribute name="error" type="String" />
+    <aura:attribute name="isClassic" type="Boolean" default="false" />
+    <aura:attribute name="translatedCountry" type="String" />
+
+    <aura:handler name="init" value="{!this}" action="{!c.doInit}" />
+
+    <aura:if isTrue="{!v.error}">
+        <div class="slds-notify slds-notify_alert slds-theme_alert-texture slds-theme_error" role="alert">
+            <h2>{!v.error}</h2>
+        </div>
+    </aura:if>
+
+    <aura:if isTrue="{!!v.searchResults}">
+        <c:SyncLeadWithDnBQuickActionSearch recordId="{!v.recordId}" error="{!v.error}" lead="{!v.lead}" searchResults="{!v.searchResults}" translatedCountry = "{!v.translatedCountry}"
+        />
+    </aura:if>
+
+    <span>
+        <aura:if isTrue="{!v.searchResults}">
+            <div class="slds-p-bottom_small slds-grid">
+                <div class="slds-col slds-size_1-of-2">
+                    <h1 class="slds-text-heading_large">Results</h1>
+                    <h2 class="slds-text-heading_medium">{!v.searchResults.matchCandidates.length} results found!</h2>
+                </div>
+                <div class="slds-col slds-size_1-of-2">
+                    <lightning:button class="slds-float_right slds-m-top_small" label="Back to Search" onclick="{!c.goBack}" />
+                </div>
+            </div>
+            <aura:iteration items="{!v.searchResults.matchCandidates}" var="match">
+                <lightning:card iconName="standard:lead">
+                    <aura:set attribute="title">
+                        {!match.organization.primaryName}
+                    </aura:set>
+                    <aura:set attribute="actions">
+                        <c:SyncLeadWithDnBQuickActionButton lead="{!v.lead}" match="{!match}" error="{!v.error}" isClassic="{!v.isClassic}"/>
+                    </aura:set>
+                    <div class="slds-grid slds-gutters">
+                        <div class="slds-col slds-size_1-of-2">
+                            <lightning:input label="Match Quality" value="{!match.matchQualityInformation.confidenceCode}" readonly="true" />
+                            <lightning:input label="DUNS" value="{!match.organization.duns}" readonly="true" />
+                            <lightning:input type="tel" label="Phone" value="{!match.organization.telephone[0].telephoneNumber}" readonly="true" />
+                        </div>
+                        <div class="slds-col slds-size_1-of-2">
+                            <lightning:input label="Street" value="{!match.organization.primaryAddress.streetAddress.line1}" readonly="true" />
+                            <lightning:input label="City" value="{!match.organization.primaryAddress.addressLocality.name}" readonly="true" />
+                            <lightning:input label="State/Province" value="{!match.organization.primaryAddress.addressRegion.abbreviatedName}" readonly="true"
+                            />
+                            <lightning:input label="Zip/Postal Code" value="{!match.organization.primaryAddress.postalCode}" readonly="true" />
+                            <lightning:input label="Country" value="{!match.organization.primaryAddress.addressCountry.isoAlpha2Code}" readonly="true"
+                            />
+                        </div>
+                    </div>
+                </lightning:card>
+            </aura:iteration>
+        </aura:if>
+    </span>
+</aura:component>

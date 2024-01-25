@@ -1,0 +1,4 @@
+<!--c:DelegatedApprovalEvent-->
+<aura:event type="APPLICATION" >
+    <aura:attribute name="actionName" type="String" default=""/>
+</aura:event>

@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Workflow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <alerts>
+        <fullName>CAN_Territory_Plan_Summary</fullName>
+        <description>CAN Territory Plan Summary</description>
+        <protected>false</protected>
+        <recipients>
+            <type>creator</type>
+        </recipients>
+        <recipients>
+            <field>Primary_Sales_Rep_Email__c</field>
+            <type>email</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>Account_Plan_Emails/CAN_Territory_Plan_Summary</template>
+    </alerts>
+    <rules>
+        <fullName>CAN Territory Plan Created or Modified</fullName>
+        <actions>
+            <name>CAN_Territory_Plan_Summary</name>
+            <type>Alert</type>
+        </actions>
+        <active>false</active>
+        <criteriaItems>
+            <field>Territory_Plan__c.CreatedDate</field>
+            <operation>notEqual</operation>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Territory_Plan__c.Draft_Do_Not_Send_Summary__c</field>
+            <operation>equals</operation>
+            <value>False</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Territory_Plan__c.LastModifiedById</field>
+            <operation>notEqual</operation>
+            <value>Salesforce Administrator</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Territory_Plan__c.CurrencyIsoCode</field>
+            <operation>equals</operation>
+            <value>cad</value>
+        </criteriaItems>
+        <description>Sends on Save if the draft checkbox is not marked.</description>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+    <tasks>
+        <fullName>ReviewTerritoryPlan</fullName>
+        <assignedToType>owner</assignedToType>
+        <description>You created a Territory Plan.</description>
+        <dueDateOffset>7</dueDateOffset>
+        <notifyAssignee>false</notifyAssignee>
+        <priority>High</priority>
+        <protected>false</protected>
+        <status>Not Started</status>
+        <subject>Review Territory Plan</subject>
+    </tasks>
+</Workflow>

@@ -1,0 +1,1061 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GlobalValueSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <customValue>
+        <fullName>Absorbents</fullName>
+        <default>false</default>
+        <label>Absorbents</label>
+    </customValue>
+    <customValue>
+        <fullName>Accessories</fullName>
+        <default>false</default>
+        <label>Accessories</label>
+    </customValue>
+    <customValue>
+        <fullName>Adhesives</fullName>
+        <default>false</default>
+        <label>Adhesives</label>
+    </customValue>
+    <customValue>
+        <fullName>Air Care / Odor Control (Deodorizers, Neutralizers)</fullName>
+        <default>false</default>
+        <label>Air Care / Odor Control (Deodorizers, Neutralizers)</label>
+    </customValue>
+    <customValue>
+        <fullName>Air Purifiers / Ozone Generators</fullName>
+        <default>false</default>
+        <label>Air Purifiers / Ozone Generators</label>
+    </customValue>
+    <customValue>
+        <fullName>Ancillary Packaging Dispensers</fullName>
+        <default>false</default>
+        <label>Ancillary Packaging Dispensers</label>
+    </customValue>
+    <customValue>
+        <fullName>Ancillary Packaging Equipment / Parts</fullName>
+        <default>false</default>
+        <label>Ancillary Packaging Equipment / Parts</label>
+    </customValue>
+    <customValue>
+        <fullName>Art / Craft Supplies</fullName>
+        <default>false</default>
+        <label>Art / Craft Supplies</label>
+    </customValue>
+    <customValue>
+        <fullName>Ash / Trash Containers / Lids</fullName>
+        <default>false</default>
+        <label>Ash / Trash Containers / Lids</label>
+    </customValue>
+    <customValue>
+        <fullName>Bag Dispensers</fullName>
+        <default>false</default>
+        <label>Bag Dispensers</label>
+    </customValue>
+    <customValue>
+        <fullName>Bagging Equipment / Parts</fullName>
+        <default>false</default>
+        <label>Bagging Equipment / Parts</label>
+    </customValue>
+    <customValue>
+        <fullName>Bags Paper</fullName>
+        <default>false</default>
+        <label>Bags Paper</label>
+    </customValue>
+    <customValue>
+        <fullName>Bags Plastic</fullName>
+        <default>false</default>
+        <label>Bags Plastic</label>
+    </customValue>
+    <customValue>
+        <fullName>Bags Specialty</fullName>
+        <default>false</default>
+        <label>Bags Specialty</label>
+    </customValue>
+    <customValue>
+        <fullName>Barriers / Protectants / Moisturizers</fullName>
+        <default>false</default>
+        <label>Barriers / Protectants / Moisturizers</label>
+    </customValue>
+    <customValue>
+        <fullName>Blades</fullName>
+        <default>false</default>
+        <label>Blades</label>
+    </customValue>
+    <customValue>
+        <fullName>Bleach / Ammonia</fullName>
+        <default>false</default>
+        <label>Bleach / Ammonia</label>
+    </customValue>
+    <customValue>
+        <fullName>Body Protection / Apparel</fullName>
+        <default>false</default>
+        <label>Body Protection / Apparel</label>
+    </customValue>
+    <customValue>
+        <fullName>Bottles / Accessories</fullName>
+        <default>false</default>
+        <label>Bottles / Accessories</label>
+    </customValue>
+    <customValue>
+        <fullName>Breathing Protection</fullName>
+        <default>false</default>
+        <label>Breathing Protection</label>
+    </customValue>
+    <customValue>
+        <fullName>Brooms / Brushes / Dust Pans</fullName>
+        <default>false</default>
+        <label>Brooms / Brushes / Dust Pans</label>
+    </customValue>
+    <customValue>
+        <fullName>Bubble</fullName>
+        <default>false</default>
+        <label>Bubble</label>
+    </customValue>
+    <customValue>
+        <fullName>Buckets / Caddies</fullName>
+        <default>false</default>
+        <label>Buckets / Caddies</label>
+    </customValue>
+    <customValue>
+        <fullName>C1S</fullName>
+        <default>false</default>
+        <label>C1S</label>
+    </customValue>
+    <customValue>
+        <fullName>C2S</fullName>
+        <default>false</default>
+        <label>C2S</label>
+    </customValue>
+    <customValue>
+        <fullName>Carbonless</fullName>
+        <default>false</default>
+        <label>Carbonless</label>
+    </customValue>
+    <customValue>
+        <fullName>Carton Sealing Tapes</fullName>
+        <default>false</default>
+        <label>Carton Sealing Tapes</label>
+    </customValue>
+    <customValue>
+        <fullName>Carts / Cart Inserts / Cart Accessories</fullName>
+        <default>false</default>
+        <label>Carts / Cart Inserts / Cart Accessories</label>
+    </customValue>
+    <customValue>
+        <fullName>Carts / Storage Bins</fullName>
+        <default>false</default>
+        <label>Carts / Storage Bins</label>
+    </customValue>
+    <customValue>
+        <fullName>Cellulose Wadding</fullName>
+        <default>false</default>
+        <label>Cellulose Wadding</label>
+    </customValue>
+    <customValue>
+        <fullName>Chemical Wipers</fullName>
+        <default>false</default>
+        <label>Chemical Wipers</label>
+    </customValue>
+    <customValue>
+        <fullName>Chipboard</fullName>
+        <default>false</default>
+        <label>Chipboard</label>
+    </customValue>
+    <customValue>
+        <fullName>Chipboard Mailers</fullName>
+        <default>false</default>
+        <label>Chipboard Mailers</label>
+    </customValue>
+    <customValue>
+        <fullName>Cleaners</fullName>
+        <default>false</default>
+        <label>Cleaners</label>
+    </customValue>
+    <customValue>
+        <fullName>Cleaning Kits</fullName>
+        <default>false</default>
+        <label>Cleaning Kits</label>
+    </customValue>
+    <customValue>
+        <fullName>Cleaning Pads / Sponges / Scrubbers</fullName>
+        <default>false</default>
+        <label>Cleaning Pads / Sponges / Scrubbers</label>
+    </customValue>
+    <customValue>
+        <fullName>Cloth / Duct Tapes</fullName>
+        <default>false</default>
+        <label>Cloth / Duct Tapes</label>
+    </customValue>
+    <customValue>
+        <fullName>Condoms</fullName>
+        <default>false</default>
+        <label>Condoms</label>
+    </customValue>
+    <customValue>
+        <fullName>Conductive Rubber Bands</fullName>
+        <default>false</default>
+        <label>Conductive Rubber Bands</label>
+    </customValue>
+    <customValue>
+        <fullName>Converting Raw Stock</fullName>
+        <default>false</default>
+        <label>Converting Raw Stock</label>
+    </customValue>
+    <customValue>
+        <fullName>Copier / Index Tabs</fullName>
+        <default>false</default>
+        <label>Copier / Index Tabs</label>
+    </customValue>
+    <customValue>
+        <fullName>Corrugated Containers</fullName>
+        <default>false</default>
+        <label>Corrugated Containers</label>
+    </customValue>
+    <customValue>
+        <fullName>Corrugated Equipment / Parts</fullName>
+        <default>false</default>
+        <label>Corrugated Equipment / Parts</label>
+    </customValue>
+    <customValue>
+        <fullName>Corrugated Mailers</fullName>
+        <default>false</default>
+        <label>Corrugated Mailers</label>
+    </customValue>
+    <customValue>
+        <fullName>Cups / Lids</fullName>
+        <default>false</default>
+        <label>Cups / Lids</label>
+    </customValue>
+    <customValue>
+        <fullName>Cushioning Dispensers</fullName>
+        <default>false</default>
+        <label>Cushioning Dispensers</label>
+    </customValue>
+    <customValue>
+        <fullName>Cushioning Equipment / Parts</fullName>
+        <default>false</default>
+        <label>Cushioning Equipment / Parts</label>
+    </customValue>
+    <customValue>
+        <fullName>Cushioning Specialty</fullName>
+        <default>false</default>
+        <label>Cushioning Specialty</label>
+    </customValue>
+    <customValue>
+        <fullName>Diapers / Baby Changing Supplies</fullName>
+        <default>false</default>
+        <label>Diapers / Baby Changing Supplies</label>
+    </customValue>
+    <customValue>
+        <fullName>Directory</fullName>
+        <default>false</default>
+        <label>Directory</label>
+    </customValue>
+    <customValue>
+        <fullName>Dispensers</fullName>
+        <default>false</default>
+        <label>Dispensers</label>
+    </customValue>
+    <customValue>
+        <fullName>Displays</fullName>
+        <default>false</default>
+        <label>Displays</label>
+    </customValue>
+    <customValue>
+        <fullName>Dollies / Hoppers / Trolleys / Trucks</fullName>
+        <default>false</default>
+        <label>Dollies / Hoppers / Trolleys / Trucks</label>
+    </customValue>
+    <customValue>
+        <fullName>Double-Coated Tapes</fullName>
+        <default>false</default>
+        <label>Double-Coated Tapes</label>
+    </customValue>
+    <customValue>
+        <fullName>Drain Maintainers / Treatments</fullName>
+        <default>false</default>
+        <label>Drain Maintainers / Treatments</label>
+    </customValue>
+    <customValue>
+        <fullName>Drum Stock / Plugs / Cores</fullName>
+        <default>false</default>
+        <label>Drum Stock / Plugs / Cores</label>
+    </customValue>
+    <customValue>
+        <fullName>Dunnage</fullName>
+        <default>false</default>
+        <label>Dunnage</label>
+    </customValue>
+    <customValue>
+        <fullName>Durables</fullName>
+        <default>false</default>
+        <label>Durables</label>
+    </customValue>
+    <customValue>
+        <fullName>Ear Protection</fullName>
+        <default>false</default>
+        <label>Ear Protection</label>
+    </customValue>
+    <customValue>
+        <fullName>Edge Protection</fullName>
+        <default>false</default>
+        <label>Edge Protection</label>
+    </customValue>
+    <customValue>
+        <fullName>Electronics</fullName>
+        <default>false</default>
+        <label>Electronics</label>
+    </customValue>
+    <customValue>
+        <fullName>Envelopes</fullName>
+        <default>false</default>
+        <label>Envelopes</label>
+    </customValue>
+    <customValue>
+        <fullName>Equipment / Parts</fullName>
+        <default>false</default>
+        <label>Equipment / Parts</label>
+    </customValue>
+    <customValue>
+        <fullName>Eye Protection</fullName>
+        <default>false</default>
+        <label>Eye Protection</label>
+    </customValue>
+    <customValue>
+        <fullName>Fabric</fullName>
+        <default>false</default>
+        <label>Fabric</label>
+    </customValue>
+    <customValue>
+        <fullName>Facial Tissue</fullName>
+        <default>false</default>
+        <label>Facial Tissue</label>
+    </customValue>
+    <customValue>
+        <fullName>Faucets / Flush Systems</fullName>
+        <default>false</default>
+        <label>Faucets / Flush Systems</label>
+    </customValue>
+    <customValue>
+        <fullName>Feminine Hygiene Products</fullName>
+        <default>false</default>
+        <label>Feminine Hygiene Products</label>
+    </customValue>
+    <customValue>
+        <fullName>Film Dispensers</fullName>
+        <default>false</default>
+        <label>Film Dispensers</label>
+    </customValue>
+    <customValue>
+        <fullName>Film Equipment / Parts</fullName>
+        <default>false</default>
+        <label>Film Equipment / Parts</label>
+    </customValue>
+    <customValue>
+        <fullName>Film Mailers</fullName>
+        <default>false</default>
+        <label>Film Mailers</label>
+    </customValue>
+    <customValue>
+        <fullName>Flexible</fullName>
+        <default>false</default>
+        <label>Flexible</label>
+    </customValue>
+    <customValue>
+        <fullName>Floor Pads / Rotary Brushes</fullName>
+        <default>false</default>
+        <label>Floor Pads / Rotary Brushes</label>
+    </customValue>
+    <customValue>
+        <fullName>Foam</fullName>
+        <default>false</default>
+        <label>Foam</label>
+    </customValue>
+    <customValue>
+        <fullName>Foam-in-Place</fullName>
+        <default>false</default>
+        <label>Foam-in-Place</label>
+    </customValue>
+    <customValue>
+        <fullName>Foam Mailers</fullName>
+        <default>false</default>
+        <label>Foam Mailers</label>
+    </customValue>
+    <customValue>
+        <fullName>Foil / Film Tapes</fullName>
+        <default>false</default>
+        <label>Foil / Film Tapes</label>
+    </customValue>
+    <customValue>
+        <fullName>Food / Beverage</fullName>
+        <default>false</default>
+        <label>Food / Beverage</label>
+    </customValue>
+    <customValue>
+        <fullName>Food Bags</fullName>
+        <default>false</default>
+        <label>Food Bags</label>
+    </customValue>
+    <customValue>
+        <fullName>Food Containers / Lids</fullName>
+        <default>false</default>
+        <label>Food Containers / Lids</label>
+    </customValue>
+    <customValue>
+        <fullName>Food Prep Supplies</fullName>
+        <default>false</default>
+        <label>Food Prep Supplies</label>
+    </customValue>
+    <customValue>
+        <fullName>Food Service Containers / Lids</fullName>
+        <default>false</default>
+        <label>Food Service Containers / Lids</label>
+    </customValue>
+    <customValue>
+        <fullName>Food Service Trays / Tray Covers</fullName>
+        <default>false</default>
+        <label>Food Service Trays / Tray Covers</label>
+    </customValue>
+    <customValue>
+        <fullName>Food Trays / Lids</fullName>
+        <default>false</default>
+        <label>Food Trays / Lids</label>
+    </customValue>
+    <customValue>
+        <fullName>Food Wrap Film / Foil / Paper</fullName>
+        <default>false</default>
+        <label>Food Wrap Film / Foil / Paper</label>
+    </customValue>
+    <customValue>
+        <fullName>Food Wraps / Prep Papers</fullName>
+        <default>false</default>
+        <label>Food Wraps / Prep Papers</label>
+    </customValue>
+    <customValue>
+        <fullName>Footwear / Accessories</fullName>
+        <default>false</default>
+        <label>Footwear / Accessories</label>
+    </customValue>
+    <customValue>
+        <fullName>Furniture</fullName>
+        <default>false</default>
+        <label>Furniture</label>
+    </customValue>
+    <customValue>
+        <fullName>General Purpose Batteries</fullName>
+        <default>false</default>
+        <label>General Purpose Batteries</label>
+    </customValue>
+    <customValue>
+        <fullName>Gloves</fullName>
+        <default>false</default>
+        <label>Gloves</label>
+    </customValue>
+    <customValue>
+        <fullName>Graphics</fullName>
+        <default>false</default>
+        <label>Graphics</label>
+    </customValue>
+    <customValue>
+        <fullName>Gummed Labels</fullName>
+        <default>false</default>
+        <label>Gummed Labels</label>
+    </customValue>
+    <customValue>
+        <fullName>Hair Care / Body Washes</fullName>
+        <default>false</default>
+        <label>Hair Care / Body Washes</label>
+    </customValue>
+    <customValue>
+        <fullName>Hand Dryers</fullName>
+        <default>false</default>
+        <label>Hand Dryers</label>
+    </customValue>
+    <customValue>
+        <fullName>Hard Floor Care</fullName>
+        <default>false</default>
+        <label>Hard Floor Care</label>
+    </customValue>
+    <customValue>
+        <fullName>Hard Floor Machines</fullName>
+        <default>false</default>
+        <label>Hard Floor Machines</label>
+    </customValue>
+    <customValue>
+        <fullName>Head Protection</fullName>
+        <default>false</default>
+        <label>Head Protection</label>
+    </customValue>
+    <customValue>
+        <fullName>High Density</fullName>
+        <default>false</default>
+        <label>High Density</label>
+    </customValue>
+    <customValue>
+        <fullName>High Density Repro</fullName>
+        <default>false</default>
+        <label>High Density Repro</label>
+    </customValue>
+    <customValue>
+        <fullName>Hotel / Lodging Accessories</fullName>
+        <default>false</default>
+        <label>Hotel / Lodging Accessories</label>
+    </customValue>
+    <customValue>
+        <fullName>Ice Treatments</fullName>
+        <default>false</default>
+        <label>Ice Treatments</label>
+    </customValue>
+    <customValue>
+        <fullName>Imaging</fullName>
+        <default>false</default>
+        <label>Imaging</label>
+    </customValue>
+    <customValue>
+        <fullName>Incontinence Products</fullName>
+        <default>false</default>
+        <label>Incontinence Products</label>
+    </customValue>
+    <customValue>
+        <fullName>Index / Tag / Vellum</fullName>
+        <default>false</default>
+        <label>Index / Tag / Vellum</label>
+    </customValue>
+    <customValue>
+        <fullName>Industrial/ Non Food</fullName>
+        <default>false</default>
+        <label>Industrial/ Non Food</label>
+    </customValue>
+    <customValue>
+        <fullName>Ink</fullName>
+        <default>false</default>
+        <label>Ink</label>
+    </customValue>
+    <customValue>
+        <fullName>Inks</fullName>
+        <default>false</default>
+        <label>Inks</label>
+    </customValue>
+    <customValue>
+        <fullName>Kraft Bubble Mailer</fullName>
+        <default>false</default>
+        <label>Kraft Bubble Mailer</label>
+    </customValue>
+    <customValue>
+        <fullName>Labeling / Identification Dispensers</fullName>
+        <default>false</default>
+        <label>Labeling / Identification Dispensers</label>
+    </customValue>
+    <customValue>
+        <fullName>Labeling and Identification Equipment / Parts</fullName>
+        <default>false</default>
+        <label>Labeling and Identification Equipment / Parts</label>
+    </customValue>
+    <customValue>
+        <fullName>Labels</fullName>
+        <default>false</default>
+        <label>Labels</label>
+    </customValue>
+    <customValue>
+        <fullName>Laser Perfed / Punched</fullName>
+        <default>false</default>
+        <label>Laser Perfed / Punched</label>
+    </customValue>
+    <customValue>
+        <fullName>Laundry Accessories</fullName>
+        <default>false</default>
+        <label>Laundry Accessories</label>
+    </customValue>
+    <customValue>
+        <fullName>Laundry Products</fullName>
+        <default>false</default>
+        <label>Laundry Products</label>
+    </customValue>
+    <customValue>
+        <fullName>Lighting / Electrical Supplies</fullName>
+        <default>false</default>
+        <label>Lighting / Electrical Supplies</label>
+    </customValue>
+    <customValue>
+        <fullName>Low Density</fullName>
+        <default>false</default>
+        <label>Low Density</label>
+    </customValue>
+    <customValue>
+        <fullName>Low Density Repro</fullName>
+        <default>false</default>
+        <label>Low Density Repro</label>
+    </customValue>
+    <customValue>
+        <fullName>Lubricants</fullName>
+        <default>false</default>
+        <label>Lubricants</label>
+    </customValue>
+    <customValue>
+        <fullName>Lumber / Plywood</fullName>
+        <default>false</default>
+        <label>Lumber / Plywood</label>
+    </customValue>
+    <customValue>
+        <fullName>Magnetic</fullName>
+        <default>false</default>
+        <label>Magnetic</label>
+    </customValue>
+    <customValue>
+        <fullName>Mailers Dispensers</fullName>
+        <default>false</default>
+        <label>Mailers Dispensers</label>
+    </customValue>
+    <customValue>
+        <fullName>Mailing Equipment / Parts</fullName>
+        <default>false</default>
+        <label>Mailing Equipment / Parts</label>
+    </customValue>
+    <customValue>
+        <fullName>Mailing Tubes</fullName>
+        <default>false</default>
+        <label>Mailing Tubes</label>
+    </customValue>
+    <customValue>
+        <fullName>Masking Paper</fullName>
+        <default>false</default>
+        <label>Masking Paper</label>
+    </customValue>
+    <customValue>
+        <fullName>Mats / Matting</fullName>
+        <default>false</default>
+        <label>Mats / Matting</label>
+    </customValue>
+    <customValue>
+        <fullName>Medical / First Aid Supplies</fullName>
+        <default>false</default>
+        <label>Medical / First Aid Supplies</label>
+    </customValue>
+    <customValue>
+        <fullName>Molded Pulp</fullName>
+        <default>false</default>
+        <label>Molded Pulp</label>
+    </customValue>
+    <customValue>
+        <fullName>Mop Buckets / Wringers</fullName>
+        <default>false</default>
+        <label>Mop Buckets / Wringers</label>
+    </customValue>
+    <customValue>
+        <fullName>Mops / Squeegees</fullName>
+        <default>false</default>
+        <label>Mops / Squeegees</label>
+    </customValue>
+    <customValue>
+        <fullName>Napkins</fullName>
+        <default>false</default>
+        <label>Napkins</label>
+    </customValue>
+    <customValue>
+        <fullName>Newsprint</fullName>
+        <default>false</default>
+        <label>Newsprint</label>
+    </customValue>
+    <customValue>
+        <fullName>Non-Print</fullName>
+        <default>false</default>
+        <label>Non-Print</label>
+    </customValue>
+    <customValue>
+        <fullName>Office Supplies</fullName>
+        <default>false</default>
+        <label>Office Supplies</label>
+    </customValue>
+    <customValue>
+        <fullName>Offset</fullName>
+        <default>false</default>
+        <label>Offset</label>
+    </customValue>
+    <customValue>
+        <fullName>Opaque</fullName>
+        <default>false</default>
+        <label>Opaque</label>
+    </customValue>
+    <customValue>
+        <fullName>Packaging Papers</fullName>
+        <default>false</default>
+        <label>Packaging Papers</label>
+    </customValue>
+    <customValue>
+        <fullName>Packing List Envelopes</fullName>
+        <default>false</default>
+        <label>Packing List Envelopes</label>
+    </customValue>
+    <customValue>
+        <fullName>Padded Mailers</fullName>
+        <default>false</default>
+        <label>Padded Mailers</label>
+    </customValue>
+    <customValue>
+        <fullName>Pads/Sheets/Partitions</fullName>
+        <default>false</default>
+        <label>Pads/Sheets/Partitions</label>
+    </customValue>
+    <customValue>
+        <fullName>Paints / Supplies</fullName>
+        <default>false</default>
+        <label>Paints / Supplies</label>
+    </customValue>
+    <customValue>
+        <fullName>Pallets</fullName>
+        <default>false</default>
+        <label>Pallets</label>
+    </customValue>
+    <customValue>
+        <fullName>Paper</fullName>
+        <default>false</default>
+        <label>Paper</label>
+    </customValue>
+    <customValue>
+        <fullName>Paper / Nonwoven</fullName>
+        <default>false</default>
+        <label>Paper / Nonwoven</label>
+    </customValue>
+    <customValue>
+        <fullName>Paper Tapes</fullName>
+        <default>false</default>
+        <label>Paper Tapes</label>
+    </customValue>
+    <customValue>
+        <fullName>Parts</fullName>
+        <default>false</default>
+        <label>Parts</label>
+    </customValue>
+    <customValue>
+        <fullName>Personal Washcloths / Wipes / Cloth Towels</fullName>
+        <default>false</default>
+        <label>Personal Washcloths / Wipes / Cloth Towels</label>
+    </customValue>
+    <customValue>
+        <fullName>Pest Control</fullName>
+        <default>false</default>
+        <label>Pest Control</label>
+    </customValue>
+    <customValue>
+        <fullName>Plates / Platters / Bowls / Lids</fullName>
+        <default>false</default>
+        <label>Plates / Platters / Bowls / Lids</label>
+    </customValue>
+    <customValue>
+        <fullName>Polishes / Waxes</fullName>
+        <default>false</default>
+        <label>Polishes / Waxes</label>
+    </customValue>
+    <customValue>
+        <fullName>Poly Bubble Mailer</fullName>
+        <default>false</default>
+        <label>Poly Bubble Mailer</label>
+    </customValue>
+    <customValue>
+        <fullName>Poly Strapping</fullName>
+        <default>false</default>
+        <label>Poly Strapping</label>
+    </customValue>
+    <customValue>
+        <fullName>Pressure Sensitive</fullName>
+        <default>false</default>
+        <label>Pressure Sensitive</label>
+    </customValue>
+    <customValue>
+        <fullName>Pressure Washers</fullName>
+        <default>false</default>
+        <label>Pressure Washers</label>
+    </customValue>
+    <customValue>
+        <fullName>Printer Ribbons</fullName>
+        <default>false</default>
+        <label>Printer Ribbons</label>
+    </customValue>
+    <customValue>
+        <fullName>Protective Food Packaging</fullName>
+        <default>false</default>
+        <label>Protective Food Packaging</label>
+    </customValue>
+    <customValue>
+        <fullName>Restroom Accessories</fullName>
+        <default>false</default>
+        <label>Restroom Accessories</label>
+    </customValue>
+    <customValue>
+        <fullName>Retail Packaging</fullName>
+        <default>false</default>
+        <label>Retail Packaging</label>
+    </customValue>
+    <customValue>
+        <fullName>Retail Solutions</fullName>
+        <default>false</default>
+        <label>Retail Solutions</label>
+    </customValue>
+    <customValue>
+        <fullName>Rigid</fullName>
+        <default>false</default>
+        <label>Rigid</label>
+    </customValue>
+    <customValue>
+        <fullName>Rigid Packaging</fullName>
+        <default>false</default>
+        <label>Rigid Packaging</label>
+    </customValue>
+    <customValue>
+        <fullName>Rope / Twine / Cord</fullName>
+        <default>false</default>
+        <label>Rope / Twine / Cord</label>
+    </customValue>
+    <customValue>
+        <fullName>Safety / Security</fullName>
+        <default>false</default>
+        <label>Safety / Security</label>
+    </customValue>
+    <customValue>
+        <fullName>Sanitary Product Receptacles / Liners</fullName>
+        <default>false</default>
+        <label>Sanitary Product Receptacles / Liners</label>
+    </customValue>
+    <customValue>
+        <fullName>Sanitizers / Sanitizing Wipes</fullName>
+        <default>false</default>
+        <label>Sanitizers / Sanitizing Wipes</label>
+    </customValue>
+    <customValue>
+        <fullName>Seals / Closures</fullName>
+        <default>false</default>
+        <label>Seals / Closures</label>
+    </customValue>
+    <customValue>
+        <fullName>Sheeting / Tubing Films</fullName>
+        <default>false</default>
+        <label>Sheeting / Tubing Films</label>
+    </customValue>
+    <customValue>
+        <fullName>Shipping Seals</fullName>
+        <default>false</default>
+        <label>Shipping Seals</label>
+    </customValue>
+    <customValue>
+        <fullName>Shrink Films</fullName>
+        <default>false</default>
+        <label>Shrink Films</label>
+    </customValue>
+    <customValue>
+        <fullName>Soaps / Hand Cleaners</fullName>
+        <default>false</default>
+        <label>Soaps / Hand Cleaners</label>
+    </customValue>
+    <customValue>
+        <fullName>Soft Floor / Upholstery Care</fullName>
+        <default>false</default>
+        <label>Soft Floor / Upholstery Care</label>
+    </customValue>
+    <customValue>
+        <fullName>Soft Floor / Upholstery Machines</fullName>
+        <default>false</default>
+        <label>Soft Floor / Upholstery Machines</label>
+    </customValue>
+    <customValue>
+        <fullName>Sorbents</fullName>
+        <default>false</default>
+        <label>Sorbents</label>
+    </customValue>
+    <customValue>
+        <fullName>Specialty</fullName>
+        <default>false</default>
+        <label>Specialty</label>
+    </customValue>
+    <customValue>
+        <fullName>Specialty / Polypropylene</fullName>
+        <default>false</default>
+        <label>Specialty / Polypropylene</label>
+    </customValue>
+    <customValue>
+        <fullName>Specialty Films</fullName>
+        <default>false</default>
+        <label>Specialty Films</label>
+    </customValue>
+    <customValue>
+        <fullName>Specialty Products</fullName>
+        <default>false</default>
+        <label>Specialty Products</label>
+    </customValue>
+    <customValue>
+        <fullName>Specialty Tapes</fullName>
+        <default>false</default>
+        <label>Specialty Tapes</label>
+    </customValue>
+    <customValue>
+        <fullName>Sprayers / Dispensing Pumps</fullName>
+        <default>false</default>
+        <label>Sprayers / Dispensing Pumps</label>
+    </customValue>
+    <customValue>
+        <fullName>Steel Strapping</fullName>
+        <default>false</default>
+        <label>Steel Strapping</label>
+    </customValue>
+    <customValue>
+        <fullName>Stencils</fullName>
+        <default>false</default>
+        <label>Stencils</label>
+    </customValue>
+    <customValue>
+        <fullName>Stirrers / Straws</fullName>
+        <default>false</default>
+        <label>Stirrers / Straws</label>
+    </customValue>
+    <customValue>
+        <fullName>Strapping Dispensers</fullName>
+        <default>false</default>
+        <label>Strapping Dispensers</label>
+    </customValue>
+    <customValue>
+        <fullName>Strapping Equipment / Parts</fullName>
+        <default>false</default>
+        <label>Strapping Equipment / Parts</label>
+    </customValue>
+    <customValue>
+        <fullName>Strapping Kits</fullName>
+        <default>false</default>
+        <label>Strapping Kits</label>
+    </customValue>
+    <customValue>
+        <fullName>Stretch Films</fullName>
+        <default>false</default>
+        <label>Stretch Films</label>
+    </customValue>
+    <customValue>
+        <fullName>Supercalendered</fullName>
+        <default>false</default>
+        <label>Supercalendered</label>
+    </customValue>
+    <customValue>
+        <fullName>Surface Protection Dispensers</fullName>
+        <default>false</default>
+        <label>Surface Protection Dispensers</label>
+    </customValue>
+    <customValue>
+        <fullName>Surface Protection Equipment / Parts</fullName>
+        <default>false</default>
+        <label>Surface Protection Equipment / Parts</label>
+    </customValue>
+    <customValue>
+        <fullName>Table Covers / Skirting / Placemats</fullName>
+        <default>false</default>
+        <label>Table Covers / Skirting / Placemats</label>
+    </customValue>
+    <customValue>
+        <fullName>Table Top Supplies</fullName>
+        <default>false</default>
+        <label>Table Top Supplies</label>
+    </customValue>
+    <customValue>
+        <fullName>Tags</fullName>
+        <default>false</default>
+        <label>Tags</label>
+    </customValue>
+    <customValue>
+        <fullName>Tape Dispensers</fullName>
+        <default>false</default>
+        <label>Tape Dispensers</label>
+    </customValue>
+    <customValue>
+        <fullName>Tape Equipment / Parts</fullName>
+        <default>false</default>
+        <label>Tape Equipment / Parts</label>
+    </customValue>
+    <customValue>
+        <fullName>Tarps</fullName>
+        <default>false</default>
+        <label>Tarps</label>
+    </customValue>
+    <customValue>
+        <fullName>Text / Cover / Writing</fullName>
+        <default>false</default>
+        <label>Text / Cover / Writing</label>
+    </customValue>
+    <customValue>
+        <fullName>Ties / Fasteners</fullName>
+        <default>false</default>
+        <label>Ties / Fasteners</label>
+    </customValue>
+    <customValue>
+        <fullName>Toiletries / Sundries</fullName>
+        <default>false</default>
+        <label>Toiletries / Sundries</label>
+    </customValue>
+    <customValue>
+        <fullName>Toilet Seat Covers</fullName>
+        <default>false</default>
+        <label>Toilet Seat Covers</label>
+    </customValue>
+    <customValue>
+        <fullName>Toilet Tissue</fullName>
+        <default>false</default>
+        <label>Toilet Tissue</label>
+    </customValue>
+    <customValue>
+        <fullName>Tools / Hardware</fullName>
+        <default>false</default>
+        <label>Tools / Hardware</label>
+    </customValue>
+    <customValue>
+        <fullName>Towels</fullName>
+        <default>false</default>
+        <label>Towels</label>
+    </customValue>
+    <customValue>
+        <fullName>Urinal Blocks / Screens</fullName>
+        <default>false</default>
+        <label>Urinal Blocks / Screens</label>
+    </customValue>
+    <customValue>
+        <fullName>Utensils</fullName>
+        <default>false</default>
+        <label>Utensils</label>
+    </customValue>
+    <customValue>
+        <fullName>Utility Containers / Lids</fullName>
+        <default>false</default>
+        <label>Utility Containers / Lids</label>
+    </customValue>
+    <customValue>
+        <fullName>Vacuums</fullName>
+        <default>false</default>
+        <label>Vacuums</label>
+    </customValue>
+    <customValue>
+        <fullName>Vehicle Care</fullName>
+        <default>false</default>
+        <label>Vehicle Care</label>
+    </customValue>
+    <customValue>
+        <fullName>Void Fill</fullName>
+        <default>false</default>
+        <label>Void Fill</label>
+    </customValue>
+    <customValue>
+        <fullName>Volatile Corrosion Inhibitor (VCI)</fullName>
+        <default>false</default>
+        <label>Volatile Corrosion Inhibitor (VCI)</label>
+    </customValue>
+    <customValue>
+        <fullName>Volatile Corrosion Inhibitor (VCI) Bags</fullName>
+        <default>false</default>
+        <label>Volatile Corrosion Inhibitor (VCI) Bags</label>
+    </customValue>
+    <customValue>
+        <fullName>Warewashing / Dishwashing</fullName>
+        <default>false</default>
+        <label>Warewashing / Dishwashing</label>
+    </customValue>
+    <customValue>
+        <fullName>Water Treatments</fullName>
+        <default>false</default>
+        <label>Water Treatments</label>
+    </customValue>
+    <description>Veritiv Product Category 2</description>
+    <masterLabel>Product Category 2</masterLabel>
+    <sorted>true</sorted>
+</GlobalValueSet>

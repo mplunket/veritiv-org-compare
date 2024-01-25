@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<WebLink xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>New_Contact_Vendor</fullName>
+    <availability>online</availability>
+    <displayType>massActionButton</displayType>
+    <encodingKey>UTF-8</encodingKey>
+    <linkType>url</linkType>
+    <masterLabel>New Contact (Vendor)</masterLabel>
+    <openType>replace</openType>
+    <protected>false</protected>
+    <requireRowSelection>false</requireRowSelection>
+    <url>/003/e?
+retURL=https://na5.salesforce.com/{!Account.Id}&amp;
+RecordType=012700000009TST&amp;
+cancelURL=https://na5.salesforce.com/{!Account.Id}&amp;
+con4_lkid={!Account.Id}&amp;
+con4={!Account.Name}&amp;
+con10={!Account.Phone}&amp;
+con19street={!Account.BillingStreet}&amp;
+con19city={!Account.BillingCity}&amp;
+con19country={!Account.BillingCountry}&amp;
+con19state={!Account.BillingState}&amp;
+con19street={!Account.BillingStreet}&amp;
+con19zip={!Account.BillingPostalCode}&amp;
+ent=Contact</url>
+</WebLink>

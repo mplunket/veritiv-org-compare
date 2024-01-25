@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Status_act_vs_dead_vs_conv__c</fullName>
+    <externalId>false</externalId>
+    <formula>IF( Converted_Status__c = &quot;Converted&quot;, &quot;Converted&quot;, 
+IF (ISPICKVAL(Status, &quot;0_Dead&quot;),&quot;Dead&quot;, &quot;Active&quot;  ))</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Status -act vs dead vs conv</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

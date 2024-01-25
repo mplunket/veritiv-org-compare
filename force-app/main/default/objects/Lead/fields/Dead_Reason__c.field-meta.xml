@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Dead_Reason__c</fullName>
+    <description>Reason for changing this Lead to a Type of Dead.</description>
+    <externalId>false</externalId>
+    <inlineHelpText>What is the reason that this Lead is being changed to a Type of Dead?</inlineHelpText>
+    <label>RejectReason</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>true</trackHistory>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>true</sorted>
+            <value>
+                <fullName>Duplicate</fullName>
+                <default>false</default>
+                <label>Duplicate</label>
+            </value>
+            <value>
+                <fullName>Equipment/Parts Inquiry</fullName>
+                <default>false</default>
+                <label>Equipment/Parts Inquiry</label>
+            </value>
+            <value>
+                <fullName>Existing Contact - Customer Service Inquiry</fullName>
+                <default>false</default>
+                <label>Existing Contact - Customer Service Inquiry</label>
+            </value>
+            <value>
+                <fullName>Expired</fullName>
+                <default>false</default>
+                <label>Expired</label>
+            </value>
+            <value>
+                <fullName>Fraud/Scam</fullName>
+                <default>false</default>
+                <label>Fraud/Scam</label>
+            </value>
+            <value>
+                <fullName>No response / Inaccurate Data</fullName>
+                <default>false</default>
+                <label>No response / Inaccurate Data</label>
+            </value>
+            <value>
+                <fullName>Not a product fit</fullName>
+                <default>false</default>
+                <label>Not a product fit</label>
+            </value>
+            <value>
+                <fullName>Not Target Profile Fit</fullName>
+                <default>false</default>
+                <label>Not Target Profile Fit</label>
+            </value>
+            <value>
+                <fullName>Order Size</fullName>
+                <default>false</default>
+                <label>Order Size</label>
+            </value>
+            <value>
+                <fullName>Pricing / Competitor</fullName>
+                <default>false</default>
+                <label>Pricing / Competitor</label>
+            </value>
+            <value>
+                <fullName>Solicitor</fullName>
+                <default>false</default>
+                <label>Solicitor</label>
+            </value>
+            <value>
+                <fullName>Student</fullName>
+                <default>false</default>
+                <label>Student</label>
+            </value>
+            <value>
+                <fullName>System</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>System</label>
+            </value>
+            <value>
+                <fullName>Timing</fullName>
+                <default>false</default>
+                <label>Timing</label>
+            </value>
+            <value>
+                <fullName>TSB?</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>TSB?</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

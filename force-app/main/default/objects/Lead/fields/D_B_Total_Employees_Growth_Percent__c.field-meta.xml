@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>D_B_Total_Employees_Growth_Percent__c</fullName>
+    <description>This is fed in from D&amp;B via data warehouse</description>
+    <externalId>false</externalId>
+    <label>D&amp;B - Total Employees Growth Percent</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>0</scale>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Number</type>
+    <unique>false</unique>
+</CustomField>

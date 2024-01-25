@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>COST_MAINT_EIR_REQUEST</fullName>
+    <columns>CASES.CASE_NUMBER</columns>
+    <columns>CASES.SUBJECT</columns>
+    <columns>CASES.STATUS</columns>
+    <columns>CASES.EMAIL</columns>
+    <columns>Unread_New_Email_on_Closed_Case__c</columns>
+    <columns>CASES.CREATED_DATE_DATE_ONLY</columns>
+    <columns>CORE.USERS.ALIAS</columns>
+    <columns>Last_Inbound_Email_Time__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>Date_Case_Opened__c</field>
+        <operation>equals</operation>
+        <value>LAST_N_DAYS:60</value>
+    </filters>
+    <filters>
+        <field>CASES.EMAIL</field>
+        <operation>contains</operation>
+        <value>k2prodemail@veritivcorp.com</value>
+    </filters>
+    <filters>
+        <field>CASES.STATUS</field>
+        <operation>equals</operation>
+        <value>Closed</value>
+    </filters>
+    <label>COST MAINT - CLOSED EIR REQUESTS</label>
+    <sharedTo>
+        <group>Cost_Maint_EIR_Request_Team</group>
+    </sharedTo>
+</ListView>

@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Working_Status__c</fullName>
+    <externalId>false</externalId>
+    <label>Working Status</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>true</sorted>
+            <value>
+                <fullName>End of Day</fullName>
+                <default>false</default>
+                <label>End of Day</label>
+            </value>
+            <value>
+                <fullName>In Office</fullName>
+                <default>true</default>
+                <label>In Office</label>
+            </value>
+            <value>
+                <fullName>Out of Office Received</fullName>
+                <default>false</default>
+                <label>Out of Office Received</label>
+            </value>
+            <value>
+                <fullName>Vacation</fullName>
+                <default>false</default>
+                <label>Vacation</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

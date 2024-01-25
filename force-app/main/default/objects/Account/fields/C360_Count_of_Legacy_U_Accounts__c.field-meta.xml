@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>C360_Count_of_Legacy_U_Accounts__c</fullName>
+    <description>Returns 1 if the account&apos;s Legacy System Cd is not blank nor &quot;X&quot; (case sensitive). Necessary for Customer 360 Object.</description>
+    <externalId>false</externalId>
+    <formula>IF(AND(
+  Legacy_System_Cd__c &lt;&gt; &quot;X&quot;
+ ,  RecordType.DeveloperName = &quot;Customer&quot;) ,
+1,0
+)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Count of Legacy U Accounts</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>0</scale>
+    <trackHistory>false</trackHistory>
+    <type>Number</type>
+    <unique>false</unique>
+</CustomField>

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>VIQ_Return_Products__c</fullName>
+    <description>Stamps the ProductGroupingKey #s for the corresponding Product Categories specified for this Insight in the CustomerInsight table from Zilliant. This field is not to change. Regardless of if a rep changes the product categories and or segment on the opportunity, these are the productgroupings that win/loss feedback is sent back to Zilliant for.</description>
+    <externalId>false</externalId>
+    <inlineHelpText>Do not edit this field.</inlineHelpText>
+    <label>VIQ Return Products</label>
+    <length>255</length>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

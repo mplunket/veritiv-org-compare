@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Close_Deal_Ratio_Percent__c</fullName>
+    <description>Close Deal Ratio Percent</description>
+    <externalId>false</externalId>
+    <formula>Sum_Num_Closed_Oppty__c  /  ( MAX(Sum_Num_Total_Oppty__c,1))</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <inlineHelpText>Close Deal Ratio Percent</inlineHelpText>
+    <label>Close Deal Ratio Percent</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>1</scale>
+    <trackHistory>false</trackHistory>
+    <type>Percent</type>
+</CustomField>

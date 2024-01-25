@@ -1,0 +1,1884 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<RecordType xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>VeritivIQ</fullName>
+    <active>false</active>
+    <businessProcess>Standard Process</businessProcess>
+    <description>Opportunities created for Zilliant Insights generated through email. - DO NOT DELETE UNTIL ZILLIANT REMOVES FROM APEX</description>
+    <label>VeritivIQ</label>
+    <picklistValues>
+        <picklist>Account_Type_Picklist__c</picklist>
+        <values>
+            <fullName>Customer</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Prospect</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Account_Vertical_Update__c</picklist>
+        <values>
+            <fullName>Building Service Contractors</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Education</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Food Processing</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Food Service</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Fulfillment</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Government</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Graphic Design%2FAdvertising</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Health Clubs</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Healthcare</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Hospitality%2FLodging</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Large Venue</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Manufacturing %28non food%2Fprint%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Other</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Printer - Commercial%2FSheet Fed</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Printer - Digital%2FWide Format</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Printer - Gang Run</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Printer - In-plant</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Printer - Other</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Printer - Packaging</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Printer - Sheetfed%2FWeb Combo</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Printer - Web</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Property Management</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Re-D %E2%80%93 Convenience Store</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Re-D - Candy%2FTobacco</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Re-D - Foodservice</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Re-D - Foodservice%2FJan-San Mix</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Re-D - Healthcare</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Re-D - Janitorial</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Re-D - Manufacturing</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Re-D - Office</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Redistribution - FS</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Retail</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Transportation</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Active_Sales_Team_Roles__c</picklist>
+        <values>
+            <fullName>Packaging Equipment Specialist</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Specialist Cold Chain</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Specialist Corrugated</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Specialist Food</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Approval_Status__c</picklist>
+        <values>
+            <fullName>Approval Pending</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Approved</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Not Submitted</fullName>
+            <default>true</default>
+        </values>
+        <values>
+            <fullName>Rejected</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Review</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>BOM__c</picklist>
+        <values>
+            <fullName>Complete</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Created</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Submitted to Finance</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Board_Grade__c</picklist>
+        <values>
+            <fullName>32 B Kraft</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>32 B MW</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>32 C Kraft</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>32 C MW</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>44 C Kraft</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>48 BC Kraft</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Box_Style__c</picklist>
+        <values>
+            <fullName>FOL</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>HSC</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>PAD</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>RSC</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>CPASS__c</picklist>
+        <values>
+            <fullName>Complete</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Submitted</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>CoPacker__c</picklist>
+        <values>
+            <fullName>Complete</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Identified</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Quote Accepted</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Quote Rejected</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>RFQ Submitted</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>SOW Received</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Samples Sent</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Customer_Platform__c</picklist>
+        <values>
+            <fullName>Aftermarket Automotive</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Aftermarket Powersports</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>All In One Printer</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Audio Accessory</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Automotive</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Camera</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Camera Accessory</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Cell Phone</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Computer Component</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Computer Peripheral</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Consumer Electronic Accessory</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Cookware</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Desktop</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Diagnostic Testing</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Durable Food and Beverage Container</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Fashion Accessory</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Fitness Accessory</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Fitness Equipment</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Flat Panel Monitor</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Floral</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Food %26 Beverage - Perishable</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Garage Equipment</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Home Security</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Hospitality Supply</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Industrial Automation</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Kitchen Appliance</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Location Tracker</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Medical Equipment %26 Supplies</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Mobile Payment</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Networking Accessories</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Notebook</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Other</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Outdoor Cooking Accessory</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Outdoor Cooking Appliances</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Outdoor Recreation Equipment</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Paper - Electronics</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Personal Care</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Pet Care</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Plumbing Products</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Printer</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Prosthetics</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Server</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Solar Panel</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Sporting Goods</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Sports Apparel</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>DB_Competitor__c</picklist>
+        <values>
+            <fullName>Competitor A</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Competitor B</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Competitor C</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Dangerous_Hazardous__c</picklist>
+        <values>
+            <fullName>No</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Yes</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Design_Stage__c</picklist>
+        <values>
+            <fullName>Accepted</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Completed</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>In Progress</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Design_Status__c</picklist>
+        <values>
+            <fullName>Approved</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Complete</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Current</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Design Review</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>On Hold</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Plan</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Returned</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Specialist Review</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Design_Type__c</picklist>
+        <values>
+            <fullName>Complex</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Simple</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>EVA__c</picklist>
+        <values>
+            <fullName>Approved</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Requested</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Food_Bev_Supps_included__c</picklist>
+        <values>
+            <fullName>No</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Yes</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>ForecastCategoryName</picklist>
+        <values>
+            <fullName>Best Case</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Closed</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Commit</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Omitted</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Pipeline</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>FrequencyKitting__c</picklist>
+        <values>
+            <fullName>Daily</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Monthly</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>One Time</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Weekly</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Frequency__c</picklist>
+        <values>
+            <fullName>One Time</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Ongoing</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Glue_Tab__c</picklist>
+        <values>
+            <fullName>Glue In</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Glue Out</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>N%2FA - Pad Request</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Growth_Initiative__c</picklist>
+        <values>
+            <fullName>Customer Experience</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Diversification</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Global Initiatives</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Organic Growth</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Packout and Kitting</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Process Improvements</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Information_Type__c</picklist>
+        <values>
+            <fullName>Award</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Bid</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Presolicitation</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>RFI</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>RFP</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>RFQ</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Invoicing__c</picklist>
+        <values>
+            <fullName>Automatic Email</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Manual Email</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Manual Mail</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Kitting_Region__c</picklist>
+        <values>
+            <fullName>East</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>West</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Kitting_Status__c</picklist>
+        <values>
+            <fullName>Complete - Kitting</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>In Process</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Need More Information - CoPacker</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Need More Information - Sales</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Not Qualified for Kitting</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Under Review</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Lane_Frequency__c</picklist>
+        <values>
+            <fullName>Dedicated</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Spot</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>LeadSource</picklist>
+        <values>
+            <fullName>Advertisement</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Campaign</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Chat</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Cold Call</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>D%26B Hoovers</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Event %2F Trade Show</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>IMap</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Phone Inquiry</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Prospect List</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Referral - Customer%2C Partner%2C Supplier</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Referral - Employee</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Social Media</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Specialist %2F Technician</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Tech Leads</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Website</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Zoominfo</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Lost_Reason__c</picklist>
+        <values>
+            <fullName>Contact - Left Company</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Contact - Not Responsive</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Customer - Bad Timing%2C Will Revisit</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Customer - Credit Issues</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Customer - Location Closed</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Customer - Lost%2FCancelled Project</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Customer - Under Existing Contract</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Lost to Competition - Bid</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Lost to Competition - Incumbent</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Lost to Competition - Other</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Lost to Competition - Vendor Took Direct</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Oppty - Duplicate Record</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Oppty - Expired</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Oppty - Low Volume</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Oppty - Not Real</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Oppty - Transferred Between Reps</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Product - Quality</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Product - Unable to find Vendor</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>VRTV - Non-competitive Cost%2FPrice</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>VRTV - Service Level</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>NIR__c</picklist>
+        <values>
+            <fullName>Complete</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Submitted</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Opportunity_Segment__c</picklist>
+        <values>
+            <fullName>Facility Solutions</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Packaging</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Print</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Publishing</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Opportunity_Type__c</picklist>
+        <values>
+            <fullName>Defending Existing Business</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>New Opportunity</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>PDN_Sample_Requested__c</picklist>
+        <values>
+            <fullName>No</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Yes - Ground</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Yes - Priority</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>POD_Required__c</picklist>
+        <values>
+            <fullName>No</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Yes</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Portfolio__c</picklist>
+        <values>
+            <fullName>Containers</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Corporate</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Domestic</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Internal Projects</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>International</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Legacy</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Other</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Pricing__c</picklist>
+        <values>
+            <fullName>No</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Yes</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Print_Segment__c</picklist>
+        <values>
+            <fullName>Agency Purchased Print</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Catalog</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Corporate Directed Buy</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Direct Mail</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Financial and Insurance</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Non Profit</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>OOH</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Pharmaceutical</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Publishing - Books and Periodicals</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Publishing - National Newstand</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Publishing - Regional and Niche</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Publishing - Specialty and Trade</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Retail - Inserts and Direct Mail</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Retail - Point of Sale %28POS%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Specialty and Converting</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Prod_Category__c</picklist>
+        <values>
+            <fullName>ADHESIVES</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>AEROSPACE</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>AMENITIES</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>AQUEOUS MEDIA</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>AQUEOUS PRINTERS</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>BAGS</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>BINDERY</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>BLANKETS</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>BOND %26 WRITING</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>CAN LINERS</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>CAN LINERS-PRIVATE BRAND</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>CANNABIS PACKAGING</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>CARBONLESS</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>CHEMICALS</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>CHEMICALS-PRIVATE BRAND</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>COATED - ROLLS</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>COATED BOARD - ROLLS</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>COATED BOARD - SHEETS</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>COATED DOMESTIC - SHEETS</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>COATED IMPORT - SHEETS</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>COMPUTER %26 LAPTOP</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>CORRUGATED</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>CUSHIONING</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>DESIGN</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>DIGITAL PAPER</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>DIGITAL PROOFING</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>DISPENSERS</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>ENGINEERING SUPPLIES BLACK %26 WHITE</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>ENGINEERING SUPPLIES COLOR</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>ENVELOPES</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>EQUIPMENT %E2%80%93 GRAPHICS</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>EQUIPMENT - PACKAGING</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>FOLDING CARTON</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>FOOD PACKAGING</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>FOOD SERVICE</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>FOOD SERVICE-PRIVATE BRAND</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>FURNITURE</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>HEWLETT PACKARD AEC PRODUCTS</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>IMAGING - CUT%2FSHEETS%2FROLLS</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>INDEX%2F BRISTOLS%2F BOARDS</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>INK%2FTONER</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>INKS%2FCOATINGS</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>JANITORIAL POWER EQUIPMENT</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>JANITORIAL POWER EQUIPMENT-PRIVATE BRAND</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>JANITORIAL SUPPLIES</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>JANITORIAL SUPPLIES-MATTING</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>JANITORIAL SUPPLIES-PRIVATE BRAND</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>KITTING</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>LABELING %26 IDENTIFICATION</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>LAMINATORS</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>LATEX PRINTERS</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>MAILERS</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>MISCELLANEOUS ACCESSORIES</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>OFF LINE FOLDERS</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>OTHER PACKAGING</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>OTHER PAPER</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>PACKAGES</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>PACKAGING MATERIALS</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>PALLETS</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>PERSONAL HYGIENE</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>PERSONAL HYGIENE-PRIVATE BRAND</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>PERSONAL PROTECTION AND SAFETY</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>PERSONAL PROTECTION AND SAFETY-PRIVATE BRAND</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>PHOTO SUPPLIES</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>PLATES%2FFILM</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>POLY BAGS</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>PREPRESS ELECTRONICS</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>PREPRESS SUPPLIES</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>PRESS ROOM CHEMISTRY</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>PRESS ROOM EQUIPMENT</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>PRESS ROOM SUPPLIES</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>PRESSURE SENSITIVE</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>RECEPTACLES AND MATERIAL HANDLING</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>RETAIL PACKAGING</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>RETAIL%2FOFFICE AND SCHOOL SUPPLIES</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>RIGID</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>SHRINK FILM</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>SKINCARE</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>SKINCARE-PRIVATE BRAND</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>SOFTWARE</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>SOLVENT MEDIA</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>SOLVENT PRINTERS</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>SPECIALTY</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>SPECIALTY FILM</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>SPECIALTY PACKAGING PRODUCTS</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>STRAPPING</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>STRETCH - BANDING</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>STRETCH - HAND GRADE FILMS</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>STRETCH - MACHINE GRADE FILMS</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>STRETCH - NETTING</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>STRETCH FILM</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>STRETCH FILM-PRIVATE BRAND</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>SURFACE PROTECTION</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>SUSTAINABILITY</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>TAPES</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>TAPES-PRIVATE BRAND</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>TCW</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>TECHNICAL ENGINEERING SYS BLACK %26 WHITE</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>TECHNICAL ENGINEERING SYSTEMS COLOR</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>TECHNICAL PLASTICS</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>TEXT %26 COVER</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>TOWELS%2FTISSUES</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>TOWELS%2FTISSUES-PRIVATE BRAND</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>UNCOATED BOARD - CUT%2FSHEETS</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>UNCOATED BOARD - ROLLS</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>UNCOATED BOOK %26 COVER</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>UNCOATED OFFSET - CUT%2FSHEETS</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>UNCOATED OFFSET - ROLLS</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>UNCOATED OPAQUE - CUT%2FSHEETS</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>UNCOATED OPAQUE - ROLLS</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>UNITIZING</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>UV PRINTERS</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>WIDE FORMAT FLEXIBLE</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>WIDE FORMAT INKS</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>WIDE FORMAT RIGID</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>WIPERS</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>XEROGRAPHIC MATERIAL</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Project_Work_Required__c</picklist>
+        <values>
+            <fullName>3D Drawings and Renderings</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Artwork - Customer Provided</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Environmental Impact Analysis</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Graphic Design</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Pallet Analysis%2FConfiguration</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Prepare RFQ</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Prod%2E Drawing Release</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Samples %28include ship to%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Samples w%2FGraphics %28include ship to%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Spec Existing with RFQ</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Structural Design</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Testing</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Rank__c</picklist>
+        <values>
+            <fullName>Cold</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Hot</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Warm</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Region__c</picklist>
+        <values>
+            <fullName>AAC</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Asia %28Restricted%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Central %28IL%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Mexico</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Northeast %28NJ%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Southeast %28GA%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Vine</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>West %28AZ%29</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Requires_Domestic_Manufactured_Product__c</picklist>
+        <values>
+            <fullName>No</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Yes</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Solution__c</picklist>
+        <values>
+            <fullName>No</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Yes</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>TSB_Segment__c</picklist>
+        <values>
+            <fullName>FS</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Non-TSB</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Paper</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Pkg</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Testing_Services_Utilized__c</picklist>
+        <values>
+            <fullName>No</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Yes</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Testing__c</picklist>
+        <values>
+            <fullName>No</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Yes</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Type</picklist>
+        <values>
+            <fullName>Existing Customer</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>New Customer</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>VLS_Opportunity_Type__c</picklist>
+        <values>
+            <fullName>LTL</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>TL</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>VML</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Vine_Doc_Status__c</picklist>
+        <values>
+            <fullName>Completed</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>In Progress</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Vine_Document_in_Progress__c</picklist>
+        <values>
+            <fullName>Pitch</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Proposal</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>SOW</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Vine_Project_Type__c</picklist>
+        <values>
+            <fullName>Design</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Design %26 Testing</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Samples</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Testing</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Vine_Services_Utilized__c</picklist>
+        <values>
+            <fullName>No</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Yes</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>WH_Volume__c</picklist>
+        <values>
+            <fullName>High</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Low</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Medium</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Who_is_paying_for_Freight__c</picklist>
+        <values>
+            <fullName>Customer</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Veritiv</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>distribution_channel__c</picklist>
+        <values>
+            <fullName>Combination</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Direct</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Indirect</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>N%2FA</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Warehouse</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>iRep_Plan_Stamp__c</picklist>
+        <values>
+            <fullName>i20</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>i50</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>i60</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>i99</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+</RecordType>

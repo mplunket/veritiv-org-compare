@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Use_to_Cover_CIN_MW_FS_Open</fullName>
+    <booleanFilter>(1 OR 2) AND 3</booleanFilter>
+    <columns>CASES.CASE_NUMBER</columns>
+    <columns>CASES.CREATED_DATE_DATE_ONLY</columns>
+    <columns>NAME</columns>
+    <columns>CASES.SUBJECT</columns>
+    <columns>CASES.STATUS</columns>
+    <columns>CASES.PRIORITY</columns>
+    <columns>OWNER_NAME</columns>
+    <columns>ToAddressRouting__c</columns>
+    <columns>X255_To_Address__c</columns>
+    <columns>CASES.RECORDTYPE</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>Email_Origin__c</field>
+        <operation>contains</operation>
+        <value>mwfs@veritivcorp.com,hlfs@veritivcorp.com,glfs@veritivcorp.com</value>
+    </filters>
+    <filters>
+        <field>X255_To_Address__c</field>
+        <operation>contains</operation>
+        <value>mwfs@veritivcorp.com,hlfs@veritivcorp.com,glfs@veritivcorp.com</value>
+    </filters>
+    <filters>
+        <field>CASES.STATUS</field>
+        <operation>notEqual</operation>
+        <value>Closed,Merged</value>
+    </filters>
+    <label>Use to Cover CIN - MW - FS - Open</label>
+    <sharedTo>
+        <group>All_Admins</group>
+        <role>CS_DAL_PKG_GL_CXP</role>
+        <role>CS_DAL_PKG_WCRM_TM_TL</role>
+        <role>CS_JAX_FS_CXP8</role>
+    </sharedTo>
+</ListView>

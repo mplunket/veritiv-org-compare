@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Bill_To_Number_to_Merge_With__c</fullName>
+    <externalId>false</externalId>
+    <inlineHelpText>Enter the Customer&apos;s Bill To number in this field.  The Prospect will be merged with the Customer that has this Bill To number.</inlineHelpText>
+    <label>Bill To Number to Merge With</label>
+    <length>20</length>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

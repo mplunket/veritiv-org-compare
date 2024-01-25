@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<BusinessProcess xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Cost Maintenance</fullName>
+    <description>for cases that come in to Cost Maintenance team</description>
+    <isActive>true</isActive>
+    <values>
+        <fullName>Closed</fullName>
+        <default>false</default>
+    </values>
+    <values>
+        <fullName>In Process</fullName>
+        <default>false</default>
+    </values>
+    <values>
+        <fullName>New</fullName>
+        <default>true</default>
+    </values>
+    <values>
+        <fullName>On Hold - CC2</fullName>
+        <default>false</default>
+    </values>
+    <values>
+        <fullName>On Hold - Category Management</fullName>
+        <default>false</default>
+    </values>
+    <values>
+        <fullName>On Hold - Credit</fullName>
+        <default>false</default>
+    </values>
+    <values>
+        <fullName>On Hold - Customer Experience</fullName>
+        <default>false</default>
+    </values>
+    <values>
+        <fullName>On Hold - Freight</fullName>
+        <default>false</default>
+    </values>
+    <values>
+        <fullName>On Hold - Internal Deviation</fullName>
+        <default>false</default>
+    </values>
+    <values>
+        <fullName>On Hold - Item File</fullName>
+        <default>false</default>
+    </values>
+    <values>
+        <fullName>On Hold - Kitting%2FConverting</fullName>
+        <default>false</default>
+    </values>
+    <values>
+        <fullName>On Hold - Manager Approval</fullName>
+        <default>false</default>
+    </values>
+    <values>
+        <fullName>On Hold - Max</fullName>
+        <default>false</default>
+    </values>
+    <values>
+        <fullName>On Hold - Pricing%2FRebates</fullName>
+        <default>false</default>
+    </values>
+    <values>
+        <fullName>On Hold - Procurement</fullName>
+        <default>false</default>
+    </values>
+    <values>
+        <fullName>On Hold - Sales</fullName>
+        <default>false</default>
+    </values>
+    <values>
+        <fullName>On Hold - Shelters</fullName>
+        <default>false</default>
+    </values>
+    <values>
+        <fullName>On Hold - Vendor</fullName>
+        <default>false</default>
+    </values>
+</BusinessProcess>

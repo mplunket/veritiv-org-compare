@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>INTL_Stage5</fullName>
+    <active>true</active>
+    <description>Ensures required values are entered before moving to a later stage</description>
+    <errorConditionFormula>AND(
+( ISNEW() || ISCHANGED(StageName) ),
+    RecordType.DeveloperName = &apos;International_Opportunity_Lightning&apos;,
+    OR(
+        ISBLANK( Expected_Billing_Date__c ),
+        ISBLANK( Bill_to_Number__c )
+    ),
+    ISPICKVAL( StageName , &apos;6- Closed Won&apos;)
+)</errorConditionFormula>
+    <errorMessage>Please complete required fields before moving to the next Stage:  Expected Billing Date, Bill to Number</errorMessage>
+</ValidationRule>

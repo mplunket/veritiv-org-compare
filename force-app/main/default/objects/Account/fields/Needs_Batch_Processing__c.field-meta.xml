@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Needs_Batch_Processing__c</fullName>
+    <defaultValue>false</defaultValue>
+    <description>Nov 2016 - Data fed in from data warehouse integration.</description>
+    <externalId>false</externalId>
+    <label>Needs Batch Processing</label>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Checkbox</type>
+</CustomField>

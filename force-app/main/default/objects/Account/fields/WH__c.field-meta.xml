@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>WH__c</fullName>
+    <description>CUSTOMER SERVICE SPECIFIC</description>
+    <externalId>false</externalId>
+    <inlineHelpText>Enter percentage of time this order type is placed</inlineHelpText>
+    <label>WH</label>
+    <precision>3</precision>
+    <required>false</required>
+    <scale>0</scale>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Percent</type>
+</CustomField>

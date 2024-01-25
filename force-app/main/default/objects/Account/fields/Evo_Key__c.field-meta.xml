@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Evo_Key__c</fullName>
+    <caseSensitive>false</caseSensitive>
+    <description>Xref that shows the Evo Bill To number on VOS accounts</description>
+    <externalId>true</externalId>
+    <label>Evo Key</label>
+    <length>10</length>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Text</type>
+    <unique>true</unique>
+</CustomField>

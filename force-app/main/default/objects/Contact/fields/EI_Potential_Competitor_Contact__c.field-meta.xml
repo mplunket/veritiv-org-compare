@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>EI_Potential_Competitor_Contact__c</fullName>
+    <description>This field stores a set of email list domain names that determine if a contact works for a competitor.</description>
+    <externalId>false</externalId>
+    <formula>OR( 
+CONTAINS( Lower(Email) ,&quot;competitor.com&quot;), 
+CONTAINS( Lower(Email) ,&quot;competitor.net&quot;))</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <inlineHelpText>Determines if the contact works for a potential competitor depending on his/her email address.</inlineHelpText>
+    <label>Potential Competitor</label>
+    <trackHistory>false</trackHistory>
+    <type>Checkbox</type>
+</CustomField>

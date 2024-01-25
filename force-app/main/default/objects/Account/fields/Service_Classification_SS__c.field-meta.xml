@@ -1,0 +1,277 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Service_Classification_SS__c</fullName>
+    <description>Nov 2016 - Data fed in from data warehouse integration.  This is the Supply one</description>
+    <externalId>false</externalId>
+    <inlineHelpText>Information imported from Compass.  Please update the Service Classification in Compass to update this field.</inlineHelpText>
+    <label>Service Classification - SS</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>1A - COMM LITHO</fullName>
+                <default>false</default>
+                <label>1A - COMM LITHO</label>
+            </value>
+            <value>
+                <fullName>1B - MNDRANHALL</fullName>
+                <default>false</default>
+                <label>1B - MNDRANHALL</label>
+            </value>
+            <value>
+                <fullName>1C - GOVERNMENT</fullName>
+                <default>false</default>
+                <label>1C - GOVERNMENT</label>
+            </value>
+            <value>
+                <fullName>1D - FINE ART</fullName>
+                <default>false</default>
+                <label>1D - FINE ART</label>
+            </value>
+            <value>
+                <fullName>1E - EXHBT CONT</fullName>
+                <default>false</default>
+                <label>1E - EXHBT CONT</label>
+            </value>
+            <value>
+                <fullName>1F - ENGMAP GIS</fullName>
+                <default>false</default>
+                <label>1F - ENGMAP GIS</label>
+            </value>
+            <value>
+                <fullName>1G - SIGN MANU</fullName>
+                <default>false</default>
+                <label>1G - SIGN MANU</label>
+            </value>
+            <value>
+                <fullName>1H - REPROGRAPH</fullName>
+                <default>false</default>
+                <label>1H - REPROGRAPH</label>
+            </value>
+            <value>
+                <fullName>1I - BUSFORMPRT</fullName>
+                <default>false</default>
+                <label>1I - BUSFORMPRT</label>
+            </value>
+            <value>
+                <fullName>1J - FLEXO PRNT</fullName>
+                <default>false</default>
+                <label>1J - FLEXO PRNT</label>
+            </value>
+            <value>
+                <fullName>1K - OFF RETAIL</fullName>
+                <default>false</default>
+                <label>1K - OFF RETAIL</label>
+            </value>
+            <value>
+                <fullName>1L - SCREEN PRT</fullName>
+                <default>false</default>
+                <label>1L - SCREEN PRT</label>
+            </value>
+            <value>
+                <fullName>1M - PHOTOGRPHY</fullName>
+                <default>false</default>
+                <label>1M - PHOTOGRPHY</label>
+            </value>
+            <value>
+                <fullName>1N - UNASSIGNED</fullName>
+                <default>false</default>
+                <label>1N - UNASSIGNED</label>
+            </value>
+            <value>
+                <fullName>1O - DIGITALPRT</fullName>
+                <default>false</default>
+                <label>1O - DIGITALPRT</label>
+            </value>
+            <value>
+                <fullName>1P - UNASSIGNED</fullName>
+                <default>false</default>
+                <label>1P - UNASSIGNED</label>
+            </value>
+            <value>
+                <fullName>1Q - PREPRESS</fullName>
+                <default>false</default>
+                <label>1Q - PREPRESS</label>
+            </value>
+            <value>
+                <fullName>1R - UNASSIGNED</fullName>
+                <default>false</default>
+                <label>1R - UNASSIGNED</label>
+            </value>
+            <value>
+                <fullName>1S - BINDERY</fullName>
+                <default>false</default>
+                <label>1S - BINDERY</label>
+            </value>
+            <value>
+                <fullName>1T - STAPLES DS</fullName>
+                <default>false</default>
+                <label>1T - STAPLES DS</label>
+            </value>
+            <value>
+                <fullName>1U - AD&amp;DESIGN</fullName>
+                <default>false</default>
+                <label>1U - AD&amp;DESIGN</label>
+            </value>
+            <value>
+                <fullName>1V - PAPR MERCH</fullName>
+                <default>false</default>
+                <label>1V - PAPR MERCH</label>
+            </value>
+            <value>
+                <fullName>1W - SCHOOLS</fullName>
+                <default>false</default>
+                <label>1W - SCHOOLS</label>
+            </value>
+            <value>
+                <fullName>1X - CORP USERS</fullName>
+                <default>false</default>
+                <label>1X - CORP USERS</label>
+            </value>
+            <value>
+                <fullName>1Y - QUIK PRT</fullName>
+                <default>false</default>
+                <label>1Y - QUIK PRT</label>
+            </value>
+            <value>
+                <fullName>1Z - HEALTHCARE</fullName>
+                <default>false</default>
+                <label>1Z - HEALTHCARE</label>
+            </value>
+            <value>
+                <fullName>2A - ACCOMMODTN</fullName>
+                <default>false</default>
+                <label>2A - ACCOMMODTN</label>
+            </value>
+            <value>
+                <fullName>2B - GOVERNMENT</fullName>
+                <default>false</default>
+                <label>2B - GOVERNMENT</label>
+            </value>
+            <value>
+                <fullName>2C - RESOURCES</fullName>
+                <default>false</default>
+                <label>2C - RESOURCES</label>
+            </value>
+            <value>
+                <fullName>2D - FOODSERV</fullName>
+                <default>false</default>
+                <label>2D - FOODSERV</label>
+            </value>
+            <value>
+                <fullName>2E - EATING&amp;DRI</fullName>
+                <default>false</default>
+                <label>2E - EATING&amp;DRI</label>
+            </value>
+            <value>
+                <fullName>2F - FOODPROCES</fullName>
+                <default>false</default>
+                <label>2F - FOODPROCES</label>
+            </value>
+            <value>
+                <fullName>2G - GROCERY</fullName>
+                <default>false</default>
+                <label>2G - GROCERY</label>
+            </value>
+            <value>
+                <fullName>2H - ACUTHEALTH</fullName>
+                <default>false</default>
+                <label>2H - ACUTHEALTH</label>
+            </value>
+            <value>
+                <fullName>2I - LTHEALTH</fullName>
+                <default>false</default>
+                <label>2I - LTHEALTH</label>
+            </value>
+            <value>
+                <fullName>2J - EDUCATION</fullName>
+                <default>false</default>
+                <label>2J - EDUCATION</label>
+            </value>
+            <value>
+                <fullName>2K - SECONDCUP</fullName>
+                <default>false</default>
+                <label>2K - SECONDCUP</label>
+            </value>
+            <value>
+                <fullName>2L - WDSERVICES</fullName>
+                <default>false</default>
+                <label>2L - WDSERVICES</label>
+            </value>
+            <value>
+                <fullName>2M - MANUFCTRNG</fullName>
+                <default>false</default>
+                <label>2M - MANUFCTRNG</label>
+            </value>
+            <value>
+                <fullName>2N - NATGROCERS</fullName>
+                <default>false</default>
+                <label>2N - NATGROCERS</label>
+            </value>
+            <value>
+                <fullName>2O - HIGHTRAFF</fullName>
+                <default>false</default>
+                <label>2O - HIGHTRAFF</label>
+            </value>
+            <value>
+                <fullName>2P - PM</fullName>
+                <default>false</default>
+                <label>2P - PM</label>
+            </value>
+            <value>
+                <fullName>2Q - BSC</fullName>
+                <default>false</default>
+                <label>2Q - BSC</label>
+            </value>
+            <value>
+                <fullName>2R - REDISTRIBU</fullName>
+                <default>false</default>
+                <label>2R - REDISTRIBU</label>
+            </value>
+            <value>
+                <fullName>2S - CATALOGUES</fullName>
+                <default>false</default>
+                <label>2S - CATALOGUES</label>
+            </value>
+            <value>
+                <fullName>2T - STAPLES DS</fullName>
+                <default>false</default>
+                <label>2T - STAPLES DS</label>
+            </value>
+            <value>
+                <fullName>2U - COSTCOSPEC</fullName>
+                <default>false</default>
+                <label>2U - COSTCOSPEC</label>
+            </value>
+            <value>
+                <fullName>2V - UNASSIGNED</fullName>
+                <default>false</default>
+                <label>2V - UNASSIGNED</label>
+            </value>
+            <value>
+                <fullName>2W - RETAIL</fullName>
+                <default>false</default>
+                <label>2W - RETAIL</label>
+            </value>
+            <value>
+                <fullName>2X - UNASSIGNED</fullName>
+                <default>false</default>
+                <label>2X - UNASSIGNED</label>
+            </value>
+            <value>
+                <fullName>2Y - UNASSIGNED</fullName>
+                <default>false</default>
+                <label>2Y - UNASSIGNED</label>
+            </value>
+            <value>
+                <fullName>2Z - OTHER</fullName>
+                <default>false</default>
+                <label>2Z - OTHER</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

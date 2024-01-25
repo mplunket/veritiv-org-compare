@@ -1,0 +1,175 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Status_Detail__c</fullName>
+    <description>Used in the CEI rollout.
+
+Dependent picklist based on Status to add clarity to the selection</description>
+    <externalId>false</externalId>
+    <inlineHelpText>What was the outcome</inlineHelpText>
+    <label>Status Detail</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <controllingField>Status</controllingField>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>true</sorted>
+            <value>
+                <fullName>Abandoned / Aged</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Abandoned / Aged</label>
+            </value>
+            <value>
+                <fullName>Cost</fullName>
+                <default>false</default>
+                <label>Cost</label>
+            </value>
+            <value>
+                <fullName>Credit</fullName>
+                <default>false</default>
+                <label>Credit</label>
+            </value>
+            <value>
+                <fullName>Customer Onboarding</fullName>
+                <default>false</default>
+                <label>Customer Onboarding</label>
+            </value>
+            <value>
+                <fullName>Delivery</fullName>
+                <default>false</default>
+                <label>Delivery</label>
+            </value>
+            <value>
+                <fullName>Freight</fullName>
+                <default>false</default>
+                <label>Freight</label>
+            </value>
+            <value>
+                <fullName>Inbound Email</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Inbound Email</label>
+            </value>
+            <value>
+                <fullName>Item File</fullName>
+                <default>false</default>
+                <label>Item File</label>
+            </value>
+            <value>
+                <fullName>Manager Approval</fullName>
+                <default>false</default>
+                <label>Manager Approval</label>
+            </value>
+            <value>
+                <fullName>New Activity</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>New Activity</label>
+            </value>
+            <value>
+                <fullName>Out of Office</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Out of Office</label>
+            </value>
+            <value>
+                <fullName>Pricing</fullName>
+                <default>false</default>
+                <label>Pricing</label>
+            </value>
+            <value>
+                <fullName>Procurement</fullName>
+                <default>false</default>
+                <label>Procurement</label>
+            </value>
+            <value>
+                <fullName>Research</fullName>
+                <default>false</default>
+                <label>Research</label>
+            </value>
+            <value>
+                <fullName>Resolved</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Resolved</label>
+            </value>
+            <value>
+                <fullName>Sales Rep</fullName>
+                <default>false</default>
+                <label>Sales Rep</label>
+            </value>
+            <value>
+                <fullName>Sourcing</fullName>
+                <default>false</default>
+                <label>Sourcing</label>
+            </value>
+            <value>
+                <fullName>Unresolved</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Unresolved</label>
+            </value>
+            <value>
+                <fullName>Warehouse</fullName>
+                <default>false</default>
+                <label>Warehouse</label>
+            </value>
+        </valueSetDefinition>
+        <valueSettings>
+            <controllingFieldValue>On Hold - Veritiv</controllingFieldValue>
+            <valueName>Cost</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>On Hold - Veritiv</controllingFieldValue>
+            <valueName>Credit</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>On Hold - Veritiv</controllingFieldValue>
+            <valueName>Customer Onboarding</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>On Hold - Veritiv</controllingFieldValue>
+            <valueName>Delivery</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>On Hold - Veritiv</controllingFieldValue>
+            <valueName>Freight</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>On Hold - Veritiv</controllingFieldValue>
+            <valueName>Item File</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>On Hold - Veritiv</controllingFieldValue>
+            <valueName>Manager Approval</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>On Hold - Veritiv</controllingFieldValue>
+            <valueName>Pricing</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>On Hold - Veritiv</controllingFieldValue>
+            <valueName>Procurement</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>On Hold - Veritiv</controllingFieldValue>
+            <valueName>Research</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>On Hold - Veritiv</controllingFieldValue>
+            <valueName>Sales Rep</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>On Hold - Veritiv</controllingFieldValue>
+            <valueName>Sourcing</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>On Hold - Veritiv</controllingFieldValue>
+            <valueName>Warehouse</valueName>
+        </valueSettings>
+    </valueSet>
+</CustomField>

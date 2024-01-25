@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<WebLink xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>New_Work_Order</fullName>
+    <availability>online</availability>
+    <description>Button to be displayed on lightning or mobile that directs to formassembly</description>
+    <displayType>button</displayType>
+    <encodingKey>UTF-8</encodingKey>
+    <hasMenubar>false</hasMenubar>
+    <hasScrollbars>true</hasScrollbars>
+    <hasToolbar>false</hasToolbar>
+    <height>600</height>
+    <isResizable>true</isResizable>
+    <linkType>url</linkType>
+    <masterLabel>Sourcing</masterLabel>
+    <openType>newWindow</openType>
+    <position>none</position>
+    <protected>false</protected>
+    <showsLocation>false</showsLocation>
+    <showsStatus>false</showsStatus>
+    <url>https://www.tfaforms.com/forms/view/4716963?tfa_37={!Opportunity.Id}&amp;tfa_38={!$User.Id}&amp;tfa_550={!Opportunity.Account}&amp;tfa_554={!Opportunity.Primary_Sales_Rep_Name__c}&amp;tfa_552={!Opportunity.Name}&amp;tfa_1289={!Account.FA_Running_User_Device__c}&amp;tfa_1292={!Account.FA_Running_User_Theme__c}</url>
+</WebLink>

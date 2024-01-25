@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Rank__c</fullName>
+    <externalId>false</externalId>
+    <inlineHelpText>Determined by Probability/Stage.
+0-39%: Cold (Stages 1-3)
+40%-69%: Warm (Stages 3-5)
+70%+: Hot (Stages 6-7)</inlineHelpText>
+    <label>Rank</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>true</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Hot</fullName>
+                <color>#CC0000</color>
+                <default>false</default>
+                <label>Hot</label>
+            </value>
+            <value>
+                <fullName>Warm</fullName>
+                <color>#33CC00</color>
+                <default>false</default>
+                <label>Warm</label>
+            </value>
+            <value>
+                <fullName>Cold</fullName>
+                <color>#0B24BE</color>
+                <default>false</default>
+                <label>Cold</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

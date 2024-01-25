@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>User_Must_Use_Path_to_Convert_a_Lead</fullName>
+    <active>true</active>
+    <description>User cannot select &quot;Converted&quot; from the picklist, but must use the Path to convert the Lead.</description>
+    <errorConditionFormula>AND(NOT(IsConverted),IsPickVal(Status,&apos;Converted&apos;),NOT(IsPickVal(PriorValue(Status),&apos;Converted&apos;)))</errorConditionFormula>
+    <errorDisplayField>Status</errorDisplayField>
+    <errorMessage>Please use the Convert button to Convert a Lead.</errorMessage>
+</ValidationRule>

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<WebLink xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Update_ShipTo_Contracts</fullName>
+    <availability>online</availability>
+    <displayType>button</displayType>
+    <encodingKey>UTF-8</encodingKey>
+    <linkType>url</linkType>
+    <masterLabel>Update ShipTo Contracts</masterLabel>
+    <openType>replace</openType>
+    <protected>false</protected>
+    <url>/flow/Update_Ship_To_Contracts?recordId={!Account.Id}&amp;retURL=/{!Account.Id}</url>
+</WebLink>

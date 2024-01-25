@@ -1,0 +1,1403 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Specifics__c</fullName>
+    <description>Retired 2/16/18.  Not used on NEW Cases Created on this date.</description>
+    <externalId>false</externalId>
+    <label>zzSpecifics</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <controllingField>Reason__c</controllingField>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Account Number Incorrect</fullName>
+                <default>false</default>
+                <label>Account Number Incorrect</label>
+            </value>
+            <value>
+                <fullName>Acknowledgments</fullName>
+                <default>false</default>
+                <label>Acknowledgments</label>
+            </value>
+            <value>
+                <fullName>Additional Charges</fullName>
+                <default>false</default>
+                <label>Additional Charges</label>
+            </value>
+            <value>
+                <fullName>Allocation - Limited # Per Month</fullName>
+                <default>false</default>
+                <label>Allocation - Limited # Per Month</label>
+            </value>
+            <value>
+                <fullName>Appointment Missed</fullName>
+                <default>false</default>
+                <label>Appointment Missed</label>
+            </value>
+            <value>
+                <fullName>Brochure</fullName>
+                <default>false</default>
+                <label>Brochure</label>
+            </value>
+            <value>
+                <fullName>Business Sold/Closed</fullName>
+                <default>false</default>
+                <label>Business Sold/Closed</label>
+            </value>
+            <value>
+                <fullName>Close Out Item</fullName>
+                <default>false</default>
+                <label>Close Out Item</label>
+            </value>
+            <value>
+                <fullName>CoC - Chain of Custody Info</fullName>
+                <default>false</default>
+                <label>CoC - Chain of Custody Info</label>
+            </value>
+            <value>
+                <fullName>Complementary Item</fullName>
+                <default>false</default>
+                <label>Complementary Item</label>
+            </value>
+            <value>
+                <fullName>Confirmation</fullName>
+                <default>false</default>
+                <label>Confirmation</label>
+            </value>
+            <value>
+                <fullName>Cost</fullName>
+                <default>false</default>
+                <label>Cost</label>
+            </value>
+            <value>
+                <fullName>Cost Correction</fullName>
+                <default>false</default>
+                <label>Cost Correction</label>
+            </value>
+            <value>
+                <fullName>Cost Negotiation</fullName>
+                <default>false</default>
+                <label>Cost Negotiation</label>
+            </value>
+            <value>
+                <fullName>Cost - Not Competitive</fullName>
+                <default>false</default>
+                <label>Cost - Not Competitive</label>
+            </value>
+            <value>
+                <fullName>Credit Dept</fullName>
+                <default>false</default>
+                <label>Credit Dept</label>
+            </value>
+            <value>
+                <fullName>Customer Canceled</fullName>
+                <default>false</default>
+                <label>Customer Canceled</label>
+            </value>
+            <value>
+                <fullName>Customer Changed</fullName>
+                <default>false</default>
+                <label>Customer Changed</label>
+            </value>
+            <value>
+                <fullName>Customer Service</fullName>
+                <default>false</default>
+                <label>Customer Service</label>
+            </value>
+            <value>
+                <fullName>Customer Unable to Meet Hard Min</fullName>
+                <default>false</default>
+                <label>Customer Unable to Meet Hard Min</label>
+            </value>
+            <value>
+                <fullName>Damaged</fullName>
+                <default>false</default>
+                <label>Damaged</label>
+            </value>
+            <value>
+                <fullName>Decrease</fullName>
+                <default>false</default>
+                <label>Decrease</label>
+            </value>
+            <value>
+                <fullName>Defective</fullName>
+                <default>false</default>
+                <label>Defective</label>
+            </value>
+            <value>
+                <fullName>Delivered/Shipped to Incorrect Address</fullName>
+                <default>false</default>
+                <label>Delivered/Shipped to Incorrect Address</label>
+            </value>
+            <value>
+                <fullName>Delivery Schedule</fullName>
+                <default>false</default>
+                <label>Delivery Schedule</label>
+            </value>
+            <value>
+                <fullName>Demand Issue</fullName>
+                <default>false</default>
+                <label>Demand Issue</label>
+            </value>
+            <value>
+                <fullName>DFR</fullName>
+                <default>false</default>
+                <label>DFR</label>
+            </value>
+            <value>
+                <fullName>Discontinued</fullName>
+                <default>false</default>
+                <label>Discontinued</label>
+            </value>
+            <value>
+                <fullName>Dispenser Loyalty Agreement</fullName>
+                <default>false</default>
+                <label>Dispenser Loyalty Agreement</label>
+            </value>
+            <value>
+                <fullName>Driver/Truck Complaint</fullName>
+                <default>false</default>
+                <label>Driver/Truck Complaint</label>
+            </value>
+            <value>
+                <fullName>Duplicate Order</fullName>
+                <default>false</default>
+                <label>Duplicate Order</label>
+            </value>
+            <value>
+                <fullName>Early Release Request - UPS</fullName>
+                <default>false</default>
+                <label>Early Release Request - UPS</label>
+            </value>
+            <value>
+                <fullName>eBusiness</fullName>
+                <default>false</default>
+                <label>eBusiness</label>
+            </value>
+            <value>
+                <fullName>Economy Issues</fullName>
+                <default>false</default>
+                <label>Economy Issues</label>
+            </value>
+            <value>
+                <fullName>Erosion Analysis</fullName>
+                <default>false</default>
+                <label>Erosion Analysis</label>
+            </value>
+            <value>
+                <fullName>Excessive Lead Times</fullName>
+                <default>false</default>
+                <label>Excessive Lead Times</label>
+            </value>
+            <value>
+                <fullName>Expect Date</fullName>
+                <default>false</default>
+                <label>Expect Date</label>
+            </value>
+            <value>
+                <fullName>Freight Charges</fullName>
+                <default>false</default>
+                <label>Freight Charges</label>
+            </value>
+            <value>
+                <fullName>GTM Improvement</fullName>
+                <default>false</default>
+                <label>GTM Improvement</label>
+            </value>
+            <value>
+                <fullName>Inaccurate Lead Time/Delivery Dates</fullName>
+                <default>false</default>
+                <label>Inaccurate Lead Time/Delivery Dates</label>
+            </value>
+            <value>
+                <fullName>Inaccurate Inventory Count</fullName>
+                <default>false</default>
+                <label>Inaccurate Inventory Count</label>
+            </value>
+            <value>
+                <fullName>Increase</fullName>
+                <default>false</default>
+                <label>Increase</label>
+            </value>
+            <value>
+                <fullName>Increase Order Size</fullName>
+                <default>false</default>
+                <label>Increase Order Size</label>
+            </value>
+            <value>
+                <fullName>Inventory</fullName>
+                <default>false</default>
+                <label>Inventory</label>
+            </value>
+            <value>
+                <fullName>Invoice Request</fullName>
+                <default>false</default>
+                <label>Invoice Request</label>
+            </value>
+            <value>
+                <fullName>Item Incorrect</fullName>
+                <default>false</default>
+                <label>Item Incorrect</label>
+            </value>
+            <value>
+                <fullName>Item Not On Order</fullName>
+                <default>false</default>
+                <label>Item Not On Order</label>
+            </value>
+            <value>
+                <fullName>Item Not Ordered</fullName>
+                <default>false</default>
+                <label>Item Not Ordered</label>
+            </value>
+            <value>
+                <fullName>Key/Top Account</fullName>
+                <default>false</default>
+                <label>Key/Top Account</label>
+            </value>
+            <value>
+                <fullName>Lack of Representation</fullName>
+                <default>false</default>
+                <label>Lack of Representation</label>
+            </value>
+            <value>
+                <fullName>LDC - Last Date to Change</fullName>
+                <default>false</default>
+                <label>LDC - Last Date to Change</label>
+            </value>
+            <value>
+                <fullName>Lead Time</fullName>
+                <default>false</default>
+                <label>Lead Time</label>
+            </value>
+            <value>
+                <fullName>Lost Contracts</fullName>
+                <default>false</default>
+                <label>Lost Contracts</label>
+            </value>
+            <value>
+                <fullName>Margin</fullName>
+                <default>false</default>
+                <label>Margin</label>
+            </value>
+            <value>
+                <fullName>Mill Rep</fullName>
+                <default>false</default>
+                <label>Mill Rep</label>
+            </value>
+            <value>
+                <fullName>Missed Non-Stock Backorder</fullName>
+                <default>false</default>
+                <label>Missed Non-Stock Backorder</label>
+            </value>
+            <value>
+                <fullName>Missed Ordering Due To Order Cycle</fullName>
+                <default>false</default>
+                <label>Missed Ordering Due To Order Cycle</label>
+            </value>
+            <value>
+                <fullName>MSDS/Chemical Lables</fullName>
+                <default>false</default>
+                <label>MSDS/Chemical Lables</label>
+            </value>
+            <value>
+                <fullName>National Contract</fullName>
+                <default>false</default>
+                <label>National Contract</label>
+            </value>
+            <value>
+                <fullName>New</fullName>
+                <default>false</default>
+                <label>New</label>
+            </value>
+            <value>
+                <fullName>New Account</fullName>
+                <default>false</default>
+                <label>New Account</label>
+            </value>
+            <value>
+                <fullName>New Item Numbers</fullName>
+                <default>false</default>
+                <label>New Item Numbers</label>
+            </value>
+            <value>
+                <fullName>New Product Intro</fullName>
+                <default>false</default>
+                <label>New Product Intro</label>
+            </value>
+            <value>
+                <fullName>NIR - Not Added to ERS</fullName>
+                <default>false</default>
+                <label>NIR - Not Added to ERS</label>
+            </value>
+            <value>
+                <fullName>NOA - Notice of Adjustment</fullName>
+                <default>false</default>
+                <label>NOA - Notice of Adjustment</label>
+            </value>
+            <value>
+                <fullName>Non-Stock</fullName>
+                <default>false</default>
+                <label>Non-Stock</label>
+            </value>
+            <value>
+                <fullName>No Substitute Available</fullName>
+                <default>false</default>
+                <label>No Substitute Available</label>
+            </value>
+            <value>
+                <fullName>Price - Not Competitive</fullName>
+                <default>false</default>
+                <label>Price - Not Competitive</label>
+            </value>
+            <value>
+                <fullName>Not Frchdsd to Purch</fullName>
+                <default>false</default>
+                <label>Not Frchdsd to Purch</label>
+            </value>
+            <value>
+                <fullName>Offering Solution</fullName>
+                <default>false</default>
+                <label>Offering Solution</label>
+            </value>
+            <value>
+                <fullName>One Time Buy</fullName>
+                <default>false</default>
+                <label>One Time Buy</label>
+            </value>
+            <value>
+                <fullName>Order</fullName>
+                <default>false</default>
+                <label>Order</label>
+            </value>
+            <value>
+                <fullName>Order Canceled</fullName>
+                <default>false</default>
+                <label>Order Canceled</label>
+            </value>
+            <value>
+                <fullName>Ordered Incorrectly</fullName>
+                <default>false</default>
+                <label>Ordered Incorrectly</label>
+            </value>
+            <value>
+                <fullName>Order Minimum Not Met</fullName>
+                <default>false</default>
+                <label>Order Minimum Not Met</label>
+            </value>
+            <value>
+                <fullName>Order Not Placed</fullName>
+                <default>false</default>
+                <label>Order Not Placed</label>
+            </value>
+            <value>
+                <fullName>Order Not Received</fullName>
+                <default>false</default>
+                <label>Order Not Received</label>
+            </value>
+            <value>
+                <fullName>Delivery Refused</fullName>
+                <default>false</default>
+                <label>Delivery Refused</label>
+            </value>
+            <value>
+                <fullName>Order Tracking</fullName>
+                <default>false</default>
+                <label>Order Tracking</label>
+            </value>
+            <value>
+                <fullName>Packing List</fullName>
+                <default>false</default>
+                <label>Packing List</label>
+            </value>
+            <value>
+                <fullName>Pickup</fullName>
+                <default>false</default>
+                <label>Pickup</label>
+            </value>
+            <value>
+                <fullName>POD Request</fullName>
+                <default>false</default>
+                <label>POD Request</label>
+            </value>
+            <value>
+                <fullName>PO Incorrect</fullName>
+                <default>false</default>
+                <label>PO Incorrect</label>
+            </value>
+            <value>
+                <fullName>Policy Credit</fullName>
+                <default>false</default>
+                <label>Policy Credit</label>
+            </value>
+            <value>
+                <fullName>PO Not Rec&apos;d by Vendor</fullName>
+                <default>false</default>
+                <label>PO Not Rec&apos;d by Vendor</label>
+            </value>
+            <value>
+                <fullName>Price</fullName>
+                <default>false</default>
+                <label>Price</label>
+            </value>
+            <value>
+                <fullName>Pricing Discrepancy</fullName>
+                <default>false</default>
+                <label>Pricing Discrepancy</label>
+            </value>
+            <value>
+                <fullName>Product Attributes</fullName>
+                <default>false</default>
+                <label>Product Attributes</label>
+            </value>
+            <value>
+                <fullName>Product Availability</fullName>
+                <default>false</default>
+                <label>Product Availability</label>
+            </value>
+            <value>
+                <fullName>Product Sourcing</fullName>
+                <default>false</default>
+                <label>Product Sourcing</label>
+            </value>
+            <value>
+                <fullName>Product Substitution</fullName>
+                <default>false</default>
+                <label>Product Substitution</label>
+            </value>
+            <value>
+                <fullName>Promotion</fullName>
+                <default>false</default>
+                <label>Promotion</label>
+            </value>
+            <value>
+                <fullName>Quantity Incorrect</fullName>
+                <default>false</default>
+                <label>Quantity Incorrect</label>
+            </value>
+            <value>
+                <fullName>Quote</fullName>
+                <default>false</default>
+                <label>Quote</label>
+            </value>
+            <value>
+                <fullName>Quote Tracking - Strategic</fullName>
+                <default>false</default>
+                <label>Quote Tracking - Strategic</label>
+            </value>
+            <value>
+                <fullName>Recapturing Lost Business</fullName>
+                <default>false</default>
+                <label>Recapturing Lost Business</label>
+            </value>
+            <value>
+                <fullName>Receiving Issue</fullName>
+                <default>false</default>
+                <label>Receiving Issue</label>
+            </value>
+            <value>
+                <fullName>Relationship</fullName>
+                <default>false</default>
+                <label>Relationship</label>
+            </value>
+            <value>
+                <fullName>Replacement</fullName>
+                <default>false</default>
+                <label>Replacement</label>
+            </value>
+            <value>
+                <fullName>RFQ</fullName>
+                <default>false</default>
+                <label>RFQ</label>
+            </value>
+            <value>
+                <fullName>Sales</fullName>
+                <default>false</default>
+                <label>Sales</label>
+            </value>
+            <value>
+                <fullName>Sales Rep</fullName>
+                <default>false</default>
+                <label>Sales Rep</label>
+            </value>
+            <value>
+                <fullName>Sample Request</fullName>
+                <default>false</default>
+                <label>Sample Request</label>
+            </value>
+            <value>
+                <fullName>Seasonal</fullName>
+                <default>false</default>
+                <label>Seasonal</label>
+            </value>
+            <value>
+                <fullName>Service Failures</fullName>
+                <default>false</default>
+                <label>Service Failures</label>
+            </value>
+            <value>
+                <fullName>Solution for Existing Product Issue</fullName>
+                <default>false</default>
+                <label>Solution for Existing Product Issue</label>
+            </value>
+            <value>
+                <fullName>Special Offer</fullName>
+                <default>false</default>
+                <label>Special Offer</label>
+            </value>
+            <value>
+                <fullName>Statement</fullName>
+                <default>false</default>
+                <label>Statement</label>
+            </value>
+            <value>
+                <fullName>Status</fullName>
+                <default>false</default>
+                <label>Status</label>
+            </value>
+            <value>
+                <fullName>Substitute is More Expensive</fullName>
+                <default>false</default>
+                <label>Substitute is More Expensive</label>
+            </value>
+            <value>
+                <fullName>Substitution</fullName>
+                <default>false</default>
+                <label>Substitution</label>
+            </value>
+            <value>
+                <fullName>Swatch Books</fullName>
+                <default>false</default>
+                <label>Swatch Books</label>
+            </value>
+            <value>
+                <fullName>Tax</fullName>
+                <default>false</default>
+                <label>Tax</label>
+            </value>
+            <value>
+                <fullName>Transfer of Account</fullName>
+                <default>false</default>
+                <label>Transfer of Account</label>
+            </value>
+            <value>
+                <fullName>Unable to Timely Meet Vendor Min</fullName>
+                <default>false</default>
+                <label>Unable to Timely Meet Vendor Min</label>
+            </value>
+            <value>
+                <fullName>UOM issue</fullName>
+                <default>false</default>
+                <label>UOM issue</label>
+            </value>
+            <value>
+                <fullName>Usage</fullName>
+                <default>false</default>
+                <label>Usage</label>
+            </value>
+            <value>
+                <fullName>UWW Minimums</fullName>
+                <default>false</default>
+                <label>UWW Minimums</label>
+            </value>
+            <value>
+                <fullName>Volume Break</fullName>
+                <default>false</default>
+                <label>Volume Break</label>
+            </value>
+            <value>
+                <fullName>Zilliant Pricing</fullName>
+                <default>false</default>
+                <label>Zilliant Pricing</label>
+            </value>
+            <value>
+                <fullName>Direct</fullName>
+                <default>false</default>
+                <label>Direct</label>
+            </value>
+            <value>
+                <fullName>Indirect</fullName>
+                <default>false</default>
+                <label>Indirect</label>
+            </value>
+            <value>
+                <fullName>Warehouse</fullName>
+                <default>false</default>
+                <label>Warehouse</label>
+            </value>
+            <value>
+                <fullName>Vendor/Mill</fullName>
+                <default>false</default>
+                <label>Vendor/Mill</label>
+            </value>
+            <value>
+                <fullName>Facility Supply</fullName>
+                <default>false</default>
+                <label>Facility Supply</label>
+            </value>
+            <value>
+                <fullName>Packaging</fullName>
+                <default>false</default>
+                <label>Packaging</label>
+            </value>
+            <value>
+                <fullName>Vendor Not Valid</fullName>
+                <default>false</default>
+                <label>Vendor Not Valid</label>
+            </value>
+            <value>
+                <fullName>Grow &apos;IT&apos;</fullName>
+                <default>false</default>
+                <label>Grow &apos;IT&apos;</label>
+            </value>
+            <value>
+                <fullName>Own &apos;IT&apos;</fullName>
+                <default>false</default>
+                <label>Own &apos;IT&apos;</label>
+            </value>
+            <value>
+                <fullName>Sell &apos;IT&apos;</fullName>
+                <default>false</default>
+                <label>Sell &apos;IT&apos;</label>
+            </value>
+            <value>
+                <fullName>Take &apos;IT&apos;</fullName>
+                <default>false</default>
+                <label>Take &apos;IT&apos;</label>
+            </value>
+            <value>
+                <fullName>Understand &apos;IT&apos;</fullName>
+                <default>false</default>
+                <label>Understand &apos;IT&apos;</label>
+            </value>
+            <value>
+                <fullName>Topline Sales Facility</fullName>
+                <default>false</default>
+                <label>Topline Sales Facility</label>
+            </value>
+            <value>
+                <fullName>Topline Sales Packaging</fullName>
+                <default>false</default>
+                <label>Topline Sales Packaging</label>
+            </value>
+            <value>
+                <fullName>Topline Sales Paper</fullName>
+                <default>false</default>
+                <label>Topline Sales Paper</label>
+            </value>
+            <value>
+                <fullName>Believe &apos;IT&apos;</fullName>
+                <default>false</default>
+                <label>Believe &apos;IT&apos;</label>
+            </value>
+            <value>
+                <fullName>Save &apos;IT&apos;</fullName>
+                <default>false</default>
+                <label>Save &apos;IT&apos;</label>
+            </value>
+            <value>
+                <fullName>See &apos;IT&apos;</fullName>
+                <default>false</default>
+                <label>See &apos;IT&apos;</label>
+            </value>
+            <value>
+                <fullName>Solve &apos;IT&apos;</fullName>
+                <default>false</default>
+                <label>Solve &apos;IT&apos;</label>
+            </value>
+            <value>
+                <fullName>3PL UFreight Load</fullName>
+                <default>false</default>
+                <label>3PL UFreight Load</label>
+            </value>
+            <value>
+                <fullName>Additional Service/Location Request</fullName>
+                <default>false</default>
+                <label>Additional Service/Location Request</label>
+            </value>
+            <value>
+                <fullName>BOL - Bill of Lading</fullName>
+                <default>false</default>
+                <label>BOL - Bill of Lading</label>
+            </value>
+            <value>
+                <fullName>Book a Load/Schedule Shipment</fullName>
+                <default>false</default>
+                <label>Book a Load/Schedule Shipment</label>
+            </value>
+            <value>
+                <fullName>Contracts</fullName>
+                <default>false</default>
+                <label>Contracts</label>
+            </value>
+            <value>
+                <fullName>Disputed Charges</fullName>
+                <default>false</default>
+                <label>Disputed Charges</label>
+            </value>
+            <value>
+                <fullName>Inbound Inventory</fullName>
+                <default>false</default>
+                <label>Inbound Inventory</label>
+            </value>
+            <value>
+                <fullName>Kitting/Rework</fullName>
+                <default>false</default>
+                <label>Kitting/Rework</label>
+            </value>
+            <value>
+                <fullName>New Item Setup</fullName>
+                <default>false</default>
+                <label>New Item Setup</label>
+            </value>
+            <value>
+                <fullName>Past Due Invoice</fullName>
+                <default>false</default>
+                <label>Past Due Invoice</label>
+            </value>
+            <value>
+                <fullName>Pickup Missed</fullName>
+                <default>false</default>
+                <label>Pickup Missed</label>
+            </value>
+            <value>
+                <fullName>Sent 3PL Invoice</fullName>
+                <default>false</default>
+                <label>Sent 3PL Invoice</label>
+            </value>
+            <value>
+                <fullName>Web Load Freight</fullName>
+                <default>false</default>
+                <label>Web Load Freight</label>
+            </value>
+        </valueSetDefinition>
+        <valueSettings>
+            <controllingFieldValue>Order</controllingFieldValue>
+            <controllingFieldValue>Service Request</controllingFieldValue>
+            <valueName>Order</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Order</controllingFieldValue>
+            <valueName>Direct</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Order</controllingFieldValue>
+            <valueName>Indirect</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Order</controllingFieldValue>
+            <valueName>Warehouse</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Change Item</controllingFieldValue>
+            <controllingFieldValue>Reports</controllingFieldValue>
+            <valueName>Cost</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Change Item</controllingFieldValue>
+            <valueName>Discontinued</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Change Item</controllingFieldValue>
+            <valueName>New</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Change Item</controllingFieldValue>
+            <valueName>Product Sourcing</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Change Item</controllingFieldValue>
+            <valueName>Replacement</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Change Item</controllingFieldValue>
+            <valueName>Status</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Forecasting</controllingFieldValue>
+            <valueName>Decrease</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Forecasting</controllingFieldValue>
+            <valueName>Increase</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Forecasting</controllingFieldValue>
+            <controllingFieldValue>Lost Business</controllingFieldValue>
+            <controllingFieldValue>Migrating Business</controllingFieldValue>
+            <valueName>Seasonal</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Margin Improvement</controllingFieldValue>
+            <valueName>Cost Negotiation</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Margin Improvement</controllingFieldValue>
+            <valueName>Erosion Analysis</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Margin Improvement</controllingFieldValue>
+            <valueName>Product Substitution</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Promotion</controllingFieldValue>
+            <valueName>Promotion</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Reports</controllingFieldValue>
+            <controllingFieldValue>Lost Business</controllingFieldValue>
+            <controllingFieldValue>Migrating Business</controllingFieldValue>
+            <valueName>Inventory</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Reports</controllingFieldValue>
+            <valueName>Margin</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Reports</controllingFieldValue>
+            <controllingFieldValue>Lost Business</controllingFieldValue>
+            <controllingFieldValue>Migrating Business</controllingFieldValue>
+            <valueName>Price</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Reports</controllingFieldValue>
+            <valueName>Sales</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Reports</controllingFieldValue>
+            <valueName>Usage</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Increasing $$$</controllingFieldValue>
+            <valueName>GTM Improvement</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Increasing $$$</controllingFieldValue>
+            <valueName>Increase Order Size</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Increasing $$$</controllingFieldValue>
+            <valueName>Quote Tracking - Strategic</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Increasing $$$</controllingFieldValue>
+            <valueName>Recapturing Lost Business</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>RFQ</controllingFieldValue>
+            <valueName>RFQ</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Lost Business</controllingFieldValue>
+            <valueName>Business Sold/Closed</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Lost Business</controllingFieldValue>
+            <controllingFieldValue>Migrating Business</controllingFieldValue>
+            <valueName>Delivery Schedule</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Lost Business</controllingFieldValue>
+            <controllingFieldValue>Migrating Business</controllingFieldValue>
+            <valueName>Economy Issues</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Lost Business</controllingFieldValue>
+            <controllingFieldValue>Migrating Business</controllingFieldValue>
+            <valueName>Lack of Representation</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Lost Business</controllingFieldValue>
+            <controllingFieldValue>Migrating Business</controllingFieldValue>
+            <valueName>Lost Contracts</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Lost Business</controllingFieldValue>
+            <controllingFieldValue>Migrating Business</controllingFieldValue>
+            <valueName>Product Availability</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Lost Business</controllingFieldValue>
+            <controllingFieldValue>Migrating Business</controllingFieldValue>
+            <valueName>Relationship</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Lost Business</controllingFieldValue>
+            <controllingFieldValue>Migrating Business</controllingFieldValue>
+            <valueName>UWW Minimums</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Equipment Service Request</controllingFieldValue>
+            <valueName>Facility Supply</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Equipment Service Request</controllingFieldValue>
+            <valueName>Packaging</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Status/Inquiry</controllingFieldValue>
+            <valueName>Acknowledgments</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Status/Inquiry</controllingFieldValue>
+            <valueName>Brochure</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Status/Inquiry</controllingFieldValue>
+            <valueName>Close Out Item</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Status/Inquiry</controllingFieldValue>
+            <valueName>CoC - Chain of Custody Info</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Status/Inquiry</controllingFieldValue>
+            <valueName>Complementary Item</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Status/Inquiry</controllingFieldValue>
+            <valueName>Confirmation</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Status/Inquiry</controllingFieldValue>
+            <valueName>Early Release Request - UPS</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Status/Inquiry</controllingFieldValue>
+            <valueName>Expect Date</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Status/Inquiry</controllingFieldValue>
+            <valueName>Invoice Request</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Status/Inquiry</controllingFieldValue>
+            <valueName>MSDS/Chemical Lables</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Status/Inquiry</controllingFieldValue>
+            <valueName>National Contract</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Status/Inquiry</controllingFieldValue>
+            <valueName>One Time Buy</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Status/Inquiry</controllingFieldValue>
+            <valueName>Order Tracking</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Status/Inquiry</controllingFieldValue>
+            <valueName>Packing List</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Status/Inquiry</controllingFieldValue>
+            <valueName>POD Request</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Status/Inquiry</controllingFieldValue>
+            <valueName>Product Attributes</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Status/Inquiry</controllingFieldValue>
+            <valueName>Sample Request</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Status/Inquiry</controllingFieldValue>
+            <valueName>Statement</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Status/Inquiry</controllingFieldValue>
+            <valueName>Swatch Books</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Status/Inquiry</controllingFieldValue>
+            <valueName>Volume Break</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Status/Inquiry</controllingFieldValue>
+            <valueName>Zilliant Pricing</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Status/Inquiry</controllingFieldValue>
+            <valueName>Contracts</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Status/Inquiry</controllingFieldValue>
+            <valueName>Sent 3PL Invoice</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Availability/Fulfillment Concern</controllingFieldValue>
+            <valueName>Allocation - Limited # Per Month</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Availability/Fulfillment Concern</controllingFieldValue>
+            <valueName>Demand Issue</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Availability/Fulfillment Concern</controllingFieldValue>
+            <valueName>Excessive Lead Times</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Availability/Fulfillment Concern</controllingFieldValue>
+            <valueName>Inaccurate Lead Time/Delivery Dates</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Availability/Fulfillment Concern</controllingFieldValue>
+            <controllingFieldValue>Order Entry Concern</controllingFieldValue>
+            <valueName>Inaccurate Inventory Count</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Availability/Fulfillment Concern</controllingFieldValue>
+            <valueName>Item Not Ordered</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Availability/Fulfillment Concern</controllingFieldValue>
+            <valueName>Missed Non-Stock Backorder</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Availability/Fulfillment Concern</controllingFieldValue>
+            <valueName>Missed Ordering Due To Order Cycle</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Availability/Fulfillment Concern</controllingFieldValue>
+            <valueName>NIR - Not Added to ERS</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Availability/Fulfillment Concern</controllingFieldValue>
+            <controllingFieldValue>Order Entry Concern</controllingFieldValue>
+            <valueName>Non-Stock</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Availability/Fulfillment Concern</controllingFieldValue>
+            <controllingFieldValue>Order Entry Concern</controllingFieldValue>
+            <valueName>No Substitute Available</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Availability/Fulfillment Concern</controllingFieldValue>
+            <valueName>Not Frchdsd to Purch</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Availability/Fulfillment Concern</controllingFieldValue>
+            <controllingFieldValue>Order Entry Concern</controllingFieldValue>
+            <valueName>PO Not Rec&apos;d by Vendor</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Availability/Fulfillment Concern</controllingFieldValue>
+            <valueName>Receiving Issue</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Availability/Fulfillment Concern</controllingFieldValue>
+            <valueName>Unable to Timely Meet Vendor Min</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Availability/Fulfillment Concern</controllingFieldValue>
+            <valueName>Vendor Not Valid</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>&apos;IT&apos; Program</controllingFieldValue>
+            <valueName>Grow &apos;IT&apos;</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>&apos;IT&apos; Program</controllingFieldValue>
+            <valueName>Own &apos;IT&apos;</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>&apos;IT&apos; Program</controllingFieldValue>
+            <valueName>Sell &apos;IT&apos;</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>&apos;IT&apos; Program</controllingFieldValue>
+            <valueName>Take &apos;IT&apos;</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>&apos;IT&apos; Program</controllingFieldValue>
+            <valueName>Understand &apos;IT&apos;</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>&apos;IT&apos; Program</controllingFieldValue>
+            <valueName>Believe &apos;IT&apos;</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>&apos;IT&apos; Program</controllingFieldValue>
+            <valueName>Save &apos;IT&apos;</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>&apos;IT&apos; Program</controllingFieldValue>
+            <valueName>See &apos;IT&apos;</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>&apos;IT&apos; Program</controllingFieldValue>
+            <valueName>Solve &apos;IT&apos;</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Order Entry Concern</controllingFieldValue>
+            <valueName>Cost - Not Competitive</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Order Entry Concern</controllingFieldValue>
+            <controllingFieldValue>Service Request</controllingFieldValue>
+            <controllingFieldValue>Billing Concern</controllingFieldValue>
+            <controllingFieldValue>Delivery Concern</controllingFieldValue>
+            <valueName>Customer Canceled</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Order Entry Concern</controllingFieldValue>
+            <valueName>Customer Unable to Meet Hard Min</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Order Entry Concern</controllingFieldValue>
+            <valueName>Dispenser Loyalty Agreement</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Order Entry Concern</controllingFieldValue>
+            <controllingFieldValue>Billing Concern</controllingFieldValue>
+            <valueName>Freight Charges</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Order Entry Concern</controllingFieldValue>
+            <controllingFieldValue>Billing Concern</controllingFieldValue>
+            <controllingFieldValue>Delivery Concern</controllingFieldValue>
+            <valueName>Item Incorrect</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Order Entry Concern</controllingFieldValue>
+            <valueName>LDC - Last Date to Change</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Order Entry Concern</controllingFieldValue>
+            <controllingFieldValue>Delivery Concern</controllingFieldValue>
+            <valueName>Lead Time</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Order Entry Concern</controllingFieldValue>
+            <valueName>New Item Numbers</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Order Entry Concern</controllingFieldValue>
+            <valueName>Price - Not Competitive</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Order Entry Concern</controllingFieldValue>
+            <valueName>Order Canceled</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Order Entry Concern</controllingFieldValue>
+            <controllingFieldValue>Billing Concern</controllingFieldValue>
+            <controllingFieldValue>Delivery Concern</controllingFieldValue>
+            <valueName>Ordered Incorrectly</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Order Entry Concern</controllingFieldValue>
+            <valueName>Order Minimum Not Met</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Order Entry Concern</controllingFieldValue>
+            <valueName>Order Not Placed</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Order Entry Concern</controllingFieldValue>
+            <valueName>Order Not Received</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Order Entry Concern</controllingFieldValue>
+            <controllingFieldValue>Billing Concern</controllingFieldValue>
+            <controllingFieldValue>Delivery Concern</controllingFieldValue>
+            <valueName>Quantity Incorrect</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Order Entry Concern</controllingFieldValue>
+            <valueName>Substitute is More Expensive</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Order Entry Concern</controllingFieldValue>
+            <valueName>Substitution</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Topline Sales</controllingFieldValue>
+            <valueName>Topline Sales Facility</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Topline Sales</controllingFieldValue>
+            <valueName>Topline Sales Packaging</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Topline Sales</controllingFieldValue>
+            <valueName>Topline Sales Paper</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Service Request</controllingFieldValue>
+            <valueName>Customer Changed</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Service Request</controllingFieldValue>
+            <controllingFieldValue>Quote</controllingFieldValue>
+            <valueName>Quote</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Service Request</controllingFieldValue>
+            <valueName>Additional Service/Location Request</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Service Request</controllingFieldValue>
+            <valueName>BOL - Bill of Lading</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Service Request</controllingFieldValue>
+            <valueName>Book a Load/Schedule Shipment</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Service Request</controllingFieldValue>
+            <valueName>Inbound Inventory</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Service Request</controllingFieldValue>
+            <valueName>Kitting/Rework</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Service Request</controllingFieldValue>
+            <valueName>New Item Setup</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Service Request</controllingFieldValue>
+            <valueName>Web Load Freight</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Product</controllingFieldValue>
+            <controllingFieldValue>Product Concern</controllingFieldValue>
+            <controllingFieldValue>Billing Concern</controllingFieldValue>
+            <controllingFieldValue>Delivery Concern</controllingFieldValue>
+            <valueName>Damaged</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Product</controllingFieldValue>
+            <controllingFieldValue>Product Concern</controllingFieldValue>
+            <controllingFieldValue>Billing Concern</controllingFieldValue>
+            <valueName>Defective</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Billing Concern</controllingFieldValue>
+            <valueName>Account Number Incorrect</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Billing Concern</controllingFieldValue>
+            <valueName>Additional Charges</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Billing Concern</controllingFieldValue>
+            <valueName>Cost Correction</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Billing Concern</controllingFieldValue>
+            <valueName>DFR</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Billing Concern</controllingFieldValue>
+            <valueName>Duplicate Order</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Billing Concern</controllingFieldValue>
+            <valueName>Item Not On Order</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Billing Concern</controllingFieldValue>
+            <valueName>NOA - Notice of Adjustment</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Billing Concern</controllingFieldValue>
+            <controllingFieldValue>Delivery Concern</controllingFieldValue>
+            <valueName>Delivery Refused</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Billing Concern</controllingFieldValue>
+            <valueName>Pickup</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Billing Concern</controllingFieldValue>
+            <valueName>PO Incorrect</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Billing Concern</controllingFieldValue>
+            <valueName>Policy Credit</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Billing Concern</controllingFieldValue>
+            <valueName>Pricing Discrepancy</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Billing Concern</controllingFieldValue>
+            <valueName>Tax</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Billing Concern</controllingFieldValue>
+            <valueName>UOM issue</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Billing Concern</controllingFieldValue>
+            <valueName>Disputed Charges</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Billing Concern</controllingFieldValue>
+            <valueName>Past Due Invoice</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Build Customer Rapport</controllingFieldValue>
+            <valueName>eBusiness</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Build Customer Rapport</controllingFieldValue>
+            <valueName>Key/Top Account</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Build Customer Rapport</controllingFieldValue>
+            <valueName>New Account</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Build Customer Rapport</controllingFieldValue>
+            <valueName>Offering Solution</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Build Customer Rapport</controllingFieldValue>
+            <valueName>Transfer of Account</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Delivery Concern</controllingFieldValue>
+            <valueName>Appointment Missed</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Delivery Concern</controllingFieldValue>
+            <valueName>Delivered/Shipped to Incorrect Address</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Service Concern</controllingFieldValue>
+            <valueName>Credit Dept</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Service Concern</controllingFieldValue>
+            <valueName>Customer Service</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Service Concern</controllingFieldValue>
+            <valueName>Driver/Truck Complaint</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Service Concern</controllingFieldValue>
+            <valueName>Mill Rep</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Service Concern</controllingFieldValue>
+            <valueName>Sales Rep</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Service Concern</controllingFieldValue>
+            <valueName>Service Failures</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Service Concern</controllingFieldValue>
+            <valueName>Vendor/Mill</valueName>
+        </valueSettings>
+    </valueSet>
+</CustomField>

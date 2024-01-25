@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<WebLink xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>New_Contact_Customer_Contact</fullName>
+    <availability>online</availability>
+    <displayType>massActionButton</displayType>
+    <encodingKey>UTF-8</encodingKey>
+    <linkType>url</linkType>
+    <masterLabel>zzzNew Contact (Customer Contact)</masterLabel>
+    <openType>replace</openType>
+    <protected>false</protected>
+    <requireRowSelection>false</requireRowSelection>
+    <url>/003/e?retURL=%2F003%2Fo&amp;RecordType=012700000009TSY&amp;cancelURL=%2F003%2Fo&amp;ent=Contact
+&amp;con4_lkid={!Account.Id} 
+&amp;CF00NR0000000PQCc={!Account.Primary_Sales_Rep_Name__c} 
+&amp;retURL%3D%252F0014000000Foa6Q&amp;amp;save_new_url=%2F00Q%2Fe%3Fre</url>
+</WebLink>

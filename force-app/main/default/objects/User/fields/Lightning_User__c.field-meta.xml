@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Lightning_User__c</fullName>
+    <description>Used to determine if the user is &apos;Lightning&apos; or not. This will be valuable in validation rules, reporting, workflow rules, and anything else that requires special treatment between lightning and classic users.</description>
+    <externalId>false</externalId>
+    <formula>AND(
+OR(
+CONTAINS(Profile.Name, &quot;Lightning&quot;),
+
+ProfileId = &quot;00e70000000swa5&quot;,
+ProfileId = &quot;00e70000000j606&quot;,
+ProfileId = &quot;00e70000000swa8&quot;,
+ProfileId = &quot;00e39000001SAoz&quot;,
+ProfileId = &quot;00ef2000001nr3T&quot;,
+ProfileId = &quot;00e70000000zpJJ&quot;
+))</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <inlineHelpText>TRUE = This user is a lightning user and subject to many lightning validation rules that other users are not.</inlineHelpText>
+    <label>Lightning User</label>
+    <type>Checkbox</type>
+</CustomField>

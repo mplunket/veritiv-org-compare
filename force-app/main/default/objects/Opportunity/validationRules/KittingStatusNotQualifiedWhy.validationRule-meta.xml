@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>KittingStatusNotQualifiedWhy</fullName>
+    <active>true</active>
+    <description>If the Kitting Status field = Not Qualified for Kitting, the field = Why not qualified for Kitting? will be requried</description>
+    <errorConditionFormula>AND(
+LEN( Why_not_qualified_for_Kitting__c )= 0,
+OR(
+ISPICKVAL(  Kitting_Status__c , &quot;Cancelled&quot;),
+ISPICKVAL(  Kitting_Status__c , &quot;Not Qualified for Kitting&quot;)))</errorConditionFormula>
+    <errorDisplayField>Why_not_qualified_for_Kitting__c</errorDisplayField>
+    <errorMessage>Please enter why the Opportunity/Account is not qualified for a Kitting Project or why its being cancelled</errorMessage>
+</ValidationRule>

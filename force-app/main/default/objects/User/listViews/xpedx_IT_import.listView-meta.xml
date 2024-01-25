@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>xpedx_IT_import</fullName>
+    <columns>FULL_NAME</columns>
+    <columns>CORE.USERS.ALIAS</columns>
+    <columns>CORE.USERS.USERNAME</columns>
+    <columns>CORE.USERS.LAST_LOGIN</columns>
+    <columns>CORE.USERS.ACTIVE</columns>
+    <columns>CORE.PROFILE.NAME</columns>
+    <columns>name_vp__c</columns>
+    <columns>CREATED_DATE</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>CREATED_DATE</field>
+        <operation>equals</operation>
+        <value>6/30/2014 12:00 AM,7/15/2014 12:00 AM</value>
+    </filters>
+    <filters>
+        <field>name_vp__c</field>
+        <operation>notEqual</operation>
+        <value>&quot;Rockenhaus, Karl&quot;,&quot;Shoulders, Lance&quot;</value>
+    </filters>
+    <label>xpedx IT import</label>
+    <language>en_US</language>
+</ListView>

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>CSP_Primary__c</fullName>
+    <deleteConstraint>SetNull</deleteConstraint>
+    <description>Nov 2016 - Data fed in from data warehouse integration for VOS customers.  For Max customers, these are updated manually but only by those in permission set ANI - Edit 123CSP fields on Accounts and Routing Records</description>
+    <externalId>false</externalId>
+    <label>VOS CSP1</label>
+    <referenceTo>User</referenceTo>
+    <relationshipName>CSPPrimaryAccounts</relationshipName>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>true</trackHistory>
+    <type>Lookup</type>
+</CustomField>

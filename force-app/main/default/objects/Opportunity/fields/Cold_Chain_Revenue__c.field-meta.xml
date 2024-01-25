@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Cold_Chain_Revenue__c</fullName>
+    <externalId>false</externalId>
+    <inlineHelpText>Opportunity sub-total from Vendors Related list for Cold Chain Packaging and Facility products.</inlineHelpText>
+    <label>Cold Chain Revenue</label>
+    <summarizedField>Vendor_Detail_Link__c.Vendor_Category_SubTotal__c</summarizedField>
+    <summaryFilterItems>
+        <field>Vendor_Detail_Link__c.Product_Category__c</field>
+        <operation>equals</operation>
+        <value>COLD CHAIN, COLD CHAIN/TEMPERATURE CONTROLLED PACKAGING</value>
+    </summaryFilterItems>
+    <summaryForeignKey>Vendor_Detail_Link__c.Opportunity__c</summaryForeignKey>
+    <summaryOperation>sum</summaryOperation>
+    <trackHistory>false</trackHistory>
+    <type>Summary</type>
+</CustomField>

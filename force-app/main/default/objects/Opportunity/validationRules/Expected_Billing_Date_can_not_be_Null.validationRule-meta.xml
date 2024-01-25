@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Expected_Billing_Date_can_not_be_Null</fullName>
+    <active>false</active>
+    <description>Original Code: 
+OR(
+AND(ISPICKVAL(StageName, &quot;8- Closed Won&quot;), ISNULL(Expected_Billing_Date__c))
+)</description>
+    <errorConditionFormula>AND(
+( ISNEW() || ISCHANGED(StageName) ),
+ISPICKVAL(StageName, &quot;8- Closed Won&quot;), 
+ISNULL(Expected_Billing_Date__c),
+$User.ProfileId &lt;&gt; &quot;00e70000000j606&quot;, 
+$User.ProfileId &lt;&gt; &quot;00e70000000swa5&quot;,
+RecordTypeId &lt;&gt; &quot;01270000000E0MT&quot;
+)</errorConditionFormula>
+    <errorDisplayField>Expected_Billing_Date__c</errorDisplayField>
+    <errorMessage>Please enter the Expected Billing Date after the deal is Won.</errorMessage>
+</ValidationRule>

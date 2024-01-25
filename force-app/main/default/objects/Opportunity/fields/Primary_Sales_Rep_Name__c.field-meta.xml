@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Primary_Sales_Rep_Name__c</fullName>
+    <deleteConstraint>SetNull</deleteConstraint>
+    <description>Required on all Layouts except &quot;Opportunity Layout - System Admin&quot; 
+When new Opportunity created from account page, PSR field is pre-populated (editable) with PSR from related Account. 
+When a Lead is converted and an opportunity created, the PSR field from the Lead is mapped to the PSR name on Opportunity. 
+When Account PSR field is changed, Account Trigger updates each related open Opportunity that has the same PSR as related Account prior to the action 
+Reps granted Read/Write access to an Opportunity when the PSR field is saved or edited with their PSR record ID. If the field on the record is changed, the previous PSR associated rep still has access</description>
+    <externalId>false</externalId>
+    <label>Primary Sales Rep</label>
+    <referenceTo>Primary_Sales_Rep__c</referenceTo>
+    <relationshipLabel>Opportunities</relationshipLabel>
+    <relationshipName>Opportunities</relationshipName>
+    <required>false</required>
+    <trackFeedHistory>true</trackFeedHistory>
+    <trackHistory>true</trackHistory>
+    <type>Lookup</type>
+</CustomField>

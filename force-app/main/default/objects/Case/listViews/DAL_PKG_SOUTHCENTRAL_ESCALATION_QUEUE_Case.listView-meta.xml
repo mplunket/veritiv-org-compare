@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>DAL_PKG_SOUTHCENTRAL_ESCALATION_QUEUE_Case</fullName>
+    <columns>CASES.CASE_NUMBER</columns>
+    <columns>NAME</columns>
+    <columns>CASES.SUBJECT</columns>
+    <columns>CASES.STATUS</columns>
+    <columns>CASES.PRIORITY</columns>
+    <columns>CASES.CREATED_DATE_DATE_ONLY</columns>
+    <columns>ToAddressRouting__c</columns>
+    <filterScope>Queue</filterScope>
+    <label>DAL-SP-PKG-ESC-LEX</label>
+    <queue>DAL_PKG_SOUTHCENTRAL_ESCALATION_QUEUE</queue>
+    <sharedTo>
+        <role>CS_DAL_CXC_Manager</role>
+        <role>CS_DAL_FS_PKG_TM_TL1</role>
+        <role>CS_DAL_PKG_GL_TM_TL</role>
+        <role>CS_DAL_PKG_NP_TM_TL</role>
+        <role>CS_DAL_PKG_SC_TM_TL</role>
+        <role>CS_DAL_PKG_WCRM_TM_TL</role>
+        <role>CS_DAL_SUPPORT</role>
+    </sharedTo>
+</ListView>

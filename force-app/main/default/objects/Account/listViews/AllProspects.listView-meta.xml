@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>AllProspects</fullName>
+    <columns>ACCOUNT.NAME</columns>
+    <columns>ACCOUNT.RECORDTYPE</columns>
+    <columns>ACCOUNT.ADDRESS1_CITY</columns>
+    <columns>CORE.USERS.LAST_NAME</columns>
+    <columns>Primary_Sales_Rep_Name__c</columns>
+    <columns>Bill_To_Number_to_Merge_With__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>ACCOUNT.RECORDTYPE</field>
+        <operation>equals</operation>
+        <value>Account.Prospect</value>
+    </filters>
+    <label>All Prospects</label>
+    <language>en_US</language>
+    <sharedTo>
+        <group>USAEnglishSpeakingUsers</group>
+    </sharedTo>
+</ListView>

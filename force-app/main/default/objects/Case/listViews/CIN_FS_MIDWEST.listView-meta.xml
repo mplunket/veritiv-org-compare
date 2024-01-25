@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>CIN_FS_MIDWEST</fullName>
+    <columns>CASES.CASE_NUMBER</columns>
+    <columns>NAME</columns>
+    <columns>CASES.SUBJECT</columns>
+    <columns>CASES.STATUS</columns>
+    <columns>CASES.PRIORITY</columns>
+    <columns>CASES.CREATED_DATE_DATE_ONLY</columns>
+    <columns>CORE.USERS.ALIAS</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>X255_To_Address__c</field>
+        <operation>contains</operation>
+        <value>mwfs@veritivcorp.com</value>
+    </filters>
+    <filters>
+        <field>Date_Case_Opened__c</field>
+        <operation>equals</operation>
+        <value>LAST_N_DAYS:60</value>
+    </filters>
+    <label>CIN - FS - MIDWEST</label>
+    <sharedTo>
+        <role>CS_CIN_GREATLAKES_CXP</role>
+        <role>CS_CIN_GREATLAKES_TM_TL</role>
+        <role>CS_CIN_MIDATLANTIC_TM_TL</role>
+        <role>CS_CIN_MIDWEST_CXP</role>
+        <role>CS_CIN_MIDWEST_TM_TL</role>
+        <role>CS_CIN_NATIONAL_TM_TL</role>
+        <role>CS_CIN_NORTHCENTRAL_TM_TL</role>
+        <role>CS_CIN_NORTHEAST_TM_TL</role>
+        <role>CS_CIN_SUPPORT</role>
+        <role>CS_CIN_TRISTATE_TM_TL</role>
+    </sharedTo>
+</ListView>

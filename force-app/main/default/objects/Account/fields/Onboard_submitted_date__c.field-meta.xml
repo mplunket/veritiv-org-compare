@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Onboard_submitted_date__c</fullName>
+    <description>track time the onboarding form was submitted to customer, for use in reporting</description>
+    <externalId>false</externalId>
+    <label>Onboard - submitted date</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Date</type>
+</CustomField>

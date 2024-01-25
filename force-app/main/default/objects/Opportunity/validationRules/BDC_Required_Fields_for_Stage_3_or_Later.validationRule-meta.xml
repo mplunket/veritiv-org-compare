@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>BDC_Required_Fields_for_Stage_3_or_Later</fullName>
+    <active>true</active>
+    <description>For BDC, Annual Opportunity Revenue, Description, and Product Category are required for Stage 3 - Develop Solution or later</description>
+    <errorConditionFormula>AND(
+( ISNEW() || ISCHANGED(StageName) ),
+ OR(
+ TEXT(StageName)= &quot;3- Develop Solution&quot;,
+ TEXT(StageName)= &quot;4- Propose&quot;,
+ TEXT(StageName)= &quot;5- Implement&quot;,
+ TEXT(StageName)= &quot;6- Closed Won&quot;
+ ),
+$Profile.Name = &quot;Sales - BDC - Lightning&quot;,
+OR(ISBlank(Amount ),
+Amount&lt;=1,
+ISBlank(Description ),
+ISBlank(Prod_Category__c ))
+)</errorConditionFormula>
+    <errorMessage>Annual Opportunity Revenue, Description, and Product Category are required for Stage 3 - Develop Solution or later</errorMessage>
+</ValidationRule>

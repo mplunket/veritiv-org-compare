@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Case_Category__c</fullName>
+    <description>Sales Support for tracking their work</description>
+    <externalId>false</externalId>
+    <label>Case Category</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>true</sorted>
+            <value>
+                <fullName>Account Receivable</fullName>
+                <default>false</default>
+                <label>Account Receivable</label>
+            </value>
+            <value>
+                <fullName>Customer Maintenance</fullName>
+                <default>false</default>
+                <label>Customer Maintenance</label>
+            </value>
+            <value>
+                <fullName>Customer Onboarding</fullName>
+                <default>false</default>
+                <label>Customer Onboarding</label>
+            </value>
+            <value>
+                <fullName>Design Center</fullName>
+                <default>false</default>
+                <label>Design Center</label>
+            </value>
+            <value>
+                <fullName>ERS</fullName>
+                <default>false</default>
+                <label>ERS</label>
+            </value>
+            <value>
+                <fullName>Information</fullName>
+                <default>false</default>
+                <label>Information</label>
+            </value>
+            <value>
+                <fullName>Legal</fullName>
+                <default>false</default>
+                <label>Legal</label>
+            </value>
+            <value>
+                <fullName>Order Resolution</fullName>
+                <default>false</default>
+                <label>Order Resolution</label>
+            </value>
+            <value>
+                <fullName>Pricing/Rebate/Cost</fullName>
+                <default>false</default>
+                <label>Pricing/Rebate/Cost</label>
+            </value>
+            <value>
+                <fullName>Product Code/Item</fullName>
+                <default>false</default>
+                <label>Product Code/Item</label>
+            </value>
+            <value>
+                <fullName>Proof Of Delivery</fullName>
+                <default>false</default>
+                <label>Proof Of Delivery</label>
+            </value>
+            <value>
+                <fullName>Quality/Compliance</fullName>
+                <default>false</default>
+                <label>Quality/Compliance</label>
+            </value>
+            <value>
+                <fullName>Reporting</fullName>
+                <default>false</default>
+                <label>Reporting</label>
+            </value>
+            <value>
+                <fullName>Sample Request</fullName>
+                <default>false</default>
+                <label>Sample Request</label>
+            </value>
+            <value>
+                <fullName>Sourcing/Quoting</fullName>
+                <default>false</default>
+                <label>Sourcing/Quoting</label>
+            </value>
+            <value>
+                <fullName>Vendor Claim</fullName>
+                <default>false</default>
+                <label>Vendor Claim</label>
+            </value>
+            <value>
+                <fullName>Vendor Request</fullName>
+                <default>false</default>
+                <label>Vendor Request</label>
+            </value>
+            <value>
+                <fullName>Warehouse Only Vendor Claim</fullName>
+                <default>false</default>
+                <label>Warehouse Only Vendor Claim</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

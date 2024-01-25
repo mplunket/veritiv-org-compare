@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>AccountId</fullName>
+    <inlineHelpText>Opportunities must be associated with New (Prospect) or Current (Customer) accounts. Customer accounts have a bill-to number; if needed, create a new Prospect account from the Accounts tab.</inlineHelpText>
+    <lookupFilter>
+        <active>true</active>
+        <filterItems>
+            <field>Account.RecordTypeId</field>
+            <operation>equals</operation>
+            <value>Customer, Prospect</value>
+        </filterItems>
+        <infoMessage>Opportunities must be associated with New (Prospect) or Current (Customer) accounts. Customer accounts have a bill-to number; if needed, create a new Prospect account from the Accounts tab.</infoMessage>
+        <isOptional>true</isOptional>
+    </lookupFilter>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>true</trackHistory>
+    <type>Lookup</type>
+</CustomField>

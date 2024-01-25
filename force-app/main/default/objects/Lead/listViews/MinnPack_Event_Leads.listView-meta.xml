@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>MinnPack_Event_Leads</fullName>
+    <columns>FULL_NAME</columns>
+    <columns>LEAD.COMPANY</columns>
+    <columns>LEAD.TITLE</columns>
+    <columns>LEAD.STATUS</columns>
+    <columns>LEAD.CITY</columns>
+    <columns>State__c</columns>
+    <columns>LEAD.COUNTRY</columns>
+    <columns>MarketingDescription__c</columns>
+    <columns>Owned_By__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>Owned_By__c</field>
+        <operation>contains</operation>
+        <value>Adam Ross</value>
+    </filters>
+    <filters>
+        <field>LEAD.STATUS</field>
+        <operation>notEqual</operation>
+        <value>0_Dead,0-Dead,Converted</value>
+    </filters>
+    <label>MinnPack Event Leads (Unassigned)</label>
+    <sharedTo>
+        <group>Marketing</group>
+    </sharedTo>
+</ListView>

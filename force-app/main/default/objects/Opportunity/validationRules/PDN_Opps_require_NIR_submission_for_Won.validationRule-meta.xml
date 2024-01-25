@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>PDN_Opps_require_NIR_submission_for_Won</fullName>
+    <active>false</active>
+    <description>If this is a PDN Opportunity and not a sample request, you must submit the NIR before marking the opportunity as closed-won
+
+Deactivated - Legacy PDN process</description>
+    <errorConditionFormula>AND (
+RecordTypeId = &quot;01239000000QUb2&quot;,
+NOT(ISPICKVAL(Region__c,&quot;Vine&quot;)),
+NOT(ISPICKVAL(Region__c,&quot;AAC&quot;)),
+NOT( Owner.Role_Name__c = &quot;INTL - SALES REP&quot;),
+NOT(Owner.name_zm_sm__c = &quot;LEWIS, DAREK&quot;),
+Express_Lane__c = FALSE,
+NIR_Exception__c  = FALSE,
+NIR_Submitted__c = FALSE,
+ISPICKVAL(StageName,&quot;6- Closed Won&quot;))</errorConditionFormula>
+    <errorMessage>Before you can close a PDN opportunity, you must submit an NIR request from the Opportunity.</errorMessage>
+</ValidationRule>

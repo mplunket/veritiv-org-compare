@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Email_Batch__c</fullName>
+    <externalId>false</externalId>
+    <formula>IF( CONTAINS (Profile.Name , &quot;CAN&quot;), &quot;CAN&quot;,
+IF( CONTAINS (Profile.Name , &quot;Ind and Core Rep&quot;), &quot;US 2&quot;,
+IF( CONTAINS (Profile.Name , &quot;CEO&quot;), &quot;MISC&quot;,
+IF( CONTAINS (Profile.Name , &quot;Zone Manager&quot;), &quot;US 1&quot;,
+IF( CONTAINS (Profile.Name , &quot;CSP&quot;), &quot;US 1&quot;,
+IF( CONTAINS (Profile.Name , &quot;CSC&quot;), &quot;US 1&quot;,
+IF( CONTAINS (Profile.Name , &quot;Executive Sponsor&quot;), &quot;MISC&quot;,
+IF( CONTAINS (Profile.Name , &quot;Ind and Core All Data&quot;), &quot;US 1&quot;,
+IF( CONTAINS (Profile.Name , &quot;Ind and Core President&quot;), &quot;US 1&quot;,
+IF( CONTAINS (Profile.Name , &quot;Ind and Core RVP and BDM&quot;), &quot;US 3&quot;,
+IF( CONTAINS (Profile.Name , &quot;Ind and Core VP and DMD&quot;), &quot;US 3&quot;,
+IF( CONTAINS (Profile.Name , &quot;Inside Sales&quot;), &quot;US 3&quot;,
+IF( CONTAINS (Profile.Name , &quot;Lead Management&quot;), &quot;MISC&quot;,
+IF( CONTAINS (Profile.Name , &quot;National Accounts - FS&quot;), &quot;US 3&quot;,
+IF( CONTAINS (Profile.Name , &quot;National Accounts - Paper&quot;), &quot;US 3&quot;,
+IF( CONTAINS (Profile.Name , &quot;National Acct Director - FS&quot;), &quot;US 3&quot;,
+IF( CONTAINS (Profile.Name , &quot;Sales Admin - &quot;), &quot;US 3&quot;,
+IF( CONTAINS (Profile.Name , &quot;Sourcing&quot;), &quot;US 3&quot;,
+IF( CONTAINS (Profile.Name , &quot;Spec Rep&quot;), &quot;US 3&quot;,
+IF( CONTAINS (Profile.Name , &quot;Specialist&quot;), &quot;US 3&quot;,
+IF( CONTAINS (Profile.Name , &quot;Supply Chain&quot;), &quot;US 3&quot;,
+IF( CONTAINS (Profile.Name , &quot;System&quot;), &quot;US 3&quot;,
+IF( CONTAINS (Profile.Name , &quot;Testing - Cara&quot;), &quot;US 3&quot;,
+IF( CONTAINS (Profile.Name , &quot;Training and Support&quot;), &quot;US 3&quot;,
+IF( CONTAINS (Profile.Name , &quot;UGS&quot;), &quot;US 1&quot;,
+IF( CONTAINS (Profile.Name , &quot;Graphic&quot;), &quot;GC&quot;,
+
+&quot;MISC&quot;)
+)))))))))))))))))))))))))</formula>
+    <label>Email Batch</label>
+    <required>false</required>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

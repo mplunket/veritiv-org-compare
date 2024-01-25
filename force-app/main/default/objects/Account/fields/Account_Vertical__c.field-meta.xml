@@ -1,0 +1,347 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Account_Vertical__c</fullName>
+    <description>Limit verticals to 30 characters only
+
+Any changes/additions here should also be made on Lead object, field Vertical, Vertical object and Brainshark
+Must also add a Vertical record (to the Vertical object)
+
+****If the values:  PRINTER - WEB or PRINTER - DIGITAL/WIDE FORMAT are ever changed, contact Heather Sagan immediately!!!  Any changes will impact call routing in the LA CSC!!!****</description>
+    <externalId>false</externalId>
+    <inlineHelpText>Select the vertical that best suits this account.</inlineHelpText>
+    <label>Account Vertical</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Ent and Hosp - Food</fullName>
+                <default>false</default>
+                <label>Ent and Hosp - Food</label>
+            </value>
+            <value>
+                <fullName>Ent and Hosp - High Traffic</fullName>
+                <default>false</default>
+                <label>Ent and Hosp - High Traffic</label>
+            </value>
+            <value>
+                <fullName>Ent and Hosp - Lodging</fullName>
+                <default>false</default>
+                <label>Ent and Hosp - Lodging</label>
+            </value>
+            <value>
+                <fullName>Food - Bakery &amp; Snack</fullName>
+                <default>false</default>
+                <label>Food - Bakery &amp; Snack</label>
+            </value>
+            <value>
+                <fullName>Food - Beverage</fullName>
+                <default>false</default>
+                <label>Food - Beverage</label>
+            </value>
+            <value>
+                <fullName>Food - Candy</fullName>
+                <default>false</default>
+                <label>Food - Candy</label>
+            </value>
+            <value>
+                <fullName>Food - Cannabis</fullName>
+                <default>false</default>
+                <label>Food - Cannabis</label>
+            </value>
+            <value>
+                <fullName>Food - Cereal &amp; Grain</fullName>
+                <default>false</default>
+                <label>Food - Cereal &amp; Grain</label>
+            </value>
+            <value>
+                <fullName>Food - Dairy</fullName>
+                <default>false</default>
+                <label>Food - Dairy</label>
+            </value>
+            <value>
+                <fullName>Food - Farming</fullName>
+                <default>false</default>
+                <label>Food - Farming</label>
+            </value>
+            <value>
+                <fullName>Food - Meat</fullName>
+                <default>false</default>
+                <label>Food - Meat</label>
+            </value>
+            <value>
+                <fullName>Food - Other</fullName>
+                <default>false</default>
+                <label>Food - Other</label>
+            </value>
+            <value>
+                <fullName>Food - Perishable Prepared</fullName>
+                <default>false</default>
+                <label>Food - Perishable Prepared</label>
+            </value>
+            <value>
+                <fullName>Fulfillment - Other</fullName>
+                <default>false</default>
+                <label>Fulfillment - Other</label>
+            </value>
+            <value>
+                <fullName>Fulfillment - Logistics</fullName>
+                <default>false</default>
+                <label>Fulfillment - Logistics</label>
+            </value>
+            <value>
+                <fullName>Fulfillment - Online Retail</fullName>
+                <default>false</default>
+                <label>Fulfillment - Online Retail</label>
+            </value>
+            <value>
+                <fullName>Fulfillment - Retail</fullName>
+                <default>false</default>
+                <label>Fulfillment - Retail</label>
+            </value>
+            <value>
+                <fullName>Fulfillment - Wholesale</fullName>
+                <default>false</default>
+                <label>Fulfillment - Wholesale</label>
+            </value>
+            <value>
+                <fullName>Government</fullName>
+                <default>false</default>
+                <label>Government</label>
+            </value>
+            <value>
+                <fullName>Government - Higher Ed</fullName>
+                <default>false</default>
+                <label>Government - Higher Ed</label>
+            </value>
+            <value>
+                <fullName>Government - K - 12</fullName>
+                <default>false</default>
+                <label>Government - K - 12</label>
+            </value>
+            <value>
+                <fullName>Graphic Design/Advertising</fullName>
+                <default>false</default>
+                <label>Graphic Design/Advertising</label>
+            </value>
+            <value>
+                <fullName>Mfg - Aerospace</fullName>
+                <default>false</default>
+                <label>Mfg - Aerospace</label>
+            </value>
+            <value>
+                <fullName>Mfg - Apparel</fullName>
+                <default>false</default>
+                <label>Mfg - Apparel</label>
+            </value>
+            <value>
+                <fullName>Mfg - Appliances</fullName>
+                <default>false</default>
+                <label>Mfg - Appliances</label>
+            </value>
+            <value>
+                <fullName>Mfg - Automotive &amp; Heavy Eqt</fullName>
+                <default>false</default>
+                <label>Mfg - Automotive &amp; Heavy Eqt</label>
+            </value>
+            <value>
+                <fullName>Mfg - Building Materials</fullName>
+                <default>false</default>
+                <label>Mfg - Building Materials</label>
+            </value>
+            <value>
+                <fullName>Mfg - Computers &amp; Electronics</fullName>
+                <default>false</default>
+                <label>Mfg - Computers &amp; Electronics</label>
+            </value>
+            <value>
+                <fullName>Mfg - Fabricated Metals</fullName>
+                <default>false</default>
+                <label>Mfg - Fabricated Metals</label>
+            </value>
+            <value>
+                <fullName>Mfg - Furniture</fullName>
+                <default>false</default>
+                <label>Mfg - Furniture</label>
+            </value>
+            <value>
+                <fullName>Mfg - Medical Eqt &amp; Supplies</fullName>
+                <default>false</default>
+                <label>Mfg - Medical Eqt &amp; Supplies</label>
+            </value>
+            <value>
+                <fullName>Mfg - Other</fullName>
+                <default>false</default>
+                <label>Mfg - Other</label>
+            </value>
+            <value>
+                <fullName>Mfg - Pharma/Health/Beauty</fullName>
+                <default>false</default>
+                <label>Mfg - Pharma/Health/Beauty</label>
+            </value>
+            <value>
+                <fullName>Mfg - Pulp and paper</fullName>
+                <default>false</default>
+                <label>Mfg - Pulp and paper</label>
+            </value>
+            <value>
+                <fullName>Office Like - BSC</fullName>
+                <default>false</default>
+                <label>Office Like - BSC</label>
+            </value>
+            <value>
+                <fullName>Office Like - Healthcare</fullName>
+                <default>false</default>
+                <label>Office Like - Healthcare</label>
+            </value>
+            <value>
+                <fullName>Office Like - Prop Mgmt</fullName>
+                <default>false</default>
+                <label>Office Like - Prop Mgmt</label>
+            </value>
+            <value>
+                <fullName>Other - FS</fullName>
+                <default>false</default>
+                <label>Other - FS</label>
+            </value>
+            <value>
+                <fullName>Printer - Commercial/Sheet Fed</fullName>
+                <default>false</default>
+                <label>Printer - Commercial/Sheet Fed</label>
+            </value>
+            <value>
+                <fullName>Printer - Digital/Wide Format</fullName>
+                <default>false</default>
+                <label>Printer - Digital/Wide Format</label>
+            </value>
+            <value>
+                <fullName>Printer - Gang Run</fullName>
+                <default>false</default>
+                <label>Printer - Gang Run</label>
+            </value>
+            <value>
+                <fullName>Printer - In-plant</fullName>
+                <default>false</default>
+                <label>Printer - In-plant</label>
+            </value>
+            <value>
+                <fullName>Printer - Other</fullName>
+                <default>false</default>
+                <label>Printer - Other</label>
+            </value>
+            <value>
+                <fullName>Printer - Packaging</fullName>
+                <default>false</default>
+                <label>Printer - Packaging</label>
+            </value>
+            <value>
+                <fullName>Printer - Sheetfed/Web Combo</fullName>
+                <default>false</default>
+                <label>Printer - Sheetfed/Web Combo</label>
+            </value>
+            <value>
+                <fullName>Printer - Web</fullName>
+                <default>false</default>
+                <label>Printer - Web</label>
+            </value>
+            <value>
+                <fullName>Pub - Book – Educational</fullName>
+                <default>false</default>
+                <label>Pub - Book – Educational</label>
+            </value>
+            <value>
+                <fullName>Pub - Book – Trade</fullName>
+                <default>false</default>
+                <label>Pub - Book – Trade</label>
+            </value>
+            <value>
+                <fullName>Pub - Catalog</fullName>
+                <default>false</default>
+                <label>Pub - Catalog</label>
+            </value>
+            <value>
+                <fullName>Pub - Direct Mail</fullName>
+                <default>false</default>
+                <label>Pub - Direct Mail</label>
+            </value>
+            <value>
+                <fullName>Pub - Inserts – Grocery</fullName>
+                <default>false</default>
+                <label>Pub - Inserts – Grocery</label>
+            </value>
+            <value>
+                <fullName>Pub - Inserts – Retail</fullName>
+                <default>false</default>
+                <label>Pub - Inserts – Retail</label>
+            </value>
+            <value>
+                <fullName>Pub - Magazine</fullName>
+                <default>false</default>
+                <label>Pub - Magazine</label>
+            </value>
+            <value>
+                <fullName>Pub - Printer Other</fullName>
+                <default>false</default>
+                <label>Pub - Printer Other</label>
+            </value>
+            <value>
+                <fullName>Pub - Specialty – Converting</fullName>
+                <default>false</default>
+                <label>Pub - Specialty – Converting</label>
+            </value>
+            <value>
+                <fullName>Pub - Specialty - Technical</fullName>
+                <default>false</default>
+                <label>Pub - Specialty - Technical</label>
+            </value>
+            <value>
+                <fullName>Re-D - Candy/Tobacco</fullName>
+                <default>false</default>
+                <label>Re-D - Candy/Tobacco</label>
+            </value>
+            <value>
+                <fullName>Re-D - Convenience Store</fullName>
+                <default>false</default>
+                <label>Re-D - Convenience Store</label>
+            </value>
+            <value>
+                <fullName>Re-D - Foodservice</fullName>
+                <default>false</default>
+                <label>Re-D - Foodservice</label>
+            </value>
+            <value>
+                <fullName>Re-D - Foodservice/Jan-San Mix</fullName>
+                <default>false</default>
+                <label>Re-D - Foodservice/Jan-San Mix</label>
+            </value>
+            <value>
+                <fullName>Re-D - Healthcare</fullName>
+                <default>false</default>
+                <label>Re-D - Healthcare</label>
+            </value>
+            <value>
+                <fullName>Redistribution - FS</fullName>
+                <default>false</default>
+                <label>Redistribution - FS</label>
+            </value>
+            <value>
+                <fullName>Re-D - Janitorial</fullName>
+                <default>false</default>
+                <label>Re-D - Janitorial</label>
+            </value>
+            <value>
+                <fullName>Re-D - Manufacturing</fullName>
+                <default>false</default>
+                <label>Re-D - Manufacturing</label>
+            </value>
+            <value>
+                <fullName>Re-D - Office</fullName>
+                <default>false</default>
+                <label>Re-D - Office</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

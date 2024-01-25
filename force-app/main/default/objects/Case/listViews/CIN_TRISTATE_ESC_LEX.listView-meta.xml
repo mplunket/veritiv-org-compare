@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>CIN_TRISTATE_ESC_LEX</fullName>
+    <columns>CASES.CREATED_DATE_DATE_ONLY</columns>
+    <columns>CASES.CASE_NUMBER</columns>
+    <columns>NAME</columns>
+    <columns>ACCOUNT.NAME</columns>
+    <columns>CASES.STATUS</columns>
+    <columns>Status_Detail__c</columns>
+    <columns>CASES.SUBJECT</columns>
+    <columns>CASES.PRIORITY</columns>
+    <columns>ToAddressRouting__c</columns>
+    <columns>CASES.LAST_UPDATE</columns>
+    <filterScope>Queue</filterScope>
+    <label>CIN-TRISTATE-ESC-LEX</label>
+    <queue>CIN_TRISTATE_ESC_LEX</queue>
+    <sharedTo>
+        <role>CS_CIN_CXC1_TM_TL</role>
+        <role>CS_CIN_CXC_Manager</role>
+        <role>CS_CIN_GREATLAKES_TM_TL</role>
+        <role>CS_CIN_MIDATLANTIC_TM_TL</role>
+        <role>CS_CIN_MIDWEST_TM_TL</role>
+        <role>CS_CIN_NATIONAL_TM_TL</role>
+        <role>CS_CIN_NORTHCENTRAL_TM_TL</role>
+        <role>CS_CIN_NORTHEAST_TM_TL</role>
+        <role>CS_CIN_SUPPORT</role>
+        <role>CS_CIN_TRISTATE_TM_TL</role>
+    </sharedTo>
+</ListView>

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Field_Sourcing_Orphan_Account</fullName>
+    <active>true</active>
+    <description>Prevent non System Admins from changing Field Sourcing account name.</description>
+    <errorConditionFormula>AND( 
+NOT( $Profile.Id = &quot;00e70000000swa5&quot;), 
+OR(Id =&quot;0013900001TuOox&quot;) 
+)</errorConditionFormula>
+    <errorMessage>Field Sourcing Orphan account cannot be modified.</errorMessage>
+</ValidationRule>

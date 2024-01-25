@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PermissionSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <description>Created so that Aarti Rao can test vbo link visibility before we roll out to end users.</description>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Primary_Sales_Rep__c.VBO_Daily_Sales_Report_Sales_Rep_Detail__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Primary_Sales_Rep__c.VBO_Monthly_Activity_Report__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Primary_Sales_Rep__c.VBO_Monthly_Activity_Trend_Report__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <hasActivationRequired>false</hasActivationRequired>
+    <label>VBO Link Testing</label>
+</PermissionSet>

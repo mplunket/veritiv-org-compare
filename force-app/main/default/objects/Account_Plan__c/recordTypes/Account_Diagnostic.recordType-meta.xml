@@ -1,0 +1,596 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<RecordType xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Account_Diagnostic</fullName>
+    <active>true</active>
+    <label>Account Diagnostic</label>
+    <picklistValues>
+        <picklist>AR_Actions__c</picklist>
+        <values>
+            <fullName>Collaborate with credit department</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Collaborate with customer</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Identify dispute invoices and resolve</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Other</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Account_Status__c</picklist>
+        <values>
+            <fullName>Existing-Fix</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Existing-Grow</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Existing-Retain</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>New-Grow</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Action_Plan_Items_Next_Qtr__c</picklist>
+        <values>
+            <fullName>Bring in specialist or spec rep</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Change product mix</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Improve credit standing</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Increase average order size</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Increase price</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Switch to private label</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Action_Plan_Items__c</picklist>
+        <values>
+            <fullName>Bring in specialist or spec rep</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Change product mix</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Improve credit standing</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Increase average order size</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Increase price</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Switch to private label</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>CBR_Focus_Topics__c</picklist>
+        <values>
+            <fullName>Address service level failures</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Establish new projects</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Evaluate and discuss product offering</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Evaluate better pricing%2Fyield options</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Other</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Reconfirm value proposition</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Review customer goals</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Review new products %26 capabilities</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Share market information</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Churn_Actions__c</picklist>
+        <values>
+            <fullName>Address service level failures</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Evaluate and discuss product offering</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Evaluate better pricing%2Fyield options</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Other</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Reconfirm value proposition</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Schedule a Customer Business Review</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Customer_Product_Knowledge_Score__c</picklist>
+        <values>
+            <fullName>1</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>2</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>3</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>4</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>5</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Financial_year__c</picklist>
+        <values>
+            <fullName>2010</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>2011</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>2012</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>2013</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>2014</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>2015</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>2016</fullName>
+            <default>true</default>
+        </values>
+        <values>
+            <fullName>2017</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>2018</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>2019</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>2020</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Fiscal_Quarter__c</picklist>
+        <values>
+            <fullName>Q1%3A Jan-Mar</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Q2%3A Apr-Jun</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Q3%3A Jul-Sept</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Q4%3A Oct-Dec</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Growth_Actions__c</picklist>
+        <values>
+            <fullName>Evaluate product offering</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Other</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Refine resource approach</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Review new products and capabilities</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Understand customers goals</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Has_Master_Service_Agreement__c</picklist>
+        <values>
+            <fullName>No</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Yes</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Other_Account_Performance_Actions__c</picklist>
+        <values>
+            <fullName>Channel shift %28Warehouse %E2%80%93 Direct%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Commission dial down</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Improve inventory carry costs</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Other</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Sales Expense reduction</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Sales Salary Reduction</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Percent_of_Business_Captured__c</picklist>
+        <values>
+            <fullName>0%25</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>100%25</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>25%25</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>50%25</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>75%25</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Pipeline_Actions__c</picklist>
+        <values>
+            <fullName>Establish new projects</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Establish or refine sales team</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Obtain new leads</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Other</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Pricing_Actions__c</picklist>
+        <values>
+            <fullName>Get best cost</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Other</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Raise pricing</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Sell alternative product</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Training on target pricing</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Product_Service_Knowledge_Score__c</picklist>
+        <values>
+            <fullName>1</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>2</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>3</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>4</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>5</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Relationship_with_Pkg_Engineers_Score__c</picklist>
+        <values>
+            <fullName>1</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>2</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>3</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>4</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>5</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Relationship_with_Purchasing_Score__c</picklist>
+        <values>
+            <fullName>1</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>2</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>3</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>4</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>5</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Sales_Approach__c</picklist>
+        <values>
+            <fullName>Supplier-Consultative</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Value Added-Partner Enterprise</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Vendor-Transactional</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Segment_Training_Completed__c</picklist>
+        <values>
+            <fullName>No</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Yes</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Share_Actions__c</picklist>
+        <values>
+            <fullName>Confirm right mix of customer contacts</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Evaluate cross-selling opportunities</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Evaluate product offering</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Other</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Refine resource approach</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Review customers goals</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Review new products and capabilities</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Strength_of_Cust_Service_Relationship__c</picklist>
+        <values>
+            <fullName>Average</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Strong</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Weak</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Strength_of_Sls_Leadership_Relationship__c</picklist>
+        <values>
+            <fullName>Average</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Strong</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Weak</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Strongest_Competitor_Knowledge_Score__c</picklist>
+        <values>
+            <fullName>1</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>2</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>3</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>4</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>5</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Supply_Chain_Actions__c</picklist>
+        <values>
+            <fullName>Decrease number of lines</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Increase Order Size</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Increase margin per line</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Other</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Reduce number of deliveries</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>completed_status__c</picklist>
+        <values>
+            <fullName>Deteriorated</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Improved</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>No Change</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+</RecordType>

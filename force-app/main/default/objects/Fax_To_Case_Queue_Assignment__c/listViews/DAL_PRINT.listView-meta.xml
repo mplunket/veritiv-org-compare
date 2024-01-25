@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>DAL_PRINT</fullName>
+    <columns>NAME</columns>
+    <columns>Active__c</columns>
+    <columns>Team_Lead_Name__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>NAME</field>
+        <operation>startsWith</operation>
+        <value>DAL</value>
+    </filters>
+    <filters>
+        <field>Team_Lead_Name__c</field>
+        <operation>contains</operation>
+        <value>FINLEY</value>
+    </filters>
+    <label>DAL - PRINT</label>
+    <language>en_US</language>
+    <sharedTo>
+        <group>SFDCAdminAccount</group>
+    </sharedTo>
+</ListView>

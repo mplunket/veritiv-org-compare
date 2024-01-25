@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>FS_Order_Size_High_VRTV__c</fullName>
+    <description>High range of the average order size for the customer in the facilities solutions segment</description>
+    <externalId>false</externalId>
+    <inlineHelpText>High range of the average order size for the customer in the facilities solutions segment</inlineHelpText>
+    <label>FS: Order Size - High VRTV</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>2</scale>
+    <trackTrending>false</trackTrending>
+    <type>Currency</type>
+</CustomField>

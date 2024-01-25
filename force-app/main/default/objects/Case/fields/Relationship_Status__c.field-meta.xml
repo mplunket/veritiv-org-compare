@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Relationship_Status__c</fullName>
+    <externalId>false</externalId>
+    <inlineHelpText>Choose the level of impact of this case on the customer.  If it&apos;s business as usual, leave it blank.</inlineHelpText>
+    <label>Relationship Status</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Red</fullName>
+                <color>#FF0000</color>
+                <default>false</default>
+                <label>Red</label>
+            </value>
+            <value>
+                <fullName>Yellow</fullName>
+                <color>#F3D904</color>
+                <default>false</default>
+                <label>Yellow</label>
+            </value>
+            <value>
+                <fullName>Green</fullName>
+                <color>#009900</color>
+                <default>false</default>
+                <label>Green</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

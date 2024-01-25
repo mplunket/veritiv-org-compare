@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>COST_MAINTENANCE_E2C_Fax_To_Case_Queue_Assignment</fullName>
+    <filterScope>Queue</filterScope>
+    <label>COST MAINTENANCE-E2C</label>
+    <queue>COST_MAINTENANCE_E2C</queue>
+    <sharedTo>
+        <allInternalUsers></allInternalUsers>
+    </sharedTo>
+</ListView>

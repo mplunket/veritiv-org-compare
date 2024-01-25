@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>PDN_Opps_Needing_Approval_Vine_Only</fullName>
+    <booleanFilter>2 and 3 and 1 and (4 OR 5)</booleanFilter>
+    <columns>AtTask_Project__c</columns>
+    <columns>Express_Lane__c</columns>
+    <columns>Region__c</columns>
+    <columns>Vine_Services_Utilized__c</columns>
+    <columns>OPPORTUNITY.NAME</columns>
+    <columns>ACCOUNT.NAME</columns>
+    <columns>OPPORTUNITY.AMOUNT</columns>
+    <columns>Date_Submitted__c</columns>
+    <columns>Requested_Completion_Date__c</columns>
+    <columns>PSR_GSM_Email__c</columns>
+    <columns>Opportunity_Owner_Division__c</columns>
+    <columns>Program_Manager__c</columns>
+    <columns>Primary_Sales_Rep_Name__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>Approval_Status__c</field>
+        <operation>equals</operation>
+        <value>Review,Approval Pending</value>
+    </filters>
+    <filters>
+        <field>OPPORTUNITY.RECORDTYPE</field>
+        <operation>equals</operation>
+        <value>Opportunity.Engineered_Packaging_Record_Type,Opportunity.Engineered_Packaging_Record_Type_PDN_Lightning</value>
+    </filters>
+    <filters>
+        <field>OPPORTUNITY.STAGE_NAME</field>
+        <operation>notEqual</operation>
+        <value>8- Closed Won,0- Closed Lost</value>
+    </filters>
+    <filters>
+        <field>Region__c</field>
+        <operation>equals</operation>
+        <value>Vine</value>
+    </filters>
+    <filters>
+        <field>Vine_Services_Utilized__c</field>
+        <operation>equals</operation>
+        <value>Yes</value>
+    </filters>
+    <label>Vine - Opptys Needing Approval</label>
+</ListView>

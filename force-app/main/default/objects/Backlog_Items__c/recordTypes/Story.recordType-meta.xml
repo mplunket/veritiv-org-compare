@@ -1,0 +1,374 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<RecordType xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Story</fullName>
+    <active>true</active>
+    <description>A short, simple description of a feature told from the perspective of the person who desires the new capability.</description>
+    <label>Story</label>
+    <picklistValues>
+        <picklist>Backlog_Type__c</picklist>
+        <values>
+            <fullName>Bug%2FIssue</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Data</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Documentation</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>New Feature%2FEnhancement</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Question%2FResearch</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Business_Priority__c</picklist>
+        <values>
+            <fullName>Critical</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>High</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Low</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Medium</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Found_in__c</picklist>
+        <values>
+            <fullName>alm_pm2%5F%5FFound_in%5F%5Fc</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Object__c</picklist>
+        <values>
+            <fullName>AIQ Permissions Config - Deal Manager</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Account</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Account %26 visibility</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Account Reassignment</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Activity</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Campaign Lines - Deal Manager</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>CampaignPriceDecay</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Carousel</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Case</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Contact</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Contract Line Item Approvals - Deal Manager</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Contracts - Deal Manager</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Customer Price List</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Dashboard - Deal Manager</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Dashboards</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Division  Info</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>FormAssembly</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Home Page</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Lead</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Multiple</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Opportunity</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Other</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>PSR</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Price Manager - Deal Manager</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Product</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Profile</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Promotions</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Quote</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Reports</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Routing Records</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Sales Accelerator</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Ship To</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Vendor</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Vendor Claim Details</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Vendor Detail</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Work Order</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Work Order Line Item</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Priority__c</picklist>
+        <values>
+            <fullName>P1</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>P2</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>P3</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>P4</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Release_Priority__c</picklist>
+        <values>
+            <fullName>High</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Low</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Medium</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Picklist</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>alm_pm2%5F%5FRelease_Priority%5F%5Fc</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Root_Cause__c</picklist>
+        <values>
+            <fullName>3rd Party Software Fix</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Code Fix</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Configuration Issue</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Custom Code Issue</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Data Issue</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Deployment Issue</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Enhancement</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Environmental</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Picklist</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>alm_pm2%5F%5FRoot_Cause%5F%5Fc</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Severity__c</picklist>
+        <values>
+            <fullName>Blocker</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Critical</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>High</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Low</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Medium</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Status__c</picklist>
+        <values>
+            <fullName>Canceled</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Dev Ready</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Groomed</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>In Development</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>In QA%2FTesting</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Needs Requirements</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Needs Solution</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>New</fullName>
+            <default>true</default>
+        </values>
+        <values>
+            <fullName>On Hold</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>QA Ready</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>QA Verified</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Ready for Grooming</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Released</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Shelf Ready</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+</RecordType>

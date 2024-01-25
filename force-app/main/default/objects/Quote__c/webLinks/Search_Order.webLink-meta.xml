@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<WebLink xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Search_Order</fullName>
+    <availability>online</availability>
+    <displayType>button</displayType>
+    <encodingKey>UTF-8</encodingKey>
+    <height>600</height>
+    <linkType>url</linkType>
+    <masterLabel>Search Order</masterLabel>
+    <openType>sidebar</openType>
+    <protected>false</protected>
+    <url>http://UWTATLUS07/uniweb/OrderLookupCriteria.aspx?environment=PRODUCTION&amp;system={!Quote__c.Account_Legacy_System_Cd__c}&amp;BillToNum={!Quote__c.Bill_To_Number__c}&amp;BillToName={!Quote__c.Account__c}&amp;ShipToNum={!Quote__c.Ship_To_Number__c}</url>
+</WebLink>

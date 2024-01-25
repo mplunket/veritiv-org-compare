@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>iRep__c</fullName>
+    <deleteConstraint>SetNull</deleteConstraint>
+    <externalId>false</externalId>
+    <label>iRep</label>
+    <lookupFilter>
+        <active>true</active>
+        <filterItems>
+            <field>Primary_Sales_Rep__c.iRep_Indicator__c</field>
+            <operation>equals</operation>
+            <value>Y</value>
+        </filterItems>
+        <isOptional>true</isOptional>
+    </lookupFilter>
+    <referenceTo>Primary_Sales_Rep__c</referenceTo>
+    <relationshipLabel>iRep Ship Tos</relationshipLabel>
+    <relationshipName>Ship_Tos</relationshipName>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Lookup</type>
+</CustomField>

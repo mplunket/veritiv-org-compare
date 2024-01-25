@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>LA_CXC</fullName>
+    <columns>NAME</columns>
+    <columns>Related_Case_Queue__c</columns>
+    <columns>OWNER.LAST_NAME</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>Related_Case_Queue__c</field>
+        <operation>startsWith</operation>
+        <value>LA-</value>
+    </filters>
+    <label>LA CXC</label>
+    <sharedTo>
+        <role>CS_CSC_Operations_Mgmt</role>
+    </sharedTo>
+</ListView>

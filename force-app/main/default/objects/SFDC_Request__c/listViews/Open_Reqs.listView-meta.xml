@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Open_Reqs</fullName>
+    <columns>request_status__c</columns>
+    <columns>NAME</columns>
+    <columns>date_start__c</columns>
+    <columns>date_release__c</columns>
+    <columns>Significant__c</columns>
+    <columns>Area__c</columns>
+    <columns>request_priority__c</columns>
+    <columns>Request_Scale__c</columns>
+    <columns>CREATED_DATE</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>request_status__c</field>
+        <operation>notEqual</operation>
+        <value>7. Merged</value>
+    </filters>
+    <label>X - Open Reqs</label>
+    <language>en_US</language>
+</ListView>

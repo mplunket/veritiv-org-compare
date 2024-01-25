@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Escalate_Assign__c</fullName>
+    <description>Used in the CEI rollout as criteria for the process builder that escalates cases after using the escalate quick action.
+
+First attempts to escalate based on the To Address email and then based on the user&apos;s role.</description>
+    <externalId>false</externalId>
+    <inlineHelpText># of times this case has been escalated using the Escalate action</inlineHelpText>
+    <label>Escalate Assign</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>0</scale>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Number</type>
+    <unique>false</unique>
+</CustomField>

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Account_Owner_Primary_Sales_Rep__c</fullName>
+    <deleteConstraint>Restrict</deleteConstraint>
+    <externalId>false</externalId>
+    <inlineHelpText>Current owner of the Ship To(s) that are flagged for reassignment</inlineHelpText>
+    <label>Account Owner - Primary Sales Rep</label>
+    <referenceTo>Primary_Sales_Rep__c</referenceTo>
+    <relationshipLabel>Account Reassignments Outgoing</relationshipLabel>
+    <relationshipName>Account_Reassignments</relationshipName>
+    <required>true</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Lookup</type>
+</CustomField>

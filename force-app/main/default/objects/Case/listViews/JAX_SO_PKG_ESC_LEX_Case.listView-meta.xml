@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>JAX_SO_PKG_ESC_LEX_Case</fullName>
+    <columns>CASES.CASE_NUMBER</columns>
+    <columns>NAME</columns>
+    <columns>CASES.SUBJECT</columns>
+    <columns>CASES.STATUS</columns>
+    <columns>CASES.PRIORITY</columns>
+    <columns>CASES.CREATED_DATE_DATE_ONLY</columns>
+    <columns>ToAddressRouting__c</columns>
+    <filterScope>Queue</filterScope>
+    <label>JAX-PKG-ESC-LEX</label>
+    <queue>JAX_SO_PKG_ESC_LEX</queue>
+    <sharedTo>
+        <group>CX_Cases_David_Dunn_access_to_ESC_qu</group>
+        <role>CS_CSC_Operations_Mgmt</role>
+        <role>CS_JAX_CXC_Manager</role>
+        <role>CS_JAX_FS_PKG_TM_TL10</role>
+        <role>CS_JAX_FS_PKG_TM_TL9</role>
+        <role>CS_JAX_FS_TM_TL5</role>
+        <role>CS_JAX_FS_TM_TL6</role>
+        <role>CS_JAX_FS_TM_TL8</role>
+        <role>CS_JAX_NAT_TM_TL7</role>
+        <role>CS_JAX_PKG_TM_TL1</role>
+        <role>CS_JAX_PKG_TM_TL2</role>
+        <role>CS_JAX_PKG_TM_TL3</role>
+        <role>CS_JAX_PKG_TM_TL4</role>
+        <role>CS_JAX_SUPPORT</role>
+    </sharedTo>
+</ListView>

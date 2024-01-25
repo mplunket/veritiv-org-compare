@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Assigned_Owned_Simplus</fullName>
+    <columns>NAME</columns>
+    <columns>Object__c</columns>
+    <columns>RECORDTYPE</columns>
+    <columns>Title__c</columns>
+    <columns>Status__c</columns>
+    <columns>Development_Due_Date__c</columns>
+    <columns>Planned_Deployment_Date__c</columns>
+    <columns>Release__c</columns>
+    <columns>Sprint__c</columns>
+    <columns>Dev_Effort__c</columns>
+    <columns>OWNER.LAST_NAME</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>Assigned__c</field>
+        <operation>contains</operation>
+        <value>Simplus</value>
+    </filters>
+    <filters>
+        <field>Status__c</field>
+        <operation>notEqual</operation>
+        <value>Released,Canceled,Pass,Fail,Resolved,Rejected,Closed,Deferred</value>
+    </filters>
+    <label>Assigned/Owned - Simplus</label>
+</ListView>

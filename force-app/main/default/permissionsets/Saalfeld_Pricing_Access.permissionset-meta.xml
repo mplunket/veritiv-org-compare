@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PermissionSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <description>Assigning this permission set to a user will grant them the ability to use the Saalfeld Pricing button on the Quote.</description>
+    <hasActivationRequired>false</hasActivationRequired>
+    <label>Saalfeld Pricing Access</label>
+</PermissionSet>

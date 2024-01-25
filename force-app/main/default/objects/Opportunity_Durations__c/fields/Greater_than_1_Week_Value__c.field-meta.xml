@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Greater_than_1_Week_Value__c</fullName>
+    <description>Number of days, if the duration is greater than 1 week.</description>
+    <externalId>false</externalId>
+    <formula>If(Business_Week__c &gt;1,Business_Days__c,0)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <inlineHelpText>The number of Business Days, if the Duration is Greater than 1 Week.</inlineHelpText>
+    <label>Greater than 1 Week Value</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>2</scale>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Number</type>
+    <unique>false</unique>
+</CustomField>

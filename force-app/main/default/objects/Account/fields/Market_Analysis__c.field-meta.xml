@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Market_Analysis__c</fullName>
+    <externalId>false</externalId>
+    <label>Market Analysis</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Consolidation</fullName>
+                <default>false</default>
+                <label>Consolidation</label>
+            </value>
+            <value>
+                <fullName>Contraction</fullName>
+                <default>false</default>
+                <label>Contraction</label>
+            </value>
+            <value>
+                <fullName>Expansion</fullName>
+                <default>false</default>
+                <label>Expansion</label>
+            </value>
+            <value>
+                <fullName>No Change</fullName>
+                <default>false</default>
+                <label>No Change</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

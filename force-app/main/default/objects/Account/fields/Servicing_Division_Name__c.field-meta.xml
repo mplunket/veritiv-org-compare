@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Servicing_Division_Name__c</fullName>
+    <description>Pulls the Servicing Division Name. Currently used in the Account &amp; Lead Visibility page for searching divisions.</description>
+    <externalId>false</externalId>
+    <formula>Servicing_Division__r.Name</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Servicing Division</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

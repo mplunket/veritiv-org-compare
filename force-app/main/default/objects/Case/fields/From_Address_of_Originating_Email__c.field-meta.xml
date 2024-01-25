@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>From_Address_of_Originating_Email__c</fullName>
+    <description>This field contains the from address of the email message that first led to the creation of this case</description>
+    <externalId>true</externalId>
+    <inlineHelpText>This field contains the from address of the email message that first led to the creation of this case</inlineHelpText>
+    <label>From Address of Originating Email</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Email</type>
+    <unique>false</unique>
+</CustomField>

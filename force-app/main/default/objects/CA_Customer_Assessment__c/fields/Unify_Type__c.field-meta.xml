@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Unify_Type__c</fullName>
+    <externalId>false</externalId>
+    <formula>IF(ispickval( TP_Account__r.Unify_Account_Type__c ,&quot;N&quot;), &quot;National Account&quot;, 
+IF(ispickval( TP_Account__r.Unify_Account_Type__c ,&quot;D&quot;), &quot;Tax Supported&quot;,
+IF(ispickval( TP_Account__r.Unify_Account_Type__c ,&quot;R&quot;), &quot;Enterprise Rep Account&quot;,  
+IF(ispickval( TP_Account__r.Unify_Account_Type__c ,&quot;U&quot;), &quot;End User/Directed Buy&quot;, 
+IF(ispickval( TP_Account__r.Unify_Account_Type__c ,&quot;C&quot;), &quot;Enterprise Manager Acct&quot;, &quot;&quot;)))))</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Unify Type</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<FieldSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Lead_LS_Search_Fields</fullName>
+    <description>Set of fields to be queried against on the Account/Lead search page</description>
+    <displayedFields>
+        <field>Company</field>
+        <isFieldManaged>false</isFieldManaged>
+        <isRequired>false</isRequired>
+    </displayedFields>
+    <label>Lead LS Search Fields</label>
+</FieldSet>

@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<BusinessProcess xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Sales Support</fullName>
+    <description>Specifically for the Sales Support team</description>
+    <isActive>true</isActive>
+    <values>
+        <fullName>Closed</fullName>
+        <default>false</default>
+    </values>
+    <values>
+        <fullName>In Process</fullName>
+        <default>false</default>
+    </values>
+    <values>
+        <fullName>New</fullName>
+        <default>true</default>
+    </values>
+    <values>
+        <fullName>On Hold - CS</fullName>
+        <default>false</default>
+    </values>
+    <values>
+        <fullName>On Hold - Costing</fullName>
+        <default>false</default>
+    </values>
+    <values>
+        <fullName>On Hold - Credit</fullName>
+        <default>false</default>
+    </values>
+    <values>
+        <fullName>On Hold - Credit Ops</fullName>
+        <default>false</default>
+    </values>
+    <values>
+        <fullName>On Hold - Customer</fullName>
+        <default>false</default>
+    </values>
+    <values>
+        <fullName>On Hold - Item File</fullName>
+        <default>false</default>
+    </values>
+    <values>
+        <fullName>On Hold - Legal %2F EHS</fullName>
+        <default>false</default>
+    </values>
+    <values>
+        <fullName>On Hold - Manager Approval</fullName>
+        <default>false</default>
+    </values>
+    <values>
+        <fullName>On Hold - Ops</fullName>
+        <default>false</default>
+    </values>
+    <values>
+        <fullName>On Hold - Parts %26 Equipment</fullName>
+        <default>false</default>
+    </values>
+    <values>
+        <fullName>On Hold - Pricing%2FRebates</fullName>
+        <default>false</default>
+    </values>
+    <values>
+        <fullName>On Hold - Procurement</fullName>
+        <default>false</default>
+    </values>
+    <values>
+        <fullName>On Hold - Sales</fullName>
+        <default>false</default>
+    </values>
+    <values>
+        <fullName>On Hold - Sourcing</fullName>
+        <default>false</default>
+    </values>
+    <values>
+        <fullName>On Hold - Vendor</fullName>
+        <default>false</default>
+    </values>
+    <values>
+        <fullName>On Hold - eBusiness</fullName>
+        <default>false</default>
+    </values>
+</BusinessProcess>

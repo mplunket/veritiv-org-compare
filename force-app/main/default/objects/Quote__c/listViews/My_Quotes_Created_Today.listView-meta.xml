@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>My_Quotes_Created_Today</fullName>
+    <columns>Bill_To_Number__c</columns>
+    <columns>Account__c</columns>
+    <columns>NAME</columns>
+    <columns>Quote_Type__c</columns>
+    <columns>Quote_Stage__c</columns>
+    <columns>Servicing_Division_Name__c</columns>
+    <columns>UPDATEDBY_USER</columns>
+    <filterScope>Mine</filterScope>
+    <filters>
+        <field>CREATED_DATE</field>
+        <operation>equals</operation>
+        <value>TODAY</value>
+    </filters>
+    <label>3 - My Quotes Created Today</label>
+    <language>en_US</language>
+</ListView>

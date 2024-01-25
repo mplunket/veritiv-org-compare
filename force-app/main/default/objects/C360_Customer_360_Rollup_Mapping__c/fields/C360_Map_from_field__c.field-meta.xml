@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>C360_Map_from_field__c</fullName>
+    <description>C360: API name of the field we will be mapping FROM.  This field name must come from an object designated in the &quot;Customer 360 SObjects&quot; custom setting and noted in the &quot;Map from Object&quot; field in this custom setting.
+
+API names of custom fields must have the &quot;__c&quot; suffix.</description>
+    <externalId>false</externalId>
+    <inlineHelpText>C360: API name of the field we will be mapping FROM.  This field name must come from an object designated in the &quot;Customer 360 SObjects&quot; custom setting and noted in the &quot;Map from Object&quot; field in this custom setting.</inlineHelpText>
+    <label>Map from field</label>
+    <length>100</length>
+    <required>true</required>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Assigned_Andrew</fullName>
+    <columns>NAME</columns>
+    <columns>request_status__c</columns>
+    <columns>Planned_Deployment_Date__c</columns>
+    <columns>Groomed__c</columns>
+    <columns>BW__c</columns>
+    <columns>Release__c</columns>
+    <columns>Historical_Status_Notes__c</columns>
+    <columns>date_start__c</columns>
+    <columns>Requested_By_User__c</columns>
+    <columns>UPDATEDBY_USER</columns>
+    <columns>LAST_UPDATE</columns>
+    <columns>CREATEDBY_USER</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>request_owner_user__c</field>
+        <operation>contains</operation>
+        <value>Hare</value>
+    </filters>
+    <filters>
+        <field>request_status__c</field>
+        <operation>notEqual</operation>
+        <value>9. Cancelled,8. On Hold,7. Completed</value>
+    </filters>
+    <label>Assigned - Andrew</label>
+    <language>en_US</language>
+</ListView>

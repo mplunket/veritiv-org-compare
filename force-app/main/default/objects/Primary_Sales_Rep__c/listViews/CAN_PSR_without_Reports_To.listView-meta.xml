@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>CAN_PSR_without_Reports_To</fullName>
+    <columns>NAME</columns>
+    <columns>Reports_To__c</columns>
+    <columns>name_zm_sm__c</columns>
+    <columns>name_vp__c</columns>
+    <columns>Email__c</columns>
+    <columns>OWNER.LAST_NAME</columns>
+    <columns>SF_userid__c</columns>
+    <columns>Network_ID__c</columns>
+    <columns>user_profile__c</columns>
+    <columns>user_role__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>Country__c</field>
+        <operation>equals</operation>
+        <value>CAN</value>
+    </filters>
+    <filters>
+        <field>Reports_To__c</field>
+        <operation>equals</operation>
+    </filters>
+    <filters>
+        <field>deactivated_user__c</field>
+        <operation>equals</operation>
+        <value>0</value>
+    </filters>
+    <label>CAN PSR without Reports To</label>
+    <language>en_US</language>
+    <sharedTo>
+        <group>All_Users</group>
+    </sharedTo>
+</ListView>

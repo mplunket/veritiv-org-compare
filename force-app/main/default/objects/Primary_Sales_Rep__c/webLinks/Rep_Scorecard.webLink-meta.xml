@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<WebLink xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Rep_Scorecard</fullName>
+    <availability>online</availability>
+    <description>Link to Microstrategy Report</description>
+    <displayType>link</displayType>
+    <encodingKey>UTF-8</encodingKey>
+    <height>800</height>
+    <linkType>url</linkType>
+    <masterLabel>zzzVOS - Rep&apos;s Sales Scorecard by Customer</masterLabel>
+    <openType>noSidebar</openType>
+    <protected>false</protected>
+    <url>http://mstrreporting.srv.unisourcelink.net/MicroStrategy/asp/Main.aspx?Server=UWPATLMSTR03.uninet.unisourcelink.net&amp;Project=Unisource+Worldwide&amp;Port=0&amp;evt=2048001&amp;src=Main.aspx.2048001&amp;visMode=0&amp;currentViewMedia=2&amp;documentID=8F353057419033F2D8A454AF90AB62A3&amp;promptsAnswerXML=&lt;rsl&gt;&lt;pa pt=&quot;6&quot; pin=&quot;0&quot; did=&quot;4613BC644A8B82836E7FE1844AB48818&quot; tp=&quot;10&quot;&gt;&lt;mi&gt;&lt;fct qsr=&quot;0&quot; fcn=&quot;0&quot; cc=&quot;1&quot; sto=&quot;1&quot; pfc=&quot;0&quot; pcc=&quot;1&quot;&gt;&lt;f did=&quot;CF7F29D9433D7FEA257DBCA7EB0AD603&quot; tp=&quot;1&quot;/&gt;&lt;/fct&gt;&lt;/mi&gt;&lt;/pa&gt;&lt;pa pt=&quot;6&quot; pin=&quot;0&quot; did=&quot;910C38CA4BA5C16BC2CB9289FFA1B248&quot; tp=&quot;10&quot;&gt;&lt;mi&gt;&lt;fct qsr=&quot;0&quot; fcn=&quot;0&quot; cc=&quot;1&quot; sto=&quot;1&quot; pfc=&quot;0&quot; pcc=&quot;1&quot;&gt;&lt;at did=&quot;B7AEF8EA4D1C579FAE61DDAA77FFE550&quot; tp=&quot;12&quot;/&gt;&lt;/fct&gt;&lt;/mi&gt;&lt;/pa&gt;&lt;pa pt=&quot;3&quot; pin=&quot;0&quot; did=&quot;E446A48B481DB4BDB05D929462578B86&quot; tp=&quot;10&quot;&gt;{!Primary_Sales_Rep__c.Employee_Number__c}&lt;/pa&gt;&lt;/rsl&gt;&gt;</url>
+</WebLink>

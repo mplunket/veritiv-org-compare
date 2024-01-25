@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>How_are_Raw_Materials_packaged__c</fullName>
+    <description>Kitting</description>
+    <externalId>false</externalId>
+    <inlineHelpText>For example:  1 up on a sheet, 2 up on a roll</inlineHelpText>
+    <label>How are Raw Materials packaged?</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>TextArea</type>
+</CustomField>

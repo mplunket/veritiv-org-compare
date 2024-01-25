@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Lightning_3_Develop_Solution</fullName>
+    <active>true</active>
+    <description>Fields required before you can advance to Stage 3</description>
+    <errorConditionFormula>AND(
+( ISNEW() || ISCHANGED(StageName) ),
+TEXT(StageName) = &quot;3- Develop Solution&quot;,
+$User.ProfileId  &lt;&gt; &quot;00e70000000swa5&quot;,
+$User.ProfileId  &lt;&gt; &quot;00e70000000j606&quot;,
+$User.ProfileId  &lt;&gt; &quot;00e5w000001xwik&quot;,
+$User.ProfileId  &lt;&gt; &quot;00e5w000001nr5t&quot;,
+$User.ProfileId  &lt;&gt; &quot;00ef2000000zIBv&quot;,
+ OR(ISBlank(Amount),
+ Amount&lt;=1,
+ ISBlank(Description),
+ ISBlank(Prod_Category__c)
+),
+RecordType.DeveloperName &lt;&gt; &apos;International_Opportunity_Lightning&apos;
+)</errorConditionFormula>
+    <errorMessage>Annual Opportunity Revenue must exceed $1 and Prod Category and Description are required before choosing 3- Develop Solution as a Stage.</errorMessage>
+</ValidationRule>

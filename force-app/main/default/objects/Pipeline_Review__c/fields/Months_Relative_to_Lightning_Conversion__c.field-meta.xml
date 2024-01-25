@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Months_Relative_to_Lightning_Conversion__c</fullName>
+    <description>Formula built straight in production to be able to use in Analytics Studio to measure adoption trends relative to lightning conversion. Output will be a number either positive or negative indicating the months between created date and the owner&apos;s lightning conversion date.</description>
+    <externalId>false</externalId>
+    <formula>((YEAR(DATEVALUE(CreatedDate)) - YEAR(Primary_Sales_Rep__r.SF_userid__r.Lightning_Conversion_Date__c))*12) 
++ 
+(MONTH(DATEVALUE(CreatedDate)) - MONTH(Primary_Sales_Rep__r.SF_userid__r.Lightning_Conversion_Date__c))</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>zzMonths Relative to Lightning Conversi</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>0</scale>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Number</type>
+    <unique>false</unique>
+</CustomField>

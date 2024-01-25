@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>See_Vendors_for_This_Vertical__c</fullName>
+    <externalId>false</externalId>
+    <formula>HYPERLINK(
+
+/* If they&apos;re in Lightning */
+IF($User.UIThemeDisplayed=&quot;Theme4d&quot;,
+
+/* Use Lightning syntax, optimized to avoid full page reload */
+&quot;/lightning/r/Report/00O70000003aD8i/view?fv0=&quot;,
+
+/* Otherwise use Classic syntax */
+&quot;/00O70000003aD8i?pv0=&quot;)
+
+/* Append the Vertical Name */
+&amp;  Name 
+,
+
+/* Specify the link text */
+&quot;See Vendors for this Vertical&quot;,
+
+/* Keep it in the same browser tab to avoid full page reload */
+&quot;_self&quot;
+)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>See Vendors for This Vertical</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

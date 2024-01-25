@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Strategic_Opportunity__c</fullName>
+    <defaultValue>false</defaultValue>
+    <description>If a qualified RFP or RFQ work order is created on this opportunity, it&apos;s considered &quot;strategic&quot; for purposes of reporting on Opps.  Will be updated by the flow Work Order - Initial Sourcing Request from Opportunity</description>
+    <externalId>false</externalId>
+    <inlineHelpText>Strategic means there was a qualified RFP or RFQ on the opportunity</inlineHelpText>
+    <label>Strategic Opportunity</label>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Checkbox</type>
+</CustomField>

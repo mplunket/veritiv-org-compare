@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Sourcing_Central_PKG_Quote</fullName>
+    <filterScope>Queue</filterScope>
+    <label>Sourcing - Central - PKG</label>
+    <queue>Sourcing_Central_PKG</queue>
+    <sharedTo>
+        <allInternalUsers></allInternalUsers>
+    </sharedTo>
+</ListView>

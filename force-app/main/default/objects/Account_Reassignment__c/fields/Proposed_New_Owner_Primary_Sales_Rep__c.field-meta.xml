@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Proposed_New_Owner_Primary_Sales_Rep__c</fullName>
+    <deleteConstraint>SetNull</deleteConstraint>
+    <externalId>false</externalId>
+    <inlineHelpText>If New Rep - enter the new Sales Rep&apos;s name
+If House - enter the SM name (you)
+If Inside Sales - qualify account with Inside Sales manager, enter the Inside Sales Rep&apos;s name</inlineHelpText>
+    <label>Proposed New Owner</label>
+    <referenceTo>Primary_Sales_Rep__c</referenceTo>
+    <relationshipLabel>Account Reassignments Incoming</relationshipLabel>
+    <relationshipName>Account_Reassignments_New_Owner</relationshipName>
+    <required>false</required>
+    <trackHistory>true</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Lookup</type>
+</CustomField>

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Information__c</fullName>
+    <description>Old: IMAGE(&quot;/servlet/servlet.ImageServer?id=01570000000yqSt&amp;oid=00DQ0000000Hls9&amp;lastMod=1284229271000&quot;, &quot;Information Email&quot; , 100, 100)</description>
+    <externalId>false</externalId>
+    <formula>IMAGE(&quot;servlet/servlet.FileDownload?file=01570000000yqSt&quot;, &quot;Information Email&quot; , 100, 100)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Information</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

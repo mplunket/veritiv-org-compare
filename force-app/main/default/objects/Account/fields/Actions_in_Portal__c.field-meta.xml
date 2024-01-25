@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Actions_in_Portal__c</fullName>
+    <externalId>false</externalId>
+    <label>Actions in Portal</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>MultiselectPicklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Pulling PO&apos;s</fullName>
+                <default>false</default>
+                <label>Pulling PO&apos;s</label>
+            </value>
+            <value>
+                <fullName>Creating ASN&apos;s</fullName>
+                <default>false</default>
+                <label>Creating ASN&apos;s</label>
+            </value>
+            <value>
+                <fullName>Updating Pricing</fullName>
+                <default>false</default>
+                <label>Updating Pricing</label>
+            </value>
+            <value>
+                <fullName>Updating ETA&apos;s</fullName>
+                <default>false</default>
+                <label>Updating ETA&apos;s</label>
+            </value>
+            <value>
+                <fullName>Updating Shipment Confirmations</fullName>
+                <default>false</default>
+                <label>Updating Shipment Confirmations</label>
+            </value>
+            <value>
+                <fullName>Portal Billed Only Customer</fullName>
+                <default>false</default>
+                <label>Portal Billed Only Customer</label>
+            </value>
+            <value>
+                <fullName>Other - Please list in Portal Notes</fullName>
+                <default>false</default>
+                <label>Other - Please list in Portal Notes</label>
+            </value>
+            <value>
+                <fullName>N/A</fullName>
+                <default>false</default>
+                <label>N/A</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+    <visibleLines>4</visibleLines>
+</CustomField>

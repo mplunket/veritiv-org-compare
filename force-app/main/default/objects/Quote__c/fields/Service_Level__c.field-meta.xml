@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Service_Level__c</fullName>
+    <description>This field is a cross object formula field and displays the Service Level from the Account on the Quote Screen</description>
+    <externalId>false</externalId>
+    <formula>CASE(Account__r.Service_Level__c, &quot;G&quot;, &quot;Gold&quot;, &quot;P&quot;, &quot;Platinum&quot;, &quot;S&quot; ,&quot;Standard&quot;, &quot;Gold&quot;, &quot;Gold&quot;, &quot;Platinum&quot;, &quot;Platinum&quot;, &quot;Standard&quot;, &quot;Standard&quot;, &quot;N/A&quot;)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Service Level</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

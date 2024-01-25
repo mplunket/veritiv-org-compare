@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Bounced_Date__c</fullName>
+    <description>If an SFDC email bounces, update this custom field from the Std Field, via workflow. Syncs to Marketo and they can update it as well. We need a custom field because standard fields are not available for us to display on Contact page layouts</description>
+    <externalId>false</externalId>
+    <label>Bounced Date</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Date</type>
+</CustomField>

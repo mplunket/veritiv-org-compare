@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>TSB_Opportunities_Joe_Souhrada</fullName>
+    <columns>OPPORTUNITY.NAME</columns>
+    <columns>TSB_Specialist__c</columns>
+    <columns>OPPORTUNITY.AMOUNT</columns>
+    <columns>OPPORTUNITY.CLOSE_DATE</columns>
+    <columns>OPPORTUNITY.STAGE_NAME</columns>
+    <columns>CORE.USERS.ALIAS</columns>
+    <columns>Date_Bid_Due__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>CORE.USERS.LAST_NAME</field>
+        <operation>equals</operation>
+        <value>Souhrada</value>
+    </filters>
+    <label>TSB Opportunities - Joe Souhrada</label>
+    <sharedTo>
+        <group>TSB_Specialists_and_Leaders</group>
+    </sharedTo>
+</ListView>

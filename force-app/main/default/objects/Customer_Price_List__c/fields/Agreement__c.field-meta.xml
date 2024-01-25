@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Agreement__c</fullName>
+    <deleteConstraint>Restrict</deleteConstraint>
+    <description>Lookup to the contract. Used for the Internal record type.</description>
+    <externalId>false</externalId>
+    <label>Agreement</label>
+    <referenceTo>Contract</referenceTo>
+    <relationshipLabel>Customer Price Lists</relationshipLabel>
+    <relationshipName>Customer_Price_Lists</relationshipName>
+    <required>true</required>
+    <trackTrending>false</trackTrending>
+    <type>Lookup</type>
+</CustomField>

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Bypass_Validation_Rule__c</fullName>
+    <defaultValue>false</defaultValue>
+    <description>For use with apex updates. This checkbox can be used in a validation rule to bypass the validation for any system updates.</description>
+    <externalId>false</externalId>
+    <label>Bypass Validation Rule</label>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Checkbox</type>
+</CustomField>

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Credit_Action_for_Setup__c</fullName>
+    <description>Formula to grab field from Account for displaying on Credit App object
+01 - Credit App is needed
+02 - Bill To setup needed
+03 - Ship To setup needed
+04 - National account - must be handled by NAM team, send email to that box
+05 - Other - Email generated to both Rep and the credit group mailbox containing all the details</description>
+    <externalId>false</externalId>
+    <formula>TEXT(Account__r.Credit_Action_for_Setup__c)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <inlineHelpText>01 - Credit App is needed
+02 - Bill To setup needed
+03 - Ship To setup needed
+04 - National account - must be handled by NAM team, send email to that box
+05 - Other - Email generated to both Rep and the credit group mailbox containing all the details</inlineHelpText>
+    <label>Credit - Action for Setup</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

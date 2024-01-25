@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>ANI_CSP_Tertiary_RR__c</fullName>
+    <deleteConstraint>SetNull</deleteConstraint>
+    <description>CSP routing is determined based on contact and DID number. The teriary CSP is the third option to handle that call.</description>
+    <externalId>false</externalId>
+    <inlineHelpText>Whom is the first option for fielding this contact&apos;s call?</inlineHelpText>
+    <label>ANI Tertiary</label>
+    <referenceTo>User</referenceTo>
+    <relationshipName>Routing_Records2</relationshipName>
+    <required>false</required>
+    <trackHistory>true</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Lookup</type>
+</CustomField>

@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Process__c</fullName>
+    <externalId>false</externalId>
+    <label>Process</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>E Parents</fullName>
+                <default>false</default>
+                <label>E Parents</label>
+            </value>
+            <value>
+                <fullName>Z Chain</fullName>
+                <default>false</default>
+                <label>Z Chain</label>
+            </value>
+            <value>
+                <fullName>D Chain</fullName>
+                <default>false</default>
+                <label>D Chain</label>
+            </value>
+            <value>
+                <fullName>E Bill Tos</fullName>
+                <default>false</default>
+                <label>E Bill Tos</label>
+            </value>
+            <value>
+                <fullName>D Bill Tos</fullName>
+                <default>false</default>
+                <label>D Bill Tos</label>
+            </value>
+            <value>
+                <fullName>Z Bill Tos</fullName>
+                <default>false</default>
+                <label>Z Bill Tos</label>
+            </value>
+            <value>
+                <fullName>Z Contracts</fullName>
+                <default>false</default>
+                <label>Z Contracts</label>
+            </value>
+            <value>
+                <fullName>E Ship Tos</fullName>
+                <default>false</default>
+                <label>E Ship Tos</label>
+            </value>
+            <value>
+                <fullName>D Ship Tos</fullName>
+                <default>false</default>
+                <label>D Ship Tos</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Vendor_required_beyond_stage_3</fullName>
+    <active>false</active>
+    <description>Require a Vendor record be added before moving to stage 4 or beyond, standard opportunities only.  Exclude Europe sales roles.
+
+Exceptions made for Sys Admins, API Admins and TSB reps and managers</description>
+    <errorConditionFormula>AND( 
+OR(
+RecordTypeId =&quot;01270000000E0MS&quot;, 
+RecordTypeId =  $Label.VeritivIQRecordTypeID),
+$Profile.Id &lt;&gt;&quot;00e70000000swa5&quot;,
+$Profile.Id &lt;&gt; &quot;00e70000000j606&quot;,
+Owner.ProfileId &lt;&gt; &quot;00e5w000001nr5t&quot;,
+Owner.ProfileId &lt;&gt; &quot;00e5w000001xwik&quot;,
+Owner.UserRoleId &lt;&gt; &quot;00E70000000me2D&quot;,
+Owner.UserRoleId &lt;&gt; &quot;00E70000000mexx&quot;,  
+Vendor_Count__c = 0,  
+OR( 
+ISPICKVAL(StageName, &quot;4- Demo/RFQ&quot;), 
+ISPICKVAL(StageName, &quot;5- Proposal&quot;), 
+ISPICKVAL(StageName, &quot;6-Closing Presentation to Decision Maker&quot;), 
+ISPICKVAL(StageName, &quot;7- Verbal Commitment&quot;), 
+ISPICKVAL(StageName, &quot;8- Closed Won&quot;) 
+)
+)</errorConditionFormula>
+    <errorMessage>You must enter a Vendor Detail record before moving beyond Stage 3.</errorMessage>
+</ValidationRule>

@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>PDN_Opp_Requ_Compl_Date_In_The_Future</fullName>
+    <active>false</active>
+    <description>When entering a Requested Completion Date on PDN Opportunities, the date must be a future date.</description>
+    <errorConditionFormula>and(or(RecordTypeId=&quot;01239000000QUb2AAG&quot;,RecordTypeId=&quot;01270000000E0TdAAK&quot;),Requested_Completion_Date__c&lt;=Today())</errorConditionFormula>
+    <errorDisplayField>Requested_Completion_Date__c</errorDisplayField>
+    <errorMessage>For PDN Opportunities, the Requested Completion Date must be a future date.</errorMessage>
+</ValidationRule>

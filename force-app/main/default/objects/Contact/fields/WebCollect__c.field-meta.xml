@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>WebCollect__c</fullName>
+    <defaultValue>false</defaultValue>
+    <description>if this box is checked, the contact should not be sent to Marketo.  These are contacts used by Credit &amp; Collections.</description>
+    <externalId>false</externalId>
+    <inlineHelpText>Indicates if contact is from Webcollect</inlineHelpText>
+    <label>WebCollect</label>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Checkbox</type>
+</CustomField>

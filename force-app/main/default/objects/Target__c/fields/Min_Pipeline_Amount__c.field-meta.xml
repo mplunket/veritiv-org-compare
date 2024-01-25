@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Min_Pipeline_Amount__c</fullName>
+    <externalId>false</externalId>
+    <formula>(YTD_Sales_Variance__c / Default_Close_Ratio__c / Default_Realization_Ratio__c)*-1</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <inlineHelpText>YTD_Sales_Variance * Default_Close_Ratio * Default_Realization_Ratio*-1</inlineHelpText>
+    <label>Min Pipeline Amount</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>2</scale>
+    <trackTrending>false</trackTrending>
+    <type>Currency</type>
+</CustomField>

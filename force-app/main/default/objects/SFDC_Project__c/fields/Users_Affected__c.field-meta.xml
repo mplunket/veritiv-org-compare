@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Users_Affected__c</fullName>
+    <externalId>false</externalId>
+    <label>Users Affected</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>MultiselectPicklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>true</sorted>
+            <value>
+                <fullName>All Users</fullName>
+                <default>false</default>
+                <label>All Users</label>
+            </value>
+            <value>
+                <fullName>Category Management</fullName>
+                <default>false</default>
+                <label>Category Management</label>
+            </value>
+            <value>
+                <fullName>Corporate Accounts</fullName>
+                <default>false</default>
+                <label>Corporate Accounts</label>
+            </value>
+            <value>
+                <fullName>Customer Service</fullName>
+                <default>false</default>
+                <label>Customer Service</label>
+            </value>
+            <value>
+                <fullName>eBusiness</fullName>
+                <default>false</default>
+                <label>eBusiness</label>
+            </value>
+            <value>
+                <fullName>Marketing</fullName>
+                <default>false</default>
+                <label>Marketing</label>
+            </value>
+            <value>
+                <fullName>New User Group</fullName>
+                <default>false</default>
+                <label>New User Group</label>
+            </value>
+            <value>
+                <fullName>Other</fullName>
+                <default>false</default>
+                <label>Other</label>
+            </value>
+            <value>
+                <fullName>PDN</fullName>
+                <default>false</default>
+                <label>PDN</label>
+            </value>
+            <value>
+                <fullName>Sales</fullName>
+                <default>false</default>
+                <label>Sales</label>
+            </value>
+            <value>
+                <fullName>Sourcing</fullName>
+                <default>false</default>
+                <label>Sourcing</label>
+            </value>
+            <value>
+                <fullName>Specialists</fullName>
+                <default>false</default>
+                <label>Specialists</label>
+            </value>
+            <value>
+                <fullName>Supply Chain</fullName>
+                <default>false</default>
+                <label>Supply Chain</label>
+            </value>
+            <value>
+                <fullName>Tax Supported Business</fullName>
+                <default>false</default>
+                <label>Tax Supported Business</label>
+            </value>
+            <value>
+                <fullName>VLS</fullName>
+                <default>false</default>
+                <label>VLS</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+    <visibleLines>3</visibleLines>
+</CustomField>

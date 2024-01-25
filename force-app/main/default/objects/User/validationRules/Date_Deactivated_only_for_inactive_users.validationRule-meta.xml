@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Date_Deactivated_only_for_inactive_users</fullName>
+    <active>true</active>
+    <description>Active users should not have Date Deactivated or Deactivation Reason details.</description>
+    <errorConditionFormula>(IsActive = TRUE)&amp;&amp;
+(NOT(ISNULL(Date_Deactivated__c)))</errorConditionFormula>
+    <errorDisplayField>Date_Deactivated__c</errorDisplayField>
+    <errorMessage>Active users should not have Date Deactivated or Deactivation Reason details.</errorMessage>
+</ValidationRule>

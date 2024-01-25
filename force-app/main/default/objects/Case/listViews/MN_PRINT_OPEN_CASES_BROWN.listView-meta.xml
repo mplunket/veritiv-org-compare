@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>MN_PRINT_OPEN_CASES_BROWN</fullName>
+    <booleanFilter>(1 OR 2) AND 3</booleanFilter>
+    <columns>OWNER_NAME</columns>
+    <columns>CASES.CREATED_DATE_DATE_ONLY</columns>
+    <columns>CASES.CASE_NUMBER</columns>
+    <columns>NAME</columns>
+    <columns>ACCOUNT.NAME</columns>
+    <columns>CASES.STATUS</columns>
+    <columns>Status_Detail__c</columns>
+    <columns>CASES.SUBJECT</columns>
+    <columns>CASES.PRIORITY</columns>
+    <columns>ToAddressRouting__c</columns>
+    <columns>CASES.LAST_UPDATE_DATE_ONLY</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>X255_To_Address__c</field>
+        <operation>contains</operation>
+        <value>printcs125,printcs127,printcs109,printcs110</value>
+    </filters>
+    <filters>
+        <field>Original_Queue_Name__c</field>
+        <operation>contains</operation>
+        <value>printcs125,printcs127,printcs109,printcs110</value>
+    </filters>
+    <filters>
+        <field>CASES.STATUS</field>
+        <operation>notEqual</operation>
+        <value>Closed,Merged</value>
+    </filters>
+    <label>MN - PRINT - OPEN CASES - BROWN</label>
+    <sharedTo>
+        <group>All_Admins</group>
+        <role>CS_MN_PRINT_TM1</role>
+        <role>CS_MN_PRINT_TM2</role>
+        <roleAndSubordinatesInternal>CS_LA_PRINT_DIRECTOR</roleAndSubordinatesInternal>
+        <roleAndSubordinatesInternal>CS_MN_PRINT_TM1</roleAndSubordinatesInternal>
+        <roleAndSubordinatesInternal>CS_MN_PRINT_TM2</roleAndSubordinatesInternal>
+        <roleAndSubordinatesInternal>CS_MN_PRINT_TSB1</roleAndSubordinatesInternal>
+    </sharedTo>
+</ListView>

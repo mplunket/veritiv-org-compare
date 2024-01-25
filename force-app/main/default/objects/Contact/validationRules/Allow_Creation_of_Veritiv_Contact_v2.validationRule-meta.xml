@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Allow_Creation_of_Veritiv_Contact_v2</fullName>
+    <active>true</active>
+    <description>No Users, except for Sys Admins, Provisioning, and the list of Users/Profiles listed above, should be able to create or edit a Contact for a Veritiv Contact on the Veritiv Headquarters Account.</description>
+    <errorConditionFormula>AND(
+Bypass_Validation_Rule__c == false,
+NOT(
+OR(
+$User.ProfileId = &apos;00e70000000swa5&apos;, /*System Administrator */
+$User.ProfileId = &apos;00e5w000001nsDI&apos;, /*Training and Support - Lightning*/
+$User.ProfileId = &apos;00e005700000017g11&apos;, /*IOD*/
+$User.ProfileId = &apos;00e70000000j606&apos;, /*Evo Intgr*/
+$User.ProfileId = &apos;00e5w000001xyQb&apos;, /*CS - Support Restricted - Lightning*/
+$UserRole.Id  = &apos;00E70000001PR3p&apos;, /*CS - CIN - CXC Manager*/
+$UserRole.Id  = &apos;00E5w000003O9dI&apos;, /*CS - CIN - MIDATLANTIC - TM &amp; TL*/
+$UserRole.Id  = &apos;00E5w000003O9ce&apos;, /*CS - CIN - MIDWEST - TM &amp; TL*/
+$UserRole.Id  = &apos;00E5w000003O9co&apos;, /*CS - CIN - GREATLAKES - TM &amp; TL*/
+$UserRole.Id  = &apos;00E5w000003O9dS&apos;, /*CS - CIN - NATIONAL - TM &amp; TL*/
+$UserRole.Id  = &apos;00E5w000003O9d3&apos;, /*CS - CIN - NORTHCENTRAL - TM &amp; TL*/
+$UserRole.Id  = &apos;00E5w000003O9cy&apos;, /*CS - CIN - NORTHEAST - TM &amp; TL*/
+$UserRole.Id  = &apos;00E5w000003O9dN&apos;, /*CS - CIN - TRISTATE - TM &amp; TL*/
+$UserRole.Id  = &apos;00E70000000tNTJ&apos;, /*CS - DAL - CXC Manager*/
+$UserRole.Id  = &apos;00Ef2000003oH2F&apos;, /*CS - DAL - PKG - GL - TM &amp; TL*/
+$UserRole.Id  = &apos;00E70000000tNTI&apos;, /*CS - DAL - PKG - NP - TM &amp; TL*/
+$UserRole.Id  = &apos;00Ef20000017LxZ&apos;, /*CS - DAL - PKG - SC - TM &amp; TL*/
+$UserRole.Id  = &apos;00E39000001c5dP&apos;, /*CS - DAL - PKG - WCRM - TM &amp; TL*/
+$UserRole.Id  = &apos;00E70000000tIfQ&apos;, /*CS - JAX - CXC Manager*/
+$UserRole.Id  = &apos;00E5w000003LZTq&apos;, /*CS - JAX - FS - TM &amp; TL5*/
+$UserRole.Id  = &apos;00E5w000003LZU5&apos;, /*CS - JAX - FS - TM &amp; TL6*/
+$UserRole.Id  = &apos;00E5w000003Q0De&apos;, /*CS - JAX - FS - TM &amp; TL8*/
+$UserRole.Id  = &apos;00E5w000003LZUF&apos;, /*CS - JAX - NAT - TM &amp; TL7*/
+$UserRole.Id  = &apos;00E5w000003LZTC&apos;, /*CS - JAX - PKG - TM &amp; TL1*/
+$UserRole.Id  = &apos;00E5w000003LZTM&apos;, /*CS - JAX - PKG - TM &amp; TL2*/
+$UserRole.Id  = &apos;00E5w000003LZTW&apos;, /*CS - JAX - PKG - TM &amp; TL3*/
+$UserRole.Id  = &apos;00E5w000003LZTg&apos;, /*CS - JAX - PKG - TM &amp; TL4*/
+$UserRole.Id  = &apos;00E70000000tPfg&apos;, /*CS - LA - FS/PKG - CXC Mgr*/
+$UserRole.Id  = &apos;00E5w000003Ktx5&apos;, /*CS - LA - FS/PKG - TM &amp; TL*/
+$UserRole.Id  = &apos;00E70000001C2s0&apos;, /*CS - LA - FS/PKG - TM1*/
+$UserRole.Id  = &apos;00E39000001tkJx&apos;, /*CS - LA - FS/PKG - TM2*/
+$UserRole.Id  = &apos;00E390000020Kbb&apos;, /*CS - LA - FS/PKG - TM3*/
+$UserRole.Id  = &apos;00E5w000003Ktwq&apos;, /*CS - LA - NAT - TM4*/
+$UserRole.Id  = &apos;00E39000001c4VA&apos;, /*CS - Seattle - Manager*/
+$UserRole.Id  = &apos;00E390000020Ln1&apos;, /*CS - LA - PRINT - DIRECTOR*/
+$UserRole.Id  = &apos;00E5w000003KuAY&apos;, /*CS - CIN - PRINT - TM1*/
+$UserRole.Id  = &apos;00E5w000003Q8ww&apos;, /*CS - LA -Print - Inside Sales Supervisor*/
+$UserRole.Id  = &apos;00E390000020Lm8&apos;, /*CS - LA - PRINT - TM1*/
+$UserRole.Id  = &apos;00E39000001c1Qj&apos;, /*CS - LA - PRINT - TM2*/
+$UserRole.Id  = &apos;00E70000000tNy4&apos;, /*CS - MN - PRINT - TM1*/
+$UserRole.Id  = &apos;00E70000000tNy7&apos;, /*CS - MN - PRINT - TM2*/
+$UserRole.Id  = &apos;00Ef2000003oXUF&apos;, /*CS - NJ - PRINT - TM1*/
+$UserRole.Id  = &apos;00E39000001fHF9&apos;, /*CS - NJ - PRINT - TM2*/
+$User.Id   = &apos;00539000003XtY1&apos;)), /*Alicia Labostrie*/
+
+$Setup.TriggerSettings__c.IsVeritivContact__c = false,
+OR(Account.Id = &quot;0017000000NJvZc&quot;,
+CONTAINS(Email, &quot;veritivcorp.com&quot;))
+)</errorConditionFormula>
+    <errorMessage>Veritiv Headquarters Contacts cannot be added or edited.  Please send a request to the Veritiv Global Service at vgsd@veritivcorp.com with the Contact information and your request will be processed.</errorMessage>
+</ValidationRule>

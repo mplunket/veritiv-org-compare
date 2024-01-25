@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Migration_Object__c</fullName>
+    <externalId>false</externalId>
+    <label>Migration Object</label>
+    <referenceTo>Migration_Object__c</referenceTo>
+    <relationshipLabel>Migration Files</relationshipLabel>
+    <relationshipName>Migration_Files</relationshipName>
+    <relationshipOrder>0</relationshipOrder>
+    <reparentableMasterDetail>false</reparentableMasterDetail>
+    <trackTrending>false</trackTrending>
+    <type>MasterDetail</type>
+    <writeRequiresMasterRead>false</writeRequiresMasterRead>
+</CustomField>

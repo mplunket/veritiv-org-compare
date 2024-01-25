@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<BusinessProcess xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Non-Console CSP Process</fullName>
+    <description>Established 2/16/18 for US and CAN CSPs while moving to Category and Details</description>
+    <isActive>true</isActive>
+    <values>
+        <fullName>Closed</fullName>
+        <default>false</default>
+    </values>
+    <values>
+        <fullName>In Process</fullName>
+        <default>true</default>
+    </values>
+    <values>
+        <fullName>On Hold - Customer</fullName>
+        <default>false</default>
+    </values>
+    <values>
+        <fullName>On Hold - Vendor</fullName>
+        <default>false</default>
+    </values>
+    <values>
+        <fullName>On Hold - Veritiv</fullName>
+        <default>false</default>
+    </values>
+</BusinessProcess>

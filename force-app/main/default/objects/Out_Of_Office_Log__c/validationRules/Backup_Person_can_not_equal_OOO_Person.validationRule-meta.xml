@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Backup_Person_can_not_equal_OOO_Person</fullName>
+    <active>true</active>
+    <errorConditionFormula>Backup_Person__c  =  Person_taking_time_off__c</errorConditionFormula>
+    <errorMessage>Backup Person can not be the same as the OOO Person</errorMessage>
+</ValidationRule>

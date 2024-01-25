@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Segment__c</fullName>
+    <externalId>false</externalId>
+    <label>Segment</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>PRINTING IMAGING</fullName>
+                <default>false</default>
+                <label>PRINTING IMAGING</label>
+            </value>
+            <value>
+                <fullName>PACKAGING</fullName>
+                <default>false</default>
+                <label>PACKAGING</label>
+            </value>
+            <value>
+                <fullName>FACILITY SUPPLIES</fullName>
+                <default>false</default>
+                <label>FACILITY SUPPLIES</label>
+            </value>
+            <value>
+                <fullName>TOTAL</fullName>
+                <default>false</default>
+                <label>TOTAL</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

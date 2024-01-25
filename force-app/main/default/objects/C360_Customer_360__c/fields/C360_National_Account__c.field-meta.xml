@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>C360_National_Account__c</fullName>
+    <defaultValue>false</defaultValue>
+    <description>This field determines whether or not the 360 record is a reference to a national account or not.  This field will be populated by users manually.</description>
+    <externalId>false</externalId>
+    <inlineHelpText>Is this Customer 360 a national account?</inlineHelpText>
+    <label>National Account</label>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

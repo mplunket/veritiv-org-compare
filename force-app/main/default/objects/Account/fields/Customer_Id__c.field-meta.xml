@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Customer_Id__c</fullName>
+    <caseSensitive>false</caseSensitive>
+    <description>Nov 2016 - Data fed in from data warehouse integration.
+July 2020 - Oracle ID project to sunset utilization of this field. ETA Early Sept 2020.</description>
+    <externalId>true</externalId>
+    <label>Customer Id</label>
+    <length>40</length>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Text</type>
+    <unique>true</unique>
+</CustomField>

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<WebLink xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>All_Contacts_Owned_by_PSR</fullName>
+    <availability>online</availability>
+    <description>Filter report to display all contact accounts owned by the PSR whose page your are on,Account Status = Active or Blank (account status of blank will pull prospects and account status of Active pulls the active customer accounts)</description>
+    <displayType>massActionButton</displayType>
+    <encodingKey>UTF-8</encodingKey>
+    <height>600</height>
+    <linkType>url</linkType>
+    <masterLabel>All Contacts Owned by PSR</masterLabel>
+    <openType>sidebar</openType>
+    <protected>false</protected>
+    <requireRowSelection>false</requireRowSelection>
+    <url>https://veritiv.lightning.force.com/lightning/r/Report/00Of2000006wKcDEAU/view?fv1={!Primary_Sales_Rep__c.Name}&amp;fv2={!Primary_Sales_Rep__c.OwnerFullName}</url>
+</WebLink>

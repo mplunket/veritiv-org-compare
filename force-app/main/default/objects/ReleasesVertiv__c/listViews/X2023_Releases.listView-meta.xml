@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>X2023_Releases</fullName>
+    <columns>NAME</columns>
+    <columns>Status__c</columns>
+    <columns>Release_Date__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>NAME</field>
+        <operation>contains</operation>
+        <value>2023</value>
+    </filters>
+    <label>2023 Releases</label>
+</ListView>

@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>JAX_SO_FS</fullName>
+    <booleanFilter>1 AND 2</booleanFilter>
+    <columns>CASES.CREATED_DATE_DATE_ONLY</columns>
+    <columns>CASES.CASE_NUMBER</columns>
+    <columns>ACCOUNT.NAME</columns>
+    <columns>NAME</columns>
+    <columns>CASES.SUBJECT</columns>
+    <columns>CASES.STATUS</columns>
+    <columns>CASES.PRIORITY</columns>
+    <columns>OWNER_NAME</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>X255_To_Address__c</field>
+        <operation>contains</operation>
+        <value>fscustomerservice@veritivcorp.com,VTVFS,UPS</value>
+    </filters>
+    <filters>
+        <field>Date_Case_Opened__c</field>
+        <operation>equals</operation>
+        <value>LAST_N_DAYS:30</value>
+    </filters>
+    <label>JAX - FS</label>
+    <sharedTo>
+        <role>CS_JAX_CXC_Manager</role>
+        <role>CS_JAX_FS_TM_TL5</role>
+        <role>CS_JAX_PKG_TM_TL1</role>
+        <role>CS_JAX_PKG_TM_TL2</role>
+        <role>CS_JAX_PKG_TM_TL3</role>
+        <role>CS_JAX_PKG_TM_TL4</role>
+        <role>CS_JAX_SUPPORT</role>
+    </sharedTo>
+</ListView>

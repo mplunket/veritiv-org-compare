@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<WebLink xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Get_DnB_Data_Classic</fullName>
+    <availability>online</availability>
+    <description>window.location = &apos;apex/DnBLeadVFSyncPage?id={!Lead.Id}&apos;;</description>
+    <displayType>button</displayType>
+    <linkType>javascript</linkType>
+    <masterLabel>Get D&amp;B Data</masterLabel>
+    <openType>onClickJavaScript</openType>
+    <protected>false</protected>
+    <url>window.location = &apos;apex/DnBLeadVFSyncPage?id={!Lead.Id}&apos;;</url>
+</WebLink>

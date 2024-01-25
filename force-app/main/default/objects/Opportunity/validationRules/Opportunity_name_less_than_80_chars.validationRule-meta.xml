@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Opportunity_name_less_than_80_chars</fullName>
+    <active>false</active>
+    <description>For UES opportunities, limit name to 80 chars for AtTask integration</description>
+    <errorConditionFormula>AND (
+OR(RecordTypeId=&apos;01270000000E0Td&apos;, RecordTypeId=&apos;01239000000QUb2&apos;),  
+
+LEN(Name)&gt;80)</errorConditionFormula>
+    <errorDisplayField>Name</errorDisplayField>
+    <errorMessage>For Engineered Packaging Opportunities, the Opportunity Name can not exceed 80 characters.</errorMessage>
+</ValidationRule>

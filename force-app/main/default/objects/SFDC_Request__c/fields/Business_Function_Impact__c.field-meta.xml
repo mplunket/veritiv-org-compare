@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Business_Function_Impact__c</fullName>
+    <externalId>false</externalId>
+    <label>Business Function Impact</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>MultiselectPicklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Accounts Payable</fullName>
+                <default>false</default>
+                <label>Accounts Payable</label>
+            </value>
+            <value>
+                <fullName>Accounts Receivable</fullName>
+                <default>false</default>
+                <label>Accounts Receivable</label>
+            </value>
+            <value>
+                <fullName>Category Management</fullName>
+                <default>false</default>
+                <label>Category Management</label>
+            </value>
+            <value>
+                <fullName>Cost Maintenance</fullName>
+                <default>false</default>
+                <label>Cost Maintenance</label>
+            </value>
+            <value>
+                <fullName>Credit and Collections</fullName>
+                <default>false</default>
+                <label>Credit and Collections</label>
+            </value>
+            <value>
+                <fullName>Customer Rebates</fullName>
+                <default>false</default>
+                <label>Customer Rebates</label>
+            </value>
+            <value>
+                <fullName>Customer Experience</fullName>
+                <default>false</default>
+                <label>Customer Experience</label>
+            </value>
+            <value>
+                <fullName>E-Business</fullName>
+                <default>false</default>
+                <label>E-Business</label>
+            </value>
+            <value>
+                <fullName>Environmental Health and Safety (EHS)</fullName>
+                <default>false</default>
+                <label>Environmental Health and Safety (EHS)</label>
+            </value>
+            <value>
+                <fullName>Equipment Parts and Services</fullName>
+                <default>false</default>
+                <label>Equipment Parts and Services</label>
+            </value>
+            <value>
+                <fullName>Inside Sales</fullName>
+                <default>false</default>
+                <label>Inside Sales</label>
+            </value>
+            <value>
+                <fullName>Inventory Management</fullName>
+                <default>false</default>
+                <label>Inventory Management</label>
+            </value>
+            <value>
+                <fullName>IT</fullName>
+                <default>false</default>
+                <label>IT</label>
+            </value>
+            <value>
+                <fullName>Kitting</fullName>
+                <default>false</default>
+                <label>Kitting</label>
+            </value>
+            <value>
+                <fullName>Legal</fullName>
+                <default>false</default>
+                <label>Legal</label>
+            </value>
+            <value>
+                <fullName>Marketing</fullName>
+                <default>false</default>
+                <label>Marketing</label>
+            </value>
+            <value>
+                <fullName>National Accounts</fullName>
+                <default>false</default>
+                <label>National Accounts</label>
+            </value>
+            <value>
+                <fullName>Operations</fullName>
+                <default>false</default>
+                <label>Operations</label>
+            </value>
+            <value>
+                <fullName>Other</fullName>
+                <default>false</default>
+                <label>Other</label>
+            </value>
+            <value>
+                <fullName>Product Inventory Management (PIM)</fullName>
+                <default>false</default>
+                <label>Product Inventory Management (PIM)</label>
+            </value>
+            <value>
+                <fullName>Pricing</fullName>
+                <default>false</default>
+                <label>Pricing</label>
+            </value>
+            <value>
+                <fullName>Sales</fullName>
+                <default>false</default>
+                <label>Sales</label>
+            </value>
+            <value>
+                <fullName>Sales Support</fullName>
+                <default>false</default>
+                <label>Sales Support</label>
+            </value>
+            <value>
+                <fullName>Sourcing</fullName>
+                <default>false</default>
+                <label>Sourcing</label>
+            </value>
+            <value>
+                <fullName>Tax</fullName>
+                <default>false</default>
+                <label>Tax</label>
+            </value>
+            <value>
+                <fullName>Tax Exempt Accounts (TEA)</fullName>
+                <default>false</default>
+                <label>Tax Exempt Accounts (TEA)</label>
+            </value>
+            <value>
+                <fullName>Training</fullName>
+                <default>false</default>
+                <label>Training</label>
+            </value>
+            <value>
+                <fullName>Vendor Rebates</fullName>
+                <default>false</default>
+                <label>Vendor Rebates</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+    <visibleLines>3</visibleLines>
+</CustomField>

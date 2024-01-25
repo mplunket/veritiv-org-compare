@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Lead_is_Converted__c</fullName>
+    <defaultValue>false</defaultValue>
+    <description>Built for Lightning Migration</description>
+    <externalId>false</externalId>
+    <inlineHelpText>Used to determine if a lead is marked converted</inlineHelpText>
+    <label>Lead is Converted</label>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Checkbox</type>
+</CustomField>

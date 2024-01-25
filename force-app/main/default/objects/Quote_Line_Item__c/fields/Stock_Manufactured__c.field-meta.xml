@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Stock_Manufactured__c</fullName>
+    <externalId>false</externalId>
+    <label>Stocked/Mfg&apos;d</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Manufactured</fullName>
+                <default>true</default>
+                <label>Manufactured</label>
+            </value>
+            <value>
+                <fullName>Stocked</fullName>
+                <default>false</default>
+                <label>Stocked</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

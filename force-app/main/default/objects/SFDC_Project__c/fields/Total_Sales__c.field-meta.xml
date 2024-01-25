@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Total_Sales__c</fullName>
+    <description>11 27 23 changed label from Total Sales to Annual Sales as per Backlog Item-3747</description>
+    <externalId>false</externalId>
+    <label>Annualized Sales</label>
+    <precision>18</precision>
+    <required>true</required>
+    <scale>0</scale>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Currency</type>
+</CustomField>

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Unread_Email_on_Open_Cases__c</fullName>
+    <defaultValue>false</defaultValue>
+    <description>8/31/20 - MA - OK TO DELETE AFTER 9/15/2020
+
+Process builder will check this box when a new email comes in on a Case that is in Status = On Hold - Customer, Veritiv, Vendor or In Process.  Used to display Cases in Case List view My Closed Cases with new emails.</description>
+    <externalId>false</externalId>
+    <label>ZZUnread Email on Open Cases</label>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

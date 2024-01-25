@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Employees_Hoovers__c</fullName>
+    <description>Added &quot;Onsite&quot; on 4-12-17</description>
+    <externalId>false</externalId>
+    <inlineHelpText>If the lead has been pushed from Market Insight (MI), will list the reported number of employees on site as reported by Dun &amp; Bradstreet data.</inlineHelpText>
+    <label>Reported # of Employees Onsite</label>
+    <precision>8</precision>
+    <required>false</required>
+    <scale>0</scale>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Number</type>
+    <unique>false</unique>
+</CustomField>

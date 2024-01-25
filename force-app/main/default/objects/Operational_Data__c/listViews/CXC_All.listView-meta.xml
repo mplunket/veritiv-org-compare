@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>CXC_All</fullName>
+    <columns>NAME</columns>
+    <columns>CSC_Director__c</columns>
+    <columns>Main_Phone_Number__c</columns>
+    <columns>Office_Hours__c</columns>
+    <columns>After_Hours_Phone__c</columns>
+    <columns>Time_Zone__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>NAME</field>
+        <operation>startsWith</operation>
+        <value>CSC,CXC</value>
+    </filters>
+    <label>CXC - All</label>
+</ListView>

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Best_Practice_Target__c</fullName>
+    <externalId>false</externalId>
+    <inlineHelpText>Define the barrier, problem, need, or area of improvement that was the target of your best practice.  Please describe the impact that this factor had on your sales. (Required: 1000 character limit)</inlineHelpText>
+    <label>Best Practice Target</label>
+    <length>1000</length>
+    <trackTrending>false</trackTrending>
+    <type>LongTextArea</type>
+    <visibleLines>5</visibleLines>
+</CustomField>

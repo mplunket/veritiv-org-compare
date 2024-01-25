@@ -1,0 +1,518 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Category__c</fullName>
+    <description>Used in the CEI rollout
+
+Replacement for &quot;Reason&quot; field currently in production environment.</description>
+    <externalId>false</externalId>
+    <inlineHelpText>What is this case about?</inlineHelpText>
+    <label>Category</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>true</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <controllingField>Speciality__c</controllingField>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>true</sorted>
+            <value>
+                <fullName>Account Setup/Maintenance</fullName>
+                <default>false</default>
+                <label>Account Setup/Maintenance</label>
+            </value>
+            <value>
+                <fullName>Billing Error</fullName>
+                <default>false</default>
+                <label>Billing Error</label>
+            </value>
+            <value>
+                <fullName>Billing Verification Error</fullName>
+                <default>false</default>
+                <label>Billing Verification Error</label>
+            </value>
+            <value>
+                <fullName>CBSS</fullName>
+                <default>false</default>
+                <label>CBSS</label>
+            </value>
+            <value>
+                <fullName>CC2</fullName>
+                <default>false</default>
+                <label>CC2</label>
+            </value>
+            <value>
+                <fullName>Collections/AR Request</fullName>
+                <default>false</default>
+                <label>Collections/AR Request</label>
+            </value>
+            <value>
+                <fullName>Company Information</fullName>
+                <default>false</default>
+                <label>Company Information</label>
+            </value>
+            <value>
+                <fullName>Cost Change Request</fullName>
+                <default>false</default>
+                <label>Cost Change Request</label>
+            </value>
+            <value>
+                <fullName>Cost Correction</fullName>
+                <default>false</default>
+                <label>Cost Correction</label>
+            </value>
+            <value>
+                <fullName>I - Credit</fullName>
+                <default>false</default>
+                <label>Credit</label>
+            </value>
+            <value>
+                <fullName>Customer Billing Question</fullName>
+                <default>false</default>
+                <label>Customer Billing Question</label>
+            </value>
+            <value>
+                <fullName>I - Delivery Issue</fullName>
+                <default>false</default>
+                <label>Delivery Issue</label>
+            </value>
+            <value>
+                <fullName>Direct Order Entry</fullName>
+                <default>false</default>
+                <label>Direct Order Entry</label>
+            </value>
+            <value>
+                <fullName>Document Request</fullName>
+                <default>false</default>
+                <label>Document Request</label>
+            </value>
+            <value>
+                <fullName>E - Duplicate</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>E - Duplicate</label>
+            </value>
+            <value>
+                <fullName>E - Non-CEI</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>E - Non-CEI</label>
+            </value>
+            <value>
+                <fullName>E - Portal Duplicate</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>E - Portal Duplicate</label>
+            </value>
+            <value>
+                <fullName>ERS/Product Availability</fullName>
+                <default>false</default>
+                <label>ERS/Product Availability</label>
+            </value>
+            <value>
+                <fullName>Existing Item Request</fullName>
+                <default>false</default>
+                <label>Existing Item Request</label>
+            </value>
+            <value>
+                <fullName>Freight</fullName>
+                <default>false</default>
+                <label>Freight</label>
+            </value>
+            <value>
+                <fullName>R - Information Only</fullName>
+                <default>false</default>
+                <label>FYI/No Action Needed</label>
+            </value>
+            <value>
+                <fullName>FYI No Action Needed</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>FYI No Action Needed</label>
+            </value>
+            <value>
+                <fullName>General Inquiry</fullName>
+                <default>false</default>
+                <label>General Inquiry</label>
+            </value>
+            <value>
+                <fullName>I - Delivery</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>I - Delivery</label>
+            </value>
+            <value>
+                <fullName>R - Inquiry</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Inquiry</label>
+            </value>
+            <value>
+                <fullName>Internal Deviation</fullName>
+                <default>false</default>
+                <label>Internal Deviation</label>
+            </value>
+            <value>
+                <fullName>I - Product/Item</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>I - Product/Item</label>
+            </value>
+            <value>
+                <fullName>I - WH</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>I - WH</label>
+            </value>
+            <value>
+                <fullName>Kitting/Converting</fullName>
+                <default>false</default>
+                <label>Kitting/Converting</label>
+            </value>
+            <value>
+                <fullName>Legal</fullName>
+                <default>false</default>
+                <label>Legal</label>
+            </value>
+            <value>
+                <fullName>Mass Vendor Update</fullName>
+                <default>false</default>
+                <label>Mass Vendor Update</label>
+            </value>
+            <value>
+                <fullName>Max</fullName>
+                <default>false</default>
+                <label>Max</label>
+            </value>
+            <value>
+                <fullName>R - Order Request</fullName>
+                <default>false</default>
+                <label>Order Change Request</label>
+            </value>
+            <value>
+                <fullName>I - Order Issue</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Order Issue</label>
+            </value>
+            <value>
+                <fullName>O - Lost Order</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Order Lost</label>
+            </value>
+            <value>
+                <fullName>O - Order Placed</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Order Placed</label>
+            </value>
+            <value>
+                <fullName>Order Release</fullName>
+                <default>false</default>
+                <label>Order Release</label>
+            </value>
+            <value>
+                <fullName>Order Status/Document Request</fullName>
+                <default>false</default>
+                <label>Order Status/Document Request</label>
+            </value>
+            <value>
+                <fullName>Payments</fullName>
+                <default>false</default>
+                <label>Payments</label>
+            </value>
+            <value>
+                <fullName>Pricing/Rebate</fullName>
+                <default>false</default>
+                <label>Pricing/Rebate</label>
+            </value>
+            <value>
+                <fullName>I - Product/Item Issue</fullName>
+                <default>false</default>
+                <label>Product/Item Issue</label>
+            </value>
+            <value>
+                <fullName>Product NIR/Maintenance</fullName>
+                <default>false</default>
+                <label>Product NIR/Maintenance</label>
+            </value>
+            <value>
+                <fullName>Quality/Compliance/Environmental Product Information</fullName>
+                <default>false</default>
+                <label>Quality/Compliance/Environmental Product Information</label>
+            </value>
+            <value>
+                <fullName>R - Customer Onboarding</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>R - Customer Onboarding</label>
+            </value>
+            <value>
+                <fullName>Reporting</fullName>
+                <default>false</default>
+                <label>Reporting</label>
+            </value>
+            <value>
+                <fullName>R - FYI/No Action Needed</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>R - FYI/No Action Needed</label>
+            </value>
+            <value>
+                <fullName>R - Item Info/Availability</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>R - Item Info/Availability</label>
+            </value>
+            <value>
+                <fullName>R - Order Status/Info</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>R - Order Status/Info</label>
+            </value>
+            <value>
+                <fullName>R - Portal Notification No Action Needed</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>R - Portal Notification No Action Needed</label>
+            </value>
+            <value>
+                <fullName>R - Pricing</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>R - Pricing</label>
+            </value>
+            <value>
+                <fullName>Samples Order Entry</fullName>
+                <default>false</default>
+                <label>Samples Order Entry</label>
+            </value>
+            <value>
+                <fullName>Shelters</fullName>
+                <default>false</default>
+                <label>Shelters</label>
+            </value>
+            <value>
+                <fullName>R - Quote</fullName>
+                <default>false</default>
+                <label>Sourcing/Quote</label>
+            </value>
+            <value>
+                <fullName>Tax</fullName>
+                <default>false</default>
+                <label>Tax</label>
+            </value>
+            <value>
+                <fullName>Tax Technology Request</fullName>
+                <default>false</default>
+                <label>Tax Technology Request</label>
+            </value>
+            <value>
+                <fullName>UPS-Early Release Request</fullName>
+                <default>false</default>
+                <label>UPS-Early Release Request</label>
+            </value>
+            <value>
+                <fullName>R - Vendor Acknowledgement</fullName>
+                <default>false</default>
+                <label>Vendor Acknowledgement</label>
+            </value>
+            <value>
+                <fullName>R - Vendor Follow-up</fullName>
+                <default>false</default>
+                <label>Vendor Follow-up</label>
+            </value>
+            <value>
+                <fullName>Vendor Request</fullName>
+                <default>false</default>
+                <label>Vendor Request</label>
+            </value>
+            <value>
+                <fullName>Warehouse/Indirect Order Entry</fullName>
+                <default>false</default>
+                <label>Warehouse/Indirect Order Entry</label>
+            </value>
+            <value>
+                <fullName>I - Warehouse Issue</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Warehouse Issue</label>
+            </value>
+        </valueSetDefinition>
+        <valueSettings>
+            <controllingFieldValue>Order Management</controllingFieldValue>
+            <valueName>I - Credit</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Order Management</controllingFieldValue>
+            <valueName>I - Delivery Issue</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Order Management</controllingFieldValue>
+            <valueName>Direct Order Entry</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Order Management</controllingFieldValue>
+            <valueName>R - Order Request</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Order Management</controllingFieldValue>
+            <valueName>Order Status/Document Request</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Order Management</controllingFieldValue>
+            <valueName>I - Product/Item Issue</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Order Management</controllingFieldValue>
+            <valueName>Samples Order Entry</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Order Management</controllingFieldValue>
+            <controllingFieldValue>Non-Order Management</controllingFieldValue>
+            <valueName>R - Quote</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Order Management</controllingFieldValue>
+            <valueName>UPS-Early Release Request</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Order Management</controllingFieldValue>
+            <valueName>R - Vendor Acknowledgement</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Order Management</controllingFieldValue>
+            <valueName>R - Vendor Follow-up</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Order Management</controllingFieldValue>
+            <valueName>Warehouse/Indirect Order Entry</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Non-Order Management</controllingFieldValue>
+            <valueName>Account Setup/Maintenance</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Non-Order Management</controllingFieldValue>
+            <valueName>Billing Error</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Non-Order Management</controllingFieldValue>
+            <valueName>Billing Verification Error</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Non-Order Management</controllingFieldValue>
+            <valueName>CBSS</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Non-Order Management</controllingFieldValue>
+            <valueName>CC2</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Non-Order Management</controllingFieldValue>
+            <valueName>Collections/AR Request</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Non-Order Management</controllingFieldValue>
+            <valueName>Company Information</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Non-Order Management</controllingFieldValue>
+            <valueName>Cost Change Request</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Non-Order Management</controllingFieldValue>
+            <valueName>Cost Correction</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Non-Order Management</controllingFieldValue>
+            <valueName>Customer Billing Question</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Non-Order Management</controllingFieldValue>
+            <valueName>Document Request</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Non-Order Management</controllingFieldValue>
+            <valueName>ERS/Product Availability</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Non-Order Management</controllingFieldValue>
+            <valueName>Existing Item Request</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Non-Order Management</controllingFieldValue>
+            <valueName>Freight</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Non-Order Management</controllingFieldValue>
+            <valueName>R - Information Only</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Non-Order Management</controllingFieldValue>
+            <valueName>General Inquiry</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Non-Order Management</controllingFieldValue>
+            <valueName>Internal Deviation</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Non-Order Management</controllingFieldValue>
+            <valueName>Kitting/Converting</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Non-Order Management</controllingFieldValue>
+            <valueName>Legal</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Non-Order Management</controllingFieldValue>
+            <valueName>Mass Vendor Update</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Non-Order Management</controllingFieldValue>
+            <valueName>Max</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Non-Order Management</controllingFieldValue>
+            <valueName>Order Release</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Non-Order Management</controllingFieldValue>
+            <valueName>Payments</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Non-Order Management</controllingFieldValue>
+            <valueName>Pricing/Rebate</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Non-Order Management</controllingFieldValue>
+            <valueName>Product NIR/Maintenance</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Non-Order Management</controllingFieldValue>
+            <valueName>Quality/Compliance/Environmental Product Information</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Non-Order Management</controllingFieldValue>
+            <valueName>Reporting</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Non-Order Management</controllingFieldValue>
+            <valueName>Shelters</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Non-Order Management</controllingFieldValue>
+            <valueName>Tax</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Non-Order Management</controllingFieldValue>
+            <valueName>Tax Technology Request</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Non-Order Management</controllingFieldValue>
+            <valueName>Vendor Request</valueName>
+        </valueSettings>
+    </valueSet>
+</CustomField>

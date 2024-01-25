@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Lost_Reason_requires_Date_to_Revisit</fullName>
+    <active>true</active>
+    <description>If lost reason is Customer - Bad Timing, Lost to Competition - Bid, or Lost to Competition - Under Existing Contract, the Date to Revisit is required.</description>
+    <errorConditionFormula>AND ( 
+OR(
+ISPICKVAL(Lost_Reason__c , &quot;Customer - Bad Timing, Will Revisit&quot;),
+ISPICKVAL(Lost_Reason__c , &quot;Lost to Competition - Bid&quot;),
+ISPICKVAL(Lost_Reason__c , &quot;Customer - Under Existing Contract&quot;)),
+ISBLANK(Date_to_Revisit__c),
+ISBLANK(Date_of_Rebid__c),
+RecordTypeId &lt;&gt; &quot;01270000000E0MT&quot;, 
+$Profile.Id &lt;&gt; &quot;00e70000000swa5&quot;,
+$Profile.Id &lt;&gt; &quot;00e5w000001nr5t&quot;,
+$Profile.Id &lt;&gt; &quot;00e5w000001xwik&quot;, 
+$Profile.Id &lt;&gt; &quot;00e70000000zomX&quot;, 
+$Profile.Id &lt;&gt; &quot;00e70000000j606&quot;
+)</errorConditionFormula>
+    <errorDisplayField>Date_to_Revisit__c</errorDisplayField>
+    <errorMessage>Based on the Lost Reason you chose,  Date to Revisit is required.  A notification will be sent to the opportunity owner on this date as a reminder to reconsider this opportunity.</errorMessage>
+</ValidationRule>

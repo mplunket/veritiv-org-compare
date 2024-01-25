@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<WebLink xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>New_ULS_Location_2</fullName>
+    <availability>online</availability>
+    <displayType>massActionButton</displayType>
+    <encodingKey>UTF-8</encodingKey>
+    <linkType>url</linkType>
+    <masterLabel>New ULS Location</masterLabel>
+    <openType>replace</openType>
+    <protected>false</protected>
+    <requireRowSelection>false</requireRowSelection>
+    <url>/a1o/
+e?CF00N7000000333HC={!Account.Account_Manager__c}
+&amp;CF00N7000000333HC_lkid={!Account.Account_ManagerId__c}
+&amp;CF00N7000000333Ga={!Account.Name}
+&amp;CF00N7000000333Ga_lkid={!Account.Id}
+&amp;CF00N7000000333HN={!Account.Project_Manager__c}
+&amp;CF00N7000000333HN_lkid={!Account.Project_ManagerId__c}
+&amp;00N7000000333HK=&quot;Complete&quot;
+&amp;retURL=/{!ULS_Location__c.Id}</url>
+</WebLink>

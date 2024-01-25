@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Deploment_Schedule</fullName>
+    <columns>Planned_Deployment_Date__c</columns>
+    <columns>NAME</columns>
+    <columns>Request_Type__c</columns>
+    <columns>Requested_By_User__c</columns>
+    <columns>request_owner_user__c</columns>
+    <columns>Release__c</columns>
+    <columns>request_status__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>Planned_Deployment_Date__c</field>
+        <operation>notEqual</operation>
+    </filters>
+    <filters>
+        <field>request_status__c</field>
+        <operation>notEqual</operation>
+        <value>7. Completed,9. Cancelled,8. On Hold</value>
+    </filters>
+    <label>4. Deployment - Upcoming</label>
+    <language>en_US</language>
+</ListView>

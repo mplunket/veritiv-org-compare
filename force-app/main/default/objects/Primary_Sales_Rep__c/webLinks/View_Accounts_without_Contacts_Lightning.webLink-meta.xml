@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<WebLink xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>View_Accounts_without_Contacts_Lightning</fullName>
+    <availability>online</availability>
+    <description>This was built for the Lightning Pilot</description>
+    <displayType>massActionButton</displayType>
+    <encodingKey>UTF-8</encodingKey>
+    <height>600</height>
+    <linkType>url</linkType>
+    <masterLabel>View Accounts without Contacts</masterLabel>
+    <openType>sidebar</openType>
+    <protected>false</protected>
+    <requireRowSelection>true</requireRowSelection>
+    <url>https://veritiv--test.lightning.force.com/lightning/r/Report/00O39000004pyGIEAY/view?fv2={!Primary_Sales_Rep__c.OwnerFirstName} {!Primary_Sales_Rep__c.OwnerLastName}</url>
+</WebLink>

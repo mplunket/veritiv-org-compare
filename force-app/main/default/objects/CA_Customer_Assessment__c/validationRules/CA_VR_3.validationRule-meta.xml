@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>CA_VR_3</fullName>
+    <active>true</active>
+    <errorConditionFormula>OR( 
+AND( 
+ISBLANK(TEXT(MLAStatus__c)), 
+NOT(ISBLANK(MLAComments__c)) 
+), 
+OR( 
+AND( 
+ISBLANK(TEXT(ConvertingExternal__c)), 
+NOT(ISBLANK(ConvertingExternalDescription__c)) 
+), 
+OR( 
+AND( 
+ISBLANK(TEXT(KittingExternal__c)), 
+NOT(ISBLANK(KittingExternalDescription__c)) 
+), 
+OR( 
+AND( 
+ISBLANK(TEXT(CuttingExternal__c)), 
+NOT(ISBLANK(CuttingExternalDescription__c)) 
+), 
+OR( 
+AND( 
+ISBLANK(TEXT(GeneralComments_Operations__c)), 
+NOT(ISBLANK(GeneralCommentsDescription_Operations__c)) 
+), 
+OR( 
+AND( 
+ISBLANK(TEXT(BlanketPOwithDollarLimit__c)), 
+NOT(ISBLANK(BlanketPOwithDollarLimitDescription__c)) 
+), 
+OR( 
+AND( 
+ISBLANK(TEXT(GeneralComments_Financial__c)), 
+NOT(ISBLANK(GeneralCommentsDescription_Finacial__c)) 
+), 
+OR( 
+AND( 
+ISBLANK(TEXT(GeneralComments_Ebusiness__c)), 
+NOT(ISBLANK(GeneralCommentsDescription_Ebusiness__c)) 
+), 
+OR( 
+AND( 
+ISBLANK(TEXT(BracketPricingDiscListLess__c)), 
+NOT(ISBLANK(BracketPricingDiscListLessDesc__c)) 
+), 
+OR( 
+AND( 
+ISBLANK(TEXT(X4DecimalPricing__c)), 
+NOT(ISBLANK(X4DecimalPricingDescription__c)) 
+), 
+OR( 
+AND( 
+ISBLANK(TEXT(RepManagedBuyGroup__c)), 
+NOT(ISBLANK(RepManagedBuyGroupDescription__c)) 
+), 
+OR( 
+AND( 
+ISBLANK(TEXT( ConvertingInternal__c)), 
+NOT(ISBLANK(ConvertingInternalDescription__c)) 
+)))))))))))))</errorConditionFormula>
+    <errorMessage>You have entered a description without the corresponding Picklist Value. Please either choose a value or remove the description.</errorMessage>
+</ValidationRule>

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>X1_Active_Queues_for_F2C</fullName>
+    <columns>NAME</columns>
+    <columns>Team_Lead_Name__c</columns>
+    <columns>UPDATEDBY_USER</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>Active__c</field>
+        <operation>equals</operation>
+        <value>1</value>
+    </filters>
+    <filters>
+        <field>NAME</field>
+        <operation>contains</operation>
+        <value>F2C</value>
+    </filters>
+    <label>1. Active Queues for F2C</label>
+    <language>en_US</language>
+</ListView>

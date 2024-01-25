@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<WebLink xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Add_to_Communications_Program</fullName>
+    <availability>online</availability>
+    <description>https://secure.eloqua.com/cvp.aspx?LP=USWI&amp;elqExtUserName=CRM.User&amp;elqExtPwdHash=C8CFE0F4949D82CD52AAD1C7F7F76C39433BEC38CE77C51B2150DA2F283AEA3C&amp;URL=agent/salesprocess/ManageContactInProcess.asp?EmailAddress={!Contact.Email}%26Context=CRM</description>
+    <displayType>link</displayType>
+    <encodingKey>UTF-8</encodingKey>
+    <hasMenubar>false</hasMenubar>
+    <hasScrollbars>true</hasScrollbars>
+    <hasToolbar>false</hasToolbar>
+    <height>600</height>
+    <isResizable>true</isResizable>
+    <linkType>url</linkType>
+    <masterLabel>Add to Communications Program</masterLabel>
+    <openType>newWindow</openType>
+    <position>none</position>
+    <protected>false</protected>
+    <showsLocation>false</showsLocation>
+    <showsStatus>false</showsStatus>
+    <url>https://secure.eloqua.com/cvp.aspx?LP=USWI&amp;elqExtUserName=CRM.User&amp;elqExtPwdHash=C8CFE0F4949D82CD52AAD1C7F7F76C39433BEC38CE77C51B2150DA2F283AEA3C&amp;URL=agent/salesprocess/ManageContactInProcess.asp?EmailAddress={!Contact.Email}%26Context=CRM</url>
+</WebLink>

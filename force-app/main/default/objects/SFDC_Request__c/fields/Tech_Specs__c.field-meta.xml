@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Tech_Specs__c</fullName>
+    <description>Include a list of all changes that will move into production. Break it out by what will be included in the Change Set and what needs to be done manually. Break out manual changes into Pre-Deployment and Post-Deployment steps (fill out specific field).</description>
+    <externalId>false</externalId>
+    <inlineHelpText>Include a list of all changes that will move into production. Break it out by what will be included in the Change Set and what needs to be done manually. Break out manual changes into Pre-Deployment and Post-Deployment steps (fill out specific field).</inlineHelpText>
+    <label>Deployment Items</label>
+    <length>32768</length>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Html</type>
+    <visibleLines>15</visibleLines>
+</CustomField>

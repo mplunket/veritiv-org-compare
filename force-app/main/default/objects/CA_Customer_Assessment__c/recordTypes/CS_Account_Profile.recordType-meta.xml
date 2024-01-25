@@ -1,0 +1,825 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<RecordType xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>CS_Account_Profile</fullName>
+    <active>false</active>
+    <label>CS Account Profile</label>
+    <picklistValues>
+        <picklist>ASN__c</picklist>
+        <values>
+            <fullName>Informational Only</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Review Required</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Acct_Access_xpedx_com__c</picklist>
+        <values>
+            <fullName>Informational Only</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Review Required</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Amalgamated__c</picklist>
+        <values>
+            <fullName>Informational Only</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Review Required</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>CIRT__c</picklist>
+        <values>
+            <fullName>Informational Only</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Review Required</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>CMS_or_Zilliant__c</picklist>
+        <values>
+            <fullName>CMS</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Zilliant</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>CSC_Support_Location__c</picklist>
+        <values>
+            <fullName>Informational Only</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Review Required</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Charge_and_Hold__c</picklist>
+        <values>
+            <fullName>Informational Only</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Review Required</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Consolidated_PODs__c</picklist>
+        <values>
+            <fullName>Informational Only</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Review Required</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Conversion__c</picklist>
+        <values>
+            <fullName>Event 5</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Event 6</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Lakeland%2FMiami</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Memphis%2FLittle Rock</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>PC%2FNU Conversion</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>SW Instance</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>ConvertingExternal__c</picklist>
+        <values>
+            <fullName>Informational Only</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Review Required</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>ConvertingInternal__c</picklist>
+        <values>
+            <fullName>Informational Only</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Review Required</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Cust_Flag_Req_Order_Level__c</picklist>
+        <values>
+            <fullName>Informational Only</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Review Required</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Cust_Flag_Required_Line_Level__c</picklist>
+        <values>
+            <fullName>Informational Only</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Review Required</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Cust_Flags_Amalgamate__c</picklist>
+        <values>
+            <fullName>Informational Only</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Review Required</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Cust_Flags_Back_Order__c</picklist>
+        <values>
+            <fullName>Informational Only</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Review Required</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Cust_Flags_Blanket_Orders__c</picklist>
+        <values>
+            <fullName>Informational Only</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Review Required</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Cust_Flags_Future_Order__c</picklist>
+        <values>
+            <fullName>Informational Only</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Review Required</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Cust_Flags_Hands_Free_Ecomm__c</picklist>
+        <values>
+            <fullName>Informational Only</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Review Required</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Cust_Flags_Order_Minimum__c</picklist>
+        <values>
+            <fullName>Informational Only</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Review Required</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Cust_Flags_PO_Price_Match__c</picklist>
+        <values>
+            <fullName>Informational Only</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Review Required</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Cust_Flags_Ship_Complete__c</picklist>
+        <values>
+            <fullName>Informational Only</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Review Required</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Customer_Assessment_Status__c</picklist>
+        <values>
+            <fullName>Complete</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>In Progress</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Not Started</fullName>
+            <default>true</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Customer_Preferred_Shipping_Method__c</picklist>
+        <values>
+            <fullName>Comm Carrier</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>FedEx</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Other</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>UPS</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Customer_Web_Site_Link__c</picklist>
+        <values>
+            <fullName>Informational Only</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Review Required</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Customer_eBusiness_Reporting__c</picklist>
+        <values>
+            <fullName>Informational Only</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Review Required</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>CuttingExternal__c</picklist>
+        <values>
+            <fullName>Informational Only</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Review Required</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>CuttingInternal__c</picklist>
+        <values>
+            <fullName>Informational Only</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Review Required</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Delivery_Windows__c</picklist>
+        <values>
+            <fullName>Informational Only</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Review Required</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>EDI__c</picklist>
+        <values>
+            <fullName>Informational Only</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Review Required</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Facility_Supplies__c</picklist>
+        <values>
+            <fullName>Informational Only</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Review Required</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Fixed__c</picklist>
+        <values>
+            <fullName>Informational Only</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Review Required</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Functional_Area__c</picklist>
+        <values>
+            <fullName>Account Type</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Customer Service</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Financial</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Inventory</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Logistics</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Operations</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Other</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Pricing</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Service %28Equipment%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>eBusiness</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>GTM_Margin__c</picklist>
+        <values>
+            <fullName>Informational Only</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Review Required</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>GeneralComments_CS__c</picklist>
+        <values>
+            <fullName>Informational Only</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Review Required</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>GeneralComments_Ebusiness__c</picklist>
+        <values>
+            <fullName>Informational Only</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Review Required</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>GeneralComments_Financial__c</picklist>
+        <values>
+            <fullName>Informational Only</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Review Required</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>GeneralComments_Operations__c</picklist>
+        <values>
+            <fullName>Informational Only</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Review Required</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>GeneralComments_Pricing__c</picklist>
+        <values>
+            <fullName>Informational Only</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Review Required</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Identify_Users_Approvers__c</picklist>
+        <values>
+            <fullName>Informational Only</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Review Required</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Kitting__c</picklist>
+        <values>
+            <fullName>Informational Only</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Review Required</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Leased__c</picklist>
+        <values>
+            <fullName>Informational Only</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Review Required</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>MIL_s_Reviewed_with_Customer__c</picklist>
+        <values>
+            <fullName>Informational Only</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Review Required</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>MIL_s__c</picklist>
+        <values>
+            <fullName>Informational Only</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Review Required</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>MLAStatus__c</picklist>
+        <values>
+            <fullName>Complete</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>In Progress</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Not Started</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>MLA__c</picklist>
+        <values>
+            <fullName>Informational Only</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Review Required</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Mark_Up__c</picklist>
+        <values>
+            <fullName>Informational Only</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Review Required</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>National_Account__c</picklist>
+        <values>
+            <fullName>Informational Only</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Review Required</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Operations_Follow_up_Needed__c</picklist>
+        <values>
+            <fullName>No</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Order_Line__c</picklist>
+        <values>
+            <fullName>Informational Only</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Review Required</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Packaging__c</picklist>
+        <values>
+            <fullName>Informational Only</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Review Required</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Punch_Out_V2__c</picklist>
+        <values>
+            <fullName>Informational Only</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Review Required</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Reporting_LEEDS__c</picklist>
+        <values>
+            <fullName>Informational Only</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Review Required</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Retail__c</picklist>
+        <values>
+            <fullName>Informational Only</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Review Required</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>SCWS_Stock_Check_Web_Service__c</picklist>
+        <values>
+            <fullName>Informational Only</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Review Required</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Summary_Billing_Automated__c</picklist>
+        <values>
+            <fullName>Informational Only</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Review Required</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Summary_Billing_Manual__c</picklist>
+        <values>
+            <fullName>Informational Only</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Review Required</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Tax_Supported_Government__c</picklist>
+        <values>
+            <fullName>Informational Only</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Review Required</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Training_Level_Required__c</picklist>
+        <values>
+            <fullName>Informational Only</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Review Required</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Unify_Order_Dashboard__c</picklist>
+        <values>
+            <fullName>Informational Only</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Review Required</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Usage_Reports__c</picklist>
+        <values>
+            <fullName>Informational Only</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Review Required</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>VMI__c</picklist>
+        <values>
+            <fullName>Informational Only</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Review Required</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Vendor_Rebates__c</picklist>
+        <values>
+            <fullName>Informational Only</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Review Required</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Wide_Format_Grand_Format__c</picklist>
+        <values>
+            <fullName>Informational Only</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Review Required</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>X3PL_Customer_Owned_Items__c</picklist>
+        <values>
+            <fullName>Informational Only</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Review Required</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>X3PL_Veritiv_Provided__c</picklist>
+        <values>
+            <fullName>Informational Only</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Review Required</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>X3PL_Veritiv_Uses__c</picklist>
+        <values>
+            <fullName>Informational Only</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Review Required</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>X3PL__c</picklist>
+        <values>
+            <fullName>No</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Yes</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>eComm_Order_Guide__c</picklist>
+        <values>
+            <fullName>Informational Only</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Review Required</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>eInvoice__c</picklist>
+        <values>
+            <fullName>Informational Only</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Review Required</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+</RecordType>

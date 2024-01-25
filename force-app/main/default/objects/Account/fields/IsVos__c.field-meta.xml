@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>IsVos__c</fullName>
+    <externalId>false</externalId>
+    <formula>if(OR(Legacy_System_Cd__c=&apos;03&apos;,Legacy_System_Cd__c  = &apos;MA&apos;,Legacy_System_Cd__c  = &apos;NU&apos;,Legacy_System_Cd__c  = &apos;PC&apos;),true,false)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>IsVos</label>
+    <trackHistory>false</trackHistory>
+    <type>Checkbox</type>
+</CustomField>

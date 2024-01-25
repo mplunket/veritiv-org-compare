@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>KC_Print</fullName>
+    <columns>NAME</columns>
+    <columns>Active__c</columns>
+    <columns>Team_Lead_Name__c</columns>
+    <columns>LAST_UPDATE</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>Team_Lead_Name__c</field>
+        <operation>contains</operation>
+        <value>Broxterman</value>
+    </filters>
+    <label>KC - PRINT</label>
+    <sharedTo>
+        <group>SFDCAdminAccount</group>
+    </sharedTo>
+</ListView>

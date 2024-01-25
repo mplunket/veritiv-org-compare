@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>iRep_Status__c</fullName>
+    <externalId>false</externalId>
+    <formula>IF( iRep_Info_Varies__c = True, 
+
+IMAGE(&quot;/servlet/servlet.FileDownload?file=01570000000zNt3&quot;, &quot;Rep inconsistent between Bill To/Ship To.&quot;) , 
+
+&quot;iRep information matches on all Ship Tos.&quot;)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>iRep Status</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

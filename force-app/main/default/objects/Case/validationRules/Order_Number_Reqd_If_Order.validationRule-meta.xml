@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Order_Number_Reqd_If_Order</fullName>
+    <active>true</active>
+    <description>If the category is order placed, you must enter an Order Number on Classic Console and LEX Cases</description>
+    <errorConditionFormula>AND(
+$User.Id &lt;&gt; &apos;005700000016aec&apos;, /*sfdc admin*/
+RecordType.DeveloperName = &apos;Console_CS_Lightning&apos;,
+OR(
+ISPICKVAL( Category__c , &quot;Warehouse/Indirect Order Entry&quot;),
+ISPICKVAL( Category__c , &quot;Direct Order Entry&quot;),
+ISPICKVAL( Category__c , &quot;Samples Order Entry&quot;)),
+ISBLANK( CS_MAX_Order_Number__c ),
+NOT(ISNEW())
+)</errorConditionFormula>
+    <errorDisplayField>CS_MAX_Order_Number__c</errorDisplayField>
+    <errorMessage>Order Number is required for all Order Entry cases.</errorMessage>
+</ValidationRule>

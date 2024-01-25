@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Prospect_Type__c</fullName>
+    <defaultValue>&quot;1. Suspect&quot;</defaultValue>
+    <description>The Status Name of the Prospect Account.</description>
+    <externalId>false</externalId>
+    <inlineHelpText>This field represents the Status Name of the Prospect Account.</inlineHelpText>
+    <label>Prospect Type</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>1. Suspect</fullName>
+                <default>false</default>
+                <label>1. Suspect</label>
+            </value>
+            <value>
+                <fullName>2. Working</fullName>
+                <default>false</default>
+                <label>2. Working</label>
+            </value>
+            <value>
+                <fullName>3. Dead</fullName>
+                <default>false</default>
+                <label>3. Dead</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Check_Boxes</fullName>
+    <active>true</active>
+    <errorConditionFormula>OR( 
+AND( 
+Overlap_Customer__c = FALSE, 
+NOT(ISBLANK(OverlapVOSSFDAccountNumber__c)) 
+), 
+AND( 
+At_Risk_Issues__c = FALSE, 
+NOT(ISBLANK(At_Risk_Issues_Description__c)) 
+), 
+AND( 
+Corporate_Account__c = FALSE, 
+NOT(ISBLANK(Corporate_Account_Description__c)) 
+), 
+AND( 
+Enterprise_Account__c = FALSE, 
+NOT(ISBLANK(Enterprise_Street_Description__c)) 
+), 
+AND( 
+Local_Account__c = FALSE, 
+NOT(ISBLANK(Local_Account_Description__c)) 
+), 
+AND( 
+Saalfeld__c = FALSE, 
+NOT(ISBLANK(Saalfeld_Description__c)) 
+), 
+AND( 
+MLA_Account__c = FALSE, 
+NOT(ISBLANK(Party_NAID__c)) 
+))</errorConditionFormula>
+    <errorMessage>You have entered a description without the corresponding checkbox. Please either check the corresponding box or remove the description.</errorMessage>
+</ValidationRule>

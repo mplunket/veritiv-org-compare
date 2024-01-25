@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Marketing_Owned_Dead_Leads_Lead_Duration</fullName>
+    <filterScope>Queue</filterScope>
+    <label>Marketing Owned Dead Leads</label>
+    <queue>Marketing_Owned_Dead_Leads</queue>
+    <sharedTo>
+        <allInternalUsers></allInternalUsers>
+    </sharedTo>
+</ListView>

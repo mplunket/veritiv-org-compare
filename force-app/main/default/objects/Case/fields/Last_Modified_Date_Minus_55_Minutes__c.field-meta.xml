@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Last_Modified_Date_Minus_55_Minutes__c</fullName>
+    <description>Used for notifications if a case gets assigned to pilot feedback queue</description>
+    <externalId>false</externalId>
+    <formula>LastModifiedDate - 0.038194444444444444444444444444444</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Last Modified Date Minus 55 Minutes</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>DateTime</type>
+</CustomField>

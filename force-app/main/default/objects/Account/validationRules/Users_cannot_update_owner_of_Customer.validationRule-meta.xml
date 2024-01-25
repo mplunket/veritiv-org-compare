@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Users_cannot_update_owner_of_Customer</fullName>
+    <active>true</active>
+    <description>stop end users from updating owner on Customer accounts - they must change ownership in Commissions and it&apos;ll feed in to Salesforce.</description>
+    <errorConditionFormula>AND(ISCHANGED( Owned_By__c ) ,
+RecordTypeId = &quot;012700000009Ovo&quot;,
+NOT( $User.ProfileId  = &quot;00e70000000j606&quot;),
+NOT( $User.ProfileId = &quot;00ef2000001nr3T&quot;),
+NOT( $User.ProfileId = &quot;00e70000000swa5&quot;))</errorConditionFormula>
+    <errorMessage>Customer reassignments can only be made in the Commissions system.  Please send an email to  Veritiv.commission@veritivcorp.com to have this account reassigned.  The update will be reflected in Salesforce within a day or two.</errorMessage>
+</ValidationRule>

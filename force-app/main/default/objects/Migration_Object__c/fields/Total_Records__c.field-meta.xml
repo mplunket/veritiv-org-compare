@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Total_Records__c</fullName>
+    <externalId>false</externalId>
+    <label>Total Records</label>
+    <summarizedField>Migration_File__c.Total_Records__c</summarizedField>
+    <summaryForeignKey>Migration_File__c.Migration_Object__c</summaryForeignKey>
+    <summaryOperation>sum</summaryOperation>
+    <trackTrending>false</trackTrending>
+    <type>Summary</type>
+</CustomField>

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PermissionSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <description>access to visual force page that allows anyone to edit opps to manager team members, too.</description>
+    <hasActivationRequired>false</hasActivationRequired>
+    <label>Add Opportunity Team Members</label>
+    <license>Salesforce</license>
+    <pageAccesses>
+        <apexPage>oppteamedit__OpportunityTeamEdit</apexPage>
+        <enabled>true</enabled>
+    </pageAccesses>
+</PermissionSet>

@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>All</fullName>
+    <columns>NAME</columns>
+    <columns>Emp_Active__c</columns>
+    <columns>Sales_Perform_EmpNumber__c</columns>
+    <columns>Emp_Job_Code__c</columns>
+    <columns>Emp_Job_Desc__c</columns>
+    <columns>Emp_Network_Id__c</columns>
+    <columns>Emp_Orig_Hire_Date__c</columns>
+    <columns>Emp_Term_Date__c</columns>
+    <columns>LAST_UPDATE</columns>
+    <columns>Rep_Cd__c</columns>
+    <columns>Rep_Cd_Div_Name__c</columns>
+    <columns>Rep_Org__c</columns>
+    <columns>Classification__c</columns>
+    <columns>Rep_Cd_Segment__c</columns>
+    <columns>Sales_Rep_Type__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>NAME</field>
+        <operation>contains</operation>
+        <value>JOnes</value>
+    </filters>
+    <label>All</label>
+</ListView>

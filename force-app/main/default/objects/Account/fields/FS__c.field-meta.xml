@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>FS__c</fullName>
+    <description>CUSTOMER SERVICE SPECIFIC</description>
+    <externalId>false</externalId>
+    <inlineHelpText>FS = Facility Solutions</inlineHelpText>
+    <label>FS</label>
+    <precision>3</precision>
+    <required>false</required>
+    <scale>0</scale>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Percent</type>
+</CustomField>

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>ANI_DID_Map__c</fullName>
+    <description>This is a formula text field that grabs the DID Number from the corresponding TFN record, which allows inbound calls to be routed.</description>
+    <externalId>false</externalId>
+    <formula>ANI_Toll_Free_Map_Number__r.ANI_DID_Number__c</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <inlineHelpText>This number feeds the Cisco Application to route calls.</inlineHelpText>
+    <label>DID Number</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

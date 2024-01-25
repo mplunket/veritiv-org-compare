@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Account_Diagnostic_Automation__c</fullName>
+    <defaultValue>false</defaultValue>
+    <description>PR-00709: Invokes &apos;Account - Account Diagnostic Automation&apos; Flow to assign a Task and create a Notification</description>
+    <externalId>false</externalId>
+    <label>Account Diagnostic Automation</label>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Checkbox</type>
+</CustomField>

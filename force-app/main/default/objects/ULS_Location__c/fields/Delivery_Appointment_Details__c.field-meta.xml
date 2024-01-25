@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Delivery_Appointment_Details__c</fullName>
+    <externalId>false</externalId>
+    <inlineHelpText>What needs to be done in order to ensure we properly communicate inbound inventory to this warehouse?</inlineHelpText>
+    <label>Delivery Appt Details</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>TextArea</type>
+</CustomField>

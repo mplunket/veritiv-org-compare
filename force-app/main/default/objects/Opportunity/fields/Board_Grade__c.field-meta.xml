@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Board_Grade__c</fullName>
+    <externalId>false</externalId>
+    <label>Board Grade</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>32 B Kraft</fullName>
+                <default>false</default>
+                <label>32 B Kraft</label>
+            </value>
+            <value>
+                <fullName>32 B MW</fullName>
+                <default>false</default>
+                <label>32 B MW</label>
+            </value>
+            <value>
+                <fullName>32 C Kraft</fullName>
+                <default>false</default>
+                <label>32 C Kraft</label>
+            </value>
+            <value>
+                <fullName>32 C MW</fullName>
+                <default>false</default>
+                <label>32 C MW</label>
+            </value>
+            <value>
+                <fullName>44 C Kraft</fullName>
+                <default>false</default>
+                <label>44 C Kraft</label>
+            </value>
+            <value>
+                <fullName>48 BC Kraft</fullName>
+                <default>false</default>
+                <label>48 BC Kraft</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

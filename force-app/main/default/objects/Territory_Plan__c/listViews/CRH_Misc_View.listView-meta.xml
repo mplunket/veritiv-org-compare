@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>CRH_Misc_View</fullName>
+    <columns>NAME</columns>
+    <columns>CREATEDBY_USER</columns>
+    <columns>CREATED_DATE</columns>
+    <columns>Fiscal_Quarter__c</columns>
+    <columns>Fiscal_Year__c</columns>
+    <columns>Deactivated_Rep__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>CREATEDBY_USER</field>
+        <operation>contains</operation>
+        <value>MIKE BROWN</value>
+    </filters>
+    <filters>
+        <field>Fiscal_Year__c</field>
+        <operation>equals</operation>
+        <value>2010,2011</value>
+    </filters>
+    <label>Durkin</label>
+    <language>en_US</language>
+</ListView>

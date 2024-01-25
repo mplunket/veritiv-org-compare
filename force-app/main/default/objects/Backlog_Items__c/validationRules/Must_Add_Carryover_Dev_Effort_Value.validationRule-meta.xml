@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Must_Add_Carryover_Dev_Effort_Value</fullName>
+    <active>true</active>
+    <description>All Carryover tickets must have a carryover dev effort value</description>
+    <errorConditionFormula>AND(
+ Carryover_Story__c = TRUE,
+ CreatedDate &lt;=  NOW() - 21,
+ Carryover_Dev_Effort_Value__c = NULL
+)</errorConditionFormula>
+    <errorDisplayField>Carryover_Dev_Effort_Value__c</errorDisplayField>
+    <errorMessage>All Carryover tickets must have a carryover dev effort value</errorMessage>
+</ValidationRule>

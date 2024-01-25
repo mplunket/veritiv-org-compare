@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>State_is_Required</fullName>
+    <active>true</active>
+    <description>Triggers error if the user attempts to convert a lead from Stage New to any Stage and if State/province is null.</description>
+    <errorConditionFormula>AND ($User.ProfileId  &lt;&gt; &quot;00e70000000swa5&quot;,
+$User.ProfileId  &lt;&gt; &quot;00e39000001fcxp&quot;,
+   OR( ISPICKVAL(Status, &quot;2_Working&quot;), 
+ ISPICKVAL(Status,&quot;Converted&quot;)),
+ isblank(State),isblank(TEXT(State__c))
+)</errorConditionFormula>
+    <errorMessage>State/Province is a required field before moving beyond stage 1-New. For US, please use the 2-digit state code. For Canada, use the 2-digit province code. For Mexico, use the 3-digit state code.</errorMessage>
+</ValidationRule>

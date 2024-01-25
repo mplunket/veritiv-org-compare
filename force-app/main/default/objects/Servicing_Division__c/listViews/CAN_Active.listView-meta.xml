@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>CAN_Active</fullName>
+    <columns>NAME</columns>
+    <columns>Division_City__c</columns>
+    <columns>Division_Code__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>Division_Country__c</field>
+        <operation>equals</operation>
+        <value>CAN</value>
+    </filters>
+    <filters>
+        <field>Active__c</field>
+        <operation>equals</operation>
+        <value>1</value>
+    </filters>
+    <label>CAN Active</label>
+</ListView>

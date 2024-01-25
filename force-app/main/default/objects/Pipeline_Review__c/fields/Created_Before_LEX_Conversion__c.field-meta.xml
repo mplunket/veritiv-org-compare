@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Created_Before_LEX_Conversion__c</fullName>
+    <description>Reporting field to display trending of whether or not Pipeline Reviews were created before or after lightning conversion. This field intended to be used with PARENTGROUPVAL and PREVGROUPVAL in summary reporting. Field value will always be the opposite of &quot;Created Post LEX Conversion&quot;.</description>
+    <externalId>false</externalId>
+    <formula>IF( Created_Post_LEX_Conversion__c ,false,true)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>zzCreated Before LEX Conversion</label>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

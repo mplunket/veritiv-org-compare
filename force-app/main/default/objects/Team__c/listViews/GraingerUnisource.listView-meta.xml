@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>GraingerUnisource</fullName>
+    <columns>NAME</columns>
+    <columns>Unisource__c</columns>
+    <columns>U_Phone__c</columns>
+    <columns>Grainger__c</columns>
+    <columns>Grainger_Info__c</columns>
+    <columns>CSP__c</columns>
+    <columns>CSP_Information__c</columns>
+    <columns>CSP2_lookup__c</columns>
+    <columns>CSP_Information_2__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>RECORDTYPE</field>
+        <operation>equals</operation>
+        <value>Team__c.Unisource_and_Grainger,Team__c.Unisource_National_Accounts</value>
+    </filters>
+    <label>Grainger - Unisource</label>
+</ListView>

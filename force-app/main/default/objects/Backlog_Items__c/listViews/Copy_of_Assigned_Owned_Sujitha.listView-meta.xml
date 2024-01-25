@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Copy_of_Assigned_Owned_Sujitha</fullName>
+    <columns>NAME</columns>
+    <columns>RECORDTYPE</columns>
+    <columns>Release__c</columns>
+    <columns>Title__c</columns>
+    <columns>Status__c</columns>
+    <columns>Development_Due_Date__c</columns>
+    <columns>Dev_Effort__c</columns>
+    <columns>Sprint__c</columns>
+    <columns>Object__c</columns>
+    <columns>Planned_Deployment_Date__c</columns>
+    <columns>OWNER.LAST_NAME</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>Assigned__c</field>
+        <operation>equals</operation>
+        <value>Sujitha Damidi</value>
+    </filters>
+    <filters>
+        <field>Status__c</field>
+        <operation>notEqual</operation>
+        <value>Released,On Hold,Canceled,Pass,Fail,Resolved,Rejected,Closed,Deferred</value>
+    </filters>
+    <label>Assigned/Owned - Sujitha</label>
+</ListView>

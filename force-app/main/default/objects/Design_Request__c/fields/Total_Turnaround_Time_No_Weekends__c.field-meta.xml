@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Total_Turnaround_Time_No_Weekends__c</fullName>
+    <externalId>false</externalId>
+    <formula>IF(
+NOT(ISBLANK(Status_Date_Complete__c))
+,
+
+Status_Date_Complete__c-CreatedDate
+
+-
+
+/*Find the number of weekend days between the 2 dates*/
+
+(FLOOR((DATEVALUE(Status_Date_Complete__c)-DATEVALUE(CreatedDate))/7)*2
+
++
+
+IF(AND(WEEKDAY(DATEVALUE(CreatedDate))=1,WEEKDAY(DATEVALUE(Status_Date_Complete__c))&lt;&gt;7),1,
+
+IF(CASE(WEEKDAY(DATEVALUE(CreatedDate)),1,8,WEEKDAY(DATEVALUE(CreatedDate)))&gt;CASE(WEEKDAY(DATEVALUE(Status_Date_Complete__c)),1,8,WEEKDAY(DATEVALUE(Status_Date_Complete__c))),2,
+
+IF(OR(WEEKDAY(DATEVALUE(Status_Date_Complete__c))=7,WEEKDAY(DATEVALUE(CreatedDate))=1),1,
+
+IF(OR(WEEKDAY(DATEVALUE(Status_Date_Complete__c))=1,WEEKDAY(DATEVALUE(CreatedDate))=7),2,
+
+0)))))
+
++
+
+IF(OR(WEEKDAY(DATEVALUE(Status_Date_Complete__c))=1,WEEKDAY(DATEVALUE(Status_Date_Complete__c))=7),DATETIMEVALUE(TEXT(DATEVALUE(Status_Date_Complete__c))+&quot; 00:00:00&quot;)+1-Status_Date_Complete__c,0)
+
++
+
+IF(OR(WEEKDAY(DATEVALUE(CreatedDate))=1,WEEKDAY(DATEVALUE(CreatedDate))=7),CreatedDate-DATETIMEVALUE(TEXT(DATEVALUE(CreatedDate))+&quot; 00:00:00&quot;),0)
+
+,
+null
+)</formula>
+    <label>Total Turnaround Time (No Weekends)</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>2</scale>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Number</type>
+    <unique>false</unique>
+</CustomField>

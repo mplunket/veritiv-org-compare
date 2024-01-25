@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>VIQ_UPPER_NetworkId__c</fullName>
+    <description>Uppercase of the NetworkId to accommodate for case sensitivity in the Zilliant db when querying for Users to set as the owner of VIQ opportunities</description>
+    <externalId>false</externalId>
+    <formula>UPPER( Network_Id__c )</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <inlineHelpText>UPPER(Network_Id__c)</inlineHelpText>
+    <label>VIQ UPPER NetworkId</label>
+    <required>false</required>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

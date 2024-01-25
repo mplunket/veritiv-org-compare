@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Warehouse_Size_sq_ft__c</fullName>
+    <description>Field to enter the warehouse square footage</description>
+    <externalId>false</externalId>
+    <inlineHelpText>Please enter the warehouse size in total square footage</inlineHelpText>
+    <label>Warehouse Size (sq ft)</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>0</scale>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Number</type>
+    <unique>false</unique>
+</CustomField>

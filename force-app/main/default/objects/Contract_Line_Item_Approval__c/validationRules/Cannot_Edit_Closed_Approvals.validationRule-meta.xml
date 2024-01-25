@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Cannot_Edit_Closed_Approvals</fullName>
+    <active>true</active>
+    <description>Whenever the record type is closed you cannot edit it. The only action that should ever be taken is an approval or a rejection via the quick actions when it is in a pending status.</description>
+    <errorConditionFormula>AND(RecordTypeId = $Label.CLIA_Closed_Record_Type_ID,
+NOT(ISCHANGED( RecordTypeId )))</errorConditionFormula>
+    <errorMessage>This record has already been actioned. You may no longer edit.</errorMessage>
+</ValidationRule>

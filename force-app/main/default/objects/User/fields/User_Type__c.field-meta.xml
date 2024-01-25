@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>User_Type__c</fullName>
+    <externalId>false</externalId>
+    <formula>IF(CONTAINS(Profile.Name , &quot;Chatter&quot;) , &quot;Chatter&quot;, 
+IF(CONTAINS(Profile.Name , &quot;Executive&quot;) , &quot;Executive&quot;, 
+IF(CONTAINS(Profile.Name , &quot;CAN - President&quot;) , &quot;Executive&quot;, 
+IF(CONTAINS(Profile.Name , &quot;Finance &amp; Training&quot;) , &quot;Finance&quot;, 
+IF(CONTAINS(Profile.Name , &quot;Finance&quot;) , &quot;Finance&quot;, 
+IF(CONTAINS(Profile.Name , &quot;CSP&quot;) , &quot;Customer Service&quot;, 
+IF(CONTAINS(Profile.Name , &quot;CS - CSC&quot;) , &quot;Customer Service&quot;, 
+IF(CONTAINS(Profile.Name , &quot;Console&quot;) , &quot;Customer Service&quot;, 
+IF(CONTAINS(Profile.Name , &quot;Customer Service&quot;) , &quot;Customer Service&quot;, 
+IF(CONTAINS(Profile.Name , &quot;CAN - CS&quot;) , &quot;Customer Service&quot;, 
+IF(CONTAINS(Profile.Name , &quot;CAC&quot;) , &quot;Customer Service&quot;, 
+IF( CONTAINS (Profile.Name , &quot;President - Sales&quot;), &quot;Sales&quot;, 
+IF( CONTAINS(Profile.Name , &quot;Sales Rep&quot;) , &quot;Sales&quot;, 
+IF( CONTAINS(Profile.Name , &quot;Sales Professional&quot;) , &quot;Sales&quot;, 
+IF( CONTAINS(Profile.Name , &quot;Sales Manager&quot;) , &quot;Sales&quot;, 
+IF( CONTAINS (Profile.Name , &quot;CAN - GSM&quot;), &quot;Sales&quot;, 
+IF( CONTAINS(Profile.Name , &quot;Business Manager&quot;) , &quot;Sales&quot;, 
+IF( CONTAINS(Profile.Name , &quot;CAN - Manager&quot;) , &quot;Sales&quot;, 
+IF( CONTAINS (Profile.Name , &quot;Ind and Core&quot;), &quot;Sales&quot;, 
+IF( CONTAINS (Profile.Name , &quot;Graphic Communications&quot;), &quot;Graphic&quot;, 
+IF( CONTAINS (Profile.Name , &quot;CAN - VP&quot;), &quot;Sales&quot;, 
+IF( CONTAINS (Profile.Name , &quot;Lead Management&quot;), &quot;Marketing&quot;, 
+IF( CONTAINS (Profile.Name , &quot;CAN - Marketing&quot;), &quot;Marketing&quot;, 
+IF( CONTAINS (Profile.Name , &quot;CEO&quot;), &quot;Executive&quot;, 
+IF( CONTAINS (Profile.Name , &quot;National Accounts&quot;), &quot;National Accounts&quot;, 
+IF( CONTAINS(Profile.Name , &quot;Corporate Accounts&quot;) , &quot;National Accounts&quot;, 
+IF( CONTAINS (Profile.Name , &quot;eBusiness&quot;), &quot;Sales&quot;, 
+IF( CONTAINS (Profile.Name , &quot;National Acct&quot;), &quot;National Accounts&quot;, 
+IF( CONTAINS (Profile.Name , &quot;3PL&quot;), &quot;3PL&quot;, 
+IF( CONTAINS (Profile.Name , &quot;Only&quot;), &quot;Read Only&quot;, 
+IF( CONTAINS (Profile.Name , &quot;Supply Chain&quot;), &quot;Supply Chain&quot;, 
+IF( CONTAINS (Profile.Name , &quot;Sales Admin&quot;), &quot;Sales&quot;, 
+IF( CONTAINS (Profile.Name , &quot;Spec Rep&quot;), &quot;Sales&quot;, 
+IF( CONTAINS (Profile.Name , &quot;Specialist&quot;), &quot;Specialist&quot;, 
+IF( CONTAINS (Profile.Name , &quot;Segment&quot;), &quot;Sales&quot;, 
+IF( CONTAINS (Profile.Name , &quot;Inside&quot;), &quot;Inside Sales&quot;, 
+IF( CONTAINS (Profile.Name , &quot;Sourcing&quot;), &quot;Sourcing&quot;, 
+IF( CONTAINS (Profile.Name , &quot;TSB&quot;), &quot;TSB&quot;, 
+IF( CONTAINS (Profile.Name , &quot;Profile&quot;), &quot;Site Guest User&quot;, 
+IF( CONTAINS (Profile.Name , &quot;UGS&quot;), &quot;UES&quot;, 
+
+&quot;IT and Support&quot;) 
+)))))))))))))))))))))))))))))))))))))))</formula>
+    <label>User Type by Profile</label>
+    <required>false</required>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

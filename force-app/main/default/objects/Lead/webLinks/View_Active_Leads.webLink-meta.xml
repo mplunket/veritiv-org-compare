@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<WebLink xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>View_Active_Leads</fullName>
+    <availability>online</availability>
+    <description>View Active Leads by Salesrep on the PSR Object</description>
+    <displayType>massActionButton</displayType>
+    <encodingKey>UTF-8</encodingKey>
+    <linkType>url</linkType>
+    <masterLabel>View Active Leads</masterLabel>
+    <openType>replace</openType>
+    <protected>false</protected>
+    <requireRowSelection>true</requireRowSelection>
+    <url>/00O39000004qNwI?pv0={!Primary_Sales_Rep__c.Name}&amp;pv1={!Primary_Sales_Rep__c.Name}</url>
+</WebLink>

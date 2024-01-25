@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Old_New_Cost__c</fullName>
+    <description>Contract Line Item Approval Old &amp; New Cost.</description>
+    <externalId>false</externalId>
+    <formula>IF(OR(ISBLANK(Contract_Line_Item__r.CampaignAppealedLine__r.CampaignName__c),ISNULL(Contract_Line_Item__r.CampaignAppealedLine__r.CampaignName__c)),
+&quot;$&quot; + text(ROUND(Contract_Line_Item__r.PricingCost__c,2)) + &apos; | &apos; + &quot;$&quot; + &apos;&apos; + text(ROUND(Contract_Line_Item__r.PricingCost__c,2)),
+&quot;$&quot; + text(ROUND(Preceeding_Camp_Cost__c,2)) + &apos; | &apos; + &quot;$&quot;+ &apos;&apos; +TEXT(IF(Contract_Line_Item__r.FuturePricingCost__c=0, ROUND(Contract_Line_Item__r.PricingCost__c,2),ROUND(Contract_Line_Item__r.FuturePricingCost__c,2))))</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Old | New Cost</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

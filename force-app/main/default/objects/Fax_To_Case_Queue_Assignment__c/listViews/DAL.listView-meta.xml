@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>DAL</fullName>
+    <columns>NAME</columns>
+    <columns>Active__c</columns>
+    <columns>Group_Mailbox_Email_Address__c</columns>
+    <columns>Division_Info__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>NAME</field>
+        <operation>startsWith</operation>
+        <value>DAL</value>
+    </filters>
+    <label>DAL - FS &amp; PKG</label>
+    <sharedTo>
+        <group>SFDCAdminAccount</group>
+    </sharedTo>
+</ListView>

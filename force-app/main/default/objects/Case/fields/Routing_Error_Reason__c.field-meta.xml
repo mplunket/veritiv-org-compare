@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Routing_Error_Reason__c</fullName>
+    <externalId>false</externalId>
+    <label>Routing Error Reason</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>AM &amp; BAM not found</fullName>
+                <default>false</default>
+                <label>AM &amp; BAM not found</label>
+            </value>
+            <value>
+                <fullName>contact not found</fullName>
+                <default>false</default>
+                <label>contact not found</label>
+            </value>
+            <value>
+                <fullName>duplicate contacts</fullName>
+                <default>false</default>
+                <label>duplicate contacts</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

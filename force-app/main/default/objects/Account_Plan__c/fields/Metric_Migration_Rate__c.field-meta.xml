@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Metric_Migration_Rate__c</fullName>
+    <externalId>false</externalId>
+    <inlineHelpText>Enter this value from the Sales Scorecard
+High: &gt;30%, Med: 10%-30%, Low: &lt;10%
+Reports: Customer Business Review, Account Migration Report</inlineHelpText>
+    <label>Metric: Sales Migration % CP</label>
+    <precision>3</precision>
+    <required>false</required>
+    <scale>0</scale>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>true</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Percent</type>
+</CustomField>

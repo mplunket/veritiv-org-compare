@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Lane_Frequency__c</fullName>
+    <externalId>false</externalId>
+    <label>Lane Frequency</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Picklist</type>
+    <valueSet>
+        <controllingField>Truckload__c</controllingField>
+        <valueSetDefinition>
+            <sorted>true</sorted>
+            <value>
+                <fullName>Dedicated</fullName>
+                <default>false</default>
+                <label>Dedicated</label>
+            </value>
+            <value>
+                <fullName>Spot</fullName>
+                <default>false</default>
+                <label>Spot</label>
+            </value>
+        </valueSetDefinition>
+        <valueSettings>
+            <controllingFieldValue>checked</controllingFieldValue>
+            <valueName>Dedicated</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>checked</controllingFieldValue>
+            <valueName>Spot</valueName>
+        </valueSettings>
+    </valueSet>
+</CustomField>

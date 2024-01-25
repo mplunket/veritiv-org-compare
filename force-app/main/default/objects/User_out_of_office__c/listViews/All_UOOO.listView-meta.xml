@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>All_UOOO</fullName>
+    <columns>NAME</columns>
+    <columns>User__c</columns>
+    <columns>Working_Status__c</columns>
+    <columns>CREATEDBY_USER</columns>
+    <columns>CREATED_DATE</columns>
+    <columns>Time_Out_Of_Office_Hours__c</columns>
+    <columns>OWNER.ALIAS</columns>
+    <columns>CREATEDBY_USER.ALIAS</columns>
+    <columns>UPDATEDBY_USER.ALIAS</columns>
+    <columns>Team_Lead_Name__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>CREATED_DATE</field>
+        <operation>greaterOrEqual</operation>
+        <value>7/27/2017 12:00 AM</value>
+    </filters>
+    <label>All UOOO</label>
+    <sharedTo>
+        <group>All_Admins</group>
+    </sharedTo>
+</ListView>

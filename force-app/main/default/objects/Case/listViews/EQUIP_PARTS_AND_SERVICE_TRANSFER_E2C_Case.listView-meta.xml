@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>EQUIP_PARTS_AND_SERVICE_TRANSFER_E2C_Case</fullName>
+    <columns>CASES.CASE_NUMBER</columns>
+    <columns>NAME</columns>
+    <columns>CASES.SUBJECT</columns>
+    <columns>CASES.STATUS</columns>
+    <columns>CASES.PRIORITY</columns>
+    <columns>CASES.CREATED_DATE_DATE_ONLY</columns>
+    <columns>CORE.USERS.ALIAS</columns>
+    <filterScope>Queue</filterScope>
+    <label>EQUIP PARTS AND SERVICE - TRANSFER - E2C</label>
+    <queue>EQUIP_PARTS_AND_SERVICE_TRANSFER_E2C</queue>
+    <sharedTo>
+        <role>EQUIPMENT_PARTS_SERVICE1</role>
+        <role>EQUIPMENT_PARTS_SERVICE2</role>
+        <role>EQUIPMENT_PARTS_SERVICE3</role>
+        <role>EQUIPMENT_PARTS_SERVICE4</role>
+        <role>SpecialistMgr</role>
+    </sharedTo>
+</ListView>

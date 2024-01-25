@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Legacy_U__c</fullName>
+    <defaultValue>false</defaultValue>
+    <description>Legacy Unisource users will all be &quot;checked&quot; so we can identify them separate from Legacy X and users that joined after the merge.</description>
+    <externalId>false</externalId>
+    <label>Legacy U</label>
+    <trackFeedHistory>false</trackFeedHistory>
+    <type>Checkbox</type>
+</CustomField>

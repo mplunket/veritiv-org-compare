@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>This_Quarter_s_Account_Plans</fullName>
+    <columns>NAME</columns>
+    <columns>Account__c</columns>
+    <columns>Review_Date__c</columns>
+    <columns>Primary_Sales_Rep__c</columns>
+    <columns>Improve_AR_percent_Past_due__c</columns>
+    <columns>Improve_pipeline__c</columns>
+    <columns>Improve_pricing__c</columns>
+    <columns>Increase_sales_growth__c</columns>
+    <columns>Increase_share_percent__c</columns>
+    <columns>Reduce_churn__c</columns>
+    <filterScope>Mine</filterScope>
+    <filters>
+        <field>Review_Date__c</field>
+        <operation>equals</operation>
+        <value>THIS_QUARTER</value>
+    </filters>
+    <label>My Account Plans for This Quarter</label>
+</ListView>

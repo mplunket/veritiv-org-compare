@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Kitting_Nicole_Perez</fullName>
+    <booleanFilter>(1 OR 2 OR 3) AND 4 AND 5</booleanFilter>
+    <columns>OPPORTUNITY.CREATED_DATE</columns>
+    <columns>OPPORTUNITY.NAME</columns>
+    <columns>ACCOUNT.NAME</columns>
+    <columns>OPPORTUNITY.STAGE_NAME</columns>
+    <columns>OPPORTUNITY.AMOUNT</columns>
+    <columns>OPPORTUNITY.CLOSE_DATE</columns>
+    <columns>CORE.USERS.FULL_NAME</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>OPPORTUNITY.RECORDTYPE</field>
+        <operation>equals</operation>
+        <value>Opportunity.Kitting</value>
+    </filters>
+    <filters>
+        <field>Was_once_Kitting__c</field>
+        <operation>equals</operation>
+        <value>1</value>
+    </filters>
+    <filters>
+        <field>Kitting__c</field>
+        <operation>equals</operation>
+        <value>1</value>
+    </filters>
+    <filters>
+        <field>Implementation_Team_Lead__c</field>
+        <operation>equals</operation>
+        <value>Nicole Perez</value>
+    </filters>
+    <filters>
+        <field>Kitting_Status__c</field>
+        <operation>equals</operation>
+        <value>Under Review</value>
+    </filters>
+    <label>Kitting - Nicole Perez</label>
+</ListView>

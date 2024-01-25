@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>SALES_SUPPORT_E2C_VENDOR_CLAIMS_Case</fullName>
+    <booleanFilter>1 OR (2 AND 3)</booleanFilter>
+    <columns>Critical__c</columns>
+    <columns>CASES.CASE_NUMBER</columns>
+    <columns>Primary_Sales_Rep__c</columns>
+    <columns>Bill_To_Number__c</columns>
+    <columns>ACCOUNT.NAME</columns>
+    <columns>CASES.SUBJECT</columns>
+    <columns>CASES.STATUS</columns>
+    <columns>CASES.PRIORITY</columns>
+    <columns>CASES.CREATED_DATE_DATE_ONLY</columns>
+    <columns>Unread_New_Email_on_Closed_Case__c</columns>
+    <filterScope>Mine</filterScope>
+    <filters>
+        <field>CASES.STATUS</field>
+        <operation>notEqual</operation>
+        <value>Closed,Merged</value>
+    </filters>
+    <filters>
+        <field>CASES.STATUS</field>
+        <operation>equals</operation>
+        <value>Closed</value>
+    </filters>
+    <filters>
+        <field>Unread_New_Email_on_Closed_Case__c</field>
+        <operation>equals</operation>
+        <value>1</value>
+    </filters>
+    <label>*VENDOR CLAIMS FS/PKG - My Open Cases</label>
+    <sharedTo>
+        <role>CS_CIN_NATIONAL_TM_TL</role>
+        <role>Vendor_Claim_Coordinators_FS_PKG</role>
+    </sharedTo>
+</ListView>

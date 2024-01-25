@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Quotes_with_Merchandisers</fullName>
+    <columns>OWNER.ALIAS</columns>
+    <columns>CREATED_DATE</columns>
+    <columns>NAME</columns>
+    <columns>Account__c</columns>
+    <columns>Servicing_Division__c</columns>
+    <columns>Servicing_Division_Name__c</columns>
+    <columns>Primary_Merchandising_Segment__c</columns>
+    <columns>Quote_Type__c</columns>
+    <columns>CREATEDBY_USER</columns>
+    <columns>Subject__c</columns>
+    <columns>Sent_to_Field_Sourcing_On__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>Quote_Stage__c</field>
+        <operation>equals</operation>
+        <value>With Merchandiser</value>
+    </filters>
+    <label>Quotes with Merchandisers</label>
+    <language>en_US</language>
+</ListView>

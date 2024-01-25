@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>All_ULS_Locations</fullName>
+    <columns>NAME</columns>
+    <columns>Account__c</columns>
+    <columns>UPDATEDBY_USER</columns>
+    <columns>Transaction_Types__c</columns>
+    <columns>Project_Manager__c</columns>
+    <columns>Account_Manager__c</columns>
+    <columns>OnBoarding_Status__c</columns>
+    <columns>Go_Live_Date__c</columns>
+    <columns>DLOC_Division__c</columns>
+    <columns>Billing_System__c</columns>
+    <columns>Transaction_System_Inventory__c</columns>
+    <columns>WH_Complexity__c</columns>
+    <columns>WH_Volume__c</columns>
+    <filterScope>Everything</filterScope>
+    <label>All ULS Locations</label>
+    <language>en_US</language>
+</ListView>

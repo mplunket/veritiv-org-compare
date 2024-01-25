@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Client_Number_to_Merge_with__c</fullName>
+    <description>Gives admin vendor code information to merge prospect Vendor with Vendor from Credit</description>
+    <externalId>false</externalId>
+    <label>Client Number to Merge with</label>
+    <length>18</length>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

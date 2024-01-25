@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Recommendations__c</fullName>
+    <externalId>false</externalId>
+    <inlineHelpText>How easily could this practice be adopted or adapted by other sales reps? What recommendations do you have for other sales reps looking to address a similar issue?</inlineHelpText>
+    <label>Recommendations</label>
+    <length>1000</length>
+    <trackTrending>false</trackTrending>
+    <type>LongTextArea</type>
+    <visibleLines>5</visibleLines>
+</CustomField>

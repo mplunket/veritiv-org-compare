@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Only_System_Admins_can_update_Email</fullName>
+    <active>true</active>
+    <description>Blocks loophole for users to update their own email address on their User record.</description>
+    <errorConditionFormula>AND(ISCHANGED( Email ),
+$User.ProfileId &lt;&gt; &quot;00e70000000swa5&quot;,
+$User.ProfileId &lt;&gt; &quot;00e5w00000269cj&quot;)</errorConditionFormula>
+    <errorDisplayField>EmailPreferences</errorDisplayField>
+    <errorMessage>Only System Admins can update email addresses on User records</errorMessage>
+</ValidationRule>

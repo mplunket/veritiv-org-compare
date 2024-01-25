@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PermissionSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <description>this is a temporary permission set for UAT on Customer onboarding, letting the UATers update Ani fields on Account - not to be deployed.</description>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Account.ANI_Primary__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Account.ANI_Secondary__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Account.ANI_Tertiary__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <hasActivationRequired>false</hasActivationRequired>
+    <label>Temp for testing - Ani update</label>
+    <license>Salesforce</license>
+</PermissionSet>

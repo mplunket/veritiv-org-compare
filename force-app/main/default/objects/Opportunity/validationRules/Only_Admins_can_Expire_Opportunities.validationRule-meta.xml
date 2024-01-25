@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Only_Admins_can_Expire_Opportunities</fullName>
+    <active>true</active>
+    <errorConditionFormula>AND(
+ISCHANGED(Lost_Reason__c),
+ISPICKVAL(Lost_Reason__c,&quot;Oppty - Expired (System)&quot;),
+$User.ProfileId &lt;&gt; &quot;00e70000000j606&quot;, 
+$User.ProfileId &lt;&gt; &quot;00e70000000swa5&quot;, 
+$User.ProfileId&lt;&gt;&quot;00e70000000zomX&quot;
+)</errorConditionFormula>
+    <errorMessage>Only System Administrators can select &quot;Expired Opportunity&quot; as the lost reason.  Please select another reason.</errorMessage>
+</ValidationRule>

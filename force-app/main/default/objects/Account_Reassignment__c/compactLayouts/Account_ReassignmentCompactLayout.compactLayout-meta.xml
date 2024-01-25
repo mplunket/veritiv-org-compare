@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CompactLayout xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Account_ReassignmentCompactLayout</fullName>
+    <fields>Name</fields>
+    <fields>Account__c</fields>
+    <fields>Account_Owner_Primary_Sales_Rep__c</fields>
+    <fields>OwnerId</fields>
+    <label>Account ReassignmentCompactLayout</label>
+</CompactLayout>

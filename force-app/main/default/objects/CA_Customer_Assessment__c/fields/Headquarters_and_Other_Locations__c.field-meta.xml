@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Headquarters_and_Other_Locations__c</fullName>
+    <description>Where is the company located? Are they multi-location or just one main office? Do they have multiple headquarters?</description>
+    <externalId>false</externalId>
+    <inlineHelpText>Where is the company located? Are they multi-location or just one main office? Do they have multiple headquarters?</inlineHelpText>
+    <label>Headquarters and Other Locations</label>
+    <length>32768</length>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>LongTextArea</type>
+    <visibleLines>3</visibleLines>
+</CustomField>

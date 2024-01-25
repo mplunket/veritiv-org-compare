@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Require_AccountContact_When_Closed</fullName>
+    <active>true</active>
+    <description>Makes sure that the account and contact are added when closing a Case - Applies to &apos;Equipment Parts and Service&apos; &amp; Console CS Lightning RTs only</description>
+    <errorConditionFormula>OR(
+AND(
+Done_In_One__c = TRUE,
+$User.Id &lt;&gt;&quot;005700000016aec&quot;, /* &apos;sfdc admin&apos; User */
+OR($RecordType.DeveloperName =&quot;Equipment_Parts_and_Service&quot;,
+$RecordType.DeveloperName =&quot;Console_CS_Lightning&quot;),
+Information_Email__c = FALSE,
+Is_Spam__c = FALSE,
+NOT( ISPICKVAL( Category__c , &quot;Company Information&quot;)),
+NOT( ISPICKVAL( Category__c , &quot;Account Setup/Maintenance&quot;)),
+NOT( ISPICKVAL( Category__c , &quot;Cost Correction&quot;)),
+NOT( ISPICKVAL( Category__c , &quot;ERS/Product Availability&quot;)),
+NOT( ISPICKVAL( Category__c , &quot;R - Information Only&quot;)),
+NOT( ISPICKVAL( Category__c , &quot;Reporting&quot;)),
+NOT( ISPICKVAL( Category__c , &quot;Vendor Request&quot;)),
+OR(
+ISBLANK( AccountId ),
+AccountId = &quot;0017000000NJvZc&quot;, /* &apos;Veritiv Headquarters&apos; Account record */
+ISBLANK( ContactId )
+)
+),
+AND(
+ISPICKVAL( Status , &quot;Closed&quot; ),
+$User.Id &lt;&gt;&quot;005700000016aec&quot;, /* &apos;sfdc admin&apos; User */
+OR($RecordType.DeveloperName =&quot;Equipment_Parts_and_Service&quot;,
+$RecordType.DeveloperName =&quot;Console_CS_Lightning&quot;),
+Information_Email__c = FALSE,
+Is_Spam__c = FALSE,
+NOT( ISPICKVAL( Category__c , &quot;Company Information&quot;)),
+NOT( ISPICKVAL( Category__c , &quot;Account Setup/Maintenance&quot;)),
+NOT( ISPICKVAL( Category__c , &quot;Cost Correction&quot;)), 
+NOT( ISPICKVAL( Category__c , &quot;ERS/Product Availability&quot;)),
+NOT( ISPICKVAL( Category__c , &quot;R - Information Only&quot;)),
+NOT( ISPICKVAL( Category__c , &quot;Reporting&quot;)),
+NOT( ISPICKVAL( Category__c , &quot;Vendor Request&quot;)),
+OR(
+ISBLANK( AccountId ),
+AccountId = &quot;0017000000NJvZc&quot;, /* &apos;Veritiv Headquarters&apos; Account record */
+ISBLANK( ContactId )
+)
+)
+)</errorConditionFormula>
+    <errorMessage>You must populate with a Customer Account and Contact on this case before closing. Veritiv Headquarters may not be used.</errorMessage>
+</ValidationRule>

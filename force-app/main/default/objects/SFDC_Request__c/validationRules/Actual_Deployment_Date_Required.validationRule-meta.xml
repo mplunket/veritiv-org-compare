@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Actual_Deployment_Date_Required</fullName>
+    <active>true</active>
+    <description>When a Request is completed, the Actual Deployment Date must be filled out (unless the Request Type is Question/Research.  If there is no deployment date, the Status should be Cancelled.</description>
+    <errorConditionFormula>AND( ISPICKVAL( request_status__c , &quot;3. Completed&quot;),   NOT(ISPICKVAL( Request_Type__c , &quot;Question/Research&quot;)),ISNULL( date_release__c  ))</errorConditionFormula>
+    <errorDisplayField>date_release__c</errorDisplayField>
+    <errorMessage>Actual Deployment Date is required before closing a Request as Completed.  If the Request was not deployed to production, the Request Status should be Cancelled.</errorMessage>
+</ValidationRule>

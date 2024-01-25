@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Current_Owner_s_Agent_ID__c</fullName>
+    <description>Used in CEI rollout. 
+
+Used for Cisco routing. Passes the current owner&apos;s cisco ID as a variable to Cisco , which, if populated, will be the first option for routing an email.</description>
+    <externalId>false</externalId>
+    <formula>Owner:User.CS_Telephony_Login_ID__c</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <inlineHelpText>Agent ID for routing.</inlineHelpText>
+    <label>Current Owner&apos;s Agent ID</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

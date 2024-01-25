@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>All</fullName>
+    <columns>NAME</columns>
+    <columns>Network_ID__c</columns>
+    <columns>OWNER.ALIAS</columns>
+    <columns>name_zm_sm__c</columns>
+    <columns>name_gsm__c</columns>
+    <columns>name_bdm_rvp__c</columns>
+    <columns>name_dir__c</columns>
+    <columns>name_vp__c</columns>
+    <columns>name_pres__c</columns>
+    <columns>Business_Unit__c</columns>
+    <columns>Segment__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>deactivated_user__c</field>
+        <operation>equals</operation>
+        <value>0</value>
+    </filters>
+    <label>All Active</label>
+    <sharedTo>
+        <group>All_Users</group>
+    </sharedTo>
+</ListView>

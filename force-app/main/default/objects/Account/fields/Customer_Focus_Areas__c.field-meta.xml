@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Customer_Focus_Areas__c</fullName>
+    <description>CUSTOMER SERVICE SPECIFIC</description>
+    <externalId>false</externalId>
+    <inlineHelpText>Competitive landscape, concerns, expectations, credit, non-OE activities, likes/dislikes</inlineHelpText>
+    <label>Customer Focus Areas</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>TextArea</type>
+</CustomField>

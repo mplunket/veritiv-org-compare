@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Cannot_Assign_Inactive_PSR</fullName>
+    <active>true</active>
+    <description>You cannot assign an inactive PSR user to a Sales Support Case.</description>
+    <errorConditionFormula>AND(
+ RecordType.Name = &quot;Sales Support&quot;,
+  RecordType.Name = &quot;Sales Support - Vendor Claim FS and PKG&quot;,
+ Primary_Sales_Rep__r.deactivated_user__c = TRUE
+)</errorConditionFormula>
+    <errorMessage>You cannot assign an inactive user to the Primary Sales Rep field. Please select an active user to proceed.</errorMessage>
+</ValidationRule>

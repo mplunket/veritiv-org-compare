@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>ZZUS_ACCT_CASES_DO_NOT_USE_Fax_To_Case_Queue_Assignment</fullName>
+    <filterScope>Queue</filterScope>
+    <label>ZZUS ACCT CASES-DO NOT USE</label>
+    <queue>ZZUS_ACCT_CASES_DO_NOT_USE</queue>
+    <sharedTo>
+        <allInternalUsers></allInternalUsers>
+    </sharedTo>
+</ListView>

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Reassignment_Effective_Date__c</fullName>
+    <description>Allows the manager to enter a date for the Reassignment to take place.  Should be left blank if they want it to be effective immediately.  This does not change the closed date or any other date.  We&apos;ll consider it closed because SM has actioned it.</description>
+    <externalId>false</externalId>
+    <inlineHelpText>If you want the reassignment to occur later, enter date here.  Leave it blank to be effective immediately</inlineHelpText>
+    <label>Reassignment Effective Date</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Date</type>
+</CustomField>

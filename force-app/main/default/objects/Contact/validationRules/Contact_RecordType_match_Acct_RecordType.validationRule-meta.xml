@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Contact_RecordType_match_Acct_RecordType</fullName>
+    <active>true</active>
+    <description>Account Record Types Customer and Prospect must have Contacts with record types Customer.</description>
+    <errorConditionFormula>OR(
+AND(OR(Account.RecordTypeId = &quot;012700000009Ovo&quot;, 
+               Account.RecordTypeId =&quot;012700000009OvZ&quot;),   
+        NOT(RecordTypeId = &quot;012700000009TSY&quot;), 
+        NOT(RecordTypeId = &quot;012f2000000QLrS&quot;)),
+
+AND(OR(Account.RecordTypeId =&quot;012700000009TNj&quot;, 
+                Account.RecordTypeId=&quot;012Q00000004jj3&quot;),
+        NOT(RecordTypeId =&quot;012700000009TST&quot;)))
+
+/*012700000009Ovo=customer, 012700000009OvZ=prospect, 012700000009TSY=customer contact, 012700000009TNj=Vendor, 012700000009TST=vendor contact*/</errorConditionFormula>
+    <errorMessage>Contact record type must match Account record type</errorMessage>
+</ValidationRule>

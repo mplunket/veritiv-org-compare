@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PermissionSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <description>May be deleted after release of Item-3493</description>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>WorkOrder.Primary_Sales_Rep_2__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <hasActivationRequired>false</hasActivationRequired>
+    <label>Edit PSR on Work Order</label>
+</PermissionSet>

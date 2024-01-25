@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>All_Steven_Current_Work</fullName>
+    <columns>Release__c</columns>
+    <columns>Sprint__c</columns>
+    <columns>NAME</columns>
+    <columns>Dev_Effort__c</columns>
+    <columns>Development_Due_Date__c</columns>
+    <columns>Planned_Deployment_Date__c</columns>
+    <columns>Title__c</columns>
+    <columns>Status__c</columns>
+    <columns>Enduser_Contact__c</columns>
+    <columns>Assigned__c</columns>
+    <columns>OWNER.FIRST_NAME</columns>
+    <columns>OWNER.LAST_NAME</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>Assigned__c</field>
+        <operation>equals</operation>
+        <value>Steven Despins</value>
+    </filters>
+    <filters>
+        <field>Status__c</field>
+        <operation>notEqual</operation>
+        <value>Released,Pass,On Hold,Canceled,Resolved,Rejected,Closed</value>
+    </filters>
+    <label>All - Steven Current Work</label>
+</ListView>

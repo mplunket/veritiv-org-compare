@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>ULS_Top_Level_Account__c</fullName>
+    <description>If the account Is a ULS Primary Account, returns the account name.  If the account has a ULS Primary Account, returns that name.  Otherwise, the field is blank.</description>
+    <externalId>false</externalId>
+    <formula>IF ( Is_ULS_Primary_Acct__c ==TRUE,Name,IF((ULS_Primary_Account__c&lt;&gt;&quot;&quot; ), ULS_Primary_Account__r.Name,&quot;&quot;  ))</formula>
+    <inlineHelpText>If the account Is a ULS Primary Account, returns the account name.  If the account has a ULS Primary Account, returns that name.  Otherwise, the field is blank.</inlineHelpText>
+    <label>ULS Top Level Account</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

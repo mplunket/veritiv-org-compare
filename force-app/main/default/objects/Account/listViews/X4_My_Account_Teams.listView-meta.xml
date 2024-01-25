@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>X4_My_Account_Teams</fullName>
+    <columns>ACCOUNT.NAME</columns>
+    <columns>ACCOUNT.RECORDTYPE</columns>
+    <columns>ACCOUNT.ACCOUNT_NUMBER</columns>
+    <columns>ACCOUNT.ADDRESS1_CITY</columns>
+    <columns>CORE.USERS.FIRST_NAME</columns>
+    <columns>CORE.USERS.LAST_NAME</columns>
+    <columns>Primary_Sales_Rep_Name__c</columns>
+    <columns>iRep_Name__c</columns>
+    <columns>Legacy_System_Cd__c</columns>
+    <columns>Legacy_Division_Cd__c</columns>
+    <columns>ACCOUNT.PHONE1</columns>
+    <filterScope>Team</filterScope>
+    <filters>
+        <field>ACCOUNT.RECORDTYPE</field>
+        <operation>notEqual</operation>
+        <value>Account.Chain_Account</value>
+    </filters>
+    <label>* My Account Teams</label>
+</ListView>

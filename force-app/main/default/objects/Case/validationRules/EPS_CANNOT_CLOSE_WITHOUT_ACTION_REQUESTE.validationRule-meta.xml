@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>EPS_CANNOT_CLOSE_WITHOUT_ACTION_REQUESTE</fullName>
+    <active>true</active>
+    <description>EQUIPMENT PARTS AND SERVICE 
+
+This VR required b/c using the Change Status action to close a case bypasses the required fields on the page layout.</description>
+    <errorConditionFormula>AND(
+RecordType.DeveloperName =&quot;Equipment_Parts_and_Service&quot;,
+ISPICKVAL(Status, &quot;Closed&quot;),
+ISBLANK( TEXT(EPSAction_Request__c)),
+Is_Spam__c =false)</errorConditionFormula>
+    <errorDisplayField>EPSAction_Request__c</errorDisplayField>
+    <errorMessage>Prior to closing this case you must select the Action Request.</errorMessage>
+</ValidationRule>

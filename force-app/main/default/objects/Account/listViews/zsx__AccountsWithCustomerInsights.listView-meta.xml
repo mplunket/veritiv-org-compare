@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>zsx__AccountsWithCustomerInsights</fullName>
+    <columns>ACCOUNT.NAME</columns>
+    <columns>zsx__CustomerInsightStatus__c</columns>
+    <columns>zsx__TotalOpportunityAmount__c</columns>
+    <columns>zsx__TTM_Revenue__c</columns>
+    <columns>zsx__AnnualPotential__c</columns>
+    <columns>zsx__Share__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>zsx__CustomerInsightId__c</field>
+        <operation>notEqual</operation>
+    </filters>
+    <label>Accounts with Customer Insights</label>
+</ListView>

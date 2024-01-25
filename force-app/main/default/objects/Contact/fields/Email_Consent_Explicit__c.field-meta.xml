@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Email_Consent_Explicit__c</fullName>
+    <description>Marketo - Email Consent Explicit.</description>
+    <externalId>false</externalId>
+    <inlineHelpText>If Yes, a person gave Veritiv permission to send electronic marketing messages per country or state legal regulations requiring consent (e.g. CASL and GDPR). Explicit expires once they unsubscribe.</inlineHelpText>
+    <label>Email Consent Explicit</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Yes</fullName>
+                <default>false</default>
+                <label>Yes</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

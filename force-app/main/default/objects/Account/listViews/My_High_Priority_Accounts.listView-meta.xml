@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>My_High_Priority_Accounts</fullName>
+    <columns>ACCOUNT.NAME</columns>
+    <columns>Account_Reassignment_Stage__c</columns>
+    <columns>ACCOUNT.ACCOUNT_NUMBER</columns>
+    <columns>CORE.USERS.ALIAS</columns>
+    <filterScope>Mine</filterScope>
+    <filters>
+        <field>Account_Reassignment_Stage__c</field>
+        <operation>equals</operation>
+        <value>New Rep - In 180-Day Review,Current Rep - 90 Day Observation</value>
+    </filters>
+    <label>My Accounts Under Review</label>
+    <sharedTo>
+        <group>All_Users</group>
+    </sharedTo>
+</ListView>

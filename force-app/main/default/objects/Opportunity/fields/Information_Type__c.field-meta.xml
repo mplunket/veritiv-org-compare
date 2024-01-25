@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Information_Type__c</fullName>
+    <externalId>false</externalId>
+    <label>Information Type</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Bid</fullName>
+                <default>false</default>
+                <label>Bid</label>
+            </value>
+            <value>
+                <fullName>Presolicitation</fullName>
+                <default>false</default>
+                <label>Presolicitation</label>
+            </value>
+            <value>
+                <fullName>RFP</fullName>
+                <default>false</default>
+                <label>RFP</label>
+            </value>
+            <value>
+                <fullName>RFI</fullName>
+                <default>false</default>
+                <label>RFI</label>
+            </value>
+            <value>
+                <fullName>RFQ</fullName>
+                <default>false</default>
+                <label>RFQ</label>
+            </value>
+            <value>
+                <fullName>Award</fullName>
+                <default>false</default>
+                <label>Award</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

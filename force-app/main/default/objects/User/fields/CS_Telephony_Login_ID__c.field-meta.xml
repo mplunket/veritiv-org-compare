@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>CS_Telephony_Login_ID__c</fullName>
+    <description>Used for ANI routing, unique to each CSP
+
+Changed 8/2017 by Bluewolf to a Text field for ability to successfully query by Cisco integration for routing.
+
+2022/04/06: Adam Ross changed field length to 12 characters per request to use the +1########## format for B+S routing</description>
+    <externalId>true</externalId>
+    <label>Agent ID for Phones</label>
+    <length>12</length>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

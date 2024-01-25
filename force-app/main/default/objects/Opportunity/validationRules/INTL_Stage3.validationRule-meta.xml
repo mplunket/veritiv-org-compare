@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>INTL_Stage3</fullName>
+    <active>true</active>
+    <description>Ensures required values are entered before moving to a later stage</description>
+    <errorConditionFormula>AND(
+( ISNEW() || ISCHANGED(StageName) ),
+    RecordType.DeveloperName = &apos;International_Opportunity_Lightning&apos;,
+    OR(
+        ISBLANK( Amount ),
+        ISBLANK( Customer_Selling_Margin_Rate__c ),
+        ISPICKVAL( Growth_Initiative__c , &apos;&apos;),
+        ISBLANK( Design_Kickoff_Date__c ),
+        ISBLANK( CloseDate )
+    ),
+    OR(
+        ISPICKVAL( StageName , &apos;4- Propose&apos;),
+        ISPICKVAL( StageName , &apos;5- Implement&apos;),
+        ISPICKVAL( StageName , &apos;6- Closed Won&apos;)
+    )
+)</errorConditionFormula>
+    <errorMessage>Please complete required fields before moving to the next Stage:  Annual Opportunity Revenue, Customer Selling Margin Rate, Growth Initiative, Design Kick-off Date, Expected Close Date</errorMessage>
+</ValidationRule>

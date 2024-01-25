@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>MAT_Latest_Unique_ID__c</fullName>
+    <description>When the FS Audit mobile app modifies an account, the app passes a unique external ID that will be used to identify the opportunity that is automatically created in SF. This is where that external ID must be specified.</description>
+    <externalId>false</externalId>
+    <label>MAT Latest Unique ID</label>
+    <length>255</length>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>MyCases</fullName>
+    <columns>CASES.CASE_NUMBER</columns>
+    <columns>ACCOUNT.NAME</columns>
+    <columns>CONTACT.ACCOUNT</columns>
+    <columns>CASES.RECORDTYPE</columns>
+    <columns>CASES.SUBJECT</columns>
+    <columns>CASES.TYPE</columns>
+    <columns>CASES.CREATED_DATE</columns>
+    <columns>CASES.CLOSED_DATE</columns>
+    <columns>CASES.STATUS</columns>
+    <filterScope>Mine</filterScope>
+    <label>My Cases</label>
+    <language>en_US</language>
+    <sharedTo>
+        <roleAndSubordinatesInternal>CSVP</roleAndSubordinatesInternal>
+        <roleAndSubordinatesInternal>CS_LA_PRINT_DIRECTOR</roleAndSubordinatesInternal>
+    </sharedTo>
+</ListView>

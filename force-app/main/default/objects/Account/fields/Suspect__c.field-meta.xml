@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Suspect__c</fullName>
+    <externalId>false</externalId>
+    <label>Status</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>true</trackHistory>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>1. Suspect</fullName>
+                <default>false</default>
+                <label>1. Suspect</label>
+            </value>
+            <value>
+                <fullName>2. Prospect</fullName>
+                <default>true</default>
+                <label>2. Prospect</label>
+            </value>
+            <value>
+                <fullName>3. National</fullName>
+                <default>false</default>
+                <label>3. National</label>
+            </value>
+            <value>
+                <fullName>4. No Interest</fullName>
+                <default>false</default>
+                <label>4. No Interest</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

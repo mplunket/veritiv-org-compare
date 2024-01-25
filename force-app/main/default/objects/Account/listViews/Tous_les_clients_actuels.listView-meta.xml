@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Tous_les_clients_actuels</fullName>
+    <columns>ACCOUNT.NAME</columns>
+    <columns>ACCOUNT.ACCOUNT_NUMBER</columns>
+    <columns>Legacy_Division_Cd__c</columns>
+    <columns>Legacy_System_Cd__c</columns>
+    <columns>ACCOUNT.ADDRESS1_CITY</columns>
+    <columns>CORE.USERS.LAST_NAME</columns>
+    <columns>Primary_Sales_Rep_Name__c</columns>
+    <columns>Active__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>ACCOUNT.RECORDTYPE</field>
+        <operation>equals</operation>
+        <value>Account.Customer</value>
+    </filters>
+    <label>Tous les clients actuels</label>
+    <language>en_US</language>
+    <sharedTo>
+        <group>CANFrenchSpeakingUsers</group>
+        <role>SystemAdministrator</role>
+    </sharedTo>
+</ListView>

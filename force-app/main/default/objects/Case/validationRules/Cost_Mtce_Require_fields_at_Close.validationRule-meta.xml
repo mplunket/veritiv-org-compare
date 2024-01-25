@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Cost_Mtce_Require_fields_at_Close</fullName>
+    <active>true</active>
+    <description>If case is Cost Maintenance and it is being closed, require fields Segment, Item Count and Vendor Name.</description>
+    <errorConditionFormula>AND(
+ISCHANGED(Status),
+ISPICKVAL(Status, &apos;Closed&apos;) ,
+RecordType.Name = &quot;Cost Maintenance&quot;,
+NOT(ISPICKVAL( Category__c, &quot;R - Information Only&quot;)),
+Is_Spam__c = false,
+OR( ISPICKVAL(Seg_Cat__c,&quot;&quot;),
+    ISNULL(Item_Count__c),
+    ISBLANK( Vendor__c ))
+)</errorConditionFormula>
+    <errorMessage>Seg/Cat, Item Count and Vendor must be filled in before you can close this Case.</errorMessage>
+</ValidationRule>

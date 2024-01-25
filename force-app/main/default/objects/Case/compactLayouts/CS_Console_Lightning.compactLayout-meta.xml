@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CompactLayout xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>CS_Console_Lightning</fullName>
+    <fields>AccountId</fields>
+    <fields>Bill_To_Number__c</fields>
+    <fields>OwnerId</fields>
+    <fields>Status</fields>
+    <fields>Priority</fields>
+    <fields>ANI_List1__c</fields>
+    <label>CS Console Lightning</label>
+</CompactLayout>

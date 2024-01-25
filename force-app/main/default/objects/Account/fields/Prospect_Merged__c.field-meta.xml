@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Prospect_Merged__c</fullName>
+    <description>Checklist field for CX indicating Prospect has been merged into Customer Account</description>
+    <externalId>false</externalId>
+    <inlineHelpText>Date Prospect was merged into Customer Account</inlineHelpText>
+    <label>Prospect Merged</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Date</type>
+</CustomField>

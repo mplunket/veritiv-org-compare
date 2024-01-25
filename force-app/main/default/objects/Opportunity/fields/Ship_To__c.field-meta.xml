@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Ship_To__c</fullName>
+    <deleteConstraint>SetNull</deleteConstraint>
+    <description>Created for the first time to provide an additional level of detail for Veritiv IQ opportunities created from Zilliant Insights. Populated via the batch and API integration to Zilliant if stamped on creation, otherwise manually updated.</description>
+    <externalId>false</externalId>
+    <inlineHelpText>Which specific ShipTo does this opportunity belong to?</inlineHelpText>
+    <label>Ship To</label>
+    <referenceTo>Ship_To__c</referenceTo>
+    <relationshipLabel>Opportunities</relationshipLabel>
+    <relationshipName>Opportunities</relationshipName>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Lookup</type>
+</CustomField>

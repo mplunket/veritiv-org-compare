@@ -1,0 +1,571 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>AD_Output_Devices__c</fullName>
+    <externalId>false</externalId>
+    <label>AD Output Device(s)</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>MultiselectPicklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>11”x17”</fullName>
+                <default>false</default>
+                <label>11”x17”</label>
+            </value>
+            <value>
+                <fullName>12”x18”</fullName>
+                <default>false</default>
+                <label>12”x18”</label>
+            </value>
+            <value>
+                <fullName>Canon</fullName>
+                <default>false</default>
+                <label>Canon</label>
+            </value>
+            <value>
+                <fullName>Canon iPF5100</fullName>
+                <default>false</default>
+                <label>Canon iPF5100</label>
+            </value>
+            <value>
+                <fullName>Canon iPF6300S</fullName>
+                <default>false</default>
+                <label>Canon iPF6300S</label>
+            </value>
+            <value>
+                <fullName>Canon iPF6400</fullName>
+                <default>false</default>
+                <label>Canon iPF6400</label>
+            </value>
+            <value>
+                <fullName>Canon iPF6450</fullName>
+                <default>false</default>
+                <label>Canon iPF6450</label>
+            </value>
+            <value>
+                <fullName>Canon iPF650</fullName>
+                <default>false</default>
+                <label>Canon iPF650</label>
+            </value>
+            <value>
+                <fullName>Canon iPF655</fullName>
+                <default>false</default>
+                <label>Canon iPF655</label>
+            </value>
+            <value>
+                <fullName>Canon iPF760</fullName>
+                <default>false</default>
+                <label>Canon iPF760</label>
+            </value>
+            <value>
+                <fullName>Canon iPF765</fullName>
+                <default>false</default>
+                <label>Canon iPF765</label>
+            </value>
+            <value>
+                <fullName>Canon iPF815</fullName>
+                <default>false</default>
+                <label>Canon iPF815</label>
+            </value>
+            <value>
+                <fullName>Canon iPF825</fullName>
+                <default>false</default>
+                <label>Canon iPF825</label>
+            </value>
+            <value>
+                <fullName>Canon iPF8300S</fullName>
+                <default>false</default>
+                <label>Canon iPF8300S</label>
+            </value>
+            <value>
+                <fullName>Canon iPF8400</fullName>
+                <default>false</default>
+                <label>Canon iPF8400</label>
+            </value>
+            <value>
+                <fullName>Canon iPF9400</fullName>
+                <default>false</default>
+                <label>Canon iPF9400</label>
+            </value>
+            <value>
+                <fullName>Canon iPF9400S</fullName>
+                <default>false</default>
+                <label>Canon iPF9400S</label>
+            </value>
+            <value>
+                <fullName>Epson 11880</fullName>
+                <default>false</default>
+                <label>Epson 11880</label>
+            </value>
+            <value>
+                <fullName>Epson 3880</fullName>
+                <default>false</default>
+                <label>Epson 3880</label>
+            </value>
+            <value>
+                <fullName>Epson 4900</fullName>
+                <default>false</default>
+                <label>Epson 4900</label>
+            </value>
+            <value>
+                <fullName>Epson 7890</fullName>
+                <default>false</default>
+                <label>Epson 7890</label>
+            </value>
+            <value>
+                <fullName>Epson 7900</fullName>
+                <default>false</default>
+                <label>Epson 7900</label>
+            </value>
+            <value>
+                <fullName>Epson 9890</fullName>
+                <default>false</default>
+                <label>Epson 9890</label>
+            </value>
+            <value>
+                <fullName>Epson 9900</fullName>
+                <default>false</default>
+                <label>Epson 9900</label>
+            </value>
+            <value>
+                <fullName>Epson GS 6000</fullName>
+                <default>false</default>
+                <label>Epson GS 6000</label>
+            </value>
+            <value>
+                <fullName>Epson S30670</fullName>
+                <default>false</default>
+                <label>Epson S30670</label>
+            </value>
+            <value>
+                <fullName>Epson S50670</fullName>
+                <default>false</default>
+                <label>Epson S50670</label>
+            </value>
+            <value>
+                <fullName>Epson S70670</fullName>
+                <default>false</default>
+                <label>Epson S70670</label>
+            </value>
+            <value>
+                <fullName>Epson T3000</fullName>
+                <default>false</default>
+                <label>Epson T3000</label>
+            </value>
+            <value>
+                <fullName>Epson T5000</fullName>
+                <default>false</default>
+                <label>Epson T5000</label>
+            </value>
+            <value>
+                <fullName>Epson T7000</fullName>
+                <default>false</default>
+                <label>Epson T7000</label>
+            </value>
+            <value>
+                <fullName>Hewlett Packard</fullName>
+                <default>false</default>
+                <label>Hewlett Packard</label>
+            </value>
+            <value>
+                <fullName>HP 1050C</fullName>
+                <default>false</default>
+                <label>HP 1050C</label>
+            </value>
+            <value>
+                <fullName>HP 1055CM</fullName>
+                <default>false</default>
+                <label>HP 1055CM</label>
+            </value>
+            <value>
+                <fullName>HP 130</fullName>
+                <default>false</default>
+                <label>HP 130</label>
+            </value>
+            <value>
+                <fullName>HP 260</fullName>
+                <default>false</default>
+                <label>HP 260</label>
+            </value>
+            <value>
+                <fullName>HP 280</fullName>
+                <default>false</default>
+                <label>HP 280</label>
+            </value>
+            <value>
+                <fullName>HP 5000</fullName>
+                <default>false</default>
+                <label>HP 5000</label>
+            </value>
+            <value>
+                <fullName>HP 500 24”</fullName>
+                <default>false</default>
+                <label>HP 500 24”</label>
+            </value>
+            <value>
+                <fullName>HP 500 42”</fullName>
+                <default>false</default>
+                <label>HP 500 42”</label>
+            </value>
+            <value>
+                <fullName>HP 5500</fullName>
+                <default>false</default>
+                <label>HP 5500</label>
+            </value>
+            <value>
+                <fullName>HP 750C</fullName>
+                <default>false</default>
+                <label>HP 750C</label>
+            </value>
+            <value>
+                <fullName>HP 755CM</fullName>
+                <default>false</default>
+                <label>HP 755CM</label>
+            </value>
+            <value>
+                <fullName>HP 800 24”</fullName>
+                <default>false</default>
+                <label>HP 800 24”</label>
+            </value>
+            <value>
+                <fullName>HP 800 42”</fullName>
+                <default>false</default>
+                <label>HP 800 42”</label>
+            </value>
+            <value>
+                <fullName>HP FB500</fullName>
+                <default>false</default>
+                <label>HP FB500</label>
+            </value>
+            <value>
+                <fullName>HP FB700</fullName>
+                <default>false</default>
+                <label>HP FB700</label>
+            </value>
+            <value>
+                <fullName>HP FB900</fullName>
+                <default>false</default>
+                <label>HP FB900</label>
+            </value>
+            <value>
+                <fullName>HP L25500</fullName>
+                <default>false</default>
+                <label>HP L25500</label>
+            </value>
+            <value>
+                <fullName>HP L26500</fullName>
+                <default>false</default>
+                <label>HP L26500</label>
+            </value>
+            <value>
+                <fullName>HP L28500</fullName>
+                <default>false</default>
+                <label>HP L28500</label>
+            </value>
+            <value>
+                <fullName>HP LX600</fullName>
+                <default>false</default>
+                <label>HP LX600</label>
+            </value>
+            <value>
+                <fullName>HP LX800</fullName>
+                <default>false</default>
+                <label>HP LX800</label>
+            </value>
+            <value>
+                <fullName>HP LX820</fullName>
+                <default>false</default>
+                <label>HP LX820</label>
+            </value>
+            <value>
+                <fullName>HP LX850</fullName>
+                <default>false</default>
+                <label>HP LX850</label>
+            </value>
+            <value>
+                <fullName>HP T120</fullName>
+                <default>false</default>
+                <label>HP T120</label>
+            </value>
+            <value>
+                <fullName>HP T1300</fullName>
+                <default>false</default>
+                <label>HP T1300</label>
+            </value>
+            <value>
+                <fullName>HP T1300PS</fullName>
+                <default>false</default>
+                <label>HP T1300PS</label>
+            </value>
+            <value>
+                <fullName>HP T1500</fullName>
+                <default>false</default>
+                <label>HP T1500</label>
+            </value>
+            <value>
+                <fullName>HP T2300PS</fullName>
+                <default>false</default>
+                <label>HP T2300PS</label>
+            </value>
+            <value>
+                <fullName>HP T2500</fullName>
+                <default>false</default>
+                <label>HP T2500</label>
+            </value>
+            <value>
+                <fullName>HP T2500 PS</fullName>
+                <default>false</default>
+                <label>HP T2500 PS</label>
+            </value>
+            <value>
+                <fullName>HP T520 24”</fullName>
+                <default>false</default>
+                <label>HP T520 24”</label>
+            </value>
+            <value>
+                <fullName>HP T520 36”</fullName>
+                <default>false</default>
+                <label>HP T520 36”</label>
+            </value>
+            <value>
+                <fullName>HP T7100</fullName>
+                <default>false</default>
+                <label>HP T7100</label>
+            </value>
+            <value>
+                <fullName>HP T790 PS 24”</fullName>
+                <default>false</default>
+                <label>HP T790 PS 24”</label>
+            </value>
+            <value>
+                <fullName>HP T790 PS 44”</fullName>
+                <default>false</default>
+                <label>HP T790 PS 44”</label>
+            </value>
+            <value>
+                <fullName>HP T920</fullName>
+                <default>false</default>
+                <label>HP T920</label>
+            </value>
+            <value>
+                <fullName>HP Z2100</fullName>
+                <default>false</default>
+                <label>HP Z2100</label>
+            </value>
+            <value>
+                <fullName>HP Z3200</fullName>
+                <default>false</default>
+                <label>HP Z3200</label>
+            </value>
+            <value>
+                <fullName>HP Z5200</fullName>
+                <default>false</default>
+                <label>HP Z5200</label>
+            </value>
+            <value>
+                <fullName>HP Z6100 42”</fullName>
+                <default>false</default>
+                <label>HP Z6100 42”</label>
+            </value>
+            <value>
+                <fullName>HP Z6100 60”</fullName>
+                <default>false</default>
+                <label>HP Z6100 60”</label>
+            </value>
+            <value>
+                <fullName>HP Z6200 42”</fullName>
+                <default>false</default>
+                <label>HP Z6200 42”</label>
+            </value>
+            <value>
+                <fullName>HP Z6200 60”</fullName>
+                <default>false</default>
+                <label>HP Z6200 60”</label>
+            </value>
+            <value>
+                <fullName>KIP</fullName>
+                <default>false</default>
+                <label>KIP</label>
+            </value>
+            <value>
+                <fullName>Mimaki</fullName>
+                <default>false</default>
+                <label>Mimaki</label>
+            </value>
+            <value>
+                <fullName>Mita</fullName>
+                <default>false</default>
+                <label>Mita</label>
+            </value>
+            <value>
+                <fullName>Mutoh</fullName>
+                <default>false</default>
+                <label>Mutoh</label>
+            </value>
+            <value>
+                <fullName>OCE</fullName>
+                <default>false</default>
+                <label>OCE</label>
+            </value>
+            <value>
+                <fullName>Oce Arizona 318 GL</fullName>
+                <default>false</default>
+                <label>Oce Arizona 318 GL</label>
+            </value>
+            <value>
+                <fullName>Oce Arizona 440 GT</fullName>
+                <default>false</default>
+                <label>Oce Arizona 440 GT</label>
+            </value>
+            <value>
+                <fullName>Oce Arizona 440 XT</fullName>
+                <default>false</default>
+                <label>Oce Arizona 440 XT</label>
+            </value>
+            <value>
+                <fullName>Oce Arizona 460 GT</fullName>
+                <default>false</default>
+                <label>Oce Arizona 460 GT</label>
+            </value>
+            <value>
+                <fullName>Oce Arizona 460 XT</fullName>
+                <default>false</default>
+                <label>Oce Arizona 460 XT</label>
+            </value>
+            <value>
+                <fullName>Oce Arizona 480 GT</fullName>
+                <default>false</default>
+                <label>Oce Arizona 480 GT</label>
+            </value>
+            <value>
+                <fullName>Oce Arizona 480 XT</fullName>
+                <default>false</default>
+                <label>Oce Arizona 480 XT</label>
+            </value>
+            <value>
+                <fullName>Oce Arizona 640 GT</fullName>
+                <default>false</default>
+                <label>Oce Arizona 640 GT</label>
+            </value>
+            <value>
+                <fullName>Oce Arizona 640 XT</fullName>
+                <default>false</default>
+                <label>Oce Arizona 640 XT</label>
+            </value>
+            <value>
+                <fullName>Oce Arizona 660 GT</fullName>
+                <default>false</default>
+                <label>Oce Arizona 660 GT</label>
+            </value>
+            <value>
+                <fullName>Oce Arizona 660 XT</fullName>
+                <default>false</default>
+                <label>Oce Arizona 660 XT</label>
+            </value>
+            <value>
+                <fullName>Oce Colorwave 300</fullName>
+                <default>false</default>
+                <label>Oce Colorwave 300</label>
+            </value>
+            <value>
+                <fullName>Oce Colorwave 650</fullName>
+                <default>false</default>
+                <label>Oce Colorwave 650</label>
+            </value>
+            <value>
+                <fullName>Oce Plotwave 300</fullName>
+                <default>false</default>
+                <label>Oce Plotwave 300</label>
+            </value>
+            <value>
+                <fullName>Oce Plotwave 340</fullName>
+                <default>false</default>
+                <label>Oce Plotwave 340</label>
+            </value>
+            <value>
+                <fullName>Oce Plotwave 350</fullName>
+                <default>false</default>
+                <label>Oce Plotwave 350</label>
+            </value>
+            <value>
+                <fullName>Oce Plotwave 360</fullName>
+                <default>false</default>
+                <label>Oce Plotwave 360</label>
+            </value>
+            <value>
+                <fullName>Oce TDS100</fullName>
+                <default>false</default>
+                <label>Oce TDS100</label>
+            </value>
+            <value>
+                <fullName>Oce TDS300</fullName>
+                <default>false</default>
+                <label>Oce TDS300</label>
+            </value>
+            <value>
+                <fullName>Oce TDS320</fullName>
+                <default>false</default>
+                <label>Oce TDS320</label>
+            </value>
+            <value>
+                <fullName>Oce TDS400</fullName>
+                <default>false</default>
+                <label>Oce TDS400</label>
+            </value>
+            <value>
+                <fullName>Oce TDS450</fullName>
+                <default>false</default>
+                <label>Oce TDS450</label>
+            </value>
+            <value>
+                <fullName>Oce TDS600</fullName>
+                <default>false</default>
+                <label>Oce TDS600</label>
+            </value>
+            <value>
+                <fullName>Oce TDS700</fullName>
+                <default>false</default>
+                <label>Oce TDS700</label>
+            </value>
+            <value>
+                <fullName>Oce TDS750</fullName>
+                <default>false</default>
+                <label>Oce TDS750</label>
+            </value>
+            <value>
+                <fullName>Oce TDS800</fullName>
+                <default>false</default>
+                <label>Oce TDS800</label>
+            </value>
+            <value>
+                <fullName>Ricoh</fullName>
+                <default>false</default>
+                <label>Ricoh</label>
+            </value>
+            <value>
+                <fullName>Roland</fullName>
+                <default>false</default>
+                <label>Roland</label>
+            </value>
+            <value>
+                <fullName>Seiko</fullName>
+                <default>false</default>
+                <label>Seiko</label>
+            </value>
+            <value>
+                <fullName>Xerox</fullName>
+                <default>false</default>
+                <label>Xerox</label>
+            </value>
+            <value>
+                <fullName>Other</fullName>
+                <default>false</default>
+                <label>Other</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+    <visibleLines>7</visibleLines>
+</CustomField>

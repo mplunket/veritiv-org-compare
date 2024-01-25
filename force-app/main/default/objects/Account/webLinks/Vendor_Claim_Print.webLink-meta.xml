@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<WebLink xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Vendor_Claim_Print</fullName>
+    <availability>online</availability>
+    <description>Link to FormAssembly 4722886</description>
+    <displayType>button</displayType>
+    <encodingKey>UTF-8</encodingKey>
+    <hasMenubar>false</hasMenubar>
+    <hasScrollbars>true</hasScrollbars>
+    <hasToolbar>false</hasToolbar>
+    <height>600</height>
+    <isResizable>true</isResizable>
+    <linkType>url</linkType>
+    <masterLabel>Vendor Claim - Print</masterLabel>
+    <openType>newWindow</openType>
+    <position>none</position>
+    <protected>false</protected>
+    <showsLocation>false</showsLocation>
+    <showsStatus>false</showsStatus>
+    <url>https://www.tfaforms.com/forms/view/4745280?
+tfa_2715={!Account.AccountNumber}&amp;
+tfa_2717={!Account.Name}&amp;
+tfa_2716={!Account.BillingAddress}&amp;
+tfa_2732={!Account.Id}&amp;
+tfa_2837={!Account.BillingState}&amp;
+tfa_2733={!User.Id}&amp;
+tfa_2721={!User.Name}&amp;
+tfa_2724={!User.Email}</url>
+</WebLink>

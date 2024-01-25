@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Vendor_Region__c</fullName>
+    <description>1/17/19 - Removed from page layouts because Vendors do not fit in the same Division groups that Veritiv has.  All data was copied and put in the Description field.</description>
+    <externalId>false</externalId>
+    <label>Vendor Region</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>ALL</fullName>
+                <default>false</default>
+                <label>ALL</label>
+            </value>
+            <value>
+                <fullName>CAN</fullName>
+                <default>false</default>
+                <label>CAN</label>
+            </value>
+            <value>
+                <fullName>SFDMA</fullName>
+                <default>false</default>
+                <label>VOS-MA</label>
+            </value>
+            <value>
+                <fullName>SFDNU</fullName>
+                <default>false</default>
+                <label>VOS-NU</label>
+            </value>
+            <value>
+                <fullName>SFDPC</fullName>
+                <default>false</default>
+                <label>VOS-PC</label>
+            </value>
+            <value>
+                <fullName>SFDSW</fullName>
+                <default>false</default>
+                <label>VOS-SW</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

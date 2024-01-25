@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>All_Active_Users</fullName>
+    <columns>FULL_NAME</columns>
+    <columns>CORE.USER_ROLE.NAME</columns>
+    <columns>CORE.PROFILE.NAME</columns>
+    <columns>CORE.USERS.LAST_LOGIN</columns>
+    <columns>CORE.USERS.ACTIVE</columns>
+    <columns>CORE.USERS.TITLE</columns>
+    <columns>CREATED_BY_NAME</columns>
+    <columns>name_zm_sm__c</columns>
+    <columns>name_gsm__c</columns>
+    <columns>name_bdm_rvp__c</columns>
+    <columns>CORE.USERS.USERNAME</columns>
+    <columns>OFFLINE_USER</columns>
+    <columns>MOBILE_USER</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>CORE.USERS.ACTIVE</field>
+        <operation>equals</operation>
+        <value>1</value>
+    </filters>
+    <label>All Active Users</label>
+    <language>en_US</language>
+</ListView>

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Zombie_Lead__c</fullName>
+    <defaultValue>false</defaultValue>
+    <description>A checkmark in this field means the lead has come back from Dead. It will remain blank until Marketo marks it as true if a dead lead comes back. Anytime something goes dead, we&apos;ll Uncheck the box in case it was checked by Marketo earlier.</description>
+    <externalId>false</externalId>
+    <label>Zombie Lead</label>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>true</trackHistory>
+    <type>Checkbox</type>
+</CustomField>

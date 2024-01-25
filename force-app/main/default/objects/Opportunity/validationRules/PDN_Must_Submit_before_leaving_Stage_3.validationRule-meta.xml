@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>PDN_Must_Submit_before_leaving_Stage_3</fullName>
+    <active>false</active>
+    <description>Don&apos;t allow them to move a lightning PDN opp to stage 4, 5 or 6 if they haven&apos;t submitted it to the design team.</description>
+    <errorConditionFormula>AND(
+ISPICKVAL( Approval_Status__c, &quot;Not Submitted&quot;),
+ RecordTypeId = &quot;01239000000QUb2&quot;,
+(OR(TEXT(StageName)= &quot;4- Propose&quot;,
+    TEXT(StageName)= &quot;5- Implement&quot;,
+    TEXT(StageName)= &quot;6- Close/Won&quot;)))</errorConditionFormula>
+    <errorMessage>You cannot move beyond stage 3 on a PDN Opportunity until you have submitted the opportunity to the design team.  Either Submit for Approval or change the record type back to Standard Opportunity.</errorMessage>
+</ValidationRule>

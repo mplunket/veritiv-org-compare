@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Convert_to_Kitting__c</fullName>
+    <defaultValue>false</defaultValue>
+    <description>Checkbox that is set to True when the Convert to Kitting button is selected</description>
+    <externalId>false</externalId>
+    <label>Convert to Kitting</label>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Checkbox</type>
+</CustomField>

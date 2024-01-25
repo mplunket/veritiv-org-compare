@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Use_to_Cover_DAL_SC_MA_PKG_Open</fullName>
+    <booleanFilter>(1 OR 2) AND 3</booleanFilter>
+    <columns>CASES.CASE_NUMBER</columns>
+    <columns>CASES.CREATED_DATE_DATE_ONLY</columns>
+    <columns>NAME</columns>
+    <columns>CASES.SUBJECT</columns>
+    <columns>CASES.STATUS</columns>
+    <columns>CASES.PRIORITY</columns>
+    <columns>OWNER_NAME</columns>
+    <columns>ToAddressRouting__c</columns>
+    <columns>X255_To_Address__c</columns>
+    <columns>CASES.RECORDTYPE</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>Email_Origin__c</field>
+        <operation>contains</operation>
+        <value>sppkg@Veritivcorp.com,DMApkg@veritivcorp.com</value>
+    </filters>
+    <filters>
+        <field>X255_To_Address__c</field>
+        <operation>contains</operation>
+        <value>SPpkg@Veritivcorp.com,DMApkg@veritivcorp.com</value>
+    </filters>
+    <filters>
+        <field>CASES.STATUS</field>
+        <operation>notEqual</operation>
+        <value>Closed,Merged</value>
+    </filters>
+    <label>Use to Cover DAL - SC/MA - PKG - Open</label>
+    <sharedTo>
+        <group>All_Admins</group>
+        <role>CS_CIN_TRISTATE_CXP</role>
+        <role>CS_JAX_PKG_CXP1</role>
+        <role>CS_JAX_PKG_CXP2</role>
+    </sharedTo>
+</ListView>

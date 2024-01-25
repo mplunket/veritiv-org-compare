@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Segment_2__c</fullName>
+    <description>Nov 2016 - Data fed in from data warehouse integration.</description>
+    <externalId>false</externalId>
+    <inlineHelpText>F = Fine Paper
+M = Facilities Supplies
+P = Packaging
+L = Publishing
+FS - Facility Solutions (from Evo system)
+PK - Packaging (from Evo system)
+PR - Print (from Evo system)</inlineHelpText>
+    <label>Segment</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>F</fullName>
+                <default>false</default>
+                <label>F</label>
+            </value>
+            <value>
+                <fullName>M</fullName>
+                <default>false</default>
+                <label>M</label>
+            </value>
+            <value>
+                <fullName>P</fullName>
+                <default>false</default>
+                <label>P</label>
+            </value>
+            <value>
+                <fullName>L</fullName>
+                <default>false</default>
+                <label>L</label>
+            </value>
+            <value>
+                <fullName>FS</fullName>
+                <default>false</default>
+                <label>FS</label>
+            </value>
+            <value>
+                <fullName>PK</fullName>
+                <default>false</default>
+                <label>PK</label>
+            </value>
+            <value>
+                <fullName>PR</fullName>
+                <default>false</default>
+                <label>PR</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

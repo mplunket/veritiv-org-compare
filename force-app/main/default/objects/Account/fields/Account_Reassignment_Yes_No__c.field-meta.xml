@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Account_Reassignment_Yes_No__c</fullName>
+    <description>Account Reassignment Flag.</description>
+    <externalId>false</externalId>
+    <formula>If(or(Account_Reassignment_Stage__c = &quot;Current Rep - 90 Day Observation&quot;,Account_Reassignment_Stage__c=&quot;New Rep - In 180-Day Review&quot;),&quot;Yes&quot;,&quot;No&quot;)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <inlineHelpText>Account Reassignment flag.  Yes if the Account Reassignment Stage is either &quot;Current Rep in 90 Day Observation&quot; or &quot;New Rep in 180 Day Observation&quot;).</inlineHelpText>
+    <label>Account Reassignment Yes/No</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Critical__c</fullName>
+    <externalId>false</externalId>
+    <formula>IF(ISPICKVAL(Status,&quot;Closed&quot;),IMAGE(&quot;/resource/1408229377000/CaseClosed&quot;, &quot;Case Closed&quot;,42,59),&quot;&quot;) +
+IF(ISPICKVAL (Priority, &quot;Critical&quot;), IMAGE(&quot;/resource/CaseCritical&quot;, &quot;Critical&quot;, 22, 22),&quot;&quot;)+
+IF(ISPICKVAL (Priority, &quot;High&quot;), IMAGE(&quot;/resource/Case2High&quot;, &quot;High&quot;, 16, 18),&quot;&quot;)+
+IF(ISPICKVAL (Priority, &quot;Medium&quot;), IMAGE(&quot;/resource/Case1Medium&quot;, &quot;Medium&quot;, 18, 16),&quot;&quot;)+
+IF(ISPICKVAL (Priority, &quot;Low&quot;), IMAGE(&quot;/resource/Case0Low&quot;, &quot;Low&quot;, 16, 18),&quot;&quot;)+
+IF(Guaranteed__c  = True, IMAGE(&quot;/resource/CaseGT&quot;, &quot;GT&quot;,19,12),&quot;&quot;)+
+IF(Lift_Gate__c   = True, IMAGE(&quot;/resource/CaseLG&quot;, &quot;LG&quot;,19,12),&quot;&quot;)+
+IF(PU_Appt_Reqd__c   = True, IMAGE(&quot;/resource/CasePU&quot;, &quot;PU&quot;,19,12),&quot;&quot;) +
+IF( Quote_Requested__c  = True, IMAGE(&quot;/resource/CaseQR&quot;, &quot;QR&quot;,19,12),&quot;&quot;)  +
+IF(Delivery_Appointment_Required__c = True, IMAGE(&quot;/resource/CaseDA&quot;, &quot;DA&quot;,19,12),&quot;&quot;)</formula>
+    <label>!</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

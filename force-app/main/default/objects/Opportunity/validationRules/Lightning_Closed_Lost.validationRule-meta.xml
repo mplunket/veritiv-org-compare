@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Lightning_Closed_Lost</fullName>
+    <active>true</active>
+    <description>Built By BW March 2018</description>
+    <errorConditionFormula>AND(
+( ISNEW() || ISCHANGED(StageName) ),
+TEXT(   StageName)= &quot;0- Closed Lost&quot;,
+ OR(ISBlank(     Lost_Date__c ),
+ ISPICKVAL( Lost_Reason__c, &quot;&quot;)
+ ))</errorConditionFormula>
+    <errorMessage>Lost Date and Lost Reason are required when choosing 0-Closed Lost as a Stage.</errorMessage>
+</ValidationRule>

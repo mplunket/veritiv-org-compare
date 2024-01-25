@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>By_Hour__c</fullName>
+    <description>Number of Cases by Hour for report calculation</description>
+    <externalId>false</externalId>
+    <formula>TEXT(VALUE( LEFT( Time_Case_Created__c , LEN( Time_Case_Created__c ) - 6)) + IF(RIGHT( Time_Case_Created__c ,2) = &apos;PM&apos;, 12, 0))</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>By Hour</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Name_of_Additional_Opportunity__c</fullName>
+    <externalId>false</externalId>
+    <inlineHelpText>Complete this field when a deal is marked Lost because it is a duplicate. Provide the Sales Rep&apos;s name as well as the Opp name, when available.</inlineHelpText>
+    <label>Name of Additional Opportunity</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>TextArea</type>
+</CustomField>

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Credit_Action_Updated__c</fullName>
+    <description>timestamp for when credit team updates the Credit - Action from Credit Dept field, so they can track their time to respond</description>
+    <externalId>false</externalId>
+    <label>Credit Action Updated</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>DateTime</type>
+</CustomField>

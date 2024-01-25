@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>CPN_Complete__c</fullName>
+    <description>Checklist item for CX</description>
+    <externalId>false</externalId>
+    <inlineHelpText>Work with sales to get CPN information and Load CPNs</inlineHelpText>
+    <label>CPN Complete</label>
+    <length>250</length>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

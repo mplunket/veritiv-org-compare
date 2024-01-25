@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Restricted_User__c</fullName>
+    <description>The below profiles are restricted from creating Opportunities, Leads and Campaigns.  We must have a minimum of 600 users with this restriction to comply with our contract, so this field helps us monitor compliance</description>
+    <externalId>false</externalId>
+    <formula>IF(Profile.Name = &quot;Chatter (Full SF License)&quot;, &quot;Yes&quot;,
+IF(Profile.Name = &quot;CSC - National Accounts&quot;, &quot;Yes&quot;,
+IF(Profile.Name = &quot;CS Console Pilot Support - Restricted&quot;, &quot;Yes&quot;,
+IF(Profile.Name = &quot;CSP &amp; TM - ANI - Vx - Support Restricted&quot;, &quot;Yes&quot;,
+IF(Profile.Name = &quot;CSP Support - Restricted&quot;, &quot;Yes&quot;,
+IF(Profile.Name = &quot;CAN - CS and Sourcing&quot;, &quot;Yes&quot;,
+IF(Profile.Name = &quot;Customer Service Exec&quot;, &quot;Yes&quot;,
+IF(Profile.Name = &quot;eBusiness Director&quot;, &quot;Yes&quot;,
+IF(Profile.Name = &quot;eBusiness Manager&quot;, &quot;Yes&quot;,
+IF(Profile.Name = &quot;Executive Read Only&quot;, &quot;Yes&quot;,
+IF(Profile.Name = &quot;Executive Sponsor&quot;, &quot;Yes&quot;,
+IF(Profile.Name = &quot;Finance&quot;, &quot;Yes&quot;,
+IF(Profile.Name = &quot;IT Admin&quot;, &quot;Yes&quot;,
+IF(Profile.Name = &quot;Lead Management - Marketing&quot;, &quot;Yes&quot;,
+IF(Profile.Name = &quot;Marketing Restricted - Lightning&quot;, &quot;Yes&quot;,
+IF(Profile.Name = &quot;Pricing - Lightning&quot;, &quot;Yes&quot;,
+IF(ProfileId = &quot;00e70000000swa8&quot;,&quot;Yes&quot;,
+IF(Profile.Name = &quot;Sales Admin&quot;, &quot;Yes&quot;,
+IF(Profile.Name = &quot;Sales Admin Restricted - Lightning&quot;, &quot;Yes&quot;,
+IF(Profile.Name = &quot;Sourcing&quot;, &quot;Yes&quot;,
+IF(Profile.Name = &quot;Sourcing - Lightning&quot;, &quot;Yes&quot;,
+IF(Profile.Name = &quot;Product Item Maintenance - Lightning&quot;, &quot;Yes&quot;,
+IF(Profile.Name = &quot;Specialist - Packaging VP &amp; Dir&quot;, &quot;Yes&quot;,
+IF(Profile.Name = &quot;Supply Chain&quot;, &quot;Yes&quot;,
+IF(Profile.Name = &quot;Training and Support&quot;, &quot;Yes&quot;,
+IF(Profile.Name = &quot;Training and Support - Console&quot;, &quot;Yes&quot;,
+IF(Profile.Name = &quot;Training and Support - Lightning&quot;, &quot;Yes&quot;,
+IF(Profile.Name = &quot;Service Desk Users&quot;, &quot;Yes&quot;,
+IF(Profile.Name = &quot;Supply Chain - 3PL Restricted&quot;, &quot;Yes&quot;,
+IF(Profile.Name = &quot;Sales Rep - Restricted&quot;, &quot;Yes&quot;,
+IF(Profile.Name = &quot;UGS&quot;, &quot;Yes&quot;,
+IF(Profile.Name = &quot;Regional Sales Admin Restricted - Lightning&quot;, &quot;Yes&quot;,
+IF(Profile.Name = &quot;PDN Restricted - Lightning&quot;, &quot;Yes&quot;,
+IF(Profile.Name = &quot;VE Branch Mgr - Restricted - Lightning&quot;, &quot;Yes&quot;,
+IF(Profile.Name = &quot;VLS Restricted - Lightning&quot;, &quot;Yes&quot;,
+IF(Profile.Name = &quot;Veritiv Support Restricted - Lightning&quot;, &quot;Yes&quot;,
+&quot;No&quot;
+))))))))))))))))))))))))))))))))))))</formula>
+    <label>Restricted User</label>
+    <required>false</required>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Combined_Corr_and_FC__c</fullName>
+    <description>Combined Corrugated and Folding Carton Revenue</description>
+    <externalId>false</externalId>
+    <label>Combined Corr and FC Revenue</label>
+    <summarizedField>Vendor_Detail_Link__c.Vendor_Category_SubTotal__c</summarizedField>
+    <summaryFilterItems>
+        <field>Vendor_Detail_Link__c.Product_Category__c</field>
+        <operation>equals</operation>
+        <value>CORRUGATED, RETAIL PACKAGING - DISPLAY, RETAIL PACKAGING - FOLDING CARTON</value>
+    </summaryFilterItems>
+    <summaryForeignKey>Vendor_Detail_Link__c.Opportunity__c</summaryForeignKey>
+    <summaryOperation>sum</summaryOperation>
+    <trackHistory>false</trackHistory>
+    <type>Summary</type>
+</CustomField>

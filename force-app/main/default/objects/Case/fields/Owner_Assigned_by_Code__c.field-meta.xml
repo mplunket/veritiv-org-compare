@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Owner_Assigned_by_Code__c</fullName>
+    <defaultValue>false</defaultValue>
+    <description>If code is used to assign the owner of the case, this checkbox must get checked by that code to allow exclusion from the case assignment rules</description>
+    <externalId>false</externalId>
+    <label>Owner Assigned by Code</label>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Required_for_Closed_Won_on_Design</fullName>
+    <active>false</active>
+    <description>Built for Lightning Migration
+Modified 6/16 to point recortypeid to lightning PDN.</description>
+    <errorConditionFormula>AND(TEXT(StageName)= &quot;6- Closed Won&quot;, 
+OR( Design__c, RecordType.Name=&quot;Engineered Packaging (PDN) Lightning&quot;), 
+OR(ISBlank( Amount ), 
+ISBlank( Customer_Selling_Margin_Rate__c ), 
+ISBlank( Prod_Category__c ), 
+ISBlank( CloseDate ) , 
+ISBlank( Expected_Billing_Date__c ), 
+ISBlank( Bill_to_Number__c ), 
+ISBlank(  Proposal_Date__c  ),
+Vendor_Count__c =0) 
+)</errorConditionFormula>
+    <errorMessage>Amount,Customer Selling Margin Rate, Product Category, Proposal Date, Close Date, Expected Billing Date, Bill To Number and Vendor must be added to mark Design opportunities as Closed Won</errorMessage>
+</ValidationRule>

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>STOWD_Count__c</fullName>
+    <description>Used in CEI rollout. 
+
+Counting the number of STOWD records, which are created when Cases change owners or status. Used for reporting.</description>
+    <externalId>false</externalId>
+    <inlineHelpText>How many different status and ownership durations has this case experienced</inlineHelpText>
+    <label>Status Durations: Count</label>
+    <summaryForeignKey>STOWD__Status_Ownership_Duration__c.STOWD__Parent__c</summaryForeignKey>
+    <summaryOperation>count</summaryOperation>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Summary</type>
+</CustomField>

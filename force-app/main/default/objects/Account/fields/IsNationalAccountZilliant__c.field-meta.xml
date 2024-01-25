@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>IsNationalAccountZilliant__c</fullName>
+    <externalId>false</externalId>
+    <formula>IF(AND(Account_SysDivBillTo__c == AccountNumber,Account_Type__c == &apos;Customer&apos;, ISPICKVAL( Active__c,&apos;Yes&apos;),OR(ISPICKVAL(Unify_Account_Type__c, &apos;N&apos;),ISPICKVAL(Unify_Account_Type__c, &apos;R&apos;),ISPICKVAL(Unify_Account_Type__c, &apos;U&apos;))),true, false)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>IsNationalAccountZilliant</label>
+    <trackHistory>false</trackHistory>
+    <type>Checkbox</type>
+</CustomField>

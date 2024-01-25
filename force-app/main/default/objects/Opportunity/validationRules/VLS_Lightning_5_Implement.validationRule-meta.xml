@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>VLS_Lightning_5_Implement</fullName>
+    <active>false</active>
+    <description>Fields required before you can advance to stage 5.</description>
+    <errorConditionFormula>AND(TEXT(    StageName)= &quot;5- Implement&quot;,
+$User.ProfileId  = &quot;00ef2000000zIBv&quot;, 
+ OR(ISBlank(Amount  ),
+Amount&lt;=1,
+ ISBlank(Customer_Selling_Margin_Rate__c  ),
+  ISBlank(Description    )
+
+ ))</errorConditionFormula>
+    <errorMessage>Before choosing 5- Implement as a Stage, Opportunity Revenue must exceed $1 and the following fields must be updated: Description, Margin.</errorMessage>
+</ValidationRule>

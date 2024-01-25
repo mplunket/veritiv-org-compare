@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<FieldSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Reporting_Links_Prospect</fullName>
+    <description>This field set is for the Prospect Account Reporting Links for Lightning users.</description>
+    <displayedFields>
+        <field>All_Parent_and_Child_Opportunities__c</field>
+        <isFieldManaged>false</isFieldManaged>
+        <isRequired>false</isRequired>
+    </displayedFields>
+    <displayedFields>
+        <field>VOS_Green_Gauge_Products_Lightning__c</field>
+        <isFieldManaged>false</isFieldManaged>
+        <isRequired>false</isRequired>
+    </displayedFields>
+    <label>Reporting Links - Prospect</label>
+</FieldSet>

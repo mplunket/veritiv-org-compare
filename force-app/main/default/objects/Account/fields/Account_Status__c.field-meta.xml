@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Account_Status__c</fullName>
+    <externalId>false</externalId>
+    <formula>IF( ISPICKVAL( Active__c , &quot;Yes&quot;) , IMAGE(&quot;/servlet/servlet.FileDownload?file=01570000001AxOs&quot;, &quot;This Account is Active&quot;),                                          
+
+IF( ISPICKVAL( Active__c , &quot;No&quot;) , IMAGE(&quot;/servlet/servlet.FileDownload?file=01570000001AxOx&quot;, &quot;This Account is Inactive&quot;),NULL) 
+
+)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Account Status</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Danger_or_Hazard_requires_Explanation</fullName>
+    <active>true</active>
+    <description>If kitting includes Dangerous or Hazardous material, and explanation will be required</description>
+    <errorConditionFormula>AND(
+ ISPICKVAL( Dangerous_Hazardous__c , &quot;Yes&quot;), 
+ ISBLANK(Danger_Hazard_Explanation__c))</errorConditionFormula>
+    <errorMessage>Please provide a detailed explanation of the Dangerous or Hazardous materials included in the Kit.</errorMessage>
+</ValidationRule>

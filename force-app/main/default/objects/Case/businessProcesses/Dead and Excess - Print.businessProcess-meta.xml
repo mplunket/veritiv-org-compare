@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<BusinessProcess xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Dead and Excess - Print</fullName>
+    <description>Print Dead and Excess Support process</description>
+    <isActive>false</isActive>
+    <values>
+        <fullName>Closed</fullName>
+        <default>false</default>
+    </values>
+    <values>
+        <fullName>In Process</fullName>
+        <default>false</default>
+    </values>
+    <values>
+        <fullName>New</fullName>
+        <default>true</default>
+    </values>
+    <values>
+        <fullName>On Hold - Customer</fullName>
+        <default>false</default>
+    </values>
+    <values>
+        <fullName>On Hold - Vendor</fullName>
+        <default>false</default>
+    </values>
+    <values>
+        <fullName>On Hold - Veritiv</fullName>
+        <default>false</default>
+    </values>
+    <values>
+        <fullName>Re-Opened</fullName>
+        <default>false</default>
+    </values>
+</BusinessProcess>

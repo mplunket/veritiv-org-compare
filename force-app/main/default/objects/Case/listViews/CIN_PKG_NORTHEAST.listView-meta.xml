@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>CIN_PKG_NORTHEAST</fullName>
+    <columns>CASES.CREATED_DATE_DATE_ONLY</columns>
+    <columns>CASES.CASE_NUMBER</columns>
+    <columns>ACCOUNT.NAME</columns>
+    <columns>NAME</columns>
+    <columns>CASES.SUBJECT</columns>
+    <columns>CASES.STATUS</columns>
+    <columns>CASES.PRIORITY</columns>
+    <columns>X255_To_Address__c</columns>
+    <columns>CORE.USERS.ALIAS</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>X255_To_Address__c</field>
+        <operation>contains</operation>
+        <value>nepkg.cs,upstatepkg.cs,upstatepackaging,ne.coe</value>
+    </filters>
+    <filters>
+        <field>Date_Case_Opened__c</field>
+        <operation>equals</operation>
+        <value>LAST_N_DAYS:60</value>
+    </filters>
+    <label>CIN - PKG - NORTHEAST</label>
+    <sharedTo>
+        <role>CS_CIN_GREATLAKES_TM_TL</role>
+        <role>CS_CIN_MIDATLANTIC_TM_TL</role>
+        <role>CS_CIN_MIDWEST_TM_TL</role>
+        <role>CS_CIN_NATIONAL_TM_TL</role>
+        <role>CS_CIN_NORTHCENTRAL_TM_TL</role>
+        <role>CS_CIN_NORTHEAST_CXP</role>
+        <role>CS_CIN_NORTHEAST_TM_TL</role>
+        <role>CS_CIN_TRISTATE_TM_TL</role>
+        <role>CS_CSC_Operations_Mgmt</role>
+    </sharedTo>
+</ListView>

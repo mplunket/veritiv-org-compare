@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>VIQ_Insight_Key__c</fullName>
+    <description>A unique identifier that must be populated in order to send back to Zilliant for closed loop reporting within their database. Must remain read-only. Corresponds with CustomerInsightKey in the Zilliant database.</description>
+    <externalId>false</externalId>
+    <inlineHelpText>Unique identifier for Zilliant database</inlineHelpText>
+    <label>VIQ Insight Key</label>
+    <length>50</length>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

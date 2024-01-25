@@ -1,0 +1,696 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<RecordType xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Graphic_Communications_Contact</fullName>
+    <active>false</active>
+    <description>Graphic Communications Contact</description>
+    <label>Graphic Communications - Contact</label>
+    <picklistValues>
+        <picklist>Contact_Role__c</picklist>
+        <values>
+            <fullName>Influencer</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Other Administrative Contact</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Pays Invoices%2FBilling Contact</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Places Orders%2FCS Contact</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Receives Order%2FWarehouse Contact</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Sales Primary Contact</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Signs Contract%2FDecision Maker</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Customer_Decline_SOC__c</picklist>
+        <values>
+            <fullName>N</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Y</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Department__c</picklist>
+        <values>
+            <fullName>Accounting</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Accounts Payable</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Engineering%2FLean Engineer</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Environmental Services %28Custodial%2FEVS%2FHousekeeping%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Estimating</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Finance</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Human Resources</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>IT</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Infection Control</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Maintenance%2FFacility Manager</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Marketing</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Operations%2FLogistics%2FShipping</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Owner%2FPresident</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Procurement%2FPurchasing</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Production%2FManufacturing</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Sales</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Warehouse</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Detail_Contact_Role__c</picklist>
+        <values>
+            <fullName>AP Contact</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Customer Ordering</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Dock Appointment</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Receives Confirmations</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Tax Contact</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Warehouse%2FOps</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>eCom Approver</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>eCom Catalog Browser</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>eCom General</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Do_NOT_Send_Email__c</picklist>
+        <values>
+            <fullName>Customer Satisfaction Survey</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Executive Communications</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Fuel Surcharge Announcement</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>New Product Announcement</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>New Promotion Announcement</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Email_Consent_Details__c</picklist>
+        <values>
+            <fullName>Existing Business Relationship</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Inquiry</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Self Selected</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Email_Consent_Explicit__c</picklist>
+        <values>
+            <fullName>Yes</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Email_Consent_Implicit__c</picklist>
+        <values>
+            <fullName>Yes</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Inactive_Reason__c</picklist>
+        <values>
+            <fullName>Deceased</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Duplicate Record</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Leave of absence</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Maternity leave</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>New role</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>No longer at company</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Other</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Job_Level__c</picklist>
+        <values>
+            <fullName>Corporate Executive</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Individual Contributor</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Owner</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Supervisor%2FManager</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>LID__No_longer_at_Company__c</picklist>
+        <values>
+            <fullName>Ignore</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Not at Company</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>LeadSource</picklist>
+        <values>
+            <fullName>Advertisement</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Cold Call</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Marketing_Segmentation__c</picklist>
+        <values>
+            <fullName>Customizers</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Minimalists</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Optimizers</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Savers</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Name</picklist>
+        <values>
+            <fullName>Dr%2E</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Mr%2E</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Mrs%2E</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Ms%2E</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Prof%2E</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Preferred_Language__c</picklist>
+        <values>
+            <fullName>English</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>French</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Spanish</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Product_Interest__c</picklist>
+        <values>
+            <fullName>AMENITIES</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>AQUEOUS MEDIA</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>AQUEOUS PRINTERS</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>BLANKETS</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>CAN LINERS</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>CAN LINERS-PRIVATE BRAND</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>CARBONLESS</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>CHEMICALS</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>CHEMICALS-PRIVATE BRAND</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>COATED - ROLLS</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>COATED BOARD - ROLLS</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>COATED BOARD - SHEETS</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>COATED DOMESTIC - SHEETS</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>COATED IMPORT - SHEETS</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>COMPUTER %26 LAPTOP</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>CORRUGATED</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>CUSHIONING</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>DIGITAL PROOFING</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>ENGINEERING SUPPLIES BLACK %26 WHITE</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>ENGINEERING SUPPLIES COLOR</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>ENVELOPES</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>EQUIPMENT %E2%80%93 GRAPHICS</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>EQUIPMENT - PACKAGING</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>FOOD PACKAGING</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>FOOD SERVICE</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>FURNITURE</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>HEWLETT PACKARD AEC PRODUCTS</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>IMAGING - CUT%2FSHEETS%2FROLLS</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>INK%2FTONER</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>INKS%2FCOATINGS</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>KITTING</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>LAMINATORS</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>LATEX PRINTERS</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>OFF LINE FOLDERS</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>OTHER PACKAGING</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>OTHER PAPER</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>PACKAGES</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>PACKAGING MATERIALS</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>PARTS</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>PHOTO SUPPLIES</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>PLATES%2FFILM</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>POLY BAGS</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>PRESS ROOM CHEMISTRY</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>SHRINK FILM</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>SOFTWARE</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>SOLVENT MEDIA</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>SOLVENT PRINTERS</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>SPECIALTY FILM</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>STRAPPING</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>STRETCH FILM</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>STRETCH FILM-PRIVATE BRAND</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>TAPES</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>TAPES-PRIVATE BRAND</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>TCW</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>TECHNICAL ENGINEERING SYS BLACK %26 WHITE</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>TECHNICAL ENGINEERING SYSTEMS COLOR</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>TECHNICAL PLASTICS</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>UNCOATED BOARD - CUT%2FSHEETS</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>UNCOATED BOARD - ROLLS</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>UNCOATED OFFSET - CUT%2FSHEETS</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>UNCOATED OFFSET - ROLLS</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>UNCOATED OPAQUE - CUT%2FSHEETS</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>UNCOATED OPAQUE - ROLLS</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>UV PRINTERS</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>XEROGRAPHIC MATERIAL</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>SOC_Show_Backorders__c</picklist>
+        <values>
+            <fullName>N</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Y</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>SOC_Show_Price__c</picklist>
+        <values>
+            <fullName>N</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Y</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>SOC_Type__c</picklist>
+        <values>
+            <fullName>Both</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Email</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Fax</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Segment__c</picklist>
+        <values>
+            <fullName>Packaging</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Publishing</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Time_Zone__c</picklist>
+        <values>
+            <fullName>Central %28CST%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Eastern %28EST%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Mountain %28MST%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Pacific %28PST%29</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Vendor_Division__c</picklist>
+        <values>
+            <fullName>Solaris - Savannah</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Vendor_Region__c</picklist>
+        <values>
+            <fullName>SFDMA</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>SFDNU</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>SFDPC</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>SFDSW</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+</RecordType>

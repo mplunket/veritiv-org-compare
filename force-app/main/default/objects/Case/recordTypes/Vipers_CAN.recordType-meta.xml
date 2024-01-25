@@ -1,0 +1,657 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<RecordType xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Vipers_CAN</fullName>
+    <active>false</active>
+    <businessProcess>CAN Support Process</businessProcess>
+    <description>CAN - Track Canadian Quotes and Orders 2/15/18 - Retired</description>
+    <label>06. CAN - Quotes and Orders</label>
+    <picklistValues>
+        <picklist>Auto_Assign_Method__c</picklist>
+        <values>
+            <fullName>Account Tax Resource</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Default Queue</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Round Robin Assigner</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Case_Category__c</picklist>
+        <values>
+            <fullName>Account Receivable</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Customer Maintenance</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Information</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Order Resolution</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Pricing%2FRebate%2FCost</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Product Code%2FItem</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Proof Of Delivery</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Reporting</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Sourcing%2FQuoting</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Vendor Claim</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Case_Type__c</picklist>
+        <values>
+            <fullName>APD</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Complimentary items</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Customer Canceled</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Customer Changed</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Damaged Product</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Demand Issue</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>ERS Issue</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Early Release Request</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>FSC</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Follow up on strategic quote</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Freight</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>GTM Improvement</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Item left off</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Lost Business</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Migrating Business</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>NIR</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>NOA</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>New product intro</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Non-Stock</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Order Over</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Order Short</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Other</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Out of Stock</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>POD</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Porcelain - Eco</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Pricing</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Pricing Discrepancy</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Request for MSDS%2FChemical Labels</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Revenue Tracker</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Shipment Tracking</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Shuttle item not received</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Special Offer</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Substitution</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Warehouse item not found</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Wrong Quantity Pulled</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Wrong item filled</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Zilliant Pricing</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Complaint_Type__c</picklist>
+        <values>
+            <fullName>Billing</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Credit</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Customer Service</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Delivery</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Early Release Request</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Other</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>POD</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Pricing Discrepancy</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Product</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Request for MSDS%2FChemical Labels</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Sales Rep</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Service</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Substitution</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Zilliant Pricing</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Customer_Expectations_from_Veritiv__c</picklist>
+        <values>
+            <fullName>Explain how the problem will be corrected</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Fill out a Corrective Action Response form %28CAR%2CSCAR%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Inspect product that maybe defective%2Fdamaged</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Investigate why problem occurred</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Response from a Senior Manager%2FQuality Manager</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>EPSAction_Request__c</picklist>
+        <values>
+            <fullName>Invoice</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Order Tracking</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Quote</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Tool Repair</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Warranty</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Order_Type_del__c</picklist>
+        <values>
+            <fullName>Direct</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Indirect</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Warehouse</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Origin</picklist>
+        <values>
+            <fullName>Email</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Web</fullName>
+            <default>true</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Payments_del__c</picklist>
+        <values>
+            <fullName>Inquiry - Customer</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Inquiry - Sales</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Over Payment</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Remittance Request</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Short Payment  - Pricing%2FQuantity</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Short Payment - Freight</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Pick_up_location_Different_Than_Shipto__c</picklist>
+        <values>
+            <fullName>No</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Yes</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Priority</picklist>
+        <values>
+            <fullName>Critical</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>High</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Low</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Medium</fullName>
+            <default>true</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Product_Disposition__c</picklist>
+        <values>
+            <fullName>Dispose</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Other</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Return to Vendor</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Product_Storage_Location_Type_Item_1__c</picklist>
+        <values>
+            <fullName>Both</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Customer Facility</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Veritiv Floor</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Product_Storage_Location_Type_Item_2__c</picklist>
+        <values>
+            <fullName>Both</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Customer Facility</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Veritiv Floor</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Product_Storage_Location_Type_Item_3__c</picklist>
+        <values>
+            <fullName>Both</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Customer Facility</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Veritiv Floor</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Reason</picklist>
+        <values>
+            <fullName>Apex Mobile</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Configuration Fix</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Outlook Integration</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>System Limitation</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Training</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Reason__c</picklist>
+        <values>
+            <fullName>Order</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Quote</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Regulatory_Customer_Issue__c</picklist>
+        <values>
+            <fullName>Food Contact Packaging</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Healthcare</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Medical Device</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Pharma</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Salesforce_com_Object__c</picklist>
+        <values>
+            <fullName>Account</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Account Plan</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Account Team</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Best Practice</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Blackberry</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Cases</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Churn Data</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Competitor</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Contact</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Contract</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Dashboards</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Opportunity</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Outlook</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Primary Sales Rep</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Promotion</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Reports</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Sales Data</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Vendor</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Seg_Cat__c</picklist>
+        <values>
+            <fullName>Facility Solutions</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Logistics Solutions</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Packaging</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Print</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Publishing</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Speciality__c</picklist>
+        <values>
+            <fullName>Non-Order Management</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Order Management</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Specifics__c</picklist>
+        <values>
+            <fullName>Direct</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Indirect</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Quote</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Warehouse</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Type</picklist>
+        <values>
+            <fullName>Issue</fullName>
+            <default>true</default>
+        </values>
+        <values>
+            <fullName>Obtaining POD</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+</RecordType>

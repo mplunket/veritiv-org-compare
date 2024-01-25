@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>zsx__PricingHealthDescription__c</fullName>
+    <deprecated>false</deprecated>
+    <externalId>false</externalId>
+    <label>Pricing Health</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>BELOW_FLOOR</fullName>
+                <default>false</default>
+                <label>Below Floor</label>
+            </value>
+            <value>
+                <fullName>BELOW_TARGET</fullName>
+                <default>false</default>
+                <label>Below Target</label>
+            </value>
+            <value>
+                <fullName>ON_TARGET</fullName>
+                <default>false</default>
+                <label>On Target</label>
+            </value>
+            <value>
+                <fullName>BELOW_START</fullName>
+                <default>false</default>
+                <label>Below Start</label>
+            </value>
+            <value>
+                <fullName>ABOVE_START</fullName>
+                <default>false</default>
+                <label>Above Start</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

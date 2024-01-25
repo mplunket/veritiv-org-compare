@@ -1,0 +1,931 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Details__c</fullName>
+    <description>Used in CEI rollout. 
+
+Replaces &quot;Specifics&quot; in current production environment.</description>
+    <externalId>false</externalId>
+    <inlineHelpText>NIR/PAF/SAF = Other Department</inlineHelpText>
+    <label>Details</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>true</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <controllingField>Category__c</controllingField>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>true</sorted>
+            <value>
+                <fullName>Additional Charges</fullName>
+                <default>false</default>
+                <label>Additional Charges</label>
+            </value>
+            <value>
+                <fullName>Aging</fullName>
+                <default>false</default>
+                <label>Aging</label>
+            </value>
+            <value>
+                <fullName>AP - - [Cost APD]</fullName>
+                <default>false</default>
+                <label>AP - - [Cost APD]</label>
+            </value>
+            <value>
+                <fullName>Appointment Missed</fullName>
+                <default>false</default>
+                <label>Appointment Missed</label>
+            </value>
+            <value>
+                <fullName>AR Statement</fullName>
+                <default>false</default>
+                <label>AR Statement</label>
+            </value>
+            <value>
+                <fullName>Backhaul Not Complete</fullName>
+                <default>false</default>
+                <label>Backhaul Not Complete</label>
+            </value>
+            <value>
+                <fullName>BR - - [BX Report]</fullName>
+                <default>false</default>
+                <label>BR - - [BX Report]</label>
+            </value>
+            <value>
+                <fullName>Branded</fullName>
+                <default>false</default>
+                <label>Branded</label>
+            </value>
+            <value>
+                <fullName>BV - - [BV Error]</fullName>
+                <default>false</default>
+                <label>BV - - [BV Error]</label>
+            </value>
+            <value>
+                <fullName>BX - - [EDI, &lt; BX Threshold]</fullName>
+                <default>false</default>
+                <label>BX - - [EDI, &lt; BX Threshold]</label>
+            </value>
+            <value>
+                <fullName>BY - - [EDI, &gt; BY Threshold]</fullName>
+                <default>false</default>
+                <label>BY - - [EDI, &gt; BY Threshold]</label>
+            </value>
+            <value>
+                <fullName>CM - - [Category Manager/International Sourcing]</fullName>
+                <default>false</default>
+                <label>CM - - [Category Manager/International Sourcing]</label>
+            </value>
+            <value>
+                <fullName>CN - - [Consignment]</fullName>
+                <default>false</default>
+                <label>CN - - [Consignment]</label>
+            </value>
+            <value>
+                <fullName>Collection Request</fullName>
+                <default>false</default>
+                <label>Collection Request</label>
+            </value>
+            <value>
+                <fullName>Company Information</fullName>
+                <default>false</default>
+                <label>Company Information</label>
+            </value>
+            <value>
+                <fullName>Cost Correction</fullName>
+                <default>false</default>
+                <label>Cost Correction/Rebate</label>
+            </value>
+            <value>
+                <fullName>Credit</fullName>
+                <default>false</default>
+                <label>Credit</label>
+            </value>
+            <value>
+                <fullName>Credit Copy</fullName>
+                <default>false</default>
+                <label>Credit Card Receipt</label>
+            </value>
+            <value>
+                <fullName>Customer Maintenance</fullName>
+                <default>false</default>
+                <label>Customer Maintenance</label>
+            </value>
+            <value>
+                <fullName>Customer Onboarding</fullName>
+                <default>false</default>
+                <label>Customer Onboarding</label>
+            </value>
+            <value>
+                <fullName>Customer Taxability Overrides</fullName>
+                <default>false</default>
+                <label>Customer Taxability Overrides</label>
+            </value>
+            <value>
+                <fullName>Cutting/Slitting</fullName>
+                <default>false</default>
+                <label>Cutting/Slitting</label>
+            </value>
+            <value>
+                <fullName>CW - - [Converting Workbook/BOM-Bill of Material]</fullName>
+                <default>false</default>
+                <label>CW - - [Converting Workbook/BOM-Bill of Material]</label>
+            </value>
+            <value>
+                <fullName>DA - - [Daily Audit Report]</fullName>
+                <default>false</default>
+                <label>DA - - [Daily Audit Report]</label>
+            </value>
+            <value>
+                <fullName>Damaged Product/Item</fullName>
+                <default>false</default>
+                <label>Damaged Product/Item</label>
+            </value>
+            <value>
+                <fullName>Decrease</fullName>
+                <default>false</default>
+                <label>Decrease</label>
+            </value>
+            <value>
+                <fullName>Design Center NIR</fullName>
+                <default>false</default>
+                <label>Design Center NIR</label>
+            </value>
+            <value>
+                <fullName>Direct</fullName>
+                <default>false</default>
+                <label>Direct</label>
+            </value>
+            <value>
+                <fullName>Driver/Truck Complaint</fullName>
+                <default>false</default>
+                <label>Driver/Truck Complaint</label>
+            </value>
+            <value>
+                <fullName>Duplicate Order</fullName>
+                <default>false</default>
+                <label>Duplicate Order</label>
+            </value>
+            <value>
+                <fullName>EI - - [EIR]</fullName>
+                <default>false</default>
+                <label>EI - - [EIR]</label>
+            </value>
+            <value>
+                <fullName>FI - - [Finance, Mass Update]</fullName>
+                <default>false</default>
+                <label>FI - - [Finance, Mass Update]</label>
+            </value>
+            <value>
+                <fullName>Freight Claim</fullName>
+                <default>false</default>
+                <label>Freight Claim</label>
+            </value>
+            <value>
+                <fullName>FS - - [Field Sourcing Quote]</fullName>
+                <default>false</default>
+                <label>FS - - [Field Sourcing Quote]</label>
+            </value>
+            <value>
+                <fullName>IN - - [Vendor Invoice – One Off]</fullName>
+                <default>false</default>
+                <label>IN - - [Vendor Invoice – One Off]</label>
+            </value>
+            <value>
+                <fullName>Increase</fullName>
+                <default>false</default>
+                <label>Increase</label>
+            </value>
+            <value>
+                <fullName>Invoice/CR Memo</fullName>
+                <default>false</default>
+                <label>Invoice/CR Memo</label>
+            </value>
+            <value>
+                <fullName>Invoice Copy</fullName>
+                <default>false</default>
+                <label>Invoice Copy</label>
+            </value>
+            <value>
+                <fullName>Item Maintenance</fullName>
+                <default>false</default>
+                <label>Item Maintenance</label>
+            </value>
+            <value>
+                <fullName>Lost Transfer</fullName>
+                <default>false</default>
+                <label>Lost Transfer</label>
+            </value>
+            <value>
+                <fullName>MC - - [Mass Vendor Update]</fullName>
+                <default>false</default>
+                <label>MC - - [Mass Vendor Update]</label>
+            </value>
+            <value>
+                <fullName>Mill Claims</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Mill Claims</label>
+            </value>
+            <value>
+                <fullName>Missing Credit</fullName>
+                <default>false</default>
+                <label>Missing Credit</label>
+            </value>
+            <value>
+                <fullName>Missing POD</fullName>
+                <default>false</default>
+                <label>Missing POD</label>
+            </value>
+            <value>
+                <fullName>New Customer/Credit Application</fullName>
+                <default>false</default>
+                <label>New Customer/Credit Application</label>
+            </value>
+            <value>
+                <fullName>New Ship To</fullName>
+                <default>false</default>
+                <label>New Ship To</label>
+            </value>
+            <value>
+                <fullName>New Supplier Request</fullName>
+                <default>false</default>
+                <label>New Supplier Request</label>
+            </value>
+            <value>
+                <fullName>NI - - [Hub New Item Setup]</fullName>
+                <default>false</default>
+                <label>NI - - [Hub New Item Setup]</label>
+            </value>
+            <value>
+                <fullName>NIR</fullName>
+                <default>false</default>
+                <label>NIR</label>
+            </value>
+            <value>
+                <fullName>No Claim</fullName>
+                <default>false</default>
+                <label>No Claim</label>
+            </value>
+            <value>
+                <fullName>Not Sure of Claim</fullName>
+                <default>false</default>
+                <label>Not Sure of Claim</label>
+            </value>
+            <value>
+                <fullName>OP - - [Net Ops, Mass Update]</fullName>
+                <default>false</default>
+                <label>OP - - [Net Ops, Mass Update]</label>
+            </value>
+            <value>
+                <fullName>Open PO, Shipped &amp; Received, No Invoice</fullName>
+                <default>false</default>
+                <label>Open PO, Shipped &amp; Received, No Invoice</label>
+            </value>
+            <value>
+                <fullName>Operating Tax Team Support</fullName>
+                <default>false</default>
+                <label>Operating Tax Team Support</label>
+            </value>
+            <value>
+                <fullName>OR - - [Outlook Request , Outside of Salesforce]</fullName>
+                <default>false</default>
+                <label>OR - - [Outlook Request , Outside of Salesforce]</label>
+            </value>
+            <value>
+                <fullName>Order Change</fullName>
+                <default>false</default>
+                <label>Order Change</label>
+            </value>
+            <value>
+                <fullName>Ordered Incorrectly</fullName>
+                <default>false</default>
+                <label>Ordered Incorrectly</label>
+            </value>
+            <value>
+                <fullName>Order Information</fullName>
+                <default>false</default>
+                <label>Order Information</label>
+            </value>
+            <value>
+                <fullName>Order Status/Tracking</fullName>
+                <default>false</default>
+                <label>Order Status/Tracking</label>
+            </value>
+            <value>
+                <fullName>Other Department</fullName>
+                <default>false</default>
+                <label>Other Department</label>
+            </value>
+            <value>
+                <fullName>Over, Short, &amp; Damaged</fullName>
+                <default>false</default>
+                <label>Over, Short, &amp; Damaged</label>
+            </value>
+            <value>
+                <fullName>P&amp;S Missing/Invalid PO</fullName>
+                <default>false</default>
+                <label>P&amp;S Missing/Invalid PO</label>
+            </value>
+            <value>
+                <fullName>Pallet Restacking</fullName>
+                <default>false</default>
+                <label>Pallet Restacking</label>
+            </value>
+            <value>
+                <fullName>Payment Inquiry - Cust</fullName>
+                <default>false</default>
+                <label>Payment Inquiry - Cust</label>
+            </value>
+            <value>
+                <fullName>Payment Inquiry Sales</fullName>
+                <default>false</default>
+                <label>Payment Inquiry - Sales</label>
+            </value>
+            <value>
+                <fullName>Payment Over</fullName>
+                <default>false</default>
+                <label>Payment Over</label>
+            </value>
+            <value>
+                <fullName>Payment Short - Freight</fullName>
+                <default>false</default>
+                <label>Payment Short - Freight</label>
+            </value>
+            <value>
+                <fullName>Payment Short - Pricing/Quantity</fullName>
+                <default>false</default>
+                <label>Payment Short - Pricing/Quantity</label>
+            </value>
+            <value>
+                <fullName>Picking Error</fullName>
+                <default>false</default>
+                <label>Picking Error</label>
+            </value>
+            <value>
+                <fullName>Pickup</fullName>
+                <default>false</default>
+                <label>Pickup</label>
+            </value>
+            <value>
+                <fullName>PO - - [PO Confirmation]</fullName>
+                <default>false</default>
+                <label>PO - - [PO Confirmation]</label>
+            </value>
+            <value>
+                <fullName>PO# Correction</fullName>
+                <default>false</default>
+                <label>PO# Correction</label>
+            </value>
+            <value>
+                <fullName>Policy Credit</fullName>
+                <default>false</default>
+                <label>Policy Credit</label>
+            </value>
+            <value>
+                <fullName>Portal Unbilled Invoice</fullName>
+                <default>false</default>
+                <label>Portal Unbilled Invoice</label>
+            </value>
+            <value>
+                <fullName>Price/Cost</fullName>
+                <default>false</default>
+                <label>Price/Cost</label>
+            </value>
+            <value>
+                <fullName>Pricing</fullName>
+                <default>false</default>
+                <label>Pricing</label>
+            </value>
+            <value>
+                <fullName>Pricing Discrepancy</fullName>
+                <default>false</default>
+                <label>Pricing Discrepancy</label>
+            </value>
+            <value>
+                <fullName>Private</fullName>
+                <default>false</default>
+                <label>Private</label>
+            </value>
+            <value>
+                <fullName>Product/Item</fullName>
+                <default>false</default>
+                <label>Product/Item Availability</label>
+            </value>
+            <value>
+                <fullName>Product/Item Description</fullName>
+                <default>false</default>
+                <label>Product/Item Description</label>
+            </value>
+            <value>
+                <fullName>Product/Item NS/No QOH/Sus</fullName>
+                <default>false</default>
+                <label>Product/Item NS/No QOH/Sus</label>
+            </value>
+            <value>
+                <fullName>Product/Item Pricing &amp; Availability</fullName>
+                <default>false</default>
+                <label>Product/Item Pricing &amp; Availability</label>
+            </value>
+            <value>
+                <fullName>Product/Item UOM/Qty</fullName>
+                <default>false</default>
+                <label>Product/Item UOM/Qty</label>
+            </value>
+            <value>
+                <fullName>Proof of Delivery</fullName>
+                <default>false</default>
+                <label>Proof of Delivery</label>
+            </value>
+            <value>
+                <fullName>QU - - [Quote – One Off]</fullName>
+                <default>false</default>
+                <label>QU - - [Quote – One Off]</label>
+            </value>
+            <value>
+                <fullName>Receiving</fullName>
+                <default>false</default>
+                <label>Receiving</label>
+            </value>
+            <value>
+                <fullName>Refusal</fullName>
+                <default>false</default>
+                <label>Refusal</label>
+            </value>
+            <value>
+                <fullName>Remit Request from AR</fullName>
+                <default>false</default>
+                <label>Remit Request from AR</label>
+            </value>
+            <value>
+                <fullName>Remove</fullName>
+                <default>false</default>
+                <label>Remove</label>
+            </value>
+            <value>
+                <fullName>Samples</fullName>
+                <default>false</default>
+                <label>Samples</label>
+            </value>
+            <value>
+                <fullName>SE - - [Correction/Clear Severe Error]</fullName>
+                <default>false</default>
+                <label>SE - - [Correction/Clear Severe Error]</label>
+            </value>
+            <value>
+                <fullName>Shipment Over</fullName>
+                <default>false</default>
+                <label>Shipment Over</label>
+            </value>
+            <value>
+                <fullName>Shipment Short</fullName>
+                <default>false</default>
+                <label>Shipment Short</label>
+            </value>
+            <value>
+                <fullName>Shipping Error</fullName>
+                <default>false</default>
+                <label>Shipping Error</label>
+            </value>
+            <value>
+                <fullName>Statement</fullName>
+                <default>false</default>
+                <label>Statement</label>
+            </value>
+            <value>
+                <fullName>Tax</fullName>
+                <default>false</default>
+                <label>Tax</label>
+            </value>
+            <value>
+                <fullName>Tax Cert-Internal Request</fullName>
+                <default>false</default>
+                <label>Tax Cert-Internal Request</label>
+            </value>
+            <value>
+                <fullName>Tax Due/Tax Dispute</fullName>
+                <default>false</default>
+                <label>Tax Due/Tax Dispute</label>
+            </value>
+            <value>
+                <fullName>UOM</fullName>
+                <default>false</default>
+                <label>UOM</label>
+            </value>
+            <value>
+                <fullName>UPS - Early Release Request</fullName>
+                <default>false</default>
+                <label>UPS - Early Release Request</label>
+            </value>
+            <value>
+                <fullName>VE - - [Vendor Invoice Error, Credit]</fullName>
+                <default>false</default>
+                <label>VE - - [Vendor Invoice Error, Credit]</label>
+            </value>
+            <value>
+                <fullName>Vendor Claim - FS/PKG</fullName>
+                <default>false</default>
+                <label>Vendor Claim - FS/PKG</label>
+            </value>
+            <value>
+                <fullName>Vendor Claim - PRINT</fullName>
+                <default>false</default>
+                <label>Vendor Claim - PRINT</label>
+            </value>
+            <value>
+                <fullName>Vendor Credit</fullName>
+                <default>false</default>
+                <label>Vendor Credit</label>
+            </value>
+            <value>
+                <fullName>Vendor Documentation</fullName>
+                <default>false</default>
+                <label>Vendor Documentation</label>
+            </value>
+            <value>
+                <fullName>VM - - [Vendor Email – One Off]</fullName>
+                <default>false</default>
+                <label>VM - - [Vendor Email – One Off]</label>
+            </value>
+            <value>
+                <fullName>VOC</fullName>
+                <default>false</default>
+                <label>VOC</label>
+            </value>
+            <value>
+                <fullName>VP - - [Vendor Price Page – One Off]</fullName>
+                <default>false</default>
+                <label>VP - - [Vendor Price Page – One Off]</label>
+            </value>
+            <value>
+                <fullName>VPPM</fullName>
+                <default>false</default>
+                <label>VPPM</label>
+            </value>
+            <value>
+                <fullName>Warehouse/Indirect</fullName>
+                <default>false</default>
+                <label>Warehouse/Indirect</label>
+            </value>
+            <value>
+                <fullName>Wrong Account#</fullName>
+                <default>false</default>
+                <label>Wrong Account#</label>
+            </value>
+            <value>
+                <fullName>Wrong Address</fullName>
+                <default>false</default>
+                <label>Wrong Address</label>
+            </value>
+            <value>
+                <fullName>Wrong Bill To</fullName>
+                <default>false</default>
+                <label>Wrong Bill To</label>
+            </value>
+            <value>
+                <fullName>Wrong Customer</fullName>
+                <default>false</default>
+                <label>Wrong Customer</label>
+            </value>
+            <value>
+                <fullName>Wrong Ship To</fullName>
+                <default>false</default>
+                <label>Wrong Ship To</label>
+            </value>
+        </valueSetDefinition>
+        <valueSettings>
+            <controllingFieldValue>Freight</controllingFieldValue>
+            <valueName>Decrease</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Freight</controllingFieldValue>
+            <valueName>Increase</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Freight</controllingFieldValue>
+            <valueName>Remove</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>CBSS</controllingFieldValue>
+            <valueName>Branded</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>CBSS</controllingFieldValue>
+            <valueName>Private</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Cost Change Request</controllingFieldValue>
+            <valueName>AP - - [Cost APD]</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Cost Change Request</controllingFieldValue>
+            <valueName>BR - - [BX Report]</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Cost Change Request</controllingFieldValue>
+            <valueName>BV - - [BV Error]</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Cost Change Request</controllingFieldValue>
+            <valueName>BX - - [EDI, &lt; BX Threshold]</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Cost Change Request</controllingFieldValue>
+            <valueName>BY - - [EDI, &gt; BY Threshold]</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Cost Change Request</controllingFieldValue>
+            <valueName>CM - - [Category Manager/International Sourcing]</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Cost Change Request</controllingFieldValue>
+            <valueName>CN - - [Consignment]</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Cost Change Request</controllingFieldValue>
+            <valueName>CW - - [Converting Workbook/BOM-Bill of Material]</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Cost Change Request</controllingFieldValue>
+            <valueName>DA - - [Daily Audit Report]</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Cost Change Request</controllingFieldValue>
+            <valueName>EI - - [EIR]</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Cost Change Request</controllingFieldValue>
+            <valueName>FI - - [Finance, Mass Update]</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Cost Change Request</controllingFieldValue>
+            <valueName>FS - - [Field Sourcing Quote]</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Cost Change Request</controllingFieldValue>
+            <valueName>IN - - [Vendor Invoice – One Off]</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Cost Change Request</controllingFieldValue>
+            <valueName>MC - - [Mass Vendor Update]</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Cost Change Request</controllingFieldValue>
+            <valueName>NI - - [Hub New Item Setup]</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Cost Change Request</controllingFieldValue>
+            <valueName>OP - - [Net Ops, Mass Update]</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Cost Change Request</controllingFieldValue>
+            <valueName>OR - - [Outlook Request , Outside of Salesforce]</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Cost Change Request</controllingFieldValue>
+            <valueName>PO - - [PO Confirmation]</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Cost Change Request</controllingFieldValue>
+            <valueName>QU - - [Quote – One Off]</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Cost Change Request</controllingFieldValue>
+            <valueName>SE - - [Correction/Clear Severe Error]</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Cost Change Request</controllingFieldValue>
+            <valueName>VE - - [Vendor Invoice Error, Credit]</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Cost Change Request</controllingFieldValue>
+            <valueName>VM - - [Vendor Email – One Off]</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Cost Change Request</controllingFieldValue>
+            <valueName>VP - - [Vendor Price Page – One Off]</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Payments</controllingFieldValue>
+            <valueName>Payment Inquiry - Cust</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Payments</controllingFieldValue>
+            <valueName>Payment Inquiry Sales</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Payments</controllingFieldValue>
+            <valueName>Payment Over</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Payments</controllingFieldValue>
+            <valueName>Payment Short - Freight</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Payments</controllingFieldValue>
+            <valueName>Payment Short - Pricing/Quantity</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Payments</controllingFieldValue>
+            <valueName>Remit Request from AR</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>I - Credit</controllingFieldValue>
+            <valueName>Additional Charges</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>I - Credit</controllingFieldValue>
+            <valueName>Cost Correction</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>I - Credit</controllingFieldValue>
+            <valueName>Duplicate Order</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>I - Credit</controllingFieldValue>
+            <valueName>Missing POD</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>I - Credit</controllingFieldValue>
+            <valueName>Ordered Incorrectly</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>I - Credit</controllingFieldValue>
+            <valueName>Over, Short, &amp; Damaged</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>I - Credit</controllingFieldValue>
+            <valueName>Pickup</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>I - Credit</controllingFieldValue>
+            <valueName>Policy Credit</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>I - Credit</controllingFieldValue>
+            <valueName>Pricing Discrepancy</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>I - Credit</controllingFieldValue>
+            <valueName>Refusal</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>I - Credit</controllingFieldValue>
+            <controllingFieldValue>General Inquiry</controllingFieldValue>
+            <valueName>Tax</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>I - Credit</controllingFieldValue>
+            <valueName>Vendor Credit</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>I - Credit</controllingFieldValue>
+            <valueName>Wrong Account#</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Customer Billing Question</controllingFieldValue>
+            <valueName>VOC</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Customer Billing Question</controllingFieldValue>
+            <valueName>VPPM</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Tax Technology Request</controllingFieldValue>
+            <valueName>Customer Taxability Overrides</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Tax Technology Request</controllingFieldValue>
+            <valueName>Operating Tax Team Support</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Tax</controllingFieldValue>
+            <valueName>Tax Cert-Internal Request</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Tax</controllingFieldValue>
+            <valueName>Tax Due/Tax Dispute</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Document Request</controllingFieldValue>
+            <valueName>Aging</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Document Request</controllingFieldValue>
+            <valueName>Invoice/CR Memo</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Document Request</controllingFieldValue>
+            <valueName>Proof of Delivery</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Document Request</controllingFieldValue>
+            <valueName>Statement</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>I - Delivery Issue</controllingFieldValue>
+            <valueName>Appointment Missed</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>I - Delivery Issue</controllingFieldValue>
+            <valueName>Backhaul Not Complete</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>I - Delivery Issue</controllingFieldValue>
+            <valueName>Driver/Truck Complaint</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>I - Delivery Issue</controllingFieldValue>
+            <valueName>Wrong Address</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>I - Delivery Issue</controllingFieldValue>
+            <valueName>Wrong Customer</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>I - Product/Item Issue</controllingFieldValue>
+            <valueName>Damaged Product/Item</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>I - Product/Item Issue</controllingFieldValue>
+            <valueName>Freight Claim</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>I - Product/Item Issue</controllingFieldValue>
+            <valueName>No Claim</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>I - Product/Item Issue</controllingFieldValue>
+            <valueName>Not Sure of Claim</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>I - Product/Item Issue</controllingFieldValue>
+            <valueName>Product/Item Description</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>I - Product/Item Issue</controllingFieldValue>
+            <valueName>Product/Item NS/No QOH/Sus</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>I - Product/Item Issue</controllingFieldValue>
+            <valueName>Vendor Claim - FS/PKG</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>I - Product/Item Issue</controllingFieldValue>
+            <valueName>Vendor Claim - PRINT</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Billing Error</controllingFieldValue>
+            <valueName>Missing Credit</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Billing Error</controllingFieldValue>
+            <valueName>Open PO, Shipped &amp; Received, No Invoice</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Billing Error</controllingFieldValue>
+            <valueName>P&amp;S Missing/Invalid PO</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Billing Error</controllingFieldValue>
+            <valueName>PO# Correction</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Billing Error</controllingFieldValue>
+            <valueName>Portal Unbilled Invoice</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Billing Error</controllingFieldValue>
+            <valueName>Pricing</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Billing Error</controllingFieldValue>
+            <valueName>Shipment Over</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Billing Error</controllingFieldValue>
+            <valueName>Shipment Short</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Billing Error</controllingFieldValue>
+            <valueName>Wrong Bill To</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Billing Error</controllingFieldValue>
+            <valueName>Wrong Ship To</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Account Setup/Maintenance</controllingFieldValue>
+            <valueName>Customer Maintenance</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Account Setup/Maintenance</controllingFieldValue>
+            <valueName>New Customer/Credit Application</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Account Setup/Maintenance</controllingFieldValue>
+            <valueName>New Ship To</valueName>
+        </valueSettings>
+    </valueSet>
+</CustomField>

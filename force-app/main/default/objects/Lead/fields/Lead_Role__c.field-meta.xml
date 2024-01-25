@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Lead_Role__c</fullName>
+    <defaultValue>&quot;Sales Primary Contact&quot;</defaultValue>
+    <description>Field used to map to the Contact Role field on Lead Conversions for Sales Reps</description>
+    <externalId>false</externalId>
+    <label>Lead Role</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>MultiselectPicklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Sales Primary Contact</fullName>
+                <default>true</default>
+                <label>Sales Primary Contact</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+    <visibleLines>4</visibleLines>
+</CustomField>

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Max_Stage_Number__c</fullName>
+    <defaultValue>6</defaultValue>
+    <description>Set by the FAP. This is the maximum stage that the opportunity can progress to due to the specific attachments that it has.</description>
+    <externalId>false</externalId>
+    <label>Max Stage Number</label>
+    <precision>2</precision>
+    <required>false</required>
+    <scale>0</scale>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Number</type>
+    <unique>false</unique>
+</CustomField>

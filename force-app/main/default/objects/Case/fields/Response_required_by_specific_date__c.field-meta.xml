@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Response_required_by_specific_date__c</fullName>
+    <externalId>false</externalId>
+    <inlineHelpText>Only add date if the Customer requires a response by a specific date</inlineHelpText>
+    <label>Response required by specific date?</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Date</type>
+</CustomField>

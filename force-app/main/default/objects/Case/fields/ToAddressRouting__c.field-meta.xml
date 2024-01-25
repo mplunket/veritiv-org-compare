@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>ToAddressRouting__c</fullName>
+    <description>Used in CEI rollout. Group email address that an email is sent into. Populated via workflow rule off the Email Message object.
+
+For Cisco routing</description>
+    <externalId>false</externalId>
+    <inlineHelpText>Email recipient address</inlineHelpText>
+    <label>To Address</label>
+    <length>4000</length>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>true</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>LongTextArea</type>
+    <visibleLines>2</visibleLines>
+</CustomField>

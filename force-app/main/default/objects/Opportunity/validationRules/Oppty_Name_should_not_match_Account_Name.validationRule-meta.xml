@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Oppty_Name_should_not_match_Account_Name</fullName>
+    <active>true</active>
+    <description>For Engineered Packaging Opportunities, the Opportunity Name must be different than the Account Name</description>
+    <errorConditionFormula>AND(RecordTypeId=&apos;01270000000E0Td&apos;,  Name = Account.Name)</errorConditionFormula>
+    <errorDisplayField>Name</errorDisplayField>
+    <errorMessage>For Engineered Packaging  Opportunities, the Opportunity Name should not be identical to the Account Name that it is related to.  Please indicate as part of the Opportunity Name something about the potential Project that makes the name somewhat unique.</errorMessage>
+</ValidationRule>

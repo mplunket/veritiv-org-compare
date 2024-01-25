@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<WebLink xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Ship_To_Lookup</fullName>
+    <availability>online</availability>
+    <displayType>button</displayType>
+    <encodingKey>UTF-8</encodingKey>
+    <height>600</height>
+    <linkType>url</linkType>
+    <masterLabel>Ship To Lookup</masterLabel>
+    <openType>sidebar</openType>
+    <protected>false</protected>
+    <url>/apex/ShipToLookup?id={!Contact.Id}&amp;type=Contact&amp;name={!Contact.Name}&amp;accountId={!Account.Id}&amp;accountName={!Account.Name}</url>
+</WebLink>

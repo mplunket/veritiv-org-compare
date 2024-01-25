@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>CX_Cannot_Change_Owner_to_Cost_Queues</fullName>
+    <active>false</active>
+    <description>Validation rule set in place so CX Cannot Change Owner to Cost Maint E2C queues, from the &quot;Change Owner&quot; lookup field on Cases.</description>
+    <errorConditionFormula>RecordType.DeveloperName = &quot;Console_CS_Lightning&quot;  &amp;&amp; 
+Owner:Queue.DeveloperName  = &quot;COST_MAINT_CC2_E2C&quot;</errorConditionFormula>
+    <errorMessage>Permission needed to change this Case to this Queue.</errorMessage>
+</ValidationRule>

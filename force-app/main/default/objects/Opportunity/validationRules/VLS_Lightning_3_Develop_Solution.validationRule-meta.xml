@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>VLS_Lightning_3_Develop_Solution</fullName>
+    <active>false</active>
+    <description>Fields required before you can advance to Stage 3 for VLS</description>
+    <errorConditionFormula>AND(TEXT(StageName)= &quot;3- Develop Solution&quot;,
+$User.ProfileId  = &quot;00ef2000000zIBv&quot;,
+ OR(ISBlank(Amount  ),
+ Amount&lt;=1,
+ ISBlank(Description  )
+ ))</errorConditionFormula>
+    <errorMessage>Before choosing 3- Develop Solution as a Stage, Opportunity Revenue must exceed $1 and Description must be updated.</errorMessage>
+</ValidationRule>

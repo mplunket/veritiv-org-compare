@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>LA_PRTSS_ESC_LEX</fullName>
+    <columns>CASES.CREATED_DATE_DATE_ONLY</columns>
+    <columns>CASES.CASE_NUMBER</columns>
+    <columns>NAME</columns>
+    <columns>ACCOUNT.NAME</columns>
+    <columns>Case_w_New_Email__c</columns>
+    <columns>CASES.STATUS</columns>
+    <columns>CASES.SUBJECT</columns>
+    <columns>CASES.PRIORITY</columns>
+    <columns>ToAddressRouting__c</columns>
+    <columns>CASES.LAST_UPDATE_DATE_ONLY</columns>
+    <filterScope>Queue</filterScope>
+    <label>LA-PRTSS-ESC-LEX</label>
+    <queue>LA_PRTSS_ESC_LEX</queue>
+    <sharedTo>
+        <role>CS_CSC_Operations_Mgmt</role>
+        <roleAndSubordinatesInternal>CS_LA_PRINT_DIRECTOR</roleAndSubordinatesInternal>
+    </sharedTo>
+</ListView>
